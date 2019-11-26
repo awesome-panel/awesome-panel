@@ -29,12 +29,19 @@ class UrlMixin:
     """
 
     def __init__(self):
+        """Initializes from the browser url parameters"""
         for key, value in pn.state.session_args.items():
             if key in self._parameter_dict():
                 value_str = value[0].decode("utf8")
                 self.set_param(key, value_str)
 
     def set_browser_url_parameters(self) -> pn.pane.HTML:
+        """A HTML Pane. Should be included in the app in order
+        to update the browser url when a parameter changes.
+
+        Returns:
+            pn.pane.HTML -- A pane containing the javascript script to update the browser url
+        """
         return pn.pane.HTML(self._browser_url_parameters_script())
 
     def _browser_url_parameters_script(self) -> str:
