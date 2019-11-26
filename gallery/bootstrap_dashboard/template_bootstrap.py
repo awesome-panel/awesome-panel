@@ -33,7 +33,6 @@ def youtube(uid: str) -> pn.Pane:
 """
     )
 
-
 class Questions(param.Parameterized):
     rows = param.Integer(default=10, bounds=(0, 100))
     df = stack_overflow.read_schema()

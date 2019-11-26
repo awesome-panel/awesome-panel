@@ -20,6 +20,3 @@ class BootStrapDashboardTemplate(pn.Template):
             ),
         }
         super().__init__(template=template, items=items)
-
-        self.add_panel("app_title", pn.Row(pn.pane.HTML("App Title")))
-

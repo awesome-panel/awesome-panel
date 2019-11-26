@@ -3,9 +3,11 @@ from typing import List, NamedTuple
 
 import numpy as np
 import pandas as pd
-import panel as pn
 import param
 from plotly import express as px
+
+import awesome_panel.express as pnx
+import panel as pn
 from products.products import Products
 
 ABOUT_PATH = pathlib.Path(__file__).parent / "about.md"
@@ -14,15 +16,7 @@ ABOUT_PATH = pathlib.Path(__file__).parent / "about.md"
 class Orders:
     def __init__(self):
         chart_data = {
-            "Day": [
-                "Sunday",
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-            ],
+            "Day": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",],
             "Orders": [15539, 21345, 18483, 24003, 23489, 24092, 12034],
         }
         self.chart_data = pd.DataFrame(chart_data)
@@ -51,9 +45,7 @@ class Orders:
 
     def _chart(self):
         fig = px.line(self.chart_data, x="Day", y="Orders")
-        fig.update_traces(
-            mode="lines+markers", marker=dict(size=10), line=dict(width=4)
-        )
+        fig.update_traces(mode="lines+markers", marker=dict(size=10), line=dict(width=4))
         fig.layout.autosize = True
         fig.layout.paper_bgcolor = "rgba(0,0,0,0)"
         fig.layout.plot_bgcolor = "rgba(0,0,0,0)"
@@ -106,7 +98,7 @@ PAGES = {page_config.name: page_config for page_config in PAGE_CONFIGS}
 PAGE_NAMES = [page_config.name for page_config in PAGE_CONFIGS]
 
 
-class PageView(param.Parameterized):
+class PageView(param.Parameterized, pnx.widgets.Url):
     page = param.ObjectSelector(default=PAGE_NAMES[0], objects=PAGE_NAMES)
 
     def select(self) -> pn.Pane:
@@ -126,6 +118,8 @@ class PageView(param.Parameterized):
     @param.depends("page")
     def view(self) -> pn.Pane:
         return pn.Column(
-            PAGES[self.page].pane, sizing_mode="stretch_width", width_policy="max"
+            PAGES[self.page].pane,
+            self.set_url_parameters,
+            sizing_mode="stretch_width",
+            width_policy="max",
         )
-

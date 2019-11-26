@@ -1,13 +1,6 @@
 import panel as pn
-import param
-import pathlib
 import views
 import awesome_panel.express as pnx
-
-# Todo: Readme https://docs.bokeh.org/en/latest/docs/user_guide/server.html#directory-format
-
-TEMPLATES_ROOT = pathlib.Path(__file__).parent / "templates"
-BOOTSTRAP_DASHBOARD_TEMPLATE = TEMPLATES_ROOT / "bootstrap_dashboard.html"
 
 
 def main() -> pn.Pane:

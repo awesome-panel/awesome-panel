@@ -21,6 +21,7 @@ pytest  # https://github.com/pytest-dev/pytest
 pytest-sugar  # https://github.com/Frozenball/pytest-sugar
 pytest-mock # https://github.com/pytest-dev/pytest-mock/
 pytest-cov # https://pypi.org/project/pytest-cov/
+selenium # To Web Test Automation. See https://selenium-python.readthedocs.io/
 
 # Code quality
 # ------------------------------------------------------------------------------
