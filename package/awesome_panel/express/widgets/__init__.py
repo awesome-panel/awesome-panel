@@ -1,1 +1,0 @@
-from awesome_panel.express.widgets._url import Url

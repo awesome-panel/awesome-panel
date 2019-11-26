@@ -37,30 +37,3 @@ def test_app():
 
     assert isinstance(app.main, pn.layout.Panel)
     assert isinstance(app.sidebar, pn.layout.Panel)
-
-
-class _Country(pnx.widgets.Url, param.Parameterized):
-    country = param.String()
-
-    @param.depends("country")
-    def set_url_parameters(self):
-        return super().set_url_parameters()
-
-
-def test_url():
-    country_url = _Country()
-    country_url.country = "Denmark"
-
-    assert country_url._parameter_dict() == {"country": "Denmark"}
-    assert country_url._urlencode() == "country=Denmark"
-
-
-def test_pn_url_view():
-    country_url = _Country()
-    country_url.country = "Norway"
-    panel = pn.Column(country_url.param, country_url.set_url_parameters)
-    panel.servable()
-
-
-if __name__.startswith("bk_script"):
-    test_pn_url_view()

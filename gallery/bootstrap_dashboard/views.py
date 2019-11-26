@@ -119,7 +119,7 @@ class PageView(param.Parameterized, pnx.widgets.Url):
     def view(self) -> pn.Pane:
         return pn.Column(
             PAGES[self.page].pane,
-            self.set_url_parameters,
+            self.set_browser_url_parameters,
             sizing_mode="stretch_width",
             width_policy="max",
         )
