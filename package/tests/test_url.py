@@ -12,13 +12,6 @@ importlib.reload(pnx)
 class _Country(pnx.param.UrlMixin, param.Parameterized):
     country = param.String()
 
-    def __init__(self, **params):
-        for key, value in pn.state.session_args.items():
-            if key in self._parameter_dict():
-                value_str = value[0].decode("utf8")
-                self.set_param(key, value_str)
-        super().__init__(**params)
-
     @param.depends("country")
     def set_browser_url_parameters(self):
         return super().set_browser_url_parameters()

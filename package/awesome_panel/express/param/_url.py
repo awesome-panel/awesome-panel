@@ -21,6 +21,12 @@ class UrlMixin:
             return super().set_browser_url_parameters()
     """
 
+    def __init__(self):
+        for key, value in pn.state.session_args.items():
+            if key in self._parameter_dict():
+                value_str = value[0].decode("utf8")
+                self.set_param(key, value_str)
+
     def set_browser_url_parameters(self) -> pn.pane.HTML:
         if len(self.get_param_values()) > 1:
             state = '{test: "me"}'
