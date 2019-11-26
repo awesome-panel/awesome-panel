@@ -32,7 +32,7 @@ def test_pn_url():
     # Given
     country_url = _Country()
     text = """
-Check
+Manual Tests
 
 - opening [http://localhost:5006/test_url](http://localhost:5006/test_url) works without error
 - opening [http://localhost:5006/test_url?country=](http://localhost:5006/test_url?country=) works without error
@@ -41,7 +41,7 @@ Check
 [http://localhost:5006/test_url?country=Norway](http://localhost:5006/test_url?country=Norway)
     """
     panel = pn.Column(country_url.param, text, country_url.set_browser_url_parameters)
-    panel.servable()
+    panel.servable("test")
 
 
 if __name__.startswith("bk_script"):
