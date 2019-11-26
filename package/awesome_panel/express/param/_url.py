@@ -1,7 +1,14 @@
-import param
-import panel as pn
+"""This module contains functionality to keep a param.Parametrized class
+in sync with the browser url
+
+
+"""
 import json
 import urllib
+
+import param
+
+import panel as pn
 
 
 class UrlMixin:
@@ -28,15 +35,16 @@ class UrlMixin:
                 self.set_param(key, value_str)
 
     def set_browser_url_parameters(self) -> pn.pane.HTML:
+        return pn.pane.HTML(self._browser_url_parameters_script())
+
+    def _browser_url_parameters_script(self) -> str:
         if len(self.get_param_values()) > 1:
-            state = '{test: "me"}'
+            state = f'{{param: "{self._urlencode()}"}}'
             title = ""
             url = f"?{self._urlencode()}"
 
-            script = f"""<script>window.history.replaceState({state},"{title}","{url}");</script>"""
-        else:
-            script = ""
-        return pn.pane.HTML(script)
+            return f"""<script>window.history.replaceState({state},"{title}","{url}");</script>"""
+        return ""
 
     def _parameter_dict(self):
         return {item[0]: item[1] for item in self.get_param_values() if item[0] != "name"}
