@@ -13,7 +13,7 @@ def test_pn_navigation():
 
     pages = [page1, page2]
     navigator = pnx.shared.Navigator(pages=pages)
-    app = pn.Column(test_pn_navigation.__doc__, navigator.view, navigator.view_active)
+    app = pn.Column(test_pn_navigation.__doc__, navigator.menu, navigator.selected_page)
     app.servable("test_pn_navigation")
 
 
