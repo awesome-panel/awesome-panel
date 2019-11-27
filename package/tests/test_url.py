@@ -17,7 +17,7 @@ class _Country(pnx.param.UrlMixin, param.Parameterized):
 
 def test_url():
     country_url = _Country()
-    country_url.set_param(country="Denmark")
+    country_url.country = "Denmark"
 
     assert country_url._parameter_dict() == {"country": "Denmark"}
     assert country_url._urlencode() == "country=Denmark"

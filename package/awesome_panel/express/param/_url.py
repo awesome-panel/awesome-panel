@@ -28,8 +28,12 @@ class UrlMixin:
             return super().set_browser_url_parameters()
     """
 
-    def __init__(self):
-        """Initializes from the browser url parameters"""
+    def __init__(self, *args, **kwargs):
+        super(UrlMixin, self).__init__(*args, **kwargs)
+        self._get_browser_url_parameters()
+
+    def _get_browser_url_parameters(self):
+        """Sets the parameters from the browser url parameters"""
         for key, value in pn.state.session_args.items():
             if key in self._parameter_dict():
                 value_str = value[0].decode("utf8")
