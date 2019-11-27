@@ -1,13 +1,11 @@
 """Tests of the awesome_panel functionality"""
-import importlib
-
 import param
 
 import awesome_panel.express as pnx
 import panel as pn
 
 
-class _Country(pnx.param.UrlMixin, param.Parameterized):
+class _Country(pnx.shared.BrowserUrlMixin, param.Parameterized):
     country = param.String()
 
     @param.depends("country")

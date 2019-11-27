@@ -11,16 +11,16 @@ import param
 import panel as pn
 
 
-class UrlMixin:
+class BrowserUrlMixin:
     """This Mixin enables parameters from a param.Parametrized Class to be shown in the url or the
-    browser. http://example
+    browser. For example like http://localhost/example_app?country=Norway
 
     Mix this class with the param.Parametrized class and add the set_browser_url_parameters HTML pane to
     your app in order to get url updates
 
     Example use case
 
-    class _Country(pnx.param.UrlMixin, param.Parameterized):
+    class _Country(pnx.shared.BrowserUrlMixin, param.Parameterized):
         country = param.String()
 
         @param.depends("country")
@@ -29,7 +29,7 @@ class UrlMixin:
     """
 
     def __init__(self, *args, **kwargs):
-        super(UrlMixin, self).__init__(*args, **kwargs)
+        super(BrowserUrlMixin, self).__init__(*args, **kwargs)
         self._get_browser_url_parameters()
 
     def _get_browser_url_parameters(self):

@@ -98,7 +98,7 @@ PAGES = {page_config.name: page_config for page_config in PAGE_CONFIGS}
 PAGE_NAMES = [page_config.name for page_config in PAGE_CONFIGS]
 
 
-class PageView(param.Parameterized, pnx.widgets.Url):
+class PageView(param.Parameterized, pnx.shared.BrowserUrlMixin):
     page = param.ObjectSelector(default=PAGE_NAMES[0], objects=PAGE_NAMES)
 
     def select(self) -> pn.Pane:

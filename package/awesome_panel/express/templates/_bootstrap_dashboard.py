@@ -1,8 +1,7 @@
-
 import panel as pn
 import pathlib
 
-TEMPLATE_URL = pathlib.Path(__file__).parent / "templates" / "bootstrap_dashboard.html"
+TEMPLATE_URL = pathlib.Path(__file__).parent / "_bootstrap_dashboard.html"
 
 
 class BootStrapDashboardTemplate(pn.Template):
@@ -15,8 +14,6 @@ class BootStrapDashboardTemplate(pn.Template):
         items = {
             "sidebar": self.sidebar,
             "main": self.main,
-            "app_title": pn.Row(
-                pn.pane.HTML(app_title),
-            ),
+            "app_title": pn.Row(pn.pane.HTML(app_title),),
         }
         super().__init__(template=template, items=items)
