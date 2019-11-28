@@ -8,13 +8,12 @@ from plotly import express as px
 
 import awesome_panel.express as pnx
 import panel as pn
-from products.products import Products
 
 ABOUT_PATH = pathlib.Path(__file__).parent / "about.md"
 
 
-class Orders:
-    def __init__(self):
+class Dashboard:
+    def __init__(self, name="Dashboard"):
         chart_data = {
             "Day": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",],
             "Orders": [15539, 21345, 18483, 24003, 23489, 24092, 12034],
@@ -54,72 +53,45 @@ class Orders:
     def _table(self):
         return pn.Row(self.table_data, sizing_mode="stretch_width")
 
-    def view(self):
+    def view(self, name="Dashboard"):
         return pn.Column(
             pn.pane.Markdown("## Dashboard"),
             self._chart(),
             pn.pane.Markdown("## Section Title"),
             self._table(),
             sizing_mode="stretch_width",
+            name=name,
         )
 
 
-def markdown_from_file(path: pathlib.Path) -> pn.Pane:
+def markdown_from_file(path: pathlib.Path, name) -> pn.Pane:
     with open(path, "r") as file:
         text = file.read()
 
-    return pn.pane.Markdown(text)
+    return pn.pane.Markdown(text, name=name)
 
 
-def simple():
-    path = pathlib.Path(__file__).parent / "templates" / "simple.html"
+def customers_view(name="Customers"):
+    path = pathlib.Path(__file__).parent / "templates" / "customers.html"
     with open(path, "r") as file:
         template_html = file.read()
     app = pn.Template(template_html)
-    app = pn.panel(app)
-    return app
+    app.add_variable("title", name)
+    return pn.Column(app, name=name)
 
 
-class PageConfig(NamedTuple):
-    name: str
-    font_awesome_class: str
-    pane: pn.Pane
+# class PageConfig(NamedTuple):
+#     name: str
+#     font_awesome_class: str
+#     pane: pn.Pane
 
 
-PAGE_CONFIGS = [
-    PageConfig("Dashboard", "fas fa-home", Orders().view()),
-    PageConfig("Products", "far fa-file", Products()),
-    PageConfig("Customers", "fas fa-file", simple()),
-    PageConfig("Reports", "fas fa-file", pn.pane.Markdown("Reports")),
-    PageConfig("Integrations", "fas fa-file", pn.pane.Markdown("Integrations")),
-    PageConfig("About", "fas fa-file", markdown_from_file(ABOUT_PATH)),
-]
-PAGES = {page_config.name: page_config for page_config in PAGE_CONFIGS}
-PAGE_NAMES = [page_config.name for page_config in PAGE_CONFIGS]
+# PAGE_CONFIGS = [
+#     PageConfig("Dashboard", "fas fa-home", Orders().view()),
+#     PageConfig("Products", "far fa-file", Products()),
+#     PageConfig("Customers", "fas fa-file", simple()),
+#     PageConfig("Reports", "fas fa-file", pn.pane.Markdown("Reports")),
+#     PageConfig("Integrations", "fas fa-file", pn.pane.Markdown("Integrations")),
+#     PageConfig("About", "fas fa-file", markdown_from_file(ABOUT_PATH)),
+# ]
 
-
-class PageView(param.Parameterized, pnx.shared.BrowserUrlMixin):
-    page = param.ObjectSelector(default=PAGE_NAMES[0], objects=PAGE_NAMES)
-
-    def select(self) -> pn.Pane:
-        def set_page(event):
-            self.page = event.obj.name
-
-        menuitems = []
-        for page in PAGES.values():
-            button = pn.widgets.Button(name=page.name)
-            button.on_click(set_page)
-            menuitems.append(button)
-
-        return pn.WidgetBox(
-            *menuitems, sizing_mode="stretch_width", css_classes=["pageview-select"]
-        )
-
-    @param.depends("page")
-    def view(self) -> pn.Pane:
-        return pn.Column(
-            PAGES[self.page].pane,
-            self.set_browser_url_parameters,
-            sizing_mode="stretch_width",
-            width_policy="max",
-        )

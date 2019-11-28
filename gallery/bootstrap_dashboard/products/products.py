@@ -6,40 +6,31 @@ import holoviews as hv
 
 
 class Products(pn.Column):
-    def __init__(self, *args, **kwargs):
+    def view(self, name="Products"):
         self.chart_data = self._chart_data()
         self.table_data = self._table_data()
         self.chart = self._chart()
         self.table = self._table()
 
-        super().__init__(
+        return pn.Column(
             pn.pane.Markdown("## Products"),
             self.chart,
             pn.pane.Markdown("## Section Title"),
             self.table,
             sizing_mode="stretch_width",
+            name=name,
         )
 
     def _chart_data(self):
         chart_data = {
-            "Day": [
-                "Sunday",
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-            ],
+            "Day": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",],
             "Orders": [15539, 21345, 18483, 24003, 23489, 24092, 12034],
         }
         return pd.DataFrame(chart_data)
 
     def _chart(self):
         fig = px.line(self._chart_data(), x="Day", y="Orders")
-        fig.update_traces(
-            mode="lines+markers", marker=dict(size=10), line=dict(width=4)
-        )
+        fig.update_traces(mode="lines+markers", marker=dict(size=10), line=dict(width=4))
         fig.layout.autosize = True
         fig.layout.paper_bgcolor = "rgba(0,0,0,0)"
         fig.layout.plot_bgcolor = "rgba(0,0,0,0)"

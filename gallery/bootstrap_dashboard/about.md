@@ -1,9 +1,9 @@
-# About
+## About
 
-[Template](https://getbootstrap.com/docs/4.3/examples/dashboard/)
+The purpose of this app is demonstrate a Bootstrap Dashboard as close to the [bootstrap dashboard template](https://getbootstrap.com/docs/4.3/examples/dashboard/) from [getboostrap.com](https://getbootstrap.com/)
 
-## Difficulties
+## Current Limitations
 
 - Cannot use bootstrap builtin navigation with icons
-- Font awesome into button
-- Make button look like link and not button
+  - Cannot get Font Awesome into button
+- Cannot make button look like flat link and not button
