@@ -12,7 +12,7 @@ def test_pn_navigation():
     page2 = pn.Row("# Page 2", name="Page 2")
 
     pages = [page1, page2]
-    navigator = pnx.shared.Navigator(pages=pages)
+    navigator = pnx.Navigator(pages=pages)
     app = pn.Column(test_pn_navigation.__doc__, navigator.menu, navigator.selected_page)
     app.servable("test_pn_navigation")
 

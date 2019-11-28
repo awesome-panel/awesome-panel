@@ -6,7 +6,7 @@ import awesome_panel.express as pnx
 import panel as pn
 
 
-class _Country(pnx.shared.BrowserUrlMixin, param.Parameterized):
+class _Country(pnx.BrowserUrlMixin, param.Parameterized):
     country = param.String()
 
     @param.depends("country")
