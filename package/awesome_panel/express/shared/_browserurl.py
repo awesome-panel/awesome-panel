@@ -3,20 +3,17 @@ in sync with the browser url
 
 
 """
-import json
 import urllib
-
-import param
 
 import panel as pn
 
 
-class BrowserUrlMixin:
+class BrowserUrlMixin: # pylint: disable=too-few-public-methods
     """This Mixin enables parameters from a param.Parametrized Class to be shown in the url or the
     browser. For example like http://localhost/example_app?country=Norway
 
-    Mix this class with the param.Parametrized class and add the set_browser_url_parameters HTML pane to
-    your app in order to get url updates
+    Mix this class with the param.Parametrized class and add the set_browser_url_parameters HTML
+    pane to your app in order to get url updates
 
     Example use case
 

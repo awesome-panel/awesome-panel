@@ -11,20 +11,7 @@ from invoke import task
 
 TEST_FILES = " ".join(["tests", "package/tests"])
 TEST_RESULTS = "test_results"
-FILES = " ".join(
-    [
-        "apps/bokeh_apps",
-        "apps/dash_apps",
-        "apps/django_dash_apps",
-        "apps/panel_apps",
-        "apps/streamlit_apps",
-        "apps/voila_apps",
-        "docs",
-        "package",
-        "tasks",
-        "tests",
-    ]
-)
+FILES = " ".join(["docs", "package", "gallery", "tasks", "tests",])
 
 
 @task
@@ -98,9 +85,7 @@ Running pytest the test framework
     command.run(command_string, echo=True)
 
     # Open the test coverage report in a browser
-    path = (
-        pathlib.Path(__file__).parent.parent / test_results / "cov_html" / "index.html"
-    )
+    path = pathlib.Path(__file__).parent.parent / test_results / "cov_html" / "index.html"
     print(f"""- generated test coverage file at {path}""")
 
 
@@ -164,9 +149,7 @@ Running autoflake to remove unused imports on all .py files recursively
 
 # Note: Get Black added back in. black,
 @task(
-    pre=[isort, autoflake, pylint, mypy, pytest],
-    aliases=["pre_commit", "test"],
-    name="all",
+    pre=[isort, autoflake, pylint, mypy, pytest], aliases=["pre_commit", "test"], name="all",
 )
 def _all(command):  # pylint: disable=unused-argument
     """Runs isort, autoflake, black, pylint, mypy and pytest

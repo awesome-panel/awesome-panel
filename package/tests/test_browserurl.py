@@ -1,4 +1,5 @@
 """Tests of the awesome_panel functionality"""
+# pylint: disable=protected-accesss
 import param
 
 import awesome_panel.express as pnx
@@ -21,24 +22,34 @@ def test_url():
     assert country_url._urlencode() == "country=Denmark"
     assert (
         country_url._browser_url_parameters_script()
-        == '<script>window.history.replaceState({param: "country=Denmark"},"","?country=Denmark");</script>'
+        == '<script>window.history.replaceState({param: "country=Denmark"},"","?country=Denmark");</script>'  # pylint: disable=line-too-long
     )
 
 
 def test_pn_url():
-    """Manual Test"""
-    # Given
-    country_url = _Country()
-    text = """
+    """
 Manual Tests
 
-- opening [http://localhost:5006/test_url](http://localhost:5006/test_url) works without error
-- opening [http://localhost:5006/test_url?country=](http://localhost:5006/test_url?country=) works without error
-- opening [http://localhost:5006/test_url?country=Denmark](http://localhost:5006/test_url?country=Denmark) then the country widget parameter is set to Denmark
+- opening
+[http://localhost:5006/test_browser_url](http://localhost:5006/test_browser_url)
+works without error
+- opening
+[http://localhost:5006/test_browser_url?country=](http://localhost:5006/test_browser_url?country=)
+works without error
+- opening
+[http://localhost:5006/test_browser_url?country=Denmark]
+(http://localhost:5006/test_browser_url?country=Denmark)
+then the country widget parameter is set to Denmark
 - Changing the country widget parameter to Norway changes the browser url to
-[http://localhost:5006/test_url?country=Norway](http://localhost:5006/test_url?country=Norway)
+[http://localhost:5006/test_browser_url?country=Norway]
+(http://localhost:5006/test_browser_url?country=Norway)
     """
-    panel = pn.Column(country_url.param, text, country_url.set_browser_url_parameters)
+    # Given
+    country_url = _Country()
+
+    panel = pn.Column(
+        test_pn_url.__doc__, country_url.param, country_url.set_browser_url_parameters
+    )
     panel.servable("test")
 
 

@@ -1,7 +1,6 @@
-"""Tests of the awesome_panel functionality"""
+"""Tests of the BootStrapDashboardTemplate"""
 import importlib
 
-import param
 import pytest
 from selenium import webdriver
 
@@ -13,7 +12,7 @@ importlib.reload(pnx)
 
 @pytest.mark.fixture
 def chrome_driver() -> webdriver.Chrome:
-    """The Chrome Web Driver Configured for Download
+    r"""The Chrome Web Driver Configured for Download
 
     You can download the Chrome driver from https://chromedriver.chromium.org/ and move
     chromedriver.exe to c:\Windows\System32 or an alternative location in the PATH
@@ -30,6 +29,7 @@ def chrome_driver() -> webdriver.Chrome:
 
 
 def test_app():
+    """Test of the attributes of the Template"""
     app = pnx.templates.BootStrapDashboardTemplate()
 
     assert hasattr(app, "main")
