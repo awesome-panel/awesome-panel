@@ -35,9 +35,7 @@ class Navigator(param.Parameterized):
             button.on_click(setpage)
             menuitems.append(button)
 
-        return pn.WidgetBox(
-            *menuitems, sizing_mode="stretch_width", css_classes=["select-selected_page-page"]
-        )
+        return pn.Column(*menuitems, width=300)
 
     @param.depends("page")
     def selected_page(self) -> pn.Column:
