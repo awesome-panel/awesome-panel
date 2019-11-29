@@ -1,19 +1,19 @@
-import pathlib
 from typing import List, NamedTuple
 
-import holoviews as hv
-import numpy as np
 import pandas as pd
-import param
 import plotly.express as px
-from plotly import express as px
 
-import awesome_panel.express as pnx
 import panel as pn
 
-
 class Dashboard:
-    def __init__(self, name="Dashboard"):
+    def __init__(self):
+        pn.config.raw_css.append(
+            """
+        table {
+            width: 95%;
+        }
+        """
+        )
         chart_data = {
             "Day": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",],
             "Orders": [15539, 21345, 18483, 24003, 23489, 24092, 12034],
@@ -39,26 +39,35 @@ class Dashboard:
             (1015, "sodales", "ligula", "in", "libero"),
         ]
         self.table_data = pd.DataFrame(
-            table_data, columns=["#", "Header", "Header", "Header", "Header"]
-        ).set_index("#")
+            table_data, columns=["Header0", "Header1", "Header2", "Header3", "Header4"]
+        ).set_index("Header0")
 
-    def _chart(self):
+    def _chart_plotly(self):
         fig = px.line(self.chart_data, x="Day", y="Orders")
         fig.update_traces(mode="lines+markers", marker=dict(size=10), line=dict(width=4))
-        fig.layout.autosize = True
         fig.layout.paper_bgcolor = "rgba(0,0,0,0)"
         fig.layout.plot_bgcolor = "rgba(0,0,0,0)"
-        return pn.pane.Plotly(fig)
+        fig.layout.autosize = True
+        return pn.Pane(fig, sizing_mode="stretch_width")
 
-    def _table(self):
-        return pn.Row(self.table_data, sizing_mode="stretch_width")
+    def _table_pane_dataframe(self):
+        return pn.Pane(self.table_data, sizing_mode="stretch_width")
+
+    def _table_widget_dataframe(self):
+        return pn.widgets.DataFrame(self.table_data, sizing_mode="stretch_width")
 
     def view(self, name="Dashboard"):
         return pn.Column(
-            pn.pane.Markdown("## Dashboard"),
-            self._chart(),
-            pn.pane.Markdown("## Section Title"),
-            self._table(),
+            pn.pane.Markdown("## Plot - Plotly"),
+            self._chart_plotly(),
+            pn.pane.Markdown("## Table - pane.DataFrame"),
+            self._table_pane_dataframe(),
+            pn.pane.Markdown("## Table - widget.DataFrame"),
+            self._table_widget_dataframe(),
             sizing_mode="stretch_width",
             name=name,
         )
+
+
+if __name__.startswith("bk"):
+    Dashboard().view().servable("column")

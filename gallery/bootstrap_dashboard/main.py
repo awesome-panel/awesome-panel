@@ -9,6 +9,8 @@ PAGES = [
     components.Dashboard().view(),
     components.Products().view(),
     components.customers_view(),
+    components.plotly_view(),
+    components.holoviews_view(),
     pnx.Markdown("## Reports", name="Reports"),
     pnx.Markdown("## Integrations", name="Integrations"),
     pnx.Markdown(path=ABOUT_PATH, name="About"),
@@ -24,5 +26,5 @@ def main() -> pn.Pane:
     return app
 
 
-if __name__ == "__main__" or __name__.startswith("bk_script"):
+if __name__.startswith("bk_script"):
     main().servable()

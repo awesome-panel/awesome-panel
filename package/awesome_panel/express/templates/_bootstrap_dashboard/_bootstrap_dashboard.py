@@ -17,11 +17,11 @@ class BootStrapDashboardTemplate(pn.Template):
         template = template.replace(CSS_MARKER, "<style>" + css + "</style>")
 
         self.sidebar = pn.Column()
-        self.main = pn.Column()
+        self.main = pn.Column(sizing_mode="stretch_width")
 
         items = {
             "sidebar": self.sidebar,
             "main": self.main,
-            "app_title": pn.Row(pn.pane.HTML(app_title),),
+            "app_title": pn.Row(pn.layout.HSpacer(), pn.pane.HTML(app_title), pn.layout.HSpacer()),
         }
         super().__init__(template=template, items=items)

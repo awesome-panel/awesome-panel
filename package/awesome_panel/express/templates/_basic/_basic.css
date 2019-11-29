@@ -1,3 +1,59 @@
-.left_header{
+html {
+    height: 100%;
+}
+body{
+    height: 100%;
+    margin: 0px;  /*removes default style*/
+
+    overflow-x: hidden;
+}
+.bk.right-column{
+    min-height: 100%;  /*allows both columns to span the full height of the browser window*/
+}
+.bk.left-column{
+    background-color: rgb(248, 249, 250);
+}
+
+.bk.left-header{
+    color: white;
     background-color: black;
+
+    position: -webkit-sticky; /* Safari */
+    position: sticky !important;
+    top: 0;
+
+    box-shadow: 5px 5px 20px grey;
+
+    z-index: 1000;
+}
+.bk.left-header :hover{
+    color: white;
+}
+.bk.right-header{
+    background-color: rgb(52, 58, 64);
+    box-shadow: 5px 5px 20px grey;
+
+    position: -webkit-sticky; /* Safari */
+    position: sticky !important;
+    top: 0;
+    width: 100%;
+
+    z-index: 1000;
+}
+.bk.sidebar{
+    margin-top: 10px;
+    height: 100%;
+
+    position: -webkit-sticky; /* Safari */
+    position: sticky !important;
+    top: 100px;
+
+    overflow-y: auto;
+}
+.bk.main{
+    background-color: white;
+
+    margin-top: 10px;
+
+    overflow-y: auto;
 }

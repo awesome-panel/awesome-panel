@@ -7,6 +7,8 @@ CSS_URL = pathlib.Path(__file__).parent / "_basic.css"
 CSS_MARKER = "<!-- _basic.css -->"
 TEMPLATE_URL = pathlib.Path(__file__).parent / "_basic.html"
 
+HEADER_HEIGHT = 48
+
 
 class BasicTemplate(pn.Template):
     """A Basic App Template"""
@@ -16,30 +18,29 @@ class BasicTemplate(pn.Template):
         css = CSS_URL.read_text()
         template = template.replace(CSS_MARKER, "<style>" + css + "</style>")
 
-        left_header = pn.Row(app_title, height=48, css_classes=["left_header"])
-        right_header = pn.layout.Row(
+        left_header = pn.Row(
             pn.layout.HSpacer(),
-            sizing_policy="stretch_width",
-            height=48,
-            css_classes=["right_header"],
+            app_title,
+            pn.layout.HSpacer(),
+            css_classes=["left-header"],
+            height=HEADER_HEIGHT,
         )
-        self.sidebar = pn.Column(
-            background="yellow", css_classes=["sidebar"], sizing_policy="stretch_both"
+        right_header = pn.Row(
+            pn.layout.HSpacer(),
+            css_classes=["right-header"],
+            height=HEADER_HEIGHT,
         )
-        self.main = pn.Column(css_classes=["main"])
+        self.sidebar = pn.Column(css_classes=["sidebar"], height_policy="max")
+        self.main = pn.Column(css_classes=["main"], width_policy="max", margin=(10, 10, 25, 25))
 
         left_column = pn.Column(
-            left_header, self.sidebar, background="lightblue", css_classes=["left-column"]
+            left_header, self.sidebar, height_policy="max", css_classes=["left-column"]
         )
         right_column = pn.Column(
-            right_header,
-            self.main,
-            background="blue",
-            width_policy="max",
-            css_classes=["right-column"],
+            right_header, self.main, width_policy="max", css_classes=["right-column"],
         )
 
-        app = pn.Row(left_column, right_column)
+        app = pn.Row(left_column, right_column, css_classes=["app"])
 
         items = {
             "app": app,

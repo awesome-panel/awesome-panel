@@ -8,5 +8,5 @@ def customers_view(name="Customers"):
     with open(path, "r") as file:
         template_html = file.read()
     app = pn.Template(template_html)
-    app.add_variable("title", name)
-    return pn.Column(app, name=name)
+    app.add_panel("title", pn.Pane(name))
+    return pn.Column(name, name=name)
