@@ -4,7 +4,7 @@ import pathlib
 import panel as pn
 
 CSS_URL = pathlib.Path(__file__).parent / "_bootstrap_dashboard.css"
-CSS_MARKER = "<!-- _bootstrap_dashboard.css -->"
+CSS_MARKER = "<!-- _boostrap_dashboard.css -->"
 TEMPLATE_URL = pathlib.Path(__file__).parent / "_bootstrap_dashboard.html"
 
 
@@ -14,7 +14,7 @@ class BootStrapDashboardTemplate(pn.Template):
     def __init__(self, app_title: str = "App Name"):
         template = TEMPLATE_URL.read_text()
         css = CSS_URL.read_text()
-        template = template.replace(CSS_MARKER, "<style>" + css + "<style>")
+        template = template.replace(CSS_MARKER, "<style>" + css + "</style>")
 
         self.sidebar = pn.Column()
         self.main = pn.Column()

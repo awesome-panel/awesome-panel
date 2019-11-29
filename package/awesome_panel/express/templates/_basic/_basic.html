@@ -1,0 +1,17 @@
+<!-- This template is inspired by
+- Bokeh Template. See https://panel.pyviz.org/user_guide/Templates.html
+- Bootstrap. See https://getbootstrap.com/
+- Font Awesome. See https://fontawesome.com/v3.2.1/get-started/
+-->
+{% extends base %}
+
+<!-- goes in head -->
+{% block postamble %}
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- _basic.css -->
+{% endblock %}
+
+<!-- goes in body -->
+{% block contents %}
+{{ embed(roots.app) }}
+{% endblock %}

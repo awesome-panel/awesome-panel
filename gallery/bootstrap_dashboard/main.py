@@ -16,7 +16,7 @@ PAGES = [
 
 
 def main() -> pn.Pane:
-    app = pnx.templates.BootStrapDashboardTemplate(app_title="Company Name")
+    app = pnx.templates.BasicTemplate(app_title="Company Name")
 
     navigator = pnx.Navigator(pages=PAGES)
     app.sidebar.append(navigator.menu)
