@@ -9,7 +9,7 @@ CSS_MARKER = "<!-- _basic.css -->"
 TEMPLATE_URL = pathlib.Path(__file__).parent / "_basic.html"
 
 HEADER_HEIGHT = 58
-SIDEBAR_WIDTH = 300
+SIDEBAR_WIDTH = 200
 
 
 class BasicTemplate(pn.Template):
@@ -19,9 +19,9 @@ class BasicTemplate(pn.Template):
         template = TEMPLATE_URL.read_text()
         css = CSS_URL.read_text()
         template = template.replace(CSS_MARKER, "<style>" + css + "</style>")
-
         app_title = pn.Row(
-            SubHeader(text=app_title, style={"color": "white"}), width=SIDEBAR_WIDTH,
+            SubHeader(text=app_title, url="#", style={"color": "white"}, css_classes=["app-title"]),
+            width=SIDEBAR_WIDTH,
         )
         header = pn.Row(
             app_title,

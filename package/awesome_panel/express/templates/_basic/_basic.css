@@ -21,12 +21,18 @@ body{
 
     z-index: 1000;
 }
-.bk.app-title{
+.bk.app-title a{
     color: white;
     background-color: black;
     text-align: center;
 }
-.bk.app-title :hover{
+.bk.app-title a:link {
+    text-decoration: none;
+}
+
+
+
+.bk.app-title a:hover{
     color: white;
 }
 .bk.sidebar{
