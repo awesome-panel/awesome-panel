@@ -7,7 +7,8 @@ CSS_URL = pathlib.Path(__file__).parent / "_basic.css"
 CSS_MARKER = "<!-- _basic.css -->"
 TEMPLATE_URL = pathlib.Path(__file__).parent / "_basic.html"
 
-HEADER_HEIGHT = 48
+HEADER_HEIGHT = 58
+SIDEBAR_WIDTH = 300
 
 
 class BasicTemplate(pn.Template):
@@ -18,29 +19,27 @@ class BasicTemplate(pn.Template):
         css = CSS_URL.read_text()
         template = template.replace(CSS_MARKER, "<style>" + css + "</style>")
 
-        left_header = pn.Row(
-            pn.layout.HSpacer(),
+        app_title = pn.Row(
+            "### " + app_title, width=SIDEBAR_WIDTH, height_policy="max", css_classes=["app-title"],
+        )
+        header = pn.Row(
             app_title,
             pn.layout.HSpacer(),
-            css_classes=["left-header"],
+            css_classes=["header"],
+            sizing_mode="stretch_width",
             height=HEADER_HEIGHT,
         )
-        right_header = pn.Row(
-            pn.layout.HSpacer(),
-            css_classes=["right-header"],
-            height=HEADER_HEIGHT,
-        )
-        self.sidebar = pn.Column(css_classes=["sidebar"], height_policy="max")
-        self.main = pn.Column(css_classes=["main"], width_policy="max", margin=(10, 10, 25, 25))
+        top_spacer = pn.layout.HSpacer(height=15)
+        self.sidebar = pn.Column(top_spacer, css_classes=["sidebar"], height_policy="max", width=SIDEBAR_WIDTH)
+        self.main = pn.Column(css_classes=["main"], width_policy="max", height_policy="max", margin=(0, 50, 0, 25))
 
-        left_column = pn.Column(
-            left_header, self.sidebar, height_policy="max", css_classes=["left-column"]
+        app = pn.Column(
+            header,
+            pn.Row(
+                self.sidebar,
+                self.main, css_classes=["mid"]),
+            sizing_mode="stretch_width",
         )
-        right_column = pn.Column(
-            right_header, self.main, width_policy="max", css_classes=["right-column"],
-        )
-
-        app = pn.Row(left_column, right_column, css_classes=["app"])
 
         items = {
             "app": app,
