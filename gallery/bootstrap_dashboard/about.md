@@ -1,6 +1,6 @@
-## About
+# About
 
-The purpose of this app is demonstrate that a Bootstrap Dashboard as close to the [bootstrap dashboard template](https://getbootstrap.com/docs/4.3/examples/dashboard/) from [getboostrap.com](https://getbootstrap.com/) can be implemented in [Panel](https://panel.pyviz.org/)
+The purpose of this app is to demonstrate that a Dashboard Layout very similar to the [bootstrap dashboard template](https://getbootstrap.com/docs/4.3/examples/dashboard/) from [getboostrap.com](https://getbootstrap.com/) can be implemented in [Panel](https://panel.pyviz.org/).
 
 ![GetBootstrap Dashboard Template](https://getbootstrap.com/docs/4.4/assets/img/examples/dashboard.png)
 

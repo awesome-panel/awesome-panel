@@ -2,6 +2,7 @@
 import param
 
 import panel as pn
+import awesome_panel.express as pnx
 
 
 class Navigator(param.Parameterized):
@@ -35,7 +36,8 @@ class Navigator(param.Parameterized):
             button.on_click(setpage)
             menuitems.append(button)
 
-        return pn.Column(*menuitems, width=300)
+        title = pn.pane.Markdown('### A serif Markdown heading', style={'text-align': "center"}, sizing_mode="stretch_width")
+        return pn.Column(title, *menuitems, sizing_mode="stretch_width")
 
     @param.depends("page")
     def selected_page(self) -> pn.Column:
