@@ -36,7 +36,7 @@ class Navigator(param.Parameterized):
             button.on_click(setpage)
             menuitems.append(button)
 
-        title = pn.pane.Markdown('### A serif Markdown heading', style={'text-align': "center"}, sizing_mode="stretch_width")
+        title = pnx.SubHeader("Navigation", text_align="center")
         return pn.Column(title, *menuitems, sizing_mode="stretch_width")
 
     @param.depends("page")

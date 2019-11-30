@@ -1,5 +1,6 @@
 """In this module we implement a title, heading and subheading"""
 import panel as pn
+from typing import Optional
 
 
 class HeadingBase(pn.pane.Markdown):
@@ -11,6 +12,7 @@ class HeadingBase(pn.pane.Markdown):
         level: int = 1,
         sizing_mode="stretch_width",
         text_align="left",
+        url: Optional[str] = None,
         *args,
         **kwargs,
     ):
@@ -22,8 +24,12 @@ class HeadingBase(pn.pane.Markdown):
             sizing_mode {str} -- (default: {"stretch_width"})
             text_align {str} -- The header can be aligned 'left', 'center' or 'right'
                 (default: {"left"})
+            url {Optional[str]} -- If not None the heading will link to the url
         """
-        heading = f"{'#'*level} {text}"
+        if url:
+            heading = f"{'#'*level} [{text}]({url})"
+        else:
+            heading = f"{'#'*level} {text}"
         if "style" in kwargs:
             kwargs["style"]["text-align"] = text_align
         else:
@@ -35,7 +41,13 @@ class Title(HeadingBase):
     """A Markdown Pane with the title"""
 
     def __init__(
-        self, text: str = "", sizing_mode="stretch_width", text_align="left", *args, **kwargs,
+        self,
+        text: str = "",
+        sizing_mode="stretch_width",
+        text_align="left",
+        url: Optional[str] = None,
+        *args,
+        **kwargs,
     ):
         """A Markdown Pane with the title
 
@@ -44,9 +56,16 @@ class Title(HeadingBase):
             sizing_mode {str} -- (default: {"stretch_width"})
             text_align {str} -- The header can be aligned 'left', 'center' or 'right'
                 (default: {"left"})
+            url {Optional[str]} -- If not None the heading will link to the url
         """
         super().__init__(
-            text=text, level=1, sizing_mode=sizing_mode, text_align=text_align, *args, **kwargs,
+            text=text,
+            level=1,
+            sizing_mode=sizing_mode,
+            text_align=text_align,
+            url=url,
+            *args,
+            **kwargs,
         )
 
 
@@ -54,7 +73,13 @@ class Header(HeadingBase):
     """A Markdown Pane with the header"""
 
     def __init__(
-        self, text: str = "", sizing_mode="stretch_width", text_align="left", *args, **kwargs,
+        self,
+        text: str = "",
+        sizing_mode="stretch_width",
+        text_align="left",
+        url: Optional[str] = None,
+        *args,
+        **kwargs,
     ):
         """A Markdown Pane with the header
 
@@ -63,9 +88,16 @@ class Header(HeadingBase):
             sizing_mode {str} -- (default: {"stretch_width"})
             text_align {str} -- The header can be aligned 'left', 'center' or 'right'
                 (default: {"left"})
+            url {Optional[str]} -- If not None the heading will link to the url
         """
         super().__init__(
-            text=text, level=2, sizing_mode=sizing_mode, text_align=text_align, *args, **kwargs,
+            text=text,
+            level=2,
+            sizing_mode=sizing_mode,
+            text_align=text_align,
+            url=url,
+            *args,
+            **kwargs,
         )
 
 
@@ -73,7 +105,13 @@ class SubHeader(HeadingBase):
     """A Markdown Pane with the sub header"""
 
     def __init__(
-        self, text: str = "", sizing_mode="stretch_width", text_align="left", *args, **kwargs,
+        self,
+        text: str = "",
+        sizing_mode="stretch_width",
+        text_align="left",
+        url: Optional[str] = None,
+        *args,
+        **kwargs,
     ):
         """A Markdown Pane with the sub header
 
@@ -82,7 +120,14 @@ class SubHeader(HeadingBase):
             sizing_mode {str} -- (default: {"stretch_width"})
             text_align {str} -- The header can be aligned 'left', 'center' or 'right'
                 (default: {"left"})
+            url {Optional[str]} -- If not None the heading will link to the url
         """
         super().__init__(
-            text=text, level=3, sizing_mode=sizing_mode, text_align=text_align, *args, **kwargs,
+            text=text,
+            level=3,
+            sizing_mode=sizing_mode,
+            text_align=text_align,
+            url=url,
+            *args,
+            **kwargs,
         )

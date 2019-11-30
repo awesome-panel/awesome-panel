@@ -30,17 +30,37 @@ We test that we can show
 def test_title_centered_white():
     """## test_title_centered_white
 
-We test that we can show a centered Title with a white text color
+We test that we can show a centered Title, Header and SubHeader with a white text color
 """
     app = pn.Column(
         pn.pane.Markdown(test_title_centered_white.__doc__),
         pnx.Title("Title Center", text_align="center", style={"color": "white"}),
+        pnx.Header("Header Center", text_align="center", style={"color": "white"}),
+        pnx.SubHeader("SubHeader Center", text_align="center", style={"color": "white"}),
         sizing_mode="stretch_width",
         background="lightgray",
     )
     app.servable(test_title_centered_white.__name__)
 
 
+@pytest.mark.panel
+def test_with_url():
+    """## test_with_url
+
+We test that we can show a Title with a link
+"""
+    app = pn.Column(
+        pn.pane.Markdown(test_with_url.__doc__),
+        pnx.Title("Title with url", url="https://awesome-streamlit.org"),
+        pnx.Header("Header with url", url="https://awesome-streamlit.org"),
+        pnx.SubHeader("SubHeader with url", url="https://awesome-streamlit.org"),
+        sizing_mode="stretch_width",
+        background="lightgray",
+    )
+    app.servable(test_with_url.__name__)
+
+
 if __name__.startswith("bk"):
     test_headings()
     test_title_centered_white()
+    test_with_url()
