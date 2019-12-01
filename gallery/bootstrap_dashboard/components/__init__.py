@@ -1,8 +1,5 @@
 from gallery.bootstrap_dashboard.components.dashboard import Dashboard
-from gallery.bootstrap_dashboard.components.products import Products
-from gallery.bootstrap_dashboard.components.customers import customers_view
-from gallery.bootstrap_dashboard.components.plotly import plotly_view
-from gallery.bootstrap_dashboard.components.core import holoviews_view
+from gallery.bootstrap_dashboard.components.core import holoviews_view, plotly_view
 
 # class PageConfig(NamedTuple):
 #     name: str

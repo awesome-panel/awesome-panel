@@ -25,6 +25,7 @@ body{
     color: white;
     background-color: black;
     text-align: center;
+    font-size: 1rem;
 }
 .bk.app-title a:link {
     text-decoration: none;
@@ -52,4 +53,42 @@ body{
     margin-top: 10px;
 
     overflow-y: auto;
+}
+
+.bk.alert {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.bk.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+.bk.alert-info hr {
+    border-top-color: #abdde5;
+}
+
+.bk.alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+.bk.alert-warning hr {
+    border-top-color: #ffe8a1;
+}
+
+.bk.alert-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.bk.alert-error hr {
+    border-top-color: #f1b0b7;
 }

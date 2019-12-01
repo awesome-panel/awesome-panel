@@ -5,15 +5,15 @@ import gallery.bootstrap_dashboard.components as components
 import panel as pn
 
 ABOUT_PATH = pathlib.Path(__file__).parent / "about.md"
+LIMITATIONS_PATH = pathlib.Path(__file__).parent / "limitations.md"
 PAGES = [
     pnx.Markdown(path=ABOUT_PATH, name="About"),
     components.Dashboard().view(),
-    components.Products().view(),
-    components.customers_view(),
-    components.plotly_view(),
+    components.plotly_view(name="Plotly"),
     components.holoviews_view(),
     pnx.Markdown("## Reports", name="Reports"),
     pnx.Markdown("## Integrations", name="Integrations"),
+    pnx.Markdown(path=LIMITATIONS_PATH, name="Limitations"),
 ]
 
 

@@ -8,10 +8,14 @@
 <!-- goes in head -->
 {% block postamble %}
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css">
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <!-- _basic.css -->
 {% endblock %}
 
 <!-- goes in body -->
 {% block contents %}
 {{ embed(roots.app) }}
+
 {% endblock %}

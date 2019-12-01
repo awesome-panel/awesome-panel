@@ -6,6 +6,8 @@ import plotly.express as px
 import panel as pn
 import awesome_panel.express as pnx
 from gallery.bootstrap_dashboard.components.core import holoviews_chart
+
+
 class Dashboard:
     def __init__(self):
         pn.config.raw_css.append(
@@ -59,9 +61,11 @@ class Dashboard:
 
     def view(self, name="Dashboard"):
         return pn.Column(
-            pnx.Header("Dashboard"),
+            pnx.Title("Dashboard"),
+            pnx.Divider(),
             holoviews_chart(),
-            pnx.Header("Section Title"),
+            pnx.Title("Section Title"),
+            pnx.Divider(),
             self._table_pane_dataframe(),
             sizing_mode="stretch_width",
             name=name,
