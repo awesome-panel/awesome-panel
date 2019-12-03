@@ -4,15 +4,8 @@ from typing import Optional
 
 
 class Markdown(pn.pane.Markdown):
-    def __init__(
-        self,
-        text: str = "",
-        path: Optional[pathlib.Path] = None,
-        sizing_mode="stretch_width",
-        *args,
-        **kwargs
-    ):
+    def __init__(self, text: str = "", path: Optional[pathlib.Path] = None, *args, **kwargs):
         if text == "" and path:
             text = path.read_text()
 
-        super().__init__(text, sizing_mode=sizing_mode, *args, **kwargs)
+        super().__init__(text, *args, **kwargs)

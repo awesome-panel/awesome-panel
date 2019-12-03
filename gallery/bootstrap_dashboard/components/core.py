@@ -42,22 +42,34 @@ def holoviews_chart():
 
 def holoviews_view() -> pn.Column:
     fig = holoviews_chart()
-    return pn.Column(pnx.Header("Holoviews"), fig, name="Holoviews", sizing_mode="stretch_both")
+    return pn.Column(
+        pnx.Header("Holoviews"),
+        fig,
+        pnx.Code(inspect.getsource(holoviews_chart)),
+        name="Holoviews",
+        sizing_mode="stretch_both",
+    )
 
 
-def plotly_view(*args, **kwargs) -> pn.Column:
+def plotly_chart():
     fig = px.line(services.get_chart_data(), x="Day", y="Orders")
     fig.update_traces(mode="lines+markers", marker=dict(size=10), line=dict(width=4))
     fig.layout.paper_bgcolor = "rgba(0,0,0,0)"
     fig.layout.plot_bgcolor = "rgba(0,0,0,0)"
     fig.layout.width = 1000
     fig.layout.autosize = True
+    return fig
+
+
+def plotly_view(*args, **kwargs) -> pn.Column:
+    fig = plotly_chart()
     return pn.Column(
         pnx.Header("Plotly"),
         pn.Row(pn.layout.HSpacer(), fig, pn.layout.HSpacer(),),
-        pn.pane.Str("Plotly cannot currently auto size to full width and be responsive"),
-        pnx.Code(code=inspect.getsource(holoviews_chart)),
+        pn.pane.HTML("Plotly cannot currently auto size to full width and be responsive"),
+        pnx.Code(code=inspect.getsource(plotly_chart)),
         sizing_mode="stretch_width",
+        name="Plotly",
         *args,
         **kwargs,
     )

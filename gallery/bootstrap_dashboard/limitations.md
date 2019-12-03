@@ -18,6 +18,21 @@ I needed this for my navigation which cannot use the Bootstrap `<a class="nav-li
 
 - Plotly is not yet responsive in Panel. See [Issue 822](https://github.com/holoviz/panel/issues/822)
 
+## Plotly Plots create other issues
+
+I have a plotly view where the code is close to a copy paste of the holoviews view. But it raises the below errors
+
+```bash
+2019-12-03 09:34:57,514 Cannot apply patch to 1291 which is not in the document anymore
+2019-12-03 09:34:57,517 Cannot apply patch to 1291 which is not in the document anymore
+2019-12-03 09:34:58,055 Cannot apply patch to 1291 which is not in the document anymore
+2019-12-03 09:34:58,058 Cannot apply patch to 1291 which is not in the document anymore
+2019-12-03 09:34:58,061 Cannot apply patch to 1291 which is not in the document anymore
+2019-12-03 09:34:58,065 Cannot apply patch to 1291 which is not in the document anymore
+2019-12-03 09:34:58,070 Cannot apply patch to 1291 which is not in the document anymore
+2019-12-03 09:34:58,073 Cannot apply patch to 1291 which is not in the document anymore
+```
+
 ## Panels, Panes and Widgets are not full width, responsive by default
 
 Panes and Widgets are not configured to be responsive by default. I always have to set `sizing_policy="stretch_width"`. This is just overhead and friction.

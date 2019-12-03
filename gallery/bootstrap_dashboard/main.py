@@ -8,9 +8,9 @@ LIMITATIONS_PATH = pathlib.Path(__file__).parent / "limitations.md"
 PAGES = [
     components.About(),
     components.Dashboard().view(),
-    components.plotly_view(name="Plotly"),
+    components.plotly_view(),
     components.holoviews_view(),
-    pn.Column(pnx.Markdown(path=LIMITATIONS_PATH, name="Limitations"),""),
+    pnx.Markdown(path=LIMITATIONS_PATH, name="Limitations"),
 ]
 
 

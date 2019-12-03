@@ -40,11 +40,11 @@ body{
     top: 58px !important;
 
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: hidden;
 }
 .bk.main{
     background-color: white;
     /* hack: Had to set overflow-x to hidden in order to not get scrollbar on About Page */
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: hidden;
 }
