@@ -1,3 +1,11 @@
 {
-    "python.pythonPath": "c:\\repos\\private\\awesome-panel\\.venv\\Scripts\\python.exe"
+    "python.pythonPath": "c:\\repos\\private\\awesome-panel\\.venv\\Scripts\\python.exe",
+    "markdownlint.config": {
+        "MD007": {
+            "indent": 4
+        }
+    },
+    "[md]": {
+        "editor.tabSize": 4
+    }
 }

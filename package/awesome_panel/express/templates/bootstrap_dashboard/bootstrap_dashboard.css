@@ -29,6 +29,9 @@ body{
 }
 .bk.sidebar{
     background-color: rgb(248, 249, 250);
+    border-right-color: rgb(230, 230, 230);
+    border-right-width: 0.1px;
+    border-right-style: solid;
 
     height: 100vh !important;
 

@@ -10,7 +10,7 @@ PAGES = [
     components.Dashboard().view(),
     components.plotly_view(name="Plotly"),
     components.holoviews_view(),
-    pnx.Markdown(path=LIMITATIONS_PATH, name="Limitations"),
+    pn.Column(pnx.Markdown(path=LIMITATIONS_PATH, name="Limitations"),""),
 ]
 
 
