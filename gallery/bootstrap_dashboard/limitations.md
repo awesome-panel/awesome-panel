@@ -34,6 +34,8 @@ For example I struggled with the below scrollbar until I found out it was becaus
 
 But I also struggle with it on this Limitations page. It's like the big image just above confuses the rendering.
 
+![Limitations Scrollbar Problem](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/gallery/bootstrap_dashboard/assets/images/limitations_page_scrollbar_problem.png?raw=true)
+
 ## I Could not get independt scrollbars working
 
 I would have liked the sidebar and content sections to have independent vertical scrollbars that only show up if needed. I could not get that working. I guess it's just my CSS skills that are too poor.
