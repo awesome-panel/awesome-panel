@@ -3,24 +3,25 @@ import pathlib
 
 import panel as pn
 from awesome_panel.express._pane._headings import SubHeader
+from awesome_panel.express.assets import CODE_HILITE_CSS, BOOTSTRAP_CSS, SCROLLBAR_CSS
 
-CSS_URL = pathlib.Path(__file__).parent / "_basic.css"
-CSS_MARKER = "<!-- _basic.css -->"
-TEMPLATE_URL = pathlib.Path(__file__).parent / "_basic.html"
-CODE_HILITE_CSS_PATH = pathlib.Path(__file__).parent / "code-hilite.css"
+BOOTSTRAP_DASHBOARD_CSS = pathlib.Path(__file__).parent / "bootstrap_dashboard.css"
+BOOTSTRAP_DASHBOARD_TEMPLATE = pathlib.Path(__file__).parent / "bootstrap_dashboard.html"
 
 HEADER_HEIGHT = 58
 SIDEBAR_WIDTH = 200
 
 
-class BasicTemplate(pn.Template):
+class BootstrapDashboardTemplate(pn.Template):
     """A Basic App Template"""
 
     def __init__(self, app_title: str = "App Name", app_url="#"):
-        pn.config.raw_css.append(CODE_HILITE_CSS_PATH.read_text())
-        template = TEMPLATE_URL.read_text()
-        css = CSS_URL.read_text()
-        template = template.replace(CSS_MARKER, "<style>" + css + "</style>")
+        pn.config.raw_css.append(CODE_HILITE_CSS.read_text())
+        pn.config.raw_css.append(BOOTSTRAP_CSS.read_text())
+        pn.config.raw_css.append(BOOTSTRAP_DASHBOARD_CSS.read_text())
+        pn.config.raw_css.append(SCROLLBAR_CSS.read_text())
+        template = BOOTSTRAP_DASHBOARD_TEMPLATE.read_text()
+
         app_title = pn.Row(
             pn.layout.HSpacer(),
             pn.pane.Markdown(f"[{app_title}]({app_url})", css_classes=["app-title"],),
@@ -39,7 +40,7 @@ class BasicTemplate(pn.Template):
             top_spacer, css_classes=["sidebar"], height_policy="max", width=SIDEBAR_WIDTH
         )
         self.main = pn.Column(
-            css_classes=["main"], width_policy="max", height_policy="max", margin=(0, 50, 0, 25)
+            css_classes=["main"], sizing_mode="stretch_both", margin=(25, 50, 25, 50)
         )
 
         app = pn.Column(

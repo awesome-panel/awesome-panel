@@ -120,6 +120,7 @@ def test_info_alert():
 
     app.servable(test_info_alert.__name__)
 
+
 @pytest.mark.panel
 def test_warning_alert():
     """Manual test of the WarningAlert Pane
@@ -134,6 +135,7 @@ def test_warning_alert():
     )
 
     app.servable(test_warning_alert.__name__)
+
 
 @pytest.mark.panel
 def test_error_alert():
@@ -151,9 +153,29 @@ def test_error_alert():
     app.servable(test_error_alert.__name__)
 
 
+@pytest.mark.panel
+def test_info_alert_height_problem():
+    """Manual test of the InfoAlert Heigh Error
+
+    We saw that the height of InfoAlert Div was much greater than it needed to be.
+    See https://github.com/holoviz/panel/issues/829
+    """
+    pn.config.raw_css.append(pnx.InfoAlert.raw_css)
+    text = """\
+Navigate to the **Dashboard Page** via the **Sidebar** to see the result.
+Or Navigate to the **Limitations Page** to learn of some of the limitations of Panel that
+I've experienced."""
+    app = pn.Column(
+        pn.pane.Markdown(test_info_alert.__doc__), pnx.InfoAlert(text), sizing_mode="stretch_width",
+    )
+
+    app.servable(test_info_alert.__name__)
+
+
 if __name__.startswith("bk"):
-    # test_divider()
-    # test_code()
+    test_divider()
+    test_code()
     test_info_alert()
     test_warning_alert()
     test_error_alert()
+    test_info_alert_height_problem()

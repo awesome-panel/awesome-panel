@@ -8,3 +8,6 @@
 I cannot use it because I cannot navigate by links in my app.
 - Plotly is not yet responsive in Panel. See [Issue 822](https://github.com/holoviz/panel/issues/822)
 - Panes and Widgets are not configured to be responsive by default. I always have to set `sizing_policy="stretch_width"`.
+- I've experienced numerous problems when using css. I have a feeling that the Bokeh Javascript on elements does not take everything like images and inline css into account. But it's difficult for me to catch and understand.
+  - For example below I saw this
+

@@ -52,15 +52,13 @@ class InfoAlert(pn.pane.Markdown):
     """An Info Alert that renders Markdown
 
     CSS Styling can be done via the classes 'alert' and 'alert-info'. See the raw_css attribute
+
+    Don't set sizing_mode="stretch_width" as this will result in problems.
+    See https://github.com/holoviz/panel/issues/829
     """
 
     def __init__(
-        self,
-        text: str,
-        sizing_mode: str = "stretch_width",
-        css_classes: List[str] = ["alert", "alert-info"],
-        *args,
-        **kwargs,
+        self, text: str, css_classes: List[str] = ["alert", "alert-info"], *args, **kwargs,
     ):
         """An Info Alert that renders Markdown
 
@@ -70,15 +68,14 @@ class InfoAlert(pn.pane.Markdown):
             text {str} -- Some MarkDown text
 
         KeyWord Arguments:
-            sizing_mode {str} --
+            css_classes {List[str]} --
         """
-        super().__init__(text, sizing_mode=sizing_mode, css_classes=css_classes)
+        super().__init__(text, css_classes=css_classes)
 
     raw_css = """
 .bk.alert {
     position: relative;
     padding: 0.75rem 1.25rem;
-    margin-bottom: 1rem;
     border: 1px solid transparent;
     border-radius: 0.25rem;
 }
@@ -99,15 +96,13 @@ class WarningAlert(pn.pane.Markdown):
     """An Warning Alert that renders Markdown
 
     CSS Styling can be done via the classes 'alert' and 'alert-warning'. See the raw_css attribute
+
+    Don't set sizing_mode="stretch_width" as this will result in problems.
+    See https://github.com/holoviz/panel/issues/829
     """
 
     def __init__(
-        self,
-        text: str,
-        sizing_mode: str = "stretch_width",
-        css_classes: List[str] = ["alert", "alert-warning"],
-        *args,
-        **kwargs,
+        self, text: str, css_classes: List[str] = ["alert", "alert-warning"], *args, **kwargs,
     ):
         """An Warning Alert that renders Markdown
 
@@ -116,16 +111,13 @@ class WarningAlert(pn.pane.Markdown):
         Arguments:
             text {str} -- Some MarkDown text
 
-        KeyWord Arguments:
-            sizing_mode {str} --
         """
-        super().__init__(text, sizing_mode=sizing_mode, css_classes=css_classes)
+        super().__init__(text, css_classes=css_classes)
 
     raw_css = """
 .bk.alert {
     position: relative;
     padding: 0.75rem 1.25rem;
-    margin-bottom: 1rem;
     border: 1px solid transparent;
     border-radius: 0.25rem;
 }
@@ -141,19 +133,18 @@ class WarningAlert(pn.pane.Markdown):
 }
 """
 
+
 class ErrorAlert(pn.pane.Markdown):
     """An Error Alert that renders Markdown
 
     CSS Styling can be done via the classes 'alert' and 'alert-error'. See the raw_css attribute
+
+    Don't set sizing_mode="stretch_width" as this will result in problems.
+    See https://github.com/holoviz/panel/issues/829
     """
 
     def __init__(
-        self,
-        text: str,
-        sizing_mode: str = "stretch_width",
-        css_classes: List[str] = ["alert", "alert-error"],
-        *args,
-        **kwargs,
+        self, text: str, css_classes: List[str] = ["alert", "alert-error"], *args, **kwargs,
     ):
         """An Error Alert that renders Markdown
 
@@ -162,16 +153,13 @@ class ErrorAlert(pn.pane.Markdown):
         Arguments:
             text {str} -- Some MarkDown text
 
-        KeyWord Arguments:
-            sizing_mode {str} --
         """
-        super().__init__(text, sizing_mode=sizing_mode, css_classes=css_classes)
+        super().__init__(text, css_classes=css_classes)
 
     raw_css = """
 .bk.alert {
     position: relative;
     padding: 0.75rem 1.25rem;
-    margin-bottom: 1rem;
     border: 1px solid transparent;
     border-radius: 0.25rem;
 }

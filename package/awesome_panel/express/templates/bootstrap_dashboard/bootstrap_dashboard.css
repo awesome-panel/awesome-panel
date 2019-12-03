@@ -1,0 +1,47 @@
+body{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+}
+.bk.header{
+    color: white;
+    background-color: black;
+
+    position: -webkit-sticky; /* Safari */
+    position: sticky !important;
+    top: 0;
+
+    box-shadow: 5px 5px 20px grey;
+
+    z-index: 1000;
+}
+.bk.app-title a{
+    color: white;
+    background-color: black;
+    text-align: center;
+    font-size: 1rem;
+}
+.bk.app-title a:link {
+    text-decoration: none;
+}
+.bk.app-title a:hover{
+    color: white;
+}
+.bk.sidebar{
+    background-color: rgb(248, 249, 250);
+
+    height: 100vh !important;
+
+    position: -webkit-sticky; /* Safari */
+    position: sticky !important;
+    top: 58px !important;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.bk.main{
+    background-color: white;
+    /* hack: Had to set overflow-x to hidden in order to not get scrollbar on About Page */
+    overflow-x: hidden;
+    overflow-y: scroll;
+}

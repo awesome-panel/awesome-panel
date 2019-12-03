@@ -48,4 +48,4 @@ class Navigator(param.Parameterized):
         """
         # Hack: For some reason returning self.page does not work
         # When all pages have been shown once then the page shown stops changing
-        return pn.Column(self.page, sizing_mode="stretch_width")
+        return self.page

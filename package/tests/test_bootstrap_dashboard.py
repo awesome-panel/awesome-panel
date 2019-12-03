@@ -30,7 +30,7 @@ def chrome_driver() -> webdriver.Chrome:
 
 def test_app():
     """Test of the attributes of the Template"""
-    app = pnx.templates.BootStrapDashboardTemplate()
+    app = pnx.templates.BootstrapDashboardTemplate()
 
     assert hasattr(app, "main")
     assert hasattr(app, "sidebar")
