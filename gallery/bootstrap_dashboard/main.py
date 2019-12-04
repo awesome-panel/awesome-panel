@@ -17,9 +17,8 @@ PAGES = [
 def main() -> pn.Pane:
     app = pnx.templates.BootstrapDashboardTemplate(app_title="Bootstrap Dashboard")
 
-    navigator = pnx.Navigator(pages=PAGES)
+    navigator = pnx.Navigator(pages=PAGES, page_outlet=app.main)
     app.sidebar.append(navigator.menu)
-    app.main.append(navigator.selected_page)
     return app
 
 

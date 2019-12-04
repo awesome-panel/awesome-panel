@@ -6,14 +6,19 @@ import panel as pn
 def test_pn_navigation():
     """# Manual Test of the Navigation Component
 
-    - Can select each the two pages
+    - Page 1 is shown by default.
+    - Can navigate to Page 1 and Page 2
     """
     page1 = pn.Row("# Page 1", name="Page 1")
     page2 = pn.Row("# Page 2", name="Page 2")
 
     pages = [page1, page2]
-    navigator = pnx.Navigator(pages=pages)
-    app = pn.Column(test_pn_navigation.__doc__, navigator.menu, navigator.selected_page)
+    content = pn.Column()
+    sidebar = pn.Column()
+    app = pn.Column(test_pn_navigation.__doc__, sidebar, content)
+
+    navigator = pnx.Navigator(pages=pages, page_outlet=content)
+    sidebar.append(navigator.menu())
     app.servable("test_pn_navigation")
 
 
