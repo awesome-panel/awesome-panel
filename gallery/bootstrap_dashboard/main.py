@@ -8,17 +8,16 @@ LIMITATIONS_PATH = pathlib.Path(__file__).parent / "limitations.md"
 PAGES = [
     components.About(),
     components.Dashboard().view(),
-    components.plotly_view(),
+    #  components.plotly_view(),
     components.holoviews_view(),
-    pnx.Markdown(path=LIMITATIONS_PATH, name="Limitations"),
+    components.Limitations(),
 ]
 
 
 def main() -> pn.Pane:
     app = pnx.templates.BootstrapDashboardTemplate(app_title="Bootstrap Dashboard")
-
-    navigator = pnx.Navigator(pages=PAGES, page_outlet=app.main)
-    app.sidebar.append(navigator.menu)
+    navigation_menu = pnx.NavigationMenu(pages=PAGES, page_outlet=app.main)
+    app.sidebar.append(navigation_menu)
     return app
 
 

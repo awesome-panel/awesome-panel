@@ -17,8 +17,8 @@ def test_pn_navigation():
     sidebar = pn.Column()
     app = pn.Column(test_pn_navigation.__doc__, sidebar, content)
 
-    navigator = pnx.Navigator(pages=pages, page_outlet=content)
-    sidebar.append(navigator.menu())
+    menu = pnx.NavigationMenu(pages=pages, page_outlet=content)
+    sidebar.append(menu)
     app.servable("test_pn_navigation")
 
 

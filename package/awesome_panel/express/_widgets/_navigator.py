@@ -7,61 +7,60 @@ import param
 import awesome_panel.express as pnx
 
 
-class Navigator(param.Parameterized):
-    """## Navigation Object
-
-    Can be used to control navigation between pages
-    """
-
-    page = param.ObjectSelector()
-
+class NavigationButton(pn.widgets.Button):
     def __init__(
+        self,
+        page: Union[pn.layout.Panel, pn.pane.Pane],
+        page_outlet: pn.layout.ListPanel,
+        *args,
+        **kwargs,
+    ):
+        """## Navigation Button to navigate between pages
+
+        Arguments:
+            page {Union[pn.layout.Panel, pn.pane.Pane]} -- A page to navigate to when the button is
+            clicked
+            page_outlet {pn.layout.ListPanel} -- The ListPanel to update when the user navigates to
+            a new page
+        """
+        if "name" not in kwargs:
+            kwargs["name"] = page.name
+
+        super().__init__(*args, **kwargs)
+
+        def navigate_to_page(event):  # pylint: disable=unused-argument
+            page_outlet.clear()
+            page_outlet.append(page)
+
+        self.on_click(navigate_to_page)
+
+
+class NavigationMenu(pn.Column):
+    "## Navigation Menu"
+
+    def __init__(  # pylint: disable=too-many-arguments
         self,
         pages: List[Union[pn.layout.Panel, pn.pane.Pane]],
         page_outlet: pn.layout.ListPanel,
         *args,
-        **kwargs
+        title: str = "Navigation",
+        text_align: str = "center",
+        sizing_mode: str = "stretch_width",
+        **kwargs,
     ):
-        """## Navigation Object
+        """## Navigation Menu
 
-        Can be used to control navigation between pages
+        A widget composed of NavigationButtons that can be used to navigate between pages.
 
         Arguments:
             pages {List[Union[pn.layout.Panel, pn.pane.Pane]]} -- A list of 'pages' to navigate
-                between
+                between. The first page in pages is selected by default.
             page_outlet {pn.layout.ListPanel} -- The ListPanel to update when the user navigates to
                 a new page
         """
-        super().__init__(*args, **kwargs)
-        self.pages = pages
-        self.page_outlet = page_outlet
-        self.params()["page"].objects = pages
-        self.page = pages[0]
-        self._update_page_outlet()
+        menuitems = [NavigationButton(page=page, page_outlet=page_outlet) for page in pages]
+        title = pnx.SubHeader(title, text_align=text_align)
+        super().__init__(title, *menuitems, sizing_mode=sizing_mode, *args, **kwargs)
 
-    def _update_page_outlet(self):
-        """Changes the page_outlet_objects to the selected page"""
-        self.page_outlet.clear()
-        self.page_outlet.append(self.page)
-
-    def menu(self) -> pn.WidgetBox:
-        """## A Menu Widget enabling the user to navigate between pages
-
-        Add this to a sidebar
-
-        Returns:
-            pn.WidgetBox -- A Vertical Menu
-        """
-
-        def set_page(event):
-            self.page = [page for page in self.pages if page.name == event.obj.name][0]
-            self._update_page_outlet()
-
-        menuitems = []
-        for page in self.pages:
-            button = pn.widgets.Button(name=page.name)
-            button.on_click(set_page)
-            menuitems.append(button)
-
-        title = pnx.SubHeader("Navigation", text_align="center")
-        return pn.Column(title, *menuitems, sizing_mode="stretch_width")
+        page_outlet.clear()
+        page_outlet.append(pages[0])

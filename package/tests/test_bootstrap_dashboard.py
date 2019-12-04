@@ -37,3 +37,10 @@ def test_app():
 
     assert isinstance(app.main, pn.layout.Panel)
     assert isinstance(app.sidebar, pn.layout.Panel)
+
+
+def test_markdown_image_width_max_100_percent():
+    """We test that the markdown image width cannot be more than 100%.
+
+    This is usefull in order to reduce the friction of using the template and Panel in general"""
+

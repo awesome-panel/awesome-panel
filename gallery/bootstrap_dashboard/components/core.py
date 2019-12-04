@@ -42,9 +42,16 @@ def holoviews_chart():
 
 def holoviews_view() -> pn.Column:
     fig = holoviews_chart()
+    text = """
+The [HoloViews](http://holoviews.org/) and [hvplot](https://hvplot.pyviz.org/) I had not used
+before. Their APIs are different than what I'm used to be also seems powerfull.
+
+I'm used to Plotly but it does not work well in Panel yet.
+"""
     return pn.Column(
         pnx.Header("Holoviews"),
         fig,
+        pn.pane.Markdown(text),
         pnx.Code(inspect.getsource(holoviews_chart)),
         name="Holoviews",
         sizing_mode="stretch_both",
@@ -57,7 +64,7 @@ def plotly_chart():
     fig.layout.paper_bgcolor = "rgba(0,0,0,0)"
     fig.layout.plot_bgcolor = "rgba(0,0,0,0)"
     fig.layout.width = 1000
-    fig.layout.autosize = True
+    # fig.layout.autosize = True
     return fig
 
 
@@ -65,11 +72,11 @@ def plotly_view(*args, **kwargs) -> pn.Column:
     fig = plotly_chart()
     return pn.Column(
         pnx.Header("Plotly"),
-        pn.Row(pn.layout.HSpacer(), fig, pn.layout.HSpacer(),),
+        pn.Row(pn.layout.HSpacer(), pn.pane.Plotly(fig), pn.layout.HSpacer(),),
         pn.pane.HTML("Plotly cannot currently auto size to full width and be responsive"),
         pnx.Code(code=inspect.getsource(plotly_chart)),
         sizing_mode="stretch_width",
-        name="Plotly",
+        name="Plotlys",
         *args,
         **kwargs,
     )
