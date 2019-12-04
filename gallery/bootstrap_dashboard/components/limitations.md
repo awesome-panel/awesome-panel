@@ -6,6 +6,7 @@ See
 - A simple layout with a column and 2 markdown panes displays on top of each other [Issue 835](https://github.com/holoviz/panel/issues/835).
     - If there is a large image in the markdown the page is not rendered correctly. The Bokeh layout engine does not get the height and width correctly.
 - No Code syntax highlighting. [Issue 391](https://github.com/holoviz/panel/issues/391)
+- Wide Images can overflow. Would be nice if `max-width: 100%` was set by default.
 
 ## Community and Documentation is difficult to use
 
@@ -69,8 +70,6 @@ For example I struggled with the below scrollbar until I found out it was becaus
 ![Info Alert Scrollbar Problem](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/gallery/bootstrap_dashboard/assets/images/info_alert_scrollbar_problem.png?raw=true)
 
 But I also struggle with it on this Limitations page. It's like the big image just above confuses the rendering. The workaround is to set `img {max-width: 100%}` in the css.
-
-![Limitations Scrollbar Problem](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/gallery/bootstrap_dashboard/assets/images/limitations_page_scrollbar_problem.png?raw=true)
 
 ## Font Awesome Icons Cannot Easily be Used
 
