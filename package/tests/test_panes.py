@@ -9,10 +9,19 @@ def test_divider():
     """## test_divider
 
 A manual test of the horizontal divider stretching to full width"""
-    app = pn.Column(
-        pn.pane.Markdown(test_divider.__doc__), pnx.Divider(), sizing_mode="stretch_width"
-    )
+    app = pn.Column(pnx.Markdown(test_divider.__doc__), pnx.Divider(), sizing_mode="stretch_width")
     app.servable(test_divider.__name__)
+
+
+def test_markdown():
+    """## test_markdown
+
+    We test the Markdown pane
+
+    - can handle leading spaces, i.e. this line shows as a bullted list and not in mono-space
+"""
+    app = pn.Column(pnx.Markdown(test_markdown.__doc__), sizing_mode="stretch_width",)
+    app.servable(test_markdown.__name__)
 
 
 @pytest.mark.panel
@@ -98,7 +107,7 @@ def my_add(a,b):
 
     pn.config.raw_css.append(css)
     app = pn.Column(
-        pn.pane.Markdown(test_code.__doc__),
+        pnx.Markdown(test_code.__doc__),
         pnx.Code(code, language="python"),
         sizing_mode="stretch_width",
     )
@@ -107,13 +116,14 @@ def my_add(a,b):
 
 @pytest.mark.panel
 def test_info_alert():
-    """Manual test of the InfoAlert Pane
+    """## test_info_alert
 
     - Blue Div with normal and bold text
+    - Curently not full width
     """
     pn.config.raw_css.append(pnx.InfoAlert.raw_css)
     app = pn.Column(
-        pn.pane.Markdown(test_info_alert.__doc__),
+        pnx.Markdown(test_info_alert.__doc__),
         pnx.InfoAlert("This is an **Info Alert**!"),
         sizing_mode="stretch_width",
     )
@@ -123,14 +133,15 @@ def test_info_alert():
 
 @pytest.mark.panel
 def test_warning_alert():
-    """Manual test of the WarningAlert Pane
+    """## test_warning_alert
 
     - Yellow Div with normal and bold text
+    - Curently not full width
     """
     pn.config.raw_css.append(pnx.WarningAlert.raw_css)
     app = pn.Column(
-        pn.pane.Markdown(test_warning_alert.__doc__),
-        pnx.WarningAlert("This is an **Warning Alert**!"),
+        pnx.Markdown(test_warning_alert.__doc__),
+        pnx.WarningAlert("This is a **Warning Alert**!"),
         sizing_mode="stretch_width",
     )
 
@@ -139,13 +150,14 @@ def test_warning_alert():
 
 @pytest.mark.panel
 def test_error_alert():
-    """Manual test of the ErrorAlert Pane
+    """## test_error_alert
 
     - Red Div with normal and bold text
+    - Curently not full width
     """
     pn.config.raw_css.append(pnx.ErrorAlert.raw_css)
     app = pn.Column(
-        pn.pane.Markdown(test_error_alert.__doc__),
+        pnx.Markdown(test_error_alert.__doc__),
         pnx.ErrorAlert("This is an **Error Alert**!"),
         sizing_mode="stretch_width",
     )
@@ -155,10 +167,10 @@ def test_error_alert():
 
 @pytest.mark.panel
 def test_info_alert_height_problem():
-    """Manual test of the InfoAlert Heigh Error
+    """## test_info_alert_height_problem
 
     We saw that the height of InfoAlert Div was much greater than it needed to be.
-    See https://github.com/holoviz/panel/issues/829
+    See [Issue 829](https://github.com/holoviz/panel/issues/829)
     """
     pn.config.raw_css.append(pnx.InfoAlert.raw_css)
     text = """\
@@ -166,7 +178,9 @@ Navigate to the **Dashboard Page** via the **Sidebar** to see the result.
 Or Navigate to the **Limitations Page** to learn of some of the limitations of Panel that
 I've experienced."""
     app = pn.Column(
-        pn.pane.Markdown(test_info_alert.__doc__), pnx.InfoAlert(text), sizing_mode="stretch_width",
+        pnx.Markdown(test_info_alert_height_problem.__doc__),
+        pnx.InfoAlert(text, sizing_mode="stretch_width"),
+        sizing_mode="stretch_width",
     )
 
     app.servable(test_info_alert.__name__)
@@ -174,6 +188,7 @@ I've experienced."""
 
 if __name__.startswith("bk"):
     test_divider()
+    test_markdown()
     test_code()
     test_info_alert()
     test_warning_alert()

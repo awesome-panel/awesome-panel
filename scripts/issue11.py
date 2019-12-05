@@ -9,15 +9,15 @@ The purpose of this app is to test that a **multi-page Dashboard Layout** simila
 """
 
 
-about_sizing_policy_stretch_width = pn.pane.Markdown(
+about_sizing_mode_stretch_width = pn.pane.Markdown(
     ABOUT, sizing_mode="stretch_width", background="lightblue"
 )
 about = pn.pane.Markdown(ABOUT, background="lightgreen")
-about_width_mode_max = pn.pane.Markdown(ABOUT, width_mode="max", background="burlywood")
+about_width_policy_max = pn.pane.Markdown(ABOUT, width_policy="max", background="burlywood")
 app = pn.Column(
-    about_sizing_policy_stretch_width,
+    about_sizing_mode_stretch_width,
     about,
-    about_width_mode_max,
+    about_width_policy_max,
     background="lightgray",
     sizing_mode="stretch_width",
 )

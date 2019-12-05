@@ -11,6 +11,9 @@ BOOTSTRAP_DASHBOARD_TEMPLATE = pathlib.Path(__file__).parent / "bootstrap_dashbo
 HEADER_HEIGHT = 58
 SIDEBAR_WIDTH = 200
 
+# Hack to make dynamically adding plotly work:
+# See https://github.com/holoviz/panel/issues/840
+pn.extension("plotly")
 
 class BootstrapDashboardTemplate(pn.Template):
     """A Basic App Template"""

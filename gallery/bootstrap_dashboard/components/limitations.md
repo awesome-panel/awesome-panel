@@ -1,12 +1,6 @@
-## Markdown is not well supported
+# Limitations of Panel
 
-See
-
-- Support rendering of indented markdown. [Issue 828](https://github.com/holoviz/panel/issues/828).
-- A simple layout with a column and 2 markdown panes displays on top of each other [Issue 835](https://github.com/holoviz/panel/issues/835).
-    - If there is a large image in the markdown the page is not rendered correctly. The Bokeh layout engine does not get the height and width correctly.
-- No Code syntax highlighting. [Issue 391](https://github.com/holoviz/panel/issues/391)
-- Wide Images can overflow. Would be nice if `max-width: 100%` was set by default.
+Let me start out by saying that I think that Panel is already very powerfull. But I have experienced som limitations and rough edges.
 
 ## Community and Documentation is difficult to use
 
@@ -18,10 +12,24 @@ See GitHub issues
 - Make Panel help text readable on Windows in Command Prompt and Git bash. [Issue 836](https://github.com/holoviz/panel/issues/836)
 - Please add the wonderfull help text to the docstrings to get context help in editor. [Issue 837](https://github.com/holoviz/panel/issues/837)
 
+## Markdown is not well supported
+
+See
+
+- Support rendering of indented markdown. [Issue 828](https://github.com/holoviz/panel/issues/828).
+- A simple layout with a column and 2 markdown panes displays on top of each other [Issue 835](https://github.com/holoviz/panel/issues/835).
+    - If there is a large image in the markdown the page is not rendered correctly. The Bokeh layout engine does not get the height and width correctly.
+- No Code syntax highlighting. [Issue 391](https://github.com/holoviz/panel/issues/391)
+- Wide Images can overflow. Would be nice if `max-width: 100%` was set by default.
+- Cannot get full width widthout lots of empty space at bottom. [Issue 848](https://github.com/holoviz/panel/issues/848)
+
 ## Plotly Plots are not well supported
 
 - Plotly is not yet responsive in Panel. See [Issue 822](https://github.com/holoviz/panel/issues/822)
-- Plotly does not show when dynamically adding and removing pages. See [Issue 840](https://github.com/holoviz/panel/issues/840)
+
+## Hot reload is slow and slows down development-test cycle
+
+See [issue 849](https://github.com/holoviz/panel/issues/849)
 
 ## Panels, Panes and Widgets are not full width, responsive by default
 
@@ -35,6 +43,7 @@ I believe I experience some rough edges for being one of the first to create a m
 - Sizing_mode="stretch_width" does not work for DataFrame panes. See [Issue 823](https://github.com/holoviz/panel/issues/823)
 - Cannot dynamically add and remove panes [Issue 838](https://github.com/holoviz/panel/issues/838)
 - Images does not support src urls and alt texts [Issue 841](https://github.com/holoviz/panel/issues/841)
+- Plotly does not show when dynamically adding and removing pages without adding plotly extension. See [Issue 840](https://github.com/holoviz/panel/issues/840)
 
 and I sometimes get error messages like this
 

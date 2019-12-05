@@ -5,7 +5,7 @@ import panel as pn
 import param
 from plotly import express as px
 
-pn.extension()
+pn.extension("plotly")  # Hack: See https://github.com/holoviz/panel/issues/840
 
 
 def navigation_button(page, page_outlet):

@@ -1,5 +1,6 @@
 """A collection of nice panes to use"""
-from typing import List
+import pathlib
+from typing import List, Optional
 
 import bokeh
 import markdown
@@ -30,7 +31,23 @@ class Divider(pn.pane.HTML):
         super().__init__("<hr>", height=10, sizing_mode="stretch_width")
 
 
-class Code(pn.pane.Markdown):
+class Markdown(pn.pane.HTML):
+    def __init__(
+        self, text: str = "", path: Optional[pathlib.Path] = None, *args, **kwargs,
+    ):
+        if text == "" and path:
+            text = path.read_text()
+
+        text_with_no_leading_spaces = "\n".join([line.lstrip() for line in text.splitlines()])
+
+        text_html = markdown.markdown(
+            text_with_no_leading_spaces, extensions=MARKDOWN_EXTENSIONS, output_format="html5"
+        )
+
+        super().__init__(text_html, *args, **kwargs)
+
+
+class Code(pn.pane.HTML):
     """A HTML code block"""
 
     def __init__(
@@ -48,7 +65,7 @@ class Code(pn.pane.Markdown):
         super().__init__(code_html, sizing_mode=sizing_mode, *args, **kwargs)
 
 
-class InfoAlert(pn.pane.Markdown):
+class InfoAlert(Markdown):
     """An Info Alert that renders Markdown
 
     CSS Styling can be done via the classes 'alert' and 'alert-info'. See the raw_css attribute
@@ -70,7 +87,7 @@ class InfoAlert(pn.pane.Markdown):
         KeyWord Arguments:
             css_classes {List[str]} --
         """
-        super().__init__(text, css_classes=css_classes)
+        super().__init__(text, css_classes=css_classes, *args, **kwargs)
 
     raw_css = """
 .bk.alert {
@@ -112,7 +129,7 @@ class WarningAlert(pn.pane.Markdown):
             text {str} -- Some MarkDown text
 
         """
-        super().__init__(text, css_classes=css_classes)
+        super().__init__(text, css_classes=css_classes, *args, **kwargs)
 
     raw_css = """
 .bk.alert {
@@ -140,7 +157,7 @@ class ErrorAlert(pn.pane.Markdown):
     CSS Styling can be done via the classes 'alert' and 'alert-error'. See the raw_css attribute
 
     Don't set sizing_mode="stretch_width" as this will result in problems.
-    See https://github.com/holoviz/panel/issues/829
+    See [Issue 829](https://github.com/holoviz/panel/issues/829)
     """
 
     def __init__(
@@ -154,7 +171,7 @@ class ErrorAlert(pn.pane.Markdown):
             text {str} -- Some MarkDown text
 
         """
-        super().__init__(text, css_classes=css_classes)
+        super().__init__(text, css_classes=css_classes, *args, **kwargs)
 
     raw_css = """
 .bk.alert {

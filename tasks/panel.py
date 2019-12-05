@@ -14,7 +14,7 @@ def bootstrap_dashboard(context, dev=False):
         dev {bool} -- Whether or not to run in Debug Mode with autoreload (default: {False})
     """
     if dev:
-        command = "python -m panel serve gallery/bootstrap_dashboard --dev"
+        command = "python -m panel serve gallery/bootstrap_dashboard --dev --show"
     else:
         command = "panel serve bootstrap_dashboard"
 

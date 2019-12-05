@@ -73,10 +73,10 @@ def plotly_view(*args, **kwargs) -> pn.Column:
     return pn.Column(
         pnx.Header("Plotly"),
         pn.Row(pn.layout.HSpacer(), pn.pane.Plotly(fig), pn.layout.HSpacer(),),
-        pn.pane.HTML("Plotly cannot currently auto size to full width and be responsive"),
+        pnx.Markdown("Plotly cannot currently auto size to full width and be responsive", background="green"),
         pnx.Code(code=inspect.getsource(plotly_chart)),
         sizing_mode="stretch_width",
-        name="Plotlys",
+        name="Plotly",
         *args,
         **kwargs,
     )
