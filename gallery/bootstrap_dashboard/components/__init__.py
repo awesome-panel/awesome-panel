@@ -1,7 +1,7 @@
 from gallery.bootstrap_dashboard.components.about import About
 from gallery.bootstrap_dashboard.components.limitations import Limitations
 from gallery.bootstrap_dashboard.components.dashboard import Dashboard
-from gallery.bootstrap_dashboard.components.core import holoviews_view, plotly_view
+from gallery.bootstrap_dashboard.components.core import holoviews_view, plotly_view, dataframe_view
 
 # class PageConfig(NamedTuple):
 #     name: str

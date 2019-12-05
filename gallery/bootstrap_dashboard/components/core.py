@@ -73,10 +73,30 @@ def plotly_view(*args, **kwargs) -> pn.Column:
     return pn.Column(
         pnx.Header("Plotly"),
         pn.Row(pn.layout.HSpacer(), pn.pane.Plotly(fig), pn.layout.HSpacer(),),
-        pnx.Markdown("Plotly cannot currently auto size to full width and be responsive", background="green"),
+        pnx.InfoAlert("Plotly cannot currently auto size to full width and be responsive"),
         pnx.Code(code=inspect.getsource(plotly_chart)),
         sizing_mode="stretch_width",
         name="Plotly",
+        *args,
+        **kwargs,
+    )
+
+
+def dataframe_view(*args, **kwargs) -> pn.Column:
+    table = pn.widgets.DataFrame(services.get_table_data(), sizing_mode="stretch_width")
+    text = """I did not use the
+    [DataFrame widget](https://panel.pyviz.org/reference/widgets/DataFrame.html#gallery-dataframe)
+    in the dashboard because it would not look like the GetBootstrap example.
+    But I would always use this power full DataFrame widget in practice
+    because it's so powerfull and nice. It's based on [SlickGrid](https://slickgrid.net/).
+    """
+    return pn.Column(
+        pnx.Header("DataFrame"),
+        pnx.InfoAlert(text),
+        pn.layout.VSpacer(height=20), # Hack
+        table,
+        sizing_mode="stretch_width",
+        name="DataFrame",
         *args,
         **kwargs,
     )

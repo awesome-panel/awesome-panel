@@ -10,6 +10,7 @@ PAGES = [
     components.Dashboard().view(),
     components.plotly_view(),
     components.holoviews_view(),
+    components.dataframe_view(),
     components.Limitations(),
 ]
 
