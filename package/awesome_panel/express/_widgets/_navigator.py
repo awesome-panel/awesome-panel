@@ -1,6 +1,5 @@
 """This module contains a navigation menu to be used to select between different pages"""
-from typing import List, Union
-
+from typing import List, Union, Optional
 import panel as pn
 import param
 
@@ -43,6 +42,7 @@ class NavigationMenu(pn.Column):
         pages: List[Union[pn.layout.Panel, pn.pane.Pane]],
         page_outlet: pn.layout.ListPanel,
         *args,
+        css_classes: Optional[List[Optional[List[str]]]] = None,
         title: str = "Navigation",
         text_align: str = "center",
         sizing_mode: str = "stretch_width",
@@ -58,7 +58,14 @@ class NavigationMenu(pn.Column):
             page_outlet {pn.layout.ListPanel} -- The ListPanel to update when the user navigates to
                 a new page
         """
-        menuitems = [NavigationButton(page=page, page_outlet=page_outlet) for page in pages]
+        if css_classes:
+            menuitems = [
+                NavigationButton(page=page, page_outlet=page_outlet, css_classes=css)
+                for page, css in zip(pages, css_classes)
+            ]
+        else:
+            menuitems = [NavigationButton(page=page, page_outlet=page_outlet) for page in pages]
+
         title = pnx.SubHeader(title, text_align=text_align)
         super().__init__(title, *menuitems, sizing_mode=sizing_mode, *args, **kwargs)
 

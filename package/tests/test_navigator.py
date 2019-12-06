@@ -39,8 +39,8 @@ def test_pn_navigation():
     - Page 1 is shown by default.
     - Can navigate to Page 1 and Page 2
     """
-    page1 = pn.Row("# Page 1", name="Page 1")
-    page2 = pn.Row("# Page 2", name="Page 2")
+    page1 = pnx.Markdown("## Page 1", name="Page 1")
+    page2 = pnx.Markdown("## Page 2", name="Page 2")
 
     pages = [page1, page2]
     content = pn.Column()
@@ -52,6 +52,32 @@ def test_pn_navigation():
     app.servable("test_pn_navigation")
 
 
+@pytest.mark.panel
+def test_pn_navigation_with_font_awesome():
+    """# Manual Test of the Navigation Component with Font Awesome
+
+    - The first button has no icon as we specified None
+    - The second button has no icon as we specified an empty list
+    - The third button has a twitter icon as specified
+    """
+    pnx.fontawesome.extend()
+    page1 = pnx.Markdown("## None", name="Page None")
+    page2 = pnx.Markdown("## Empty", name="Page Empty")
+    page3 = pnx.Markdown("## Twitter", name=" Page Twitter")
+
+    pages = [page1, page2, page3]
+    content = pn.Column()
+    sidebar = pn.Column()
+    app = pn.Column(pnx.Markdown(test_pn_navigation_with_font_awesome.__doc__), sidebar, content)
+
+    css_classes = [None, [], ["pab", "pa-twitter"]]
+
+    menu = pnx.NavigationMenu(pages=pages, page_outlet=content, css_classes=css_classes)
+    sidebar.append(menu)
+    app.servable("test_pn_navigation_with_font_awesome")
+
+
 if __name__.startswith("bk"):
     test_pn_navigation_button()
     test_pn_navigation()
+    test_pn_navigation_with_font_awesome()
