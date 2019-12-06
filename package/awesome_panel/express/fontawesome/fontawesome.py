@@ -20,13 +20,19 @@ FONTAWESOME_CSS_URL = "https://use.fontawesome.com/releases/v5.11.2/css/all.css"
 _EXTENDED = False
 
 _FONTAWESOME_PANEL_EXPRESS_HEADER = """
+
 div.bk.pas div.bk *::before, div.bk.pab div.bk *::before {
     display: inline-block;
     font-style: normal;
     font-variant: normal;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
+}
+div.bk.pas div.bk *::before{
     font-family: "Font Awesome 5 Free";
+}
+div.bk.pab div.bk *::before {
+    font-family:"Font Awesome 5 Brands"
 }
 """
 

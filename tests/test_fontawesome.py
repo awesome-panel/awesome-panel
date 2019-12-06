@@ -36,10 +36,10 @@ def test_html_with_font_awesome():
 def test_button_with_font_awesome():
     """## test_button_with_font_awesome
 
-    Manual test of a buttons with a font awesome icons"""
-    button_user = pn.widgets.Button(name=" User", css_classes=["pa-login"],)
-    button_newspaper = pn.widgets.Button(name=" News Paper", css_classes=["pa-tps"],)
-    button_twitter = pn.widgets.Button(name=" Twitter", css_classes=["pa-twitter"],)
+    Manual test of a buttons with a font awesome icon"""
+    button_user = pn.widgets.Button(name=" User", css_classes=["pas", "pa-user"],)
+    button_newspaper = pn.widgets.Button(name=" News Paper", css_classes=["pas", "pa-newspaper"],)
+    button_twitter = pn.widgets.Button(name=" Twitter", css_classes=["pab", "pa-twitter"],)
 
     app = pn.Column(
         Markdown(test_button_with_font_awesome.__doc__),
