@@ -1,19 +1,19 @@
 """In this module we implement a title, heading and subheading"""
-import panel as pn
 from typing import Optional
+
+import panel as pn
 
 
 class HeadingBase(pn.pane.Markdown):
     """Base class for headings like Title, Header and SubHeader"""
 
-    def __init__(
+    def __init__(  # pylint: disable=too-many-arguments
         self,
         text: str = "",
         level: int = 1,
         sizing_mode="stretch_width",
         text_align="left",
         url: Optional[str] = None,
-        *args,
         **kwargs,
     ):
         """Base class for headings like Title, Header and SubHeader
@@ -34,7 +34,7 @@ class HeadingBase(pn.pane.Markdown):
             kwargs["style"]["text-align"] = text_align
         else:
             kwargs["style"] = {"text-align": text_align}
-        super().__init__(heading, sizing_mode=sizing_mode, *args, **kwargs)
+        super().__init__(heading, sizing_mode=sizing_mode, **kwargs)
 
 
 class Title(HeadingBase):
@@ -46,7 +46,6 @@ class Title(HeadingBase):
         sizing_mode="stretch_width",
         text_align="left",
         url: Optional[str] = None,
-        *args,
         **kwargs,
     ):
         """A Markdown Pane with the title
@@ -59,13 +58,7 @@ class Title(HeadingBase):
             url {Optional[str]} -- If not None the heading will link to the url
         """
         super().__init__(
-            text=text,
-            level=1,
-            sizing_mode=sizing_mode,
-            text_align=text_align,
-            url=url,
-            *args,
-            **kwargs,
+            text=text, level=1, sizing_mode=sizing_mode, text_align=text_align, url=url, **kwargs,
         )
 
 
@@ -78,7 +71,6 @@ class Header(HeadingBase):
         sizing_mode="stretch_width",
         text_align="left",
         url: Optional[str] = None,
-        *args,
         **kwargs,
     ):
         """A Markdown Pane with the header
@@ -91,13 +83,7 @@ class Header(HeadingBase):
             url {Optional[str]} -- If not None the heading will link to the url
         """
         super().__init__(
-            text=text,
-            level=2,
-            sizing_mode=sizing_mode,
-            text_align=text_align,
-            url=url,
-            *args,
-            **kwargs,
+            text=text, level=2, sizing_mode=sizing_mode, text_align=text_align, url=url, **kwargs,
         )
 
 
@@ -110,7 +96,6 @@ class SubHeader(HeadingBase):
         sizing_mode="stretch_width",
         text_align="left",
         url: Optional[str] = None,
-        *args,
         **kwargs,
     ):
         """A Markdown Pane with the sub header
@@ -123,11 +108,5 @@ class SubHeader(HeadingBase):
             url {Optional[str]} -- If not None the heading will link to the url
         """
         super().__init__(
-            text=text,
-            level=3,
-            sizing_mode=sizing_mode,
-            text_align=text_align,
-            url=url,
-            *args,
-            **kwargs,
+            text=text, level=3, sizing_mode=sizing_mode, text_align=text_align, url=url, **kwargs,
         )

@@ -1,11 +1,17 @@
 
+
 div.bk.pas div.bk *::before, div.bk.pab div.bk *::before {
     display: inline-block;
     font-style: normal;
     font-variant: normal;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
+}
+div.bk.pas div.bk *::before{
     font-family: "Font Awesome 5 Free";
+}
+div.bk.pab div.bk *::before {
+    font-family:"Font Awesome 5 Brands"
 }
 div.bk.pa-500px div.bk *::before{content:"\f26e"}
 div.bk.pa-accessible-icon div.bk *::before{content:"\f368"}

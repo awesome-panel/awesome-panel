@@ -8,7 +8,7 @@ import urllib
 import panel as pn
 
 
-class BrowserUrlMixin: # pylint: disable=too-few-public-methods
+class BrowserUrlMixin:  # pylint: disable=too-few-public-methods
     """This Mixin enables parameters from a param.Parametrized Class to be shown in the url or the
     browser. For example like http://localhost/example_app?country=Norway
 
@@ -46,7 +46,7 @@ class BrowserUrlMixin: # pylint: disable=too-few-public-methods
         return pn.pane.HTML(self._browser_url_parameters_script())
 
     def _browser_url_parameters_script(self) -> str:
-        if len(self.get_param_values()) > 1:
+        if len(self.get_param_values()) > 1:  # type: ignore
             state = f'{{param: "{self._urlencode()}"}}'
             title = ""
             url = f"?{self._urlencode()}"

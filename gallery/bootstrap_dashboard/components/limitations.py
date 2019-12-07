@@ -1,6 +1,7 @@
-import panel as pn
-import awesome_panel.express as pnx
 import pathlib
+
+import awesome_panel.express as pnx
+import panel as pn
 
 LIMITATIONS_PATH = pathlib.Path(__file__).parent / "limitations.md"
 
@@ -21,4 +22,3 @@ It's a limitation of Panel :-)""",
         super().__init__(
             warning, limitations, sizing_mode="stretch_width", name="Limitations",
         )
-

@@ -8,9 +8,11 @@ div.bk.pas div.bk *::before, div.bk.pab div.bk *::before {
 }
 div.bk.pas div.bk *::before{
     font-family: "Font Awesome 5 Free";
+    font-weight: 900;
 }
 div.bk.pab div.bk *::before {
-    font-family:"Font Awesome 5 Brands"
+    font-family:"Font Awesome 5 Brands";
+    font-weight: 900;
 }
 
 div.bk.pa-500px div.bk *::before{content:"\f26e"}

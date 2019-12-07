@@ -10,10 +10,7 @@ This module contains functionality for using Font Awesome as
 import urllib.request
 
 import panel as pn
-
-from awesome_panel.express.assets import (
-    FONTAWESOME_PANEL_EXPRESS_CSS as FONTAWESOME_PANEL_EXPRESS_CSS,
-)
+from awesome_panel.express.assets import FONTAWESOME_PANEL_EXPRESS_CSS
 
 FONTAWESOME_CSS_URL = "https://use.fontawesome.com/releases/v5.11.2/css/all.css"
 
@@ -41,12 +38,15 @@ def extend():
     """## Extends Panel with functionality to use Font Awesome
 
     See [Font Awesome](https://fontawesome.com/) and
-    [Font Awesome CSS Pseudo Elements](https://fontawesome.com/how-to-use/on-the-web/advanced/css-pseudo-elements)
+    [Font Awesome CSS Pseudo Elements]
+    (https://fontawesome.com/how-to-use/on-the-web/advanced/css-pseudo-elements)
     for more information.
 
-    To find icons refer to [Font Awesome Search](https://fontawesome.com/icons/search).
+    To find icons refer to [Font Awesome Search]
+    (https://fontawesome.com/icons/search).
 
-    For examples refer to [W3C Font Awesome Intro](https://www.w3schools.com/icons/fontawesome_icons_intro.asp)
+    For examples refer to [W3C Font Awesome Intro]
+    (https://www.w3schools.com/icons/fontawesome_icons_intro.asp)
     """
     if not _EXTENDED:
         pn.config.raw_css.append(FONTAWESOME_PANEL_EXPRESS_CSS.read_text())

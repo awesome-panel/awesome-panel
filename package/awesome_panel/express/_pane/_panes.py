@@ -4,6 +4,7 @@ from typing import List, Optional
 
 import bokeh
 import markdown
+
 import panel as pn
 
 MARKDOWN_EXTENSIONS = [
@@ -17,7 +18,7 @@ MARKDOWN_EXTENSIONS = [
 class Divider(pn.pane.HTML):
     """A HTML Divider"""
 
-    def __init__(self, sizing_policy="stretch_width", *args, **kwargs):
+    def __init__(self, sizing_mode="stretch_width", **kwargs):
         """A HTML Divider
 
         The HTML
@@ -28,13 +29,34 @@ class Divider(pn.pane.HTML):
         Keyword Arguments:
             sizing_policy {str} -- [description] (default: {"stretch_width"})
         """
-        super().__init__("<hr>", height=10, sizing_mode="stretch_width")
+        super().__init__("<hr>", height=10, sizing_mode=sizing_mode, **kwargs)
 
 
 class Markdown(pn.pane.HTML):
+    """Extension of the original Markdown pane
+
+    Can
+
+    - Take path input
+    - Remove leading spaces
+    - Syntax highlight code
+    """
+
     def __init__(
-        self, text: str = "", path: Optional[pathlib.Path] = None, *args, **kwargs,
+        self, text: str = "", path: Optional[pathlib.Path] = None, **kwargs,
     ):
+        """Extension of the original Markdow pane
+
+        Can
+
+        - Take path input
+        - Remove leading spaces
+        - Syntax highlight code
+
+        Keyword Arguments:
+            text {str} -- The text to convert to Markdown (default: {""})
+            path {Optional[pathlib.Path]} -- An optional path to a file (default: {None})
+        """
         if text == "" and path:
             text = path.read_text()
 
@@ -44,7 +66,7 @@ class Markdown(pn.pane.HTML):
             text_with_no_leading_spaces, extensions=MARKDOWN_EXTENSIONS, output_format="html5"
         )
 
-        super().__init__(text_html, *args, **kwargs)
+        super().__init__(text_html, **kwargs)
 
 
 class Code(pn.pane.HTML):
@@ -75,7 +97,7 @@ class InfoAlert(Markdown):
     """
 
     def __init__(
-        self, text: str, css_classes: List[str] = ["alert", "alert-info"], *args, **kwargs,
+        self, text: str, *args, **kwargs,
     ):
         """An Info Alert that renders Markdown
 
@@ -84,10 +106,15 @@ class InfoAlert(Markdown):
         Arguments:
             text {str} -- Some MarkDown text
 
-        KeyWord Arguments:
-            css_classes {List[str]} --
         """
-        super().__init__(text, css_classes=css_classes, *args, **kwargs)
+        if "css_classes" in kwargs:
+            if not "alert" in kwargs["css_classes"]:
+                kwargs["css_classes"].append("alert")
+            if not "alert-info" in kwargs["css_classes"]:
+                kwargs["css_classes"].append("alert-info")
+        else:
+            kwargs["css_classes"] = ["alert", "alert-info"]
+        super().__init__(text, *args, **kwargs)
 
     raw_css = """
 .bk.alert {
@@ -119,7 +146,7 @@ class WarningAlert(pn.pane.Markdown):
     """
 
     def __init__(
-        self, text: str, css_classes: List[str] = ["alert", "alert-warning"], *args, **kwargs,
+        self, text: str, *args, **kwargs,
     ):
         """An Warning Alert that renders Markdown
 
@@ -129,7 +156,15 @@ class WarningAlert(pn.pane.Markdown):
             text {str} -- Some MarkDown text
 
         """
-        super().__init__(text, css_classes=css_classes, *args, **kwargs)
+        if "css_classes" in kwargs:
+            if not "alert" in kwargs["css_classes"]:
+                kwargs["css_classes"].append("alert")
+            if not "alert-warning" in kwargs["css_classes"]:
+                kwargs["css_classes"].append("alert-warning")
+        else:
+            kwargs["css_classes"] = ["alert", "alert-warning"]
+        print(kwargs)
+        super().__init__(text, *args, **kwargs)
 
     raw_css = """
 .bk.alert {
@@ -161,7 +196,7 @@ class ErrorAlert(pn.pane.Markdown):
     """
 
     def __init__(
-        self, text: str, css_classes: List[str] = ["alert", "alert-error"], *args, **kwargs,
+        self, text: str, *args, **kwargs,
     ):
         """An Error Alert that renders Markdown
 
@@ -171,7 +206,14 @@ class ErrorAlert(pn.pane.Markdown):
             text {str} -- Some MarkDown text
 
         """
-        super().__init__(text, css_classes=css_classes, *args, **kwargs)
+        if "css_classes" in kwargs:
+            if not "alert" in kwargs["css_classes"]:
+                kwargs["css_classes"].append("alert")
+            if not "alert-error" in kwargs["css_classes"]:
+                kwargs["css_classes"].append("alert-error")
+        else:
+            kwargs["css_classes"] = ["alert", "alert-error"]
+        super().__init__(text, *args, **kwargs)
 
     raw_css = """
 .bk.alert {

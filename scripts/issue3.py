@@ -1,6 +1,7 @@
-import panel as pn
 import pandas as pd
 import plotly.express as px
+
+import panel as pn
 
 data = {
     "Day": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",],

@@ -1,9 +1,10 @@
 """This module contains a navigation menu to be used to select between different pages"""
-from typing import List, Union, Optional
-import panel as pn
+from typing import List, Optional, Union
+
 import param
 
 import awesome_panel.express as pnx
+import panel as pn
 
 
 class NavigationButton(pn.widgets.Button):
@@ -23,7 +24,10 @@ class NavigationButton(pn.widgets.Button):
             a new page
         """
         if "name" not in kwargs:
-            kwargs["name"] = page.name
+            if "css_classes" in kwargs:
+                kwargs["name"] = " " + page.name
+            else:
+                kwargs["name"] = page.name
 
         super().__init__(*args, **kwargs)
 
@@ -59,8 +63,9 @@ class NavigationMenu(pn.Column):
                 a new page
         """
         if css_classes:
+            pnx.fontawesome.extend()
             menuitems = [
-                NavigationButton(page=page, page_outlet=page_outlet, css_classes=css)
+                NavigationButton(page, page_outlet=page_outlet, css_classes=css)
                 for page, css in zip(pages, css_classes)
             ]
         else:

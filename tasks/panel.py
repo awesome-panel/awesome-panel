@@ -1,5 +1,5 @@
 """This module contains a set of helpfull Invoke Tasks for working with Panel"""
-from invoke import task, Context
+from invoke import Context, task
 
 
 @task

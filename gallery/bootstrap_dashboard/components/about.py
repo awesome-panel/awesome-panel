@@ -1,6 +1,7 @@
-import panel as pn
-import awesome_panel.express as pnx
 import pathlib
+
+import awesome_panel.express as pnx
+import panel as pn
 
 ABOUT_PATH = pathlib.Path(__file__).parent / "about.md"
 IMAGE_URL = "https://getbootstrap.com/docs/4.4/assets/img/examples/dashboard.png"
@@ -21,4 +22,3 @@ I've experienced.""",
         super().__init__(
             about, image, info, sizing_mode="stretch_width", name="About",
         )
-

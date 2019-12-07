@@ -1,7 +1,8 @@
 """In this module we test the markdown component"""
+import pathlib
+
 import awesome_panel.express as pnx
 import panel as pn
-import pathlib
 
 TEST_MD_FILE = pathlib.Path(__file__).parent / "data" / "test.md"
 

@@ -1,5 +1,5 @@
-from gallery.bootstrap_dashboard import components
 import panel as pn
+from gallery.bootstrap_dashboard import components
 
 
 def test_dashboard_plot():

@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 def get_chart_data():
         chart_data = {
             "Day": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",],

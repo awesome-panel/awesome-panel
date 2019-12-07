@@ -1,5 +1,6 @@
-import panel as pn
 import markdown
+
+import panel as pn
 
 
 class Code(pn.pane.HTML):

@@ -53,3 +53,6 @@ img {
     overflow-x: hidden;
     overflow-y: hidden;
 }
+div.bk.navigation div.bk button {
+    text-align: left !important;
+}

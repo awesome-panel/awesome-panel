@@ -1,5 +1,5 @@
 """Tests of the awesome_panel functionality"""
-# pylint: disable=protected-accesss
+# pylint: disable=protected-access
 import param
 
 import awesome_panel.express as pnx
@@ -15,6 +15,7 @@ class _Country(pnx.BrowserUrlMixin, param.Parameterized):
 
 
 def test_url():
+    """Test of the pnx.BrowserUrlMixin"""
     country_url = _Country()
     country_url.country = "Denmark"
 

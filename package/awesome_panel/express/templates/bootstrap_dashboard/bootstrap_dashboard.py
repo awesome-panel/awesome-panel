@@ -2,8 +2,10 @@
 import pathlib
 
 import panel as pn
-from awesome_panel.express._pane._headings import SubHeader
-from awesome_panel.express.assets import CODE_HILITE_PANEL_EXPRESS_CSS, BOOTSTRAP_PANEL_EXPRESS_CSS, SCROLLBAR_PANEL_EXPRESS_CSS
+from awesome_panel.express import fontawesome
+from awesome_panel.express.assets import (BOOTSTRAP_PANEL_EXPRESS_CSS,
+                                          CODE_HILITE_PANEL_EXPRESS_CSS,
+                                          SCROLLBAR_PANEL_EXPRESS_CSS)
 
 BOOTSTRAP_DASHBOARD_CSS = pathlib.Path(__file__).parent / "bootstrap_dashboard.css"
 BOOTSTRAP_DASHBOARD_TEMPLATE = pathlib.Path(__file__).parent / "bootstrap_dashboard.html"
@@ -15,6 +17,7 @@ SIDEBAR_WIDTH = 200
 # See https://github.com/holoviz/panel/issues/840
 pn.extension("plotly")
 
+
 class BootstrapDashboardTemplate(pn.Template):
     """A Basic App Template"""
 
@@ -23,6 +26,7 @@ class BootstrapDashboardTemplate(pn.Template):
         pn.config.raw_css.append(BOOTSTRAP_PANEL_EXPRESS_CSS.read_text())
         pn.config.raw_css.append(BOOTSTRAP_DASHBOARD_CSS.read_text())
         pn.config.raw_css.append(SCROLLBAR_PANEL_EXPRESS_CSS.read_text())
+        fontawesome.extend()
         template = BOOTSTRAP_DASHBOARD_TEMPLATE.read_text()
 
         app_title = pn.Row(

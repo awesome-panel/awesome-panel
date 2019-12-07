@@ -40,4 +40,3 @@ button = pn.widgets.Button(
 )
 app = pn.Column(example, button)
 app.servable()
-

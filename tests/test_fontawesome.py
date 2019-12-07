@@ -2,9 +2,9 @@
 # pylint: disable=protected-access
 import pathlib
 
-import panel as pn
 import pytest
 
+import panel as pn
 from awesome_panel.express import fontawesome
 from awesome_panel.express._pane._panes import Markdown
 

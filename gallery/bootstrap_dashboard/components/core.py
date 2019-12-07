@@ -1,12 +1,11 @@
 import inspect
-from typing import List, NamedTuple
 
 import holoviews as hv
 import hvplot.pandas
-import panel as pn
 from plotly import express as px
 
 import awesome_panel.express as pnx
+import panel as pn
 from gallery.bootstrap_dashboard import services
 
 pn.extension()

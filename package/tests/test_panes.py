@@ -1,5 +1,6 @@
 """Test of _pane.core functionality"""
 import pytest
+
 import awesome_panel.express as pnx
 import panel as pn
 
