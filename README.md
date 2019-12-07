@@ -1,6 +1,6 @@
 # Awesome Panel [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/MarcSkovMadsen/awesome-panel)
 
-[<img src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/panel-logo.png?raw=true" align="right" height="75" width="75">](https://panel.pyviz.org/)
+[<img src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/panel-logo.png?raw=true" align="right" height="75" width="75">](https://panel.pyviz.org/)
 
 > A high-level app and dashboarding solution for **Python**!
 
@@ -16,12 +16,6 @@ Panel is part of the [HoloViz](https://holoviz.org/) maintained libraries and th
 [<img class="pvlogo" src="https://holoviz.org/assets/param.png" height="75">](https://param.pyviz.org)
 [<img class="pvlogo" src="https://holoviz.org/assets/colorcet.png" height="75">](https://colorcet.pyviz.org)
 
-Holoviz is sponsored by
-
-<a class="reference external image-reference" href="http://www.anaconda.com"><img alt="Anaconda website" src="https://www.anaconda.com/wp-content/uploads/2018/06/cropped-Anaconda_horizontal_RGB-1-600x102.png" style="height: 60px;"></a>
-<a class="reference external image-reference" href="http://www.quansight.com"><img alt="Quansight website" src="https://static.wixstatic.com/media/095d2c_2508c560e87d436ea00357abc404cf1d~mv2.png/v1/crop/x_0,y_9,w_915,h_329/fill/w_191,h_65,al_c,q_80,usm_0.66_1.00_0.01/095d2c_2508c560e87d436ea00357abc404cf1d~mv2.webp" style="height: 60px;"></a>
-<a class="reference external image-reference" href="https://numfocus.org"><img alt="NumFOCUS website" src="https://numfocus.org/wp-content/uploads/2018/01/optNumFocus_LRG.png" style="height: 60px;"></a>
-
 This project provides
 
 - A curated [list](https://github.com/MarcSkovMadsen/awesome-panel#awesome-resources) of Awesome Panel **resources**. See below.
@@ -31,7 +25,7 @@ This project provides
 
 Visit the app at [awesome-panel.org](https://awesome-panel.org)!
 
-![Awesome Panel Org Animation](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/awesome-panel-full-branded.gif?raw=true)
+![Awesome Panel Org Animation](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/awesome-panel-full-branded.gif?raw=true)
 
 ## The Power of Panel
 
