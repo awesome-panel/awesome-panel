@@ -1,6 +1,45 @@
 # Awesome Panel [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/MarcSkovMadsen/awesome-panel)
 
-A repository for sharing knowledge on (PyViz) Panel in order to build awesome analytics apps in Python
+[<img src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/panel-logo.png?raw=true" align="right" height="75" width="75">](https://panel.pyviz.org/)
+
+> A high-level app and dashboarding solution for **Python**!
+
+A repository for sharing knowledge on the use of [Panel](https://panel.pyviz.org/) for developing **awesome analytics apps** in Python.
+
+Panel is part of the [HoloViz](https://holoviz.org/) maintained libraries and the effort to make browser-based data visualization in Python easier to use, easier to learn, and more powerful.
+
+[<img class="pvlogo" src="https://holoviz.org/assets/panel.png" height="75">](https://panel.pyviz.org)
+[<img class="pvlogo" src="https://holoviz.org/assets/hvplot.png" height="75">](https://hvplot.pyviz.org)
+[<img class="pvlogo" src="https://holoviz.org/assets/holoviews.png" height="75">](https://holoviews.org)
+[<img class="pvlogo" src="https://holoviz.org/assets/geoviews.png" height="75">](http://geoviews.org)
+[<img class="pvlogo" src="https://holoviz.org/assets/datashader.png" height="75">](http://datashader.org)
+[<img class="pvlogo" src="https://holoviz.org/assets/param.png" height="75">](https://param.pyviz.org)
+[<img class="pvlogo" src="https://holoviz.org/assets/colorcet.png" height="75">](https://colorcet.pyviz.org)
+
+Holoviz is sponsored by
+
+<a class="reference external image-reference" href="http://www.anaconda.com"><img alt="Anaconda website" src="https://www.anaconda.com/wp-content/uploads/2018/06/cropped-Anaconda_horizontal_RGB-1-600x102.png" style="height: 60px;"></a>
+<a class="reference external image-reference" href="http://www.quansight.com"><img alt="Quansight website" src="https://static.wixstatic.com/media/095d2c_2508c560e87d436ea00357abc404cf1d~mv2.png/v1/crop/x_0,y_9,w_915,h_329/fill/w_191,h_65,al_c,q_80,usm_0.66_1.00_0.01/095d2c_2508c560e87d436ea00357abc404cf1d~mv2.webp" style="height: 60px;"></a>
+<a class="reference external image-reference" href="https://numfocus.org"><img alt="NumFOCUS website" src="https://numfocus.org/wp-content/uploads/2018/01/optNumFocus_LRG.png" style="height: 60px;"></a>
+
+This project provides
+
+- A curated [list](https://github.com/MarcSkovMadsen/awesome-panel#awesome-resources) of Awesome Panel **resources**. See below.
+- An [**awesome Panel application**](https://awesome-panel.org) with a **gallery** of Awesome Panel Apps.
+    - Feel free to add your awesome app to the gallery via a [Pull request](https://github.com/MarcSkovMadsen/awesome-panel/pulls). It's easy (see below).
+- A **best practices** example and **starter template** of an awesome, multipage app with an automated CI/ CD pipeline, deployed to the cloud and running in a Docker container.
+
+Visit the app at [awesome-panel.org](https://awesome-panel.org)!
+
+![Awesome Panel Org Animation](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/awesome-panel-full-branded.gif?raw=true)
+
+## The Power of Panel
+
+The only way to truly understand how powerfull Panel is to play around with it. But if you need to be convinced first, then here is the **30 minute introduction** to Panel!
+
+Afterwards you can go to the [Panel Getting Started Guide](http://panel.pyviz.org/getting_started/index.html) or visit the [Panel Gallery](http://panel.pyviz.org/gallery/index.html).
+
+[![Introduction to Panel](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/youtube-introduction-to-panel.png?raw=true)](https://www.youtube.com/watch?v=L91rd1D6XTA&t=1133s "Introduction to panel")
 
 ## Governance
 
@@ -121,16 +160,16 @@ invoke docker.run-server
 
 If you don't wan't to clone the repo and build the docker container you can just use `docker run` to run the image from [Dockerhub](https://cloud.docker.com/u/marcskovmadsen/repository/docker/marcskovmadsen/awesome-panel)
 
+To run the panel interactively on port 80
+
+```bash
+docker run -it -p 80:80 marcskovmadsen/awesome-panel:latest
+```
+
 To run bash interactively
 
 ```bash
 docker run -it -p 80:80 --entrypoint "/bin/bash" marcskovmadsen/awesome-panel:latest
-```
-
-To run the panel interactively on port 80
-
-```bash
-docker run -it -p 80:80 --entrypoint "panel" marcskovmadsen/awesome-panel:latest run app.py
 ```
 
 ### Code quality and Tests
@@ -168,7 +207,7 @@ Available tasks:
   docker.run-server-with-ping             Run the docker image with Panel server and
   docker.system-prune                     The docker system prune command will free up space
   jupyter.notebook                        Run jupyter notebook
-  package.build                           Builds the awesome-streamlit package)
+  package.build                           Builds the awesome-panel package)
   panel.bootstrap-dashboard               Starts the Panel Server and serves the Bootstrap Dashboard App
   sphinx.build                            Build local version of site and open in a browser
   sphinx.copy-from-project-root           We need to copy files like README.md into docs/_copy_of_project_root

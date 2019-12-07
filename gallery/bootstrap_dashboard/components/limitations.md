@@ -68,7 +68,7 @@ It's difficult to use a framework like Bootstrap together with Panel which build
     - For example the Bootstrap sidebar automatically adjusts it's width if I change the window size but the Bokeh Buttons do not respond to this change.
 - It's difficult to wrap Panel Panes and Widgets into Bootstrap components like cards as "component templating" is not supported. See [Issue 810](https://github.com/holoviz/panel/issues/810)
 
-## Custom CSS does not play nicely with Bokeh HTML, CSS and Javascipt
+## Custom CSS does not play nicely with Bokeh HTML, CSS and Javascript
 
 I've experienced numerous problems when using css.
 
@@ -82,13 +82,15 @@ But I also struggle with it on this Limitations page. It's like the big image ju
 
 ## Font Awesome Icons Cannot Easily be Used
 
-Icons like fontawesome icons are not supporteded in Buttons.
+Icons like fontawesome icons are not supported in Buttons.
 
 I needed Buttons with Icons for my navigation which cannot use the Bootstrap `<a class="nav-link" href="#">`.
 
 I cannot navigate in my single page app using urls. That is not supported
 
 I could develop a multi page app that Panel serves via urls. But then I would loose my application state when navigating between pages.
+
+BUT. I FOUND A WAY TO IMPLEMENT IT MY SELF.
 
 ## There is no Browser URL widget
 
