@@ -102,7 +102,6 @@ class WarningAlert(pn.pane.Markdown):
                 kwargs["css_classes"].append("alert-warning")
         else:
             kwargs["css_classes"] = ["alert", "alert-warning"]
-        print(kwargs)
         super().__init__(text, **kwargs)
 
     raw_css = """
