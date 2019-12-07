@@ -4,3 +4,4 @@
 # ------------------------------------------------------------------------------
 rope # for refactoring in VS Code
 ptvsd # Python Tools for Visual Studio debug server. See https://github.com/microsoft/ptvsd
+jupyter
