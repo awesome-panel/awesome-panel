@@ -7,6 +7,9 @@ img {
     /* we wan't no overflow. Will make it easier to include images in markdown */
     max-width: 100%;
 }
+table {
+    width: 95%;
+}
 
 .bk.header{
     color: white;

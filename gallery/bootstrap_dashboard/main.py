@@ -17,7 +17,7 @@ import panel as pn
 LIMITATIONS_PATH = pathlib.Path(__file__).parent / "limitations.md"
 PAGES = [
     components.About(),
-    components.Dashboard().view(),
+    components.dashboard_view(),
     components.plotly_view(),
     components.holoviews_view(),
     components.dataframe_view(),

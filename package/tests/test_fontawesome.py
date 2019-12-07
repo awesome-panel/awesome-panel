@@ -68,7 +68,8 @@ def test_get_fontawesome_panel_express_css():
     [
         (
             r'.fa-bus:before{content:"\f207"}.fa-bus-alt:before{content:"\f55e"}',
-            'div.bk.pa-bus div.bk *::before{content:"\\f207"}\ndiv.bk.pa-bus-alt div.bk *::before{content:"\\f55e"}',
+            'div.bk.pa-bus div.bk *::before{content:"\\f207"}\ndiv.bk.pa-bus-alt div.bk *::before'
+            '{content:"\\f55e"}',
         ),
     ],
 )

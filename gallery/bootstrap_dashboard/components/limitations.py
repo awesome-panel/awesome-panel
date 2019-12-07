@@ -1,3 +1,7 @@
+"""## Limitations Page Functionality
+
+The Limitations Page tells what limitations i've seen when building the BootStrap Dashboard App
+"""
 import pathlib
 
 import awesome_panel.express as pnx

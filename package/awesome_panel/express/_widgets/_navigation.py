@@ -17,8 +17,8 @@ class NavigationButton(pn.widgets.Button):
         """## Navigation Button to navigate between pages
 
         Arguments:
-            page {Union[pn.layout.Panel, pn.pane.Pane, pn.pane.Widget]} -- A page to navigate to when the button is
-            clicked
+            page {Union[pn.layout.Panel, pn.pane.Pane, pn.pane.Widget]} -- A page to navigate to
+            when the button is clicked
             page_outlet {pn.layout.ListPanel} -- The ListPanel to update when the user navigates to
             a new page
         """
