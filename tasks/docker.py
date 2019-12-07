@@ -68,14 +68,14 @@ class Image:
 IMAGES = {
     "base": Image(
         docker_file="devops/docker/Dockerfile.base",
-        name="awesome-streamlit_base",
+        name="awesome-panel_base",
         context=".",
         dependencies=[],
         registry=DOCKER_REGISTRY,
     ),
     "prod": Image(
         docker_file="devops/docker/Dockerfile.prod",
-        name="awesome-streamlit",
+        name="awesome-panel",
         context=".",
         dependencies=["base"],
         registry=DOCKER_REGISTRY,
@@ -91,7 +91,7 @@ def build(c, image="prod", tag="latest", rebuild=False):
         c {[type]} -- Invoke command
 
     Keyword Arguments:backend
-        image {str} -- Image name: awesome-streamlit (default: {"prod"})
+        image {str} -- Image name: awesome-panel (default: {"prod"})
         tag {str} -- Image tag.
             If tag != "latest" then the image will be tagged with both tag and 'latest'
             (default: {"latest"})
@@ -115,14 +115,14 @@ def build(c, image="prod", tag="latest", rebuild=False):
 
 
 @task
-def run(c, image="awesome-streamlit", tag="latest"):  # pylint: disable=unused-argument
+def run(c, image="awesome-panel", tag="latest"):  # pylint: disable=unused-argument
     """Run the Docker container bash terminal interactively.
 
     Arguments:
         c {[type]} -- Invoke command object
 
     Keyword Arguments:
-        image {[type]} -- awesome-streamlit (default: {"prod"})
+        image {[type]} -- awesome-panel (default: {"prod"})
         tag {str} -- Name of tag (default: {"latest"})
     """
 
@@ -134,22 +134,21 @@ Running the '{image}:{tag}' Docker image
 """
     )
     command = (
-        f'docker run -it -p 80:80 --entrypoint "/bin/bash" '
-        f"{DOCKER_REGISTRY}/{image}:{tag} "
+        f'docker run -it -p 80:80 --entrypoint "/bin/bash" ' f"{DOCKER_REGISTRY}/{image}:{tag} "
     )
     print(command)
     subprocess.run(command, check=True)
 
 
 @task
-def push(c, image="awesome-streamlit", tag="latest"):
+def push(c, image="awesome-panel", tag="latest"):
     """Push the Docker container
 
     Arguments:
         c {[type]} -- Invoke command object
 
     Keyword Arguments:
-        image {[type]} -- awesome-streamlit (default: {"awesome-streamlit"})
+        image {[type]} -- awesome-panel (default: {"awesome-panel"})
         tag {str} -- Name of tag (default: {"latest"})
     """
     command = f"docker push {DOCKER_REGISTRY}/{image}:{tag}"
@@ -158,18 +157,18 @@ def push(c, image="awesome-streamlit", tag="latest"):
 
 @task
 def run_server(c):  # pylint: disable=unused-argument
-    """Run the Docker image with the Streamlit server.
+    """Run the Docker image with the Panel server.
 
     Arguments:
         c {[type]} -- Invoke command object
 
     Keyword Arguments:
-        image {[type]} -- awesome-streamlit (default: {"prod"})
+        image {[type]} -- awesome-panel (default: {"prod"})
         tag {str} -- Name of tag (default: {"latest"})
     """
 
     # Invoke cannot run interactive
-    image = "awesome-streamlit"
+    image = "awesome-panel"
     tag = "latest"
     print(
         f"""
@@ -178,7 +177,7 @@ Running the '{image}:{tag}' Docker image
 """
     )
     command = (
-        'docker run -it -p 80:80 --entrypoint "streamlit" '
+        'docker run -it -p 80:80 --entrypoint "panel" '
         f"{DOCKER_REGISTRY}/{image}:{tag} "
         "run app.py"
     )
@@ -189,20 +188,20 @@ Running the '{image}:{tag}' Docker image
 
 @task
 def run_server_with_ping(c):  # pylint: disable=unused-argument
-    """Run the docker image with Streamlit server and
-    a ping to awesome-streamlit.org every 5 minutes
+    """Run the docker image with Panel server and
+    a ping to awesome-panel.org every 5 minutes
     to keep it alive
 
     Arguments:
         c {[type]} -- Invoke command object
 
     Keyword Arguments:
-        image {[type]} -- awesome-streamlit (default: {"prod"})
+        image {[type]} -- awesome-panel (default: {"prod"})
         tag {str} -- Name of tag (default: {"latest"})
     """
 
     # Invoke cannot run interactive
-    image = "awesome-streamlit"
+    image = "awesome-panel"
     tag = "latest"
     print(
         f"""
@@ -213,7 +212,7 @@ Running the '{image}:{tag}' Docker image
     command = (
         'docker run -it -p 80:80 --entrypoint "/bin/bash" '
         f"{DOCKER_REGISTRY}/{image}:{tag} "
-        "./scripts/run_awesome_streamlit_with_ping.sh"
+        "./scripts/run_awesome_panel_with_ping.sh"
     )
 
     print(command)

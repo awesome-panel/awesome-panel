@@ -1,4 +1,4 @@
-import panel as pn
+from gallery.bootstrap_dashboard.main import main as bootstrap_dashboard_app
 
-app = pn.panel.Markdown("Awesome Panel")
-app.servable
+bootstrap_dashboard_app().servable()
+

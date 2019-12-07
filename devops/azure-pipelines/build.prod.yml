@@ -1,0 +1,48 @@
+# specific path build
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    exclude:
+    - devops/azure-pipelines/build.base.yml
+    - devops/docker/Dockerfile.base
+    - requirements.txt
+
+pool:
+  vmImage: 'Ubuntu-16.04'
+variables:
+  dockerFile: 'devops/docker/Dockerfile.prod'
+  dockerRegistry: 'dockerhub-awesome-panel'
+  imageName: 'marcskovmadsen/awesome-panel'
+  buildContext: .
+
+steps:
+- task: Docker@2
+  displayName: Login to Docker Hub
+  inputs:
+    command: login
+    containerRegistry: $(dockerRegistry)
+- task: Docker@0
+  displayName: 'Build an image'
+  inputs:
+    dockerFile: $(dockerFile)
+    imageName: '$(imageName):$(Build.BuildId)'
+    defaultContext: False
+    context: $(buildContext)
+    includeLatestTag: true
+- task: Docker@2
+  displayName: Push image
+  inputs:
+    containerRegistry: |
+      $(dockerRegistry)
+    repository: $(imageName)
+    command: push
+    tags: |
+      $(Build.BuildId)
+      latest
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: Dockerfile'
+  inputs:
+    PathtoPublish: $(dockerFile)
+    ArtifactName: $(imageName)

@@ -10,7 +10,7 @@ import panel as pn
 importlib.reload(pnx)
 
 
-@pytest.mark.fixture
+@pytest.fixture
 def chrome_driver() -> webdriver.Chrome:
     r"""The Chrome Web Driver Configured for Download
 
