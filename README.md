@@ -1,6 +1,6 @@
 # Awesome Panel [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/MarcSkovMadsen/awesome-panel)
 
-[<img src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/panel-logo.png?raw=true" align="right" width="150">](https://panel.pyviz.org/)
+[<img src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/panel-logo.png?raw=true" align="right" height="75">](https://panel.pyviz.org/)
 
 > A powerfull, high-level app and dashboarding solution for **Python**!
 
