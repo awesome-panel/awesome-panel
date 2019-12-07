@@ -179,7 +179,7 @@ Running the '{image}:{tag}' Docker image
     command = (
         'docker run -it -p 80:80 --entrypoint "panel" '
         f"{DOCKER_REGISTRY}/{image}:{tag} "
-        "serve app.py --port 80"
+        "serve app.py --address 0.0.0.0 --port 80"
     )
 
     print(command)
