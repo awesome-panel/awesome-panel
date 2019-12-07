@@ -10,7 +10,7 @@ RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
 # should correspond to the exposed port
 EXPOSE 80
 
-RUN invoke sphinx.copy-from-project-root
+# RUN invoke sphinx.copy-from-project-root
 WORKDIR /app
 
 ENTRYPOINT [ "/bin/bash", "panel", "serve", "app.py", "--port", "80"]
