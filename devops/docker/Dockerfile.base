@@ -16,7 +16,7 @@ ADD requirements_base.txt ./requirements_base.txt
 RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements_base.txt \
     && rm -rf requirements_base.txt
 
-ARG bokeh_allow_ws_origin=192.168.99.100,https://awesome-panel.azurewebsites.net/,https://awesome-panel.org
+ARG bokeh_allow_ws_origin=192.168.99.100,awesome-panel.azurewebsites.net,52.233.133.121,52.232.38.244,52.233.185.35,52.166.75.172,13.81.1.156,52.136.254.253,51.144.165.65
 ENV BOKEH_ALLOW_WS_ORIGIN=$bokeh_allow_ws_origin
 
 ENTRYPOINT [ "/bin/bash" ]
