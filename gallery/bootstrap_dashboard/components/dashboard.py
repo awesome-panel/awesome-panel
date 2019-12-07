@@ -3,8 +3,8 @@ import plotly.express as px
 
 import awesome_panel.express as pnx
 import panel as pn
-from gallery.bootstrap_dashboard.components.core import holoviews_chart
 from gallery.bootstrap_dashboard import services
+from gallery.bootstrap_dashboard.components.core import holoviews_chart
 
 
 class Dashboard:

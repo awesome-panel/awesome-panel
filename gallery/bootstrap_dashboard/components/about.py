@@ -1,10 +1,21 @@
+"""## About Page
+
+The About Page tells why we build the BootStrap Dashboard App.
+
+The content is from the markdown file located at ABOUT_PATH combined with an image from IMAGE_URL.
+"""
 import pathlib
 
 import awesome_panel.express as pnx
 import panel as pn
 
 ABOUT_PATH = pathlib.Path(__file__).parent / "about.md"
-IMAGE_URL = "https://getbootstrap.com/docs/4.4/assets/img/examples/dashboard.png"
+IMAGE_PATH = (
+    pathlib.Path(__file__).parent.parent
+    / "assets"
+    / "images"
+    / "bootstrap_dashboard_template_original.png"
+)
 
 
 class About(pn.Column):
@@ -12,7 +23,7 @@ class About(pn.Column):
 
     def __init__(self):
         about = pnx.Markdown(path=ABOUT_PATH)
-        image = pn.pane.PNG(IMAGE_URL)
+        image = pn.pane.PNG(str(IMAGE_PATH), max_width=600, sizing_mode="scale_both")
         info = pnx.InfoAlert(
             """\
 Navigate to the **Dashboard Page** via the **Sidebar** to see the result.

@@ -1,4 +1,13 @@
-"""Main BootstrapDashboard widget"""
+"""# BootstrapDashboard App.
+
+Creates a Bootstrap Dashboard App
+
+- inspired by the [GetBoostrap Dashboard Template]
+(https://getbootstrap.com/docs/4.4/examples/dashboard/)
+- implemented using the `awesome_panel' python package and in particular the
+`awesome_panel.express.templates.BootstrapDashboardTemplate`
+- Start the app by using `panel serve` on this file.
+"""
 import pathlib
 
 import awesome_panel.express as pnx
@@ -25,6 +34,18 @@ MENU_BUTTON_CSS_CLASSES = [
 
 
 def main() -> pn.Pane:
+    """## Bootstrap Dashboard App
+
+    Creates a Bootstrap Dashboard App
+
+    - inspired by the [GetBoostrap Dashboard Template]
+    (https://getbootstrap.com/docs/4.4/examples/dashboard/)
+    - implemented using the `awesome_panel' python package and in particular the
+    `awesome_panel.express.templates.BootstrapDashboardTemplate`
+
+    Returns:
+        pn.Pane -- The Bootstrap Dashboard App
+    """
     pnx.fontawesome.extend()
 
     app = pnx.templates.BootstrapDashboardTemplate(app_title="Bootstrap Dashboard")

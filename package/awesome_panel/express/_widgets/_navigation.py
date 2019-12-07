@@ -1,24 +1,23 @@
 """This module contains a navigation menu to be used to select between different pages"""
 from typing import List, Optional, Union
 
-import param
-
 import awesome_panel.express as pnx
 import panel as pn
 
 
 class NavigationButton(pn.widgets.Button):
+    """## Navigation_Button"""
+
     def __init__(
         self,
-        page: Union[pn.layout.Panel, pn.pane.Pane],
+        page: Union[pn.layout.Panel, pn.pane.Pane, pn.widgets.Widget],
         page_outlet: pn.layout.ListPanel,
-        *args,
         **kwargs,
     ):
         """## Navigation Button to navigate between pages
 
         Arguments:
-            page {Union[pn.layout.Panel, pn.pane.Pane]} -- A page to navigate to when the button is
+            page {Union[pn.layout.Panel, pn.pane.Pane, pn.pane.Widget]} -- A page to navigate to when the button is
             clicked
             page_outlet {pn.layout.ListPanel} -- The ListPanel to update when the user navigates to
             a new page
@@ -29,7 +28,7 @@ class NavigationButton(pn.widgets.Button):
             else:
                 kwargs["name"] = page.name
 
-        super().__init__(*args, **kwargs)
+        super().__init__(**kwargs)
 
         def navigate_to_page(event):  # pylint: disable=unused-argument
             page_outlet.clear()
