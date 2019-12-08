@@ -33,7 +33,37 @@ The only way to truly understand how powerfull Panel is to play around with it. 
 
 Afterwards you can go to the [Panel Getting Started Guide](http://panel.pyviz.org/getting_started/index.html) or visit the [Panel Gallery](http://panel.pyviz.org/gallery/index.html).
 
-[![Introduction to Panel](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/youtube-introduction-to-panel.png?raw=true)](https://www.youtube.com/watch?v=L91rd1D6XTA&t=1133s "Introduction to panel")
+[![Introduction to Panel](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/youtube-introduction-to-panel.png?raw=true)](https://www.youtube.com/watch?v=L91rd1D6XTA&t=1133s "Introduction to panel")
+
+## Awesome Resources
+
+A curated list of awesome panel resources. Inspired by [awesome-python](https://github.com/vinta/awesome-python) and [awesome-pandas](https://github.com/tommyod/awesome-pandas).
+
+## Contribute
+
+GitHub [Issues](https://github.com/MarcSkovMadsen/awesome-panel/issues) and [Pull requests](https://github.com/MarcSkovMadsen/awesome-panel/pulls) are very welcome!
+
+If you believe Awesome Panel is awesome and would like to join as a Core Developer feel free to reach out via [datamodelsanalytics.com](https://datamodelsanalytics.com)
+
+### How to contribute to the Panel Community
+
+Please join the community in the [PyViz/PyvViz](https://gitter.im/pyviz/pyviz?source=orgpage) channel on Gitter. There as a [feature request](https://github.com/holoviz/panel/issues/831) for a Discuss site.
+
+### How to contribute to the Panel Package and WebSite
+
+You can contribute to the Panel package on [GitHub/pyviz/panel](https://github.com/holoviz/panel) or sponsor it by contacting [sales@anaconda.com](mailto:sales%40anaconda.com). For more information see the official [About Panel](https://panel.pyviz.org/about.html) page.
+
+### How to sponsor the Awesome Panel project
+
+If you would like to sponsor my time or the infrastructure the platform is running on, feel free to reach out. You can find my contact details at [datamodelsanalytics.com](https://datamodelsanalytics.com).
+
+You can also appreciate the work I have already done if you
+
+[![Buy me a coffee](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/buymeacoffee.png?raw=true)](https://www.buymeacoffee.com/4jlTzBJyQ)
+
+Thanks
+
+Marc
 
 ## Governance
 
@@ -51,7 +81,7 @@ Thanks
 
 ### LICENSE
 
-Apache 2.0 License
+[Apache 2.0 License]([Attribution-ShareAlike 4.0 International](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/license.md))
 
 ## Getting Started with the Awesome Panel Repository
 
@@ -59,12 +89,12 @@ Apache 2.0 License
 
 - An Operating System like Windows, OsX or Linux
 - A working [Python](https://www.python.org/) installation.
-  - We recommend using 64bit Python 3.7.4.
+    - We recommend using 64bit Python 3.7.4.
 - a Shell
-  - We recommend [Git Bash](https://git-scm.com/downloads) for Windows 8.1
-  - We recommend [wsl](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) for For Windows 10
+    - We recommend [Git Bash](https://git-scm.com/downloads) for Windows 8.1
+    - We recommend [wsl](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) for For Windows 10
 - an Editor
-  - We recommend [VS Code](https://code.visualstudio.com/) (Preferred) or [PyCharm](https://www.jetbrains.com/pycharm/).
+    - We recommend [VS Code](https://code.visualstudio.com/) (Preferred) or [PyCharm](https://www.jetbrains.com/pycharm/).
 - The [Git cli](https://git-scm.com/downloads)
 
 ### Installation
@@ -111,7 +141,7 @@ In a Windows terminal it's
 .venv/Scripts/activate.bat
 ```
 
-##### or via anaconda
+##### or via Anaconda
 
 Create virtual environment named awesome-panel
 
@@ -216,6 +246,27 @@ Available tasks:
   test.pylint                             Runs pylint (linter) on all .py files recursively to identify coding errors
   test.pytest                             Runs pytest to identify failing tests
 ```
+
+### CI/ CD and Hosting
+
+The application is
+
+- build as a Docker image and tested via Azure Pipelines builds
+    - You find the Dockerfiles [here](https://github.com/MarcSkovMadsen/awesome-panel/tree/master/devops/docker) and the Azure pipelines yml files [here](https://github.com/MarcSkovMadsen/awesome-panel/tree/master/devops/azure-pipelines)
+
+![Azure Pipelines](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/azure-pipeline.png?raw=true)
+
+- pushed to the Dockerhub repository [marcskovmadsen/awesome-panel](https://cloud.docker.com/u/marcskovmadsen/repository/docker/marcskovmadsen/awesome-panel).
+
+![Dockerhub](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/dockerhub.png?raw=true)
+
+- released via Azure Pipelines
+
+![Azure Pipelines](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/azure-pipeline-release.png?raw=true)
+
+- to a web app for containers service on Azure on the cheapest non-free pricing tier
+
+![Azure Pipelines](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/azure-pricing-tier.png?raw=true)
 
 ### Project Layout
 
