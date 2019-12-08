@@ -6,16 +6,6 @@
 
 A repository for sharing knowledge on the use of [Panel](https://panel.pyviz.org/) for developing **awesome analytics apps** in Python.
 
-Panel is part of the [HoloViz](https://holoviz.org/) maintained libraries and the effort to make browser-based data visualization in Python easier to use, easier to learn, and more powerful.
-
-[<img class="pvlogo" src="https://holoviz.org/assets/panel.png" height="75">](https://panel.pyviz.org)
-[<img class="pvlogo" src="https://holoviz.org/assets/hvplot.png" height="75">](https://hvplot.pyviz.org)
-[<img class="pvlogo" src="https://holoviz.org/assets/holoviews.png" height="75">](https://holoviews.org)
-[<img class="pvlogo" src="https://holoviz.org/assets/geoviews.png" height="75">](http://geoviews.org)
-[<img class="pvlogo" src="https://holoviz.org/assets/datashader.png" height="75">](http://datashader.org)
-[<img class="pvlogo" src="https://holoviz.org/assets/param.png" height="75">](https://param.pyviz.org)
-[<img class="pvlogo" src="https://holoviz.org/assets/colorcet.png" height="75">](https://colorcet.pyviz.org)
-
 This project provides
 
 - A curated [list](https://github.com/MarcSkovMadsen/awesome-panel#awesome-resources) of Awesome Panel **resources**. See below.
@@ -25,7 +15,7 @@ This project provides
 
 Visit the app at [awesome-panel.org](https://awesome-panel.org)!
 
-![Awesome Panel Org Animation](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/awesome-panel-full-branded.gif?raw=true)
+[![Awesome Panel Org Animation](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/awesome-panel-full-branded.gif?raw=true)](https://awesome-panel.org)
 
 ## The Power of Panel
 
@@ -34,6 +24,16 @@ The only way to truly understand how powerfull Panel is to play around with it. 
 Afterwards you can go to the [Panel Getting Started Guide](http://panel.pyviz.org/getting_started/index.html) or visit the [Panel Gallery](http://panel.pyviz.org/gallery/index.html).
 
 [![Introduction to Panel](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/youtube-introduction-to-panel.png?raw=true)](https://www.youtube.com/watch?v=L91rd1D6XTA&t=1133s "Introduction to panel")
+
+Panel is part of the [HoloViz](https://holoviz.org/) maintained libraries and the effort to make browser-based data visualization in Python easier to use, easier to learn, and more powerful.
+
+[<img class="pvlogo" src="https://holoviz.org/assets/panel.png" height="75">](https://panel.pyviz.org)
+[<img class="pvlogo" src="https://holoviz.org/assets/hvplot.png" height="75">](https://hvplot.pyviz.org)
+[<img class="pvlogo" src="https://holoviz.org/assets/holoviews.png" height="75">](https://holoviews.org)
+[<img class="pvlogo" src="https://holoviz.org/assets/geoviews.png" height="75">](http://geoviews.org)
+[<img class="pvlogo" src="https://holoviz.org/assets/datashader.png" height="75">](http://datashader.org)
+[<img class="pvlogo" src="https://holoviz.org/assets/param.png" height="75">](https://param.pyviz.org)
+[<img class="pvlogo" src="https://holoviz.org/assets/colorcet.png" height="75">](https://colorcet.pyviz.org)
 
 ## Awesome Resources
 
@@ -47,15 +47,15 @@ If you believe Awesome Panel is awesome and would like to join as a Core Develop
 
 ### How to contribute to the Panel Community
 
-Please join the community in the [PyViz/PyvViz](https://gitter.im/pyviz/pyviz?source=orgpage) channel on Gitter. There as a [feature request](https://github.com/holoviz/panel/issues/831) for a Discuss site.
+Please join the community in the [PyViz/PyvViz](https://gitter.im/pyviz/pyviz?source=orgpage) channel on Gitter. There as a [feature request](https://github.com/holoviz/panel/issues/831) for a Discuss site to replace Gitter.
 
-### How to contribute to the Panel Package and WebSite
+### How to contribute to the Panel Package and Web Site
 
-You can contribute to the Panel package on [GitHub/pyviz/panel](https://github.com/holoviz/panel) or sponsor it by contacting [sales@anaconda.com](mailto:sales%40anaconda.com). For more information see the official [About Panel](https://panel.pyviz.org/about.html) page.
+You can contribute to the Panel package on [GitHub/pyviz/panel](https://github.com/holoviz/panel) or sponsor it by contacting [sales@anaconda.com](mailto:sales%40anaconda.com). For more information see the [Official About Panel](https://panel.pyviz.org/about.html) page.
 
 ### How to sponsor the Awesome Panel project
 
-If you would like to sponsor my time or the infrastructure the platform is running on, feel free to reach out. You can find my contact details at [datamodelsanalytics.com](https://datamodelsanalytics.com).
+If you would like to **sponsor my time or the infrastructure** the platform is running on, feel free to reach out. You can find my contact details at [datamodelsanalytics.com](https://datamodelsanalytics.com).
 
 You can also appreciate the work I have already done if you
 
@@ -81,7 +81,7 @@ Thanks
 
 ### LICENSE
 
-[Apache 2.0 License]([Attribution-ShareAlike 4.0 International](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/license.md))
+[Apache 2.0 License]([Attribution-ShareAlike 4.0 International](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/license.md)
 
 ## Getting Started with the Awesome Panel Repository
 
