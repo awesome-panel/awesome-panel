@@ -7,7 +7,7 @@ This package is currently **highly experimental** and
 - The **api might change** dramatically and often!
     - If the Panel package starts providing the functionality, then it should be removed from this package.
 - If you find a version that works for you, then please **pin the version number**!
-    - An example of pinning the version number is `awesome-panel==20191014.2`.
+    - An example of pinning the version number is `awesome-panel==20191208.2`.
 
 You can install it using
 
@@ -18,10 +18,12 @@ pip install awesome-panel
 The **express** module contains improved widgets and extensions like *fontawesome* and *bootstrap* as well as the *Bootstrap Dashboard Template* used by [awesome-panel.org](https://awesome-panel.org). It should be imported as `pnx`.
 
 ```python
-import awesome_panel.experiments as pnx
+import awesome_panel.express as pnx
 ```
 
 For example the code below is used to configure the Bootstrap Dashboard App in the Gallery at awesome-panel.org.
+
+[![Awesome Panel Org Animation](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/awesome-panel-full-branded.gif?raw=true)](https://awesome-panel.org)
 
 ```python
 """# BootstrapDashboard App.
