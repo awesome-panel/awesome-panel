@@ -25,7 +25,7 @@ Afterwards you can go to the [Panel Getting Started Guide](http://panel.pyviz.or
 
 [![Introduction to Panel](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/youtube-introduction-to-panel.png?raw=true)](https://www.youtube.com/watch?v=L91rd1D6XTA&t=1133s "Introduction to panel")
 
-Panel is part of the [HoloViz](https://holoviz.org/) maintained libraries and the effort to make browser-based data visualization in Python easier to use, easier to learn, and more powerful.
+Panel is completely open source, available under a BSD license freely for both commercial and non-commercial use. Panel is part of the [HoloViz](https://holoviz.org/) ecosystem and works well with all the HoloViz tools..
 
 [<img class="pvlogo" src="https://holoviz.org/assets/panel.png" height="75">](https://panel.pyviz.org)
 [<img class="pvlogo" src="https://holoviz.org/assets/hvplot.png" height="75">](https://hvplot.pyviz.org)
@@ -34,6 +34,10 @@ Panel is part of the [HoloViz](https://holoviz.org/) maintained libraries and th
 [<img class="pvlogo" src="https://holoviz.org/assets/datashader.png" height="75">](http://datashader.org)
 [<img class="pvlogo" src="https://holoviz.org/assets/param.png" height="75">](https://param.pyviz.org)
 [<img class="pvlogo" src="https://holoviz.org/assets/colorcet.png" height="75">](https://colorcet.pyviz.org)
+
+Panel is developed and maintained by [Anaconda](https://www.anaconda.com/) developers and community contributors
+
+![Anaconda](ttps://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/anaconda-logo.png?raw=true)
 
 ## Awesome Resources
 
