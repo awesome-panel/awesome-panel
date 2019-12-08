@@ -281,14 +281,14 @@ As our application grows we would refactor our app.py file into multiple folders
 
 - *assets* here we keep our css and images assets.
 - *models* - Defines the layout of our data in the form of
-  - Classes: Name, attribute names, types
-  - DataFrame Schemas: column and index names, dtypes
-  - SQLAlchemy Tables: columns names, types
+    - Classes: Name, attribute names, types
+    - DataFrame Schemas: column and index names, dtypes
+    - SQLAlchemy Tables: columns names, types
 - *pages* - Defines the different pages of the Panel app
 - *services* - Organizes and shares business logic, models, data and functions with different pages of the Panel App.
-  - Database interactions: Select, Insert, Update, Delete
-  - REST API interactions, get, post, put, delete
-  - Pandas transformations
+    - Database interactions: Select, Insert, Update, Delete
+    - REST API interactions, get, post, put, delete
+    - Pandas transformations
 
 and end up with a project structure like
 
