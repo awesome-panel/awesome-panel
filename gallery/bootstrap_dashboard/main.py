@@ -8,13 +8,11 @@ Creates a Bootstrap Dashboard App
 `awesome_panel.express.templates.BootstrapDashboardTemplate`
 - Start the app by using `panel serve` on this file.
 """
-import pathlib
+import panel as pn
 
 import awesome_panel.express as pnx
 import gallery.bootstrap_dashboard.components as components
-import panel as pn
 
-LIMITATIONS_PATH = pathlib.Path(__file__).parent / "limitations.md"
 PAGES = [
     components.About(),
     components.dashboard_view(),

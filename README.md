@@ -200,6 +200,25 @@ To run bash interactively
 docker run -it -p 80:80 --entrypoint "/bin/bash" marcskovmadsen/awesome-panel:latest
 ```
 
+## Building and Deploy the Awesome Panel Package
+
+You can build the package using
+
+```bash
+cd package
+python setup.py sdist bdist_wheel
+```
+
+If you wan't to publish the package to PyPi you should first
+
+update the version number in the setup.py file. The format is `YYYYmmdd.version`. For example `20191208.1`
+
+Then you run
+
+```bash
+twine upload dist/awesome-panel-YYYYmmdd.version.tar.gz -u <the-pypi-username> -p <the-pypi-password>
+```
+
 ### Code quality and Tests
 
 We use
