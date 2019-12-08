@@ -1,18 +1,34 @@
-.. Awesome Panels documentation master file, created by
-   sphinx-quickstart on Thu Oct 17 07:32:50 2019.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+Welcome to Awesome Panel's documentation!
+=============================================
 
-Welcome to Awesome Panels documentation!
-============================================================
+This is the documentation of the **Awesome Panel Project** including the
 
-This is the documentation of the **Awesome Panel** project.
+- `Awesome Panel Resources List <https://github.com/marcskovmadsen/awesome-panel>`_ on GitHub
+- `Repo <https://github.com/marcskovmadsen/awesome-panel>`_ on GitHub
+- `App <https://awesome-panel.org>`_ at awesome-panel.org
+- `Docs <https://awesome-panel.readthedocs.io/en/latest/>`_ on Read The Docs
+- `Python Package <https://pypi.org/project/awesome-panel/>`_ on PyPi
+- `Docker Image <https://cloud.docker.com/u/marcskovmadsen/repository/docker/marcskovmadsen/awesome-panel>`_ on Docker Hub
 
 .. toctree::
    :maxdepth: 1
    :caption: Awesome Panel Docs!
 
-   _copy_of_project_root/README.md
+   Awesome Panel Resources list! <awesome-list.md>
+   Repo Introduction <_copy_of_project_root/README>
+
+.. toctree::
+   :maxdepth: 1
+   :caption: About the Project
+
+   How to Contribute <_copy_of_project_root/contributing>
+   How to Conduct as a Contributor <_copy_of_project_root/code-of-conduct>
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Tutorials
+
+   How to use VS Code with Panel <vscode.md>
 
 Indices and tables
 ==================
