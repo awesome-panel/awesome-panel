@@ -11,14 +11,14 @@ LIMITATIONS_PATH = pathlib.Path(__file__).parent / "limitations.md"
 
 
 class Limitations(pn.Column):
-    """The Limitations Page tells what limitations i've seen when building the BootStrap
+    """The Limitations Page tells what limitations I've seen when building the BootStrap
     Dashboard App"""
 
     def __init__(self):
         warning = pnx.WarningAlert(
             """\
-Please **resize this window** in order to see the full content. The Bokeh layout engine used by
-Paneldoes not identify the  page height correctly when showing markdown with images.
+You might need to **resize this window** in order to see the full content. The Bokeh layout engine
+used by Panel does not always identify the  page height correctly when showing markdown with images.
 It's a limitation of Panel :-)""",
         )
         limitations = pnx.Markdown(path=LIMITATIONS_PATH)

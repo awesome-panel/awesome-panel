@@ -9,8 +9,8 @@ See GitHub issues
 - Create Discuss Forum to foster community discussions and knowledge sharing on Panel. [Issue 831](https://github.com/holoviz/panel/issues/831)
 - Change search functionality at [https://panel.pyviz.org/](https://panel.pyviz.org/) to return Panel specific results. [Issue 832](https://github.com/holoviz/panel/issues/832)
 - Please add more structure, search, navigation and content to Panel Documentation. [Issue 833](https://github.com/holoviz/panel/issues/833)
-- Make Panel help text readable on Windows in Command Prompt and Git bash. [Issue 836](https://github.com/holoviz/panel/issues/836)
 - Please add the wonderfull help text to the docstrings to get context help in editor. [Issue 837](https://github.com/holoviz/panel/issues/837)
+- Make Panel help text readable on Windows in Command Prompt and Git bash. [Issue 836](https://github.com/holoviz/panel/issues/836)
 
 ## Markdown is not well supported
 
@@ -30,6 +30,7 @@ Please note that there is a bug wrt. Chrome making Panel/ Bokeh applications slo
 ## Plotly Plots are not well supported
 
 - Plotly is not yet responsive in Panel. See [Issue 822](https://github.com/holoviz/panel/issues/822)
+- Plotly plots loads a lot slower than HoloViews plots.
 
 ## Hot reload is slow and slows down development-test cycle
 
@@ -104,6 +105,8 @@ I would like to be able to keep the server app state in sync with the client app
 
 - If the user/ client navigates to a url my app state should be updated using the full url including parameters
 - If I change my app state the parameters of my state should be available in the browser url for bookmarking and sharing.
+
+BUT. I FOUND A WAY TO PARTIALLY IMPLEMENT IT MY SELF via Javascript.
 
 ## I Could not get independt scrollbars working
 
