@@ -38,25 +38,20 @@ class BootstrapDashboardTemplate(pn.Template):
         header = pn.Row(
             app_title,
             pn.layout.HSpacer(),
-            css_classes=["header"],
             sizing_mode="stretch_width",
             height=HEADER_HEIGHT,
         )
         top_spacer = pn.layout.HSpacer(height=15)
         self.sidebar = pn.Column(
-            top_spacer, css_classes=["sidebar"], height_policy="max", width=SIDEBAR_WIDTH
+            top_spacer, height_policy="max", width=SIDEBAR_WIDTH
         )
         self.main = pn.Column(
-            css_classes=["main"], sizing_mode="stretch_both", margin=(25, 50, 25, 50)
-        )
-
-        app = pn.Column(
-            header,
-            pn.Row(self.sidebar, self.main, css_classes=["mid"]),
-            sizing_mode="stretch_width",
+            sizing_mode="stretch_both", margin=(25, 50, 25, 50)
         )
 
         items = {
-            "app": app,
+            "header": header,
+            "sidebar": self.sidebar,
+            "main": self.main
         }
         super().__init__(template=template, items=items)

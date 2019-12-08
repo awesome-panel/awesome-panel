@@ -1,8 +1,3 @@
-body{
-    overflow-x: hidden;
-    overflow-y: scroll;
-    width: 100%;
-}
 img {
     /* we wan't no overflow. Will make it easier to include images in markdown */
     max-width: 100%;
@@ -11,18 +6,37 @@ table {
     width: 95%;
 }
 
-.bk.header{
-    color: white;
-    background-color: black;
-
-    position: -webkit-sticky; /* Safari */
-    position: sticky !important;
-    top: 0;
-
-    box-shadow: 5px 5px 20px grey;
-
-    z-index: 1000;
+#page {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  grid-template: [header-left] "head head" 60px [header-right]
+                 [main-left]   "nav  main" 1fr  [main-right] / 200px 1fr;
 }
+
+header {
+  grid-area: head;
+
+  color: white;
+  background-color: black;
+
+  box-shadow: 5px 5px 20px grey;
+
+  z-index: 1000;
+}
+
+nav {
+  grid-area: nav;
+  background-color: rgb(248, 249, 250);
+  border-right-color: rgb(230, 230, 230);
+  border-right-width: 0.1px;
+  border-right-style: solid;
+}
+
+main {
+  grid-area: main;
+}
+
 .bk.app-title a{
     color: white;
     background-color: black;
@@ -34,27 +48,6 @@ table {
 }
 .bk.app-title a:hover{
     color: white;
-}
-.bk.sidebar{
-    background-color: rgb(248, 249, 250);
-    border-right-color: rgb(230, 230, 230);
-    border-right-width: 0.1px;
-    border-right-style: solid;
-
-    height: 100vh !important;
-
-    position: -webkit-sticky; /* Safari */
-    position: sticky !important;
-    top: 58px !important;
-
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
-.bk.main{
-    background-color: white;
-    /* hack: Had to set overflow-x to hidden in order to not get scrollbar on About Page */
-    overflow-x: hidden;
-    overflow-y: hidden;
 }
 div.bk.navigation div.bk button {
     text-align: left !important;
