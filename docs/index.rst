@@ -15,7 +15,7 @@ This is the documentation of the **Awesome Panel Project** including the
    :caption: Awesome Panel Docs!
 
    Awesome Panel Resources list! <awesome-list.md>
-   Repo Introduction <_copy_of_project_root/README>
+   Repo readme <_copy_of_project_root/README>
 
 .. toctree::
    :maxdepth: 1
@@ -28,7 +28,6 @@ This is the documentation of the **Awesome Panel Project** including the
    :maxdepth: 1
    :caption: Tutorials
 
-   How to use VS Code with Panel <vscode.md>
 
 Indices and tables
 ==================

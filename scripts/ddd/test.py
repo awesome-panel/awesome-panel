@@ -28,6 +28,13 @@ Mads 31 Christian"""
 
 OUTPUT2 = 58
 
+INPUT3 = """\
+Mirko 6
+Mortin 3 Mirko
+"""
+
+OUTPUT3 = 9
+
 
 def test_create_from_line_leader():
     line = "Mirko 6"
@@ -103,7 +110,7 @@ def test_drunk_factor_three_subs():
 
 
 @pytest.mark.parametrize(
-    ["input", "expected"], [(INPUT0, OUTPUT0), (INPUT1, OUTPUT1), (INPUT2, OUTPUT2),]
+    ["input", "expected"], [(INPUT0, OUTPUT0), (INPUT1, OUTPUT1), (INPUT2, OUTPUT2),(INPUT3, OUTPUT3)]
 )
 def test_max_communication_time_tree_0(input, expected):
     persons = Person.create_from_lines(input)
@@ -142,4 +149,13 @@ def test_max_communication_time_tree_2():
 
     assert persons["Maria"].max_drunk_factor_tree == 31 + 6 + 5 + 10
     assert persons["Maria"].max_communication_time_tree == 21 + 6 + 31
+
+def test_max_communication_time_tree_3():
+    persons = Person.create_from_lines(INPUT3)
+
+    assert persons["Mortin"].max_drunk_factor_tree == 3
+    assert persons["Mortin"].max_communication_time_tree == 0
+
+    assert persons["Mirko"].max_drunk_factor_tree == 3+6
+    assert persons["Mirko"].max_communication_time_tree == 3+6
 

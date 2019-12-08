@@ -9,7 +9,7 @@ from invoke import task
 logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
 
 ROOT = pathlib.Path(__file__).parent.parent
-ROOT_FILES = ["README.md"]
+ROOT_FILES = ["README.md", "contributing.md", "code-of-conduct.md"]
 
 
 @task

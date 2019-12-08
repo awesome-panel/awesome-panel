@@ -37,7 +37,7 @@ Panel is completely open source, available under a BSD license freely for both c
 
 Panel is developed and maintained by [Anaconda](https://www.anaconda.com/) developers and community contributors
 
-![Anaconda](ttps://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/anaconda-logo.png?raw=true)
+![Anaconda](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/anaconda-logo.png?raw=true)
 
 ## Awesome Resources
 

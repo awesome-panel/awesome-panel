@@ -9,6 +9,8 @@ class Person:
         self.drunk_factor = drunk_factor
         self.leader_name = leader_name
         self.subs: List["Person"] = []
+        self._max_drunk_factor_tree = None
+        self._max_communication_time_tree = None
 
     @staticmethod
     def create_from_line(line: str) -> "Person":
@@ -29,19 +31,39 @@ class Person:
                 persons[person.leader_name].subs.append(person)
         return persons
 
+    @classmethod
+    def create_from_input(cls) -> Dict[str, "Person"]:
+        n = int(input())
+        lines = []
+        for _ in range(n):
+            lines.append(input())
+
+        return cls.create_from_lines("\n".join(lines))
+
     @property
     def max_drunk_factor_tree(self) -> int:
+        if self._max_drunk_factor_tree:
+            return self._max_drunk_factor_tree
+
         if not self.subs:
             return self.drunk_factor
 
-        return self.drunk_factor + max((person.max_drunk_factor_tree) for person in self.subs)
+        self._max_drunk_factor_tree = self.drunk_factor + max(
+            (person.max_drunk_factor_tree) for person in self.subs
+        )
+        return self._max_drunk_factor_tree
 
     @property
     def max_communication_time_tree(self) -> int:
+        if self._max_communication_time_tree:
+            return self._max_communication_time_tree
+
         if not self.subs:
             return 0
         if len(self.subs) == 1:
-            return self.subs[0].max_communication_time_tree
+            if self.subs[0].max_communication_time_tree > 0:
+                return self.subs[0].max_communication_time_tree
+            return self.max_drunk_factor_tree
 
         drunk_factor_highest = 0
         drunk_factor_second_highest = 0
@@ -61,7 +83,10 @@ class Person:
             self.drunk_factor + drunk_factor_highest + drunk_factor_second_highest
         )
 
-        return max(max_communication_time_sub_tree, max_communication_time_two_subs)
+        self._max_communication_time_tree = max(
+            max_communication_time_sub_tree, max_communication_time_two_subs
+        )
+        return self._max_communication_time_tree
 
     @property
     def is_leader(self) -> bool:
@@ -74,3 +99,10 @@ class Person:
 
     def __repr__(self):
         return self.__str__()
+
+
+if __name__ == "__main__":
+    persons = Person.create_from_input()
+    leader_name = list(persons)[0]
+    leader = persons[leader_name]
+    print(leader.max_communication_time_tree)

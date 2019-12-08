@@ -30,6 +30,10 @@ Navigate to the **Dashboard Page** via the **Sidebar** to see the result.
 Or Navigate to the **Limitations Page** to learn of some of the limitations of Panel that
 I've experienced.""",
         )
+        warning = pnx.WarningAlert(
+            """Please note that there is a bug wrt. Chrome making Panel/ Bokeh applications slow in
+            general. See [Bokeh Issue 9515](https://github.com/bokeh/bokeh/issues/9515)"""
+        )
         super().__init__(
-            about, image, info, sizing_mode="stretch_width", name="About",
+            about, image, info, warning, sizing_mode="stretch_width", name="About",
         )

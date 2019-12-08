@@ -23,6 +23,10 @@ See
 - Wide Images can overflow. Would be nice if `max-width: 100%` was set by default.
 - Cannot get full width widthout lots of empty space at bottom. [Issue 848](https://github.com/holoviz/panel/issues/848)
 
+## Bokeh Layout Engine is Slow in Chrome
+
+Please note that there is a bug wrt. Chrome making Panel/ Bokeh applications slow in general. See [Bokeh Issue 9515](https://github.com/bokeh/bokeh/issues/9515)
+
 ## Plotly Plots are not well supported
 
 - Plotly is not yet responsive in Panel. See [Issue 822](https://github.com/holoviz/panel/issues/822)
