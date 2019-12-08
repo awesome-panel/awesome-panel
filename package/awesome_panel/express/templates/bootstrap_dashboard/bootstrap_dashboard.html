@@ -10,6 +10,19 @@
 
 <!-- goes in body -->
 {% block contents %}
-{{ embed(roots.app) }}
+
+<section id="page">
+  <header>
+    {{ embed(roots.header) }}
+  </header>
+
+  <nav>
+    {{ embed(roots.sidebar) }}
+  </nav>
+
+  <main>
+    {{ embed(roots.main) }}
+  </main>
+</section>
 
 {% endblock %}
