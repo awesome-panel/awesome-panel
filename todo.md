@@ -1,7 +1,5 @@
 # Todo List
 
-- Create new root / page
-- Resources
 - Gallery
     - Bootstrap Dashboard
     - Awesome Panel Package
@@ -35,3 +33,6 @@ main {
 - Create 5 minutes introduction to Panel on Youtube
 
 - Add url state navigation
+
+- fav icon
+- Browser tab title

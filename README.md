@@ -27,13 +27,13 @@ Afterwards you can go to the [Panel Getting Started Guide](http://panel.pyviz.or
 
 Panel is completely open source, available under a BSD license freely for both commercial and non-commercial use. Panel is part of the [HoloViz](https://holoviz.org/) ecosystem and works well with all the HoloViz tools..
 
-[<img class="pvlogo" src="https://holoviz.org/assets/panel.png" height="75">](https://panel.pyviz.org)
-[<img class="pvlogo" src="https://holoviz.org/assets/hvplot.png" height="75">](https://hvplot.pyviz.org)
-[<img class="pvlogo" src="https://holoviz.org/assets/holoviews.png" height="75">](https://holoviews.org)
-[<img class="pvlogo" src="https://holoviz.org/assets/geoviews.png" height="75">](http://geoviews.org)
-[<img class="pvlogo" src="https://holoviz.org/assets/datashader.png" height="75">](http://datashader.org)
-[<img class="pvlogo" src="https://holoviz.org/assets/param.png" height="75">](https://param.pyviz.org)
-[<img class="pvlogo" src="https://holoviz.org/assets/colorcet.png" height="75">](https://colorcet.pyviz.org)
+[<img src="https://holoviz.org/assets/panel.png" height="75">](https://panel.pyviz.org)
+[<img src="https://holoviz.org/assets/hvplot.png" height="75">](https://hvplot.pyviz.org)
+[<img src="https://holoviz.org/assets/holoviews.png" height="75">](https://holoviews.org)
+[<img src="https://holoviz.org/assets/geoviews.png" height="75">](http://geoviews.org)
+[<img src="https://holoviz.org/assets/datashader.png" height="75">](http://datashader.org)
+[<img src="https://holoviz.org/assets/param.png" height="75">](https://param.pyviz.org)
+[<img src="https://holoviz.org/assets/colorcet.png" height="75">](https://colorcet.pyviz.org)
 
 Panel is developed and maintained by [Anaconda](https://www.anaconda.com/) developers and community contributors
 
@@ -69,6 +69,10 @@ A curated list of awesome panel resources. Inspired by [awesome-python](https://
 
 - [Turn any Notebook into a Deployable Dashboard | SciPy 2019 | James Bednar](https://www.youtube.com/watch?v=L91rd1D6XTA&t=274s)
 - [Visualize any Data Easily, from Notebooks to Dashboards](https://www.youtube.com/watch?v=7deGS4IPAQ0&t=1326s)
+
+## HoloViz
+
+- [HoloViz.org - Awesome Resources and Tutorials](http://holoviz.org/index.html)
 
 ## Contribute
 

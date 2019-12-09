@@ -26,3 +26,7 @@
 
 - [Turn any Notebook into a Deployable Dashboard | SciPy 2019 | James Bednar](https://www.youtube.com/watch?v=L91rd1D6XTA&t=274s)
 - [Visualize any Data Easily, from Notebooks to Dashboards](https://www.youtube.com/watch?v=7deGS4IPAQ0&t=1326s)
+
+## HoloViz
+
+- [HoloViz.org - Awesome Resources and Tutorials](http://holoviz.org/index.html)

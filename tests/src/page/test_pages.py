@@ -3,6 +3,9 @@ import pytest
 from panel.layout import Column
 
 from src.pages import home, resources
+from awesome_panel.express import bootstrap
+
+bootstrap.extend()
 
 
 @pytest.mark.panel

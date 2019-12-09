@@ -31,14 +31,15 @@ Afterwards you can go to the [Panel Getting Started Guide](http://panel.pyviz.or
 
 Panel is completely open source, available under a BSD license freely for both commercial and non-commercial use. Panel is part of the [HoloViz](https://holoviz.org/) ecosystem and works well with all the HoloViz tools..
 
-[<img class="pvlogo" src="https://holoviz.org/assets/panel.png" height="75">](https://panel.pyviz.org)
-[<img class="pvlogo" src="https://holoviz.org/assets/hvplot.png" height="75">](https://hvplot.pyviz.org)
-[<img class="pvlogo" src="https://holoviz.org/assets/holoviews.png" height="75">](https://holoviews.org)
-[<img class="pvlogo" src="https://holoviz.org/assets/geoviews.png" height="75">](http://geoviews.org)
-[<img class="pvlogo" src="https://holoviz.org/assets/datashader.png" height="75">](http://datashader.org)
-[<img class="pvlogo" src="https://holoviz.org/assets/param.png" height="75">](https://param.pyviz.org)
-[<img class="pvlogo" src="https://holoviz.org/assets/colorcet.png" height="75">](https://colorcet.pyviz.org)
+[<img src="https://holoviz.org/assets/panel.png" height="75">](https://panel.pyviz.org)
+[<img src="https://holoviz.org/assets/hvplot.png" height="75">](https://hvplot.pyviz.org)
+[<img src="https://holoviz.org/assets/holoviews.png" height="75">](https://holoviews.org)
+[<img src="https://holoviz.org/assets/geoviews.png" height="75">](http://geoviews.org)
+[<img src="https://holoviz.org/assets/datashader.png" height="75">](http://datashader.org)
+[<img src="https://holoviz.org/assets/param.png" height="75">](https://param.pyviz.org)
+[<img src="https://holoviz.org/assets/colorcet.png" height="75">](https://colorcet.pyviz.org)
 
 Panel is developed and maintained by developers from [Anaconda](https://anaconda.com) as well as community contributors.
 
-[<img class="pvlogo" src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/anaconda-logo.png?raw=true" width="200">](https://anaconda.com)
+[<img src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/anaconda-logo.png?raw=true" width="200">](https://anaconda.com)
+
