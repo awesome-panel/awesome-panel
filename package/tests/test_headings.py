@@ -53,9 +53,9 @@ We test that we can show a Title with a link
 """
     app = pn.Column(
         pn.pane.Markdown(test_with_url.__doc__),
-        pnx.Title("Title with url", url="https://awesome-streamlit.org"),
-        pnx.Header("Header with url", url="https://awesome-streamlit.org"),
-        pnx.SubHeader("SubHeader with url", url="https://awesome-streamlit.org"),
+        pnx.Title("Title with url", url="https://awesome-panel.org"),
+        pnx.Header("Header with url", url="https://awesome-panel.org"),
+        pnx.SubHeader("SubHeader with url", url="https://awesome-panel.org"),
         sizing_mode="stretch_width",
         background="lightgray",
     )

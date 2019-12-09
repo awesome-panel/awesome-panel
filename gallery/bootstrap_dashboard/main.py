@@ -19,7 +19,6 @@ PAGES = [
     components.plotly_view(),
     components.holoviews_view(),
     components.dataframe_view(),
-    components.Limitations(),
 ]
 MENU_BUTTON_CSS_CLASSES = [
     ["navigation", "pas", "pa-home"],
@@ -27,7 +26,6 @@ MENU_BUTTON_CSS_CLASSES = [
     ["navigation", "pas", "pa-chart-bar"],
     ["navigation", "pas", "pa-chart-pie"],
     ["navigation", "pas", "pa-table"],
-    ["navigation", "pas", "pa-bug"],
 ]
 
 

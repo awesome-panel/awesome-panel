@@ -10,6 +10,6 @@ from invoke import task
 
 @task
 def build(command):
-    """Builds the awesome-streamlit package)"""
+    """Builds the awesome-panel package)"""
     with command.cd("package"):
         command.run("python setup.py sdist bdist_wheel")

@@ -4,7 +4,7 @@ from panel.pane import Markdown
 def title_awesome(body: str) -> Markdown:
     """Writes the title as f'Awesome Panel {body}'
     - plus the awesome badge
-    - plus a link to the awesome-streamlit GitHub page
+    - plus a link to the awesome-panel GitHub page
 
     Arguments:
         body {str} -- [description]

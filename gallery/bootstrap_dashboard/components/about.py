@@ -26,16 +26,9 @@ class About(pn.Column):
         image = pn.pane.PNG(str(IMAGE_PATH), max_width=600, sizing_mode="scale_both")
         info = pnx.InfoAlert(
             """\
-Navigate to the **Dashboard Page** via the **Sidebar** to see the result.
-Or Navigate to the **Limitations Page** to learn of some of the limitations of Panel that
-I've experienced.""",
-        )
-        warning = pnx.WarningAlert(
-            """**Please use FireFox, Safari or Edge** if you can. There is a bug wrt. Chrome
-            making Panel/ Bokeh applications slow in general.
-            See [Bokeh Issue 9515](https://github.com/bokeh/bokeh/issues/9515).
-            And this page does not render nicely in IE"""
+Navigate to the **Dashboard Page** via the **Tab** to see the result. The other tabs are comments on
+what alternative layouts and widgets I could have used.""",
         )
         super().__init__(
-            about, image, info, warning, sizing_mode="stretch_width", name="About",
+            about, image, info, sizing_mode="stretch_both", name="About",
         )

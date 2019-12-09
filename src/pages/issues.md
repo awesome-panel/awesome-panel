@@ -1,6 +1,10 @@
-# Limitations of Panel
+# Awesome Panel Issues ![Awesome Badge](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)
 
-Let me start out by saying that I think that Panel is already very powerfull. But I have experienced som limitations and rough edges.
+Let me start out by saying that I think that Panel is already very powerfull and usefull.
+
+But I have experienced som issues and rough edges as I've developed this site.
+
+By listing them here I hope to give you an impression of the current issues and rough edges of developing a multipage application in Panel. I also hope they well get attention by the community (including me) and be solved to lower the friction of create awesome analytical apps in Panel.
 
 ## Community and Documentation is difficult to use
 

@@ -30,3 +30,14 @@
 ## HoloViz
 
 - [HoloViz.org - Awesome Resources and Tutorials](http://holoviz.org/index.html)
+
+## Sister Sites
+
+- [awesome-streamlit.org](https://awesome-streamlit.org)
+
+## Alternative Frameworks
+
+- [Bokeh](https://bokeh.pydata.org/en/latest/index.html)
+- [Jupyter Voila](https://blog.jupyter.org/and-voil%C3%A0-f6a2c08a4a93)
+- [Plotly Dash](https://plot.ly/dash/)
+- [Streamlit](https://streamlit.io)
