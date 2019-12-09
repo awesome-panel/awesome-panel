@@ -334,9 +334,8 @@ and end up with a project structure like
     |       ├── service1.py
     |       └── service2.py
     └── pages
-    |   └── pages
-    |       ├── page1.py
-    |       └── page2.py
+    |   ├── page1.py
+    |   └── page2.py
     └── shared
         └── models
         |   ├── model1.py

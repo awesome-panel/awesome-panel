@@ -34,7 +34,7 @@ I've experienced.""",
             """**Please use FireFox, Safari or Edge** if you can. There is a bug wrt. Chrome
             making Panel/ Bokeh applications slow in general.
             See [Bokeh Issue 9515](https://github.com/bokeh/bokeh/issues/9515).
-            And this page does not render nicely in IE."""
+            And this page does not render nicely in IE"""
         )
         super().__init__(
             about, image, info, warning, sizing_mode="stretch_width", name="About",
