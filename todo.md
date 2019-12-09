@@ -1,7 +1,6 @@
 # Todo List
 
 - Create new root / page
-- Home
 - Resources
 - Gallery
     - Bootstrap Dashboard

@@ -43,6 +43,33 @@ Panel is developed and maintained by [Anaconda](https://www.anaconda.com/) devel
 
 A curated list of awesome panel resources. Inspired by [awesome-python](https://github.com/vinta/awesome-python) and [awesome-pandas](https://github.com/tommyod/awesome-pandas).
 
+### Panel
+
+- [Panel](https://panel.pyviz.org/)
+- [Announcing Article](https://medium.com/@philipp.jfr/panel-announcement-2107c2b15f52)
+- [Getting Started](https://panel.pyviz.org/getting_started/index.html)
+- [User Guide](https://panel.pyviz.org/user_guide/index.html)
+- [Gallery](https://panel.pyviz.org/gallery/index.html)
+- [Reference Gallery](https://panel.pyviz.org/reference/index.html)
+- [GitHub](https://github.com/holoviz/panel)
+
+### Awesome Panel
+
+- [App](https://awesome-panel.org)
+- [Github](https://github.com/marcskovmadsen/awesome-panel)
+- [Docs](https://awesome-panel.readthedocs.io/en/latest/)
+- [Docker](https://hub.docker.com/r/marcskovmadsen/awesome-panel)
+- [PyPi](https://pypi.org/project/awesome-panel/)
+
+### Articles
+
+- [Dashboards with PyViz Panel for interactive web apps](https://dmnfarrell.github.io/bioinformatics/pyviz-panel)
+
+### Videos
+
+- [Turn any Notebook into a Deployable Dashboard | SciPy 2019 | James Bednar](https://www.youtube.com/watch?v=L91rd1D6XTA&t=274s)
+- [Visualize any Data Easily, from Notebooks to Dashboards](https://www.youtube.com/watch?v=7deGS4IPAQ0&t=1326s)
+
 ## Contribute
 
 GitHub [Issues](https://github.com/MarcSkovMadsen/awesome-panel/issues) and [Pull requests](https://github.com/MarcSkovMadsen/awesome-panel/pulls) are very welcome!

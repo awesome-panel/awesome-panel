@@ -12,10 +12,11 @@ import panel as pn
 
 import awesome_panel.express as pnx
 import gallery.bootstrap_dashboard.components as components
-from src.pages import home
+from src.pages import home, resources
 
 PAGES = [
     home.view(),
+    resources.view(),
     components.About(),
     components.dashboard_view(),
     components.plotly_view(),
@@ -25,6 +26,7 @@ PAGES = [
 ]
 MENU_BUTTON_CSS_CLASSES = [
     ["navigation", "pas", "pa-home"],
+    ["navigation", "pas", "pa-link"],
     ["navigation", "pas", "pa-home"],
     ["navigation", "pas", "pa-chart-line"],
     ["navigation", "pas", "pa-chart-bar"],
@@ -32,7 +34,6 @@ MENU_BUTTON_CSS_CLASSES = [
     ["navigation", "pas", "pa-table"],
     ["navigation", "pas", "pa-bug"],
 ]
-
 
 def main() -> pn.Pane:
     """## Bootstrap Dashboard App
