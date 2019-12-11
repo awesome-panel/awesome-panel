@@ -98,9 +98,8 @@ def dataframe_view(*args, **kwargs) -> pn.Column:
     because it's so powerfull and nice. It's based on [SlickGrid](https://slickgrid.net/).
     """
     return pn.Column(
-        pnx.Header("DataFrame"),
         pnx.InfoAlert(text),
-        pn.layout.VSpacer(height=20),  # Hack
+        pn.layout.HSpacer(height=20),  # Hack
         table,
         sizing_mode="stretch_width",
         name="DataFrame",

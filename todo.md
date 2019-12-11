@@ -1,11 +1,5 @@
 # Todo List
 
-- Gallery
-    - Bootstrap Dashboard
-    - Awesome Panel Package
-- About
-    - Marc Skov Madsen
-    - Contribute
 - Links to Github, Docs, Docker, Pypi
 
 - Create Resources list

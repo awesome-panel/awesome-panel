@@ -6,6 +6,11 @@ But I have experienced som issues and rough edges as I've developed this site.
 
 By listing them here I hope to give you an impression of the current issues and rough edges of developing a multipage application in Panel. I also hope they well get attention by the community (including me) and be solved to lower the friction of create awesome analytical apps in Panel.
 
+## The Bokeh Layout Engine is not your friend
+
+- The Bokeh layout engine works against you. Things do not work or render as expected.
+- Panel/ Bokeh applications are especially slow in Chrome. See [Bokeh Issue 9515](https://github.com/bokeh/bokeh/issues/9515)
+
 ## Community and Documentation is difficult to use
 
 See GitHub issues
@@ -26,10 +31,6 @@ See
 - No Code syntax highlighting. [Issue 391](https://github.com/holoviz/panel/issues/391)
 - Wide Images can overflow. Would be nice if `max-width: 100%` was set by default.
 - Cannot get full width widthout lots of empty space at bottom. [Issue 848](https://github.com/holoviz/panel/issues/848)
-
-## Bokeh Layout Engine is Slow in Chrome
-
-Please note that there is a bug wrt. Chrome making Panel/ Bokeh applications slow in general. See [Bokeh Issue 9515](https://github.com/bokeh/bokeh/issues/9515)
 
 ## Plotly Plots are not well supported
 

@@ -1,8 +1,10 @@
 """## The Gallery Page of awesome-panel.org"""
-from panel import Column, depends, Spacer
-from panel.widgets import Select
+from panel import Column
+from panel.layout import HSpacer
+from panel.widgets import Button
 import panel as pn
 
+from awesome_panel.express import Title
 from awesome_panel.express._pane._panes import Markdown
 from awesome_panel.express.bootstrap import InfoAlert
 from gallery.bootstrap_dashboard import components, app
@@ -16,12 +18,8 @@ If you have an awesome tool or app you wan't to show case here you are very welc
 You can do so via a [pull request](https://github.com/MarcSkovMadsen/awesome-panel/pulls)."""
 
 INFO_TEXT = """\
-Please **use FireFox, Safari or Edge** if you can.
-
-Alternatively you can use Chrome - but it's
-[slower](https://github.com/bokeh/bokeh/issues/9515).
-
-This page does not render nicely in Internet Explorer and it's not supported.
+Please **use FireFox, Safari or Edge** if you can. Alternatively you can use Chrome - but it's
+[slower](https://github.com/bokeh/bokeh/issues/9515). This page does not render nicely in Internet Explorer and it's not supported.
 
 Please **have patience** as some of the apps can take 10-30 seconds to load.
 """
@@ -34,19 +32,40 @@ def info():
 APPS = {"Info Alert": info, "Bootstrap Dashboard": app.main, "DataFrame": components.dataframe_view}
 
 
-def view() -> Column:
-    """The gallery view of awesome-panel.org"""
-    app_selection = Select(name="Select app", options=list(APPS.keys()))
+class GalleryButton(Button):
+    def __init__(self, name, page, page_outlet, **kwargs):
+        super().__init__(name=name, **kwargs)
+        self.name = name
+        self.page = page
+        self.page_outlet = page_outlet
 
-    @pn.depends(app_selection.param.value)
-    def selected_app(value):
-        return APPS[value]()
+        def click_handler(event):
+            title = Title(name)
+            self.page_outlet.clear()
+            self.page_outlet.append(title)
+            self.page_outlet.append(self.page())
 
-    return Column(
-        Markdown(TEXT),
-        app_selection,
-        Spacer(height=50),
-        selected_app,
-        sizing_mode="stretch_both",
-        name="Gallery",
-    )
+        self.on_click(click_handler)
+
+
+class Gallery:
+    def __init__(self, page_outlet: pn.Column):
+        self.page_outlet = page_outlet
+
+    def view(self) -> Column:
+        """The gallery view of awesome-panel.org"""
+        buttons = []
+        for name, page in APPS.items():
+            buttons.append(GalleryButton(name, page, self.page_outlet))
+
+        gallery = Column(
+            Markdown(TEXT),
+            info(),
+            HSpacer(height=50),
+            *buttons,
+            name="Gallery",
+            sizing_mode="stretch_width",
+        )
+
+        return gallery
+

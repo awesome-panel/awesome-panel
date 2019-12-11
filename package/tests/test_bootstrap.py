@@ -72,7 +72,7 @@ Or Navigate to the **Limitations Page** to learn of some of the limitations of P
 I've experienced."""
     app = pn.Column(
         pnx.Markdown(test_info_alert_height_problem.__doc__),
-        pnx.InfoAlert(text, sizing_mode="stretch_width"),
+        pnx.InfoAlert(text),
         sizing_mode="stretch_width",
     )
 

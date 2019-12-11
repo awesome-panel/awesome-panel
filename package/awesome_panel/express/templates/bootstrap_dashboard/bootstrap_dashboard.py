@@ -3,9 +3,11 @@ import pathlib
 
 import panel as pn
 from awesome_panel.express import fontawesome
-from awesome_panel.express.assets import (BOOTSTRAP_PANEL_EXPRESS_CSS,
-                                          CODE_HILITE_PANEL_EXPRESS_CSS,
-                                          SCROLLBAR_PANEL_EXPRESS_CSS)
+from awesome_panel.express.assets import (
+    BOOTSTRAP_PANEL_EXPRESS_CSS,
+    CODE_HILITE_PANEL_EXPRESS_CSS,
+    SCROLLBAR_PANEL_EXPRESS_CSS,
+)
 
 BOOTSTRAP_DASHBOARD_CSS = pathlib.Path(__file__).parent / "bootstrap_dashboard.css"
 BOOTSTRAP_DASHBOARD_TEMPLATE = pathlib.Path(__file__).parent / "bootstrap_dashboard.html"
@@ -36,22 +38,14 @@ class BootstrapDashboardTemplate(pn.Template):
             width=SIDEBAR_WIDTH,
         )
         header = pn.Row(
-            app_title,
-            pn.layout.HSpacer(),
-            sizing_mode="stretch_width",
-            height=HEADER_HEIGHT,
+            app_title, pn.layout.HSpacer(), sizing_mode="stretch_width", height=HEADER_HEIGHT,
         )
         top_spacer = pn.layout.HSpacer(height=15)
-        self.sidebar = pn.Column(
-            top_spacer, height_policy="max", width=SIDEBAR_WIDTH
-        )
+        self.header = header
+        self.sidebar = pn.Column(top_spacer, height_policy="max", width=SIDEBAR_WIDTH)
         self.main = pn.Column(
-            sizing_mode="stretch_both", margin=(25, 50, 25, 50)
+            sizing_mode="stretch_width", margin=(25, 50, 25, 50)
         )
 
-        items = {
-            "header": header,
-            "sidebar": self.sidebar,
-            "main": self.main
-        }
+        items = {"header": header, "sidebar": self.sidebar, "main": self.main}
         super().__init__(template=template, items=items)
