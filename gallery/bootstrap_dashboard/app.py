@@ -27,12 +27,12 @@ def main() -> pn.Pane:
         pn.Pane -- The Bootstrap Dashboard App
     """
     tabs = pn.Tabs(
-        components.dashboard_view(),
         components.About(),
-        components.plotly_view(),
-        components.holoviews_view(),
-        components.dataframe_view(),
-        sizing_mode="stretch_both",
+        components.dashboard_view(),
+        # components.plotly_view(),
+        # components.holoviews_view(),
+        # components.dataframe_view(),
+        sizing_mode="stretch_width",
     )
-    app = pn.Column(tabs, name="Bootstrap Dashboard", sizing_mode="stretch_both")
+    app = pn.Column(tabs, name="Bootstrap Dashboard", sizing_mode="stretch_width")
     return app

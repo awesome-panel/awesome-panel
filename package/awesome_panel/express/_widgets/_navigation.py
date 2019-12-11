@@ -22,17 +22,23 @@ class NavigationButton(pn.widgets.Button):
             page_outlet {pn.layout.ListPanel} -- The ListPanel to update when the user navigates to
             a new page
         """
+        if callable(page):
+            page_ = page()
+        else:
+            page_ = page
+
+
         if "name" not in kwargs:
             if "css_classes" in kwargs:
-                kwargs["name"] = " " + page.name
+                kwargs["name"] = " " + page_.name
             else:
-                kwargs["name"] = page.name
+                kwargs["name"] = page_.name
 
         super().__init__(**kwargs)
 
         def navigate_to_page(event):  # pylint: disable=unused-argument
             page_outlet.clear()
-            page_outlet.append(page)
+            page_outlet.append(page_)
 
         self.on_click(navigate_to_page)
 

@@ -6,6 +6,10 @@ table {
     width: 95%;
 }
 
+header a:-webkit-any-link {
+  color: white;
+}
+
 #page {
   display: grid;
   width: 100%;
