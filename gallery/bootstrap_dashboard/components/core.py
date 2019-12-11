@@ -7,8 +7,6 @@ import plotly.express as px  # pylint: disable=wrong-import-order
 
 import awesome_panel.express as pnx
 import panel as pn
-from gallery.bootstrap_dashboard import services
-
 pn.extension()
 
 # See also

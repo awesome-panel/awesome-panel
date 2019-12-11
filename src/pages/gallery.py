@@ -7,7 +7,7 @@ import panel as pn
 from awesome_panel.express import Title
 from awesome_panel.express._pane._panes import Markdown
 from awesome_panel.express.bootstrap import InfoAlert
-from gallery.bootstrap_dashboard import components, app
+from gallery import bootstrap_dashboard
 
 TEXT = """\
 # Awesome Panel Gallery ![Awesome Badge](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)
@@ -29,8 +29,7 @@ def info():
     return Column(InfoAlert(text=INFO_TEXT), sizing_mode="stretch_width")
 
 
-APPS = {"Info Alert": info, "Bootstrap Dashboard": app.main, "DataFrame": components.dataframe_view}
-
+APPS = {"Info Alert": info, "Bootstrap Dashboard": bootstrap_dashboard.view}
 
 class GalleryButton(Button):
     def __init__(self, name, page, page_outlet, **kwargs):
