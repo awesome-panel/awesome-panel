@@ -6,15 +6,17 @@ But I have experienced som issues and rough edges as I've developed this site.
 
 By listing them here I hope to give you an impression of the current issues and rough edges of developing a multipage application in Panel. I also hope they well get attention by the community (including me) and be solved to lower the friction of create awesome analytical apps in Panel.
 
-## The Bokeh Layout Engine is not your friend
+## The Bokeh Layout Engine is not always your friend
 
 - The Bokeh layout engine works against you when you try to create advanced layouts. Things do not work or render as expected.
 - Panel/ Bokeh applications are especially slow in Chrome. See [Bokeh Issue 9515](https://github.com/bokeh/bokeh/issues/9515)
 
 To circumvent these issues my most important learning is to KEEP IT SIMPLE STUPID!
 
-- Use the Template system.
-- Don't do lots of nesting of Columns and Rows.
+- Use the Template system if you can.
+- Don't do lots of nested Columns and Rows in Panel.
+- Don't configure layout settings like width, height, margin etc. of Panel Columns and Rows via Css.
+    - Use Column and Row attributes in Panel for that.
 
 ## Community and Documentation is difficult to use
 

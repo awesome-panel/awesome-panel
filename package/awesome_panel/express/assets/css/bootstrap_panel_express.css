@@ -58,6 +58,10 @@ body{
 
 
   }
+.bk.card img{
+    border: 0.5px solid rgba(0,0,0,.125);
+    padding: 1px;
+}
 .bk a:hover {
     color: #007bff;
     text-decoration: none;

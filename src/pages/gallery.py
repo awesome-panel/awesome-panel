@@ -12,12 +12,16 @@ from gallery import bootstrap_dashboard
 TEXT = """\
 # Awesome Panel Gallery ![Awesome Badge](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)
 
-I hope this gallery can show case the power of Panel and inspire you as you build awesome analytics apps in Panel.
+With this Gallery I hope to
 
-This Gallery is running on a low end server in Azure.
+- show you the power of Panel
+- help lower the friction of using Panel
+- inspire you to build awesome analytics apps in Python.
+
+This Gallery is running on a low end server on Azure.
 So the performance can be significantly improved if you have access to a higher end server.
 
-If you have an awesome tool or app you wan't to show case here you are very welcome.
+If you have an awesome tool or app you wan't to show here you are very welcome.
 You can do so via a [pull request](https://github.com/MarcSkovMadsen/awesome-panel/pulls)."""
 
 
@@ -51,7 +55,7 @@ class GalleryButton(Button):
 
 class GalleryCard(Column):
     def __init__(self, name, page, page_outlet, **kwargs):
-        self.button = GalleryButton(name, page, page_outlet, width=222, align="center", **kwargs)
+        self.button = GalleryButton(name, page, page_outlet, width=365, align="center", **kwargs)
         spacer = pn.layout.HSpacer(height=5)
         super().__init__(
             spacer,
@@ -61,7 +65,7 @@ class GalleryCard(Column):
                 height=272,
                 align="center",
             ),
-            spacer,
+            # spacer,
             self.button,
             spacer,
             name="gallery-item-" + name,
