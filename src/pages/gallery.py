@@ -14,7 +14,7 @@ TEXT = """\
 
 I hope this gallery can show case the power of Panel and inspire you as you build awesome analytics apps in Panel.
 
-This Gallery is running on a low end server in Azure (B2, 200 total ACU, 3.5 GB memory, A-Series compute equivalent).
+This Gallery is running on a low end server in Azure.
 So the performance can be significantly improved if you have access to a higher end server.
 
 If you have an awesome tool or app you wan't to show case here you are very welcome.
@@ -23,7 +23,7 @@ You can do so via a [pull request](https://github.com/MarcSkovMadsen/awesome-pan
 
 INFO_TEXT = """\
 Please **use FireFox, Safari or Edge** if you can. Alternatively you can use Chrome - but it's
-[slower](https://github.com/bokeh/bokeh/issues/9515). This page does not render nicely in Internet Explorer and it's not supported."""
+[slower](https://github.com/bokeh/bokeh/issues/9515). Internet Explorer is not supported."""
 
 
 def info():
@@ -35,7 +35,7 @@ APPS = {"Info Alert": info, "Bootstrap Dashboard": bootstrap_dashboard.view}
 
 class GalleryButton(Button):
     def __init__(self, name, page, page_outlet, **kwargs):
-        super().__init__(name=name, button_type='primary', **kwargs)
+        super().__init__(name=name, button_type="primary", **kwargs)
         self.name = name
         self.page = page
         self.page_outlet = page_outlet
@@ -51,15 +51,19 @@ class GalleryButton(Button):
 
 class GalleryCard(Column):
     def __init__(self, name, page, page_outlet, **kwargs):
-        self.button = GalleryButton(name, page, page_outlet, width=380, **kwargs)
+        self.button = GalleryButton(name, page, page_outlet, width=222, align="center", **kwargs)
+        spacer = pn.layout.HSpacer(height=5)
         super().__init__(
+            spacer,
             pn.pane.PNG(
                 "gallery/bootstrap_dashboard/bootstrap_dashboard.png",
                 width=360,
                 height=272,
                 align="center",
             ),
+            spacer,
             self.button,
+            spacer,
             name="gallery-item-" + name,
             width=400,
             margin=10,
