@@ -31,6 +31,7 @@ def info():
 
 APPS = {"Info Alert": info, "Bootstrap Dashboard": bootstrap_dashboard.view}
 
+
 class GalleryButton(Button):
     def __init__(self, name, page, page_outlet, **kwargs):
         super().__init__(name=name, **kwargs)
@@ -47,6 +48,19 @@ class GalleryButton(Button):
         self.on_click(click_handler)
 
 
+class GalleryCard(Column):
+    def __init__(self, name, page, page_outlet, **kwargs):
+        self.button = GalleryButton(name, page, page_outlet, **kwargs)
+        super().__init__(
+            pn.pane.HTML(
+                '<img src="https://pypi.org/static/images/logo-small.6eef541e.svg" height="200px">'
+            ),
+            self.button,
+            name="gallery-item-" + name,
+            **kwargs,
+        )
+
+
 class Gallery:
     def __init__(self, page_outlet: pn.Column):
         self.page_outlet = page_outlet
@@ -55,13 +69,13 @@ class Gallery:
         """The gallery view of awesome-panel.org"""
         buttons = []
         for name, page in APPS.items():
-            buttons.append(GalleryButton(name, page, self.page_outlet))
+            buttons.append(GalleryCard(name, page, self.page_outlet))
 
         gallery = Column(
             Markdown(TEXT),
             info(),
             HSpacer(height=50),
-            *buttons,
+            pn.Row(*buttons),
             name="Gallery",
             sizing_mode="stretch_width",
         )
