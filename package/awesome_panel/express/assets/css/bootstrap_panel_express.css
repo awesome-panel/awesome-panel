@@ -13,6 +13,15 @@ body{
     margin-top: 15px;
     margin-bottom: 15px;
 }
+.bk.alert a {
+    color: #002752;
+    font-weight: 700;
+  }
+.bk.alert a:hover {
+    color: #002752;
+    font-weight: 700;
+    text-decoration: underline;
+}
 .bk.alert-info {
     color: #0c5460;
     background-color: #d1ecf1;
@@ -36,4 +45,20 @@ body{
 }
 .bk.alert-error hr {
     border-top-color: #f1b0b7;
+}
+
+.bk.card {
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+}
+.bk a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+
+
+  }
+.bk a:hover {
+    color: #007bff;
+    text-decoration: none;
 }
