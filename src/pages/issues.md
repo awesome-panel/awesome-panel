@@ -8,8 +8,13 @@ By listing them here I hope to give you an impression of the current issues and 
 
 ## The Bokeh Layout Engine is not your friend
 
-- The Bokeh layout engine works against you. Things do not work or render as expected.
+- The Bokeh layout engine works against you when you try to create advanced layouts. Things do not work or render as expected.
 - Panel/ Bokeh applications are especially slow in Chrome. See [Bokeh Issue 9515](https://github.com/bokeh/bokeh/issues/9515)
+
+To circumvent these issues my most important learning is to KEEP IT SIMPLE STUPID!
+
+- Use the Template system.
+- Don't do lots of nesting of Columns and Rows.
 
 ## Community and Documentation is difficult to use
 

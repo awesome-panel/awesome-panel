@@ -22,8 +22,11 @@ MENU_BUTTON_CSS_CLASSES = [
     ["navigation", "pas", "pa-address-card"],
 ]
 
-CONTACT = """\
-    <a href="https://github.com/marcskovmadsen/awesome-panel"><i class="fab fa-github"></i></a>"""
+CONTACT = """<p>
+<a href="https://github.com/marcskovmadsen/awesome-panel" target="_blank"><i class="fab fa-github"></i></a>
+<a href="https://hub.docker.com/r/marcskovmadsen/awesome-panel" target="_blank"><i class="fab fa-docker"></i></a>
+<a href="https://pypi.org/project/awesome-panel/" target="_blank"><img src="https://i.morioh.com/5a214f83f2.png" height="13"></a>
+</p>"""
 
 
 def main() -> pn.Pane:
@@ -56,9 +59,9 @@ def main() -> pn.Pane:
     )
     app.sidebar.append(navigation_menu)
 
-    contact = pn.pane.HTML(CONTACT)
+    contact = pn.Row(pn.pane.HTML(CONTACT))
     app.header.append(contact)
-    app.header.append(pn.layout.HSpacer(width=50))
+    app.header.append(pn.layout.VSpacer(width=50))
     return app
 
 

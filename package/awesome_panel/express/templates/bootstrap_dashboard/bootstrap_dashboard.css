@@ -27,6 +27,15 @@ header {
   box-shadow: 5px 5px 20px grey;
 
   z-index: 1000;
+
+  text-align: center;
+  font-size: 1rem;
+}
+header a:link {
+  text-decoration: none;
+}
+header a:hover{
+  color: white;
 }
 
 nav {
