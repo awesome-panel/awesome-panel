@@ -32,10 +32,18 @@ header {
   font-size: 1rem;
 }
 header a:link {
+  color: white;
   text-decoration: none;
+}
+header a:visited {
+  color: white;
 }
 header a:hover{
   color: white;
+}
+header i.fab, header i.fas {
+  font-size: 1rem;
+  padding-left: 0.3rem;
 }
 
 nav {
