@@ -8,7 +8,7 @@ from awesome_panel.express import Title, spinners
 from awesome_panel.express._pane._panes import Markdown
 from awesome_panel.express.bootstrap import InfoAlert
 from gallery import bootstrap_dashboard
-from gallery.awesome_panel_tests import test_loading_io
+from gallery.awesome_panel_tests import test_spinners
 
 TEXT = """\
 # Awesome Panel Gallery ![Awesome Badge](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)
@@ -38,7 +38,7 @@ def info():
 APPS = {
     "Info Alert": info,
     "Bootstrap Dashboard": bootstrap_dashboard.view,
-    "Spinners": test_loading_io.view,
+    "Spinners": test_spinners.view,
 }
 
 
@@ -51,7 +51,7 @@ class GalleryButton(Button):
 
         def click_handler(event):
             title = Title(name)
-            self.page_outlet[:] = [spinners.Default()]
+            self.page_outlet[:] = [spinners.DefaultSpinner()]
             self.page_outlet[:] = [title, self.page()]
 
         self.on_click(click_handler)

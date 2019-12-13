@@ -8,13 +8,25 @@ from awesome_panel.express.testing import TestApp
 
 
 def test_default_spinner():
-    """## Show default spinner while python code is running
+    """## Show the default spinner"""
+    default_spinner = pnx.spinners.DefaultSpinner()
+    return TestApp(test_default_spinner, default_spinner)
 
-    It works on Tornado Server 5.1.1 but not 6.0.3. See [Discourse]
-    (https://discourse.holoviz.org/t/how-can-i-show-spinner-when-code-is-running/30/2)
+
+def test_all_spinners():
+    """## Show all spinners"""
+    spinners_all = pn.Row(pnx.spinners.DefaultSpinner(), pnx.spinners.FacebookSpinner())
+    return TestApp(test_all_spinners, spinners_all)
+
+
+def test_spinner_while_python_executing():
+    """## Show Facebook spinner while Python code is running
+
+    It works on Tornado Server 5.1.1 but not 6.0.3. See
+    [Discourse](https://discourse.holoviz.org/t/how-can-i-show-spinner-when-code-is-running/30/2)
     """
-    button = pn.widgets.Button(name="Load page", button_type="primary")
-    spinner = pnx.spinners.Default()
+    button = pn.widgets.Button(name="Run Python Code", button_type="primary")
+    spinner = pnx.spinners.FacebookSpinner()
     page = pn.Column(button)
 
     def click_handler(event):  # pylint: disable=unused-argument
@@ -24,29 +36,29 @@ def test_default_spinner():
 
     button.on_click(click_handler)
 
-    return TestApp(test_default_spinner, page)
+    return TestApp(test_spinner_while_python_executing, page)
 
 
-def test_facebook_spinner():
-    """## Show Facebook spinner while python code is running
+def test_spinner_can_be_centered():
+    """## Show spinner can be centered
 
-    It works on Tornado Server 5.1.1 but not 6.0.3. See [Discourse]
-    (https://discourse.holoviz.org/t/how-can-i-show-spinner-when-code-is-running/30/2)
+    At the same time we can test if the spinner looks good on a dark background
     """
-    button = pn.widgets.Button(name="Load page", button_type="primary")
-    spinner = pnx.spinners.Facebook()
-    page = pn.Column(button)
+    spinner = pnx.spinners.FacebookSpinner()
 
-    def click_handler(event):  # pylint: disable=unused-argument
-        page[:] = [spinner]
-        time.sleep(2.5)
-        page[:] = [button]
+    page = pn.Column(spinner.center(), width=400, height=400, background="gray",)
+    return TestApp(test_spinner_can_be_centered, page)
 
-    button.on_click(click_handler)
 
-    return TestApp(test_default_spinner, page)
+def view() -> pn.Column:
+    """View all tests"""
+    return pn.Column(
+        test_default_spinner(),
+        test_all_spinners(),
+        test_spinner_while_python_executing(),
+        test_spinner_can_be_centered(),
+    )
 
 
 if __name__.startswith("bk"):
-    test_default_spinner().servable()
-    test_facebook_spinner().servable()
+    view().servable()

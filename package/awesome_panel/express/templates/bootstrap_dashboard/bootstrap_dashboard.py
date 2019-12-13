@@ -29,7 +29,6 @@ class BootstrapDashboardTemplate(pn.Template):
         pn.config.raw_css.append(BOOTSTRAP_DASHBOARD_CSS.read_text())
         pn.config.raw_css.append(SCROLLBAR_PANEL_EXPRESS_CSS.read_text())
         fontawesome.extend()
-        spinners.extend()
         template = BOOTSTRAP_DASHBOARD_TEMPLATE.read_text()
 
         app_title = pn.Row(
@@ -44,9 +43,7 @@ class BootstrapDashboardTemplate(pn.Template):
         top_spacer = pn.layout.HSpacer(height=15)
         self.header = header
         self.sidebar = pn.Column(top_spacer, height_policy="max", width=SIDEBAR_WIDTH)
-        self.main = pn.Column(
-            sizing_mode="stretch_width", margin=(25, 50, 25, 50)
-        )
+        self.main = pn.Column(sizing_mode="stretch_width", margin=(25, 50, 25, 50))
 
         items = {"header": header, "sidebar": self.sidebar, "main": self.main}
         super().__init__(template=template, items=items)
