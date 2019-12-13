@@ -35,13 +35,13 @@ steps:
     context: $(buildContext)
     includeLatestTag: true
 - task: Docker@0
-    displayName: 'Build an the Test image'
-    inputs:
-      dockerFile: $(dockerFileTest)
-      imageName: '$(imageNameTest):$(Build.BuildId)'
-      defaultContext: False
-      context: $(buildContext)
-      includeLatestTag: true
+  displayName: 'Build the Test image'
+  inputs:
+    dockerFile: $(dockerFileTest)
+    imageName: '$(imageNameTest):$(Build.BuildId)'
+    defaultContext: False
+    context: $(buildContext)
+    includeLatestTag: true
 - script: |
     id=$(docker create marcskovmadsen/awesome-panel_test:latest)
     docker cp $id:/app/test_results/. test_results
