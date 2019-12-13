@@ -1,0 +1,24 @@
+FROM marcskovmadsen/awesome-panel:latest
+
+WORKDIR /app
+
+RUN pip install pylint2junit
+
+RUN mkdir -p test_results; exit 0
+
+RUN pylint --rcfile=.pylintrc --output-format=pylint2junit.JunitReporter docs package gallery tasks src tests 2>&1 > test_results/pylint-results.xml;exit 0
+
+RUN rm -rf .mypy_cache/; exit 0
+RUN mypy --config-file=mypy.ini --junit-xml test_results/mypy-results.xml docs package gallery tasks src tests; exit 0
+
+RUN pytest tests package/tests gallery/awesome_panel_express_tests -m "not functionaltest and not integrationtest" --doctest-modules --junitxml=test_results/test-results.xml; exit 0
+
+# Remove empty test_results files.
+# Pylint produces empty files if no issues identified
+# This causes problems when publishing test results
+# Thus we delete empty files here.
+RUN touch test_results/dummy && find test_results -size 0 -print0 |xargs -0 rm --
+RUN ls test_results
+
+ENTRYPOINT ["/bin/bash"]
+

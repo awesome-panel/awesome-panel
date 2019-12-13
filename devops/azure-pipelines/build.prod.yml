@@ -13,10 +13,12 @@ trigger:
 pool:
   vmImage: 'Ubuntu-16.04'
 variables:
-  dockerFile: 'devops/docker/Dockerfile.prod'
-  dockerRegistry: 'dockerhub-awesome-panel'
-  imageName: 'marcskovmadsen/awesome-panel'
   buildContext: .
+  dockerFile: 'devops/docker/Dockerfile.prod'
+  imageName: 'marcskovmadsen/awesome-panel'
+  dockerFileTest: 'devops/docker/Dockerfile.test'
+  imageNameTest: 'marcskovmadsen/awesome-panel_test'
+  dockerRegistry: 'dockerhub-awesome-panel'
 
 steps:
 - task: Docker@2
@@ -25,13 +27,55 @@ steps:
     command: login
     containerRegistry: $(dockerRegistry)
 - task: Docker@0
-  displayName: 'Build an image'
+  displayName: 'Build the Prod image'
   inputs:
     dockerFile: $(dockerFile)
     imageName: '$(imageName):$(Build.BuildId)'
     defaultContext: False
     context: $(buildContext)
     includeLatestTag: true
+- task: Docker@0
+    displayName: 'Build an the Test image'
+    inputs:
+      dockerFile: $(dockerFileTest)
+      imageName: '$(imageNameTest):$(Build.BuildId)'
+      defaultContext: False
+      context: $(buildContext)
+      includeLatestTag: true
+- script: |
+    id=$(docker create marcskovmadsen/awesome-panel_test:latest)
+    docker cp $id:/app/test_results/. test_results
+    docker rm -v $id
+    ls test_results
+  displayName: Export test results from api_test image
+  condition: succeededOrFailed()
+
+- task: PublishTestResults@2
+  displayName: 'Publish Pytest Results'
+  inputs:
+    testResultsFiles: |
+      test_results/test-results.xml
+    failTaskOnFailedTests: true
+    testRunTitle: 'Pytest'
+  condition: succeededOrFailed()
+
+- task: PublishTestResults@2
+  displayName: 'Publish Pylint Results'
+  inputs:
+    testResultsFiles: |
+      test_results/pylint-results.xml
+    failTaskOnFailedTests: true
+    testRunTitle: 'Pylint'
+  condition: succeededOrFailed()
+
+- task: PublishTestResults@2
+  displayName: 'Publish MyPy Results'
+  inputs:
+    testResultsFiles: |
+      test_results/mypy-results.xml
+    failTaskOnFailedTests: true
+    testRunTitle: 'MyPy'
+  condition: succeededOrFailed()
 - task: Docker@2
   displayName: Push image
   inputs:

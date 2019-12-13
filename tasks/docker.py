@@ -80,6 +80,13 @@ IMAGES = {
         dependencies=["base"],
         registry=DOCKER_REGISTRY,
     ),
+    "test": Image(
+        docker_file="devops/docker/Dockerfile.test",
+        name="awesome-panel_test",
+        context=".",
+        dependencies=["prod"],
+        registry=DOCKER_REGISTRY,
+    ),
 }
 
 
