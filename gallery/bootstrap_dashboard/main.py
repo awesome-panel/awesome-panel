@@ -9,7 +9,7 @@ Creates a Bootstrap Dashboard Page with a Chart and a Table
 """
 import pathlib
 
-import hvplot.pandas # pylint: disable=unused-import
+import hvplot.pandas  # pylint: disable=unused-import
 import pandas as pd
 import panel as pn
 

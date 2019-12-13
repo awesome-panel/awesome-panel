@@ -1,8 +1,7 @@
 """## The Home Page of awesome-panel.org"""
 import pathlib
 
-from panel import Column, Row
-from panel.layout import HSpacer
+from panel import Column
 
 from awesome_panel.express._pane._panes import Markdown
 

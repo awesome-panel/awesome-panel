@@ -7,15 +7,15 @@ from panel import Column
 from panel.layout import HSpacer
 from panel.widgets import Button
 
-from awesome_panel.express import Title, spinners
+from awesome_panel.express import spinners
 from awesome_panel.express._pane._panes import Markdown
 from awesome_panel.express.bootstrap import InfoAlert
 from gallery import bootstrap_dashboard
-from gallery.awesome_panel_express_tests import test_spinners
+from gallery.awesome_panel_express_tests import test_spinners  # type: ignore
 
 ROOT = str(pathlib.Path.cwd())
 GITHUB_RAW_URL = "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master"
-
+# pylint: disable=line-too-long
 TEXT = """\
 # Awesome Panel Gallery ![Awesome Badge](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)
 
@@ -30,7 +30,7 @@ So the performance can be significantly improved if you have access to a higher 
 
 If you have an awesome tool or app you wan't to show here you are very welcome.
 You can do so via a [pull request](https://github.com/MarcSkovMadsen/awesome-panel/pulls)."""
-
+# pylint: enable=line-too-long
 
 INFO_TEXT = """\
 Please **use FireFox, Safari or Edge** if you can. Alternatively you can use Chrome - but it's
@@ -38,6 +38,7 @@ Please **use FireFox, Safari or Edge** if you can. Alternatively you can use Chr
 
 
 def info():
+    """An InfoAlert with relevant text"""
     return Column(InfoAlert(text=INFO_TEXT), sizing_mode="stretch_width")
 
 
@@ -49,17 +50,33 @@ APPS = {
 
 
 class GalleryButton(Button):
+    """## Button that loads page.
+
+    When clicked the page of the GalleryButton loads"""
+
     def __init__(self, name, page, page_outlet, **kwargs):
+        """## Button that loads page
+
+        When clicked the page of the GalleryButton loads
+
+        Arguments:
+            name {[type]} -- The name/ text of the Button
+            page {[type]} -- The page to load
+            page_outlet {[type]} -- The page_outlet to load the page to
+        """
         super().__init__(name=name, button_type="primary", **kwargs)
         self.name = name
         self.page = page
         self.page_outlet = page_outlet
 
-        def click_handler(event):
+        def click_handler(event):  # pylint: disable=unused-argument
             file_url = GITHUB_RAW_URL + inspect.getfile(self.page).replace(ROOT, "").replace(
                 "\\", "/"
             )
-            text = f'<h2>{name}&nbsp;<a href={file_url} target="_blank" title="Source Code"><i class="fas fa-code"></i></a></h2>'
+            text = (
+                f'<h2>{name}&nbsp;<a href={file_url} target="_blank" title="Source Code">'
+                '<i class="fas fa-code"></i></a></h2>'
+            )
 
             self.page_outlet[:] = [spinners.DefaultSpinner().center()]
             self.page_outlet[:] = [text, self.page()]
@@ -68,7 +85,16 @@ class GalleryButton(Button):
 
 
 class GalleryCard(Column):
+    """A Card consisting of an image and a button"""
+
     def __init__(self, name, page, page_outlet, **kwargs):
+        """A Card consisting of an image and a button
+
+        Arguments:
+            name {[type]} -- The name of the card/ the text on the Button
+            page {[type]} -- The page to load
+            page_outlet {[type]} -- The page to load to
+        """
         self.button = GalleryButton(name, page, page_outlet, width=365, align="center", **kwargs)
         spacer = pn.layout.HSpacer(height=5)
         super().__init__(
@@ -90,7 +116,9 @@ class GalleryCard(Column):
         )
 
 
-class Gallery:
+class Gallery:  # pylint: disable=too-few-public-methods
+    """The Gallery page"""
+
     def __init__(self, page_outlet: pn.Column):
         self.page_outlet = page_outlet
 

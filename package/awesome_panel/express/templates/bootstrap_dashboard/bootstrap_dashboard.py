@@ -4,11 +4,9 @@ import pathlib
 import panel as pn
 
 from awesome_panel.express import fontawesome
-from awesome_panel.express.assets import (
-    BOOTSTRAP_PANEL_EXPRESS_CSS,
-    CODE_HILITE_PANEL_EXPRESS_CSS,
-    SCROLLBAR_PANEL_EXPRESS_CSS,
-)
+from awesome_panel.express.assets import (BOOTSTRAP_PANEL_EXPRESS_CSS,
+                                          CODE_HILITE_PANEL_EXPRESS_CSS,
+                                          SCROLLBAR_PANEL_EXPRESS_CSS)
 
 BOOTSTRAP_DASHBOARD_CSS = pathlib.Path(__file__).parent / "bootstrap_dashboard.css"
 BOOTSTRAP_DASHBOARD_TEMPLATE = pathlib.Path(__file__).parent / "bootstrap_dashboard.html"
