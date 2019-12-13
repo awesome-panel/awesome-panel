@@ -9,6 +9,8 @@ from awesome_panel.express._pane._panes import Markdown
 class TestApp(Column):
     """Creates a Test App from the name and docstring of the test function"""
 
+    __test__ = False  # We don't wan't pytest to collect this
+
     def __init__(self, test_func: Callable, *args, **kwargs):
         """## Creates a Test App from the name and docstring of the test function
 

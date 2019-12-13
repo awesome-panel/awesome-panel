@@ -4,7 +4,6 @@ Here you maintain the list of awesome resources
 """
 from awesome_panel.database import authors, tags
 from awesome_panel.database.apps_in_gallery import APPS_IN_GALLERY
-
 # pylint: disable=line-too-long
 from awesome_panel.shared.models import Resource
 

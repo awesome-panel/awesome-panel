@@ -1,17 +1,18 @@
 """## The Gallery Page of awesome-panel.org"""
+import importlib
 import inspect
 import pathlib
+from types import ModuleType
 
 import panel as pn
 from panel import Column
 from panel.layout import HSpacer
 from panel.widgets import Button
 
+from awesome_panel import database
 from awesome_panel.express import spinners
 from awesome_panel.express._pane._panes import Markdown
 from awesome_panel.express.bootstrap import InfoAlert
-from gallery import bootstrap_dashboard
-from gallery.awesome_panel_express_tests import test_spinners  # type: ignore
 
 ROOT = str(pathlib.Path.cwd())
 GITHUB_RAW_URL = "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master"
@@ -42,11 +43,30 @@ def info():
     return Column(InfoAlert(text=INFO_TEXT), sizing_mode="stretch_width")
 
 
+def to_module_function(gallery_url: str) -> ModuleType:
+    """Converts a link to a python gallery file to a module string
+
+    Arguments:
+        gallery_url {str} -- The link to the python gallery file
+
+    Returns:
+        Module -- The module string, for example 'gallery.boostrap_dashboard.main'
+    """
+
+    module_str = (
+        gallery_url.replace(database.settings.GITHUB_URL, "")
+        .replace(".py", "")
+        .replace("/", ".")
+        .replace("\\", ".")
+    )
+    return importlib.import_module(module_str)
+
+
+# pylint: disable=line-too-long
 APPS = {
-    "Info Alert": info,
-    "Bootstrap Dashboard": bootstrap_dashboard.view,
-    "Spinners": test_spinners.view,
+    app.name: to_module_function(app.url).view for app in database.apps_in_gallery.APPS_IN_GALLERY  # type: ignore
 }
+# pylint: enable=line-too-long
 
 
 class GalleryButton(Button):
