@@ -51,8 +51,16 @@ class GalleryButton(Button):
 
         def click_handler(event):
             title = Title(name)
+
+            import inspect
+            import pathlib
+            root = str(pathlib.Path.cwd())
+            filename = inspect.getfile(self.page).replace(root,"")
+            url = "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master" + filename
+
+
             self.page_outlet[:] = [spinners.DefaultSpinner()]
-            self.page_outlet[:] = [title, self.page()]
+            self.page_outlet[:] = [title, url, self.page()]
 
         self.on_click(click_handler)
 
