@@ -1,10 +1,9 @@
 import holoviews as hv
 import hvplot.pandas
 import pandas as pd
+import panel as pn
 import param
 from plotly import express as px
-
-import panel as pn
 
 pn.extension("plotly")  # Hack: See https://github.com/holoviz/panel/issues/840
 

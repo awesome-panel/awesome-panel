@@ -32,4 +32,3 @@ class TestApp(Column):
             kwargs["sizing_mode"] = "stretch_width"
 
         super().__init__(text, *args, **kwargs)
-

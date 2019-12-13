@@ -1,3 +1,4 @@
+"""Functionality for awesome-streamlit.org"""
 from panel.pane import Markdown
 
 

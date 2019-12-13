@@ -1,6 +1,5 @@
-import param
-
 import panel as pn
+import param
 
 PAGES = {
     "About": pn.pane.Markdown("about " * 2500, sizing_mode="stretch_width", name="About"),

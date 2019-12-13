@@ -1,7 +1,8 @@
 """Test of the app functionality"""
 import pytest
-import awesome_panel.app as app
 from panel.layout import Column
+
+import awesome_panel.app as app
 
 
 @pytest.mark.panel

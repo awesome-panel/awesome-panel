@@ -1,7 +1,6 @@
 import pandas as pd
-import plotly.express as px
-
 import panel as pn
+import plotly.express as px
 
 pn.config.raw_css.append(
     """

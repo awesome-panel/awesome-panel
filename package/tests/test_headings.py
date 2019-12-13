@@ -1,8 +1,8 @@
 """The module tests the improved headings classes"""
+import panel as pn
 import pytest
 
 import awesome_panel.express as pnx
-import panel as pn
 
 
 @pytest.mark.panel

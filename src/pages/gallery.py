@@ -11,7 +11,7 @@ from awesome_panel.express import Title, spinners
 from awesome_panel.express._pane._panes import Markdown
 from awesome_panel.express.bootstrap import InfoAlert
 from gallery import bootstrap_dashboard
-from gallery.awesome_panel_tests import test_spinners
+from gallery.awesome_panel_express_tests import test_spinners
 
 ROOT = str(pathlib.Path.cwd())
 GITHUB_RAW_URL = "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master"

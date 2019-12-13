@@ -1,5 +1,6 @@
 """Bootstrap inspired functionality"""
 import panel as pn
+
 from awesome_panel.express._pane._panes import Markdown
 from awesome_panel.express.assets import BOOTSTRAP_PANEL_EXPRESS_CSS
 

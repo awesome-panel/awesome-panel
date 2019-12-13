@@ -1,9 +1,9 @@
 """Tests of the awesome_panel functionality"""
+import panel as pn
 # pylint: disable=protected-access
 import param
 
 import awesome_panel.express as pnx
-import panel as pn
 
 
 class _Country(pnx.BrowserUrlMixin, param.Parameterized):

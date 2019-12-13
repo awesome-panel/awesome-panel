@@ -2,7 +2,8 @@
 import pathlib
 
 import panel as pn
-from awesome_panel.express import fontawesome, spinners
+
+from awesome_panel.express import fontawesome
 from awesome_panel.express.assets import (
     BOOTSTRAP_PANEL_EXPRESS_CSS,
     CODE_HILITE_PANEL_EXPRESS_CSS,

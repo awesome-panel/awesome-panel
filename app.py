@@ -11,8 +11,7 @@ Creates a Bootstrap Dashboard App
 import panel as pn
 
 import awesome_panel.express as pnx
-from src.pages import home, resources, about, issues, gallery
-
+from src.pages import about, gallery, home, issues, resources
 
 MENU_BUTTON_CSS_CLASSES = [
     ["navigation", "pas", "pa-home"],
@@ -68,4 +67,3 @@ def main() -> pn.Pane:
 
 if __name__.startswith("bk_script"):
     main().servable("Awesome Panel")
-

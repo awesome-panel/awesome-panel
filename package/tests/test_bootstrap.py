@@ -1,8 +1,8 @@
 """Tests of the bootstrap inspired functionality"""
+import panel as pn
 import pytest
 
 import awesome_panel.express as pnx
-import panel as pn
 
 pnx.bootstrap.extend()
 

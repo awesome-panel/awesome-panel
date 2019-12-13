@@ -158,4 +158,3 @@ def test_max_communication_time_tree_3():
 
     assert persons["Mirko"].max_drunk_factor_tree == 3+6
     assert persons["Mirko"].max_communication_time_tree == 3+6
-

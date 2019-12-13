@@ -2,10 +2,11 @@
 import pytest
 from panel.layout import Column
 
-from src.pages import home, resources, gallery
-from awesome_panel.express import bootstrap
+import awesome_panel.express as pnx
+from awesome_panel.express.testing import TestApp
+from src.pages import gallery, home, resources
 
-bootstrap.extend()
+pnx.bootstrap.extend()
 
 
 @pytest.mark.panel
@@ -13,7 +14,7 @@ def test_home():
     """Test that we can see the home page
 
     """
-    Column(home.view(), sizing_mode="stretch_width").servable()
+    return TestApp(test_home, home.view())
 
 
 @pytest.mark.panel
@@ -21,7 +22,7 @@ def test_resources():
     """Test that we can see the resources page
 
     """
-    Column(resources.view(), sizing_mode="stretch_width").servable()
+    return TestApp(test_resources, resources.view())
 
 
 @pytest.mark.panel
@@ -29,10 +30,13 @@ def test_gallery():
     """Test that we can see the gallery page
 
     """
-    Column(gallery.view(), sizing_mode="stretch_width").servable()
+    page_outlet = Column()
+    page = gallery.Gallery(page_outlet=page_outlet).view()
+    page_outlet[:] = [page]
+    return TestApp(test_gallery, page_outlet)
 
 
 if __name__.startswith("bk"):
-    # test_home()
-    # test_resources()
-    test_gallery()
+    test_home().servable()
+    test_resources().servable()
+    test_gallery().servable()

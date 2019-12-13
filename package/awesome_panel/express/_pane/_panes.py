@@ -3,7 +3,6 @@ import pathlib
 from typing import Optional
 
 import markdown
-
 import panel as pn
 
 MARKDOWN_EXTENSIONS = [

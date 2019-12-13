@@ -1,5 +1,6 @@
-import panel as pn
 import time
+
+import panel as pn
 
 
 def test_show_message_while_python_code_is_running():

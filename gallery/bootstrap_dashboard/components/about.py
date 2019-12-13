@@ -6,8 +6,9 @@ The content is from the markdown file located at ABOUT_PATH combined with an ima
 """
 import pathlib
 
-import awesome_panel.express as pnx
 import panel as pn
+
+import awesome_panel.express as pnx
 
 ABOUT_PATH = pathlib.Path(__file__).parent / "about.md"
 IMAGE_PATH = (
