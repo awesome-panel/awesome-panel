@@ -1,14 +1,20 @@
 """## The Gallery Page of awesome-panel.org"""
+import inspect
+import pathlib
+
+import panel as pn
 from panel import Column
 from panel.layout import HSpacer
 from panel.widgets import Button
-import panel as pn
 
 from awesome_panel.express import Title, spinners
 from awesome_panel.express._pane._panes import Markdown
 from awesome_panel.express.bootstrap import InfoAlert
 from gallery import bootstrap_dashboard
 from gallery.awesome_panel_tests import test_spinners
+
+ROOT = str(pathlib.Path.cwd())
+GITHUB_RAW_URL = "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master"
 
 TEXT = """\
 # Awesome Panel Gallery ![Awesome Badge](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)
@@ -50,17 +56,13 @@ class GalleryButton(Button):
         self.page_outlet = page_outlet
 
         def click_handler(event):
-            title = Title(name)
+            file_url = GITHUB_RAW_URL + inspect.getfile(self.page).replace(ROOT, "").replace(
+                "\\", "/"
+            )
+            text = f'<h2>{name}&nbsp;<a href={file_url} target="_blank" title="Source Code"><i class="fas fa-code"></i></a></h2>'
 
-            import inspect
-            import pathlib
-            root = str(pathlib.Path.cwd())
-            filename = inspect.getfile(self.page).replace(root,"")
-            url = "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master" + filename
-
-
-            self.page_outlet[:] = [spinners.DefaultSpinner()]
-            self.page_outlet[:] = [title, url, self.page()]
+            self.page_outlet[:] = [spinners.DefaultSpinner().center()]
+            self.page_outlet[:] = [text, self.page()]
 
         self.on_click(click_handler)
 

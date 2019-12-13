@@ -37,8 +37,8 @@ class NavigationButton(pn.widgets.Button):
         super().__init__(**kwargs)
 
         def navigate_to_page(event):  # pylint: disable=unused-argument
-            page_outlet.clear()
-            page_outlet.append(page_)
+            page_outlet[:] = [pnx.spinners.DefaultSpinner().center()]
+            page_outlet[:] = [page_]
 
         self.on_click(navigate_to_page)
 

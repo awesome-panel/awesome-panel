@@ -7,14 +7,15 @@ from src.pages import gallery
 
 
 def test_gallery_button():
+    pnx.fontawesome.extend()
     app = pn.Column(name="app", width=400, height=400)
 
     def page():
         return pn.Column("Test Page", name="Test Page")
 
-    gallery_button = gallery.GalleryButton("test", page, app)
+    gallery_button = gallery.GalleryButton("Test App", page, app)
     app[:] = [gallery_button]
-    return app
+    return TestApp(test_gallery_button, app)
 
 
 def view() -> pn.Column:
