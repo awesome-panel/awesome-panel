@@ -47,7 +47,7 @@ steps:
     docker cp $id:/app/test_results/. test_results
     docker rm -v $id
     ls test_results
-  displayName: Export test results from test image
+  displayName: Export test results
   condition: succeededOrFailed()
 
 - task: PublishTestResults@2
