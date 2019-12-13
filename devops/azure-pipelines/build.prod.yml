@@ -35,7 +35,7 @@ steps:
     context: $(buildContext)
     includeLatestTag: true
 - task: Docker@0
-  displayName: 'Build the Test image'
+  displayName: 'Run tests'
   inputs:
     dockerFile: $(dockerFileTest)
     imageName: '$(imageNameTest):$(Build.BuildId)'
@@ -47,7 +47,7 @@ steps:
     docker cp $id:/app/test_results/. test_results
     docker rm -v $id
     ls test_results
-  displayName: Export test results from api_test image
+  displayName: Export test results from test image
   condition: succeededOrFailed()
 
 - task: PublishTestResults@2
