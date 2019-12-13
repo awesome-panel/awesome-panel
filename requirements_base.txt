@@ -1,5 +1,6 @@
 # Panel
 panel
+tornado==5.1.1 # See https://discourse.holoviz.org/t/how-can-i-show-spinner-when-code-is-running/30/4
 hvplot
 
 # Data Engineering and Science

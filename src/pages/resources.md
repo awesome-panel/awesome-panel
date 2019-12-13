@@ -3,12 +3,13 @@
 ## Panel
 
 - [Panel](https://panel.pyviz.org/)
-- [Announcing Article](https://medium.com/@philipp.jfr/panel-announcement-2107c2b15f52)
+- [Discourse](https://discourse.holoviz.org/c/panel)
 - [Getting Started](https://panel.pyviz.org/getting_started/index.html)
 - [User Guide](https://panel.pyviz.org/user_guide/index.html)
 - [Gallery](https://panel.pyviz.org/gallery/index.html)
 - [Reference Gallery](https://panel.pyviz.org/reference/index.html)
 - [GitHub](https://github.com/holoviz/panel)
+- [Announcing Article](https://medium.com/@philipp.jfr/panel-announcement-2107c2b15f52)
 
 ## Awesome Panel
 

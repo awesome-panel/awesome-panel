@@ -11,13 +11,13 @@ I believe Panel could be such an easy to use and powerfull framework. But it is 
 - Partially because its not really been communicated widely.
 - Partly because there is a little bit of friction to using all the powerfull features.
 
-My hope is that this project can contribute to spreading the word and lowering the friction.
+My hope is that this can help spread the word and lower the friction.
 
 This application provides
 
 - A curated list of awesome Panel **resources**.
 - A **gallery** of awesome panel applications.
-- This app as a **best practice example** of a multi page app with a nice layout developed in Panel.
+- This app as a **best practice multi page app** with a nice layout developed in Panel.
 
 Please **use FireFox, Safari or Edge** if you can. Alternatively Chrome - but it's [slower](https://github.com/bokeh/bokeh/issues/9515). This page does not render nicely in Internet Explorer and it's not supported.
 

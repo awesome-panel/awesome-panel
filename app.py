@@ -67,5 +67,5 @@ def main() -> pn.Pane:
 
 
 if __name__.startswith("bk_script"):
-    main().servable()
+    main().servable("Awesome Panel")
 

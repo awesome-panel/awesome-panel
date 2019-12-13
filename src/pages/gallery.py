@@ -4,10 +4,11 @@ from panel.layout import HSpacer
 from panel.widgets import Button
 import panel as pn
 
-from awesome_panel.express import Title
+from awesome_panel.express import Title, spinners
 from awesome_panel.express._pane._panes import Markdown
 from awesome_panel.express.bootstrap import InfoAlert
 from gallery import bootstrap_dashboard
+from gallery.awesome_panel_tests import test_loading_io
 
 TEXT = """\
 # Awesome Panel Gallery ![Awesome Badge](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)
@@ -34,7 +35,11 @@ def info():
     return Column(InfoAlert(text=INFO_TEXT), sizing_mode="stretch_width")
 
 
-APPS = {"Info Alert": info, "Bootstrap Dashboard": bootstrap_dashboard.view}
+APPS = {
+    "Info Alert": info,
+    "Bootstrap Dashboard": bootstrap_dashboard.view,
+    "Spinners": test_loading_io.view,
+}
 
 
 class GalleryButton(Button):
@@ -46,9 +51,8 @@ class GalleryButton(Button):
 
         def click_handler(event):
             title = Title(name)
-            self.page_outlet.clear()
-            self.page_outlet.append(title)
-            self.page_outlet.append(self.page())
+            self.page_outlet[:] = [spinners.Default()]
+            self.page_outlet[:] = [title, self.page()]
 
         self.on_click(click_handler)
 
@@ -96,4 +100,3 @@ class Gallery:
         )
 
         return gallery
-
