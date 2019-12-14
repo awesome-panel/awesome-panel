@@ -113,7 +113,7 @@ The above is the perfect scenario. If this is not possible do the best you can a
 
 ### How to Contribute an App to the Gallery
 
-- Fork this repo and follow the [Getting Started Instructions](getting-started-with-the-awesome-panel-repository) below.
+- Fork this repo and follow the [Getting Started Instructions](#getting-started-with-the-awesome-panel-repository) below.
 - Create a new folder and file `src/pages/gallery/<my_awesome_app>/<my_awesome_app.py` for your app.
     - Your `<my_awesome_app.py>` file should contain a function `def view() -> panel.Column:` that returns your app as a column.
     - Add additional files to the folder if you need it.
@@ -127,17 +127,15 @@ The above is the perfect scenario. If this is not possible do the best you can a
 
 The above is the perfect scenario. If this is not possible do the best you can and then reach out. I would really like to include your Awesome Panel App in the Gallery.
 
-### How to sponsor the Awesome Panel project
+### How to Sponsor the Awesome Panel Project
 
 If you would like to **sponsor my time or the infrastructure** the platform is running on, feel free to reach out. You can find my contact details at [datamodelsanalytics.com](https://datamodelsanalytics.com).
 
-You can also appreciate the work I have already done if you
+You can also appreciate the work that has already been done if you
 
 [![Buy me a coffee](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/buymeacoffee.png?raw=true)](https://www.buymeacoffee.com/4jlTzBJyQ)
 
 Thanks
-
-Marc
 
 ## Governance
 
@@ -147,6 +145,8 @@ I'm Marc, Skov, Madsen, PhD, CFA®, Lead Data Scientist Developer at [Ørsted](h
 
 You can learn more about me at [datamodelsanalytics.com](https://datamodelsanalytics.com)
 
+[<img src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/datamodelsanalytics.png?raw=true" style="max-width: 968px">](https://datamodelsanalytics.com)
+
 I try my best to govern and maintain this project in the spirit of the [Zen of Python](https://www.python.org/dev/peps/pep-0020/).
 
 But **i'm not an experienced open source maintainer** so helpfull suggestions are appreciated.
@@ -155,7 +155,7 @@ Thanks
 
 ### LICENSE
 
-[Apache 2.0 License]([Attribution-ShareAlike 4.0 International](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/license.md)
+[Apache 2.0 License](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/LICENSE)
 
 ## Getting Started with the Awesome Panel Repository
 
@@ -270,7 +270,7 @@ To run bash interactively
 docker run -it -p 80:80 --entrypoint "/bin/bash" marcskovmadsen/awesome-panel:latest
 ```
 
-## Building and Deploy the Awesome Panel Package
+## Build and Deploy the Awesome Panel Package
 
 You can build the package using
 
@@ -343,8 +343,8 @@ Available tasks:
 
 The application is
 
-- build as a Docker image and tested via Azure Pipelines builds
-    - You find the Dockerfiles [here](https://github.com/MarcSkovMadsen/awesome-panel/tree/master/devops/docker) and the Azure pipelines yml files [here](https://github.com/MarcSkovMadsen/awesome-panel/tree/master/devops/azure-pipelines)
+- built as a Docker image and tested via Azure Pipelines.
+    - You can find the Dockerfiles [here](https://github.com/MarcSkovMadsen/awesome-panel/tree/master/devops/docker) and the Azure pipelines yml files [here](https://github.com/MarcSkovMadsen/awesome-panel/tree/master/devops/azure-pipelines).
 
 ![Azure Pipelines](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/azure-pipeline.png?raw=true)
 ![Azure Pipelines Build and Test](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/azure-pipeline-build-test.png?raw=true)
