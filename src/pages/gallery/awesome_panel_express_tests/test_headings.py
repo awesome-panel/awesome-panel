@@ -1,21 +1,19 @@
-"""The module tests the improved headings classes"""
+"""We test the `Title`, `Header` and `Subheader` functionality provided by
+`awesome_panel.express`"""
 import panel as pn
-import pytest
 
 import awesome_panel.express as pnx
+from awesome_panel.express.testing import TestApp
 
 
-@pytest.mark.panel
 def test_headings():
-    """## test_headings
-
-We test that we can show
+    """We test that we can show
 
 - headers: title, header, subheader
 - aligned: left, center
 """
-    app = pn.Column(
-        pn.pane.Markdown(test_headings.__doc__),
+    return TestApp(
+        test_headings,
         pnx.Title("Title Left"),
         pnx.Header("Header Left"),
         pnx.SubHeader("SubHeader Left"),
@@ -23,46 +21,43 @@ We test that we can show
         pnx.Header("Header Center", text_align="center"),
         pnx.SubHeader("SubHeader Center", text_align="center"),
         sizing_mode="stretch_width",
-        background="lightgray",
     )
-    app.servable(test_headings.__name__)
 
 
-@pytest.mark.panel
 def test_title_centered_white():
-    """## test_title_centered_white
-
-We test that we can show a centered Title, Header and SubHeader with a white text color
-"""
-    app = pn.Column(
-        pn.pane.Markdown(test_title_centered_white.__doc__),
+    """We test that we can show a centered Title, Header and SubHeader with a white text color"""
+    return TestApp(
+        test_title_centered_white,
         pnx.Title("Title Center", text_align="center", style={"color": "white"}),
         pnx.Header("Header Center", text_align="center", style={"color": "white"}),
         pnx.SubHeader("SubHeader Center", text_align="center", style={"color": "white"}),
         sizing_mode="stretch_width",
         background="lightgray",
     )
-    app.servable(test_title_centered_white.__name__)
 
 
-@pytest.mark.panel
 def test_with_url():
-    """## test_with_url
-
-We test that we can show a Title with a link
+    """We test that we can show a Title with a link
 """
-    app = pn.Column(
-        pn.pane.Markdown(test_with_url.__doc__),
+    return TestApp(
+        test_with_url,
         pnx.Title("Title with url", url="https://awesome-panel.org"),
         pnx.Header("Header with url", url="https://awesome-panel.org"),
         pnx.SubHeader("SubHeader with url", url="https://awesome-panel.org"),
         sizing_mode="stretch_width",
-        background="lightgray",
     )
-    app.servable(test_with_url.__name__)
+
+
+def view() -> pn.Column:
+    """Wraps all tests in a Column that can be included in the Gallery or served independently
+
+    Returns:
+        pn.Column -- An Column containing all the tests
+    """
+    return pn.Column(
+        pnx.Markdown(__doc__), test_headings(), test_title_centered_white(), test_with_url(),
+    )
 
 
 if __name__.startswith("bk"):
-    test_headings()
-    test_title_centered_white()
-    test_with_url()
+    view().servable("test_headings")

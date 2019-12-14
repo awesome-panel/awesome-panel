@@ -40,7 +40,11 @@ def test_button_with_font_awesome():
 
 
 def view() -> pn.Column:
-    """This function collect the tests into a Column"""
+    """Wraps all tests in a Column that can be included in the Gallery or served independently
+
+    Returns:
+        pn.Column -- An Column containing all the tests
+    """
     return pn.Column(
         pnx.Markdown(__doc__), test_html_with_font_awesome(), test_button_with_font_awesome(),
     )

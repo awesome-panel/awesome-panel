@@ -78,6 +78,7 @@ def view() -> pn.Column:
         pn.Column -- An Column containing all the tests
     """
     return pn.Column(
+        pnx.Markdown(__doc__),
         test_info_alert(),
         test_error_alert(),
         test_warning_alert(),

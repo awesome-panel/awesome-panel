@@ -73,8 +73,14 @@ return TestApp(
 
 
 def view() -> pn.Column:
-    """This function collect the tests into a Column"""
-    return pn.Column(__doc__, test_markdown, test_markdown_from_file, test_markdown_code_block)
+    """Wraps all tests in a Column that can be included in the Gallery or served independently
+
+    Returns:
+        pn.Column -- An Column containing all the tests
+    """
+    return pn.Column(
+        pnx.Markdown(__doc__), test_markdown, test_markdown_from_file, test_markdown_code_block
+    )
 
 
 if __name__.startswith("bk"):

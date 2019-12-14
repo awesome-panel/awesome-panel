@@ -4,7 +4,7 @@
 
 This an open source project and you are very welcome to **contribute** your awesome
 comments, questions, resources and apps as
-[issues](https://github.com/MarcSkovMadsen/awesome-panel/issues) of or
+[issues](https://github.com/MarcSkovMadsen/awesome-panel/issues) or
 [pull requests](https://github.com/MarcSkovMadsen/awesome-panel/pulls)
 to the [source code](https://github.com/MarcSkovMadsen/awesome-panel).
 
