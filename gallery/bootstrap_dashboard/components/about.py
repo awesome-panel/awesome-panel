@@ -2,7 +2,8 @@
 
 The About Page tells why we build the BootStrap Dashboard App.
 
-The content is from the markdown file located at ABOUT_PATH combined with an image from thumbnail_path.
+The content is from the markdown file located at ABOUT_PATH combined with an image from
+thumbnail_path.
 """
 import pathlib
 

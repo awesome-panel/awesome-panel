@@ -1,7 +1,5 @@
 # Todo List
 
-setup image links
-
 - Add more examples
   - Add https://www.sicara.ai/blog/2018-01-30-bokeh-dash-best-dashboard-framework-python
   - Add Widgets, Pane, Layouts with links

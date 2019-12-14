@@ -11,19 +11,15 @@ def tag() -> Tag:
     return Tag(name="new tag")
 
 
-# pylint: disable=duplicate-code
 @pytest.fixture
 def author() -> Author:
     """Author fixture"""
     return Author(
-        name="Marc Skov Madsen",
+        name="Marc Skov Madsen 2",
         url="https://datamodelsanalytics.com",
         github_url="https://github.com/marcskovmadsen",
         github_avatar_url="https://avatars0.githubusercontent.com/u/42288570",
     )
-
-
-# pylint: enable=duplicate-code
 
 
 @pytest.fixture
@@ -32,6 +28,7 @@ def resource(author, tag) -> Resource:
     return Resource(
         name="awesome-panel.org",
         url="https://awesome-panel.org",
+        thumbnail_path="assets/images/thumbnails/awesome-panel-org.png",
         is_awesome=True,
         tags=[tag],
         author=author,
@@ -50,7 +47,7 @@ def test_tag__str__(tag):
 
 def test_author__init__(author):
     """Test Author __init__"""
-    assert author.name == "Marc Skov Madsen"
+    assert author.name == "Marc Skov Madsen 2"
     assert author.url == "https://datamodelsanalytics.com"
     assert author.github_url == "https://github.com/marcskovmadsen"
     assert author.github_avatar_url == "https://avatars0.githubusercontent.com/u/42288570"
@@ -58,13 +55,14 @@ def test_author__init__(author):
 
 def test_author__str__(author):
     """Test Author __str__"""
-    assert str(author) == "Marc Skov Madsen"
+    assert str(author) == "Marc Skov Madsen 2"
 
 
 def test_resource__init__(resource, author, tag):
     """Test Resource __init__"""
     assert resource.name == "awesome-panel.org"
     assert resource.url == "https://awesome-panel.org"
+    assert resource.thumbnail_path == "assets/images/thumbnails/awesome-panel-org.png"
     assert resource.is_awesome
     assert resource.tags == [tag]
     assert resource.author == author
@@ -79,7 +77,7 @@ def test_resource_to_markdown_bullet(resource):
     """I can convert a resource to a a markdown bullet string"""
     assert resource.to_markdown_bullet() == (
         "- [awesome-panel.org](https://awesome-panel.org) by "
-        "[Marc Skov Madsen](https://datamodelsanalytics.com) (#new tag)"
+        "[Marc Skov Madsen 2](https://datamodelsanalytics.com) (#new tag)"
     )
 
 
@@ -97,8 +95,8 @@ def test_author_to_html(author):
     actual = author.to_html(width="25px", height="25px")
     # Then
     assert actual == (
-        '<a href="https://github.com/marcskovmadsen" title="Author: Marc Skov Madsen" '
+        '<a href="https://github.com/marcskovmadsen" title="Author: Marc Skov Madsen 2" '
         'target="_blank"><img src="https://avatars0.githubusercontent.com/u/42288570" '
-        'alt="Marc Skov Madsen" style="border-radius: 50%;width: 25px;height: 25px;'
+        'alt="Marc Skov Madsen 2" style="border-radius: 50%;width: 25px;height: 25px;'
         'vertical-align: text-bottom;"></img></a>'
     )
