@@ -31,6 +31,14 @@ APPS_IN_GALLERY = [
         author=authors.MARC_SKOV_MADSEN,
     ),
     Resource(
+        name="Test Bootstrap Alerts",
+        url=GITHUB_GALLERY_URL + "awesome_panel_express_tests/test_bootstrap_alerts.py",
+        thumbnail_path=THUMBNAILS_ROOT + "test_bootstrap_alerts.png",
+        tags=[tags.CODE, tags.APP_IN_GALLERY, tags.AWESOMEPANEL_EXPRESS],
+        is_awesome=True,
+        author=authors.MARC_SKOV_MADSEN,
+    ),
+    Resource(
         name="Test Spinners",
         url=GITHUB_GALLERY_URL + "awesome_panel_express_tests/test_spinners.py",
         thumbnail_path=THUMBNAILS_ROOT + "test_spinners.png",
