@@ -1,6 +1,7 @@
 # Todo List
 
 - Add more examples
+  - add awesome_panel.express
   - Add https://www.sicara.ai/blog/2018-01-30-bokeh-dash-best-dashboard-framework-python
   - Add Widgets, Pane, Layouts with links
 
@@ -36,3 +37,5 @@
 - Sticky Header
 - Autodoc awesome_panel
 - fav icon
+
+- setup automated release of awesome_panel package
