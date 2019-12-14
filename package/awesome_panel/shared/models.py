@@ -55,14 +55,14 @@ class Resource:
         self,
         name: str,
         url: str,
-        thumbnail_url: str,
+        thumbnail_path: str,
         is_awesome: bool,
         tags: Optional[List[Tag]] = None,
         author: Optional[Author] = None,
     ):
         self.name = name
         self.url = url
-        self.thumbnail_url = thumbnail_url
+        self.thumbnail_path = thumbnail_path
         self.is_awesome = is_awesome
         if tags:
             self.tags = tags

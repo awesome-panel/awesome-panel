@@ -122,14 +122,10 @@ class GalleryCard(Column):
         """
         self.button = GalleryButton(page, page_outlet, width=365, align="center", **kwargs)
         spacer = pn.layout.HSpacer(height=5)
+        print(page.thumbnail_path)
         super().__init__(
             spacer,
-            pn.pane.PNG(
-                "gallery/bootstrap_dashboard/bootstrap_dashboard.png",
-                width=360,
-                height=272,
-                align="center",
-            ),
+            pn.pane.PNG(page.thumbnail_path, width=360, height=272, align="center",),
             # spacer,
             self.button,
             spacer,
