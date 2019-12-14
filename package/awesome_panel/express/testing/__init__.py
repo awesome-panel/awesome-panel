@@ -30,7 +30,7 @@ class TestApp(Column):
             text_str += "\n\n" + test_func.__doc__
         text = Markdown(text_str)
 
-        if "sizing_mode" not in kwargs:
+        if "sizing_mode" not in kwargs and not "width" in kwargs and not "height" in kwargs:
             kwargs["sizing_mode"] = "stretch_width"
 
         super().__init__(text, *args, **kwargs)

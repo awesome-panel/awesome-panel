@@ -9,13 +9,13 @@ from panel import Column
 from panel.layout import HSpacer
 from panel.widgets import Button
 
+from awesome_panel.app.services import module_to_github_url
 from awesome_panel import database
 from awesome_panel.express import spinners
 from awesome_panel.express._pane._panes import Markdown
 from awesome_panel.express.bootstrap import InfoAlert
 
 ROOT = str(pathlib.Path.cwd())
-GITHUB_RAW_URL = "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master"
 # pylint: disable=line-too-long
 TEXT = """\
 # Awesome Panel Gallery ![Awesome Badge](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)
@@ -90,9 +90,7 @@ class GalleryButton(Button):
         self.page_outlet = page_outlet
 
         def click_handler(event):  # pylint: disable=unused-argument
-            file_url = GITHUB_RAW_URL + inspect.getfile(self.page).replace(ROOT, "").replace(
-                "\\", "/"
-            )
+            file_url = module_to_github_url(self.page)
             text = (
                 f'<h2>{name}&nbsp;<a href={file_url} target="_blank" title="Source Code">'
                 '<i class="fas fa-code"></i></a></h2>'
