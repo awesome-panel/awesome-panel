@@ -89,7 +89,7 @@ I have a feeling that the Bokeh Javascript on elements does not take everything 
 
 For example I struggled with the below scrollbar until I found out it was because i had a `margin-bottom: 1rem;` in the css for the info box. When I removed that the problem was solved.
 
-![Info Alert Scrollbar Problem](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/gallery/bootstrap_dashboard/assets/images/info_alert_scrollbar_problem.png?raw=true)
+![Info Alert Scrollbar Problem](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/bootstrap_dashboard/assets/images/info_alert_scrollbar_problem.png?raw=true)
 
 But I also struggle with it on this Limitations page. It's like the big image just above confuses the rendering. The workaround is to set `img {max-width: 100%}` in the css.
 

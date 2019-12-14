@@ -15,19 +15,19 @@ from awesome_panel.express.testing import TestApp
 
 
 def test_default_spinner():
-    """## Show the default spinner"""
+    """Show the default spinner"""
     default_spinner = pnx.spinners.DefaultSpinner()
     return TestApp(test_default_spinner, default_spinner)
 
 
 def test_all_spinners():
-    """## Show all spinners"""
+    """Show all spinners"""
     spinners_all = pn.Row(pnx.spinners.DefaultSpinner(), pnx.spinners.FacebookSpinner())
     return TestApp(test_all_spinners, spinners_all)
 
 
 def test_spinner_while_python_executing():
-    """## Show Facebook spinner while Python code is running
+    """Show spinner while Python code is running
 
     It works on Tornado Server 5.1.1 but not 6.0.3. See
     [Discourse](https://discourse.holoviz.org/t/how-can-i-show-spinner-when-code-is-running/30/2)
@@ -47,7 +47,7 @@ def test_spinner_while_python_executing():
 
 
 def test_spinner_can_be_centered():
-    """## Show spinner can be centered
+    """Show spinner can be centered
 
     At the same time we can test if the spinner looks good on a dark background
     """

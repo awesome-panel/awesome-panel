@@ -8,6 +8,8 @@ comments, questions, resources and apps as
 [pull requests](https://github.com/MarcSkovMadsen/awesome-panel/pulls)
 to the [source code](https://github.com/MarcSkovMadsen/awesome-panel).
 
+For more details see the [Contribute](https://github.com/marcskovmadsen/awesome-panel#contribute) section of the README file.
+
 ## The Developer
 
 This project is developed by Marc Skov Madsen. You can learn more about me at

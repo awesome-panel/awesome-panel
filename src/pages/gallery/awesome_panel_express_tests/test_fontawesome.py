@@ -12,7 +12,7 @@ pnx.fontawesome.extend()
 
 
 def test_html_with_font_awesome():
-    """## Test that we can use HTML with font awesome icons"""
+    """Test that we can use HTML with font awesome icons"""
     text = """
     <ul style="margin: 0;">
         <li><i class="fas fa-user"></i> Login</li>
@@ -27,7 +27,7 @@ def test_html_with_font_awesome():
 
 
 def test_button_with_font_awesome():
-    """## Test that we can use buttons with a font awesome icon
+    """Test that we can use buttons with a font awesome icon
 
     Please note that the 'f' in FontAwesome css classes needs to be changed to 'p' for Panel.
     For example to `css_classes=["pas", "pa-user"]`

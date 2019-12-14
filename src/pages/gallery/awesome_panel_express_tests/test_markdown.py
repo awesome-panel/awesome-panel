@@ -47,6 +47,14 @@ def test_markdown_from_file():
     )
 
 
+def test_markdown_indendation():
+    """We test the Markdown pane
+
+    - can handle leading spaces, i.e. this line shows as a bullited list and not in mono-space
+"""
+    return TestApp(test_markdown_indendation, sizing_mode="stretch_width",)
+
+
 def test_markdown_code_block():
     """We test that
 
@@ -79,7 +87,11 @@ def view() -> pn.Column:
         pn.Column -- An Column containing all the tests
     """
     return pn.Column(
-        pnx.Markdown(__doc__), test_markdown, test_markdown_from_file, test_markdown_code_block
+        pnx.Markdown(__doc__),
+        test_markdown,
+        test_markdown_from_file,
+        test_markdown_indendation,
+        test_markdown_code_block,
     )
 
 
