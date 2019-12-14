@@ -2,6 +2,7 @@
 import importlib
 import pathlib
 from types import ModuleType
+from typing import List
 
 import panel as pn
 from panel import Column
@@ -9,7 +10,6 @@ from panel.layout import HSpacer
 from panel.widgets import Button
 
 from awesome_panel import database
-from awesome_panel.database.apps_in_gallery import APPS_IN_GALLERY
 from awesome_panel.express import Divider, spinners
 from awesome_panel.express._pane._panes import Markdown
 from awesome_panel.express.bootstrap import InfoAlert
@@ -139,16 +139,23 @@ class GalleryCard(Column):
 class Gallery:  # pylint: disable=too-few-public-methods
     """The Gallery page"""
 
-    def __init__(self, page_outlet: pn.Column):
+    def __init__(self, page_outlet: pn.Column, apps_in_gallery: List[Resource]):
+        """Constructs a Gallery
+
+        Arguments:
+            page_outlet {pn.Column} -- A Column to hold the selected gallery page
+            apps_in_gallery {List[Resource]} -- The list of apps to include in the gallery
+        """
         self.page_outlet = page_outlet
+        self.apps_in_gallery = apps_in_gallery
 
     def view(self) -> Column:
         """The gallery view of awesome-panel.org"""
         buttons = []
-        for app in APPS_IN_GALLERY:
+        for app in self.apps_in_gallery:
             buttons.append(GalleryCard(app, self.page_outlet))
 
-        gallery = Column(
+        return Column(
             Markdown(TEXT),
             info(),
             HSpacer(height=25),
@@ -157,5 +164,3 @@ class Gallery:  # pylint: disable=too-few-public-methods
             name="Gallery",
             sizing_mode="stretch_width",
         )
-
-        return gallery

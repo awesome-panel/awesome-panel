@@ -1,6 +1,6 @@
 """Test of the app services"""
 from awesome_panel.core import services
-from gallery.bootstrap_dashboard import main
+from src.pages.gallery.bootstrap_dashboard import main
 
 
 def test_module_to_github_url():
@@ -10,5 +10,5 @@ def test_module_to_github_url():
     # Then
     assert actual == (
         "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/"
-        "gallery/bootstrap_dashboard/main.py"
+        "src/pages/gallery/bootstrap_dashboard/main.py"
     )

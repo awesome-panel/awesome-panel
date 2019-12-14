@@ -11,6 +11,7 @@ Creates a Bootstrap Dashboard App
 import panel as pn
 
 import awesome_panel.express as pnx
+from awesome_panel.database.apps_in_gallery import APPS_IN_GALLERY
 from src.pages import about, gallery, home, issues, resources
 
 MENU_BUTTON_CSS_CLASSES = [
@@ -60,7 +61,7 @@ def main() -> pn.Pane:
         # Hack for some reason I need to instantiate this otherwise the layout is not nice
         home.view(),
         resources.view,
-        gallery.Gallery(app.main).view,
+        gallery.Gallery(page_outlet=app.main, apps_in_gallery=APPS_IN_GALLERY).view,
         issues.view,
         about.view,
     ]

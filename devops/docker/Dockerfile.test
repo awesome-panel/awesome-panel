@@ -6,12 +6,12 @@ RUN pip install pylint2junit
 
 RUN mkdir -p test_results; exit 0
 
-RUN pylint --rcfile=.pylintrc --output-format=pylint2junit.JunitReporter app.py docs package gallery tasks src tests 2>&1 > test_results/pylint-results.xml;exit 0
+RUN pylint --rcfile=.pylintrc --output-format=pylint2junit.JunitReporter app.py docs package tasks src tests 2>&1 > test_results/pylint-results.xml;exit 0
 
 RUN rm -rf .mypy_cache/; exit 0
-RUN mypy --config-file=mypy.ini --junit-xml test_results/mypy-results.xml app.py docs package gallery tasks src tests; exit 0
+RUN mypy --config-file=mypy.ini --junit-xml test_results/mypy-results.xml app.py docs package tasks src tests; exit 0
 
-RUN pytest tests package/tests gallery/awesome_panel_express_tests -m "not functionaltest and not integrationtest" --doctest-modules --junitxml=test_results/test-results.xml; exit 0
+RUN pytest tests package/tests src/pages/gallery/awesome_panel_express_tests -m "not functionaltest and not integrationtest" --doctest-modules --junitxml=test_results/test-results.xml; exit 0
 
 # Remove empty test_results files.
 # Pylint produces empty files if no issues identified

@@ -103,3 +103,4 @@ venv.bak/
 # mypy
 .mypy_cache/
 gallery/panel-examples/
+src/pages/gallery/panel-examples/
