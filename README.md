@@ -210,7 +210,7 @@ pip install -r requirements_local.txt
 ### Build and run the Application Locally
 
 ```bash
-python -m panel serve app.py
+panel serve app.py
 ```
 
 or in a jupyter notebook
@@ -297,7 +297,6 @@ Available tasks:
   docker.system-prune                     The docker system prune command will free up space
   jupyter.notebook                        Run jupyter notebook
   package.build                           Builds the awesome-panel package)
-  panel.bootstrap-dashboard               Starts the Panel Server and serves the Bootstrap Dashboard App
   sphinx.build                            Build local version of site and open in a browser
   sphinx.copy-from-project-root           We need to copy files like README.md into docs/_copy_of_project_root
   sphinx.livereload                       Start autobild documentation server and open in browser.
