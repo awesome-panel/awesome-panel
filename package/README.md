@@ -34,7 +34,7 @@ Creates a Bootstrap Dashboard App
 (https://getbootstrap.com/docs/4.4/examples/dashboard/)
 - implemented using the `awesome_panel' python package and in particular the
 `awesome_panel.express.templates.BootstrapDashboardTemplate`
-- Start the app by using `panel serve` on this file.
+- Start the app by using `python -m panel serve` on this file.
 """
 import panel as pn
 

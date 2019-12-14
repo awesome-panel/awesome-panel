@@ -210,7 +210,7 @@ pip install -r requirements_local.txt
 ### Build and run the Application Locally
 
 ```bash
-panel serve app.py
+python -m panel serve app.py
 ```
 
 or in a jupyter notebook

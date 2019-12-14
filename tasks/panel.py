@@ -16,6 +16,6 @@ def bootstrap_dashboard(context, dev=False):
     if dev:
         command = "python -m panel serve gallery/bootstrap_dashboard --dev --show"
     else:
-        command = "panel serve bootstrap_dashboard"
+        command = "python -m panel serve bootstrap_dashboard"
 
     context.run(command)
