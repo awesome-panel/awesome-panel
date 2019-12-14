@@ -1,25 +1,19 @@
 # Todo List
 
-- Add github_url and github_image_url to Author
-  - Use it on Gallery App Page
-
-- Fix url issue on Gallery Page
-
-- Create Resources list
-    - add https://youtu.be/Fp1OgFkll9Q
-    - Functionality to create resources list markdown
-    - Functionality to update readme.md resources list
-
-- Add infobar with links to issues and feature requests.
-  - Describe how to contribute
-  - Add Issues and Feature requests to Github link
-- Make gallery searcheable by Tag and Author
+setup image links
 
 - Add more examples
   - Add https://www.sicara.ai/blog/2018-01-30-bokeh-dash-best-dashboard-framework-python
   - Add Widgets, Pane, Layouts with links
 
 - Create 5 minutes introduction to Panel on Youtube
+
+- Create Resources list
+    - add https://youtu.be/Fp1OgFkll9Q
+    - Functionality to create resources list markdown
+    - Functionality to update readme.md resources list
+
+- Make gallery searcheable by Tag and Author
 
 - Feature requests
   - Image Buton

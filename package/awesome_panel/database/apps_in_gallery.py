@@ -16,6 +16,7 @@ APPS_IN_GALLERY = [
     Resource(
         name="Bootstrap Dashboard",
         url=GITHUB_GALLERY_URL + "bootstrap_dashboard/main.py",
+        thumbnail_url="",
         tags=[tags.CODE, tags.APP_IN_GALLERY],
         is_awesome=True,
         author=authors.MARC_SKOV_MADSEN,
@@ -23,6 +24,7 @@ APPS_IN_GALLERY = [
     Resource(
         name="Test Spinners",
         url=GITHUB_GALLERY_URL + "awesome_panel_express_tests/test_spinners.py",
+        thumbnail_url="",
         tags=[tags.CODE, tags.APP_IN_GALLERY, tags.AWESOMEPANEL_EXPRESS],
         is_awesome=True,
         author=authors.MARC_SKOV_MADSEN,

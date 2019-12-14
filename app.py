@@ -28,6 +28,16 @@ CONTACT = """<p>
 <a href="https://hub.docker.com/r/marcskovmadsen/awesome-panel" target="_blank"><i class="fab fa-docker" title="Docker"></i></a>
 </p>"""
 
+INFO = """\
+#### Contribute
+
+This an **open source project** and you are very welcome to contribute your awesome comments,
+questions, resources and apps as
+[issues and feature requests](https://github.com/MarcSkovMadsen/awesome-panel/issues/new/choose)
+or
+[pull requests](https://github.com/marcskovmadsen/awesome-panel/pulls).
+"""
+
 
 def main() -> pn.Pane:
     """## Bootstrap Dashboard App
@@ -57,7 +67,8 @@ def main() -> pn.Pane:
     navigation_menu = pnx.NavigationMenu(
         pages=pages, page_outlet=app.main, css_classes=MENU_BUTTON_CSS_CLASSES
     )
-    app.sidebar.append(navigation_menu)
+    info = pn.Column(pnx.Markdown(INFO), margin=10, sizing_mode="stretch_width")
+    app.sidebar[:] = [navigation_menu, info]
 
     contact = pn.Row(pn.pane.HTML(CONTACT))
     app.header.append(contact)

@@ -4,6 +4,7 @@ Here you maintain the list of awesome resources
 """
 from awesome_panel.database import authors, tags
 from awesome_panel.database.apps_in_gallery import APPS_IN_GALLERY
+
 # pylint: disable=line-too-long
 from awesome_panel.shared.models import Resource
 
@@ -13,6 +14,7 @@ RESOURCES = [
     Resource(
         name="Awesome-panel.org",
         url="https://awesome-panel.org",
+        thumbnail_url="abc",
         is_awesome=True,
         tags=[tags.AWESOME_PANEL_ORG],
         author=authors.MARC_SKOV_MADSEN,
