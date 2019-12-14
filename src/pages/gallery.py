@@ -10,11 +10,10 @@ from panel.widgets import Button
 
 from awesome_panel import database
 from awesome_panel.database.apps_in_gallery import APPS_IN_GALLERY
-from awesome_panel.express import spinners
+from awesome_panel.express import Divider, spinners
 from awesome_panel.express._pane._panes import Markdown
 from awesome_panel.express.bootstrap import InfoAlert
 from awesome_panel.shared.models import Resource
-from awesome_panel.express import Divider
 
 ROOT = str(pathlib.Path.cwd())
 # pylint: disable=line-too-long

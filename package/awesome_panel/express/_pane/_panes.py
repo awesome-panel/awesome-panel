@@ -4,6 +4,7 @@ from typing import Optional
 
 import markdown
 import panel as pn
+
 from awesome_panel.express.assets import CODE_HILITE_PANEL_EXPRESS_CSS
 
 MARKDOWN_EXTENSIONS = [
