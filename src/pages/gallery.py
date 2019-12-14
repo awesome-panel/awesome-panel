@@ -152,7 +152,8 @@ class Gallery:  # pylint: disable=too-few-public-methods
         gallery = Column(
             Markdown(TEXT),
             info(),
-            HSpacer(height=50),
+            HSpacer(height=25),
+            Divider(),
             *buttons,
             name="Gallery",
             sizing_mode="stretch_width",
