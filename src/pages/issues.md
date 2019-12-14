@@ -1,6 +1,6 @@
-# Awesome Panel Issues ![Awesome Badge](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)
+# Issues Experienced During Development of this Project
 
-Let me start out by saying that I think that Panel is already very powerfull and usefull.
+Let me start out by saying that I think that **Panel is already very powerfull and usefull**.
 
 But I have experienced som issues and rough edges as I've developed this site.
 
@@ -43,10 +43,6 @@ See
 
 - Plotly is not yet responsive in Panel. See [Issue 822](https://github.com/holoviz/panel/issues/822)
 - Plotly plots loads a lot slower than HoloViews plots.
-
-## Hot reload is slow and slows down development-test cycle
-
-See [issue 849](https://github.com/holoviz/panel/issues/849)
 
 ## Panels, Panes and Widgets are not full width, responsive by default
 
@@ -109,6 +105,10 @@ I could develop a multi page app that Panel serves via urls. But then I would lo
 
 BUT. I FOUND A WAY TO IMPLEMENT IT MY SELF.
 
+## Hot reload is slow and slows down development-test cycle
+
+See [issue 849](https://github.com/holoviz/panel/issues/849)
+
 ## There is no Browser URL widget
 
 There is not functionality or Widget in Panel to use the Browser and  URLs like `example.com/page1/?year=1976` for navigation, bookmarking and sharing links. See [issue 811](https://github.com/holoviz/panel/issues/811).
@@ -120,6 +120,6 @@ I would like to be able to keep the server app state in sync with the client app
 
 BUT. I FOUND A WAY TO PARTIALLY IMPLEMENT IT MY SELF via Javascript.
 
-## I Could not get independt scrollbars working
+## I Could not get independent scrollbars working
 
 I would have liked the sidebar and content sections to have independent vertical scrollbars that only show up if needed. I could not get that working. I guess it's just my CSS skills that are too poor.

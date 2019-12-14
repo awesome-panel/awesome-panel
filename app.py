@@ -46,7 +46,7 @@ def main() -> pn.Pane:
 
     app = pnx.templates.BootstrapDashboardTemplate(app_title="Awesome Panel")
 
-    PAGES = [
+    pages = [
         # Hack for some reason I need to instantiate this otherwise the layout is not nice
         home.view(),
         resources.view,
@@ -55,7 +55,7 @@ def main() -> pn.Pane:
         about.view,
     ]
     navigation_menu = pnx.NavigationMenu(
-        pages=PAGES, page_outlet=app.main, css_classes=MENU_BUTTON_CSS_CLASSES
+        pages=pages, page_outlet=app.main, css_classes=MENU_BUTTON_CSS_CLASSES
     )
     app.sidebar.append(navigation_menu)
 

@@ -11,6 +11,7 @@ def tag() -> Tag:
     return Tag(name="new tag")
 
 
+# pylint: disable=duplicate-code
 @pytest.fixture
 def author() -> Author:
     """Author fixture"""
@@ -20,6 +21,9 @@ def author() -> Author:
         github_url="https://github.com/marcskovmadsen",
         github_avatar_url="https://avatars0.githubusercontent.com/u/42288570",
     )
+
+
+# pylint: enable=duplicate-code
 
 
 @pytest.fixture
@@ -85,3 +89,16 @@ def test_screenshot_file(resource):
     resource.name = "Hello-panel deployed on Glitch"
     # Then:
     assert resource.screenshot_file == "hello-panel-deployed-on-glitch.png"
+
+
+def test_author_to_html(author):
+    """On the Gallery App Page I need functionality to show and link to the Author"""
+    # When
+    actual = author.to_html(width="25px", height="25px")
+    # Then
+    assert actual == (
+        '<a href="https://github.com/marcskovmadsen" title="Author: Marc Skov Madsen" '
+        'target="_blank"><img src="https://avatars0.githubusercontent.com/u/42288570" '
+        'alt="Marc Skov Madsen" style="border-radius: 50%;width: 25px;height: 25px;'
+        'vertical-align: text-bottom;"></img></a>'
+    )

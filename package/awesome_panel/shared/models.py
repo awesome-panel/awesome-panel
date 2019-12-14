@@ -33,6 +33,20 @@ class Author(NamedTuple):
     def __repr__(self):
         return self.name
 
+    def to_html(self, width="20px", height="20px") -> str:
+        """## A valid HTML string with the GitHub image and GitHub url link
+
+        Returns:
+            str -- A valid HTML string with the github avatar link
+        """
+        return (
+            f'<a href="{self.github_url}" title="Author: {self.name}" target="_blank">'
+            f'<img src="{self.github_avatar_url}" alt="{self.name}" '
+            f'style="border-radius: 50%;width: {width};height: {height};'
+            'vertical-align: text-bottom;">'
+            "</img></a>"
+        )
+
 
 class Resource:
     """Model of a Resource"""

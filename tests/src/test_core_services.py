@@ -1,9 +1,10 @@
 """Test of the app services"""
+from awesome_panel.core import services
 from gallery.bootstrap_dashboard import main
-from awesome_panel.app import services
 
 
 def test_module_to_github_url():
+    """An extrac test of the module_to_github_url function as I had problems making it work"""
     # When
     actual = services.module_to_github_url(main)
     # Then

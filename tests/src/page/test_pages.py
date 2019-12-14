@@ -1,5 +1,6 @@
 """Test of the pages"""
 import pytest
+
 import awesome_panel.express as pnx
 from awesome_panel.express.testing import TestApp
 from src.pages import home, resources

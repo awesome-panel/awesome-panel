@@ -8,12 +8,11 @@ from panel import Column
 from panel.layout import HSpacer
 from panel.widgets import Button
 
-from awesome_panel.core.services import module_to_github_url
 from awesome_panel import database
+from awesome_panel.database.apps_in_gallery import APPS_IN_GALLERY
 from awesome_panel.express import spinners
 from awesome_panel.express._pane._panes import Markdown
 from awesome_panel.express.bootstrap import InfoAlert
-from awesome_panel.database.apps_in_gallery import APPS_IN_GALLERY
 from awesome_panel.shared.models import Resource
 
 ROOT = str(pathlib.Path.cwd())
@@ -42,6 +41,22 @@ Please **use FireFox, Safari or Edge** if you can. Alternatively you can use Chr
 def info():
     """An InfoAlert with relevant text"""
     return Column(InfoAlert(text=INFO_TEXT), sizing_mode="stretch_width")
+
+
+def page_code_url_to_html(page: Resource) -> str:
+    """Converts a page to html link to the code with a font awesome icon
+
+    Make sure to run pnx.fontawesome.extend() for this to work
+
+    Arguments:
+        page {Resource} -- A page
+
+    Returns:
+        str -- A html string linking to the code and with a nice fontawesome icon
+    """
+    return (
+        f'<a href={page.url} target="_blank" title="Source Code">' '<i class="fas fa-code"></i></a>'
+    )
 
 
 def to_module_function(gallery_url: str) -> ModuleType:
@@ -84,8 +99,8 @@ class GalleryButton(Button):
 
         def click_handler(event):  # pylint: disable=unused-argument
             text = (
-                f'<h2>{page.name}&nbsp;<a href={page.url} target="_blank" title="Source Code">'
-                '<i class="fas fa-code"></i></a></h2>'
+                f"<h1>Gallery / {page.name}</h1>"
+                f"<p>Resources: {page.author.to_html()}, {page_code_url_to_html(page)}</p>"
             )
             page_view = to_module_function(page.url).view()
             self.page_outlet[:] = [spinners.DefaultSpinner().center()]

@@ -4,7 +4,6 @@ import pathlib
 from types import ModuleType
 
 from awesome_panel.database.settings import GITHUB_BLOB_MASTER_URL
-from awesome_panel.shared.models import Author
 
 ROOT_PATH = str(pathlib.Path.cwd()).lower()
 
@@ -26,15 +25,3 @@ def module_to_github_url(module: ModuleType) -> str:
     file_relative = file_absolute.replace(ROOT_PATH, "")
     file_relative = file_relative[1:].replace("\\", "/")
     return GITHUB_BLOB_MASTER_URL + file_relative
-
-
-def author_to_github_link_with_image(author: Author) -> str:
-    """## A HTML image link string
-
-    Arguments:
-        author {Author} -- The Author
-
-    Returns:
-        str -- A valid HTML string with the github avatar link
-    """
-    return f'<a href="{author.github_url}" target="_blank"><img src="{author.github_avatar_url}" title="{author.name}"></img></a>'

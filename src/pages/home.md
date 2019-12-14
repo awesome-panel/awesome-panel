@@ -1,4 +1,4 @@
-# Awesome Panel ![Awesome Badge](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)
+# Home of Awesome Panel ![Awesome Badge](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)
 
 Panel is announced as **a high-level app and dashboarding solution for Python**. I think the terms **powerfull** and **full of features** should be added to that.
 
