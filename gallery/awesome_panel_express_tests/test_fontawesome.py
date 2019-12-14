@@ -1,7 +1,8 @@
-"""Here we test the functionality of font awesome"""
-# pylint: disable=protected-access
-import pathlib
+"""Here we test the functionality of `awesome_panel.express.fontawesome`
 
+Please note you need to run `fontawesome.extend()` in order to import the relevant css.
+"""
+# pylint: disable=protected-access
 import panel as pn
 
 import awesome_panel.express as pnx
@@ -26,7 +27,11 @@ def test_html_with_font_awesome():
 
 
 def test_button_with_font_awesome():
-    """## Test that we can use buttons with a font awesome icon"""
+    """## Test that we can use buttons with a font awesome icon
+
+    Please note that the 'f' in FontAwesome css classes needs to be changed to 'p' for Panel.
+    For example to `css_classes=["pas", "pa-user"]`
+    """
     button_user = pn.widgets.Button(name=" User", css_classes=["pas", "pa-user"],)
     button_newspaper = pn.widgets.Button(name=" News Paper", css_classes=["pas", "pa-newspaper"],)
     button_twitter = pn.widgets.Button(name=" Twitter", css_classes=["pab", "pa-twitter"],)
@@ -36,7 +41,9 @@ def test_button_with_font_awesome():
 
 def view() -> pn.Column:
     """This function collect the tests into a Column"""
-    return pn.Column(test_html_with_font_awesome(), test_button_with_font_awesome(),)
+    return pn.Column(
+        pnx.Markdown(__doc__), test_html_with_font_awesome(), test_button_with_font_awesome(),
+    )
 
 
 if __name__.startswith("bk"):

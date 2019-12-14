@@ -12,6 +12,7 @@ from awesome_panel.shared.models import Resource
 
 GITHUB_GALLERY_URL = GITHUB_BLOB_MASTER_URL + "gallery/"
 
+# Please keep this list sorted by name
 APPS_IN_GALLERY = [
     Resource(
         name="Bootstrap Dashboard",
@@ -22,17 +23,17 @@ APPS_IN_GALLERY = [
         author=authors.MARC_SKOV_MADSEN,
     ),
     Resource(
-        name="Test Spinners",
-        url=GITHUB_GALLERY_URL + "awesome_panel_express_tests/test_spinners.py",
-        thumbnail_path=THUMBNAILS_ROOT + "test_spinners.png",
+        name="Test FontAwesome",
+        url=GITHUB_GALLERY_URL + "awesome_panel_express_tests/test_fontawesome.py",
+        thumbnail_path=THUMBNAILS_ROOT + "test_fontawesome.png",
         tags=[tags.CODE, tags.APP_IN_GALLERY, tags.AWESOMEPANEL_EXPRESS],
         is_awesome=True,
         author=authors.MARC_SKOV_MADSEN,
     ),
     Resource(
-        name="Test FontAwesome",
-        url=GITHUB_GALLERY_URL + "awesome_panel_express_tests/test_fontawesome.py",
-        thumbnail_path=THUMBNAILS_ROOT + "test_fontawesome.png",
+        name="Test Spinners",
+        url=GITHUB_GALLERY_URL + "awesome_panel_express_tests/test_spinners.py",
+        thumbnail_path=THUMBNAILS_ROOT + "test_spinners.png",
         tags=[tags.CODE, tags.APP_IN_GALLERY, tags.AWESOMEPANEL_EXPRESS],
         is_awesome=True,
         author=authors.MARC_SKOV_MADSEN,

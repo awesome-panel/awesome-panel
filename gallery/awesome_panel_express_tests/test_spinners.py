@@ -1,4 +1,11 @@
-"""Test of the loading_io module of loading spinners"""
+"""Test of the `awesome_panel.express.spinners` functionality
+
+Please note the spinners are based on Gif images.
+
+I also tried using pure css spinners from
+[loading.io/css/](https://loading.io/css/) but they stopped spinning while the Bokeh layout engine
+was running.
+"""
 import time
 
 import panel as pn
@@ -53,6 +60,7 @@ def test_spinner_can_be_centered():
 def view() -> pn.Column:
     """View all tests"""
     return pn.Column(
+        pnx.Markdown(__doc__),
         test_default_spinner(),
         test_all_spinners(),
         test_spinner_while_python_executing(),
