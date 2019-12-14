@@ -99,6 +99,34 @@ Please join the community in the [PyViz/PyvViz](https://gitter.im/pyviz/pyviz?so
 
 You can contribute to the Panel package on [GitHub/pyviz/panel](https://github.com/holoviz/panel) or sponsor it by contacting [sales@anaconda.com](mailto:sales%40anaconda.com). For more information see the [Official About Panel](https://panel.pyviz.org/about.html) page.
 
+### How to Contribute an URL to the Resources List
+
+- Fork this repo
+- add the URL to the files
+    - `package\awesome_panel\database\resources.py`
+        - This includes adding you as an Author in the `package/awesome_panel/database/authors.py` file.
+        - This might include creating one or more Tags in the `package/awesome_panel/database/tags.py` file.
+    - `README.md`
+- Create a [pull request](https://github.com/marcskovmadsen/awesome-panel/pulls).
+
+The above is the perfect scenario. If this is not possible do the best you can and then reach out. I would really like to include your Awesome Panel URL to the resources list.
+
+### How to Contribute an App to the Gallery
+
+- Fork this repo and follow the [Getting Started Instructions](getting-started-with-the-awesome-panel-repository) below.
+- Create a new folder and file `src/pages/gallery/<my_awesome_app>/<my_awesome_app.py` for your app.
+    - Your `<my_awesome_app.py>` file should contain a function `def view() -> panel.Column:` that returns your app as a column.
+    - Add additional files to the folder if you need it.
+- Add your app to the `APPS_IN_GALLERY` list in the `package/awesome_panel/database/apps_in_gallery.py` file.
+    - This includes adding you as an Author in the `package/awesome_panel/database/authors.py` file.
+    - This might include creating one or more Tags in the `package/awesome_panel/database/tags.py` file.
+    - This includes creating a Thumbnail of your app and saving it to `assets/images/thumbnails/` folder.
+- Run `panel serve app.py` and manully test your app
+- Run `invoke test.all` and fix all errors. Also fix any warnings if possible.
+- Create a [pull request](https://github.com/marcskovmadsen/awesome-panel/pulls).
+
+The above is the perfect scenario. If this is not possible do the best you can and then reach out. I would really like to include your Awesome Panel App in the Gallery.
+
 ### How to sponsor the Awesome Panel project
 
 If you would like to **sponsor my time or the infrastructure** the platform is running on, feel free to reach out. You can find my contact details at [datamodelsanalytics.com](https://datamodelsanalytics.com).
