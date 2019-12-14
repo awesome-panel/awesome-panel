@@ -29,7 +29,7 @@ def test_markdown():
 def test_code():
     """## test_code
 
-A manual test of the Code pane. We expect to see nicely formatted python code"""
+A manual test of the Code pane. We expect to see nicely formatted Python code"""
     code = """\
 def my_add(a,b):
     return a+b

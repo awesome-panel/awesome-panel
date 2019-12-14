@@ -14,6 +14,7 @@ from awesome_panel.express import spinners
 from awesome_panel.express._pane._panes import Markdown
 from awesome_panel.express.bootstrap import InfoAlert
 from awesome_panel.shared.models import Resource
+from awesome_panel.express import Divider
 
 ROOT = str(pathlib.Path.cwd())
 # pylint: disable=line-too-long
@@ -60,10 +61,10 @@ def page_code_url_to_html(page: Resource) -> str:
 
 
 def to_module_function(gallery_url: str) -> ModuleType:
-    """Converts a link to a python gallery file to a module string
+    """Converts a link to a Python gallery file to a module string
 
     Arguments:
-        gallery_url {str} -- The link to the python gallery file
+        gallery_url {str} -- The link to the Python gallery file
 
     Returns:
         Module -- The module string, for example 'gallery.boostrap_dashboard.main'
@@ -122,7 +123,6 @@ class GalleryCard(Column):
         """
         self.button = GalleryButton(page, page_outlet, width=365, align="center", **kwargs)
         spacer = pn.layout.HSpacer(height=5)
-        print(page.thumbnail_path)
         super().__init__(
             spacer,
             pn.pane.PNG(page.thumbnail_path, width=360, height=272, align="center",),

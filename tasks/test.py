@@ -122,7 +122,7 @@ def mypy(command, files=FILES):
     """
     print(
         """
-Running mypy for identifying python type errors
+Running mypy for identifying Python type errors
 ===============================================
 """
     )

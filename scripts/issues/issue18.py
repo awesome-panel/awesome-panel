@@ -11,7 +11,7 @@ def test_show_message_while_python_code_is_running():
 
     def click_handler(event):
         page[:] = [message]
-        # Run python Code
+        # Run Python Code
         time.sleep(5)
         # Update page
         page[:] = ["Success"]

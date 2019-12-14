@@ -4,6 +4,7 @@ from typing import Optional
 
 import markdown
 import panel as pn
+from awesome_panel.express.assets import CODE_HILITE_PANEL_EXPRESS_CSS
 
 MARKDOWN_EXTENSIONS = [
     "markdown.extensions.extra",
@@ -11,6 +12,8 @@ MARKDOWN_EXTENSIONS = [
     "fenced_code",
     "codehilite",
 ]
+
+EXTENDED = False
 
 
 class Divider(pn.pane.HTML):
@@ -83,3 +86,11 @@ class Code(pn.pane.HTML):
             code_markdown, extensions=MARKDOWN_EXTENSIONS, output_format="html5"
         )
         super().__init__(code_html, sizing_mode=sizing_mode, **kwargs)
+
+    @staticmethod
+    def extend():
+        """Adds Code Hilite CSS Formatting to the app"""
+        global EXTENDED  # pylint: disable=global-statement
+        if not EXTENDED:
+            EXTENDED = True
+            pn.config.raw_css.append(CODE_HILITE_PANEL_EXPRESS_CSS.read_text())

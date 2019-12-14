@@ -4,7 +4,7 @@ Creates a Bootstrap Dashboard Page with a Chart and a Table
 
 - inspired by the [GetBoostrap Dashboard Template]
 (https://getbootstrap.com/docs/4.4/examples/dashboard/)
-- implemented using the `awesome_panel' python package and in particular the
+- implemented using the `awesome_panel' Python package and in particular the
 `awesome_panel.express.templates.BootstrapDashboardTemplate`
 """
 import pathlib
@@ -25,6 +25,11 @@ TEXT = """\
 The purpose of this app is to test that a **multi-page Dashboard Layout** similar to the [bootstrap dashboard template](https://getbootstrap.com/docs/4.3/examples/dashboard/) from [getboostrap.com](https://getbootstrap.com/) can be implemented in [Panel](https://panel.pyviz.org/).
 
 The layout with a header, navigation sidebar and a main area is what powers [awesome-panel.org](https://awesome-panel.org).
+
+You can see how the template is used [here](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/app.py).
+
+The template is available for you as `awesome_panel.express.templates.BootstrapDashboardTemplate`.
+
 """
 
 
@@ -35,7 +40,7 @@ def view() -> pn.Column:
 
     - inspired by the [GetBoostrap Dashboard Template]
     (https://getbootstrap.com/docs/4.4/examples/dashboard/)
-    - implemented using the `awesome_panel' python package and in particular the
+    - implemented using the `awesome_panel' Python package and in particular the
     `awesome_panel.express.templates.BootstrapDashboardTemplate`
 
     Returns:
@@ -76,6 +81,7 @@ def _holoviews_chart():
         show_grid=True,
     )
     return fig
+
 
 def _get_chart_data() -> pd.DataFrame:
     """## Chart Data

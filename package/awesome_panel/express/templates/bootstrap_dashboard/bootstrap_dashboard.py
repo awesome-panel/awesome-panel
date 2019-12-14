@@ -3,10 +3,12 @@ import pathlib
 
 import panel as pn
 
-from awesome_panel.express import fontawesome
-from awesome_panel.express.assets import (BOOTSTRAP_PANEL_EXPRESS_CSS,
-                                          CODE_HILITE_PANEL_EXPRESS_CSS,
-                                          SCROLLBAR_PANEL_EXPRESS_CSS)
+import awesome_panel.express as pnx
+from awesome_panel.express.assets import (
+    BOOTSTRAP_PANEL_EXPRESS_CSS,
+    CODE_HILITE_PANEL_EXPRESS_CSS,
+    SCROLLBAR_PANEL_EXPRESS_CSS,
+)
 
 BOOTSTRAP_DASHBOARD_CSS = pathlib.Path(__file__).parent / "bootstrap_dashboard.css"
 BOOTSTRAP_DASHBOARD_TEMPLATE = pathlib.Path(__file__).parent / "bootstrap_dashboard.html"
@@ -23,11 +25,12 @@ class BootstrapDashboardTemplate(pn.Template):
     """A Basic App Template"""
 
     def __init__(self, app_title: str = "App Name", app_url="#"):
-        pn.config.raw_css.append(CODE_HILITE_PANEL_EXPRESS_CSS.read_text())
-        pn.config.raw_css.append(BOOTSTRAP_PANEL_EXPRESS_CSS.read_text())
         pn.config.raw_css.append(BOOTSTRAP_DASHBOARD_CSS.read_text())
         pn.config.raw_css.append(SCROLLBAR_PANEL_EXPRESS_CSS.read_text())
-        fontawesome.extend()
+        pn.config.raw_css.append(CODE_HILITE_PANEL_EXPRESS_CSS.read_text())
+        pnx.Code.extend()
+        pnx.bootstrap.extend()
+        pnx.fontawesome.extend()
         template = BOOTSTRAP_DASHBOARD_TEMPLATE.read_text()
 
         app_title = pn.Row(
