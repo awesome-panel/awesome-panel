@@ -1,6 +1,5 @@
 """## The Gallery Page of awesome-panel.org"""
 import importlib
-import inspect
 import pathlib
 from types import ModuleType
 
@@ -9,11 +8,13 @@ from panel import Column
 from panel.layout import HSpacer
 from panel.widgets import Button
 
-from awesome_panel.app.services import module_to_github_url
+from awesome_panel.core.services import module_to_github_url
 from awesome_panel import database
 from awesome_panel.express import spinners
 from awesome_panel.express._pane._panes import Markdown
 from awesome_panel.express.bootstrap import InfoAlert
+from awesome_panel.database.apps_in_gallery import APPS_IN_GALLERY
+from awesome_panel.shared.models import Resource
 
 ROOT = str(pathlib.Path.cwd())
 # pylint: disable=line-too-long
@@ -54,7 +55,7 @@ def to_module_function(gallery_url: str) -> ModuleType:
     """
 
     module_str = (
-        gallery_url.replace(database.settings.GITHUB_URL, "")
+        gallery_url.replace(database.settings.GITHUB_BLOB_MASTER_URL, "")
         .replace(".py", "")
         .replace("/", ".")
         .replace("\\", ".")
@@ -62,19 +63,12 @@ def to_module_function(gallery_url: str) -> ModuleType:
     return importlib.import_module(module_str)
 
 
-# pylint: disable=line-too-long
-APPS = {
-    app.name: to_module_function(app.url).view for app in database.apps_in_gallery.APPS_IN_GALLERY  # type: ignore
-}
-# pylint: enable=line-too-long
-
-
 class GalleryButton(Button):
     """## Button that loads page.
 
     When clicked the page of the GalleryButton loads"""
 
-    def __init__(self, name, page, page_outlet, **kwargs):
+    def __init__(self, page: Resource, page_outlet, **kwargs):
         """## Button that loads page
 
         When clicked the page of the GalleryButton loads
@@ -84,20 +78,18 @@ class GalleryButton(Button):
             page {[type]} -- The page to load
             page_outlet {[type]} -- The page_outlet to load the page to
         """
-        super().__init__(name=name, button_type="primary", **kwargs)
-        self.name = name
+        super().__init__(name=page.name, button_type="primary", **kwargs)
         self.page = page
         self.page_outlet = page_outlet
 
         def click_handler(event):  # pylint: disable=unused-argument
-            file_url = module_to_github_url(self.page)
             text = (
-                f'<h2>{name}&nbsp;<a href={file_url} target="_blank" title="Source Code">'
+                f'<h2>{page.name}&nbsp;<a href={page.url} target="_blank" title="Source Code">'
                 '<i class="fas fa-code"></i></a></h2>'
             )
-
+            page_view = to_module_function(page.url).view()
             self.page_outlet[:] = [spinners.DefaultSpinner().center()]
-            self.page_outlet[:] = [text, self.page()]
+            self.page_outlet[:] = [text, page_view]
 
         self.on_click(click_handler)
 
@@ -105,15 +97,15 @@ class GalleryButton(Button):
 class GalleryCard(Column):
     """A Card consisting of an image and a button"""
 
-    def __init__(self, name, page, page_outlet, **kwargs):
+    def __init__(self, page: Resource, page_outlet, **kwargs):
         """A Card consisting of an image and a button
 
         Arguments:
             name {[type]} -- The name of the card/ the text on the Button
-            page {[type]} -- The page to load
+            page {Resource} -- The page to load
             page_outlet {[type]} -- The page to load to
         """
-        self.button = GalleryButton(name, page, page_outlet, width=365, align="center", **kwargs)
+        self.button = GalleryButton(page, page_outlet, width=365, align="center", **kwargs)
         spacer = pn.layout.HSpacer(height=5)
         super().__init__(
             spacer,
@@ -126,7 +118,7 @@ class GalleryCard(Column):
             # spacer,
             self.button,
             spacer,
-            name="gallery-item-" + name,
+            name="gallery-item-" + page.name,
             width=400,
             margin=10,
             css_classes=["card"],
@@ -143,8 +135,8 @@ class Gallery:  # pylint: disable=too-few-public-methods
     def view(self) -> Column:
         """The gallery view of awesome-panel.org"""
         buttons = []
-        for name, page in APPS.items():
-            buttons.append(GalleryCard(name, page, self.page_outlet))
+        for app in APPS_IN_GALLERY:
+            buttons.append(GalleryCard(app, self.page_outlet))
 
         gallery = Column(
             Markdown(TEXT),
