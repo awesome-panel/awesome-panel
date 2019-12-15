@@ -14,7 +14,7 @@ MARKDOWN_EXTENSIONS = [
     "codehilite",
 ]
 
-EXTENDED = False
+_EXTENDED = False
 
 
 class Divider(pn.pane.HTML):
@@ -91,7 +91,7 @@ class Code(pn.pane.HTML):
     @staticmethod
     def extend():
         """Adds Code Hilite CSS Formatting to the app"""
-        global EXTENDED  # pylint: disable=global-statement
-        if not EXTENDED:
-            EXTENDED = True
+        global _EXTENDED  # pylint: disable=global-statement
+        if not _EXTENDED:
+            _EXTENDED = True
             pn.config.raw_css.append(CODE_HILITE_PANEL_EXPRESS_CSS.read_text())

@@ -20,9 +20,11 @@ def extend():
     - We don't use the bootstrap javascript like jquery, popper and bootstrap because it does not
     play well with the Bookeh Layout Engine
     """
+    global _EXTENDED  # pylint: disable=global-statement
     if not _EXTENDED:
         pn.config.raw_css.append(BOOTSTRAP_PANEL_EXPRESS_CSS.read_text())
         # pn.config.css_files.append(BOOTSTRAP_CSS_URL)
+        _EXTENDED = True
 
 
 class InfoAlert(Markdown):

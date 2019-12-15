@@ -49,9 +49,11 @@ def extend():
     For examples refer to [W3C Font Awesome Intro]
     (https://www.w3schools.com/icons/fontawesome_icons_intro.asp)
     """
+    global _EXTENDED  # pylint: disable=global-statement
     if not _EXTENDED:
         pn.config.raw_css.append(FONTAWESOME_PANEL_EXPRESS_CSS.read_text())
         pn.config.css_files.append(FONTAWESOME_CSS_URL)
+        _EXTENDED = True
 
 
 def get_fontawesome_panel_express() -> str:
