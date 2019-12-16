@@ -6,7 +6,7 @@ The purpose of the Awesome Panel Project is to share knowledge on how Awesome Pa
 
 I believe easy to use and powerfull frameworks for developing awesome, interactive tools and apps by and for domain experts like analysts, engineers and scientists using the power of Python has a huge potential.
 
-I believe Panel could be such an easy to use and powerfull framework. But it is not receiving the attentation that it deserves.
+I believe Panel could be such an easy to use and powerfull framework. But it is not receiving the attention that it deserves.
 
 - Partially because its not really been communicated widely.
 - Partly because there is a little bit of friction to using all the powerfull features.
