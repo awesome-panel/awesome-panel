@@ -46,6 +46,7 @@ A curated list of awesome panel resources. Inspired by [awesome-python](https://
 ### Panel
 
 - [Panel](https://panel.pyviz.org/)
+-
 - [Announcing Article](https://medium.com/@philipp.jfr/panel-announcement-2107c2b15f52)
 - [Getting Started](https://panel.pyviz.org/getting_started/index.html)
 - [User Guide](https://panel.pyviz.org/user_guide/index.html)
