@@ -24,7 +24,7 @@ And I'm thinking that power of the whole Holoviz Ecosystem is also what makes it
 import pathlib
 from typing import List
 
-# import holoviews as hv
+import holoviews as hv
 import hvplot.pandas  # pylint: disable=unused-import
 import pandas as pd
 import panel as pn
@@ -69,6 +69,7 @@ Right now I'm thinking that it's because the wholo Holoviz Ecosystem is so power
     categories = param.ListSelector()
     scatter_df = param.DataFrame()
     bar_df = param.DataFrame()
+    rangexy = hv.streams.RangeXY()
 
     def __init__(self, *args, **kwargs):
         kickstarter_df = self.get_kickstarter_df()
@@ -93,15 +94,15 @@ Right now I'm thinking that it's because the wholo Holoviz Ecosystem is so power
         # Rename columns to Capitalized without under score
         # Add name of movie to hover tooltip
         scatter_plot = self.get_scatter_plot(self.scatter_df)
-        self.bar_df = self.scatter_df
-
-        # rangexy = hv.streams.RangeXY(source=scatter_plot.last)
-
-        # @param.depends(rangexy.param.x_range, rangexy.param.y_range, watch=True)
-        # def set_bar_df(x_range, y_range):
-        #     self.bar_df = _filter_bar_df(self.scatter_df, x_range, y_range)
-
+        self.rangexy.source = scatter_plot.last
         return scatter_plot
+
+    @param.depends("scatter_df", "rangexy.x_range", "rangexy.y_range", watch=True)
+    def _set_bar_df(self):
+        """Update the bar_df dataframe"""
+        self.bar_df = self._filter_bar_df(
+            self.scatter_df, self.rangexy.x_range, self.rangexy.y_range
+        )
 
     @param.depends("bar_df")
     def bar_chart_view(self):
@@ -115,6 +116,7 @@ Right now I'm thinking that it's because the wholo Holoviz Ecosystem is so power
             self.param.categories,
             self.scatter_plot_view,
             self.bar_chart_view,
+            self.rangexy,
             sizing_mode="stretch_width",
         )
 
