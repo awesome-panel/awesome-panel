@@ -1,5 +1,7 @@
-# Panel
-panel
+# Panel. We use github version because of
+# - https://github.com/holoviz/panel/issues/883
+# - https://github.com/holoviz/panel/pull/867
+git+https://github.com/holoviz/panel.git@3210670ee6842314efdb1818405a47704262b7ce
 tornado==5.1.1 # See https://discourse.holoviz.org/t/how-can-i-show-spinner-when-code-is-running/30/4
 hvplot
 
