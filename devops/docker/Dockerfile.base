@@ -8,7 +8,8 @@ ENV PYTHONUNBUFFERED 1
 
 RUN apt-get update && apt-get install -y \
     dpkg-dev \
-    gcc
+    gcc \
+    git
 
 WORKDIR /app
 
