@@ -15,12 +15,17 @@ The claims where
 You can evaluate this dashboard and the code to make your personal evaluation of the above
 statements.
 
-My evaluation is the **first three statements does no longer hold**. The fourth I've also experienced
-see this [discussion](https://discourse.holoviz.org/t/how-to-create-a-parameterized-dashboard-with-seperation-between-data-transforms-and-data-views/53/13)
+My evaluation is
 
-I can see that I made a lot of mistakes because it takes time to understand how the api works.
-Right now I'm thinking that it's because I chose the most advanced way to implement this using `param` and reactive programme.
-And I'm thinking that power of the whole Holoviz Ecosystem is also what makes it difficult to get started with.
+- the **first two statements does no longer hold**.
+- The third is up for discussion. I would also like the Dashboard updates to be a bit faster.
+Maybe it's because I don't yet know how to implement this efficiently. Or maybe 10.000 points are
+simply too many to render in a browser. With 1.000 points it works very well.
+- The fourth I've also experienced
+see this [discussion](https://discourse.holoviz.org/t/how-to-create-a-parameterized-dashboard-with-seperation-between-data-transforms-and-data-views/53/13).
+
+I can see that I made a lot of mistakes because it takes time for me to understand how the api works.
+There is a lot to I need to learn across the HoloViz suite of tools.
 """
 # pylint: enable=line-too-long
 import pathlib
