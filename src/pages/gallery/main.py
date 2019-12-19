@@ -35,6 +35,10 @@ section of the README."""
 # pylint: enable=line-too-long
 
 INFO_TEXT = """\
+Please note that zooming on the parent, stacker chart and having the child, bar chart update
+accordingly is currently buggy. If you do the child, bar chart will stop updating.
+The zoom will be supported in Panel 0.71.
+
 Please **use FireFox, Safari or Edge** if you can. Alternatively you can use Chrome - but it's
 [slower](https://github.com/bokeh/bokeh/issues/9515). Internet Explorer is not supported."""
 
