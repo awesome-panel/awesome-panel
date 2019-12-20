@@ -14,15 +14,9 @@
 <!-- goes in body -->
 {% block contents %}
 
-<div style="background:blue;">
-  {{ embed(roots.header) }}
-  {{ embed(roots.sidebar) }}
-  {{ embed(roots.main) }}
-</div>
-
-<!-- <section id="page">
+<section id="page">
   <header>
-
+    {{ embed(roots.header) }}
   </header>
 
   <nav>
@@ -30,8 +24,8 @@
   </nav>
 
   <main>
-
+    {{ embed(roots.main) }}
   </main>
-</section> -->
+</section>
 
 {% endblock %}
