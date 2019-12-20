@@ -36,6 +36,7 @@ import hvplot.pandas  # pylint: disable=unused-import
 import pandas as pd
 import panel as pn
 import param
+from awesome_panel.express.bootstrap import InfoAlert
 
 pn.extension()
 
@@ -48,6 +49,11 @@ DATE_COLUMNS = [
 N_SAMPLES = 10000
 CMAP = {"canceled": "blue", "failed": "red", "successful": "green", "suspended": "orange"}
 
+INFO = """\
+Please note that zooming on the parent, stacker chart and having the child, bar chart update
+accordingly is currently buggy. If you do the child, bar chart will stop updating.
+The zoom will be supported in Panel 0.71.
+"""
 
 class KickstarterDashboard(param.Parameterized):
     # pylint: disable=line-too-long
@@ -128,6 +134,7 @@ There is a lot to I need to learn across the HoloViz suite of tools.
         """A Reactive View of the KickstarterDashboard"""
         return pn.Column(
             pn.pane.Markdown(__doc__),
+            InfoAlert(INFO), pn.layout.HSpacer(height=25),
             self.param.categories,
             self.scatter_plot_view,
             self.bar_chart_view,
