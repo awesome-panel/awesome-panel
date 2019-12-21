@@ -20,8 +20,15 @@ AWESOME_PANEL_ORG = Author(
     github_url="https://github.com/marcskovmadsen",
     github_avatar_url="https://avatars0.githubusercontent.com/u/42288570",
 )
+PHILIPP_RUDIGER = Author(
+    name="Philipp Rudiger",
+    url="http://philippjfr.com/",
+    github_url="https://github.com/philippjfr",
+    github_avatar_url="https://avatars0.githubusercontent.com/u/1550771",
+)
 AUTHORS = [
+    AWESOME_PANEL_ORG,
     MARC_SKOV_MADSEN,
     PANEL_AUTHOR,
-    AWESOME_PANEL_ORG,
+    PHILIPP_RUDIGER,
 ]

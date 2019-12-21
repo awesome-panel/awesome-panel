@@ -69,6 +69,7 @@ A curated list of awesome panel resources. Inspired by [awesome-python](https://
 ### Videos
 
 - [Turn any Notebook into a Deployable Dashboard | SciPy 2019 | James Bednar](https://www.youtube.com/watch?v=L91rd1D6XTA&t=274s)
+- [Turn any Notebook into a Deployable Dashboard | PyData Berlin 2019 | Philipp Rudiger](https://www.youtube.com/watch?v=Ohr29FJjBi0&list=PLGVZCDnMOq0pNHTYo3i56zYU-Tdw5Uguw)
 - [Visualize any Data Easily, from Notebooks to Dashboards](https://www.youtube.com/watch?v=7deGS4IPAQ0&t=1326s)
 
 ## HoloViz
