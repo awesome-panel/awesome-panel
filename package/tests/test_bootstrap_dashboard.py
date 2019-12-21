@@ -1,10 +1,5 @@
 """Tests of the BootStrapDashboardTemplate"""
-import importlib
-
 import panel as pn
-import pytest
-from selenium import webdriver
-
 import awesome_panel.express as pnx
 
 
