@@ -22,6 +22,12 @@ def test_app_attributes():
 
 
 def test_app_with_content():
+    """Basic test of the layout. Manually test that
+
+    - The layout is divided into a header, sidebar and main area.
+    - There is only vertical scroll in the sidebar and main area.
+    - The vertical scroll is independent.
+    """
     app = pnx.templates.BootstrapDashboardTemplate("awesome-panel.org", "https://awesome-panel.org")
     app.header.append(pn.layout.HSpacer(background="red"))
     app.header.append(pn.Row("Header", background="orange"))

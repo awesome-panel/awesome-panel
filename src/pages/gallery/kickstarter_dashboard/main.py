@@ -91,7 +91,7 @@ There is a lot to I need to learn across the HoloViz suite of tools.
     bar_df = param.DataFrame()
     rangexy = param.ClassSelector(class_=hv.streams.RangeXY, default=hv.streams.RangeXY())
 
-    def __init__(self, kickstarter_df: Optional[pd.DataFrame]=None, *args, **kwargs):
+    def __init__(self, kickstarter_df: Optional[pd.DataFrame] = None, **kwargs):
         if not isinstance(kickstarter_df, pd.DataFrame):
             kickstarter_df = self.get_kickstarter_df()
         categories = self.get_categories(kickstarter_df)
@@ -102,7 +102,7 @@ There is a lot to I need to learn across the HoloViz suite of tools.
         self.param.scatter_df.default = kickstarter_df
         self.param.bar_df.default = kickstarter_df
 
-        super().__init__(*args, **kwargs)
+        super().__init__(**kwargs)
 
     @param.depends("kickstarter_df", "categories", watch=True)
     def _set_scatter_df(self):
