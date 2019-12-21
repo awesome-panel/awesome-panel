@@ -26,10 +26,13 @@ see this [discussion](https://discourse.holoviz.org/t/how-to-create-a-parameteri
 
 I can see that I made a lot of mistakes because it takes time for me to understand how the api works.
 There is a lot to I need to learn across the HoloViz suite of tools.
+
+You can find an alternative version of this Dashboard in Streamlit at
+[awesome-streamlit.org](https://awesome-streamlit.org)
 """
 # pylint: enable=line-too-long
 import pathlib
-from typing import List
+from typing import List, Optional
 
 import holoviews as hv
 import hvplot.pandas  # pylint: disable=unused-import
@@ -42,7 +45,6 @@ pn.extension()
 
 KICKSTARTER_PATH = pathlib.Path(__file__).parent / "kickstarter-cleaned.csv"
 COLUMNS = ["created_at", "usd_pledged", "state", "category_slug"]
-# Picked with http://tristen.ca/hcl-picker/#/hlc/6/1.05/251C2A/E98F55
 DATE_COLUMNS = [
     "created_at",
 ]
@@ -54,6 +56,7 @@ Please note that zooming on the parent, stacker chart and having the child, bar 
 accordingly is currently buggy. If you do the child, bar chart will stop updating.
 The zoom will be supported in Panel 0.71.
 """
+
 
 class KickstarterDashboard(param.Parameterized):
     # pylint: disable=line-too-long
@@ -88,8 +91,9 @@ There is a lot to I need to learn across the HoloViz suite of tools.
     bar_df = param.DataFrame()
     rangexy = param.ClassSelector(class_=hv.streams.RangeXY, default=hv.streams.RangeXY())
 
-    def __init__(self, *args, **kwargs):
-        kickstarter_df = self.get_kickstarter_df()
+    def __init__(self, kickstarter_df: Optional[pd.DataFrame]=None, *args, **kwargs):
+        if not isinstance(kickstarter_df, pd.DataFrame):
+            kickstarter_df = self.get_kickstarter_df()
         categories = self.get_categories(kickstarter_df)
 
         self.param.kickstarter_df.default = kickstarter_df
@@ -102,7 +106,7 @@ There is a lot to I need to learn across the HoloViz suite of tools.
 
     @param.depends("kickstarter_df", "categories", watch=True)
     def _set_scatter_df(self):
-        self.scatter_df = self._filter_on_categories(self.kickstarter_df, self.categories)
+        self.scatter_df = self.filter_on_categories(self.kickstarter_df, self.categories)
 
     @param.depends("scatter_df")
     def scatter_plot_view(self):
@@ -114,15 +118,14 @@ There is a lot to I need to learn across the HoloViz suite of tools.
         # Please note that depending on how the scatter_plot is generated it might be a Scatter
         # or Ndoverlay objects
         # In the first case use scatter_plot. In the second case use scatter_plot.last
-        print(type(scatter_plot))
         self.rangexy.source = scatter_plot.last
         return scatter_plot
 
     @param.depends("scatter_df", "rangexy.x_range", "rangexy.y_range", watch=True)
     def _set_bar_df(self):
         """Update the bar_df dataframe"""
-        self.bar_df = self._filter_bar_df(
-            self.scatter_df, self.rangexy.x_range, self.rangexy.y_range # pylint: disable=no-member
+        self.bar_df = self.filter_on_ranges(
+            self.scatter_df, self.rangexy.x_range, self.rangexy.y_range  # pylint: disable=no-member
         )
 
     @param.depends("bar_df")
@@ -134,7 +137,8 @@ There is a lot to I need to learn across the HoloViz suite of tools.
         """A Reactive View of the KickstarterDashboard"""
         return pn.Column(
             pn.pane.Markdown(__doc__),
-            InfoAlert(INFO), pn.layout.HSpacer(height=25),
+            InfoAlert(INFO),
+            pn.layout.HSpacer(height=25),
             self.param.categories,
             self.scatter_plot_view,
             self.bar_chart_view,
@@ -170,14 +174,15 @@ There is a lot to I need to learn across the HoloViz suite of tools.
         source_data["usd_pledged"] = source_data["usd_pledged"] / 10 ** 6
         return source_data.sample(n_samples)
 
-    def get_kickstarter_df(self) -> pd.DataFrame:
+    @classmethod
+    def get_kickstarter_df(cls) -> pd.DataFrame:
         """The Dataframe of Kickstarter Data
 
         Returns:
             [pd.DataFrame] -- The Dataframe of Kickstarter Data
         """
-        source_data = self._extract()
-        kickstarter_df = self._transform(source_data)
+        source_data = cls._extract()
+        kickstarter_df = cls._transform(source_data)
         return kickstarter_df
 
     @staticmethod
@@ -192,8 +197,9 @@ There is a lot to I need to learn across the HoloViz suite of tools.
         """
         return list(kickstarter_df["broader_category"].unique())
 
-    def _filter_on_categories(
-        self, kickstarter_df: pd.DataFrame, categories: List[str]
+    @classmethod
+    def filter_on_categories(
+        cls, kickstarter_df: pd.DataFrame, categories: List[str]
     ) -> pd.DataFrame:
         """Filters the kickstarter_df by the specified categories
 
@@ -205,12 +211,12 @@ There is a lot to I need to learn across the HoloViz suite of tools.
             pd.DataFrame -- The filtered DataFrame
         """
         if categories is None or categories == []:
-            categories = self.get_categories(kickstarter_df)
+            categories = cls.get_categories(kickstarter_df)
         categories_filter = kickstarter_df["broader_category"].isin(categories)
         return kickstarter_df[categories_filter]
 
     @staticmethod
-    def _filter_bar_df(kickstarter_df: pd.DataFrame, x_range, y_range) -> pd.DataFrame:
+    def filter_on_ranges(kickstarter_df: pd.DataFrame, x_range, y_range) -> pd.DataFrame:
         """Filter the kickstarter_df by x_range and y_range
 
         Arguments:
@@ -235,7 +241,7 @@ There is a lot to I need to learn across the HoloViz suite of tools.
         return sub_df
 
     @staticmethod
-    def get_scatter_plot(kickstarter_df: pd.DataFrame): # pylint: disable=missing-return-type-doc
+    def get_scatter_plot(kickstarter_df: pd.DataFrame):  # pylint: disable=missing-return-type-doc
         """A Scatter plot of the kickstarter_df
 
         Arguments:
@@ -260,7 +266,7 @@ There is a lot to I need to learn across the HoloViz suite of tools.
         )
 
     @staticmethod
-    def get_bar_chart(kickstarter_df: pd.DataFrame): # pylint: disable=missing-return-type-doc
+    def get_bar_chart(kickstarter_df: pd.DataFrame):  # pylint: disable=missing-return-type-doc
         """A bar chart of the kickstarter_df
 
         Arguments:

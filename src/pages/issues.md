@@ -11,22 +11,29 @@ By listing them here I hope to give you an impression of the current issues and 
 - The Bokeh layout engine works against you when you try to create advanced layouts. Things do not work or render as expected.
 - Panel/ Bokeh applications are especially slow in Chrome. See [Bokeh Issue 9515](https://github.com/bokeh/bokeh/issues/9515)
 
-To circumvent these issues my most important learning is to KEEP IT SIMPLE STUPID!
+To circumvent these issues my most important learning is to **KEEP IT SIMPLE STUPID!**
 
-- Use the Template system if you can.
+- Use the [Template](https://panel.pyviz.org/user_guide/Templates.html) system whenever you can.
 - Don't do lots of nested Columns and Rows in Panel.
 - Don't configure layout settings like width, height, margin etc. of Panel Columns and Rows via Css.
     - Use Column and Row attributes in Panel for that.
+
+## The Bokeh server does not Support Multiprocessing in Practice
+
+- See [Issue 897](https://github.com/holoviz/panel/issues/897)
 
 ## Community and Documentation is difficult to use
 
 See GitHub issues
 
-- Create Discuss Forum to foster community discussions and knowledge sharing on Panel. [Issue 831](https://github.com/holoviz/panel/issues/831)
 - Change search functionality at [https://panel.pyviz.org/](https://panel.pyviz.org/) to return Panel specific results. [Issue 832](https://github.com/holoviz/panel/issues/832)
 - Please add more structure, search, navigation and content to Panel Documentation. [Issue 833](https://github.com/holoviz/panel/issues/833)
 - Please add the wonderfull help text to the docstrings to get context help in editor. [Issue 837](https://github.com/holoviz/panel/issues/837)
 - Make Panel help text readable on Windows in Command Prompt and Git bash. [Issue 836](https://github.com/holoviz/panel/issues/836)
+
+### Solved
+
+- Create Discuss Forum to foster community discussions and knowledge sharing on Panel. [Issue 831](https://github.com/holoviz/panel/issues/831)
 
 ## Markdown is not well supported
 

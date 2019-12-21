@@ -26,11 +26,11 @@ The purpose of this app is to test that a **multi-page Dashboard Layout** simila
 
 The layout with a header, navigation sidebar and a main area is what powers [awesome-panel.org](https://awesome-panel.org).
 
-You can see how the template is used [here](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/app.py).
+You can see how the template is implemented
+[here](https://github.com/MarcSkovMadsen/awesome-panel/tree/master/package/awesome_panel/express/templates/bootstrap_dashboard)
 
-The template is available for you as `awesome_panel.express.templates.BootstrapDashboardTemplate`.
-
-"""
+The template is generally avaiable in the [awesome_panel](https://pypi.org/project/awesome-panel/)
+python package via `awesome_panel.express.templates.BootstrapDashboardTemplate`."""
 
 
 def view() -> pn.Column:
