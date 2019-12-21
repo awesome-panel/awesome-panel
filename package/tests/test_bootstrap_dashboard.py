@@ -7,39 +7,28 @@ from selenium import webdriver
 
 import awesome_panel.express as pnx
 
-importlib.reload(pnx)
 
-
-@pytest.fixture
-def chrome_driver() -> webdriver.Chrome:
-    r"""The Chrome Web Driver Configured for Download
-
-    You can download the Chrome driver from https://chromedriver.chromium.org/ and move
-    chromedriver.exe to c:\Windows\System32 or an alternative location in the PATH
-
-    Returns:
-        webdriver.Chrome -- The Chrome Web Driver
-    """
-    options = webdriver.ChromeOptions()
-    # Maybe add this later
-    # options.add_argument('headless')
-    options.add_experimental_option("useAutomationExtension", False)
-
-    return webdriver.Chrome(options=options)
-
-
-def test_app():
+def test_app_attributes():
     """Test of the attributes of the Template"""
     app = pnx.templates.BootstrapDashboardTemplate()
 
+    assert hasattr(app, "header")
     assert hasattr(app, "main")
     assert hasattr(app, "sidebar")
 
+    assert isinstance(app.header, pn.layout.Panel)
     assert isinstance(app.main, pn.layout.Panel)
     assert isinstance(app.sidebar, pn.layout.Panel)
 
 
-def test_markdown_image_width_max_100_percent():
-    """We test that the markdown image width cannot be more than 100%.
+def test_app_with_content():
+    app = pnx.templates.BootstrapDashboardTemplate("awesome-panel.org", "https://awesome-panel.org")
+    app.header.append(pn.layout.HSpacer(background="red"))
+    app.header.append(pn.Row("Header", background="orange"))
+    app.sidebar[:] = ["Sidebar", pn.layout.HSpacer(background="blue", height=200)]
+    app.main[:] = ["Main", pn.layout.HSpacer(background="green", height=4000)]
+    return app
 
-    This is usefull in order to reduce the friction of using the template and Panel in general"""
+
+if __name__.startswith("bk"):
+    test_app_with_content().servable("test_app_with_content")
