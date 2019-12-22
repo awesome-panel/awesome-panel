@@ -13,14 +13,11 @@ The claims where
 - Interactions take a long time to develop
 
 You can evaluate this dashboard and the code to make your personal evaluation of the above
-statements.
+statements in the Context of Panel.
 
 My evaluation is
 
-- the **first two statements does no longer hold**.
-- The third is up for discussion. I would also like the Dashboard updates to be a bit faster.
-Maybe it's because I don't yet know how to implement this efficiently. Or maybe 10.000 points are
-simply too many to render in a browser. With 1.000 points it works very well.
+- the **first three statements does no longer hold**.
 - The fourth I've also experienced
 see this [discussion](https://discourse.holoviz.org/t/how-to-create-a-parameterized-dashboard-with-seperation-between-data-transforms-and-data-views/53/13).
 
@@ -139,9 +136,9 @@ There is a lot to I need to learn across the HoloViz suite of tools.
             pn.pane.Markdown(__doc__),
             InfoAlert(INFO),
             pn.layout.HSpacer(height=25),
-            self.param.categories,
-            self.scatter_plot_view,
-            self.bar_chart_view,
+            pn.Row(
+                pn.Column(self.scatter_plot_view, self.bar_chart_view, sizing_mode="stretch_width"),
+                pn.Param(self.param.categories, widgets={"categories":  {"max_width": 125, "size": len(self.categories)}}), sizing_mode="stretch_width"),
             sizing_mode="stretch_width",
         )
 
