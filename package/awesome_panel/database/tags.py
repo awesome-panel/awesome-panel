@@ -2,7 +2,7 @@
 from awesome_panel.shared.models import Tag
 
 # Tags
-ALTERNATIVE = Tag(name="Alternative")
+ALTERNATIVE = Tag(name="Alternatives")
 APP = Tag("App")
 APP_IN_GALLERY = Tag(name="App In Gallery")
 ARTICLE = Tag(name="Article")
@@ -15,9 +15,8 @@ IMAGE_RECOGNITION = Tag(name="Image Recognition")
 MACHINE_LEARNING = Tag(name="Machine Learning")
 NLP = Tag(name="NLP")
 SOCIAL = Tag(name="Social")
-PANEL_TAG = Tag(name="panel.io")
-PANEL_COMPONENT = Tag(name="Component")
-PANEL_EXAMPLE = Tag(name="Example")
+PANEL = Tag(name="Panel")
+SISTER_SITES = Tag(name="Sister Sites")
 TECHNICAL = Tag(name="Technical")
 TUTORIAL = Tag(name="Tutorial")
 VIDEO = Tag(name="Video")
@@ -37,9 +36,7 @@ TAGS = [
     MACHINE_LEARNING,
     NLP,
     SOCIAL,
-    PANEL_TAG,
-    PANEL_COMPONENT,
-    PANEL_EXAMPLE,
+    PANEL,
     TECHNICAL,
     TUTORIAL,
     VIDEO,
