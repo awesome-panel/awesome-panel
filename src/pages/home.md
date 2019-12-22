@@ -23,11 +23,11 @@ Please **use FireFox, Safari or Edge** if you can. Alternatively Chrome - but it
 
 ## The Power of Panel
 
-The only way to truly understand how powerfull Panel is to play around with it. But if you need to be convinced first, then take a look at the **30 minute introduction** to Panel.
+The only way to truly understand how powerfull Panel is to play around with it. But if you need to be convinced first, then take a look at the first **4 minutes** of this **introduction to Panel**.
 
 Afterwards you can go to the [Panel Getting Started Guide](http://panel.pyviz.org/getting_started/index.html) or visit the [Panel Gallery](http://panel.pyviz.org/gallery/index.html) and the [Panel Reference Gallery](https://panel.pyviz.org/reference/index.html).
 
-[![Introduction to Panel](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/youtube-introduction-to-panel.png?raw=true)](https://www.youtube.com/watch?v=L91rd1D6XTA&t=1133s "Introduction to panel")
+[![Introduction to Panel](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/youtube-introduction-to-panel.png?raw=true)](https://www.youtube.com/watch?v=Ohr29FJjBi0 "Introduction to panel")
 
 Panel is completely open source, available under a BSD license freely for both commercial and non-commercial use. Panel is part of the [HoloViz](https://holoviz.org/) ecosystem and works well with all the HoloViz tools..
 
