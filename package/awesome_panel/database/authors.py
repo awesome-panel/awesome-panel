@@ -50,6 +50,12 @@ PHILIPP_RUDIGER = Author(
     github_url="https://github.com/philippjfr",
     github_avatar_url="https://avatars0.githubusercontent.com/u/1550771",
 )
+PLOTLY = Author(
+    name="Plotly",
+    url="https://plot.ly/",
+    github_url="https://github.com/plotly",
+    github_avatar_url="https://avatars2.githubusercontent.com/u/5997976",
+)
 STREAMLIT = Author(
     name="Streamlit",
     url="https://streamlit.io/",
@@ -71,8 +77,15 @@ DAMIAN_FARRELL = Author(
 
 AUTHORS = [
     AWESOME_PANEL_ORG,
+    BOKEH,
+    DASH,
+    DAMIAN_FARRELL,
+    HOLOVIZ,
     JAMES_BEDNAR,
     MARC_SKOV_MADSEN,
     PANEL,
     PHILIPP_RUDIGER,
+    PLOTLY,
+    STREAMLIT,
+    VOILA,
 ]

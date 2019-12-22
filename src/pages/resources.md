@@ -4,7 +4,7 @@
 
 - [Bokeh](https://bokeh.pydata.org/en/latest/index.html) by [Bokeh](https://docs.bokeh.org/en/latest/ ) (#Alternatives)
 - [Jupyter Voila](https://blog.jupyter.org/and-voil%C3%A0-f6a2c08a4a93) by [Voila](https://github.com/voila-dashboards) (#Alternatives)
-- [Plotly Dash](https://plot.ly/dash/) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#Alternatives)
+- [Plotly Dash](https://plot.ly/dash/) by [Plotly](https://plot.ly/) (#Alternatives)
 - [Streamlit](https://streamlit.io) by [Streamlit](https://streamlit.io/) (#Alternatives)
 
 ### Article

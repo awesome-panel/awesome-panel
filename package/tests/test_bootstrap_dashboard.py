@@ -1,5 +1,6 @@
 """Tests of the BootStrapDashboardTemplate"""
 import panel as pn
+
 import awesome_panel.express as pnx
 
 

@@ -36,6 +36,7 @@ import hvplot.pandas  # pylint: disable=unused-import
 import pandas as pd
 import panel as pn
 import param
+
 from awesome_panel.express.bootstrap import InfoAlert
 
 pn.extension()
@@ -138,7 +139,12 @@ There is a lot to I need to learn across the HoloViz suite of tools.
             pn.layout.HSpacer(height=25),
             pn.Row(
                 pn.Column(self.scatter_plot_view, self.bar_chart_view, sizing_mode="stretch_width"),
-                pn.Param(self.param.categories, widgets={"categories":  {"max_width": 125, "size": len(self.categories)}}), sizing_mode="stretch_width"),
+                pn.Param(
+                    self.param.categories,
+                    widgets={"categories": {"max_width": 125, "size": len(self.categories)}},
+                ),
+                sizing_mode="stretch_width",
+            ),
             sizing_mode="stretch_width",
         )
 
