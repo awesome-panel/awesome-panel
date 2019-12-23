@@ -6,3 +6,5 @@ from awesome_panel.express.bootstrap import ErrorAlert, InfoAlert, WarningAlert
 from awesome_panel.express.widgets.browserurl import BrowserUrlMixin
 from awesome_panel.express.widgets.navigation import (NavigationButton,
                                                       NavigationMenu)
+
+from .bootstrap.cards.cards import Card

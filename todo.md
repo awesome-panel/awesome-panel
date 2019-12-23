@@ -5,3 +5,5 @@
   - Add Widgets, Pane, Layouts with links (browser_url, navigation_menu)
 
 - Create 5 minutes introduction to Panel on Youtube
+
+Add https://demo.bokeh.org/

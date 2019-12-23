@@ -28,13 +28,13 @@ class NavigationButton(pn.widgets.Button):
         else:
             page_ = page
 
-
         if "name" not in kwargs:
             if "css_classes" in kwargs:
                 kwargs["name"] = " " + page_.name
             else:
                 kwargs["name"] = page_.name
-
+        if "width" not in kwargs:
+            kwargs["width"] = 165
         super().__init__(**kwargs)
 
         def navigate_to_page(event):  # pylint: disable=unused-argument

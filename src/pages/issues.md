@@ -64,6 +64,7 @@ I believe I experience some rough edges for being one of the first to create a m
 - Cannot dynamically add and remove panes [Issue 838](https://github.com/holoviz/panel/issues/838)
 - Images does not support src urls and alt texts [Issue 841](https://github.com/holoviz/panel/issues/841)
 - Plotly does not show when dynamically adding and removing pages without adding plotly extension. See [Issue 840](https://github.com/holoviz/panel/issues/840)
+- Css_classes attribute does not work for the Holoviews Panel [Issue 902](https://github.com/holoviz/panel/issues/902)
 
 and I sometimes get error messages like this
 
