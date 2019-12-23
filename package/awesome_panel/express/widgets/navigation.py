@@ -77,8 +77,11 @@ class NavigationMenu(pn.Column):
         else:
             menuitems = [NavigationButton(page=page, page_outlet=page_outlet) for page in pages]
 
-        title = pnx.SubHeader(title, text_align=text_align)
-        super().__init__(title, *menuitems, sizing_mode=sizing_mode, *args, **kwargs)
+        # title = pnx.SubHeader(title, text_align=text_align)
+        title = pn.layout.HSpacer(height=20)
+        super().__init__(
+            title, *menuitems, sizing_mode=sizing_mode, *args, **kwargs,
+        )
 
         page_outlet.clear()
         page_outlet.append(pages[0])
