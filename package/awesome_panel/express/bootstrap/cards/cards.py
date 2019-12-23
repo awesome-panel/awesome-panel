@@ -65,7 +65,10 @@ class Card(pn.Column):
 
         collapse_button.on_click(click_callback)
         header_row = pn.Row(
-            header, pn.layout.HSpacer(), collapse_button, css_classes=["card-header"]
+            f'<h5 class="card-header"">{header}</h5>',
+            pn.layout.HSpacer(),
+            collapse_button,
+            css_classes=["card-header"],
         )
         super().__init__(header_row, content, **kwargs)
 
