@@ -14,8 +14,9 @@ This is the documentation of the **Awesome Panel Project** including the
    :maxdepth: 1
    :caption: Awesome Panel Docs!
 
-   Awesome Panel Resources list! <awesome-list.md>
    Repo readme <_copy_of_project_root/README>
+   Awesome Panel Resources list! <awesome-list.md>
+   Awesome Panel Package <awesome_panel/awesome_panel.rst>
 
 .. toctree::
    :maxdepth: 1

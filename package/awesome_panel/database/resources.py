@@ -1,6 +1,5 @@
-"""Simple 'database' of models
-
-Here you maintain the list of awesome resources
+"""In this module we define all Resources (except apps in the gallery) and exposes
+them via the RESOURCES list.
 """
 from awesome_panel.database import authors, tags
 from awesome_panel.database.apps_in_gallery import APPS_IN_GALLERY

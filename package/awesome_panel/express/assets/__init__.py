@@ -1,4 +1,10 @@
-"""Exposes paths to assets"""
+"""Exposes Paths to the following assets
+
+- BOOTSTRAP_PANEL_EXPRESS_CSS
+- CODE_HILITE_PANEL_EXPRESS_CSS
+- SCROLLBAR_PANEL_EXPRESS_CSS
+- FONTAWESOME_PANEL_EXPRESS_CSS
+"""
 import pathlib
 
 ROOT = pathlib.Path(__file__).parent

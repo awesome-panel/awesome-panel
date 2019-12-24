@@ -1,14 +1,13 @@
-"""In this module we define the list of apps contributed to the Gallery
+"""In this module we define all apps in the gallery as Resources and expose them via the
+**APPS_IN_GALLERY** list.
 
-Please note that all contribute apps should
+Please note that all apps in the list
 
-- be located in https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/
-gallery/<app_name_folder>
-- include that tags tags.CODE, tags.APP_IN_GALLERY as a minimum
+- be located in https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/gallery/
+- include the tags *tags.CODE* and *tags.APP_IN_GALLERY* as a minimum
 """
 from awesome_panel.database import authors, tags
-from awesome_panel.database.settings import (GITHUB_BLOB_MASTER_URL,
-                                             THUMBNAILS_ROOT)
+from awesome_panel.database.settings import GITHUB_BLOB_MASTER_URL, THUMBNAILS_ROOT
 from awesome_panel.shared.models import Resource
 
 GITHUB_GALLERY_URL = GITHUB_BLOB_MASTER_URL + "src/pages/gallery/"

@@ -1,4 +1,5 @@
-"""This module contains the list of Authors"""
+"""In this module we define all Authors of resources or apps in the gallery and exposes
+them via the AUTHORS list"""
 from awesome_panel.shared.models import Author
 
 # Authors

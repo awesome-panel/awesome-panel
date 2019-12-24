@@ -1,7 +1,7 @@
-"Module containing Tags"
+"""In this module we define all Resource Tags and exposes them via the TAGS list."""
 from awesome_panel.shared.models import Tag
 
-# Tags
+# Please keep the Tags sorted alphabetically
 ALTERNATIVE = Tag(name="Alternatives")
 APP = Tag("App")
 APP_IN_GALLERY = Tag(name="App In Gallery")
@@ -22,6 +22,7 @@ TUTORIAL = Tag(name="Tutorial")
 VIDEO = Tag(name="Video")
 VOILA = Tag(name="Voila")
 
+# Please keep this list sorted alphabetically
 TAGS = [
     ALTERNATIVE,
     APP,

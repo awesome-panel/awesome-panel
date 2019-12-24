@@ -23,7 +23,7 @@ The only way to truly understand how powerfull Panel is to play around with it. 
 
 Afterwards you can go to the [Panel Getting Started Guide](http://panel.pyviz.org/getting_started/index.html) or visit the [Panel Gallery](http://panel.pyviz.org/gallery/index.html).
 
-[![Introduction to Panel](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/youtube-introduction-to-panel.png?raw=true)](https://www.youtube.com/watch?v=L91rd1D6XTA&t=1133s "Introduction to panel")
+[![Introduction to Panel](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/youtube-introduction-to-panel.png?raw=true)](https://www.youtube.com/watch?v=Ohr29FJjBi0 "Introduction to panel")
 
 Panel is completely open source, available under a BSD license freely for both commercial and non-commercial use. Panel is part of the [HoloViz](https://holoviz.org/) ecosystem and works well with all the HoloViz tools..
 
@@ -43,6 +43,62 @@ Panel is developed and maintained by [Anaconda](https://www.anaconda.com/) devel
 
 A curated list of awesome panel resources. Inspired by [awesome-python](https://github.com/vinta/awesome-python) and [awesome-pandas](https://github.com/tommyod/awesome-pandas).
 
+### Alternatives
+
+- [Bokeh](https://bokeh.pydata.org/en/latest/index.html) by [Bokeh](https://docs.bokeh.org/en/latest/ ) (#Alternatives)
+- [Jupyter Voila](https://blog.jupyter.org/and-voil%C3%A0-f6a2c08a4a93) by [Voila](https://github.com/voila-dashboards) (#Alternatives)
+- [Plotly Dash](https://plot.ly/dash/) by [Plotly](https://plot.ly/) (#Alternatives)
+- [Streamlit](https://streamlit.io) by [Streamlit](https://streamlit.io/) (#Alternatives)
+
+### Article
+
+- [Dashboards with PyViz Panel for interactive web apps](https://dmnfarrell.github.io/bioinformatics/pyviz-panel) by [Damien Farrell](https://dmnfarrell.github.io/) (#Article)
+
+### Awesome-panel.org
+
+- [Awesome-panel.org](https://awesome-panel.org) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#Awesome-panel.org)
+- [Docker](https://hub.docker.com/r/marcskovmadsen/awesome-panel) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#Awesome-panel.org)
+- [Docs](https://awesome-panel.readthedocs.io/en/latest/) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#Awesome-panel.org)
+- [Github](https://github.com/marcskovmadsen/awesome-panel) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#Awesome-panel.org)
+- [PyPi](https://pypi.org/project/awesome-panel/) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#Awesome-panel.org)
+
+### Code
+
+- [Bootstrap Dashboard](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/bootstrap_dashboard/main.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
+- [Kickstarter Dashboard](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/kickstarter_dashboard/main.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
+- [Test Bootstrap Alerts](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/awesome_panel_express_tests/test_bootstrap_alerts.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #awesome_panel.express)
+- [Test Code](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/awesome_panel_express_tests/test_code.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #awesome_panel.express)
+- [Test Divider](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/awesome_panel_express_tests/test_divider.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #awesome_panel.express)
+- [Test FontAwesome](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/awesome_panel_express_tests/test_fontawesome.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #awesome_panel.express)
+- [Test Headings](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/awesome_panel_express_tests/test_headings.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #awesome_panel.express)
+- [Test Markdown](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/awesome_panel_express_tests/test_markdown.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #awesome_panel.express)
+- [Test Spinners](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/awesome_panel_express_tests/test_spinners.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #awesome_panel.express)
+
+### Panel
+
+- [Announcing Article](https://medium.com/@philipp.jfr/panel-announcement-2107c2b15f52) by [Philipp Rudiger](http://philippjfr.com/) (#Panel)
+- [Discourse](https://discourse.holoviz.org/c/panel) by [panel](https://panel.pyviz.org/) (#Panel)
+- [Gallery](https://panel.pyviz.org/gallery/index.html) by [panel](https://panel.pyviz.org/) (#Panel)
+- [Getting Started](https://panel.pyviz.org/getting_started/index.html) by [panel](https://panel.pyviz.org/) (#Panel)
+- [GitHub](https://github.com/holoviz/panel) by [panel](https://panel.pyviz.org/) (#Panel)
+- [Panel](https://panel.pyviz.org/) by [panel](https://panel.pyviz.org/) (#Panel)
+- [Reference Gallery](https://panel.pyviz.org/reference/index.html) by [panel](https://panel.pyviz.org/) (#Panel)
+- [User Guide](https://panel.pyviz.org/user_guide/index.html) by [panel](https://panel.pyviz.org/) (#Panel)
+
+### Sister Sites
+
+- [awesome-streamlit.org](https://awesome-streamlit.org) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#Sister Sites)
+
+### Tutorial
+
+- [HoloViz.org - Awesome Resources and Tutorials](http://holoviz.org/index.html) by [HoloViz](http://holoviz.org/) (#Tutorial)
+
+### Video
+
+- [Turn any Notebook into a Deployable Dashboard | SciPy 2019 | James Bednar](https://www.youtube.com/watch?v=L91rd1D6XTA&t=274s) by [James A. Bednar](https://github.com/jbednar) (#Tutorial, #Video)
+- [Turn any notebook into a deployable dashboard|PyData Berlin 2019](https://www.youtube.com/watch?v=Ohr29FJjBi0&list=PLGVZCDnMOq0pNHTYo3i56zYU-Tdw5Uguw) by [Philipp Rudiger](http://philippjfr.com/) (#Tutorial, #Video)
+- [Visualize any Data Easily, from Notebooks to Dashboards](https://www.youtube.com/watch?v=7deGS4IPAQ0&t=1326s) by [James A. Bednar](https://github.com/jbednar) (#Tutorial, #Video)
+
 ## Contribute
 
 GitHub [Issues](https://github.com/MarcSkovMadsen/awesome-panel/issues) and [Pull requests](https://github.com/MarcSkovMadsen/awesome-panel/pulls) are very welcome!
@@ -57,17 +113,43 @@ Please join the community in the [PyViz/PyvViz](https://gitter.im/pyviz/pyviz?so
 
 You can contribute to the Panel package on [GitHub/pyviz/panel](https://github.com/holoviz/panel) or sponsor it by contacting [sales@anaconda.com](mailto:sales%40anaconda.com). For more information see the [Official About Panel](https://panel.pyviz.org/about.html) page.
 
-### How to sponsor the Awesome Panel project
+### How to Contribute an URL to the Resources List
+
+- Fork this repo
+- add the URL to the files
+    - `package\awesome_panel\database\resources.py`
+        - This includes adding you as an Author in the `package/awesome_panel/database/authors.py` file.
+        - This might include creating one or more Tags in the `package/awesome_panel/database/tags.py` file.
+    - `README.md`
+- Create a [pull request](https://github.com/marcskovmadsen/awesome-panel/pulls).
+
+The above is the perfect scenario. If this is not possible do the best you can and then reach out. I would really like to include your Awesome Panel URL to the resources list.
+
+### How to Contribute an App to the Gallery
+
+- Fork this repo and follow the [Getting Started Instructions](#getting-started-with-the-awesome-panel-repository) below.
+- Create a new folder and file `src/pages/gallery/<my_awesome_app>/<my_awesome_app.py` for your app.
+    - Your `<my_awesome_app.py>` file should contain a function `def view() -> panel.Column:` that returns your app as a column.
+    - Add additional files to the folder if you need it.
+- Add your app to the `APPS_IN_GALLERY` list in the `package/awesome_panel/database/apps_in_gallery.py` file.
+    - This includes adding you as an Author in the `package/awesome_panel/database/authors.py` file.
+    - This might include creating one or more Tags in the `package/awesome_panel/database/tags.py` file.
+    - This includes creating a Thumbnail of your app and saving it to `assets/images/thumbnails/` folder.
+- Run `panel serve app.py` and manully test your app
+- Run `invoke test.all` and fix all errors. Also fix any warnings if possible.
+- Create a [pull request](https://github.com/marcskovmadsen/awesome-panel/pulls).
+
+The above is the perfect scenario. If this is not possible do the best you can and then reach out. I would really like to include your Awesome Panel App in the Gallery.
+
+### How to Sponsor the Awesome Panel Project
 
 If you would like to **sponsor my time or the infrastructure** the platform is running on, feel free to reach out. You can find my contact details at [datamodelsanalytics.com](https://datamodelsanalytics.com).
 
-You can also appreciate the work I have already done if you
+You can also appreciate the work that has already been done if you
 
 [![Buy me a coffee](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/buymeacoffee.png?raw=true)](https://www.buymeacoffee.com/4jlTzBJyQ)
 
 Thanks
-
-Marc
 
 ## Governance
 
@@ -77,6 +159,8 @@ I'm Marc, Skov, Madsen, PhD, CFA®, Lead Data Scientist Developer at [Ørsted](h
 
 You can learn more about me at [datamodelsanalytics.com](https://datamodelsanalytics.com)
 
+[<img src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/datamodelsanalytics.png?raw=true" style="max-width: 968px">](https://datamodelsanalytics.com)
+
 I try my best to govern and maintain this project in the spirit of the [Zen of Python](https://www.python.org/dev/peps/pep-0020/).
 
 But **i'm not an experienced open source maintainer** so helpfull suggestions are appreciated.
@@ -85,7 +169,7 @@ Thanks
 
 ### LICENSE
 
-[Apache 2.0 License]([Attribution-ShareAlike 4.0 International](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/license.md)
+[Apache 2.0 License](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/LICENSE)
 
 ## Getting Started with the Awesome Panel Repository
 
@@ -200,7 +284,7 @@ To run bash interactively
 docker run -it -p 80:80 --entrypoint "/bin/bash" marcskovmadsen/awesome-panel:latest
 ```
 
-## Building and Deploy the Awesome Panel Package
+## Build and Deploy the Awesome Panel Package
 
 You can build the package using
 
@@ -255,7 +339,6 @@ Available tasks:
   docker.system-prune                     The docker system prune command will free up space
   jupyter.notebook                        Run jupyter notebook
   package.build                           Builds the awesome-panel package)
-  panel.bootstrap-dashboard               Starts the Panel Server and serves the Bootstrap Dashboard App
   sphinx.build                            Build local version of site and open in a browser
   sphinx.copy-from-project-root           We need to copy files like README.md into docs/_copy_of_project_root
   sphinx.livereload                       Start autobild documentation server and open in browser.
@@ -274,10 +357,11 @@ Available tasks:
 
 The application is
 
-- build as a Docker image and tested via Azure Pipelines builds
-    - You find the Dockerfiles [here](https://github.com/MarcSkovMadsen/awesome-panel/tree/master/devops/docker) and the Azure pipelines yml files [here](https://github.com/MarcSkovMadsen/awesome-panel/tree/master/devops/azure-pipelines)
+- built as a Docker image and tested via Azure Pipelines.
+    - You can find the Dockerfiles [here](https://github.com/MarcSkovMadsen/awesome-panel/tree/master/devops/docker) and the Azure pipelines yml files [here](https://github.com/MarcSkovMadsen/awesome-panel/tree/master/devops/azure-pipelines).
 
 ![Azure Pipelines](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/azure-pipeline.png?raw=true)
+![Azure Pipelines Build and Test](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/azure-pipeline-build-test.png?raw=true)
 
 - pushed to the Dockerhub repository [marcskovmadsen/awesome-panel](https://cloud.docker.com/u/marcskovmadsen/repository/docker/marcskovmadsen/awesome-panel).
 
@@ -334,9 +418,8 @@ and end up with a project structure like
     |       ├── service1.py
     |       └── service2.py
     └── pages
-    |   └── pages
-    |       ├── page1.py
-    |       └── page2.py
+    |   ├── page1.py
+    |   └── page2.py
     └── shared
         └── models
         |   ├── model1.py

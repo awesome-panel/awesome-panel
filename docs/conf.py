@@ -12,6 +12,22 @@ from typing import Dict
 
 from recommonmark.parser import CommonMarkParser  # type: ignore
 
+import commonmark
+
+
+def docstring(app, what, name, obj, options, lines):
+    md = "\n".join(lines)
+    ast = commonmark.Parser().parse(md)
+    rst = commonmark.ReStructuredTextRenderer().render(ast)
+    lines.clear()
+    for line in rst.splitlines():
+        lines.append(line)
+
+
+def setup(app):
+    app.connect("autodoc-process-docstring", docstring)
+
+
 # -- Project information -----------------------------------------------------
 
 project = "Awesome Panel"
@@ -35,6 +51,7 @@ release = ""
 # ones.
 extensions = [
     "sphinx.ext.autodoc",
+    "sphinx.ext.napoleon",
     # "sphinx.ext.doctest",
     # "sphinx.ext.todo",
     # "sphinx.ext.coverage",
@@ -127,13 +144,7 @@ latex_elements: Dict[str, str] = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (
-        master_doc,
-        "AwesomePanel.tex",
-        "Awesome Panel Documentation",
-        "Marc Skov Madsen",
-        "manual",
-    )
+    (master_doc, "AwesomePanel.tex", "Awesome Panel Documentation", "Marc Skov Madsen", "manual",)
 ]
 
 

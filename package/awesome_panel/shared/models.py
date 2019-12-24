@@ -1,4 +1,4 @@
-"""Models of app"""
+"""Models of Resource, Author and Tag used to defined the RESOURCES and APPS_IN_GALLERY list."""
 from typing import List, NamedTuple, Optional
 
 _IMAGE_DICT = {" ": "-", "#": ""}
@@ -37,7 +37,7 @@ class Author(NamedTuple):
         """## A valid HTML string with the GitHub image and GitHub url link
 
         Returns:
-            str -- A valid HTML string with the github avatar link
+            str: A valid HTML string with the github avatar link
         """
         return (
             f'<a href="{self.github_url}" title="Author: {self.name}" target="_blank">'
@@ -49,7 +49,18 @@ class Author(NamedTuple):
 
 
 class Resource:
-    """Model of a Resource"""
+    """Model of a Resource
+
+        Args:
+            name (str): The name of the Resource
+            url (str): The url to the resource
+            thumbnail_path (str): A thumbnail image of the resource
+            is_awesome (bool): Whether or not the Resource should be included in the awesome-panel
+            list of awesome resources.
+            tags (Optional[List[Tag]], optional): A list of Tags describing the Resource.
+            Used to search for Resources. Defaults to None.
+            author (Optional[Author], optional): The author of the resource. Defaults to None.
+    """
 
     def __init__(  # pylint: disable=too-many-arguments
         self,
@@ -74,7 +85,7 @@ class Resource:
         """A markdown bullet string
 
         Returns:
-            [str] -- The Resource as a Markdown bullet string
+            str: The Resource as a Markdown bullet string
         """
         result = f"- [{self.name}]({self.url})"
         if self.author:
@@ -92,10 +103,10 @@ class Resource:
 
     @property
     def screenshot_file(self) -> str:
-        """The file name of an associated image of the resource
+        """The file name of a screenshot of the resource
 
         Returns:
-            str -- The file name of an associated image
+            str: The file name of screenshot of the resource
         """
         file = f"{self.name.lower()}.png"
         for original, new in _IMAGE_DICT.items():
