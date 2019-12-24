@@ -10,12 +10,14 @@ http://www.sphinx-doc.org/en/master/config
 # -- Options for LaTeX output ------------------------------------------------
 from typing import Dict
 
+import commonmark
 from recommonmark.parser import CommonMarkParser  # type: ignore
 
-import commonmark
 
-
-def docstring(app, what, name, obj, options, lines):
+def docstring(
+    app, what, name, obj, options, lines
+):  # pylint: disable=unused-argument, too-many-arguments
+    """Helper function to render docstring using markdown"""
     md = "\n".join(lines)
     ast = commonmark.Parser().parse(md)
     rst = commonmark.ReStructuredTextRenderer().render(ast)
@@ -25,6 +27,7 @@ def docstring(app, what, name, obj, options, lines):
 
 
 def setup(app):
+    """Setups the Sphinx app"""
     app.connect("autodoc-process-docstring", docstring)
 
 
