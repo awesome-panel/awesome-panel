@@ -105,3 +105,4 @@ venv.bak/
 gallery/panel-examples/
 src/pages/gallery/panel-examples/
 .venv2/
+tmp/

@@ -7,6 +7,7 @@ hvplot
 
 # Data Engineering and Science
 pandas==0.25.2
+geopandas # To `pip install geopandas` on windows please follow https://geoffboeing.com/2014/09/using-geopandas-windows/
 xlrd==1.2.0 # For importing xls files
 
 # Data Visualization
