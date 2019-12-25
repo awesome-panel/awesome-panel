@@ -7,9 +7,11 @@ The example is inspired by the article
 by [Damian Farrell](https://github.com/dmnfarrell). See also his
 [Notebook](https://github.com/dmnfarrell/teaching/blob/master/geo/maps_python.ipynb)
 
-The data is provided by [Our World in Data](https://ourworldindata.org/).
+The data is provided by [Our World in Data](https://ourworldindata.org/). You can find the source
+data on [GitHub](https://github.com/owid/owid-datasets/tree/master/datasets).
 
-If you wan't to `pip install geopandas` on Windows then please follow the
+This example uses [geopandas](http://geopandas.org/). If you wan't to `pip install geopandas` on
+Windows then please follow the
 [using-geopandas-windows](https://geoffboeing.com/2014/09/using-geopandas-windows/) article.
 """
 
@@ -25,13 +27,14 @@ import panel.widgets as pnw
 from bokeh.models import ColorBar, GeoJSONDataSource, LinearColorMapper
 from bokeh.palettes import brewer  # pylint: disable=no-name-in-module
 from bokeh.plotting import figure
+import param
 
 FILE_DIR = pathlib.Path(__file__).parent
 SHAPEFILE = FILE_DIR / "data/ne_110m_admin_0_countries.shp"
 OWIDDATASETS_FILE = FILE_DIR / "data/owid_datasets.csv"
 
 
-class OwidDashboard:
+class OwidDashboard(param.Parameterized):
     """A Dashboard showing the Owid World Data like 'Annual CO2 Emissions'
 
         Args:
@@ -40,6 +43,9 @@ class OwidDashboard:
             owid_data_sets (Optional[pd.DataFrame], optional): A DataFrame listing the available
             datasets. Defaults to None.
     """
+
+    dataset_name = param.ObjectSelector()
+    year = param.Integer(2010, bounds=(1950, 2018))
 
     def __init__(
         self,
@@ -56,6 +62,27 @@ class OwidDashboard:
         else:
             self.owid_data_sets = owid_data_sets
 
+        dataset_names = list(self.owid_data_sets.index)
+        self.param.dataset_name.objects = dataset_names
+        self.param.dataset_name.default = dataset_names[0]
+
+    @param.depends("dataset_name", "year")
+    def map_plot(self):
+        return self._map_plot(self.dataset_name, self.year)
+
+    @param.depends("dataset_name")
+    def download_link(self):
+        download_icon = '<img src="https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiJjIndjdDmAhXOY1AKHQasC20QjRx6BAgBEAQ&url=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Fdownload-button_532&psig=AOvVaw2xuzJjaLznTZ6nFo2696u-&ust=1577339513551859"/>'
+        return f'<a href="{self.owid_data_sets.loc[self.dataset_name].url}" download>{download_icon}</a>'
+
+
+    @lru_cache(2048)
+    def _map_plot(self, name: str, year: int):
+        shape_data, key = self.get_owid_data(
+            self.owid_data_sets, self.shape_data, name=name, year=year,
+        )
+        return self.get_map_plot(shape_data, key, key)
+
     @staticmethod
     @lru_cache(2048)
     def get_shape_data() -> gpd.geodataframe.GeoDataFrame:
@@ -64,19 +91,6 @@ class OwidDashboard:
         shape_data.columns = ["country", "country_code", "geometry"]
         shape_data = shape_data.drop(shape_data.index[159])
         return shape_data
-
-    @staticmethod
-    def to_geo_json_data_source(shape_data: gpd.geodataframe.GeoDataFrame) -> GeoJSONDataSource:
-        """Convert the shape_data to a GeoJSONDataSource
-
-        Args:
-            shape_data (gpd.geodataframe.GeoDataFrame): The shape data
-
-        Returns:
-            GeoJSONDataSource: The resulting GeoJson Data
-        """
-        json_data = json.dumps(json.loads(shape_data.to_json()))
-        return GeoJSONDataSource(geojson=json_data)
 
     @staticmethod
     @lru_cache(2048)
@@ -126,6 +140,19 @@ class OwidDashboard:
         merged[key] = merged[key].fillna(0)
         return merged, key
 
+    @staticmethod
+    def to_geo_json_data_source(data: gpd.geodataframe.GeoDataFrame) -> GeoJSONDataSource:
+        """Convert the data to a GeoJSONDataSource
+
+        Args:
+            data (gpd.geodataframe.GeoDataFrame): The data
+
+        Returns:
+            GeoJSONDataSource: The resulting GeoJson Data
+        """
+        json_data = json.dumps(json.loads(data.to_json()))
+        return GeoJSONDataSource(geojson=json_data)
+
     @classmethod
     def get_map_plot(
         cls,
@@ -150,9 +177,7 @@ class OwidDashboard:
             orientation="horizontal",
         )
 
-        plot = figure(
-            title=title, plot_height=500, tools="", sizing_mode="stretch_width",
-        )
+        plot = figure(title=title, plot_height=500, tools="", sizing_mode="stretch_width",)
         plot.xgrid.grid_line_color = None
         plot.ygrid.grid_line_color = None
         plot.patches(
@@ -170,23 +195,6 @@ class OwidDashboard:
 
     def view(self):
         """Map dashboard"""
-
-        map_pane = pn.pane.Bokeh()
-        dataset_selected = pnw.Select(name="dataset", options=list(self.owid_data_sets.index))
-        year_selected = pnw.IntSlider(start=1950, end=2018, value=2010)
-
-        def update_map(event):  # pylint: disable=unused-argument
-            shape_data, key = self.get_owid_data(
-                self.owid_data_sets,
-                self.shape_data,
-                name=dataset_selected.value,
-                year=year_selected.value,
-            )
-            map_pane.object = self.get_map_plot(shape_data, key, key)
-
-        year_selected.param.watch(update_map, "value")
-        year_selected.param.trigger("value")
-        dataset_selected.param.watch(update_map, "value")
         css = """
 .bk.owid-card {
     border: 1px solid rgba(0,0,0,.125);
@@ -197,9 +205,21 @@ class OwidDashboard:
 }
         """
         style = f"<style>{css}</style>"
-        content = pn.Column(dataset_selected, map_pane, year_selected, css_classes=["owid-content"],  margin=(10, 12, 12, 10), sizing_mode="stretch_width",)
-        card = pn.Column(content, css_classes=["owid-card"], sizing_mode="stretch_width", max_width=1000)
-        app = pn.Column(pn.pane.Markdown(__doc__), pn.pane.HTML(style), card, sizing_mode="stretch_width")
+        content = pn.Column(
+            self.param.dataset_name,
+            self.map_plot,
+            self.param.year,
+            pn.Row(pn.layout.HSpacer(), self.download_link, sizing_mode="stretch_width"),
+            css_classes=["owid-content"],
+            margin=(10, 12, 12, 10),
+            sizing_mode="stretch_width",
+        )
+        card = pn.Column(
+            content, css_classes=["owid-card"], sizing_mode="stretch_width", max_width=1000
+        )
+        app = pn.Column(
+            pn.pane.Markdown(__doc__), pn.pane.HTML(style), card, sizing_mode="stretch_width"
+        )
         return app
 
 
