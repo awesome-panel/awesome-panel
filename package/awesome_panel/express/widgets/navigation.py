@@ -54,7 +54,6 @@ class NavigationMenu(pn.Column):
         *args,
         css_classes: Optional[List[Optional[List[str]]]] = None,
         title: str = "Navigation",
-        text_align: str = "center",
         sizing_mode: str = "stretch_width",
         **kwargs,
     ):

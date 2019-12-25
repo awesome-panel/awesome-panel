@@ -23,11 +23,10 @@ from typing import Optional
 import geopandas as gpd
 import pandas as pd
 import panel as pn
-import panel.widgets as pnw
+import param
 from bokeh.models import ColorBar, GeoJSONDataSource, LinearColorMapper
 from bokeh.palettes import brewer  # pylint: disable=no-name-in-module
 from bokeh.plotting import figure
-import param
 
 FILE_DIR = pathlib.Path(__file__).parent
 SHAPEFILE = FILE_DIR / "data/ne_110m_admin_0_countries.shp"
@@ -42,6 +41,7 @@ class OwidDashboard(param.Parameterized):
             Defaults to None.
             owid_data_sets (Optional[pd.DataFrame], optional): A DataFrame listing the available
             datasets. Defaults to None.
+            kwargs: Any other parameters
     """
 
     dataset_name = param.ObjectSelector()
@@ -51,7 +51,9 @@ class OwidDashboard(param.Parameterized):
         self,
         shape_data: Optional[gpd.geodataframe.GeoDataFrame] = None,
         owid_data_sets: Optional[pd.DataFrame] = None,
+        **kwargs,
     ):
+
         if not shape_data:
             self.shape_data = self.get_shape_data()
         else:
@@ -63,18 +65,15 @@ class OwidDashboard(param.Parameterized):
             self.owid_data_sets = owid_data_sets
 
         dataset_names = list(self.owid_data_sets.index)
+
+        super().__init__(**kwargs)
         self.param.dataset_name.objects = dataset_names
         self.param.dataset_name.default = dataset_names[0]
 
     @param.depends("dataset_name", "year")
     def map_plot(self):
+        """The Bokeh Map"""
         return self._map_plot(self.dataset_name, self.year)
-
-    @param.depends("dataset_name")
-    def download_link(self):
-        download_icon = '<img src="https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiJjIndjdDmAhXOY1AKHQasC20QjRx6BAgBEAQ&url=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Fdownload-button_532&psig=AOvVaw2xuzJjaLznTZ6nFo2696u-&ust=1577339513551859"/>'
-        return f'<a href="{self.owid_data_sets.loc[self.dataset_name].url}" download>{download_icon}</a>'
-
 
     @lru_cache(2048)
     def _map_plot(self, name: str, year: int):
@@ -82,6 +81,22 @@ class OwidDashboard(param.Parameterized):
             self.owid_data_sets, self.shape_data, name=name, year=year,
         )
         return self.get_map_plot(shape_data, key, key)
+
+    @param.depends("dataset_name")
+    def download_link(self) -> str:
+        """A HTML string to enable download of the data
+
+        Returns:
+            str: A HTML link
+        """
+        download_icon = (
+            '<img src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/'
+            'icons/download_icon.png?raw=true" height="16px" width="16px"/>'
+        )
+        return (
+            f'<a href="{self.owid_data_sets.loc[self.dataset_name].url}" download>'
+            f'{download_icon}</a>'
+        )
 
     @staticmethod
     @lru_cache(2048)
@@ -105,10 +120,11 @@ class OwidDashboard(param.Parameterized):
     @staticmethod
     @lru_cache(2048)
     def get_owid_df(url) -> pd.DataFrame:
+        """The DataFrame of data from Owid"""
         return pd.read_csv(url)
 
     @classmethod
-    def get_owid_data(
+    def get_owid_data( # pylint: disable=too-many-arguments
         cls,
         owid_data_sets: pd.DataFrame,
         shape_data: gpd.geodataframe.GeoDataFrame,
