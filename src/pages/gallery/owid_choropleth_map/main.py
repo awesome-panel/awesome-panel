@@ -1,11 +1,13 @@
 """In this example we show how to construct an interactive
 [Choropleth](ps://en.wikipedia.org/wiki/Choropleth_map) map.
 
-The example is heavily inspired by the article
+The example is inspired by the article
 [Choropleth maps with geopandas, Bokeh and Panel]\
 (https://dmnfarrell.github.io/bioinformatics/bokeh-maps)
 by [Damian Farrell](https://github.com/dmnfarrell). See also his
 [Notebook](https://github.com/dmnfarrell/teaching/blob/master/geo/maps_python.ipynb)
+
+The data is provided by [Our World in Data](https://ourworldindata.org/).
 
 If you wan't to `pip install geopandas` on Windows then please follow the
 [using-geopandas-windows](https://geoffboeing.com/2014/09/using-geopandas-windows/) article.
@@ -13,6 +15,7 @@ If you wan't to `pip install geopandas` on Windows then please follow the
 
 import json
 import pathlib
+from functools import lru_cache
 from typing import Optional
 
 import geopandas as gpd
@@ -37,6 +40,7 @@ class OwidDashboard:
             owid_data_sets (Optional[pd.DataFrame], optional): A DataFrame listing the available
             datasets. Defaults to None.
     """
+
     def __init__(
         self,
         shape_data: Optional[gpd.geodataframe.GeoDataFrame] = None,
@@ -53,6 +57,7 @@ class OwidDashboard:
             self.owid_data_sets = owid_data_sets
 
     @staticmethod
+    @lru_cache(2048)
     def get_shape_data() -> gpd.geodataframe.GeoDataFrame:
         """Loads the shape data of the map"""
         shape_data = gpd.read_file(SHAPEFILE)[["ADMIN", "ADM0_A3", "geometry"]]
@@ -74,16 +79,23 @@ class OwidDashboard:
         return GeoJSONDataSource(geojson=json_data)
 
     @staticmethod
+    @lru_cache(2048)
     def get_owid_data_sets() -> pd.DataFrame:
         """The list of Owid data sets
 
         Returns:
-            pd.DataFrame: A DataFrame with columns=["name", "url"]
+            pd.DataFrame: A DataFrame with columns=["name", "url"] and index=["name"]
         """
         return pd.read_csv(OWIDDATASETS_FILE).set_index("name")
 
     @staticmethod
+    @lru_cache(2048)
+    def get_owid_df(url) -> pd.DataFrame:
+        return pd.read_csv(url)
+
+    @classmethod
     def get_owid_data(
+        cls,
         owid_data_sets: pd.DataFrame,
         shape_data: gpd.geodataframe.GeoDataFrame,
         name: str,
@@ -104,7 +116,7 @@ class OwidDashboard:
             gpd.geodataframe.GeoDataFrame: The Owid Data Sets merged with the shape data
         """
         url = owid_data_sets.loc[name].url
-        owid_data = pd.read_csv(url)
+        owid_data = cls.get_owid_df(url)
         if year is not None:
             owid_data = owid_data[owid_data["Year"] == year]
         merged = shape_data.merge(owid_data, left_on="country", right_on="Entity", how="left")
@@ -133,15 +145,13 @@ class OwidDashboard:
         color_bar = ColorBar(
             color_mapper=color_mapper,
             label_standoff=8,
-            width=500,
             height=20,
             location=(0, 0),
             orientation="horizontal",
         )
 
-        tools = "wheel_zoom,pan,reset"
         plot = figure(
-            title=title, plot_height=400, plot_width=850, toolbar_location="right", tools=tools
+            title=title, plot_height=500, tools="", sizing_mode="stretch_width",
         )
         plot.xgrid.grid_line_color = None
         plot.ygrid.grid_line_color = None
@@ -155,30 +165,41 @@ class OwidDashboard:
             fill_color={"field": value_column, "transform": color_mapper},
         )
         plot.add_layout(color_bar, "below")
+        plot.toolbar.logo = None
         return plot
 
     def view(self):
         """Map dashboard"""
 
-        map_pane = pn.pane.Bokeh(width=400)
+        map_pane = pn.pane.Bokeh()
         dataset_selected = pnw.Select(name="dataset", options=list(self.owid_data_sets.index))
         year_selected = pnw.IntSlider(start=1950, end=2018, value=2010)
 
-        def update_map(event): # pylint: disable=unused-argument
+        def update_map(event):  # pylint: disable=unused-argument
             shape_data, key = self.get_owid_data(
                 self.owid_data_sets,
                 self.shape_data,
                 name=dataset_selected.value,
                 year=year_selected.value,
             )
-            map_pane.object = self.get_map_plot(shape_data, key)
+            map_pane.object = self.get_map_plot(shape_data, key, key)
 
         year_selected.param.watch(update_map, "value")
         year_selected.param.trigger("value")
         dataset_selected.param.watch(update_map, "value")
-        app = pn.Column(
-            pn.pane.Markdown(__doc__), pn.Row(dataset_selected, year_selected), map_pane
-        )
+        css = """
+.bk.owid-card {
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+    font-family: Lato,"Helvetica Neue",Arial,sans-serif;
+    font-weight: 400;
+    box-shadow: 5px 5px 20px grey;
+}
+        """
+        style = f"<style>{css}</style>"
+        content = pn.Column(dataset_selected, map_pane, year_selected, css_classes=["owid-content"],  margin=(10, 12, 12, 10), sizing_mode="stretch_width",)
+        card = pn.Column(content, css_classes=["owid-card"], sizing_mode="stretch_width", max_width=1000)
+        app = pn.Column(pn.pane.Markdown(__doc__), pn.pane.HTML(style), card, sizing_mode="stretch_width")
         return app
 
 
