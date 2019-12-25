@@ -11,6 +11,22 @@ from awesome_panel.shared.models import Resource
 
 RESOURCES = [
     Resource(
+        name="Open Source Directions ep. 29: Panel",
+        url="https://www.youtube.com/watch?v=hZOsxmM_wyg",
+        thumbnail_path=THUMBNAILS_ROOT + "",
+        is_awesome=True,
+        tags=[tags.VIDEO],
+        author=authors.QUANSIGHT,
+    ),
+    Resource(
+        name="Our World in Data",
+        url="https://ourworldindata.org/",
+        thumbnail_path=THUMBNAILS_ROOT + "",
+        is_awesome=True,
+        tags=[tags.INSPIRATION],
+        author=authors.OURWORLDINDATA,
+    ),
+    Resource(
         name="Panel",
         url="https://panel.pyviz.org/",
         thumbnail_path=THUMBNAILS_ROOT + "",

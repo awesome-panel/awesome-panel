@@ -10,6 +10,7 @@ AWESOME_PANEL_ORG = Tag(name="Awesome-panel.org")
 AWESOMEPANEL_EXPRESS = Tag(name="awesome_panel.express")
 CODE = Tag("Code")
 DEPLOYMENT = Tag(name="Deployment")
+INSPIRATION = Tag(name="Inspiration")
 FINANCE = Tag(name="Finance")
 IMAGE_RECOGNITION = Tag(name="Image Recognition")
 MACHINE_LEARNING = Tag(name="Machine Learning")
@@ -32,6 +33,7 @@ TAGS = [
     AWESOME_PANEL_ORG,
     CODE,
     DEPLOYMENT,
+    INSPIRATION,
     FINANCE,
     IMAGE_RECOGNITION,
     MACHINE_LEARNING,

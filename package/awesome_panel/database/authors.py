@@ -39,6 +39,12 @@ MARC_SKOV_MADSEN = Author(
     github_url="https://github.com/marcskovmadsen",
     github_avatar_url="https://avatars0.githubusercontent.com/u/42288570",
 )
+OURWORLDINDATA = Author(
+    name="Our World in Data",
+    url="https://ourworldindata.org/",
+    github_url="https://github.com/owid",
+    github_avatar_url="https://avatars3.githubusercontent.com/u/14187135",
+)
 PANEL = Author(
     name="panel",
     url="https://panel.pyviz.org/",
@@ -56,6 +62,12 @@ PLOTLY = Author(
     url="https://plot.ly/",
     github_url="https://github.com/plotly",
     github_avatar_url="https://avatars2.githubusercontent.com/u/5997976",
+)
+QUANSIGHT = Author(
+    name="Quansight",
+    url="https://www.quansight.com/",
+    github_url="https://github.com/Quansight",
+    github_avatar_url="https://avatars1.githubusercontent.com/u/34879953",
 )
 STREAMLIT = Author(
     name="Streamlit",
@@ -84,8 +96,10 @@ AUTHORS = [
     HOLOVIZ,
     JAMES_BEDNAR,
     MARC_SKOV_MADSEN,
+    OURWORLDINDATA,
     PANEL,
     PHILIPP_RUDIGER,
+    QUANSIGHT,
     PLOTLY,
     STREAMLIT,
     VOILA,
