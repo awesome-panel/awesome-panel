@@ -1,3 +1,9 @@
+"""
+I wanted to enable easy sharing of [awesome-panel.org](https://awesome-panel.org) on social media,
+so I've implemented the functionality and made it available via the
+[awesome_panel package](https://pypi.org/project/awesome-panel/) in the
+`awesome_panel.express.bootstrap.share_link` module"""
+
 import panel as pn
 
 from awesome_panel.express import fontawesome
