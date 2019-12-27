@@ -7,3 +7,5 @@
 - Create 5 minutes introduction to Panel on Youtube
 
 Add https://demo.bokeh.org/
+
+https://informationisbeautiful.net/beautifulnews/584-usa-wind-power/
