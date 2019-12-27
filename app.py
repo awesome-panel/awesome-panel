@@ -39,6 +39,14 @@ or
 [pull requests](https://github.com/marcskovmadsen/awesome-panel/pulls).
 """
 
+SHARE_LINK_STYLE = """
+nav .bk a.button-share-link {
+    font-size: 1rem;
+    color: #343a40;
+    margin-left: 2px;
+}
+"""
+
 
 def main() -> pn.Pane:
     """## Bootstrap Dashboard App
@@ -54,6 +62,7 @@ def main() -> pn.Pane:
         pn.Pane -- The Bootstrap Dashboard App
     """
     pnx.fontawesome.extend()
+    pn.config.raw_css.append(SHARE_LINK_STYLE)
 
     app = pnx.templates.BootstrapDashboardTemplate(app_title="Awesome Panel")
 
@@ -68,8 +77,19 @@ def main() -> pn.Pane:
     navigation_menu = pnx.NavigationMenu(
         pages=pages, page_outlet=app.main, css_classes=MENU_BUTTON_CSS_CLASSES
     )
-    info = pn.Column(pnx.Markdown(INFO), margin=10, sizing_mode="stretch_width")
-    app.sidebar[:] = [navigation_menu, info]
+    share = pn.Column(
+        pnx.Markdown("#### Share"),
+        pn.Row(
+            pnx.fontawesome.share_link.ShareOnTwitter().view(),
+            pnx.fontawesome.share_link.ShareOnLinkedIn().view(),
+            pnx.fontawesome.share_link.ShareOnReddit().view(),
+            pnx.fontawesome.share_link.ShareOnFacebook().view(),
+            pnx.fontawesome.share_link.ShareOnMail().view(),
+        ),
+        margin=(10, 10, 0, 10),
+    )
+    info = pn.Column(pnx.Markdown(INFO), margin=(0, 10, 0, 10), sizing_mode="stretch_width")
+    app.sidebar[:] = [navigation_menu, share, info]
 
     contact = pn.Row(pn.pane.HTML(CONTACT))
     app.header.append(contact)
