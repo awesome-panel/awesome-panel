@@ -96,6 +96,14 @@ APPS_IN_GALLERY = [
         author=authors.MARC_SKOV_MADSEN,
     ),
     Resource(
+        name="Test Share Links",
+        url=GITHUB_GALLERY_URL + "awesome_panel_express_tests/test_share_links.py",
+        thumbnail_path=THUMBNAILS_ROOT + "test_share_links.png",
+        tags=[tags.CODE, tags.APP_IN_GALLERY, tags.AWESOMEPANEL_EXPRESS],
+        is_awesome=True,
+        author=authors.MARC_SKOV_MADSEN,
+    ),
+    Resource(
         name="Test Spinners",
         url=GITHUB_GALLERY_URL + "awesome_panel_express_tests/test_spinners.py",
         thumbnail_path=THUMBNAILS_ROOT + "test_spinners.png",

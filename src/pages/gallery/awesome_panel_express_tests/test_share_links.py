@@ -1,16 +1,18 @@
 import panel as pn
 
 from awesome_panel.express import fontawesome
-from awesome_panel.express.fontawesome.share_link import (ShareOnFacebook,
-                                                          ShareOnLinkedIn,
-                                                          ShareOnMail,
-                                                          ShareOnReddit,
-                                                          ShareOnTwitter)
+from awesome_panel.express.fontawesome.share_link import (
+    ShareOnFacebook,
+    ShareOnLinkedIn,
+    ShareOnMail,
+    ShareOnReddit,
+    ShareOnTwitter,
+)
 from awesome_panel.express.testing import TestApp
 
 STYLE = """
 <style>
-.button-share-link {
+.bk a.button-share-link {
     font-size: 2rem;
     color: black;
 }
