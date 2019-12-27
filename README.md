@@ -78,6 +78,7 @@ A curated list of awesome panel resources. Inspired by [awesome-python](https://
 
 ### Inspiration
 
+- [Information is Beautiful](https://informationisbeautiful.net/) by [Information is beautiful](https://informationisbeautiful.net/) (#Inspiration)
 - [Our World in Data](https://ourworldindata.org/) by [Our World in Data](https://ourworldindata.org/) (#Inspiration)
 
 ### Panel

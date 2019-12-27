@@ -11,6 +11,14 @@ from awesome_panel.shared.models import Resource
 
 RESOURCES = [
     Resource(
+        name="Information is Beautiful",
+        url="https://informationisbeautiful.net/",
+        thumbnail_path=THUMBNAILS_ROOT + "",
+        is_awesome=True,
+        tags=[tags.INSPIRATION],
+        author=authors.INFORMATIONISBEUTIFULL,
+    ),
+    Resource(
         name="Open Source Directions ep. 29: Panel",
         url="https://www.youtube.com/watch?v=hZOsxmM_wyg",
         thumbnail_path=THUMBNAILS_ROOT + "",

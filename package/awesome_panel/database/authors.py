@@ -27,6 +27,12 @@ HOLOVIZ = Author(
     github_url="https://github.com/holoviz",
     github_avatar_url="https://avatars2.githubusercontent.com/u/51678735",
 )
+INFORMATIONISBEUTIFULL = Author(
+    name="Information is beautiful",
+    url="https://informationisbeautiful.net/",
+    github_url="",
+    github_avatar_url="",
+)
 JAMES_BEDNAR = Author(
     name="James A. Bednar",
     url="https://github.com/jbednar",
