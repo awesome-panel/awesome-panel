@@ -7,7 +7,7 @@ Inspired by https://css-tricks.com/considerations-styling-modal/
 import panel as pn
 
 CSS = """
-.modal {
+.bk.modal {
   /* This way it could be display flex or grid or whatever also. */
   display: block;
   max-width: 100%;
@@ -22,6 +22,9 @@ CSS = """
 
   margin: auto!important;
   box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.9);
+
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 0.25rem;
 }
 .closed {
   display: none!important;
@@ -37,13 +40,7 @@ CSS = """
   background: rgba(0, 0, 0, 0.6);
 }
 .modal-guts {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   overflow: auto;
-  padding: 20px 50px 20px 20px;
 }
 body {
   background-color:#556;
@@ -74,9 +71,7 @@ modal.classList.toggle("closed");
 modalOverlay.classList.toggle("closed");
 """
     )
-    close_modal_button = pn.widgets.Button(
-        name="Obvious Close Button", css_classes=["close-modal-button"]
-    )
+    close_modal_button = pn.widgets.Button(name="X", css_classes=["close-modal-button"], width=50,)
     close_modal_button.js_on_click(
         code="""
 var modal = document.querySelector(".bk.modal");
@@ -85,24 +80,27 @@ modal.classList.toggle("closed");
 modalOverlay.classList.toggle("closed");
 """
     )
-
+    modal_title = pn.pane.Markdown("# Modal Example")
     modal_guts = pn.pane.HTML(
         """
-<h1>Modal Example</h1>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae expedita corrupti laudantium aperiam, doloremque explicabo ipsum earum dicta saepe delectus totam vitae ipsam doloribus et obcaecati facilis eius assumenda, cumque.</p>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae expedita corrupti laudantium aperiam, doloremque explicabo ipsum earum dicta saepe delectus totam vitae ipsam doloribus et obcaecati facilis eius assumenda, cumque.</p>
         """,
         css_classes=["modal-guts"],
     )
     modal = pn.Column(
-        close_modal_button,
-        modal_guts,
+        pn.Column(
+            pn.Row(modal_title, pn.layout.HSpacer(), close_modal_button,),
+            pn.layout.Divider(),
+            modal_guts,
+            sizing_mode="stretch_width",
+            margin=10,
+        ),
         width=400,
-        height=400,
         background="white",
         css_classes=["modal"],
     )
-    return pn.Column(open_modal_button, modal_overlay, modal, sizing_mode="stretch_both")
+    return pn.Column(open_modal_button, modal, modal_overlay, sizing_mode="stretch_both")
 
 
 if __name__.startswith("bk"):
