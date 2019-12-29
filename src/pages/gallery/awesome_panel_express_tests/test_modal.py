@@ -1,7 +1,5 @@
 """Here we test functionality to open a Panel in a modal window.
 
-THIS IS CURRENTLY ONLY AN EXPERIMENT. USE THIS FOR INSPIRATION.
-
 The Modal can be used to focus some kind of information like text, images, charts or (parts of)
 an interactive dashboard.
 
@@ -13,10 +11,10 @@ The implementation is inspired by
 """
 
 import panel as pn
+
+from awesome_panel.express import Divider, InfoAlert
 from awesome_panel.express.bootstrap.modal import Modal
 from awesome_panel.express.testing import TestApp
-from awesome_panel.express import Divider
-from awesome_panel.express import fontawesome
 
 TEXT1 = """\
 
@@ -33,7 +31,6 @@ BODY_OPTIONS = {
 }
 
 pn.config.raw_css.append(MODAL.get_css())
-fontawesome.extend()
 
 
 def test_modal():
@@ -83,6 +80,10 @@ def view() -> pn.Column:
     """
     return pn.Column(
         pn.pane.Markdown(__doc__),
+        pn.pane.Markdown(
+            "THIS IS CURRENTLY AN EXPERIMENT ONLY. USE THIS FOR INSPIRATION ONLY.",
+            background="#d1ecf1",
+        ),
         Divider(),
         test_modal(),
         Divider(),
