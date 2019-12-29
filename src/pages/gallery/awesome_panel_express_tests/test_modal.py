@@ -25,12 +25,12 @@ Click 'X' to close the Modal dialogue
 """
 MODAL = Modal(title="Modal", body=[TEXT1],)
 
+STYLE = pn.pane.HTML(f"<style>{MODAL.get_css()}</style>")
+
 BODY_OPTIONS = {
     "text1": TEXT1,
     "text2": "text2 " * 3,
 }
-
-pn.config.raw_css.append(MODAL.get_css())
 
 
 def test_modal():
@@ -79,6 +79,7 @@ def view() -> pn.Column:
         pn.Column -- A Column containing all the tests
     """
     return pn.Column(
+        STYLE,
         pn.pane.Markdown(__doc__),
         pn.pane.Markdown(
             "THIS IS CURRENTLY AN EXPERIMENT ONLY. USE THIS FOR INSPIRATION ONLY.",
