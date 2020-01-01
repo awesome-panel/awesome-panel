@@ -19,16 +19,8 @@ import numpy as np
 import pandas as pd
 import panel as pn
 import param
-from keras.applications import (
-    densenet,
-    imagenet_utils,
-    inception_v3,
-    mobilenet_v2,
-    nasnet,
-    resnet,
-    vgg19,
-    xception,
-)
+from keras.applications import (densenet, imagenet_utils, inception_v3,
+                                mobilenet_v2, nasnet, resnet, vgg19, xception)
 from keras.preprocessing.image import img_to_array, load_img
 from PIL import Image
 
@@ -124,7 +116,7 @@ class KerasApplication(NamedTuple):
         image = self.preprocess_input(image)
 
         report_progress_func(f"Classifying image with '{self.name}'... ", 85)
-        predictions = model.predict(image)
+        predictions = model.predict(image) # type: ignore
         top_predictions = self.decode_predictions_func(predictions)
 
         report_progress_func("", 0)
@@ -258,6 +250,10 @@ def set_environ():
 
 
 class ImageClassifierApp(param.Parameterized):
+    """The Image Classifier App
+
+    We define the parameters, views and depencies of the app
+    """
     model = param.ObjectSelector(
         default=KERAS_APPLICATIONS[DEFAULT_KERAS_APPLICATION_INDEX], objects=KERAS_APPLICATIONS,
     )
@@ -268,8 +264,10 @@ class ImageClassifierApp(param.Parameterized):
 
     @param.depends("model")
     def resources_view(self):
+        """A view of a section with links to resources"""
         if self.model:
             return pn.pane.Markdown(get_resources_markdown(self.model))
+        return pn.pane.HTML()
 
     # @param.depends("image_file", watch=True)
     # def set_image(self):
@@ -277,51 +275,68 @@ class ImageClassifierApp(param.Parameterized):
 
     @param.depends("image_file")
     def image_view(self):
+        """A view of the image_file"""
         if self.image_file:
-            b = io.BytesIO(self.image_file)
+            bytes_io = io.BytesIO(self.image_file)
             return pn.pane.HTML(
-                '<img src="data:image/jpg;base64,{0}" style="height:400px;min-width:600px;"/>'.format(
-                    b64encode(b.getvalue()).decode("utf-8")
+                '<img src="data:image/jpg;base64,{0}" style="height:400px;min-width:600px;"/>'
+                .format(
+                    b64encode(bytes_io.getvalue()).decode("utf-8")
                 )
             )
         return pnx.InfoAlert("Upload an image in .jpg format", height=400, min_width=600)
 
     def report_progress(self, message: str = "", value: int = 0):
+        """Update the progress message and value
+
+        Args:
+            message (str, optional): A message to convery to the user. Defaults to "".
+            value (int, optional): A progress value between 0 and 100. Defaults to 0.
+        """
         self.progress_message = message
         self.progress_value = value
 
     @param.depends("image_file", "model", watch=True)
     def set_top_predictions(self):
+        """Updates the top_predictions"""
         self.top_predictions = None
 
         if self.image_file and self.model:
             self.report_progress("Prediction Started", 1)
             bytes_io = io.BytesIO(self.image_file)
             pil_image = Image.open(bytes_io)
+            # pylint: disable=no-member
             self.top_predictions = self.model.get_top_predictions(
                 image=pil_image, report_progress_func=self.report_progress,
             )
+            # pylint: enable=no-member
 
     @param.depends("top_predictions")
     def main_prediction_view(self):
         """A pretty string of the main prediction to output to the user"""
         if self.model and self.top_predictions:
+            # pylint: disable=no-member
             main_prediction_string = self.model.to_main_prediction_string(self.top_predictions)
+            # pylint: enable=no-member
             return pn.pane.Markdown(main_prediction_string)
-        else:
-            return pn.pane.Str("Not Available")
+
+        return pn.pane.Str("Not Available")
 
     @param.depends("top_predictions")
     def predictions_chart_view(self):
+        """A view of a chart showing the top predictions and their probabilities"""
         if self.model and self.top_predictions:
+            # pylint: disable=no-member
             chart = self.model.to_predictions_chart(self.top_predictions)
+            # pylint: enable=no-member
             chart = chart.properties(height=200, width=400,)
             return pn.pane.Vega(chart)
-        else:
-            return pn.pane.Str("Not Available")
+
+        return pn.pane.Str("Not Available")
 
     @param.depends("progress_value", "top_predictions")
     def predictions_view(self):
+        """A view showing the predictions or the progress of the predictions"""
         if self.progress_value:
             return pn.Column(
                 pnx.SubHeader("Prediction"),
@@ -363,26 +378,6 @@ def view():
         sizing_mode="stretch_width",
     )
     return app
-
-    #     def report_progress(message, value, progress=progress, progress_bar=progress_bar):
-    #         if value == 0:
-    #             progress_bar.empty()
-    #             progress.empty()
-    #         else:
-    #             progress_bar.progress(value)
-    #             progress.markdown(message)
-
-    #     predictions = selected_model.get_top_predictions(
-    #         image=image, report_progress_func=report_progress
-    #     )
-
-    #     st.subheader("Main Prediction")
-    #     main_prediction = selected_model.to_main_prediction_string(predictions)
-    #     st.write(main_prediction)
-
-    #     st.subheader("Alternative Predictions")
-    #     predictions_chart = selected_model.to_predictions_chart(predictions)
-    #     st.altair_chart(predictions_chart)
 
 
 if __name__.startswith("bk"):
