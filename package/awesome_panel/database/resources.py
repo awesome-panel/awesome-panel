@@ -12,6 +12,18 @@ from awesome_panel.shared.models import Resource
 RESOURCES = [
     Resource(
         name="Information is Beautiful",
+        url=(
+            "https://towardsdatascience.com/how-to-build-a-time-series-dashboard-in-python-with-"
+            "panel-altair-and-a-jupyter-notebook-c0ed40f02289",
+        ),
+        thumbnail_path=THUMBNAILS_ROOT + "",
+        is_awesome=True,
+        tags=[tags.TUTORIAL, tags.ARTICLE],
+        author=authors.BENJAMIN_COOLEY,
+    ),
+
+    Resource(
+        name="Information is Beautiful",
         url="https://informationisbeautiful.net/",
         thumbnail_path=THUMBNAILS_ROOT + "",
         is_awesome=True,

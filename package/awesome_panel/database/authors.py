@@ -7,7 +7,13 @@ AWESOME_PANEL_ORG = Author(
     name="Awesome-panel.org",
     url="https://awesome-panel.org",
     github_url="https://github.com/marcskovmadsen",
-    github_avatar_url="https://avatars0.githubusercontent.com/u/42288570",
+    github_avatar_url="https://avatars0.githubusercontent.com/u/24277277?s=400&v=4",
+)
+BENJAMIN_COOLEY = Author(
+    name="Bokeh",
+    url="https://bendoesdata.github.io/",
+    github_url="https://github.com/bendoesdata",
+    github_avatar_url="https://avatars3.githubusercontent.com/u/8440965",
 )
 BOKEH = Author(
     name="Bokeh",

@@ -12,8 +12,12 @@ xlrd==1.2.0 # For importing xls files
 
 # Data Visualization
 plotly==4.3.0
+altair==4.0.0
 # seaborn==0.9.0
 # matplotlib==3.1.1
+Keras==2.3.1
+Pillow==6.2.1
+tensorflow==2.0.0
 
 # Utils
 # ------------------------------------------------------------------------------

@@ -1,0 +1,6 @@
+panel==0.7
+numpy==1.17.2
+Keras==2.3.1
+Pillow==6.2.1
+tensorflow==2.0.0
+altair==4.0.0
