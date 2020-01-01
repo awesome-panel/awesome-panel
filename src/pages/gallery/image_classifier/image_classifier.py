@@ -1,7 +1,7 @@
 """This is an **image classifier app** that enables a user to
 
-- select a classifier model (in the sidebar),
-- upload an image (in the main area)
+- select a classifier model
+- upload an image
 
 and get a predicted classification in return.
 
