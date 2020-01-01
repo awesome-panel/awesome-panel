@@ -225,7 +225,7 @@ KERAS_APPLICATIONS: List[KerasApplication] = [
     ),
 ]
 
-IMAGE_TYPES = [".png", ".jpg"]
+IMAGE_TYPES = [".jpg"]
 
 # pylint: disable=line-too-long
 def get_resources_markdown(model: KerasApplication) -> str:
@@ -280,11 +280,11 @@ class ImageClassifierApp(param.Parameterized):
         if self.image_file:
             b = io.BytesIO(self.image_file)
             return pn.pane.HTML(
-                '<img src="data:image/jpg;base64,{0}" style="height:400px;"/>'.format(
+                '<img src="data:image/jpg;base64,{0}" style="height:400px;min-width:600px;"/>'.format(
                     b64encode(b.getvalue()).decode("utf-8")
                 )
             )
-        return pnx.InfoAlert("Upload an image", height=400)
+        return pnx.InfoAlert("Upload an image in .jpg format", height=400, min_width=600)
 
     def report_progress(self, message: str = "", value: int = 0):
         self.progress_message = message
@@ -348,7 +348,7 @@ def view():
 
     app = pn.Column(
         pnx.Header("Image Classification with Keras and Tensorflow.", height=40),
-        pnx.InfoAlert(__doc__),
+        pnx.Markdown(__doc__),
         image_classifier_app.resources_view,
         pnx.SubHeader("Classifier"),
         pn.Param(

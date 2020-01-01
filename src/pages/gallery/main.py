@@ -105,7 +105,7 @@ class GalleryButton(Button):
             )
             page_view = to_module_function(page.url).view()
             self.page_outlet[:] = [spinners.DefaultSpinner().center()]
-            self.page_outlet[:] = [text, page_view]
+            self.page_outlet[:] = [pn.pane.HTML(text), page_view]
 
         self.on_click(click_handler)
 

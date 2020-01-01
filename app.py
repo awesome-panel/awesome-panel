@@ -61,6 +61,7 @@ def main() -> pn.Pane:
     Returns:
         pn.Pane -- The Bootstrap Dashboard App
     """
+    pn.extension("vega")
     pnx.fontawesome.extend()
     pn.config.raw_css.append(SHARE_LINK_STYLE)
 
