@@ -19,8 +19,16 @@ import numpy as np
 import pandas as pd
 import panel as pn
 import param
-from keras.applications import (densenet, imagenet_utils, inception_v3,
-                                mobilenet_v2, nasnet, resnet, vgg19, xception)
+from keras.applications import (
+    densenet,
+    imagenet_utils,
+    inception_v3,
+    mobilenet_v2,
+    nasnet,
+    resnet,
+    vgg19,
+    xception,
+)
 from keras.preprocessing.image import img_to_array, load_img
 from PIL import Image
 
@@ -116,7 +124,7 @@ class KerasApplication(NamedTuple):
         image = self.preprocess_input(image)
 
         report_progress_func(f"Classifying image with '{self.name}'... ", 85)
-        predictions = model.predict(image) # type: ignore
+        predictions = model.predict(image)  # type: ignore
         top_predictions = self.decode_predictions_func(predictions)
 
         report_progress_func("", 0)
@@ -254,6 +262,7 @@ class ImageClassifierApp(param.Parameterized):
 
     We define the parameters, views and depencies of the app
     """
+
     model = param.ObjectSelector(
         default=KERAS_APPLICATIONS[DEFAULT_KERAS_APPLICATION_INDEX], objects=KERAS_APPLICATIONS,
     )
@@ -279,8 +288,7 @@ class ImageClassifierApp(param.Parameterized):
         if self.image_file:
             bytes_io = io.BytesIO(self.image_file)
             return pn.pane.HTML(
-                '<img src="data:image/jpg;base64,{0}" style="height:400px;min-width:600px;"/>'
-                .format(
+                '<img src="data:image/jpg;base64,{0}" style="height:400px;min-width:600px;"/>'.format(
                     b64encode(bytes_io.getvalue()).decode("utf-8")
                 )
             )
@@ -367,11 +375,13 @@ def view():
         image_classifier_app.resources_view,
         pnx.SubHeader("Classifier"),
         pn.Param(
-            image_classifier_app.param["model"], widgets={"model": pn.widgets.RadioButtonGroup}
+            image_classifier_app.param["model"],
+            widgets={"model": {"type": pn.widgets.RadioButtonGroup, "button_type": "primary"}},
         ),
         pnx.SubHeader("Image"),
         pn.Param(
-            image_classifier_app.param["image_file"], widgets={"image_file": pn.widgets.FileInput}
+            image_classifier_app.param["image_file"],
+            widgets={"image_file": {"type": pn.widgets.FileInput, "accept": ".jpg"}},
         ),
         image_classifier_app.image_view,
         image_classifier_app.predictions_view,
