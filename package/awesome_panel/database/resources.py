@@ -14,7 +14,7 @@ RESOURCES = [
         name="Information is Beautiful",
         url=(
             "https://towardsdatascience.com/how-to-build-a-time-series-dashboard-in-python-with-"
-            "panel-altair-and-a-jupyter-notebook-c0ed40f02289",
+            "panel-altair-and-a-jupyter-notebook-c0ed40f02289"
         ),
         thumbnail_path=THUMBNAILS_ROOT + "",
         is_awesome=True,

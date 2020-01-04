@@ -2,11 +2,12 @@
 
 The plotly plot does not update when data is set! HoloViews does"""
 
-import panel as pn
 import hvplot.pandas
-import plotly.express as px
-import param
 import pandas as pd
+import panel as pn
+import param
+import plotly.express as px
+
 pn.extension('plotly')
 
 class App(param.Parameterized):

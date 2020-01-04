@@ -1,5 +1,6 @@
+from typing import List, NamedTuple
+
 import panel as pn
-from typing import NamedTuple, List
 import param
 
 
@@ -36,4 +37,3 @@ def view():
 
 if __name__.startswith("bk"):
     view().servable()
-

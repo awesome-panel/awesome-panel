@@ -12,3 +12,4 @@ https://informationisbeautiful.net/beautifulnews/584-usa-wind-power/
 
 Implement Notebook widget similar to https://discuss.streamlit.io/t/implementation-of-end-code-block-using-streamlit-for-notebook/1505 and maybe Markdown with fenched code blocks.
 
+embed pdf https://zwiftinsider.com/wp-content/uploads/2019/10/Watopia-2.11.pdf https://zwiftinsider.com/map/

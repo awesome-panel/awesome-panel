@@ -4,18 +4,18 @@
 - view the route on a map
 - see some basic metrics and charts
 """
-import datetime
-from typing import Dict, Tuple, Optional, List, Union
+import pathlib
+from typing import List, Optional, Union
 
 import fitparse
+import holoviews as hv
+import hvplot.pandas
 import pandas as pd
 import panel as pn
 import param
-import holoviews as hv
-import hvplot.pandas
 import plotly.express as px
-import pathlib
-pn.extension('plotly')
+
+pn.extension("plotly")
 
 UNIT_CONVERSION = {
     "speed": {"from": "10*6m/s", "to": "km/h", "factor": 0.0036},
@@ -25,7 +25,36 @@ UNIT_CONVERSION = {
     "position_lat": {"from": "semicircles", "to": "degrees", "factor": (180.0 / 2 ** 31)},
 }
 
-DEFAULT_FIT_FILE = pathlib.Path(__file__).parent / "files/4394446039.fit"
+DEFAULT_FIT_FILE = pathlib.Path(__file__).parent / "files/zwift_watopia.fit"
+
+
+class ProgressWithMessage(param.Parameterized):
+    value = param.Integer()
+    message = param.String()
+    bar_color = param.String("info")
+
+    def update(self, value: int, message: str):
+        self.value = value
+        self.message = message
+
+    def reset(self):
+        self.value = 0
+        self.message = ""
+
+    @param.depends("value", "message", "bar_color")
+    def view(self):
+        print("a")
+        content = []
+        if self.value:
+            content.append(
+                pn.widgets.Progress(value=self.value, bar_color=self.bar_color, align="center")
+            )
+        elif self.message:
+            content.append(pn.widgets.Progress(active=True))
+        if self.message:
+            content.append(pn.pane.Str(self.message))
+        return pn.Row(*content, sizing_mode="stretch_width")
+
 
 class TrainingServices:
     """A Collection of services for working with training files and training data"""
@@ -130,8 +159,9 @@ class TrainingAnalysisApp(param.Parameterized):
 
     training_file = param.FileSelector()
     training_data = param.DataFrame()
+    progress = param.ClassSelector(class_=ProgressWithMessage, default=ProgressWithMessage())
 
-    def __init__(self, training_file_path: Optional[pathlib.Path]=None, **kwargs):
+    def __init__(self, training_file_path: Optional[pathlib.Path] = None, **kwargs):
         super().__init__(**kwargs)
 
         if training_file_path:
@@ -140,15 +170,23 @@ class TrainingAnalysisApp(param.Parameterized):
     @param.depends("training_file", watch=True)
     def parse_training_file(self):
         """Converts the training_file to the training_data"""
+        self.progress.message = "Parsing Training File"
         self.training_data = TrainingServices.parse_fit_file(self.training_file)
+        self.progress.reset()
 
     @param.depends("training_data")
     def plots_view(self):
-        return TrainingServices.plot_layout(self.training_data)
+        self.progress.message = "Creating Performance Plots"
+        plot = TrainingServices.plot_layout(self.training_data)
+        self.progress.reset()
+        return plot
 
     @param.depends("training_data")
     def plot_map(self):
-        return TrainingServices.plot_map(self.training_data)
+        self.progress.message = "Creating Map"
+        plot = TrainingServices.plot_map(self.training_data)
+        self.progress.reset()
+        return plot
 
     def view(self):
         """The main view of the TrainingAnalysisApp"""
@@ -157,16 +195,17 @@ class TrainingAnalysisApp(param.Parameterized):
                 self.param.training_file,
                 widgets={"training_file": {"type": pn.widgets.FileInput, "accept": ".fit"}},
             ),
+            self.progress.view,
             self.plot_map,
             self.plots_view,
             sizing_mode="stretch_both",
         )
 
 
-def view(training_file_path: Optional[pathlib.Path]):
+def view(training_file_path: Optional[pathlib.Path] = None):
     """Run this to run the application"""
     return TrainingAnalysisApp(training_file_path=training_file_path).view()
 
 
 if __name__.startswith("bk"):
-    view(DEFAULT_FIT_FILE).servable()
+    view().servable()

@@ -23,6 +23,7 @@ s = setup(  # pylint: disable=invalid-name
     url="https://github.com/MarcSkovMadsen/awesome-panel",
     author="Marc Skov Madsen",
     author_email="marc.skov.madsen@gmail.com",
+    package_data={"awesome_panel": ["py.typed"]},
     packages=["awesome_panel"],
     install_requires=["panel"],
     python_requires=">= 3.7",

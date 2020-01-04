@@ -19,16 +19,8 @@ import numpy as np
 import pandas as pd
 import panel as pn
 import param
-from keras.applications import (
-    densenet,
-    imagenet_utils,
-    inception_v3,
-    mobilenet_v2,
-    nasnet,
-    resnet,
-    vgg19,
-    xception,
-)
+from keras.applications import (densenet, imagenet_utils, inception_v3,
+                                mobilenet_v2, nasnet, resnet, vgg19, xception)
 from keras.preprocessing.image import img_to_array, load_img
 from PIL import Image
 
@@ -288,7 +280,8 @@ class ImageClassifierApp(param.Parameterized):
         if self.image_file:
             bytes_io = io.BytesIO(self.image_file)
             return pn.pane.HTML(
-                '<img src="data:image/jpg;base64,{0}" style="height:400px;min-width:600px;"/>'.format(
+                '<img src="data:image/jpg;base64,{0}" style="height:400px;min-width:600px;"/>'
+                .format(
                     b64encode(bytes_io.getvalue()).decode("utf-8")
                 )
             )
@@ -392,4 +385,3 @@ def view():
 
 if __name__.startswith("bk"):
     view().servable()
-
