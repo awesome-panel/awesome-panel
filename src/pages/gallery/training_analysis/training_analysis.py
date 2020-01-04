@@ -18,7 +18,7 @@ import plotly.express as px
 pn.extension("plotly")
 
 UNIT_CONVERSION = {
-    "speed": {"from": "10*6m/s", "to": "km/h", "factor": 0.0036},
+PROGRESS = ProgressExt()
     "enhanced_speed": {"from": "10*6m/s", "to": "km/h", "factor": 3.6},
     "altitude": {"from": "unknown", "to": "m", "factor": 0.03855343881175331},
     "position_long": {"from": "semicircles", "to": "degrees", "factor": (180.0 / 2 ** 31)},
