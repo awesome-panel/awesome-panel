@@ -1,2 +1,1 @@
 fitparse==1.1.0
-geoviews==1.6.6
