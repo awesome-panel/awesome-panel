@@ -13,6 +13,7 @@ xlrd==1.2.0 # For importing xls files
 # Data Visualization
 plotly==4.3.0
 altair==4.0.0
+geoviews==1.6.6
 # seaborn==0.9.0
 # matplotlib==3.1.1
 Keras==2.3.1
@@ -22,6 +23,7 @@ tensorflow==2.0.0
 # Utils
 # ------------------------------------------------------------------------------
 invoke==1.3.0 # Invoke is a Python task execution tool & library. See http://www.pyinvoke.org/
+fitparse==1.1.0 # For reading and parsing .fit files. See https://github.com/dtcooper/python-fitparse
 
 # Testing
 # ------------------------------------------------------------------------------
