@@ -4,7 +4,8 @@ import pathlib
 import pandas as pd
 
 # pylint: disable=redefined-outer-name,protected-access
-from src.pages.gallery.training_analysis.training_analysis import TrainingServices
+from src.pages.gallery.training_analysis.training_analysis import \
+    TrainingServices
 
 FIT_FILE = pathlib.Path(__file__).parent / "files/zwift_watopia.fit"
 

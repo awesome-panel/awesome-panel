@@ -29,40 +29,12 @@ app.servable()
 which will show the progress and reset every 2 clicks.
 """
 
-from awesome_panel.express import ProgressExt
-from awesome_panel.express.testing import TestApp
-import panel as pn
 import time
 
+import panel as pn
 
-def test_constructor():
-    # When
-    progress = ProgressExt(value=10, message="hello world", bar_color="primary")
-    # Then
-    assert progress.value == 10
-    assert progress.message == "hello world"
-    assert progress.bar_color == "primary"
-
-
-def test_update():
-    # Given
-    progress = ProgressExt()
-    # When
-    progress.update(20, "hello again")
-    # Then
-    assert progress.value == 20
-    assert progress.message == "hello again"
-
-
-def test_reset():
-    # Given
-    progress = ProgressExt(value=10, message="hello world", bar_color="primary")
-    # When
-    progress.reset()
-    # Then
-    assert progress.value == 0
-    assert progress.message == ""
-    assert progress.bar_color == "primary"
+from awesome_panel.express import ProgressExt
+from awesome_panel.express.testing import TestApp
 
 
 def test_view_value_and_message():
@@ -70,7 +42,7 @@ def test_view_value_and_message():
 
     - The progress bar is active with the value 50
     - The message hello world is visible
-    - The color is the blue *info* color
+    - The bar color is the blue *info* color
     """
     progress = ProgressExt(value=50, message="hello world")
     return TestApp(test_view_value_and_message, progress.view())
@@ -81,7 +53,7 @@ def test_view_message_only():
 
     - The progress bar is active with no value
     - The message is stated
-    - The color is the blue *info* color
+    - The bar color is the blue *info* color
     """
     progress = ProgressExt(value=0, message="hello world")
     return TestApp(test_view_message_only, progress.view())
@@ -107,6 +79,17 @@ def test_view_none():
     return TestApp(test_view_none, progress.view())
 
 
+def test_bar_color():
+    """We test the view with a value and a message
+
+    - The progress bar is active with the value 50
+    - The message hello world is visible
+    - The bar color is the green *success* color
+    """
+    progress = ProgressExt(value=50, message="hello world", bar_color="success")
+    return TestApp(test_bar_color, progress.view())
+
+
 def test_report_as_context_manager():
     """We test that the `ProgressExt.report` function works as a context manager
 
@@ -115,7 +98,7 @@ def test_report_as_context_manager():
     progress = ProgressExt()
     run_button = pn.widgets.Button(name="Click me")
 
-    def run(event):
+    def run(event):  # pylint: disable=unused-argument
         with progress.report(50, "running"):
             time.sleep(1)
 
@@ -132,7 +115,7 @@ def test_report_as_decorator():
     run_button = pn.widgets.Button(name="Click me")
 
     @progress.report(33, "calculation")
-    def run(event):
+    def run(event):  # pylint: disable=unused-argument
         time.sleep(1)
 
     run_button.on_click(run)
@@ -147,7 +130,7 @@ def test_increment_as_context_manager():
     progress = ProgressExt()
     run_button = pn.widgets.Button(name="Click me")
 
-    def run(event):
+    def run(event):  # pylint: disable=unused-argument
         with progress.increment(50, "incrementing ..."):
             time.sleep(0.5)
 
@@ -164,7 +147,7 @@ def test_increment_as_decorator():
     run_button = pn.widgets.Button(name="Click me")
 
     @progress.increment(50, "incrementing ...")
-    def run(event):
+    def run(event):  # pylint: disable=unused-argument
         time.sleep(0.5)
 
     run_button.on_click(run)
@@ -183,6 +166,7 @@ def view() -> pn.Column:
         test_view_message_only,
         test_view_value_only,
         test_view_none,
+        test_bar_color,
         test_report_as_context_manager,
         test_report_as_decorator,
         test_increment_as_context_manager,

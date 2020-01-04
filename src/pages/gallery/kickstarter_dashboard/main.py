@@ -28,6 +28,7 @@ You can find an alternative version of this Dashboard in Streamlit at
 [awesome-streamlit.org](https://awesome-streamlit.org)
 """
 # pylint: enable=line-too-long
+# pylint: disable=duplicate-code
 import pathlib
 from typing import List, Optional
 
@@ -38,7 +39,7 @@ import panel as pn
 import param
 
 from awesome_panel.express.bootstrap import InfoAlert
-
+# pylint: enable=duplicate-code
 pn.extension()
 
 KICKSTARTER_PATH = pathlib.Path(__file__).parent / "kickstarter-cleaned.csv"

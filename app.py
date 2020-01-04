@@ -8,12 +8,13 @@ Creates a Bootstrap Dashboard App
 `awesome_panel.express.templates.BootstrapDashboardTemplate`
 - Start the app by using `panel serve` on this file.
 """
+from typing import List, Optional
+
 import panel as pn
 
 import awesome_panel.express as pnx
 from awesome_panel.database.apps_in_gallery import APPS_IN_GALLERY
 from src.pages import about, gallery, home, issues, resources
-from typing import Optional, List
 
 MENU_BUTTON_CSS_CLASSES: Optional[List[Optional[List[str]]]] = [
     ["navigation", "pas", "pa-home"],

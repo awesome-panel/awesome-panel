@@ -1,24 +1,27 @@
-"""The Training Analysis App provides functionality to
+"""The Training Analy_seriesis App provides functionality to
 
 - upload a file
 - view the route on a map
 - see some basic metrics and charts
 """
+# pylint: disable=duplicate-code
 import pathlib
 from typing import List, Optional, Union
 
 import fitparse
 import holoviews as hv
-import hvplot.pandas
+import hvplot.pandas # pylint: disable=unused-import
 import pandas as pd
 import panel as pn
 import param
 import plotly.express as px
-
+from awesome_panel.express import ProgressExt
+# pylint: enable=duplicate-code
 pn.extension("plotly")
+PROGRESS = ProgressExt()
 
 UNIT_CONVERSION = {
-PROGRESS = ProgressExt()
+    "speed": {"from": "10*6m/s", "to": "km/h", "factor": 0.0036},
     "enhanced_speed": {"from": "10*6m/s", "to": "km/h", "factor": 3.6},
     "altitude": {"from": "unknown", "to": "m", "factor": 0.03855343881175331},
     "position_long": {"from": "semicircles", "to": "degrees", "factor": (180.0 / 2 ** 31)},
@@ -26,34 +29,6 @@ PROGRESS = ProgressExt()
 }
 
 DEFAULT_FIT_FILE = pathlib.Path(__file__).parent / "files/zwift_watopia.fit"
-
-
-class ProgressWithMessage(param.Parameterized):
-    value = param.Integer()
-    message = param.String()
-    bar_color = param.String("info")
-
-    def update(self, value: int, message: str):
-        self.value = value
-        self.message = message
-
-    def reset(self):
-        self.value = 0
-        self.message = ""
-
-    @param.depends("value", "message", "bar_color")
-    def view(self):
-        print("a")
-        content = []
-        if self.value:
-            content.append(
-                pn.widgets.Progress(value=self.value, bar_color=self.bar_color, align="center")
-            )
-        elif self.message:
-            content.append(pn.widgets.Progress(active=True))
-        if self.message:
-            content.append(pn.pane.Str(self.message))
-        return pn.Row(*content, sizing_mode="stretch_width")
 
 
 class TrainingServices:
@@ -72,7 +47,7 @@ class TrainingServices:
         Returns:
             pd.DataFrame: A DataFrame with the data
         """
-        if isinstance(file, bytes) or isinstance(file, str):
+        if isinstance(file, (bytes, str)):
             fit_file = fitparse.FitFile(file)
         elif isinstance(file, fitparse.base.FitFile):
             fit_file = file
@@ -95,35 +70,63 @@ class TrainingServices:
             training_data_row[column] *= UNIT_CONVERSION[column]["factor"]
 
     @staticmethod
-    def plot(training_data: pd.DataFrame, x: str = "timestamp", y: str = "power"):
-        return training_data.hvplot(x=x, y=y)
+    def plot(training_data: pd.DataFrame, x_series: str = "timestamp", y_series: str = "power"):
+        """Line plot of the training data
+
+        Args:
+            training_data (pd.DataFrame): A DataFrame with Training Data
+            x_series (str, optional): The name of the column to show on the x-axis. Defaults to
+            "timestamp".
+            y_series (str, optional): The name of the column to show on the y-axis. Defaults to
+            "power".
+
+        Returns:
+            HoloViews: A plot
+        """
+        return training_data.hvplot(x=x_series, y=y_series)
 
     @classmethod
     def plot_layout(
         cls,
         training_data: Optional[pd.DataFrame],
-        xs: List[str] = ["timestamp"],
-        ys: List[str] = ["power", "heart_rate", "speed", "cadence", "altitude"],
+        x_series: Optional[List[str]] = None,
+        y_series: Optional[List[str]] = None,
     ):
+        """A layout of plots of the different measures like speed and power
+
+        Args:
+            training_data (Optional[pd.DataFrame]): The training data
+            x_series (Optional[List[str]], optional): The column to plot on the x-axis. Defaults to
+            None.
+            y_series (Optional[List[str]], optional): The columns to plot on the y-axis. Defaults
+            to None.
+
+        Returns:
+            HoloViews: A layout of multiple plots
+        """
         if training_data is None or training_data.empty:
             return None
+        if not x_series:
+            x_series = ["timestamp"]
+        if not y_series:
+            y_series = ["power", "heart_rate", "speed", "cadence", "altitude"]
 
         plots = hv.Layout()
-        for x in xs:
-            for y in ys:
-                plots += cls.plot(training_data, x, y)
+        for x_s in x_series:
+            for y_s in y_series:
+                plots += cls.plot(training_data, x_s, y_s)
         return plots.cols(1)
 
     @staticmethod
-    def plot_map(
+    def plot_map( # pylint: disable=too-many-arguments
         training_data: Optional[pd.DataFrame],
-        mapbox_style="open-street-map",
-        mapbox_zoom=13,
-        height=400,
-        width=800,
-        mode="lines",
+        mapbox_style: str = "open-street-map",
+        mapbox_zoom: int = 13,
+        height: int = 400,
+        width: int = 800,
+        mode: str = "lines",
     ):
-        """Plots the training_data onto a map
+        """Plots the route onto a map
 
         Args:
             training_data (Optional[pd.DataFrame]): [description]
@@ -131,6 +134,12 @@ class TrainingServices:
             "open-street-map", "carto-positron", "carto-darkmatter", "stamen-terrain",
             "stamen-toner" or "stamen-watercolor". Defaults to "".
             mapbox_zoom (int, optional): The Zoom Level. Defaults to 13.
+            height (int, optional): The height of the plot. Defaults to 400.
+            width (int, optional): The width of the plot. Defaults to 800.
+            mode (str, optional): The mode of the trace. Defaults to "lines".
+
+        Returns:
+            figure: A plot of the route on a map
         """
         if training_data is None or training_data.empty:
             return None
@@ -142,7 +151,7 @@ class TrainingServices:
             color="power",
             color_continuous_scale=px.colors.cyclical.IceFire,
             height=height,
-            width=800,
+            width=width,
         )
         fig.update_traces(mode=mode)
         fig.update_layout(
@@ -155,11 +164,10 @@ class TrainingServices:
 
 
 class TrainingAnalysisApp(param.Parameterized):
-    """The Training Analysis App enables a user to analyze his training and performance"""
+    """The Training Analy_seriesis App enables a user to analyze his training and performance"""
 
     training_file = param.FileSelector()
     training_data = param.DataFrame()
-    progress = param.ClassSelector(class_=ProgressWithMessage, default=ProgressWithMessage())
 
     def __init__(self, training_file_path: Optional[pathlib.Path] = None, **kwargs):
         super().__init__(**kwargs)
@@ -168,25 +176,30 @@ class TrainingAnalysisApp(param.Parameterized):
             self.training_file = training_file_path.read_bytes()
 
     @param.depends("training_file", watch=True)
+    @PROGRESS.report(message="Parsing Training File")
     def parse_training_file(self):
         """Converts the training_file to the training_data"""
-        self.progress.message = "Parsing Training File"
         self.training_data = TrainingServices.parse_fit_file(self.training_file)
-        self.progress.reset()
+
+    @param.depends("Creating Performance Plots")
+    @PROGRESS.report(message="Parsing Training File")
+    def plot_layout_view(self):
+        """A layout of plots of the training data. For example timestamp vs power.
+
+        Returns:
+            HoloViews: A layout of plots
+        """
+        return TrainingServices.plot_layout(self.training_data)
 
     @param.depends("training_data")
-    def plots_view(self):
-        self.progress.message = "Creating Performance Plots"
-        plot = TrainingServices.plot_layout(self.training_data)
-        self.progress.reset()
-        return plot
+    @PROGRESS.report(message="Creating Map")
+    def plot_map_view(self):
+        """The route on a map
 
-    @param.depends("training_data")
-    def plot_map(self):
-        self.progress.message = "Creating Map"
-        plot = TrainingServices.plot_map(self.training_data)
-        self.progress.reset()
-        return plot
+        Returns:
+            HoloViews: A plot of the route on a map.
+        """
+        return TrainingServices.plot_map(self.training_data)
 
     def view(self):
         """The main view of the TrainingAnalysisApp"""
@@ -195,9 +208,9 @@ class TrainingAnalysisApp(param.Parameterized):
                 self.param.training_file,
                 widgets={"training_file": {"type": pn.widgets.FileInput, "accept": ".fit"}},
             ),
-            self.progress.view,
-            self.plot_map,
-            self.plots_view,
+            PROGRESS.view,
+            self.plot_map_view,
+            self.plot_layout_view,
             sizing_mode="stretch_both",
         )
 
