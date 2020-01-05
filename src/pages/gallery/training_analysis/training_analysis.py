@@ -17,6 +17,10 @@ import param
 import plotly.express as px
 
 from awesome_panel.express import ProgressExt
+from src.pages.gallery.training_analysis.views.athlete_view import AthleteUpdateView
+from src.pages.gallery.training_analysis.views.performance_curve_view import (
+    PerformanceCurveUpdateView,
+)
 
 # pylint: enable=duplicate-code
 pn.extension("plotly")
@@ -207,7 +211,7 @@ class TrainingAnalysisApp(param.Parameterized):
 
     def view(self):
         """The main view of the TrainingAnalysisApp"""
-        return pn.Column(
+        activity_view = pn.Column(
             pn.Param(
                 self.param.training_file,
                 widgets={"training_file": {"type": pn.widgets.FileInput, "accept": ".fit"}},
@@ -217,6 +221,11 @@ class TrainingAnalysisApp(param.Parameterized):
             self.plot_layout_view,
             sizing_mode="stretch_both",
         )
+        athlete_view = pn.Tabs(
+            ("General", AthleteUpdateView()), ("Power Curve", PerformanceCurveUpdateView())
+        )
+
+        return pn.Tabs(("Activity", activity_view), ("Athlete", athlete_view),)
 
 
 def view(training_file_path: Optional[pathlib.Path] = None):
