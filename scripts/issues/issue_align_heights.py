@@ -1,10 +1,16 @@
+import datetime
+
+import panel as pn
+import param
+
+DATE_BOUNDS = (datetime.date(1980, 1, 1), datetime.datetime.now().date())
+
+
 """This module contains functionality to model Performance Curve
 
 An example is a Power Curve
 """
-import datetime
 
-import param
 
 DATE_BOUNDS = (datetime.date(1980, 1, 1), datetime.datetime.now().date())
 
@@ -45,3 +51,45 @@ class PerformanceCurve(param.Parameterized):
     two_hour_date = param.Date(datetime.date(2018, 10, 28), bounds=DATE_BOUNDS)
     five_hour = param.Number(251)
     five_hour_date = param.Date(datetime.date(2017, 6, 5), bounds=DATE_BOUNDS)
+
+
+class CustomGrid(pn.GridBox):
+    def __init__(self, *objects, **params):
+        super().__init__(*objects, **params, ncols=2, nrows=15)
+
+
+class PerformanceCurveUpdateView(pn.Column):
+    """A View for editing/ updating the Performance Curve"""
+
+    def __init__(self, performance_curve: PerformanceCurve, **kwargs):
+        self.performance_curve = performance_curve
+        super().__init__(
+            pn.Row(
+                pn.Param(
+                    self.performance_curve,
+                    widgets={
+                        "one_sec_date": pn.widgets.DatePicker,
+                        "two_sec_date": pn.widgets.DatePicker,
+                        "five_sec_date": pn.widgets.DatePicker,
+                        "ten_sec_date": pn.widgets.DatePicker,
+                        "twenty_sec_date": pn.widgets.DatePicker,
+                        "thirty_sec_date": pn.widgets.DatePicker,
+                        "one_min_date": pn.widgets.DatePicker,
+                        "two_min_date": pn.widgets.DatePicker,
+                        "five_min_date": pn.widgets.DatePicker,
+                        "ten_min_date": pn.widgets.DatePicker,
+                        "twenty_min_date": pn.widgets.DatePicker,
+                        "thirty_min_date": pn.widgets.DatePicker,
+                        "one_hour_date": pn.widgets.DatePicker,
+                        "two_hour_date": pn.widgets.DatePicker,
+                        "five_hour_date": pn.widgets.DatePicker,
+                    },
+                    default_layout=CustomGrid,
+                    show_name=False,
+                ),
+            ),
+            **kwargs
+        )
+
+
+PerformanceCurveUpdateView(PerformanceCurve()).servable()

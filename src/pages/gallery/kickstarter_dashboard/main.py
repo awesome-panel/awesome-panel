@@ -49,7 +49,12 @@ DATE_COLUMNS = [
     "created_at",
 ]
 N_SAMPLES = 10000
-CMAP = {"canceled": "blue", "failed": "red", "successful": "green", "suspended": "orange"}
+CMAP = {
+    "canceled": "blue",
+    "failed": "red",
+    "successful": "green",
+    "suspended": "orange",
+}
 
 INFO = """\
 Please note that zooming on the parent, stacker chart and having the child, bar chart update
@@ -125,7 +130,9 @@ There is a lot to I need to learn across the HoloViz suite of tools.
     def _set_bar_df(self):
         """Update the bar_df dataframe"""
         self.bar_df = self.filter_on_ranges(
-            self.scatter_df, self.rangexy.x_range, self.rangexy.y_range  # pylint: disable=no-member
+            self.scatter_df,
+            self.rangexy.x_range,  # pylint: disable=no-member
+            self.rangexy.y_range,  # pylint: disable=no-member
         )
 
     @param.depends("bar_df")
@@ -140,7 +147,9 @@ There is a lot to I need to learn across the HoloViz suite of tools.
             InfoAlert(INFO),
             pn.layout.HSpacer(height=25),
             pn.Row(
-                pn.Column(self.scatter_plot_view, self.bar_chart_view, sizing_mode="stretch_width"),
+                pn.Column(
+                    self.scatter_plot_view, self.bar_chart_view, sizing_mode="stretch_width",
+                ),
                 pn.Param(
                     self.param.categories,
                     widgets={"categories": {"max_width": 125, "size": len(self.categories)}},
@@ -246,7 +255,7 @@ There is a lot to I need to learn across the HoloViz suite of tools.
         return sub_df
 
     @staticmethod
-    def get_scatter_plot(kickstarter_df: pd.DataFrame):  # pylint: disable=missing-return-type-doc
+    def get_scatter_plot(kickstarter_df: pd.DataFrame,):  # pylint: disable=missing-return-type-doc
         """A Scatter plot of the kickstarter_df
 
         Arguments:
@@ -271,7 +280,7 @@ There is a lot to I need to learn across the HoloViz suite of tools.
         )
 
     @staticmethod
-    def get_bar_chart(kickstarter_df: pd.DataFrame):  # pylint: disable=missing-return-type-doc
+    def get_bar_chart(kickstarter_df: pd.DataFrame,):  # pylint: disable=missing-return-type-doc
         """A bar chart of the kickstarter_df
 
         Arguments:

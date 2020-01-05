@@ -65,7 +65,7 @@ class Markdown(pn.pane.HTML):
         text_with_no_leading_spaces = "\n".join([line.lstrip() for line in text.splitlines()])
 
         text_html = markdown.markdown(
-            text_with_no_leading_spaces, extensions=MARKDOWN_EXTENSIONS, output_format="html5"
+            text_with_no_leading_spaces, extensions=MARKDOWN_EXTENSIONS, output_format="html5",
         )
 
         super().__init__(text_html, **kwargs)
@@ -75,7 +75,7 @@ class Code(pn.pane.HTML):
     """A HTML code block"""
 
     def __init__(
-        self, code: str = "", language: str = "python", sizing_mode="stretch_width", **kwargs
+        self, code: str = "", language: str = "python", sizing_mode="stretch_width", **kwargs,
     ):
         """A HTML code block"""
         code_markdown = f"""

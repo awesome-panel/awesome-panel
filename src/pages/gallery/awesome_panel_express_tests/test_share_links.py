@@ -7,11 +7,13 @@ so I've implemented the functionality and made it available via the
 import panel as pn
 
 from awesome_panel.express import fontawesome
-from awesome_panel.express.fontawesome.share_link import (ShareOnFacebook,
-                                                          ShareOnLinkedIn,
-                                                          ShareOnMail,
-                                                          ShareOnReddit,
-                                                          ShareOnTwitter)
+from awesome_panel.express.fontawesome.share_link import (
+    ShareOnFacebook,
+    ShareOnLinkedIn,
+    ShareOnMail,
+    ShareOnReddit,
+    ShareOnTwitter,
+)
 from awesome_panel.express.testing import TestApp
 
 STYLE = """

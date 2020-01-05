@@ -179,7 +179,7 @@ class OwidDashboard(param.Parameterized):
         return merged, key
 
     @staticmethod
-    def to_geo_json_data_source(data: gpd.geodataframe.GeoDataFrame) -> GeoJSONDataSource:
+    def to_geo_json_data_source(data: gpd.geodataframe.GeoDataFrame,) -> GeoJSONDataSource:
         """Convert the data to a GeoJSONDataSource
 
         Args:
@@ -253,10 +253,10 @@ class OwidDashboard(param.Parameterized):
             sizing_mode="stretch_width",
         )
         card = pn.Column(
-            content, css_classes=["owid-card"], sizing_mode="stretch_width", max_width=1000
+            content, css_classes=["owid-card"], sizing_mode="stretch_width", max_width=1000,
         )
         app = pn.Column(
-            pn.pane.Markdown(__doc__), pn.pane.HTML(style), card, INFO, sizing_mode="stretch_width"
+            pn.pane.Markdown(__doc__), pn.pane.HTML(style), card, INFO, sizing_mode="stretch_width",
         )
         return app
 

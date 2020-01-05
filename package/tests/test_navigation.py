@@ -19,7 +19,7 @@ def test_pn_navigation_button():
     page_outlet = pn.Column(page)
     button = pnx.NavigationButton(page=page, page_outlet=page_outlet)
     button_font_awesome = pnx.NavigationButton(
-        page=page_font_awesome, page_outlet=page_outlet, css_classes=["pab", "pa-twitter"]
+        page=page_font_awesome, page_outlet=page_outlet, css_classes=["pab", "pa-twitter"],
     )
     app = pn.Column(
         pnx.Markdown(test_pn_navigation_button.__doc__),

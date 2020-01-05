@@ -36,7 +36,7 @@ Running Black the Python code formatter
 =======================================
 """
     )
-    command.run("black .", echo=True)
+    command.run("black . -l 100", echo=True)
 
 
 @task
@@ -149,7 +149,7 @@ Running autoflake to remove unused imports on all .py files recursively
 
 # Note: Get Black added back in. black,
 @task(
-    pre=[isort, autoflake, pylint, mypy, pytest], aliases=["pre_commit", "test"], name="all",
+    pre=[isort, autoflake, black, pylint, mypy, pytest], aliases=["pre_commit", "test"], name="all",
 )
 def _all(command):  # pylint: disable=unused-argument
     """Runs isort, autoflake, black, pylint, mypy and pytest

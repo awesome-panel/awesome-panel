@@ -7,8 +7,7 @@ Please note that all apps in the list
 - include the tags *tags.CODE* and *tags.APP_IN_GALLERY* as a minimum
 """
 from awesome_panel.database import authors, tags
-from awesome_panel.database.settings import (GITHUB_BLOB_MASTER_URL,
-                                             THUMBNAILS_ROOT)
+from awesome_panel.database.settings import GITHUB_BLOB_MASTER_URL, THUMBNAILS_ROOT
 from awesome_panel.shared.models import Resource
 
 GITHUB_GALLERY_URL = GITHUB_BLOB_MASTER_URL + "src/pages/gallery/"

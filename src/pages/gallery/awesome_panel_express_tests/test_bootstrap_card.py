@@ -124,7 +124,7 @@ def test_card_with_multiple_panels():
     """
     card = pnx.Card(
         "Card With Plot",
-        [_holoviews_chart(), "Awesome Panel! " * 50, _holoviews_chart(), "Awesome Panel! " * 50],
+        [_holoviews_chart(), "Awesome Panel! " * 50, _holoviews_chart(), "Awesome Panel! " * 50,],
         width=600,
     )
     return TestApp(test_card_with_multiple_panels, card)

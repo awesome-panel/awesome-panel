@@ -6,7 +6,12 @@ class Code(pn.pane.HTML):
     """A HTML code block"""
 
     def __init__(
-        self, code: str = "", language: str = "python", sizing_mode="stretch_width", *args, **kwargs
+        self,
+        code: str = "",
+        language: str = "python",
+        sizing_mode="stretch_width",
+        *args,
+        **kwargs,
     ):
         """A HTML code block"""
         code_markdown = f"""
@@ -97,7 +102,12 @@ class Code(pn.pane.HTML):
     """A HTML code block"""
 
     def __init__(
-        self, code: str = "", language: str = "python", sizing_mode="stretch_width", *args, **kwargs
+        self,
+        code: str = "",
+        language: str = "python",
+        sizing_mode="stretch_width",
+        *args,
+        **kwargs,
     ):
         """A HTML code block"""
         code_markdown = f"""

@@ -1,12 +1,10 @@
-"""In this module we define views of the Athlete Model"""
+"""In this module we define Views of the Athlete Model"""
 
 from typing import Optional
 
 import panel as pn
 
 from ..models.athlete import Athlete
-
-pn.extension()
 
 
 class AthleteUpdateView(pn.Column):
@@ -19,7 +17,8 @@ class AthleteUpdateView(pn.Column):
             self.athlete = Athlete()
 
         super().__init__(
-            pn.Param(self.athlete.param, widgets={"birthday": pn.widgets.DatePicker}),
-            pn.widgets.DatePicker(),
+            self.athlete.param["name_"],
+            pn.Param(self.athlete.param["birthday"], widgets={"birthday": pn.widgets.DatePicker},),
+            self.athlete.param["weight"],
             **kwargs,
         )

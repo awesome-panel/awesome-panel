@@ -8,7 +8,8 @@ import panel as pn
 import param
 import plotly.express as px
 
-pn.extension('plotly')
+pn.extension("plotly")
+
 
 class App(param.Parameterized):
     data_is_set = param.Boolean(default=False)

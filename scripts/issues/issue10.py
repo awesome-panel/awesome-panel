@@ -96,7 +96,7 @@ def main():
         css_classes=["app-title"],
     )
     header = pn.Row(
-        app_title, pn.layout.HSpacer(), sizing_mode="stretch_width", css_classes=["header"]
+        app_title, pn.layout.HSpacer(), sizing_mode="stretch_width", css_classes=["header"],
     )
     sidebar = pn.Column(
         "Sidebar",
@@ -115,7 +115,7 @@ def main():
     content.append(page)
 
     body = pn.Column(
-        header, pn.Row(sidebar, content), sizing_mode="stretch_width", background="darkgray"
+        header, pn.Row(sidebar, content), sizing_mode="stretch_width", background="darkgray",
     )
 
     items = {

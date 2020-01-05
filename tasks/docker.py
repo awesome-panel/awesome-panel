@@ -183,10 +183,7 @@ Running the '{image}:{tag}' Docker image
 ========================================
 """
     )
-    command = (
-        'docker run -it -p 80:80 '
-        f"{DOCKER_REGISTRY}/{image}:{tag} "
-    )
+    command = "docker run -it -p 80:80 " f"{DOCKER_REGISTRY}/{image}:{tag} "
 
     print(command)
     subprocess.run(command, check=True)

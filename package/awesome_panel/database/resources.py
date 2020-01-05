@@ -4,6 +4,7 @@ them via the RESOURCES list.
 from awesome_panel.database import authors, tags
 from awesome_panel.database.apps_in_gallery import APPS_IN_GALLERY
 from awesome_panel.database.settings import THUMBNAILS_ROOT
+
 # pylint: disable=line-too-long
 from awesome_panel.shared.models import Resource
 
@@ -21,7 +22,6 @@ RESOURCES = [
         tags=[tags.TUTORIAL, tags.ARTICLE],
         author=authors.BENJAMIN_COOLEY,
     ),
-
     Resource(
         name="Information is Beautiful",
         url="https://informationisbeautiful.net/",

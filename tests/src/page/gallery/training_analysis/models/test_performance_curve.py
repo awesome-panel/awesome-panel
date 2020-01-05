@@ -1,8 +1,7 @@
 """In this module we test the PerformanceCurve model"""
 import datetime
 
-from src.pages.gallery.training_analysis.models.performance_curve import \
-    PerformanceCurve
+from src.pages.gallery.training_analysis.models.performance_curve import PerformanceCurve
 
 
 def test_constructor():

@@ -56,7 +56,7 @@ pn.config.raw_css.append(css)
 chart = _holoviews_chart()
 chart_panel = pn.panel(chart, css_classes=["card-panel"], background="salmon", margin=0)
 header = pn.pane.HTML(
-    "<h5>header</h5>", css_classes=["card-header"], sizing_mode="stretch_width", margin=0
+    "<h5>header</h5>", css_classes=["card-header"], sizing_mode="stretch_width", margin=0,
 )
 body = pn.pane.Markdown("this is my text. " * 50, css_classes=["card-panel"], margin=0)
 card = pn.Column(
