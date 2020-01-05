@@ -10,12 +10,14 @@ from typing import List, Optional, Union
 
 import fitparse
 import holoviews as hv
-import hvplot.pandas # pylint: disable=unused-import
+import hvplot.pandas  # pylint: disable=unused-import
 import pandas as pd
 import panel as pn
 import param
 import plotly.express as px
+
 from awesome_panel.express import ProgressExt
+
 # pylint: enable=duplicate-code
 pn.extension("plotly")
 PROGRESS = ProgressExt()
@@ -181,7 +183,7 @@ class TrainingAnalysisApp(param.Parameterized):
         """Converts the training_file to the training_data"""
         self.training_data = TrainingServices.parse_fit_file(self.training_file)
 
-    @param.depends("Creating Performance Plots")
+    @param.depends("training_data")
     @PROGRESS.report(message="Parsing Training File")
     def plot_layout_view(self):
         """A layout of plots of the training data. For example timestamp vs power.
@@ -197,7 +199,7 @@ class TrainingAnalysisApp(param.Parameterized):
         """The route on a map
 
         Returns:
-            HoloViews: A plot of the route on a map.
+                HoloViews: A plot of the route on a map.
         """
         return TrainingServices.plot_map(self.training_data)
 
@@ -221,4 +223,4 @@ def view(training_file_path: Optional[pathlib.Path] = None):
 
 
 if __name__.startswith("bk"):
-    view().servable()
+    view(DEFAULT_FIT_FILE).servable()

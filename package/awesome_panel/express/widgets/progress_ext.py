@@ -136,7 +136,7 @@ class ProgressExt(param.Parameterized):
         Can be used as context manager or decorator.
 
         Args:
-            value (int): A value between 0 and 100 that will be added to selv.value.
+            value (int): A value between 0 and 100 that will be added to self.value.
             message (str): A message for the user describing what is happening
 
         Yields:

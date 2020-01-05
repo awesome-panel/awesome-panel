@@ -10,7 +10,7 @@ to the [source code](https://github.com/MarcSkovMadsen/awesome-panel).
 
 For more details see the [Contribute](https://github.com/marcskovmadsen/awesome-panel#contribute) section of the README file.
 
-## The Developer
+## Development
 
 This project is developed by Marc Skov Madsen. You can learn more about me at
 [datamodelsanalytics.com](https://datamodelsanalytics.com).

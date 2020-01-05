@@ -39,6 +39,7 @@ import panel as pn
 import param
 
 from awesome_panel.express.bootstrap import InfoAlert
+
 # pylint: enable=duplicate-code
 pn.extension()
 
