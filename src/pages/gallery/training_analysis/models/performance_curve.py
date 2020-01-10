@@ -1,4 +1,4 @@
-"""This module contains functionality to model Performance Curve
+"""This module contains functionality to model a Performance Curve
 
 An example is a Power Curve
 """
