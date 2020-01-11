@@ -7,6 +7,10 @@
 - [Plotly Dash](https://plot.ly/dash/) by [Plotly](https://plot.ly/) (#Alternatives)
 - [Streamlit](https://streamlit.io) by [Streamlit](https://streamlit.io/) (#Alternatives)
 
+### App
+
+- [XrViz](https://github.com/intake/xrviz) by [Intake](https://github.com/intake) (#App, #Code, #Inspiration)
+
 ### Article
 
 - [Dashboards with PyViz Panel for interactive web apps](https://dmnfarrell.github.io/bioinformatics/pyviz-panel) by [Damien Farrell](https://dmnfarrell.github.io/) (#Article)
@@ -22,6 +26,7 @@
 ### Code
 
 - [Bootstrap Dashboard](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/bootstrap_dashboard/main.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
+- [Image Classifier](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/image_classifier/image_classifier.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
 - [Kickstarter Dashboard](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/kickstarter_dashboard/main.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
 - [Owid Choropleth Map](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/owid_choropleth_map/main.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
 - [Test Bootstrap Alerts](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/awesome_panel_express_tests/test_bootstrap_alerts.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #awesome_panel.express)
@@ -31,6 +36,9 @@
 - [Test FontAwesome](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/awesome_panel_express_tests/test_fontawesome.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #awesome_panel.express)
 - [Test Headings](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/awesome_panel_express_tests/test_headings.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #awesome_panel.express)
 - [Test Markdown](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/awesome_panel_express_tests/test_markdown.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #awesome_panel.express)
+- [Test Modal](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/awesome_panel_express_tests/test_modal.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #awesome_panel.express)
+- [Test Progress Extension](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/awesome_panel_express_tests/test_progress_ext.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #awesome_panel.express)
+- [Test Share Links](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/awesome_panel_express_tests/test_share_links.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #awesome_panel.express)
 - [Test Spinners](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/awesome_panel_express_tests/test_spinners.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #awesome_panel.express)
 
 ### Inspiration
@@ -56,6 +64,7 @@
 ### Tutorial
 
 - [HoloViz.org - Awesome Resources and Tutorials](http://holoviz.org/index.html) by [HoloViz](http://holoviz.org/) (#Tutorial)
+- [Information is Beautiful](https://towardsdatascience.com/how-to-build-a-time-series-dashboard-in-python-with-panel-altair-and-a-jupyter-notebook-c0ed40f02289) by [Bokeh](https://bendoesdata.github.io/) (#Article, #Tutorial)
 
 ### Video
 

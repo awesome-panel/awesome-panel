@@ -39,6 +39,12 @@ INFORMATIONISBEUTIFULL = Author(
     github_url="",
     github_avatar_url="",
 )
+INTAKE = Author(
+    name="Intake",
+    url="https://github.com/intake",
+    github_url="https://github.com/intake",
+    github_avatar_url="https://avatars1.githubusercontent.com/u/1469464",
+)
 JAMES_BEDNAR = Author(
     name="James A. Bednar",
     url="https://github.com/jbednar",
@@ -106,6 +112,7 @@ AUTHORS = [
     DASH,
     DAMIAN_FARRELL,
     HOLOVIZ,
+    INTAKE,
     JAMES_BEDNAR,
     MARC_SKOV_MADSEN,
     OURWORLDINDATA,

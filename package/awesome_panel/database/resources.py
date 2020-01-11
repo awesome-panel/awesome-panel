@@ -12,6 +12,14 @@ from awesome_panel.shared.models import Resource
 
 RESOURCES = [
     Resource(
+        name="XrViz",
+        url="https://github.com/intake/xrviz",
+        thumbnail_path=THUMBNAILS_ROOT + "",
+        is_awesome=True,
+        tags=[tags.APP, tags.CODE, tags.INSPIRATION],
+        author=authors.INTAKE,
+    ),
+    Resource(
         name="Information is Beautiful",
         url=(
             "https://towardsdatascience.com/how-to-build-a-time-series-dashboard-in-python-with-"
