@@ -4,7 +4,7 @@ import pathlib
 
 import pandas as pd
 
-from src.pages.gallery.training_analysis.services import fit_file_services
+from src.pages.gallery.training_analysis.services import fit_file_services  # typing: ignore
 
 FIT_FILE = pathlib.Path(fit_file_services.__file__).parent.parent / "assets/files/zwift_watopia.fit"
 
