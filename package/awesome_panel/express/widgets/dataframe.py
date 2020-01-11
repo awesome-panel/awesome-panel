@@ -20,12 +20,20 @@ def get_default_formatters(
     float_format: str = FLOAT_FORMAT,
     float_align: str = FLOAT_ALIGN,
 ) -> Dict:
-    """A dictionary of columns and formats for the Pandas DataFrame Styler
+    """A dictionary of columns and formats for the the `DataFrame` Panel widget.
 
-    Note if the index is 1-dimensional and the name is None we rename to 'index' in order to be able
+    #### Example Use Case
+
+    ```python
+    formatters = get_default_formatters(data)
+    dataframe_widget = pn.widgets.DataFrame(data, formatters=formatters))
+    ```
+
+    ### Notes
+
+    - if the index is 1-dimensional and the name is None we rename to 'index' in order to be able
     to format the index.
-
-    For the complete formattings specification see [numbrojs](http://numbrojs.com/format.html)
+    - For the complete formattings specification see [numbrojs](http://numbrojs.com/format.html)
 
     Args:
         data (pd.DataFrame): A DataFrame of data
