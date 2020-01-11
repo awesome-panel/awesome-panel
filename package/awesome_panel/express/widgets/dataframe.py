@@ -44,14 +44,16 @@ def get_default_formatters(
         elif data[column].dtype == FLOAT_DTYPE:
             formatters[column] = NumberFormatter(format=float_format, text_align=float_align)
 
+    # Hack: Without a proper name we cannot format the index
     if len(data.index.names) == 1 and not data.index.name:
         data.index.name = "index"
 
     for index, name in enumerate(data.index.names):
         if name:
-            if data.index[index].dtype == INT_DTYPE:
+            dtype = data.index.get_level_values(index).dtype
+            if dtype == INT_DTYPE:
                 formatters[name] = NumberFormatter(format=int_format, text_align=int_align)
-            elif data.index[index].dtype == FLOAT_DTYPE:
+            elif dtype == FLOAT_DTYPE:
                 formatters[name] = NumberFormatter(format=float_format, text_align=float_align)
 
     return formatters

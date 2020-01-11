@@ -18,10 +18,10 @@ import altair as alt
 import pandas as pd
 import panel as pn
 import param
-from bokeh.models.widgets.tables import NumberFormatter
 from yahooquery import Ticker
 
 import awesome_panel.express as pnx
+from awesome_panel.express.widgets.dataframe import get_default_formatters
 
 # Todo
 # - color active tab "info" blue
@@ -214,7 +214,7 @@ class BasePage(Page):
             data = YahooQueryService.get_data(self.symbols, self.endpoint, self.frequency)
 
         if isinstance(data, pd.DataFrame):
-            formatters = pnx.widgets.dataframe.get_default_formatters(data)
+            formatters = get_default_formatters(data)
             return pn.widgets.DataFrame(
                 data, fit_columns=True, formatters=formatters, sizing_mode="stretch_width"
             )
