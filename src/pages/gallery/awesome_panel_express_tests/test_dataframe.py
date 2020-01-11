@@ -1,10 +1,11 @@
 """Panel does not style a `widgets.DataFrame` by default.
 
 A user can specify some Formatters like `Numberformatter`, `Stringformater` etc
-`from bokeh.models.widgets.tables`. But this takes time.
+`from bokeh.models.widgets.tables` manually. But this takes time, so I consider this *friction*.
 
-In the `awesome_panel.express.widgets` we lower the friction by providing functionality for sensible
-defaults. See also [Issue 940](https://github.com/holoviz/panel/issues/940)
+In the `awesome_panel.express.widgets.dataframe` module we lower the friction by providing
+functionality for sensible defaults. See also [Issue 940]\
+(https://github.com/holoviz/panel/issues/940).
 """
 
 import pandas as pd
@@ -24,13 +25,24 @@ def test_get_default_formatters():
     - ints aligned right, with zero decimals and ',' as thousands separator
     - floats aligned right, with two decimals and ',' as thousands separator
     - strings aligned left
+
     """
     data = pd.DataFrame(
         {"int": [1, 2, 3000], "float": [3.14, 6.28, 9000.42], "str": ["A", "B", "C"]},
         index=[1, 2, 3],
     )
     formatters = dataframe.get_default_formatters(data)
-    return TestApp(test_get_default_formatters, pn.widgets.DataFrame(data, formatters=formatters))
+    code = pnx.Code(
+        """\
+data = pd.DataFrame(
+    {"int": [1, 2, 3000], "float": [3.14, 6.28, 9000.42], "str": ["A", "B", "C"]},
+    index=[1, 2, 3],
+)
+formatters = dataframe.get_default_formatters(data)"""
+    )
+    return TestApp(
+        test_get_default_formatters, pn.widgets.DataFrame(data, formatters=formatters), code
+    )
 
 
 def view() -> pn.Column:
@@ -39,7 +51,9 @@ def view() -> pn.Column:
     Returns:
         pn.Column -- A Column containing all the tests
     """
-    return pn.Column(pnx.Markdown(__doc__), test_get_default_formatters)
+    return pn.Column(
+        pnx.Markdown(__doc__), test_get_default_formatters, sizing_mode="stretch_width"
+    )
 
 
 if __name__.startswith("bk"):

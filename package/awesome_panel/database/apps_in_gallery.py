@@ -71,6 +71,14 @@ APPS_IN_GALLERY = [
         author=authors.MARC_SKOV_MADSEN,
     ),
     Resource(
+        name="Test DataFrame",
+        url=GITHUB_GALLERY_URL + "awesome_panel_express_tests/test_dataframe.py",
+        thumbnail_path=THUMBNAILS_ROOT + "test_dataframe.png",
+        tags=[tags.CODE, tags.APP_IN_GALLERY, tags.AWESOMEPANEL_EXPRESS],
+        is_awesome=True,
+        author=authors.MARC_SKOV_MADSEN,
+    ),
+    Resource(
         name="Test Divider",
         url=GITHUB_GALLERY_URL + "awesome_panel_express_tests/test_divider.py",
         thumbnail_path=THUMBNAILS_ROOT + "test_divider.png",
