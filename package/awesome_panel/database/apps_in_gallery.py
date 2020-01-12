@@ -47,6 +47,14 @@ APPS_IN_GALLERY = [
         author=authors.MARC_SKOV_MADSEN,
     ),
     Resource(
+        name="Yahoo Query",
+        url=GITHUB_GALLERY_URL + "yahooquery_app/yahooquery_app.py",
+        thumbnail_path=THUMBNAILS_ROOT + "yahooquery_app.png",
+        tags=[tags.CODE, tags.APP_IN_GALLERY],
+        is_awesome=True,
+        author=authors.MARC_SKOV_MADSEN,
+    ),
+    Resource(
         name="Test Bootstrap Alerts",
         url=GITHUB_GALLERY_URL + "awesome_panel_express_tests/test_bootstrap_alerts.py",
         thumbnail_path=THUMBNAILS_ROOT + "test_bootstrap_alerts.png",

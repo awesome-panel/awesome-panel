@@ -14,7 +14,7 @@ def test_base__page__data_balance_sheet_quarterly():
     assert not base_page.attr_is_property
 
     base_page._help()
-    base_page.frequency_edit_view()
+    base_page._frequency_widget()
     base_page._code()
     base_page._data()
     base_page.view()
