@@ -29,6 +29,8 @@ This is the documentation of the **Awesome Panel Project** including the
    :maxdepth: 1
    :caption: Tutorials
 
+   How to use VS Code with Panel <vscode.md>
+
 
 Indices and tables
 ==================

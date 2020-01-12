@@ -83,7 +83,9 @@ class YahooQueryService:
 
         try:
             data = getattr(ticker, attribute)(*args)
+            print(*args)
         except TypeError:
+            print("error")
             data = getattr(ticker, attribute)
         return data
 
@@ -121,7 +123,7 @@ class Page(param.Parameterized):
     Don't use this on a standalone basis"""
 
     symbols = param.String("ORSTED.CO")
-    ticker = param.ClassSelector(class_=Ticker)
+    # ticker = param.ClassSelector(class_=Ticker)
 
 
 class HomePage(Page):
@@ -176,9 +178,7 @@ class BasePage(Page):
     The user can select an endpoint and the help text, code and result will be presented."""
 
     endpoint = param.ObjectSelector(default="asset_profile", objects=BASE_ENDPOINTS)
-    frequency = param.ObjectSelector(
-        default="annual", objects={"Annual": "annual", "Quarterly": "quarterly"}
-    )
+    frequency = param.ObjectSelector(default="q", objects={"Annual": "a", "Quarterly": "q"})
 
     @property
     def attr(self):
@@ -202,26 +202,41 @@ class BasePage(Page):
 
     @param.depends("endpoint", "frequency")
     def _code(self):
+        print("a")
         if self.attr_is_property:
             return pnx.Code(f"Ticker('{self.symbols}').{self.endpoint}", language="python")
         return pnx.Code(f"Ticker('{self.symbols}').{self.endpoint}(frequency='{self.frequency}')")
 
     @param.depends("symbols", "endpoint", "frequency")
     def _data(self):
+        print("b")
         if self.attr_is_property:
+            print("d1")
             data = YahooQueryService.get_data(self.symbols, self.endpoint)
         else:
+            print("d2")
             data = YahooQueryService.get_data(self.symbols, self.endpoint, self.frequency)
-
+        print("e")
         if isinstance(data, pd.DataFrame):
+            print("f")
             formatters = get_default_formatters(data)
-            return pn.widgets.DataFrame(
-                data, fit_columns=True, formatters=formatters, sizing_mode="stretch_width"
-            )
+            print(formatters)
+            print(data)
+            print("g")
+            try:
+                dataframe = pn.widgets.DataFrame(
+                    data, fit_columns=True, formatters=formatters, sizing_mode="stretch_width"
+                )
+            except Exception as e:
+                print("h")
+            print("i")
+            return dataframe
+
         return pnx_json(data)
 
-    @param.depends("symbols", "frequency")
+    @param.depends("symbols")
     def view(self):
+        print("c")
         return pn.Column(
             pn.pane.Markdown(
                 """
