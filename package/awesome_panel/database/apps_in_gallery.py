@@ -47,6 +47,14 @@ APPS_IN_GALLERY = [
         author=authors.MARC_SKOV_MADSEN,
     ),
     Resource(
+        name="Param Reference Example",
+        url=GITHUB_GALLERY_URL + "param_reference_example/param_reference_example.py",
+        thumbnail_path=THUMBNAILS_ROOT + "param_reference_example.png",
+        tags=[tags.CODE, tags.APP_IN_GALLERY],
+        is_awesome=True,
+        author=authors.MARC_SKOV_MADSEN,
+    ),
+    Resource(
         name="Yahoo Query",
         url=GITHUB_GALLERY_URL + "yahooquery_app/yahooquery_app.py",
         thumbnail_path=THUMBNAILS_ROOT + "yahooquery_app.png",
