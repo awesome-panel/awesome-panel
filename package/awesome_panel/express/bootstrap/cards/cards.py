@@ -33,18 +33,7 @@ class Card(pn.Column):
         # Due to https://github.com/holoviz/panel/issues/903 we have to insert the content into a
         # column with relevant margin
         #
-        content = pn.Column(
-            *[self.get_card_panel(panel) for panel in panels],
-            css_classes=["card-body"],
-            sizing_mode="stretch_width",
-            margin=(0, 2, 2, 0),
-        )
-        # Due to Bokeh formatting every card-panel is 5px inside the card-body
-        # and thus we cannot get borders to overlap.
-        # So the first panel should have no border to hide this fact
-        if len(content) > 0:
-            content[0].css_classes.remove("card-panel")
-            content[0].css_classes.append("card-panel-first")
+        content = self._get_card_content(panels)
 
         if not collapsable:
             header_pane = self.get_card_header(header)
@@ -71,6 +60,35 @@ class Card(pn.Column):
             css_classes=["card-header"],
         )
         super().__init__(header_row, content, **kwargs)
+
+    def _get_card_content(self, panels: List[pn.pane.Viewable]) -> pn.pane.Viewable:
+        """Combines the list of Viewables into a Viewable with the right css classes
+
+        Args:
+            panels (List[pn.pane.Viewable]): A list of Viewables
+
+        Returns:
+            pn.pane.Viewable: A Viewable of the input Viewables with the right css classes applied.
+        """
+        # Due to https://github.com/holoviz/panel/issues/903 we have to insert the content into a
+        # column with relevant margin
+        #
+        content = pn.Column(
+            *[self.get_card_panel(panel) for panel in panels],
+            css_classes=["card-body"],
+            sizing_mode="stretch_width",
+            margin=(0, 2, 2, 0),
+        )
+        # Due to Bokeh formatting every card-panel is 5px inside the card-body
+        # and thus we cannot get borders to overlap.
+        # So the first panel should have no border to hide this fact
+        if len(content) > 0:
+            if content[0].css_classes and "card-panel" in content[0].css_classes:
+                content[0].css_classes.remove("card-panel")
+                content[0].css_classes.append("card-panel-first")
+            else:
+                content[0].css_classes = ["card-panel-first"]
+        return content
 
     @staticmethod
     def get_card_header(text: str, **kwargs) -> pn.pane.HTML:

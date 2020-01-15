@@ -117,12 +117,7 @@ def pnx_help(python_object: object) -> pn.pane.Viewable:
     Returns:
         pn.pane.Viewable: A Viewable showing the docstring and more
     """
-    return pnx.Code(
-        f"""{str(type(python_object))}
-
-{python_object.__doc__}""",
-        language="bash",
-    )
+    return pnx.Card("Documentation", pnx.Code(str(python_object.__doc__), language="bash",),)
 
 
 # TTodo: Move to pnx and create tests
@@ -136,7 +131,19 @@ def pnx_json(python_object: object, indent=2) -> pn.pane.Viewable:
     Returns:
         pn.pane.Viewable: [description]
     """
-    return pnx.Code(json.dumps(python_object, indent=indent), language="json")
+    return pnx.Card("Response", pnx.Code(json.dumps(python_object, indent=indent), language="json"))
+
+
+def code_card(code: str) -> pn.pane.Viewable:
+    """Wraps the code into a Card with "Code" as header and code as body
+
+    Args:
+        code (str): The code snippet to show
+
+    Returns:
+        pn.pane.Viewable: A Card with "Code" as header and code as body.
+    """
+    return pnx.Card("Code", pnx.Code(code))
 
 
 class Page(param.Parameterized):
@@ -150,49 +157,18 @@ class Page(param.Parameterized):
 class HomePage(Page):
     """Provides the view of the Home Page"""
 
-    def _text(self):
-        return f"""
-            This app demonstrates the use of the [YahooQuery]\
-(https://github.com/dpguthrie/yahooquery) package.
+    @param.depends("symbols")
+    def _code(self):
+        return code_card(
+            f"""from yahooquery import Ticker
 
-            This app was first developed in Streamlit by [Doug Guthrie](https://github/dpguthrie)).
-            See the [yahooquery-streamlit repo](https://github.com/dpguthrie/yahooquery-streamlit).
+tickers = Ticker("{self.symbols}"")
+        """
+        )
 
-            You can see the Streamlit version in the gallery at
-            [awesome-streamlit.org](awesome-streamlit.org)
-
-            ### Instructions
-
-            Enter a symbol or list of symbols in the box above (**comma
-            separated**).  Then select different pages in the dropdown to view
-            the data available to you.
-
-            ### Installation
-
-            ```python
-            pip install yahooquery
-            ```
-
-            ### Ticker Usage
-
-            The `Ticker` class provides the access point to data residing on
-            Yahoo Finance.  It accepts either a symbol or list of symbols.
-            Additionally, you can supply `formatted` as a keyword argument
-            to the class to format the data returned from the API (default is
-            `True`)
-
-            ```python
-            from yahooquery import Ticker
-
-            tickers = Ticker({self.symbols})
-            ```
-
-            ```bash
-            {str(type(Ticker))}
-
-            {Ticker.__doc__}
-            ```
-            """
+    @staticmethod
+    def _help_text():
+        return pnx_help(Ticker)
 
     @param.depends("symbols")
     def view(self) -> pn.pane.Viewable:
@@ -201,7 +177,9 @@ class HomePage(Page):
         Returns:
             pn.pane.Viewable: The main view of the HomePage
         """
-        return pnx.Markdown(self._text(), sizing_mode="stretch_width")
+        return pn.Column(
+            self._code, pn.layout.HSpacer(height=25), self._help_text, sizing_mode="stretch_width",
+        )
 
 
 class BasePage(Page):
@@ -236,17 +214,13 @@ class BasePage(Page):
             return pnx_help(self.attr)
         return ""
 
-    @param.depends("endpoint")
-    def _frequency_widget(self):
-        if self.attr_is_property:
-            return pn.pane.HTML()
-        return self.param.frequency
-
     @param.depends("endpoint", "frequency")
     def _code(self):
         if self.attr_is_property:
-            return pnx.Code(f"Ticker('{self.symbols}').{self.endpoint}", language="python")
-        return pnx.Code(f"Ticker('{self.symbols}').{self.endpoint}(frequency='{self.frequency}')")
+            code = f"Ticker('{self.symbols}').{self.endpoint}"
+        else:
+            code = f"Ticker('{self.symbols}').{self.endpoint}(frequency='{self.frequency}')"
+        return code_card(code)
 
     @param.depends("symbols", "endpoint", "frequency")
     def _data(self):
@@ -257,9 +231,34 @@ class BasePage(Page):
         if isinstance(data, pd.DataFrame):
             # Enable formatters when https://github.com/holoviz/panel/issues/941 is solved
             # formatters = get_default_formatters(data)
-            return pn.widgets.DataFrame(data, fit_columns=True, sizing_mode="stretch_width")
+            return pnx.Card(
+                "Response",
+                pn.widgets.DataFrame(
+                    data, fit_columns=True, sizing_mode="stretch_width", margin=25
+                ),
+            )
 
         return pnx_json(data)
+
+    # TTodo: remove line
+    @param.depends("endpoint")
+    def _selections(self):
+        print(self.attr_is_property)
+        if self.attr_is_property:
+            parameters = ["endpoint"]
+        else:
+            parameters = ["endpoint", "frequency"]
+
+        return pnx.Card(
+            "Selections",
+            pn.Param(
+                self,
+                parameters=parameters,
+                show_name=False,
+                default_layout=pn.Row,
+                widgets={"endpoint": {"width": 300}, "frequency": {"width": 100},},
+            ),
+        )
 
     @param.depends("symbols")
     def view(self) -> pn.pane.Viewable:
@@ -269,17 +268,12 @@ class BasePage(Page):
             pn.pane.Viewable: The main view of the BasePage
         """
         return pn.Column(
-            pn.pane.Markdown(
-                """
-            ## Base - Single Endpoint
-
-            Select an option below to see the data available through
-            the base endpoints."""
-            ),
-            self.param.endpoint,
-            self._frequency_widget,
+            self._selections,
+            pn.layout.HSpacer(height=25),
             self._code,
+            pn.layout.HSpacer(height=25),
             self._help,
+            pn.layout.HSpacer(height=25),
             self._data,
             sizing_mode="stretch_width",
         )
@@ -314,8 +308,11 @@ class BaseMultiplePage(Page):
     @param.depends("symbols", "all_endpoints", "endpoints")
     def _code(self):
         if self.all_endpoints:
-            return pnx.Code(f"Ticker('{self.symbols}').all_endpoints", language="python")
-        return pnx.Code(f"Ticker('{self.symbols}').get_endpoints({self.endpoints})")
+            code = f"Ticker('{self.symbols}').all_endpoint"
+        else:
+            code = f"Ticker('{self.symbols}').get_endpoints({self.endpoints})"
+
+        return code_card(code=code)
 
     @param.depends("symbols", "all_endpoints", "endpoints")
     @PROGRESS.report(message="Requesting data from Yahoo Finance")
@@ -329,6 +326,11 @@ class BaseMultiplePage(Page):
             data = YahooQueryService.get_data(self.symbols, "get_endpoints")(self.endpoints)
         return pnx_json(data)
 
+    def _selections(self):
+        return pnx.Card(
+            "Selections", [self.param.all_endpoints, self._endpoints_widget], sizing_mode=None
+        )
+
     @param.depends("symbols")
     def view(self) -> pn.pane.Viewable:
         """The main view of the BasePage
@@ -339,14 +341,15 @@ class BaseMultiplePage(Page):
         return pn.Column(
             pn.Row(
                 pn.Column(
-                    pn.pane.Markdown("## Base - Multiple Requests"),
-                    self._help,
                     self._code,
+                    pn.layout.HSpacer(height=25),
+                    self._help,
+                    pn.layout.HSpacer(height=25),
                     self._data,
                     sizing_mode="stretch_width",
                 ),
-                pn.layout.VSpacer(width=1, margin=(0, 10)),
-                pn.Column(self.param.all_endpoints, self._endpoints_widget,),
+                pn.layout.VSpacer(width=25),
+                self._selections,
             ),
             sizing_mode="stretch_width",
         )
@@ -390,7 +393,19 @@ class YahooQueryView(pn.Column):
     ):
         super().__init__(
             pn.pane.Markdown(
-                """# Welcome to [YahooQuery](https://github.com/dpguthrie/yahooquery)"""
+                """# Welcome to [YahooQuery](https://github.com/dpguthrie/yahooquery)
+
+This app demonstrates the use of the [YahooQuery](https://github.com/dpguthrie/yahooquery) package.
+
+This app was first developed in Streamlit by [Doug Guthrie](https://github/dpguthrie).
+See the [yahooquery-streamlit repo](https://github.com/dpguthrie/yahooquery-streamlit).
+
+You can see the Streamlit version in the gallery at
+[awesome-streamlit.org](awesome-streamlit.org)
+
+Enter a symbol or comma seperated list of symbols in the box below. Then select different pages
+to view the data available to you.
+"""
             ),
             self._symbols_widget(symbols),
             pn.layout.VSpacer(height=25),
@@ -426,7 +441,7 @@ class YahooQueryView(pn.Column):
         Returns:
             pn.Tabs: [description]
         """
-        return pn.Tabs(*pages, sizing_mode=sizing_mode,)
+        return pn.Tabs(*pages, sizing_mode=sizing_mode)
 
 
 class YahooQueryApp(Page):
@@ -436,10 +451,10 @@ class YahooQueryApp(Page):
         super().__init__(**kwargs)
         self.pages = {
             "Introduction": HomePage(),
-            "Base": BasePage(),
-            "Base - Multiple": BaseMultiplePage(),
-            "Options": OptionsPage(),
-            "History": HistoryPage(),
+            "Single Request": BasePage(),
+            "Multiple Requests": BaseMultiplePage(),
+            "Options Requests": OptionsPage(),
+            "Historical Requests": HistoryPage(),
         }
 
     @param.depends("symbols", watch=True)
@@ -472,11 +487,12 @@ if __name__.startswith("bk"):
     pnx.fontawesome.extend()
     pnx.bootstrap.extend()
 
-    import ptvsd
+    # import ptvsd
 
-    ptvsd.enable_attach(address=("localhost", 5678))
-    print("Ready to attach the VS Code debugger")
-    ptvsd.wait_for_attach()  # Only include this line if you always wan't to attach the debugger
+    # ptvsd.enable_attach(address=("localhost", 5678))
+    # print("Ready to attach the VS Code debugger")
+    # ptvsd.wait_for_attach()  # Only include this line if you always wan't to attach the debugger
 
-    BaseMultiplePage().view().servable()
-    # view().servable()
+    # BasePage().view().servable()
+    # BaseMultiplePage().view().servable()
+    view().servable()
