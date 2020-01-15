@@ -70,7 +70,6 @@ class YahooQueryService:
 
     @classmethod
     @lru_cache(2048)
-    @PROGRESS.report(message="Requesting data from Yahoo Finance")
     def get_data(cls, symbols: str, attribute: str, *args) -> Dict:
         """Gets data from yahoo
 
@@ -117,7 +116,7 @@ def pnx_help(python_object: object) -> pn.pane.Viewable:
     Returns:
         pn.pane.Viewable: A Viewable showing the docstring and more
     """
-    return pnx.Card("Documentation", pnx.Code(str(python_object.__doc__), language="bash",),)
+    return pnx.Card("Documentation", pnx.Code(str(python_object.__doc__), language="bash"),)
 
 
 # TTodo: Move to pnx and create tests
@@ -214,7 +213,7 @@ class BasePage(Page):
             return pnx_help(self.attr)
         return ""
 
-    @param.depends("endpoint", "frequency")
+    @param.depends("symbols", "endpoint", "frequency")
     def _code(self):
         if self.attr_is_property:
             code = f"Ticker('{self.symbols}').{self.endpoint}"
@@ -223,6 +222,7 @@ class BasePage(Page):
         return code_card(code)
 
     @param.depends("symbols", "endpoint", "frequency")
+    @PROGRESS.report(message="Requesting A Single Endpoint from Yahoo Finance")
     def _data(self):
         if self.attr_is_property:
             data = YahooQueryService.get_data(self.symbols, self.endpoint)
@@ -243,7 +243,6 @@ class BasePage(Page):
     # TTodo: remove line
     @param.depends("endpoint")
     def _selections(self):
-        print(self.attr_is_property)
         if self.attr_is_property:
             parameters = ["endpoint"]
         else:
@@ -315,7 +314,7 @@ class BaseMultiplePage(Page):
         return code_card(code=code)
 
     @param.depends("symbols", "all_endpoints", "endpoints")
-    @PROGRESS.report(message="Requesting data from Yahoo Finance")
+    @PROGRESS.report(message="Requesting Multiple Endpoints from Yahoo Finance")
     def _data(self):
         if self.all_endpoints:
             data = YahooQueryService.get_data(self.symbols, "all_endpoints")
@@ -331,7 +330,6 @@ class BaseMultiplePage(Page):
             "Selections", [self.param.all_endpoints, self._endpoints_widget], sizing_mode=None
         )
 
-    @param.depends("symbols")
     def view(self) -> pn.pane.Viewable:
         """The main view of the BasePage
 
@@ -356,16 +354,50 @@ class BaseMultiplePage(Page):
 
 
 class OptionsPage(Page):
-    """Options Page"""
+    """A view of the Options request
 
-    @param.depends("tickers")
+    The user can select all or multiple endpoints and the help text, code and result will be
+    presented."""
+
+    @staticmethod
+    def _help():
+        return pnx_help(Ticker.option_chain)
+
+    @param.depends("symbols")
+    def _code(self):
+        code = f"Ticker('{self.symbols}').option_chain"
+        return code_card(code=code)
+
+    @param.depends("symbols")
+    @PROGRESS.report(message="Requesting Options Chain from Yahoo Finance")
+    def _data(self):
+        data = YahooQueryService.get_data(self.symbols, "option_chain")
+        if isinstance(data, pd.DataFrame):
+            # Enable formatters when https://github.com/holoviz/panel/issues/941 is solved
+            # formatters = get_default_formatters(data)
+            # We also show the first 5 columns as other wise the app gets too slow.
+            return pnx.Card(
+                "Response",
+                pn.widgets.DataFrame(
+                    data.head(), fit_columns=True, sizing_mode="stretch_width", margin=25
+                ),
+            )
+        return pnx_json(data)
+
     def view(self) -> pn.pane.Viewable:
-        """The main view of the BasePage
+        """The main view of the OptionsPage
 
         Returns:
-            pn.pane.Viewable: The main view of the BasePage
+            pn.pane.Viewable: The main view of the OptionsPage
         """
-        return "Hello OptionsPage" + self.symbols
+        return pn.Column(
+            self._code,
+            pn.layout.HSpacer(height=25),
+            self._help,
+            pn.layout.HSpacer(height=25),
+            self._data,
+            sizing_mode="stretch_width",
+        )
 
 
 class HistoryPage(Page):
@@ -495,4 +527,5 @@ if __name__.startswith("bk"):
 
     # BasePage().view().servable()
     # BaseMultiplePage().view().servable()
-    view().servable()
+    OptionsPage().view().servable()
+    # view().servable()
