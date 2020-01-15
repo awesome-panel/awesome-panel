@@ -1,7 +1,8 @@
 """
-This app illustrates the usage of the `pn.Param` function.
+This app illustrates the usage of the `pn.Param` function. The `pn.Param` function is used to
+layout, style and configure the widgets of a `param.Parameterized` class when using it in Panel.
 
-I took me some time to get my head around how to use it. So I've created this app
+It took me some time to get my head around how to use it. So I've created this app
 that I hope can help you.
 
 I have an open [pull request](https://github.com/holoviz/panel/pull/944) on adding an extended and
@@ -11,7 +12,7 @@ documented walkthrough of this app to the
 In this app we build a model and view of a cycling Athlete and his PowerCurve.
 
 The PowerCurve is a recording of the athletes maximum power output in Watt per kg for fixed
-durations.
+durations of time.
 """
 
 import datetime
@@ -55,7 +56,7 @@ def view() -> pn.pane.Viewable:
         width=600,
     )
 
-    power_curve_columns_view = pn.Param(
+    power_curve_two_columns_view = pn.Param(
         athlete.power_curve,
         default_layout=GridBoxWithTwoColumns,
         show_name=False,
@@ -68,9 +69,9 @@ def view() -> pn.pane.Viewable:
         },
     )
 
-    power_curve_view = pn.Row(
-        power_curve_columns_view,
-        pn.layout.VSpacer(width=50),
+    power_curve_with_plot_view = pn.Row(
+        power_curve_two_columns_view,
+        pn.layout.VSpacer(width=25),
         athlete.power_curve.plot,
         pn.layout.VSpacer(width=10),
     )
@@ -78,13 +79,16 @@ def view() -> pn.pane.Viewable:
     return pn.Column(
         STYLE,
         pn.pane.Markdown(__doc__),
+        pn.layout.HSpacer(height=25),
         pn.Column(
-            pn.pane.Markdown("### Athlete"),
-            athlete_view,
-            pn.pane.Markdown("#### Power Curve"),
-            power_curve_view,
+            pn.Column(
+                pn.pane.Markdown("### Athlete"),
+                athlete_view,
+                pn.pane.Markdown("#### Power Curve"),
+                power_curve_with_plot_view,
+                margin=20,
+            ),
             css_classes=["app"],
-            margin=50,
         ),
     )
 
