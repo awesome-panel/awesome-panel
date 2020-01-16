@@ -11,16 +11,21 @@ This version of the app is developed in [Panel](https://panel.pyviz.org/) by [Ma
     (https://datamodelsanalytics.com)
 """
 import json
+import datetime
 from functools import lru_cache
 from typing import Dict, List, Tuple
 
-# import altair as alt
+import altair as alt
 import pandas as pd
 import panel as pn
 import param
 from yahooquery import Ticker
 
 import awesome_panel.express as pnx
+
+PERIOD_END_DATE = datetime.datetime.now().date()
+PERIOD_START_DATE = PERIOD_END_DATE - datetime.timedelta(days=365)
+DATE_BOUNDS = (datetime.datetime(1900, 1, 1).date(), PERIOD_END_DATE)
 
 # from awesome_panel.express.widgets.dataframe import get_default_formatters
 
@@ -400,17 +405,127 @@ class OptionsPage(Page):
         )
 
 
-class HistoryPage(Page):
-    """History Page"""
+class GridBoxWithTwoColumns(pn.GridBox):
+    """A Custom Gridbox with 3 columns"""
 
-    @param.depends("tickers")
+    def __init__(self, *objects, **params):
+        super().__init__(*objects, **params, ncols=2)
+
+
+class HistoryPage(Page):
+    """Provides an illustration of the `Ticker.history` method"""
+
+    period_type = param.ObjectSelector(default="Period", objects=["Dates", "Period"])
+    # pylint: disable=protected-access
+    interval = param.ObjectSelector(default="1d", objects=Ticker._INTERVALS)
+    period = param.ObjectSelector(default="1y", objects=Ticker._PERIODS)
+    # pylint: enable=protected-access
+    start = param.Date(default=PERIOD_START_DATE, bounds=DATE_BOUNDS)
+    end = param.Date(default=PERIOD_END_DATE, bounds=DATE_BOUNDS)
+
+    @staticmethod
+    def _help():
+        return pnx_help(Ticker.history)
+
+    @param.depends("period_type")
+    def _param_view(self):
+        if self.period_type == "Period":
+            return pn.Param(
+                self,
+                parameters=["period_type", "interval", "period",],
+                default_layout=GridBoxWithTwoColumns,
+                width=400,
+                show_name=False,
+            )
+        return pn.Param(
+            self,
+            parameters=["period_type", "interval", "start", "end"],
+            default_layout=GridBoxWithTwoColumns,
+            widgets={"start": pn.widgets.DatePicker, "end": pn.widgets.DatePicker,},
+            width=600,
+            show_name=False,
+        )
+
+    @param.depends("symbols", "period_type", "interval", "period", "start", "end")
+    def _code(self):
+        code = f"""Ticker("{self.symbols}").history({', '.join(self._args_string)})"""
+        return code_card(code=code)
+
+    @property
+    def _history_args(self):
+        history_args = {}
+        if self.period_type == "Period":
+            history_args["period"] = self.period
+            history_args["start"] = None
+            history_args["end"] = None
+        else:
+            history_args["period"] = None
+            history_args["start"] = self.start
+            history_args["end"] = self.end
+        history_args["interval"] = self.interval
+        return history_args
+
+    @property
+    def _args_string(self):
+        return [
+            str(k) + "='" + str(v) + "'" for k, v in self._history_args.items() if v is not None
+        ]
+
+    # I cannot make the chart responsive. There is some starting information here
+    # See https://stackoverflow.com/questions/55169344/how-to-make-altair-plots-responsive
+    @staticmethod
+    def _history_plot(dataframe: pd.DataFrame):
+        if "symbol" in dataframe.columns:
+            chart = (
+                alt.Chart(dataframe.reset_index())
+                .mark_line()
+                .encode(alt.Y("close:Q", scale=alt.Scale(zero=False)), x="dates", color="symbol")
+            )
+        else:
+            chart = (
+                alt.Chart(dataframe.reset_index())
+                .mark_line()
+                .encode(alt.Y("close:Q", scale=alt.Scale(zero=False)), x="dates:T")
+            )
+
+        chart = chart.properties(
+            width=800,
+            height=300,
+        )
+        return chart
+
+
+    @param.depends("symbols")
+    @PROGRESS.report(message="Requesting Price History from Yahoo Finance")
+    def _data(self):
+        tickers = YahooQueryService.to_ticker(self.symbols)
+        data = tickers.history(**self._history_args)
+        if isinstance(data, pd.DataFrame):
+            return pn.Column(
+                pnx.Card(
+                    "Response",
+                    body=pn.pane.Vega(self._history_plot(data), sizing_mode="stretch_width", height=325)
+                ),
+                sizing_mode="stretch_width",
+            )
+        return pnx_json(data)
+
     def view(self) -> pn.pane.Viewable:
-        """The main view of the BasePage
+        """The main view of the OptionsPage
 
         Returns:
-            pn.pane.Viewable: The main view of the BasePage
+            pn.pane.Viewable: The main view of the OptionsPage
         """
-        return "Hello HistoryPage" + self.symbols
+        return pn.Column(
+            self._param_view,
+            pn.layout.HSpacer(height=25),
+            self._code,
+            pn.layout.HSpacer(height=25),
+            self._help,
+            pn.layout.HSpacer(height=25),
+            self._data,
+            sizing_mode="stretch_width",
+        )
 
 
 class YahooQueryView(pn.Column):
@@ -527,5 +642,6 @@ if __name__.startswith("bk"):
 
     # BasePage().view().servable()
     # BaseMultiplePage().view().servable()
-    OptionsPage().view().servable()
+    # OptionsPage().view().servable()
+    HistoryPage().view().servable()
     # view().servable()
