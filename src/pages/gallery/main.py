@@ -11,7 +11,7 @@ from panel.widgets import Button
 
 from awesome_panel import database
 from awesome_panel.express import Divider, spinners
-from awesome_panel.express._pane._panes import Markdown
+from awesome_panel.express.pane.panes import Markdown
 from awesome_panel.express.bootstrap import InfoAlert
 from awesome_panel.shared.models import Resource
 

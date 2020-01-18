@@ -1,7 +1,7 @@
 """Bootstrap inspired functionality"""
 import panel as pn
 
-from awesome_panel.express._pane._panes import Markdown
+from awesome_panel.express.pane.panes import Markdown
 from awesome_panel.express.assets import BOOTSTRAP_PANEL_EXPRESS_CSS
 
 BOOTSTRAP_CSS_URL = "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"

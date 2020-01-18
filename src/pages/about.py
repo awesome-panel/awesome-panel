@@ -3,7 +3,7 @@ import pathlib
 
 from panel import Column
 
-from awesome_panel.express._pane._panes import Markdown
+from awesome_panel.express.pane.panes import Markdown
 
 ABOUT_PATH = pathlib.Path(__file__).parent / "about.md"
 

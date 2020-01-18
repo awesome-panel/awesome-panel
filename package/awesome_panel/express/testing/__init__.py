@@ -3,7 +3,7 @@ from typing import Callable
 
 from panel.layout import Column
 
-from awesome_panel.express._pane._panes import Markdown
+from awesome_panel.express.pane.panes import Markdown
 
 
 class TestApp(Column):
