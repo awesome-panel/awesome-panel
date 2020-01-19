@@ -22,7 +22,10 @@ import pandas as pd
 import panel as pn
 import param
 
-DATE_BOUNDS = (datetime.date(1900, 1, 1), datetime.datetime.now().date())
+DATE_BOUNDS = (
+    datetime.date(1900, 1, 1,),
+    datetime.datetime.now().date(),
+)
 
 STYLE = """
 <style>
@@ -48,9 +51,9 @@ def view() -> pn.pane.Viewable:
         athlete,
         widgets={
             "birthday": pn.widgets.DatePicker,
-            "weight": {"type": pn.widgets.LiteralInput, "width": 100},
+            "weight": {"type": pn.widgets.LiteralInput, "width": 100,},
         },
-        parameters=["name_", "birthday", "weight"],
+        parameters=["name_", "birthday", "weight",],
         show_name=False,
         default_layout=pn.Row,
         width=600,
@@ -101,37 +104,42 @@ class PowerCurve(param.Parameterized):
     """
 
     ten_sec = param.Number(1079)
-    ten_sec_date = param.Date(datetime.date(2018, 8, 21), bounds=DATE_BOUNDS)
+    ten_sec_date = param.Date(datetime.date(2018, 8, 21,), bounds=DATE_BOUNDS,)
     one_min = param.Number(684)
-    one_min_date = param.Date(datetime.date(2017, 8, 31), bounds=DATE_BOUNDS)
+    one_min_date = param.Date(datetime.date(2017, 8, 31,), bounds=DATE_BOUNDS,)
     ten_min = param.Number(419)
-    ten_min_date = param.Date(datetime.date(2017, 9, 22), bounds=DATE_BOUNDS)
+    ten_min_date = param.Date(datetime.date(2017, 9, 22,), bounds=DATE_BOUNDS,)
     twenty_min = param.Number(398)
-    twenty_min_date = param.Date(datetime.date(2017, 9, 22), bounds=DATE_BOUNDS)
+    twenty_min_date = param.Date(datetime.date(2017, 9, 22,), bounds=DATE_BOUNDS,)
     one_hour = param.Number(319)
-    one_hour_date = param.Date(datetime.date(2017, 8, 6), bounds=DATE_BOUNDS)
+    one_hour_date = param.Date(datetime.date(2017, 8, 6,), bounds=DATE_BOUNDS,)
 
-    @param.depends("ten_sec", "one_min", "ten_min", "twenty_min", "one_hour")
-    def plot(self):
+    @param.depends(
+        "ten_sec", "one_min", "ten_min", "twenty_min", "one_hour",
+    )
+    def plot(self,):
         """A plot of the power curve: duration vs power"""
         data = {
-            "duration": [10 / 60, 1, 10, 20, 60],
-            "power": [self.ten_sec, self.one_min, self.ten_min, self.twenty_min, self.one_hour],
+            "duration": [10 / 60, 1, 10, 20, 60,],
+            "power": [self.ten_sec, self.one_min, self.ten_min, self.twenty_min, self.one_hour,],
         }
         dataframe = pd.DataFrame(data)
         line_plot = dataframe.hvplot.line(
             x="duration", y="power", width=300, line_color="#007BFF", line_width=3,
         )
-        scatter_plot = dataframe.hvplot.scatter(x="duration", y="power", width=300).opts(
-            marker="o", size=6, color="#007BFF"
+        scatter_plot = dataframe.hvplot.scatter(x="duration", y="power", width=300,).opts(
+            marker="o", size=6, color="#007BFF",
         )
         fig = line_plot * scatter_plot
-        gridstyle = {"grid_line_color": "black", "grid_line_width": 0.1}
+        gridstyle = {
+            "grid_line_color": "black",
+            "grid_line_width": 0.1,
+        }
         fig = fig.opts(
             responsive=True,
             toolbar=None,
-            yticks=list(range(0, 1600, 200)),
-            ylim=(0, 1500),
+            yticks=list(range(0, 1600, 200,)),
+            ylim=(0, 1500,),
             gridstyle=gridstyle,
             show_grid=True,
         )
@@ -142,9 +150,9 @@ class Athlete(param.Parameterized):
     """A model of an Athlete"""
 
     name_ = param.String("P.A. Nelson")
-    birthday = param.Date(datetime.date(1976, 9, 17), bounds=DATE_BOUNDS)
-    weight = param.Number(default=82, bounds=(20, 300))
-    power_curve = param.ClassSelector(class_=PowerCurve, default=PowerCurve())
+    birthday = param.Date(datetime.date(1976, 9, 17,), bounds=DATE_BOUNDS,)
+    weight = param.Number(default=82, bounds=(20, 300,),)
+    power_curve = param.ClassSelector(class_=PowerCurve, default=PowerCurve(),)
 
 
 class GridBoxWithTwoColumns(pn.GridBox):

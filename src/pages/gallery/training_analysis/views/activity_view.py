@@ -21,7 +21,8 @@ class ActivityView(pn.Column):
     ):
         super().__init__(
             pn.Param(
-                parameters.file, widgets={"file": {"type": pn.widgets.FileInput, "accept": ".fit"}},
+                parameters.file,
+                widgets={"file": {"type": pn.widgets.FileInput, "accept": ".fit",}},
             ),
             map_plot,
             activity_plots,

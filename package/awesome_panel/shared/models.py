@@ -1,7 +1,14 @@
 """Models of Resource, Author and Tag used to defined the RESOURCES and APPS_IN_GALLERY list."""
-from typing import List, NamedTuple, Optional
+from typing import (
+    List,
+    NamedTuple,
+    Optional,
+)
 
-_IMAGE_DICT = {" ": "-", "#": ""}
+_IMAGE_DICT = {
+    " ": "-",
+    "#": "",
+}
 
 
 class Tag(NamedTuple):
@@ -9,13 +16,13 @@ class Tag(NamedTuple):
 
     name: str
 
-    def __str__(self):
+    def __str__(self,):
         return self.name
 
-    def __repr__(self):
+    def __repr__(self,):
         return self.name
 
-    def __hash__(self):
+    def __hash__(self,):
         return hash(self.name)
 
 
@@ -27,13 +34,13 @@ class Author(NamedTuple):
     github_url: str
     github_avatar_url: str
 
-    def __str__(self):
+    def __str__(self,):
         return self.name
 
-    def __repr__(self):
+    def __repr__(self,):
         return self.name
 
-    def to_html(self, width="20px", height="20px") -> str:
+    def to_html(self, width="20px", height="20px",) -> str:
         """## A valid HTML string with the GitHub image and GitHub url link
 
         Returns:
@@ -81,7 +88,7 @@ class Resource:
             self.tags = []
         self.author = author
 
-    def to_markdown_bullet(self) -> str:
+    def to_markdown_bullet(self,) -> str:
         """A markdown bullet string
 
         Returns:
@@ -95,20 +102,20 @@ class Resource:
 
         return result
 
-    def __str__(self):
+    def __str__(self,):
         return self.name
 
-    def __repr__(self):
+    def __repr__(self,):
         return f"Resource(name={self.name})"
 
     @property
-    def screenshot_file(self) -> str:
+    def screenshot_file(self,) -> str:
         """The file name of a screenshot of the resource
 
         Returns:
             str: The file name of screenshot of the resource
         """
         file = f"{self.name.lower()}.png"
-        for original, new in _IMAGE_DICT.items():
-            file = file.replace(original, new)
+        for (original, new,) in _IMAGE_DICT.items():
+            file = file.replace(original, new,)
         return file

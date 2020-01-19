@@ -15,32 +15,34 @@ class App(param.Parameterized):
     data_is_set = param.Boolean(default=False)
     data = param.DataFrame()
 
-    @pn.depends("data_is_set", watch=True)
-    def set_data(self):
+    @pn.depends(
+        "data_is_set", watch=True,
+    )
+    def set_data(self,):
         if self.data_is_set:
             rows = [
-                (1, 2),
-                (3, 4),
+                (1, 2,),
+                (3, 4,),
             ]
-            self.data = pd.DataFrame(rows, columns=["x", "y"])
+            self.data = pd.DataFrame(rows, columns=["x", "y",],)
         else:
             self.data = None
 
     @pn.depends("data")
-    def plot_holoviews(self):
+    def plot_holoviews(self,):
         if self.data is None or self.data.empty:
             return None
 
-        return self.data.hvplot(x="x", y="y")
+        return self.data.hvplot(x="x", y="y",)
 
     @pn.depends("data")
-    def plot_plotly(self):
+    def plot_plotly(self,):
         if self.data is None or self.data.empty:
             return None
 
-        return px.scatter(self.data, x="x", y="y")
+        return px.scatter(self.data, x="x", y="y",)
 
-    def view(self):
+    def view(self,):
         return pn.Column(
             self.param.data_is_set,
             pn.pane.Markdown("## Holoviews"),

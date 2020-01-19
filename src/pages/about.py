@@ -10,4 +10,4 @@ ABOUT_PATH = pathlib.Path(__file__).parent / "about.md"
 
 def view() -> Column:
     """The about view of awesome-panel.org"""
-    return Column(Markdown(path=ABOUT_PATH), sizing_mode="stretch_width", name="About")
+    return Column(Markdown(path=ABOUT_PATH), sizing_mode="stretch_width", name="About",)

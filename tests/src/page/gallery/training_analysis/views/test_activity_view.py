@@ -15,7 +15,7 @@ def test_activity_view():
 
         file = param.FileSelector()
 
-    view = activity_view.ActivityView(ActivityMock().param, "map_plot mock", "activity_plots mock")
+    view = activity_view.ActivityView(ActivityMock().param, "map_plot mock", "activity_plots mock",)
     return TestApp(test_activity_view, view,)
 
 

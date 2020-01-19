@@ -3,10 +3,11 @@ analysis of large datasets. And now there are Python bindings via
 [PyDeck](https://deckgl.readthedocs.io/en/latest/)
 
 
-It would be so nice to be able to use in Panel.
+It would be so nice to be able to use in Panel. See
+[Feature Request 957](https://github.com/holoviz/panel/issues/957).
 
-For now i've implemented one way communication. I.e. you can declare your visualisation in Python
-using PyDeck and display it in your browser.
+For now i've implemented a first, very simple, one way communication.
+I.e. you can declare your visualisation in Python using PyDeck and display it in your browser.
 """
 import panel as pn
 import pydeck as pdk
@@ -40,11 +41,11 @@ def uk_accidents_example() -> pdk.Deck:
     layer = pdk.Layer(
         "HexagonLayer",
         UK_ACCIDENTS_DATA,
-        get_position=["lng", "lat"],
+        get_position=["lng", "lat",],
         auto_highlight=True,
         elevation_scale=50,
         pickable=True,
-        elevation_range=[0, 3000],
+        elevation_range=[0, 3000,],
         extruded=True,
         coverage=1,
     )
@@ -61,7 +62,7 @@ def uk_accidents_example() -> pdk.Deck:
     )
 
     # Combined all of it and render a viewport
-    return pdk.Deck(layers=[layer], initial_view_state=view_state, mapbox_key=MAPBOX_KEY)
+    return pdk.Deck(layers=[layer], initial_view_state=view_state, mapbox_key=MAPBOX_KEY,)
 
 
 def test_pydeck_pane():
@@ -69,7 +70,7 @@ def test_pydeck_pane():
     [PyDec Docs](https://deckgl.readthedocs.io/en/latest/layer.html) in Panel."""
     deck = uk_accidents_example()
     # deck.to_html("test.html", open_browser=True, notebook_display=False)
-    return TestApp(test_pydeck_pane, pnx.PyDeck(deck).as_pane)
+    return TestApp(test_pydeck_pane, pnx.PyDeck(deck).as_pane, width=500, height=400,)
 
 
 def view() -> pn.Column:
@@ -78,7 +79,7 @@ def view() -> pn.Column:
     Returns:
         pn.Column -- A Column containing all the tests
     """
-    return pn.Column(pnx.Markdown(__doc__), test_pydeck_pane)
+    return pn.Column(pnx.Markdown(__doc__), test_pydeck_pane,)
 
 
 if __name__.startswith("bk"):

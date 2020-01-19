@@ -30,7 +30,10 @@ You can find an alternative version of this Dashboard in Streamlit at
 # pylint: enable=line-too-long
 # pylint: disable=duplicate-code
 import pathlib
-from typing import List, Optional
+from typing import (
+    List,
+    Optional,
+)
 
 import holoviews as hv
 import hvplot.pandas  # pylint: disable=unused-import
@@ -44,7 +47,12 @@ from awesome_panel.express.bootstrap import InfoAlert
 pn.extension()
 
 KICKSTARTER_PATH = pathlib.Path(__file__).parent / "kickstarter-cleaned.csv"
-COLUMNS = ["created_at", "usd_pledged", "state", "category_slug"]
+COLUMNS = [
+    "created_at",
+    "usd_pledged",
+    "state",
+    "category_slug",
+]
 DATE_COLUMNS = [
     "created_at",
 ]
@@ -94,10 +102,10 @@ There is a lot to I need to learn across the HoloViz suite of tools.
     categories = param.ListSelector()
     scatter_df = param.DataFrame()
     bar_df = param.DataFrame()
-    rangexy = param.ClassSelector(class_=hv.streams.RangeXY, default=hv.streams.RangeXY())
+    rangexy = param.ClassSelector(class_=hv.streams.RangeXY, default=hv.streams.RangeXY(),)
 
     def __init__(self, kickstarter_df: Optional[pd.DataFrame] = None, **kwargs):
-        if not isinstance(kickstarter_df, pd.DataFrame):
+        if not isinstance(kickstarter_df, pd.DataFrame,):
             kickstarter_df = self.get_kickstarter_df()
         categories = self.get_categories(kickstarter_df)
 
@@ -109,12 +117,14 @@ There is a lot to I need to learn across the HoloViz suite of tools.
 
         super().__init__(**kwargs)
 
-    @param.depends("kickstarter_df", "categories", watch=True)
-    def _set_scatter_df(self):
-        self.scatter_df = self.filter_on_categories(self.kickstarter_df, self.categories)
+    @param.depends(
+        "kickstarter_df", "categories", watch=True,
+    )
+    def _set_scatter_df(self,):
+        self.scatter_df = self.filter_on_categories(self.kickstarter_df, self.categories,)
 
     @param.depends("scatter_df")
-    def scatter_plot_view(self):
+    def scatter_plot_view(self,):
         """A Reactive View of the scatter plot"""
         # Potential Improvements
         # Rename columns to Capitalized without under score
@@ -126,8 +136,10 @@ There is a lot to I need to learn across the HoloViz suite of tools.
         self.rangexy.source = scatter_plot.last
         return scatter_plot
 
-    @param.depends("scatter_df", "rangexy.x_range", "rangexy.y_range", watch=True)
-    def _set_bar_df(self):
+    @param.depends(
+        "scatter_df", "rangexy.x_range", "rangexy.y_range", watch=True,
+    )
+    def _set_bar_df(self,):
         """Update the bar_df dataframe"""
         self.bar_df = self.filter_on_ranges(
             self.scatter_df,
@@ -136,11 +148,11 @@ There is a lot to I need to learn across the HoloViz suite of tools.
         )
 
     @param.depends("bar_df")
-    def bar_chart_view(self):
+    def bar_chart_view(self,):
         """A Reactive View of the Bar Chart"""
         return self.get_bar_chart(self.bar_df)
 
-    def view(self):
+    def view(self,):
         """A Reactive View of the KickstarterDashboard"""
         return pn.Column(
             pn.pane.Markdown(__doc__),
@@ -152,7 +164,7 @@ There is a lot to I need to learn across the HoloViz suite of tools.
                 ),
                 pn.Param(
                     self.param.categories,
-                    widgets={"categories": {"max_width": 125, "size": len(self.categories)}},
+                    widgets={"categories": {"max_width": 125, "size": len(self.categories),}},
                 ),
                 sizing_mode="stretch_width",
             ),
@@ -167,10 +179,10 @@ There is a lot to I need to learn across the HoloViz suite of tools.
             pd.DataFrame -- A Dataframe of kickstarter data with
             columns=["created_at", "usd_pledged", "state", "category_slug"]
         """
-        return pd.read_csv(KICKSTARTER_PATH, parse_dates=DATE_COLUMNS)
+        return pd.read_csv(KICKSTARTER_PATH, parse_dates=DATE_COLUMNS,)
 
     @staticmethod
-    def _transform(source_data: pd.DataFrame, n_samples: int = N_SAMPLES) -> pd.DataFrame:
+    def _transform(source_data: pd.DataFrame, n_samples: int = N_SAMPLES,) -> pd.DataFrame:
         """Transform the data by
 
         - adding broader_category,
@@ -189,7 +201,7 @@ There is a lot to I need to learn across the HoloViz suite of tools.
         return source_data.sample(n_samples)
 
     @classmethod
-    def get_kickstarter_df(cls) -> pd.DataFrame:
+    def get_kickstarter_df(cls,) -> pd.DataFrame:
         """The Dataframe of Kickstarter Data
 
         Returns:
@@ -200,7 +212,7 @@ There is a lot to I need to learn across the HoloViz suite of tools.
         return kickstarter_df
 
     @staticmethod
-    def get_categories(kickstarter_df) -> List[str]:
+    def get_categories(kickstarter_df,) -> List[str]:
         """The list of kickstarter broader categories
 
         Arguments:
@@ -213,7 +225,7 @@ There is a lot to I need to learn across the HoloViz suite of tools.
 
     @classmethod
     def filter_on_categories(
-        cls, kickstarter_df: pd.DataFrame, categories: List[str]
+        cls, kickstarter_df: pd.DataFrame, categories: List[str],
     ) -> pd.DataFrame:
         """Filters the kickstarter_df by the specified categories
 
@@ -230,7 +242,7 @@ There is a lot to I need to learn across the HoloViz suite of tools.
         return kickstarter_df[categories_filter]
 
     @staticmethod
-    def filter_on_ranges(kickstarter_df: pd.DataFrame, x_range, y_range) -> pd.DataFrame:
+    def filter_on_ranges(kickstarter_df: pd.DataFrame, x_range, y_range,) -> pd.DataFrame:
         """Filter the kickstarter_df by x_range and y_range
 
         Arguments:
@@ -294,8 +306,8 @@ There is a lot to I need to learn across the HoloViz suite of tools.
 
         # Filter
         stacked_barchart_df = (
-            kickstarter_df[["broader_category", "state", "created_at"]]
-            .groupby(["broader_category", "state"])
+            kickstarter_df[["broader_category", "state", "created_at",]]
+            .groupby(["broader_category", "state",])
             .count()
             .rename(columns={"created_at": "Number of projects"})
         )

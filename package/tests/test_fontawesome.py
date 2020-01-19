@@ -18,12 +18,12 @@ def test_get_fontawesome_panel_express_css():
     assert fontawesome.fontawesome._FONTAWESOME_PANEL_EXPRESS_HEADER in actual
     assert 'div.bk.pa-bus div.bk *::before{content:"\\f207"}' in actual
 
-    with open(OUT / "test_fontawesome_panel_express.css", "w") as file:
+    with open(OUT / "test_fontawesome_panel_express.css", "w",) as file:
         file.write(actual)
 
 
 @pytest.mark.parametrize(
-    ["css", "expected"],
+    ["css", "expected",],
     [
         (
             r'.fa-bus:before{content:"\f207"}.fa-bus-alt:before{content:"\f55e"}',
@@ -32,7 +32,9 @@ def test_get_fontawesome_panel_express_css():
         ),
     ],
 )
-def test__to_fontawesome_panel_express_css(css, expected):
+def test__to_fontawesome_panel_express_css(
+    css, expected,
+):
     "Test that _to_fontawesome_panel_express can return a text string without error"
     # When
     actual = fontawesome.fontawesome._to_fontawesome_panel_express(css)

@@ -20,7 +20,9 @@ _EXTENDED = False
 class Divider(pn.pane.HTML):
     """A HTML Divider"""
 
-    def __init__(self, sizing_mode="stretch_width", **kwargs):
+    def __init__(
+        self, sizing_mode="stretch_width", **kwargs,
+    ):
         """A HTML Divider
 
         The HTML
@@ -31,7 +33,9 @@ class Divider(pn.pane.HTML):
         Keyword Arguments:
             sizing_policy {str} -- [description] (default: {"stretch_width"})
         """
-        super().__init__("<hr>", height=10, sizing_mode=sizing_mode, **kwargs)
+        super().__init__(
+            "<hr>", height=10, sizing_mode=sizing_mode, **kwargs,
+        )
 
 
 class Markdown(pn.pane.HTML):
@@ -68,7 +72,9 @@ class Markdown(pn.pane.HTML):
             text_with_no_leading_spaces, extensions=MARKDOWN_EXTENSIONS, output_format="html5",
         )
 
-        super().__init__(text_html, **kwargs)
+        super().__init__(
+            text_html, **kwargs,
+        )
 
 
 class Code(pn.pane.HTML):
@@ -84,9 +90,11 @@ class Code(pn.pane.HTML):
 ```
 """
         code_html = markdown.markdown(
-            code_markdown, extensions=MARKDOWN_EXTENSIONS, output_format="html5"
+            code_markdown, extensions=MARKDOWN_EXTENSIONS, output_format="html5",
         )
-        super().__init__(code_html, sizing_mode=sizing_mode, **kwargs)
+        super().__init__(
+            code_html, sizing_mode=sizing_mode, **kwargs,
+        )
 
     @staticmethod
     def extend():

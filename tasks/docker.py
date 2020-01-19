@@ -16,7 +16,7 @@ DOCKER_REGISTRY = "marcskovmadsen"
 
 
 def _build(  # pylint: disable=too-many-arguments
-    c, docker_file: str, image: str, tag: str, context: str, rebuild: bool = False
+    c, docker_file: str, image: str, tag: str, context: str, rebuild: bool = False,
 ):
     """Helper function for docker build
 
@@ -41,7 +41,9 @@ Building the '{DOCKER_REGISTRY}/{image}:{tag}' Docker image
         )
     else:
         command = f"docker build --rm -f {docker_file} -t {image}:{tag} -t {image}:latest {context}"
-    c.run(command, echo=True)
+    c.run(
+        command, echo=True,
+    )
 
 
 @dataclass
@@ -55,7 +57,7 @@ class Image:
     registry: str = DOCKER_REGISTRY
 
     @property
-    def image(self) -> str:
+    def image(self,) -> str:
         """The full name of the image, i.e. registry/name
 
         Returns:
@@ -91,7 +93,9 @@ IMAGES = {
 
 
 @task
-def build(c, image="prod", tag="latest", rebuild=False):
+def build(
+    c, image="prod", tag="latest", rebuild=False,
+):
     """Build Docker image
 
     Arguments:
@@ -105,11 +109,13 @@ def build(c, image="prod", tag="latest", rebuild=False):
         rebuild {bool} -- If set then the image and all dependencies are rebuilt from scratch
             (default: {False})
     """
-    image_configuration = IMAGES.get(image, IMAGES["prod"])
+    image_configuration = IMAGES.get(image, IMAGES["prod"],)
 
     if rebuild:
         for dependent_image in image_configuration.dependencies:
-            build(c, image=dependent_image, tag=tag, rebuild=rebuild)
+            build(
+                c, image=dependent_image, tag=tag, rebuild=rebuild,
+            )
 
     _build(
         c,
@@ -122,7 +128,9 @@ def build(c, image="prod", tag="latest", rebuild=False):
 
 
 @task
-def run(c, image="awesome-panel", tag="latest"):  # pylint: disable=unused-argument
+def run(
+    c, image="awesome-panel", tag="latest",
+):  # pylint: disable=unused-argument
     """Run the Docker container bash terminal interactively.
 
     Arguments:
@@ -144,11 +152,15 @@ Running the '{image}:{tag}' Docker image
         f'docker run -it -p 80:80 --entrypoint "/bin/bash" ' f"{DOCKER_REGISTRY}/{image}:{tag} "
     )
     print(command)
-    subprocess.run(command, check=True)
+    subprocess.run(
+        command, check=True,
+    )
 
 
 @task
-def push(c, image="awesome-panel", tag="latest"):
+def push(
+    c, image="awesome-panel", tag="latest",
+):
     """Push the Docker container
 
     Arguments:
@@ -159,11 +171,13 @@ def push(c, image="awesome-panel", tag="latest"):
         tag {str} -- Name of tag (default: {"latest"})
     """
     command = f"docker push {DOCKER_REGISTRY}/{image}:{tag}"
-    c.run(command, echo=True)
+    c.run(
+        command, echo=True,
+    )
 
 
 @task
-def run_server(c):  # pylint: disable=unused-argument
+def run_server(c,):  # pylint: disable=unused-argument
     """Run the Docker image with the Panel server.
 
     Arguments:
@@ -186,11 +200,13 @@ Running the '{image}:{tag}' Docker image
     command = "docker run -it -p 80:80 " f"{DOCKER_REGISTRY}/{image}:{tag} "
 
     print(command)
-    subprocess.run(command, check=True)
+    subprocess.run(
+        command, check=True,
+    )
 
 
 @task
-def run_server_with_ping(c):  # pylint: disable=unused-argument
+def run_server_with_ping(c,):  # pylint: disable=unused-argument
     """Run the docker image with Panel server and
     a ping to awesome-panel.org every 5 minutes
     to keep it alive
@@ -219,11 +235,13 @@ Running the '{image}:{tag}' Docker image
     )
 
     print(command)
-    subprocess.run(command, check=True)
+    subprocess.run(
+        command, check=True,
+    )
 
 
 @task
-def system_prune(c):
+def system_prune(c,):
     """The docker system prune command will free up space
 
     It removes all stopped containers, all dangling images, and
@@ -236,11 +254,13 @@ def system_prune(c):
 ================================
 """
     )
-    c.run("docker system prune", echo=True)
+    c.run(
+        "docker system prune", echo=True,
+    )
 
 
 @task
-def remove_unused(command):  # pylint: disable=unused-argument
+def remove_unused(command,):  # pylint: disable=unused-argument
     """Removes all unused containers to free up space"""
     print("RUN THESE")
     print("docker rmi $(docker images -q)")

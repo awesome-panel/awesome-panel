@@ -44,8 +44,8 @@ def test_view_value_and_message():
     - The message hello world is visible
     - The bar color is the blue *info* color
     """
-    progress = ProgressExt(value=50, message="hello world")
-    return TestApp(test_view_value_and_message, progress.view())
+    progress = ProgressExt(value=50, message="hello world",)
+    return TestApp(test_view_value_and_message, progress.view(),)
 
 
 def test_view_message_only():
@@ -55,8 +55,8 @@ def test_view_message_only():
     - The message is stated
     - The bar color is the blue *info* color
     """
-    progress = ProgressExt(value=0, message="hello world")
-    return TestApp(test_view_message_only, progress.view())
+    progress = ProgressExt(value=0, message="hello world",)
+    return TestApp(test_view_message_only, progress.view(),)
 
 
 def test_view_value_only():
@@ -65,8 +65,8 @@ def test_view_value_only():
     - The progressbar is shown with a value of 50
     - No message is shown
     """
-    progress = ProgressExt(value=50, message="")
-    return TestApp(test_view_value_only, progress.view())
+    progress = ProgressExt(value=50, message="",)
+    return TestApp(test_view_value_only, progress.view(),)
 
 
 def test_view_none():
@@ -75,8 +75,8 @@ def test_view_none():
     - No progressbar is shown
     - No message is shown
     """
-    progress = ProgressExt(value=0, message="")
-    return TestApp(test_view_none, progress.view())
+    progress = ProgressExt(value=0, message="",)
+    return TestApp(test_view_none, progress.view(),)
 
 
 def test_bar_color():
@@ -86,8 +86,8 @@ def test_bar_color():
     - The message hello world is visible
     - The bar color is the green *success* color
     """
-    progress = ProgressExt(value=50, message="hello world", bar_color="success")
-    return TestApp(test_bar_color, progress.view())
+    progress = ProgressExt(value=50, message="hello world", bar_color="success",)
+    return TestApp(test_bar_color, progress.view(),)
 
 
 def test_report_as_context_manager():
@@ -98,12 +98,14 @@ def test_report_as_context_manager():
     progress = ProgressExt()
     run_button = pn.widgets.Button(name="Click me")
 
-    def run(event):  # pylint: disable=unused-argument
-        with progress.report(50, "running"):
+    def run(event,):  # pylint: disable=unused-argument
+        with progress.report(
+            50, "running",
+        ):
             time.sleep(1)
 
     run_button.on_click(run)
-    return TestApp(test_report_as_context_manager, run_button, progress.view)
+    return TestApp(test_report_as_context_manager, run_button, progress.view,)
 
 
 def test_report_as_decorator():
@@ -114,12 +116,14 @@ def test_report_as_decorator():
     progress = ProgressExt()
     run_button = pn.widgets.Button(name="Click me")
 
-    @progress.report(33, "calculation")
-    def run(event):  # pylint: disable=unused-argument
+    @progress.report(
+        33, "calculation",
+    )
+    def run(event,):  # pylint: disable=unused-argument
         time.sleep(1)
 
     run_button.on_click(run)
-    return TestApp(test_report_as_decorator, run_button, progress.view)
+    return TestApp(test_report_as_decorator, run_button, progress.view,)
 
 
 def test_increment_as_context_manager():
@@ -130,12 +134,14 @@ def test_increment_as_context_manager():
     progress = ProgressExt()
     run_button = pn.widgets.Button(name="Click me")
 
-    def run(event):  # pylint: disable=unused-argument
-        with progress.increment(50, "incrementing ..."):
+    def run(event,):  # pylint: disable=unused-argument
+        with progress.increment(
+            50, "incrementing ...",
+        ):
             time.sleep(0.5)
 
     run_button.on_click(run)
-    return TestApp(test_increment_as_context_manager, run_button, progress.view)
+    return TestApp(test_increment_as_context_manager, run_button, progress.view,)
 
 
 def test_increment_as_decorator():
@@ -146,12 +152,14 @@ def test_increment_as_decorator():
     progress = ProgressExt()
     run_button = pn.widgets.Button(name="Click me")
 
-    @progress.increment(50, "incrementing ...")
-    def run(event):  # pylint: disable=unused-argument
+    @progress.increment(
+        50, "incrementing ...",
+    )
+    def run(event,):  # pylint: disable=unused-argument
         time.sleep(0.5)
 
     run_button.on_click(run)
-    return TestApp(test_increment_as_decorator, run_button, progress.view)
+    return TestApp(test_increment_as_decorator, run_button, progress.view,)
 
 
 def view() -> pn.Column:

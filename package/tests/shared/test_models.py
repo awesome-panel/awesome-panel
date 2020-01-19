@@ -2,7 +2,11 @@
 # pylint: disable=redefined-outer-name,protected-access
 import pytest
 
-from awesome_panel.shared.models import Author, Resource, Tag
+from awesome_panel.shared.models import (
+    Author,
+    Resource,
+    Tag,
+)
 
 
 @pytest.fixture
@@ -23,7 +27,7 @@ def author() -> Author:
 
 
 @pytest.fixture
-def resource(author, tag) -> Resource:
+def resource(author, tag,) -> Resource:
     """Resource fixture"""
     return Resource(
         name="awesome-panel.org",
@@ -35,17 +39,17 @@ def resource(author, tag) -> Resource:
     )
 
 
-def test_tag__init__(tag):
+def test_tag__init__(tag,):
     """Test Tag __init__"""
     assert tag.name == "new tag"
 
 
-def test_tag__str__(tag):
+def test_tag__str__(tag,):
     """Test Tag __str__"""
     assert str(tag) == "new tag"
 
 
-def test_author__init__(author):
+def test_author__init__(author,):
     """Test Author __init__"""
     assert author.name == "Marc Skov Madsen 2"
     assert author.url == "https://datamodelsanalytics.com"
@@ -53,12 +57,14 @@ def test_author__init__(author):
     assert author.github_avatar_url == "https://avatars0.githubusercontent.com/u/42288570"
 
 
-def test_author__str__(author):
+def test_author__str__(author,):
     """Test Author __str__"""
     assert str(author) == "Marc Skov Madsen 2"
 
 
-def test_resource__init__(resource, author, tag):
+def test_resource__init__(
+    resource, author, tag,
+):
     """Test Resource __init__"""
     assert resource.name == "awesome-panel.org"
     assert resource.url == "https://awesome-panel.org"
@@ -68,12 +74,12 @@ def test_resource__init__(resource, author, tag):
     assert resource.author == author
 
 
-def test_resource__str__(resource):
+def test_resource__str__(resource,):
     """test of resource.__str__ method"""
     assert str(resource) == resource.name
 
 
-def test_resource_to_markdown_bullet(resource):
+def test_resource_to_markdown_bullet(resource,):
     """I can convert a resource to a a markdown bullet string"""
     assert resource.to_markdown_bullet() == (
         "- [awesome-panel.org](https://awesome-panel.org) by "
@@ -81,7 +87,7 @@ def test_resource_to_markdown_bullet(resource):
     )
 
 
-def test_screenshot_file(resource):
+def test_screenshot_file(resource,):
     """test of resource.screenshot_file"""
     # When:
     resource.name = "Hello-panel deployed on Glitch"
@@ -89,10 +95,10 @@ def test_screenshot_file(resource):
     assert resource.screenshot_file == "hello-panel-deployed-on-glitch.png"
 
 
-def test_author_to_html(author):
+def test_author_to_html(author,):
     """On the Gallery App Page I need functionality to show and link to the Author"""
     # When
-    actual = author.to_html(width="25px", height="25px")
+    actual = author.to_html(width="25px", height="25px",)
     # Then
     assert actual == (
         '<a href="https://github.com/marcskovmadsen" title="Author: Marc Skov Madsen 2" '

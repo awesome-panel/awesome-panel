@@ -22,7 +22,7 @@ def my_add(a,b):
     return a+b
 """
 
-    return TestApp(test_code, pnx.Code(code, language="python"), sizing_mode="stretch_width",)
+    return TestApp(test_code, pnx.Code(code, language="python",), sizing_mode="stretch_width",)
 
 
 def view() -> pn.Column:

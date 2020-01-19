@@ -10,10 +10,14 @@ This app was first developed in Streamlit by [Doug Guthrie](https://github/dpgut
 This version of the app is developed in [Panel](https://panel.pyviz.org/) by [Marc Skov Madsen]\
     (https://datamodelsanalytics.com)
 """
-import json
 import datetime
+import json
 from functools import lru_cache
-from typing import Dict, List, Tuple
+from typing import (
+    Dict,
+    List,
+    Tuple,
+)
 
 import altair as alt
 import pandas as pd
@@ -25,7 +29,10 @@ import awesome_panel.express as pnx
 
 PERIOD_END_DATE = datetime.datetime.now().date()
 PERIOD_START_DATE = PERIOD_END_DATE - datetime.timedelta(days=365)
-DATE_BOUNDS = (datetime.datetime(1900, 1, 1).date(), PERIOD_END_DATE)
+DATE_BOUNDS = (
+    datetime.datetime(1900, 1, 1,).date(),
+    PERIOD_END_DATE,
+)
 
 # from awesome_panel.express.widgets.dataframe import get_default_formatters
 
@@ -75,7 +82,7 @@ class YahooQueryService:
 
     @classmethod
     @lru_cache(2048)
-    def get_data(cls, symbols: str, attribute: str, *args) -> Dict:
+    def get_data(cls, symbols: str, attribute: str, *args,) -> Dict:
         """Gets data from yahoo
 
         Arguments:
@@ -89,14 +96,14 @@ class YahooQueryService:
         ticker = cls.to_ticker(symbols)
 
         try:
-            data = getattr(ticker, attribute)(*args)
+            data = getattr(ticker, attribute,)(*args)
         except TypeError:
-            data = getattr(ticker, attribute)
+            data = getattr(ticker, attribute,)
         return data
 
     @staticmethod
     @lru_cache(2048)
-    def to_ticker(symbols: str) -> Ticker:
+    def to_ticker(symbols: str,) -> Ticker:
         """Converts a comma seperated list of tickers to a Ticker
 
         Args:
@@ -112,7 +119,7 @@ class YahooQueryService:
 # TTodo: Move to pnx and create tests
 # TTodo: Make Calendar Event stand beautifully
 # TTodo: Add <hr>
-def pnx_help(python_object: object) -> pn.pane.Viewable:
+def pnx_help(python_object: object,) -> pn.pane.Viewable:
     """Helper function that convert a python object into a viewable help text
 
     Args:
@@ -121,11 +128,11 @@ def pnx_help(python_object: object) -> pn.pane.Viewable:
     Returns:
         pn.pane.Viewable: A Viewable showing the docstring and more
     """
-    return pnx.Card("Documentation", pnx.Code(str(python_object.__doc__), language="bash"),)
+    return pnx.Card("Documentation", pnx.Code(str(python_object.__doc__), language="bash",),)
 
 
 # TTodo: Move to pnx and create tests
-def pnx_json(python_object: object, indent=2) -> pn.pane.Viewable:
+def pnx_json(python_object: object, indent=2,) -> pn.pane.Viewable:
     """Converts and json serialisabe object into Viewable
 
     Args:
@@ -135,10 +142,12 @@ def pnx_json(python_object: object, indent=2) -> pn.pane.Viewable:
     Returns:
         pn.pane.Viewable: [description]
     """
-    return pnx.Card("Response", pnx.Code(json.dumps(python_object, indent=indent), language="json"))
+    return pnx.Card(
+        "Response", pnx.Code(json.dumps(python_object, indent=indent,), language="json",),
+    )
 
 
-def code_card(code: str) -> pn.pane.Viewable:
+def code_card(code: str,) -> pn.pane.Viewable:
     """Wraps the code into a Card with "Code" as header and code as body
 
     Args:
@@ -147,7 +156,7 @@ def code_card(code: str) -> pn.pane.Viewable:
     Returns:
         pn.pane.Viewable: A Card with "Code" as header and code as body.
     """
-    return pnx.Card("Code", pnx.Code(code))
+    return pnx.Card("Code", pnx.Code(code),)
 
 
 class Page(param.Parameterized):
@@ -162,7 +171,7 @@ class HomePage(Page):
     """Provides the view of the Home Page"""
 
     @param.depends("symbols")
-    def _code(self):
+    def _code(self,):
         return code_card(
             f"""from yahooquery import Ticker
 
@@ -175,7 +184,7 @@ tickers = Ticker("{self.symbols}"")
         return pnx_help(Ticker)
 
     @param.depends("symbols")
-    def view(self) -> pn.pane.Viewable:
+    def view(self,) -> pn.pane.Viewable:
         """The main view of the HomePage
 
         Returns:
@@ -191,55 +200,59 @@ class BasePage(Page):
 
     The user can select an endpoint and the help text, code and result will be presented."""
 
-    endpoint = param.ObjectSelector(default="asset_profile", objects=BASE_ENDPOINTS)
-    frequency = param.ObjectSelector(default="a", objects={"Annual": "a", "Quarterly": "q"})
+    endpoint = param.ObjectSelector(default="asset_profile", objects=BASE_ENDPOINTS,)
+    frequency = param.ObjectSelector(default="a", objects={"Annual": "a", "Quarterly": "q",},)
 
     @property
-    def attr(self) -> object:
+    def attr(self,) -> object:
         """The Ticker.<endpoint> attribute
 
         Returns:
             object: The Ticker.<endpoint> attribute]
         """
-        return getattr(Ticker, self.endpoint)
+        return getattr(Ticker, self.endpoint,)
 
     @property
-    def attr_is_property(self) -> bool:
+    def attr_is_property(self,) -> bool:
         """Whether or not self.attr is a property
 
         Returns:
             bool: Return True if self.attr is a property. Oherwise False is returned.
         """
-        return isinstance(self.attr, property)
+        return isinstance(self.attr, property,)
 
     @param.depends("endpoint")
-    def _help(self):
+    def _help(self,):
         if self.endpoint:
             return pnx_help(self.attr)
         return ""
 
-    @param.depends("symbols", "endpoint", "frequency")
-    def _code(self):
+    @param.depends(
+        "symbols", "endpoint", "frequency",
+    )
+    def _code(self,):
         if self.attr_is_property:
             code = f"Ticker('{self.symbols}').{self.endpoint}"
         else:
             code = f"Ticker('{self.symbols}').{self.endpoint}(frequency='{self.frequency}')"
         return code_card(code)
 
-    @param.depends("symbols", "endpoint", "frequency")
+    @param.depends(
+        "symbols", "endpoint", "frequency",
+    )
     @PROGRESS.report(message="Requesting A Single Endpoint from Yahoo Finance")
-    def _data(self):
+    def _data(self,):
         if self.attr_is_property:
-            data = YahooQueryService.get_data(self.symbols, self.endpoint)
+            data = YahooQueryService.get_data(self.symbols, self.endpoint,)
         else:
-            data = YahooQueryService.get_data(self.symbols, self.endpoint, self.frequency)
-        if isinstance(data, pd.DataFrame):
+            data = YahooQueryService.get_data(self.symbols, self.endpoint, self.frequency,)
+        if isinstance(data, pd.DataFrame,):
             # Enable formatters when https://github.com/holoviz/panel/issues/941 is solved
             # formatters = get_default_formatters(data)
             return pnx.Card(
                 "Response",
                 pn.widgets.DataFrame(
-                    data, fit_columns=True, sizing_mode="stretch_width", margin=25
+                    data, fit_columns=True, sizing_mode="stretch_width", margin=25,
                 ),
             )
 
@@ -247,11 +260,14 @@ class BasePage(Page):
 
     # TTodo: remove line
     @param.depends("endpoint")
-    def _selections(self):
+    def _selections(self,):
         if self.attr_is_property:
             parameters = ["endpoint"]
         else:
-            parameters = ["endpoint", "frequency"]
+            parameters = [
+                "endpoint",
+                "frequency",
+            ]
 
         return pnx.Card(
             "Selections",
@@ -265,7 +281,7 @@ class BasePage(Page):
         )
 
     @param.depends("symbols")
-    def view(self) -> pn.pane.Viewable:
+    def view(self,) -> pn.pane.Viewable:
         """The main view of the BasePage
 
         Returns:
@@ -290,7 +306,7 @@ class BaseMultiplePage(Page):
     presented."""
 
     all_endpoints = param.Boolean(
-        default=False, doc="If True all endpoints should be requested otherwise only multiple"
+        default=False, doc="If True all endpoints should be requested otherwise only multiple",
     )
     endpoints = param.ListSelector(
         default=["assetProfile"],
@@ -298,19 +314,23 @@ class BaseMultiplePage(Page):
     )
 
     @param.depends("all_endpoints")
-    def _endpoints_widget(self):
+    def _endpoints_widget(self,):
         if not self.all_endpoints:
-            return pn.Param(self.param.endpoints, widgets={"endpoints": {"height": 600},})
+            return pn.Param(self.param.endpoints, widgets={"endpoints": {"height": 600},},)
         return None
 
-    @param.depends("all_endpoints", "endpoints")
-    def _help(self):
+    @param.depends(
+        "all_endpoints", "endpoints",
+    )
+    def _help(self,):
         if self.all_endpoints:
             return pnx_help(Ticker.all_endpoints)
         return pnx_help(Ticker.get_endpoints)
 
-    @param.depends("symbols", "all_endpoints", "endpoints")
-    def _code(self):
+    @param.depends(
+        "symbols", "all_endpoints", "endpoints",
+    )
+    def _code(self,):
         if self.all_endpoints:
             code = f"Ticker('{self.symbols}').all_endpoint"
         else:
@@ -318,24 +338,26 @@ class BaseMultiplePage(Page):
 
         return code_card(code=code)
 
-    @param.depends("symbols", "all_endpoints", "endpoints")
+    @param.depends(
+        "symbols", "all_endpoints", "endpoints",
+    )
     @PROGRESS.report(message="Requesting Multiple Endpoints from Yahoo Finance")
-    def _data(self):
+    def _data(self,):
         if self.all_endpoints:
-            data = YahooQueryService.get_data(self.symbols, "all_endpoints")
+            data = YahooQueryService.get_data(self.symbols, "all_endpoints",)
         else:
             if not self.endpoints:
                 return pnx.InfoAlert("Please select one or more Endpoints")
 
-            data = YahooQueryService.get_data(self.symbols, "get_endpoints")(self.endpoints)
+            data = YahooQueryService.get_data(self.symbols, "get_endpoints",)(self.endpoints)
         return pnx_json(data)
 
-    def _selections(self):
+    def _selections(self,):
         return pnx.Card(
-            "Selections", [self.param.all_endpoints, self._endpoints_widget], sizing_mode=None
+            "Selections", [self.param.all_endpoints, self._endpoints_widget,], sizing_mode=None,
         )
 
-    def view(self) -> pn.pane.Viewable:
+    def view(self,) -> pn.pane.Viewable:
         """The main view of the BasePage
 
         Returns:
@@ -369,27 +391,27 @@ class OptionsPage(Page):
         return pnx_help(Ticker.option_chain)
 
     @param.depends("symbols")
-    def _code(self):
+    def _code(self,):
         code = f"Ticker('{self.symbols}').option_chain"
         return code_card(code=code)
 
     @param.depends("symbols")
     @PROGRESS.report(message="Requesting Options Chain from Yahoo Finance")
-    def _data(self):
-        data = YahooQueryService.get_data(self.symbols, "option_chain")
-        if isinstance(data, pd.DataFrame):
+    def _data(self,):
+        data = YahooQueryService.get_data(self.symbols, "option_chain",)
+        if isinstance(data, pd.DataFrame,):
             # Enable formatters when https://github.com/holoviz/panel/issues/941 is solved
             # formatters = get_default_formatters(data)
             # We also show the first 5 columns as other wise the app gets too slow.
             return pnx.Card(
                 "Response",
                 pn.widgets.DataFrame(
-                    data.head(), fit_columns=True, sizing_mode="stretch_width", margin=25
+                    data.head(), fit_columns=True, sizing_mode="stretch_width", margin=25,
                 ),
             )
         return pnx_json(data)
 
-    def view(self) -> pn.pane.Viewable:
+    def view(self,) -> pn.pane.Viewable:
         """The main view of the OptionsPage
 
         Returns:
@@ -408,27 +430,31 @@ class OptionsPage(Page):
 class GridBoxWithTwoColumns(pn.GridBox):
     """A Custom Gridbox with 3 columns"""
 
-    def __init__(self, *objects, **params):
-        super().__init__(*objects, **params, ncols=2)
+    def __init__(
+        self, *objects, **params,
+    ):
+        super().__init__(
+            *objects, **params, ncols=2,
+        )
 
 
 class HistoryPage(Page):
     """Provides an illustration of the `Ticker.history` method"""
 
-    period_type = param.ObjectSelector(default="Period", objects=["Dates", "Period"])
+    period_type = param.ObjectSelector(default="Period", objects=["Dates", "Period",],)
     # pylint: disable=protected-access
-    interval = param.ObjectSelector(default="1d", objects=Ticker._INTERVALS)
-    period = param.ObjectSelector(default="1y", objects=Ticker._PERIODS)
+    interval = param.ObjectSelector(default="1d", objects=Ticker._INTERVALS,)
+    period = param.ObjectSelector(default="1y", objects=Ticker._PERIODS,)
     # pylint: enable=protected-access
-    start = param.Date(default=PERIOD_START_DATE, bounds=DATE_BOUNDS)
-    end = param.Date(default=PERIOD_END_DATE, bounds=DATE_BOUNDS)
+    start = param.Date(default=PERIOD_START_DATE, bounds=DATE_BOUNDS,)
+    end = param.Date(default=PERIOD_END_DATE, bounds=DATE_BOUNDS,)
 
     @staticmethod
     def _help():
         return pnx_help(Ticker.history)
 
     @param.depends("period_type")
-    def _param_view(self):
+    def _param_view(self,):
         if self.period_type == "Period":
             return pn.Param(
                 self,
@@ -439,20 +465,22 @@ class HistoryPage(Page):
             )
         return pn.Param(
             self,
-            parameters=["period_type", "interval", "start", "end"],
+            parameters=["period_type", "interval", "start", "end",],
             default_layout=GridBoxWithTwoColumns,
             widgets={"start": pn.widgets.DatePicker, "end": pn.widgets.DatePicker,},
             width=600,
             show_name=False,
         )
 
-    @param.depends("symbols", "period_type", "interval", "period", "start", "end")
-    def _code(self):
+    @param.depends(
+        "symbols", "period_type", "interval", "period", "start", "end",
+    )
+    def _code(self,):
         code = f"""Ticker("{self.symbols}").history({', '.join(self._args_string)})"""
         return code_card(code=code)
 
     @property
-    def _history_args(self):
+    def _history_args(self,):
         history_args = {}
         if self.period_type == "Period":
             history_args["period"] = self.period
@@ -466,7 +494,7 @@ class HistoryPage(Page):
         return history_args
 
     @property
-    def _args_string(self):
+    def _args_string(self,):
         return [
             str(k) + "='" + str(v) + "'" for k, v in self._history_args.items() if v is not None
         ]
@@ -474,43 +502,41 @@ class HistoryPage(Page):
     # I cannot make the chart responsive. There is some starting information here
     # See https://stackoverflow.com/questions/55169344/how-to-make-altair-plots-responsive
     @staticmethod
-    def _history_plot(dataframe: pd.DataFrame):
+    def _history_plot(dataframe: pd.DataFrame,):
         if "symbol" in dataframe.columns:
             chart = (
                 alt.Chart(dataframe.reset_index())
                 .mark_line()
-                .encode(alt.Y("close:Q", scale=alt.Scale(zero=False)), x="dates", color="symbol")
+                .encode(alt.Y("close:Q", scale=alt.Scale(zero=False),), x="dates", color="symbol",)
             )
         else:
             chart = (
                 alt.Chart(dataframe.reset_index())
                 .mark_line()
-                .encode(alt.Y("close:Q", scale=alt.Scale(zero=False)), x="dates:T")
+                .encode(alt.Y("close:Q", scale=alt.Scale(zero=False),), x="dates:T",)
             )
 
-        chart = chart.properties(
-            width=800,
-            height=300,
-        )
+        chart = chart.properties(width=800, height=300,)
         return chart
-
 
     @param.depends("symbols")
     @PROGRESS.report(message="Requesting Price History from Yahoo Finance")
-    def _data(self):
+    def _data(self,):
         tickers = YahooQueryService.to_ticker(self.symbols)
         data = tickers.history(**self._history_args)
-        if isinstance(data, pd.DataFrame):
+        if isinstance(data, pd.DataFrame,):
             return pn.Column(
                 pnx.Card(
                     "Response",
-                    body=pn.pane.Vega(self._history_plot(data), sizing_mode="stretch_width", height=325)
+                    body=pn.pane.Vega(
+                        self._history_plot(data), sizing_mode="stretch_width", height=325,
+                    ),
                 ),
                 sizing_mode="stretch_width",
             )
         return pnx_json(data)
 
-    def view(self) -> pn.pane.Viewable:
+    def view(self,) -> pn.pane.Viewable:
         """The main view of the OptionsPage
 
         Returns:
@@ -534,7 +560,7 @@ class YahooQueryView(pn.Column):
     def __init__(
         self,
         symbols: pn.pane.Viewable,
-        pages: List[Tuple[str, pn.pane.Viewable]],
+        pages: List[Tuple[str, pn.pane.Viewable,]],
         sizing_mode="stretch_width",
         **kwargs,
     ):
@@ -570,13 +596,13 @@ to view the data available to you.
         )
 
     def _symbols_widget(
-        self, symbols: pn.pane.Viewable, sizing_mode: str = "stretch_width"
+        self, symbols: pn.pane.Viewable, sizing_mode: str = "stretch_width",
     ) -> pn.pane.Viewable:
-        return pn.Row(symbols, self._symbol_lookup_link(), sizing_mode=sizing_mode)
+        return pn.Row(symbols, self._symbol_lookup_link(), sizing_mode=sizing_mode,)
 
     @staticmethod
     def pages_view(
-        pages: List[Tuple[str, pn.pane.Viewable]], sizing_mode: str = "stretch_width"
+        pages: List[Tuple[str, pn.pane.Viewable,]], sizing_mode: str = "stretch_width",
     ) -> pn.Tabs:
         """A Tabbed view of the pages
 
@@ -588,13 +614,15 @@ to view the data available to you.
         Returns:
             pn.Tabs: [description]
         """
-        return pn.Tabs(*pages, sizing_mode=sizing_mode)
+        return pn.Tabs(*pages, sizing_mode=sizing_mode,)
 
 
 class YahooQueryApp(Page):
     """The main app makes the yahooquery package interactive"""
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self, **kwargs,
+    ):
         super().__init__(**kwargs)
         self.pages = {
             "Introduction": HomePage(),
@@ -604,20 +632,22 @@ class YahooQueryApp(Page):
             "Historical Requests": HistoryPage(),
         }
 
-    @param.depends("symbols", watch=True)
-    def _set_pages(self):
+    @param.depends(
+        "symbols", watch=True,
+    )
+    def _set_pages(self,):
         for page in self.pages.values():
             page.symbols = self.symbols
 
-    def view(self) -> pn.pane.Viewable:
+    def view(self,) -> pn.pane.Viewable:
         """The main view of the app
 
         Returns:
             pn.pane.Viewable: Serve this via .servable()
         """
-        pages_list = [(key, value.view()) for key, value in self.pages.items()]
+        pages_list = [(key, value.view(),) for key, value in self.pages.items()]
 
-        return YahooQueryView(self.param.symbols, pages_list, sizing_mode="stretch_width")
+        return YahooQueryView(self.param.symbols, pages_list, sizing_mode="stretch_width",)
 
 
 def view():

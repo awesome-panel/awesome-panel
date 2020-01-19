@@ -134,12 +134,16 @@ class Modal(param.Parameterized):
         """
         return _CSS
 
-    @param.depends("title", watch=True)
-    def set_modal_title(self):
+    @param.depends(
+        "title", watch=True,
+    )
+    def set_modal_title(self,):
         """Updates the title of the modal"""
         self._modal_title.object = "# " + self.title
 
-    @param.depends("body", watch=True)
-    def set_modal_body(self):
+    @param.depends(
+        "body", watch=True,
+    )
+    def set_modal_body(self,):
         """Updates the body of the modal"""
         self._modal_body[:] = self.body

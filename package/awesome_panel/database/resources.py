@@ -1,7 +1,10 @@
 """In this module we define all Resources (except apps in the gallery) and exposes
 them via the RESOURCES list.
 """
-from awesome_panel.database import authors, tags
+from awesome_panel.database import (
+    authors,
+    tags,
+)
 from awesome_panel.database.apps_in_gallery import APPS_IN_GALLERY
 from awesome_panel.database.settings import THUMBNAILS_ROOT
 
@@ -16,7 +19,7 @@ RESOURCES = [
         url="https://github.com/intake/xrviz",
         thumbnail_path=THUMBNAILS_ROOT + "",
         is_awesome=True,
-        tags=[tags.APP, tags.CODE, tags.INSPIRATION],
+        tags=[tags.APP, tags.CODE, tags.INSPIRATION,],
         author=authors.INTAKE,
     ),
     Resource(
@@ -27,7 +30,7 @@ RESOURCES = [
         ),
         thumbnail_path=THUMBNAILS_ROOT + "",
         is_awesome=True,
-        tags=[tags.TUTORIAL, tags.ARTICLE],
+        tags=[tags.TUTORIAL, tags.ARTICLE,],
         author=authors.BENJAMIN_COOLEY,
     ),
     Resource(
@@ -171,7 +174,7 @@ RESOURCES = [
         url="https://www.youtube.com/watch?v=L91rd1D6XTA&t=274s",
         thumbnail_path=THUMBNAILS_ROOT + "",
         is_awesome=True,
-        tags=[tags.VIDEO, tags.TUTORIAL],
+        tags=[tags.VIDEO, tags.TUTORIAL,],
         author=authors.JAMES_BEDNAR,
     ),
     Resource(
@@ -179,7 +182,7 @@ RESOURCES = [
         url="https://www.youtube.com/watch?v=Ohr29FJjBi0&list=PLGVZCDnMOq0pNHTYo3i56zYU-Tdw5Uguw",
         thumbnail_path=THUMBNAILS_ROOT + "pydataberlin2019.png?raw=true",
         is_awesome=True,
-        tags=[tags.VIDEO, tags.TUTORIAL],
+        tags=[tags.VIDEO, tags.TUTORIAL,],
         author=authors.PHILIPP_RUDIGER,
     ),
     Resource(
@@ -187,7 +190,7 @@ RESOURCES = [
         url="https://www.youtube.com/watch?v=7deGS4IPAQ0&t=1326s",
         thumbnail_path=THUMBNAILS_ROOT + "",
         is_awesome=True,
-        tags=[tags.VIDEO, tags.TUTORIAL],
+        tags=[tags.VIDEO, tags.TUTORIAL,],
         author=authors.JAMES_BEDNAR,
     ),
     Resource(

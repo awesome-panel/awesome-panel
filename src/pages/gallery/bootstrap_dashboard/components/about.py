@@ -23,9 +23,9 @@ IMAGE_PATH = (
 class About(pn.Column):
     """The About Page tells why we build the BootStrap Dashboard App"""
 
-    def __init__(self):
+    def __init__(self,):
         about = pnx.Markdown(path=ABOUT_PATH)
-        image = pn.pane.PNG(str(IMAGE_PATH), max_width=600, sizing_mode="scale_both")
+        image = pn.pane.PNG(str(IMAGE_PATH), max_width=600, sizing_mode="scale_both",)
         info = pnx.InfoAlert(
             """\
 Navigate to the **Dashboard Page** via the **Tab** to see the result. The other tabs are comments on

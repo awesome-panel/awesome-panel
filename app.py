@@ -8,20 +8,29 @@ Creates a Bootstrap Dashboard App
 `awesome_panel.express.templates.BootstrapDashboardTemplate`
 - Start the app by using `panel serve` on this file.
 """
-from typing import List, Optional
+from typing import (
+    List,
+    Optional,
+)
 
 import panel as pn
 
 import awesome_panel.express as pnx
 from awesome_panel.database.apps_in_gallery import APPS_IN_GALLERY
-from src.pages import about, gallery, home, issues, resources
+from src.pages import (
+    about,
+    gallery,
+    home,
+    issues,
+    resources,
+)
 
 MENU_BUTTON_CSS_CLASSES: Optional[List[Optional[List[str]]]] = [
-    ["navigation", "pas", "pa-home"],
-    ["navigation", "pas", "pa-link"],
-    ["navigation", "pas", "pa-images"],
-    ["navigation", "pas", "pa-bug"],
-    ["navigation", "pas", "pa-address-card"],
+    ["navigation", "pas", "pa-home",],
+    ["navigation", "pas", "pa-link",],
+    ["navigation", "pas", "pa-images",],
+    ["navigation", "pas", "pa-bug",],
+    ["navigation", "pas", "pa-address-card",],
 ]
 
 CONTACT = """<p>
@@ -65,6 +74,7 @@ def main() -> pn.Pane:
     """
     pn.extension("vega")
     pnx.fontawesome.extend()
+    pnx.PyDeck.extend()
     pn.config.raw_css.append(SHARE_LINK_STYLE)
 
     app = pnx.templates.BootstrapDashboardTemplate(app_title="Awesome Panel")
@@ -73,12 +83,12 @@ def main() -> pn.Pane:
         # Hack for some reason I need to instantiate this otherwise the layout is not nice
         home.view(),
         resources.view,
-        gallery.Gallery(page_outlet=app.main, apps_in_gallery=APPS_IN_GALLERY).view,
+        gallery.Gallery(page_outlet=app.main, apps_in_gallery=APPS_IN_GALLERY,).view,
         issues.view,
         about.view,
     ]
     navigation_menu = pnx.NavigationMenu(
-        pages=pages, page_outlet=app.main, css_classes=MENU_BUTTON_CSS_CLASSES
+        pages=pages, page_outlet=app.main, css_classes=MENU_BUTTON_CSS_CLASSES,
     )
     share = pn.Column(
         pnx.Markdown("#### Share"),
@@ -89,10 +99,14 @@ def main() -> pn.Pane:
             pnx.fontawesome.share_link.ShareOnFacebook().view(),
             pnx.fontawesome.share_link.ShareOnMail().view(),
         ),
-        margin=(10, 10, 0, 10),
+        margin=(10, 10, 0, 10,),
     )
-    info = pn.Column(pnx.Markdown(INFO), margin=(0, 10, 0, 10), sizing_mode="stretch_width")
-    app.sidebar[:] = [navigation_menu, share, info]
+    info = pn.Column(pnx.Markdown(INFO), margin=(0, 10, 0, 10,), sizing_mode="stretch_width",)
+    app.sidebar[:] = [
+        navigation_menu,
+        share,
+        info,
+    ]
 
     contact = pn.Row(pn.pane.HTML(CONTACT))
     app.header.append(contact)

@@ -5,11 +5,11 @@ import panel as pn
 
 def test_show_message_while_python_code_is_running():
     """## Message IS NOT shown while code is running"""
-    button = pn.widgets.Button(name="Load page", button_type="primary")
+    button = pn.widgets.Button(name="Load page", button_type="primary",)
     message = "Awesome Panel Loading..."
     page = pn.Column(button)
 
-    def click_handler(event):
+    def click_handler(event,):
         page[:] = [message]
         # Run Python Code
         time.sleep(5)

@@ -1414,7 +1414,7 @@
             "name": "awesome-panel",
         },
         "language_info": {
-            "codemirror_mode": {"name": "ipython", "version": 3},
+            "codemirror_mode": {"name": "ipython", "version": 3,},
             "file_extension": ".py",
             "mimetype": "text/x-python",
             "name": "python",

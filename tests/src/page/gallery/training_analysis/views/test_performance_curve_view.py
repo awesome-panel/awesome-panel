@@ -20,7 +20,7 @@ def view() -> pn.Column:
     Returns:
         pn.Column -- A Column containing all the tests
     """
-    return pn.Column(pnx.Markdown(__doc__), test_performance_curve_update_view())
+    return pn.Column(pnx.Markdown(__doc__), test_performance_curve_update_view(),)
 
 
 if __name__.startswith("bk"):

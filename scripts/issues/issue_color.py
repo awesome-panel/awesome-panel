@@ -1,4 +1,7 @@
-from typing import List, NamedTuple
+from typing import (
+    List,
+    NamedTuple,
+)
 
 import panel as pn
 import param
@@ -29,7 +32,7 @@ def view():
     app = pn.Column(
         pn.Param(
             image_classifier_app.param["model"],
-            widgets={"model": {"type": pn.widgets.RadioButtonGroup, "button_type": "primary"}},
+            widgets={"model": {"type": pn.widgets.RadioButtonGroup, "button_type": "primary",}},
         ),
     )
     return app

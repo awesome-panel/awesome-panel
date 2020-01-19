@@ -9,13 +9,13 @@ import pathlib
 
 from invoke import task
 
-TEST_FILES = " ".join(["tests", "package/tests", "src/pages/gallery/awesome_panel_express_tests"])
+TEST_FILES = " ".join(["tests", "package/tests", "src/pages/gallery/awesome_panel_express_tests",])
 TEST_RESULTS = "test_results"
 FILES = " ".join(["app.py", "docs", "package", "tasks", "src", "tests",])
 
 
 @task
-def bandit(command):
+def bandit(command,):
     """Runs Bandit the security linter from PyCQA."""
     print(
         """
@@ -24,11 +24,13 @@ to identify common security issues in Python code
 =================================================
 """
     )
-    command.run("bandit -r ./", echo=True)
+    command.run(
+        "bandit -r ./", echo=True,
+    )
 
 
 @task
-def black(command):
+def black(command,):
     """Runs black (autoformatter) on all .py files recursively"""
     print(
         """
@@ -36,11 +38,13 @@ Running Black the Python code formatter
 =======================================
 """
     )
-    command.run("black . -l 100", echo=True)
+    command.run(
+        "black . -l 100", echo=True,
+    )
 
 
 @task
-def isort(command):
+def isort(command,):
     """Runs isort (import sorter) on all .py files recursively"""
     print(
         """
@@ -48,11 +52,15 @@ Running isort the Python code import sorter
 ===========================================
 """
     )
-    command.run("isort -rc .", echo=True)
+    command.run(
+        "isort -rc .", echo=True,
+    )
 
 
 @task
-def pytest(command, test_files=TEST_FILES, test_results=TEST_RESULTS):
+def pytest(
+    command, test_files=TEST_FILES, test_results=TEST_RESULTS,
+):
     """Runs pytest to identify failing tests
 
     Arguments:
@@ -82,7 +90,9 @@ Running pytest the test framework
         command_string += f" --cov-report html:{test_results}/cov_html"
 
     # Run the command_string
-    command.run(command_string, echo=True)
+    command.run(
+        command_string, echo=True,
+    )
 
     # Open the test coverage report in a browser
     path = pathlib.Path(__file__).parent.parent / test_results / "cov_html" / "index.html"
@@ -90,7 +100,9 @@ Running pytest the test framework
 
 
 @task()
-def pylint(command, files=FILES):
+def pylint(
+    command, files=FILES,
+):
     """Runs pylint (linter) on all .py files recursively to identify coding errors
 
     Arguments:
@@ -109,11 +121,15 @@ sniffs for code smells and offers simple refactoring suggestions.
 """
     )
     command_string = f"pylint {files}"
-    command.run(command_string, echo=True)
+    command.run(
+        command_string, echo=True,
+    )
 
 
 @task
-def mypy(command, files=FILES):
+def mypy(
+    command, files=FILES,
+):
     """Runs mypy (static type checker) on all .py files recursively
 
     Arguments:
@@ -127,11 +143,13 @@ Running mypy for identifying Python type errors
 """
     )
     command_string = f"mypy {files}"
-    command.run(command_string, echo=True)
+    command.run(
+        command_string, echo=True,
+    )
 
 
 @task
-def autoflake(command):
+def autoflake(command,):
     """Runs autoflake to remove unused imports on all .py files recursively
 
     Arguments:
@@ -144,14 +162,18 @@ Running autoflake to remove unused imports on all .py files recursively
 """
     )
     # command.run("RUN rm -rf .mypy_cache/; exit 0")
-    command.run("autoflake --imports=pytest --in-place --recursive .", echo=True)
+    command.run(
+        "autoflake --imports=pytest --in-place --recursive .", echo=True,
+    )
 
 
 # Note: Get Black added back in. black,
 @task(
-    pre=[isort, autoflake, black, pylint, mypy, pytest], aliases=["pre_commit", "test"], name="all",
+    pre=[isort, autoflake, black, pylint, mypy, pytest,],
+    aliases=["pre_commit", "test",],
+    name="all",
 )
-def _all(command):  # pylint: disable=unused-argument
+def _all(command,):  # pylint: disable=unused-argument
     """Runs isort, autoflake, black, pylint, mypy and pytest
 
     Arguments:

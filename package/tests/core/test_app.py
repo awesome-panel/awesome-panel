@@ -14,7 +14,7 @@ def test_title_awesome():
     """
     title_none = core.title_awesome("")
     title_test = core.title_awesome("Test")
-    Column(title_none, title_test, sizing_mode="stretch_width").servable()
+    Column(title_none, title_test, sizing_mode="stretch_width",).servable()
 
 
 if __name__.startswith("bk"):

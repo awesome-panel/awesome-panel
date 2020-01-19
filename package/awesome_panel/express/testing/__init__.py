@@ -23,7 +23,7 @@ class TestApp(Column):
         Arguments:
             test_func {Callable} -- The function to create an app from.
         """
-        text_str = test_func.__name__.replace("_", " ").capitalize()
+        text_str = test_func.__name__.replace("_", " ",).capitalize()
         text_str = "# " + text_str
 
         if test_func.__doc__:

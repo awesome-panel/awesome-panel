@@ -2,7 +2,7 @@
 from panel.pane import Markdown
 
 
-def title_awesome(body: str) -> Markdown:
+def title_awesome(body: str,) -> Markdown:
     """An *Awesome Panel* title as a Markdown with
 
     - the text like 'Awesome Panel About'

@@ -24,7 +24,11 @@ import geopandas as gpd
 import pandas as pd
 import panel as pn
 import param
-from bokeh.models import ColorBar, GeoJSONDataSource, LinearColorMapper
+from bokeh.models import (
+    ColorBar,
+    GeoJSONDataSource,
+    LinearColorMapper,
+)
 from bokeh.palettes import brewer  # pylint: disable=no-name-in-module
 from bokeh.plotting import figure
 
@@ -64,7 +68,7 @@ class OwidDashboard(param.Parameterized):
     """
 
     dataset_name = param.ObjectSelector()
-    year = param.Integer(2010, bounds=(1950, 2018))
+    year = param.Integer(2010, bounds=(1950, 2018,),)
 
     def __init__(
         self,
@@ -89,22 +93,26 @@ class OwidDashboard(param.Parameterized):
         self.param.dataset_name.default = dataset_names[0]
         super().__init__(**kwargs)
 
-    @param.depends("dataset_name", "year")
-    def map_plot(self):
+    @param.depends(
+        "dataset_name", "year",
+    )
+    def map_plot(self,):
         """The Bokeh Map"""
-        return self._map_plot(self.dataset_name, self.year)
+        return self._map_plot(self.dataset_name, self.year,)
 
     @lru_cache(2048)
-    def _map_plot(self, name: str, year: int):
+    def _map_plot(
+        self, name: str, year: int,
+    ):
         if name and year:
-            shape_data, key = self.get_owid_data(
+            (shape_data, key,) = self.get_owid_data(
                 self.owid_data_sets, self.shape_data, name=name, year=year,
             )
-            return self.get_map_plot(shape_data, key, key)
+            return self.get_map_plot(shape_data, key, key,)
         return None
 
     @param.depends("dataset_name")
-    def download_link(self) -> str:
+    def download_link(self,) -> str:
         """A HTML string to enable download of the data
 
         Returns:
@@ -124,8 +132,12 @@ class OwidDashboard(param.Parameterized):
     @lru_cache(2048)
     def get_shape_data() -> gpd.geodataframe.GeoDataFrame:
         """Loads the shape data of the map"""
-        shape_data = gpd.read_file(SHAPEFILE)[["ADMIN", "ADM0_A3", "geometry"]]
-        shape_data.columns = ["country", "country_code", "geometry"]
+        shape_data = gpd.read_file(SHAPEFILE)[["ADMIN", "ADM0_A3", "geometry",]]
+        shape_data.columns = [
+            "country",
+            "country_code",
+            "geometry",
+        ]
         shape_data = shape_data.drop(shape_data.index[159])
         return shape_data
 
@@ -141,7 +153,7 @@ class OwidDashboard(param.Parameterized):
 
     @staticmethod
     @lru_cache(2048)
-    def get_owid_df(url) -> pd.DataFrame:
+    def get_owid_df(url,) -> pd.DataFrame:
         """The DataFrame of data from Owid"""
         return pd.read_csv(url)
 
@@ -171,12 +183,15 @@ class OwidDashboard(param.Parameterized):
         owid_data = cls.get_owid_df(url)
         if year is not None:
             owid_data = owid_data[owid_data["Year"] == year]
-        merged = shape_data.merge(owid_data, left_on="country", right_on="Entity", how="left")
+        merged = shape_data.merge(owid_data, left_on="country", right_on="Entity", how="left",)
 
         if key is None:
             key = owid_data.columns[2]
         merged[key] = merged[key].fillna(0)
-        return merged, key
+        return (
+            merged,
+            key,
+        )
 
     @staticmethod
     def to_geo_json_data_source(data: gpd.geodataframe.GeoDataFrame,) -> GeoJSONDataSource:
@@ -206,12 +221,12 @@ class OwidDashboard(param.Parameterized):
         palette = brewer["OrRd"][8]
         palette = palette[::-1]
         vals = shape_data[value_column]
-        color_mapper = LinearColorMapper(palette=palette, low=vals.min(), high=vals.max())
+        color_mapper = LinearColorMapper(palette=palette, low=vals.min(), high=vals.max(),)
         color_bar = ColorBar(
             color_mapper=color_mapper,
             label_standoff=8,
             height=20,
-            location=(0, 0),
+            location=(0, 0,),
             orientation="horizontal",
         )
 
@@ -225,13 +240,15 @@ class OwidDashboard(param.Parameterized):
             fill_alpha=1,
             line_width=0.5,
             line_color="black",
-            fill_color={"field": value_column, "transform": color_mapper},
+            fill_color={"field": value_column, "transform": color_mapper,},
         )
-        plot.add_layout(color_bar, "below")
+        plot.add_layout(
+            color_bar, "below",
+        )
         plot.toolbar.logo = None
         return plot
 
-    def view(self):
+    def view(self,):
         """Map dashboard"""
         css = """
 .bk.owid-card {
@@ -247,9 +264,9 @@ class OwidDashboard(param.Parameterized):
             self.param.dataset_name,
             self.map_plot,
             self.param.year,
-            pn.Row(pn.layout.HSpacer(), self.download_link, sizing_mode="stretch_width"),
+            pn.Row(pn.layout.HSpacer(), self.download_link, sizing_mode="stretch_width",),
             css_classes=["owid-content"],
-            margin=(10, 12, 12, 10),
+            margin=(10, 12, 12, 10,),
             sizing_mode="stretch_width",
         )
         card = pn.Column(

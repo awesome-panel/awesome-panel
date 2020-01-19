@@ -15,7 +15,7 @@ from recommonmark.parser import CommonMarkParser  # type: ignore
 
 
 def docstring(
-    app, what, name, obj, options, lines
+    app, what, name, obj, options, lines,
 ):  # pylint: disable=unused-argument, too-many-arguments
     """Helper function to render docstring using markdown"""
     md = "\n".join(lines)
@@ -26,9 +26,11 @@ def docstring(
         lines.append(line)
 
 
-def setup(app):
+def setup(app,):
     """Setups the Sphinx app"""
-    app.connect("autodoc-process-docstring", docstring)
+    app.connect(
+        "autodoc-process-docstring", docstring,
+    )
 
 
 # -- Project information -----------------------------------------------------
@@ -72,7 +74,11 @@ templates_path = ["_templates"]
 source_parsers = {".md": CommonMarkParser}
 
 # The suffix of source filenames.
-source_suffix = [".rst", ".md", ".ipynb"]
+source_suffix = [
+    ".rst",
+    ".md",
+    ".ipynb",
+]
 
 # The master toctree document.
 master_doc = "index"
@@ -87,7 +93,11 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
+exclude_patterns = [
+    "_build",
+    "Thumbs.db",
+    ".DS_Store",
+]
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = "sphinx"
@@ -128,7 +138,7 @@ html_static_path = ["_static"]
 htmlhelp_basename = "AwesomePaneldoc"
 
 
-latex_elements: Dict[str, str] = {
+latex_elements: Dict[str, str,] = {
     # The paper size ('letterpaper' or 'a4paper').
     #
     # 'papersize': 'letterpaper',

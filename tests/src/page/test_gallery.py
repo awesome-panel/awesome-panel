@@ -17,9 +17,9 @@ def test_gallery():
 
     """
     page_outlet = Column(sizing_mode="stretch_width")
-    page = gallery.Gallery(page_outlet=page_outlet, apps_in_gallery=APPS_IN_GALLERY).view()
+    page = gallery.Gallery(page_outlet=page_outlet, apps_in_gallery=APPS_IN_GALLERY,).view()
     page_outlet[:] = [page]
-    return TestApp(test_gallery, page_outlet)
+    return TestApp(test_gallery, page_outlet,)
 
 
 if __name__.startswith("bk"):

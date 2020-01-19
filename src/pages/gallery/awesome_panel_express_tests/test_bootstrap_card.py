@@ -43,8 +43,8 @@ def test_card():
     And the card it self is full width responsive by default.
     """
 
-    card = pnx.Card("Card - Header and Body", TEXT)
-    return TestApp(test_card, card, width=600, background="ghostwhite")
+    card = pnx.Card("Card - Header and Body", TEXT,)
+    return TestApp(test_card, card, width=600, background="ghostwhite",)
 
 
 def test_card_fixed_width():
@@ -55,8 +55,8 @@ def test_card_fixed_width():
 
     And the card it self is fixed to 300px
     """
-    card = pnx.Card("Card - Fixed Width", TEXT, width=300)
-    return TestApp(test_card_fixed_width, card, width=600, background="ghostwhite")
+    card = pnx.Card("Card - Fixed Width", TEXT, width=300,)
+    return TestApp(test_card_fixed_width, card, width=600, background="ghostwhite",)
 
 
 def _get_chart_data() -> pd.DataFrame:
@@ -68,7 +68,7 @@ def _get_chart_data() -> pd.DataFrame:
 
     chart_data = {
         "Day": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",],
-        "Orders": [15539, 21345, 18483, 24003, 23489, 24092, 12034],
+        "Orders": [15539, 21345, 18483, 24003, 23489, 24092, 12034,],
     }
     return pd.DataFrame(chart_data)
 
@@ -79,16 +79,19 @@ def _holoviews_chart():
     line_plot = data.hvplot.line(
         x="Day", y="Orders", width=None, height=500, line_color="#007BFF", line_width=6,
     )
-    scatter_plot = data.hvplot.scatter(x="Day", y="Orders", height=300).opts(
-        marker="o", size=10, color="#007BFF"
+    scatter_plot = data.hvplot.scatter(x="Day", y="Orders", height=300,).opts(
+        marker="o", size=10, color="#007BFF",
     )
     fig = line_plot * scatter_plot
-    gridstyle = {"grid_line_color": "black", "grid_line_width": 0.1}
+    gridstyle = {
+        "grid_line_color": "black",
+        "grid_line_width": 0.1,
+    }
     fig = fig.opts(
         responsive=True,
         toolbar=None,
-        yticks=list(range(12000, 26000, 2000)),
-        ylim=(12000, 26000),
+        yticks=list(range(12000, 26000, 2000,)),
+        ylim=(12000, 26000,),
         gridstyle=gridstyle,
         show_grid=True,
     )
@@ -103,8 +106,8 @@ def test_card_with_plot():
 
     And the card it self is fixed is full width responsive
     """
-    card = pnx.Card("Card With Plot", _holoviews_chart(), width=600)
-    return TestApp(test_card_with_plot, card)
+    card = pnx.Card("Card With Plot", _holoviews_chart(), width=600,)
+    return TestApp(test_card_with_plot, card,)
 
 
 def test_card_with_multiple_panels():
@@ -127,7 +130,7 @@ def test_card_with_multiple_panels():
         [_holoviews_chart(), "Awesome Panel! " * 50, _holoviews_chart(), "Awesome Panel! " * 50,],
         width=600,
     )
-    return TestApp(test_card_with_multiple_panels, card)
+    return TestApp(test_card_with_multiple_panels, card,)
 
 
 def test_card_collapsable():
@@ -148,9 +151,12 @@ def test_card_collapsable():
     - I would like to change the collapse button callback from a Python callback to JS callback.
     """
     card = pnx.Card(
-        "Card with Plot", [_holoviews_chart(), "Awesome Panel! " * 50], collapsable=True, width=600,
+        "Card with Plot",
+        [_holoviews_chart(), "Awesome Panel! " * 50,],
+        collapsable=True,
+        width=600,
     )
-    return TestApp(test_card_collapsable, card, pn.layout.HSpacer(height=500))
+    return TestApp(test_card_collapsable, card, pn.layout.HSpacer(height=500),)
 
 
 def view() -> pn.Column:

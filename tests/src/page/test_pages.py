@@ -3,7 +3,10 @@ import pytest
 
 import awesome_panel.express as pnx
 from awesome_panel.express.testing import TestApp
-from src.pages import home, resources
+from src.pages import (
+    home,
+    resources,
+)
 
 pnx.bootstrap.extend()
 
@@ -13,7 +16,7 @@ def test_home():
     """Test that we can see the home page
 
     """
-    return TestApp(test_home, home.view())
+    return TestApp(test_home, home.view(),)
 
 
 @pytest.mark.panel
@@ -21,7 +24,7 @@ def test_resources():
     """Test that we can see the resources page
 
     """
-    return TestApp(test_resources, resources.view())
+    return TestApp(test_resources, resources.view(),)
 
 
 if __name__.startswith("bk"):

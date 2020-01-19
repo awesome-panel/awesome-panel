@@ -7,7 +7,7 @@ from awesome_panel.express.testing import TestApp
 
 def test_divider():
     """A manual test of the horizontal divider stretching to full width"""
-    return TestApp(test_divider, pnx.Divider(), sizing_mode="stretch_width")
+    return TestApp(test_divider, pnx.Divider(), sizing_mode="stretch_width",)
 
 
 def view() -> pn.Column:
@@ -16,7 +16,7 @@ def view() -> pn.Column:
     Returns:
         pn.Column -- A Column containing all the tests
     """
-    return pn.Column(pnx.Markdown(__doc__), test_divider())
+    return pn.Column(pnx.Markdown(__doc__), test_divider(),)
 
 
 if __name__.startswith("bk"):

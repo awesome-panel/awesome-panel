@@ -1,10 +1,10 @@
+import pandas as pd
 import panel as pn
 import plotly.express as px
-import pandas as pd
 
 DATA = {
-    "x": [1, 2, 3, 4],
-    "y": [2, 4, 6, 8],
+    "x": [1, 2, 3, 4,],
+    "y": [2, 4, 6, 8,],
 }
 pn.extension("plotly")
 
@@ -14,11 +14,11 @@ def dataframe():
 
 
 def chart():
-    return px.line(dataframe(), x="x", y="y")
+    return px.line(dataframe(), x="x", y="y",)
 
 
 def chart_fixed():
-    return px.line(dataframe(), x="x", y="y", width=800, height=300)
+    return px.line(dataframe(), x="x", y="y", width=800, height=300,)
 
 
 def chart_responsive_width():

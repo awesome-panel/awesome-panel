@@ -14,12 +14,12 @@ def test_pn_navigation_button():
     """
     # Given:
     pnx.fontawesome.extend()
-    page = pnx.Header("Button Page", name="Button")
-    page_font_awesome = pnx.Header("Font Awesome Page", name=" Font Awesome")
+    page = pnx.Header("Button Page", name="Button",)
+    page_font_awesome = pnx.Header("Font Awesome Page", name=" Font Awesome",)
     page_outlet = pn.Column(page)
-    button = pnx.NavigationButton(page=page, page_outlet=page_outlet)
+    button = pnx.NavigationButton(page=page, page_outlet=page_outlet,)
     button_font_awesome = pnx.NavigationButton(
-        page=page_font_awesome, page_outlet=page_outlet, css_classes=["pab", "pa-twitter"],
+        page=page_font_awesome, page_outlet=page_outlet, css_classes=["pab", "pa-twitter",],
     )
     app = pn.Column(
         pnx.Markdown(test_pn_navigation_button.__doc__),
@@ -39,15 +39,18 @@ def test_pn_navigation():
     - Page 1 is shown by default.
     - Can navigate to Page 1 and Page 2
     """
-    page1 = pnx.Markdown("## Page 1", name="Page 1")
-    page2 = pnx.Markdown("## Page 2", name="Page 2")
+    page1 = pnx.Markdown("## Page 1", name="Page 1",)
+    page2 = pnx.Markdown("## Page 2", name="Page 2",)
 
-    pages = [page1, page2]
+    pages = [
+        page1,
+        page2,
+    ]
     content = pn.Column()
     sidebar = pn.Column()
-    app = pn.Column(pnx.Markdown(test_pn_navigation.__doc__), sidebar, content)
+    app = pn.Column(pnx.Markdown(test_pn_navigation.__doc__), sidebar, content,)
 
-    menu = pnx.NavigationMenu(pages=pages, page_outlet=content)
+    menu = pnx.NavigationMenu(pages=pages, page_outlet=content,)
     sidebar.append(menu)
     app.servable("test_pn_navigation")
 
@@ -61,18 +64,26 @@ def test_pn_navigation_with_font_awesome():
     - The third button has a twitter icon as specified
     """
     pnx.fontawesome.extend()
-    page1 = pnx.Markdown("## None", name="Page None")
-    page2 = pnx.Markdown("## Empty", name="Page Empty")
-    page3 = pnx.Markdown("## Twitter", name=" Page Twitter")
+    page1 = pnx.Markdown("## None", name="Page None",)
+    page2 = pnx.Markdown("## Empty", name="Page Empty",)
+    page3 = pnx.Markdown("## Twitter", name=" Page Twitter",)
 
-    pages = [page1, page2, page3]
+    pages = [
+        page1,
+        page2,
+        page3,
+    ]
     content = pn.Column()
     sidebar = pn.Column()
-    app = pn.Column(pnx.Markdown(test_pn_navigation_with_font_awesome.__doc__), sidebar, content)
+    app = pn.Column(pnx.Markdown(test_pn_navigation_with_font_awesome.__doc__), sidebar, content,)
 
-    css_classes = [None, [], ["pab", "pa-twitter"]]
+    css_classes = [
+        None,
+        [],
+        ["pab", "pa-twitter",],
+    ]
 
-    menu = pnx.NavigationMenu(pages=pages, page_outlet=content, css_classes=css_classes)
+    menu = pnx.NavigationMenu(pages=pages, page_outlet=content, css_classes=css_classes,)
     sidebar.append(menu)
     app.servable("test_pn_navigation_with_font_awesome")
 

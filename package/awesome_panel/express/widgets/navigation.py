@@ -1,5 +1,9 @@
 """This module contains a navigation menu to be used to select between different pages"""
-from typing import List, Optional, Union
+from typing import (
+    List,
+    Optional,
+    Union,
+)
 
 import panel as pn
 
@@ -11,7 +15,7 @@ class NavigationButton(pn.widgets.Button):
 
     def __init__(
         self,
-        page: Union[pn.layout.Panel, pn.pane.Pane, pn.widgets.Widget],
+        page: Union[pn.layout.Panel, pn.pane.Pane, pn.widgets.Widget,],
         page_outlet: pn.layout.ListPanel,
         **kwargs,
     ):
@@ -37,7 +41,7 @@ class NavigationButton(pn.widgets.Button):
             kwargs["width"] = 165
         super().__init__(**kwargs)
 
-        def navigate_to_page(event):  # pylint: disable=unused-argument
+        def navigate_to_page(event,):  # pylint: disable=unused-argument
             page_outlet[:] = [pnx.spinners.DefaultSpinner().center()]
             page_outlet[:] = [page_]
 
@@ -49,7 +53,7 @@ class NavigationMenu(pn.Column):
 
     def __init__(  # pylint: disable=too-many-arguments
         self,
-        pages: List[Union[pn.layout.Panel, pn.pane.Pane]],
+        pages: List[Union[pn.layout.Panel, pn.pane.Pane,]],
         page_outlet: pn.layout.ListPanel,
         *args,
         css_classes: Optional[List[Optional[List[str]]]] = None,
@@ -70,11 +74,11 @@ class NavigationMenu(pn.Column):
         if css_classes:
             pnx.fontawesome.extend()
             menuitems = [
-                NavigationButton(page, page_outlet=page_outlet, css_classes=css)
-                for page, css in zip(pages, css_classes)
+                NavigationButton(page, page_outlet=page_outlet, css_classes=css,)
+                for page, css in zip(pages, css_classes,)
             ]
         else:
-            menuitems = [NavigationButton(page=page, page_outlet=page_outlet) for page in pages]
+            menuitems = [NavigationButton(page=page, page_outlet=page_outlet,) for page in pages]
 
         # title = pnx.SubHeader(title, text_align=text_align)
         title = pn.layout.HSpacer(height=20)

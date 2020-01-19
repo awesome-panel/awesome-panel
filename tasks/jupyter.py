@@ -3,6 +3,6 @@ from invoke import task
 
 
 @task
-def notebook(context):
+def notebook(context,):
     """Run jupyter notebook"""
     context.run("jupyter notebook")

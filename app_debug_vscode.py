@@ -5,7 +5,7 @@ import ptvsd
 # pylint: disable=invalid-name
 print("Ready to attach the VS Code debugger")
 
-ptvsd.enable_attach(address=("localhost", 5678))
+ptvsd.enable_attach(address=("localhost", 5678,))
 ptvsd.wait_for_attach()
 
 # START YOUR CODE HERE

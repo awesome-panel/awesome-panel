@@ -34,7 +34,9 @@ class HeadingBase(pn.pane.Markdown):
             kwargs["style"]["text-align"] = text_align
         else:
             kwargs["style"] = {"text-align": text_align}
-        super().__init__(heading, sizing_mode=sizing_mode, **kwargs)
+        super().__init__(
+            heading, sizing_mode=sizing_mode, **kwargs,
+        )
 
 
 class Title(HeadingBase):

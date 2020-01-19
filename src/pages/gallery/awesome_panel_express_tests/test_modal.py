@@ -12,7 +12,10 @@ The implementation is inspired by
 
 import panel as pn
 
-from awesome_panel.express import Divider, InfoAlert
+from awesome_panel.express import (
+    Divider,
+    InfoAlert,
+)
 from awesome_panel.express.bootstrap.modal import Modal
 from awesome_panel.express.testing import TestApp
 
@@ -36,7 +39,7 @@ BODY_OPTIONS = {
 def test_modal():
     """A test that a modal can be opened using a button"""
     open_button = MODAL.get_open_modal_button("Open")
-    return TestApp(test_modal, open_button)
+    return TestApp(test_modal, open_button,)
 
 
 def test_modal_settings():
@@ -55,8 +58,10 @@ def test_modal_settings():
         name="Select body of modal", value=options[0:1], options=options,
     )
 
-    @pn.depends(body_selector, watch=True)
-    def set_modal_body(_):  # pylint: disable=unused-variable
+    @pn.depends(
+        body_selector, watch=True,
+    )
+    def set_modal_body(_,):  # pylint: disable=unused-variable
         if body_selector.value:
             # pylint: disable=not-an-iterable
             MODAL.body = [BODY_OPTIONS[option] for option in body_selector.value]

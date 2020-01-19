@@ -105,23 +105,23 @@ def main():
         width=SIDEBAR_WIDTH,
         css_classes=["sidebar"],
     )
-    content = pn.Column(width_policy="max", margin=(25, 50, 25, 50), css_classes=["content"])
+    content = pn.Column(width_policy="max", margin=(25, 50, 25, 50,), css_classes=["content"],)
 
     about = pn.layout.Row(pn.pane.Markdown(ABOUT))
     image = pn.pane.PNG(IMAGE)
-    info = pn.pane.Markdown(INFO, background="#d1ecf1")
-    page = pn.Column(about, image, info, sizing_mode="stretch_width", css_classes=["about"])
+    info = pn.pane.Markdown(INFO, background="#d1ecf1",)
+    page = pn.Column(about, image, info, sizing_mode="stretch_width", css_classes=["about"],)
 
     content.append(page)
 
     body = pn.Column(
-        header, pn.Row(sidebar, content), sizing_mode="stretch_width", background="darkgray",
+        header, pn.Row(sidebar, content,), sizing_mode="stretch_width", background="darkgray",
     )
 
     items = {
         "body": body,
     }
-    template = pn.Template(template=TEMPLATE, items=items)
+    template = pn.Template(template=TEMPLATE, items=items,)
     template.servable()
 
 

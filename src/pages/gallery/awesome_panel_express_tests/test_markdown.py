@@ -29,7 +29,7 @@ def test_markdown():
     """
     return TestApp(
         test_markdown,
-        pnx.Markdown("# Header", name="basic", background="lightblue"),
+        pnx.Markdown("# Header", name="basic", background="lightblue",),
         sizing_mode="stretch_width",
         background="lightgray",
         max_width=600,
@@ -43,7 +43,7 @@ def test_markdown_from_file():
     """
     return TestApp(
         test_markdown_from_file,
-        pnx.Markdown(path=TEST_MD_FILE, name="file", background="lightblue"),
+        pnx.Markdown(path=TEST_MD_FILE, name="file", background="lightblue",),
     )
 
 
@@ -76,7 +76,7 @@ return TestApp(
 
     return TestApp(
         test_markdown_code_block,
-        pnx.Markdown(code_block, name="code block", background="lightblue"),
+        pnx.Markdown(code_block, name="code block", background="lightblue",),
     )
 
 

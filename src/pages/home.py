@@ -10,4 +10,4 @@ HOME_PATH = pathlib.Path(__file__).parent / "home.md"
 
 def view() -> Column:
     """The home view of awesome-panel.org"""
-    return Column(Markdown(path=HOME_PATH), name="Home", sizing_mode="stretch_width")
+    return Column(Markdown(path=HOME_PATH), name="Home", sizing_mode="stretch_width",)

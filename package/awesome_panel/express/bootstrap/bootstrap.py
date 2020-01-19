@@ -1,8 +1,8 @@
 """Bootstrap inspired functionality"""
 import panel as pn
 
-from awesome_panel.express.pane.panes import Markdown
 from awesome_panel.express.assets import BOOTSTRAP_PANEL_EXPRESS_CSS
+from awesome_panel.express.pane.panes import Markdown
 
 BOOTSTRAP_CSS_URL = "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 
@@ -55,8 +55,13 @@ class InfoAlert(Markdown):
             if not "alert-info" in kwargs["css_classes"]:
                 kwargs["css_classes"].append("alert-info")
         else:
-            kwargs["css_classes"] = ["alert", "alert-info"]
-        super().__init__(text, **kwargs)
+            kwargs["css_classes"] = [
+                "alert",
+                "alert-info",
+            ]
+        super().__init__(
+            text, **kwargs,
+        )
 
     raw_css = """
 .bk.alert {
@@ -104,8 +109,13 @@ class WarningAlert(pn.pane.Markdown):
             if not "alert-warning" in kwargs["css_classes"]:
                 kwargs["css_classes"].append("alert-warning")
         else:
-            kwargs["css_classes"] = ["alert", "alert-warning"]
-        super().__init__(text, **kwargs)
+            kwargs["css_classes"] = [
+                "alert",
+                "alert-warning",
+            ]
+        super().__init__(
+            text, **kwargs,
+        )
 
     raw_css = """
 .bk.alert {
@@ -153,8 +163,13 @@ class ErrorAlert(pn.pane.Markdown):
             if not "alert-error" in kwargs["css_classes"]:
                 kwargs["css_classes"].append("alert-error")
         else:
-            kwargs["css_classes"] = ["alert", "alert-error"]
-        super().__init__(text, **kwargs)
+            kwargs["css_classes"] = [
+                "alert",
+                "alert-error",
+            ]
+        super().__init__(
+            text, **kwargs,
+        )
 
     raw_css = """
 .bk.alert {

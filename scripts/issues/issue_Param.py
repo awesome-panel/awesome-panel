@@ -21,9 +21,11 @@ example = Example()
 
 view1 = pn.Column(example.param)
 view2 = pn.Param(example.param, widgets={"show_me2": {"width": 200,}, "show_me3": {"width": 300},},)
-view3 = pn.Param(example, parameters=["show_me2", "show_me3"],
-                 widgets={"show_me2": {"width": 200,},
-                          "show_me3": {"width": 300,}})
+view3 = pn.Param(
+    example,
+    parameters=["show_me2", "show_me3"],
+    widgets={"show_me2": {"width": 200,}, "show_me3": {"width": 300,}},
+)
 
 app = pn.Column(
     __doc__,
@@ -34,10 +36,3 @@ app = pn.Column(
     ),
 )
 app.servable()
-
-**`default_layout`** (ClassSelector) A layout like Column, Row etc or a Custom GridBox or GridSpec.
-**`expand`** (bool) Whether or not to expand
-**`expand_button`** (None or Button) The expand button
-**`expand_layout`** (ClassSelector) A layout like Column, Row etc. or a Custom GridBox or GridSpec.
-**`show_labels`** (bool) Whether or not to show labels
-**`show_name`** (bool) Whether or not to show the name of the Parameterized Class

@@ -66,7 +66,7 @@ Or Navigate to the **Limitations Page** to learn of some of the limitations of P
 I've experienced."""
     return TestApp(
         test_info_alert_height_problem,
-        pnx.InfoAlert(text, sizing_mode="stretch_width"),
+        pnx.InfoAlert(text, sizing_mode="stretch_width",),
         sizing_mode="stretch_width",
     )
 
