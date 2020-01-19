@@ -9,7 +9,13 @@ ENV PYTHONUNBUFFERED 1
 RUN apt-get update && apt-get install -y \
     dpkg-dev \
     gcc \
-    git
+    git \
+    curl \
+    gnupg
+
+RUN curl -sL https://deb.nodesource.com/setup_13.x  | bash -
+RUN apt-get -y install nodejs
+RUN npm install
 
 WORKDIR /app
 
