@@ -24,6 +24,11 @@ from src.pages import (
     issues,
     resources,
 )
+from src.pages.gallery.custom_bokeh_model.custom import Custom  # type: ignore
+
+# Hack to get the custom_bokeh_model app working.
+# We need to instantiate the model before running servable
+Custom()
 
 MENU_BUTTON_CSS_CLASSES: Optional[List[Optional[List[str]]]] = [
     ["navigation", "pas", "pa-home",],
