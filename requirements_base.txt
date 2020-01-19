@@ -57,3 +57,4 @@ doc8 # Doc8 is an opinionated style checker for rst (with basic support for plai
 # sphinxcontrib.actdiag # Creates diagram images from simple text files. See http://blockdiag.com/en/actdiag/index.html
 # nbsphinx # Enables you to write your documentation in Jupyter Notebooks. See https://nbsphinx.readthedocs.io/en/0.4.2/
 yahooquery==1.0.11
+pydeck==0.2.0
