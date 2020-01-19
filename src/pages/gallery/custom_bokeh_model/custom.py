@@ -16,7 +16,10 @@ The best starting point for Custom Bokeh Models is to get inspiration from
 - [Bokeh TypeScript Models](https://github.com/bokeh/bokeh/tree/master/bokehjs/src/lib/models)
 - [Panel Models](https://github.com/holoviz/panel/tree/master/panel/models)
 
-With some help I succeeded in creating the below Bokeh Custom Model
+With some help I succeeded in creating the below Bokeh Custom Model.
+
+Please note you need to instantiate the Custom Model before you run `.servable()` in order to get
+it compiled.
 """
 
 import pathlib
