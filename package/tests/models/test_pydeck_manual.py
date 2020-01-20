@@ -1,18 +1,11 @@
-"""[Deck.gl](https://deck.gl/#/) is an awesome WebGL-powered framework for visual exploratory data
-analysis of large datasets. And PyDeck provides Python bindings via
-[PyDeck](https://deckgl.readthedocs.io/en/latest/)
+"""In this module we test the PyDeck Bokeh Model
 
-
-It would be so nice to be able to use in Panel. See
-[Feature Request 957](https://github.com/holoviz/panel/issues/957).
-
-For now i've implemented a first, very simple, one way communication.
-I.e. you can declare your visualisation in Python using PyDeck and display it in your browser.
+These test can be run partically via pytest and partially by running
+`panel serve` on this file and manually verifying the results
 """
 import panel as pn
 import pydeck as pdk
-
-import awesome_panel.express as pnx
+from awesome_panel.express.models.pydeck import PyDeckPlot
 from awesome_panel.express.testing import TestApp
 
 UK_ACCIDENTS_DATA = (
@@ -20,14 +13,13 @@ UK_ACCIDENTS_DATA = (
     "deck.gl-data/master/examples/3d-heatmap/heatmap-data.csv"
 )
 
-pnx.PyDeck.extend()
 MAPBOX_KEY = (
     "pk.eyJ1IjoibWFyY3Nrb3ZtYWRzZW4iLCJhIjoiY2s1anMzcG5rMDYzazNvcm10NTFybTE4cSJ9."
     "TV1XBgaMfR-iTLvAXM_Iew"
 )
 
 
-def uk_accidents_example() -> pdk.Deck:
+def uk_accidents_deck() -> pdk.Deck:
     """The UK Accidents Deck
 
     See [PyDec Docs](https://deckgl.readthedocs.io/en/latest/layer.html)
@@ -65,23 +57,30 @@ def uk_accidents_example() -> pdk.Deck:
     return pdk.Deck(layers=[layer], initial_view_state=view_state, mapbox_key=MAPBOX_KEY,)
 
 
-def test_pydeck_pane():
-    """We test that we can display the UK Accidents Data example from the
-    [PyDec Docs](https://deckgl.readthedocs.io/en/latest/layer.html) in Panel."""
-    deck = uk_accidents_example()
-    breakpoint()
-    # deck.to_html("test.html", open_browser=True, notebook_display=False)
-    return TestApp(test_pydeck_pane, pnx.PyDeck(deck).as_pane, width=500, height=400,)
+def test_basic():
+    """A basic test. We test that
+
+    - json_input
+    - mapbox_api_key
+    - tooltip
+
+    is shown"""
+    deck = uk_accidents_deck()
+    plot = PyDeckPlot(
+        json_input=deck.to_json(), mapbox_api_key=deck.mapbox_key, tooltip=deck.deck_widget.tooltip,
+    )
+
+    return TestApp(test_basic, pn.pane.Bokeh(plot))
 
 
 def view() -> pn.Column:
-    """Wraps all tests in a Column that can be included in the Gallery or served independently
+    """Wraps all tests in a Column
 
     Returns:
         pn.Column -- A Column containing all the tests
     """
-    return pn.Column(pnx.Markdown(__doc__), test_pydeck_pane,)
+    return pn.Column(__doc__, test_basic,)
 
 
 if __name__.startswith("bk"):
-    view().servable("test_deck_gl")
+    view().servable("test_pydeck_manual")
