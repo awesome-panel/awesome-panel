@@ -16,8 +16,8 @@ class ActivityView(pn.Column):
     def __init__(
         self,
         parameters: param.parameterized.Parameters,
-        map_plot: pn.pane.Viewable,
-        activity_plots: pn.pane.Viewable,
+        map_plot: pn.viewable.Viewable,
+        activity_plots: pn.viewable.Viewable,
     ):
         super().__init__(
             pn.Param(

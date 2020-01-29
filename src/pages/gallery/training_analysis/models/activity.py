@@ -53,10 +53,10 @@ class Activity(param.Parameterized):
         """
         return activity_plot.map_plot(self.data)
 
-    def view(self,) -> pn.pane.Viewable:
+    def view(self,) -> pn.viewable.Viewable:
         """A view of the Activity
 
         Returns:
-            pn.pane.Viewable: A view of the Activity
+            pn.viewable.Viewable: A view of the Activity
         """
         return activity_view.ActivityView(self.param, self.map_plot, self.activity_plots,)

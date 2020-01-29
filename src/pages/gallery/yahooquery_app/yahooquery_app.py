@@ -119,20 +119,20 @@ class YahooQueryService:
 # TTodo: Move to pnx and create tests
 # TTodo: Make Calendar Event stand beautifully
 # TTodo: Add <hr>
-def pnx_help(python_object: object,) -> pn.pane.Viewable:
+def pnx_help(python_object: object,) -> pn.viewable.Viewable:
     """Helper function that convert a python object into a viewable help text
 
     Args:
         python_object (object): Any python object
 
     Returns:
-        pn.pane.Viewable: A Viewable showing the docstring and more
+        pn.viewable.Viewable: A Viewable showing the docstring and more
     """
     return pnx.Card("Documentation", pnx.Code(str(python_object.__doc__), language="bash",),)
 
 
 # TTodo: Move to pnx and create tests
-def pnx_json(python_object: object, indent=2,) -> pn.pane.Viewable:
+def pnx_json(python_object: object, indent=2,) -> pn.viewable.Viewable:
     """Converts and json serialisabe object into Viewable
 
     Args:
@@ -140,21 +140,21 @@ def pnx_json(python_object: object, indent=2,) -> pn.pane.Viewable:
         indent (int, optional): The indentation level of the json output. Defaults to 2.
 
     Returns:
-        pn.pane.Viewable: [description]
+        pn.viewable.Viewable: [description]
     """
     return pnx.Card(
         "Response", pnx.Code(json.dumps(python_object, indent=indent,), language="json",),
     )
 
 
-def code_card(code: str,) -> pn.pane.Viewable:
+def code_card(code: str,) -> pn.viewable.Viewable:
     """Wraps the code into a Card with "Code" as header and code as body
 
     Args:
         code (str): The code snippet to show
 
     Returns:
-        pn.pane.Viewable: A Card with "Code" as header and code as body.
+        pn.viewable.Viewable: A Card with "Code" as header and code as body.
     """
     return pnx.Card("Code", pnx.Code(code),)
 
@@ -184,11 +184,11 @@ tickers = Ticker("{self.symbols}"")
         return pnx_help(Ticker)
 
     @param.depends("symbols")
-    def view(self,) -> pn.pane.Viewable:
+    def view(self,) -> pn.viewable.Viewable:
         """The main view of the HomePage
 
         Returns:
-            pn.pane.Viewable: The main view of the HomePage
+            pn.viewable.Viewable: The main view of the HomePage
         """
         return pn.Column(
             self._code, pn.layout.HSpacer(height=25), self._help_text, sizing_mode="stretch_width",
@@ -281,11 +281,11 @@ class BasePage(Page):
         )
 
     @param.depends("symbols")
-    def view(self,) -> pn.pane.Viewable:
+    def view(self,) -> pn.viewable.Viewable:
         """The main view of the BasePage
 
         Returns:
-            pn.pane.Viewable: The main view of the BasePage
+            pn.viewable.Viewable: The main view of the BasePage
         """
         return pn.Column(
             self._selections,
@@ -357,11 +357,11 @@ class BaseMultiplePage(Page):
             "Selections", [self.param.all_endpoints, self._endpoints_widget,], sizing_mode=None,
         )
 
-    def view(self,) -> pn.pane.Viewable:
+    def view(self,) -> pn.viewable.Viewable:
         """The main view of the BasePage
 
         Returns:
-            pn.pane.Viewable: The main view of the BasePage
+            pn.viewable.Viewable: The main view of the BasePage
         """
         return pn.Column(
             pn.Row(
@@ -411,11 +411,11 @@ class OptionsPage(Page):
             )
         return pnx_json(data)
 
-    def view(self,) -> pn.pane.Viewable:
+    def view(self,) -> pn.viewable.Viewable:
         """The main view of the OptionsPage
 
         Returns:
-            pn.pane.Viewable: The main view of the OptionsPage
+            pn.viewable.Viewable: The main view of the OptionsPage
         """
         return pn.Column(
             self._code,
@@ -536,11 +536,11 @@ class HistoryPage(Page):
             )
         return pnx_json(data)
 
-    def view(self,) -> pn.pane.Viewable:
+    def view(self,) -> pn.viewable.Viewable:
         """The main view of the OptionsPage
 
         Returns:
-            pn.pane.Viewable: The main view of the OptionsPage
+            pn.viewable.Viewable: The main view of the OptionsPage
         """
         return pn.Column(
             self._param_view,
@@ -559,8 +559,8 @@ class YahooQueryView(pn.Column):
 
     def __init__(
         self,
-        symbols: pn.pane.Viewable,
-        pages: List[Tuple[str, pn.pane.Viewable,]],
+        symbols: pn.viewable.Viewable,
+        pages: List[Tuple[str, pn.viewable.Viewable,]],
         sizing_mode="stretch_width",
         **kwargs,
     ):
@@ -589,25 +589,25 @@ to view the data available to you.
         )
 
     @staticmethod
-    def _symbol_lookup_link() -> pn.pane.Viewable:
+    def _symbol_lookup_link() -> pn.viewable.Viewable:
         return pn.pane.Markdown(
             "<a href='https://finance.yahoo.com/lookup' target='_blank'>"
             "<i class='fas fa-search'></i></a>"
         )
 
     def _symbols_widget(
-        self, symbols: pn.pane.Viewable, sizing_mode: str = "stretch_width",
-    ) -> pn.pane.Viewable:
+        self, symbols: pn.viewable.Viewable, sizing_mode: str = "stretch_width",
+    ) -> pn.viewable.Viewable:
         return pn.Row(symbols, self._symbol_lookup_link(), sizing_mode=sizing_mode,)
 
     @staticmethod
     def pages_view(
-        pages: List[Tuple[str, pn.pane.Viewable,]], sizing_mode: str = "stretch_width",
+        pages: List[Tuple[str, pn.viewable.Viewable,]], sizing_mode: str = "stretch_width",
     ) -> pn.Tabs:
         """A Tabbed view of the pages
 
         Args:
-            pages (List[Tuple[str, pn.pane.Viewable]]): A list of Pages to display
+            pages (List[Tuple[str, pn.viewable.Viewable]]): A list of Pages to display
             sizing_mode (str, optional): The sizing mode of the pages_view. Defaults to \
                 "stretch_width".
 
@@ -639,11 +639,11 @@ class YahooQueryApp(Page):
         for page in self.pages.values():
             page.symbols = self.symbols
 
-    def view(self,) -> pn.pane.Viewable:
+    def view(self,) -> pn.viewable.Viewable:
         """The main view of the app
 
         Returns:
-            pn.pane.Viewable: Serve this via .servable()
+            pn.viewable.Viewable: Serve this via .servable()
         """
         pages_list = [(key, value.view(),) for key, value in self.pages.items()]
 

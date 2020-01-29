@@ -18,7 +18,7 @@ class Card(pn.Column):
     def __init__(
         self,
         header: str,
-        body: Union[pn.pane.Viewable, List[pn.pane.Viewable],],
+        body: Union[pn.viewable.Viewable, List[pn.viewable.Viewable],],
         collapsable: bool = False,
         **kwargs,
     ):
@@ -68,14 +68,14 @@ class Card(pn.Column):
             header_row, content, **kwargs,
         )
 
-    def _get_card_content(self, panels: List[pn.pane.Viewable],) -> pn.pane.Viewable:
+    def _get_card_content(self, panels: List[pn.viewable.Viewable],) -> pn.viewable.Viewable:
         """Combines the list of Viewables into a Viewable with the right css classes
 
         Args:
-            panels (List[pn.pane.Viewable]): A list of Viewables
+            panels (List[pn.viewable.Viewable]): A list of Viewables
 
         Returns:
-            pn.pane.Viewable: A Viewable of the input Viewables with the right css classes applied.
+            pn.viewable.Viewable: A Viewable of the input Viewables with the right css classes applied.
         """
         # Due to https://github.com/holoviz/panel/issues/903 we have to insert the content into a
         # column with relevant margin
@@ -121,7 +121,7 @@ class Card(pn.Column):
         return pn.pane.HTML(object_, **kwargs,)
 
     @staticmethod
-    def get_card_panel(obj, **kwargs,) -> pn.pane.Viewable:
+    def get_card_panel(obj, **kwargs,) -> pn.viewable.Viewable:
         """A Card Panel to be inserted into the body of the Card
 
         Arguments:
@@ -129,7 +129,7 @@ class Card(pn.Column):
             always be converted to a HTML pane
 
         Returns:
-            pn.pane.Viewable -- A Viewable of the obj
+            pn.viewable.Viewable -- A Viewable of the obj
         """
         if "css_classes" not in kwargs:
             kwargs["css_classes"] = []

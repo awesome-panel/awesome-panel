@@ -90,11 +90,11 @@ class ProgressExt(param.Parameterized):
     @param.depends(
         "value", "message", "bar_color",
     )
-    def view(self,) -> pn.pane.Viewable:
+    def view(self,) -> pn.viewable.Viewable:
         """View the widget
 
         Returns:
-            pn.pane.Viewable: Add this to your app to see the progress reported
+            pn.viewable.Viewable: Add this to your app to see the progress reported
         """
         content = []
         if self.value:

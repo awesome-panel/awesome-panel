@@ -69,7 +69,6 @@ def test_pydeck_pane():
     """We test that we can display the UK Accidents Data example from the
     [PyDec Docs](https://deckgl.readthedocs.io/en/latest/layer.html) in Panel."""
     deck = uk_accidents_example()
-    breakpoint()
     # deck.to_html("test.html", open_browser=True, notebook_display=False)
     return TestApp(test_pydeck_pane, pnx.PyDeck(deck).as_pane, width=500, height=400,)
 

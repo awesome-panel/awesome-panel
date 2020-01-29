@@ -38,11 +38,11 @@ STYLE = """
 """
 
 
-def view() -> pn.pane.Viewable:
+def view() -> pn.viewable.Viewable:
     """A View of an Athlete and his Power Curve
 
     Returns:
-        pn.pane.Viewable: The main Viewable of the app.
+        pn.viewable.Viewable: The main Viewable of the app.
     """
 
     athlete = Athlete()
