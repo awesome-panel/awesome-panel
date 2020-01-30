@@ -10,3 +10,4 @@ My tips+tricks to mitigate this is.
 - Don’t do lots of nested Columns and Rows in Panel. Use pn.Param if you have a model with a lot of parameters.
 - Don’t configure layout settings like width, height, margin etc. of Panel Columns and Rows via Css. Use Column and Row attributes in Panel for that.
 - Use FireFox instead of Chrome. It's much faster.
+- Swap out all content of a layout at once (`col[:]=[objects]`) instead of multiple times (`for obj in objects: col.append(obj)`)

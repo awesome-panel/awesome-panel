@@ -4,12 +4,13 @@ Let me start out by saying that I think that **Panel is already very powerfull a
 
 But I have experienced som issues and rough edges as I've developed this site.
 
-By listing them here I hope to give you an impression of the current issues and rough edges of developing a multipage application in Panel. I also hope they well get attention by the community (including me) and be solved to lower the friction of create awesome analytical apps in Panel.
+By discussing them here I hope to give you an impression of the current issues and rough edges of developing a multipage application in Panel. I also hope they well get attention by the community (including me) and be solved to lower the friction of create awesome analytical apps in Panel.
+
+You can find an overview of all my +50 open and closed issues + feature requests [here](https://github.com/holoviz/panel/issues?utf8=%E2%9C%93&q=author%3AMarcSkovMadsen+).
 
 ## The Bokeh Layout Engine is not always your friend
 
-- The Bokeh layout engine works against you when you try to create advanced layouts. Things do not work or render as expected.
-- Panel/ Bokeh applications are especially slow in Chrome. See [Bokeh Issue 9515](https://github.com/bokeh/bokeh/issues/9515)
+- The Bokeh layout engine can work against you when you try to create advanced layouts. Things do not perform or render as expected.
 
 To circumvent these issues my most important learning is to **KEEP IT SIMPLE STUPID!**
 
@@ -17,6 +18,10 @@ To circumvent these issues my most important learning is to **KEEP IT SIMPLE STU
 - Don't do lots of nested Columns and Rows in Panel.
 - Don't configure layout settings like width, height, margin etc. of Panel Columns and Rows via Css.
     - Use Column and Row attributes in Panel for that.
+
+### Solved
+
+- Panel/ Bokeh applications are especially slow in Chrome. See [Bokeh Issue 9515](https://github.com/bokeh/bokeh/issues/9515)
 
 ## The Bokeh server does not Support Multiprocessing in Practice
 
@@ -26,30 +31,32 @@ To circumvent these issues my most important learning is to **KEEP IT SIMPLE STU
 
 See GitHub issues
 
-- Change search functionality at [https://panel.pyviz.org/](https://panel.pyviz.org/) to return Panel specific results. [Issue 832](https://github.com/holoviz/panel/issues/832)
 - Please add more structure, search, navigation and content to Panel Documentation. [Issue 833](https://github.com/holoviz/panel/issues/833)
 - Please add the wonderfull help text to the docstrings to get context help in editor. [Issue 837](https://github.com/holoviz/panel/issues/837)
-- Make Panel help text readable on Windows in Command Prompt and Git bash. [Issue 836](https://github.com/holoviz/panel/issues/836)
 
 ### Solved
 
 - Create Discuss Forum to foster community discussions and knowledge sharing on Panel. [Issue 831](https://github.com/holoviz/panel/issues/831)
+- Make Panel help text readable on Windows in Command Prompt and Git bash. [Issue 836](https://github.com/holoviz/panel/issues/836)
+- Change search functionality at [https://panel.pyviz.org/](https://panel.pyviz.org/) to return Panel specific results. [Issue 832](https://github.com/holoviz/panel/issues/832)
 
 ## Markdown is not well supported
 
 See
 
-- Support rendering of indented markdown. [Issue 828](https://github.com/holoviz/panel/issues/828).
 - A simple layout with a column and 2 markdown panes displays on top of each other [Issue 835](https://github.com/holoviz/panel/issues/835).
     - If there is a large image in the markdown the page is not rendered correctly. The Bokeh layout engine does not get the height and width correctly.
-- No Code syntax highlighting. [Issue 391](https://github.com/holoviz/panel/issues/391)
 - Wide Images can overflow. Would be nice if `max-width: 100%` was set by default.
+
+### Solved
+
+- Support rendering of indented markdown. [Issue 828](https://github.com/holoviz/panel/issues/828).
+- No Code syntax highlighting. [Issue 391](https://github.com/holoviz/panel/issues/391)
 - Cannot get full width widthout lots of empty space at bottom. [Issue 848](https://github.com/holoviz/panel/issues/848)
 
 ## Plotly Plots are not well supported
 
 - Plotly is not yet responsive in Panel. See [Issue 822](https://github.com/holoviz/panel/issues/822)
-- Plotly plots loads a lot slower than HoloViews plots.
 
 ## Panels, Panes and Widgets are not full width, responsive by default
 
@@ -60,11 +67,8 @@ Panes and Widgets are not configured to be full width, responsive by default. I 
 I believe I experience some rough edges for being one of the first to create a multipage app in Panel with markdown (with images and code). For example
 
 - DataFrame widget raises exception if two columns have the same names. See [Issue 821](https://github.com/holoviz/panel/issues/821).
-- Sizing_mode="stretch_width" does not work for DataFrame panes. See [Issue 823](https://github.com/holoviz/panel/issues/823)
 - Cannot dynamically add and remove panes [Issue 838](https://github.com/holoviz/panel/issues/838)
 - Images does not support src urls and alt texts [Issue 841](https://github.com/holoviz/panel/issues/841)
-- Plotly does not show when dynamically adding and removing pages without adding plotly extension. See [Issue 840](https://github.com/holoviz/panel/issues/840)
-- Css_classes attribute does not work for the Holoviews Panel [Issue 902](https://github.com/holoviz/panel/issues/902)
 
 and I sometimes get error messages like this
 
@@ -80,6 +84,12 @@ and I sometimes get error messages like this
 ```
 
 I've been told I can ignore these as they don't matter.
+
+### Solved
+
+- Sizing_mode="stretch_width" does not work for DataFrame panes. See [Issue 823](https://github.com/holoviz/panel/issues/823)
+- Css_classes attribute does not work for the Holoviews Panel [Issue 902](https://github.com/holoviz/panel/issues/902)
+- Plotly does not show when dynamically adding and removing pages without adding plotly extension. See [Issue 840](https://github.com/holoviz/panel/issues/840)
 
 ## Bootstrap CSS and Javascript does not play nicely with Bokeh HTML, CSS and Javascript
 
@@ -127,7 +137,3 @@ I would like to be able to keep the server app state in sync with the client app
 - If I change my app state the parameters of my state should be available in the browser url for bookmarking and sharing.
 
 BUT. I FOUND A WAY TO PARTIALLY IMPLEMENT IT MY SELF via Javascript.
-
-## I Could not get independent scrollbars working
-
-I would have liked the sidebar and content sections to have independent vertical scrollbars that only show up if needed. I could not get that working. I guess it's just my CSS skills that are too poor.
