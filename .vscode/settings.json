@@ -8,5 +8,6 @@
     "[md]": {
         "editor.tabSize": 4
     },
-    "autoDocstring.docstringFormat": "google"
+    "autoDocstring.docstringFormat": "google",
+    "restructuredtext.confPath": "${workspaceFolder}\\docs"
 }

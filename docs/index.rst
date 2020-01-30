@@ -30,6 +30,7 @@ This is the documentation of the **Awesome Panel Project** including the
    :caption: Tutorials
 
    How to use VS Code with Panel <vscode.md>
+   Tips+Tricks for creating performant Apps <performance.md>
 
 
 Indices and tables
