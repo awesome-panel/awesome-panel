@@ -15,6 +15,14 @@ from awesome_panel.shared.models import Resource
 
 RESOURCES = [
     Resource(
+        name="VTK Examples by xavArtley",
+        url="https://xavartley.github.io/#panel/vtk_examples/Gallery_VTK.html",
+        thumbnail_path=THUMBNAILS_ROOT + "",
+        is_awesome=True,
+        tags=[tags.APP, tags.INSPIRATION, tags.VTK],
+        author=authors.XAVARTLEY,
+    ),
+    Resource(
         name="XrViz",
         url="https://github.com/intake/xrviz",
         thumbnail_path=THUMBNAILS_ROOT + "",

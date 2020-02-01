@@ -81,6 +81,7 @@ def main() -> pn.Pane:
     pnx.fontawesome.extend()
     pnx.PyDeck.extend()
     pn.config.raw_css.append(SHARE_LINK_STYLE)
+    pn.config.sizing_mode = "stretch_width"
 
     app = pnx.templates.BootstrapDashboardTemplate(app_title="Awesome Panel")
 
@@ -93,7 +94,11 @@ def main() -> pn.Pane:
         about.view,
     ]
     navigation_menu = pnx.NavigationMenu(
-        pages=pages, page_outlet=app.main, css_classes=MENU_BUTTON_CSS_CLASSES,
+        pages=pages,
+        page_outlet=app.main,
+        css_classes=MENU_BUTTON_CSS_CLASSES,
+        width=190,
+        sizing_mode="stretch_height",
     )
     share = pn.Column(
         pnx.Markdown("#### Share"),
@@ -106,16 +111,18 @@ def main() -> pn.Pane:
         ),
         margin=(10, 10, 0, 10,),
     )
-    info = pn.Column(pnx.Markdown(INFO), margin=(0, 10, 0, 10,), sizing_mode="stretch_width",)
+    info = pn.Column(pnx.Markdown(INFO), margin=(0, 10, 0, 10,), sizing_mode="stretch_both",)
     app.sidebar[:] = [
         navigation_menu,
         share,
         info,
     ]
 
-    contact = pn.Row(pn.pane.HTML(CONTACT))
+    contact = pn.pane.HTML(
+        CONTACT, width=200, height=58 - 10, sizing_mode="fixed", margin=(10, 50, 0, 0)
+    )
     app.header.append(contact)
-    app.header.append(pn.layout.VSpacer(width=25))
+    # app.header.append(pn.layout.VSpacer(width=25))
     return app
 
 

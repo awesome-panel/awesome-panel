@@ -1,15 +1,14 @@
 """
-This app illustrates the usage of the `pn.Param` function. The `pn.Param` function is used to
+This app illustrates the usage of the **`pn.Param`** function. The `pn.Param` function is used to
 layout, style and configure the widgets of a `param.Parameterized` class when using it in Panel.
 
 It took me some time to get my head around how to use it. So I've created this app
 that I hope can help you.
 
-I have an open [pull request](https://github.com/holoviz/panel/pull/944) on adding an extended and
-documented walkthrough of this app to the
-[Panel Reference Gallery](https://panel.holoviz.org/reference/index.html).
+I have also contributed a **guided walk through** of this example to the Panel Reference Gallery.
+You can find it [here](https://panel.holoviz.org/reference/panes/Param.html#panes-gallery-param).
 
-In this app we build a model and view of a cycling Athlete and his PowerCurve.
+In this app we build **a model a cycling Athlete and his PowerCurve**.
 
 The PowerCurve is a recording of the athletes maximum power output in Watt per kg for fixed
 durations of time.

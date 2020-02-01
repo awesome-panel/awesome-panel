@@ -31,10 +31,9 @@ class BootstrapDashboardTemplate(pn.Template):
         template = BOOTSTRAP_DASHBOARD_TEMPLATE.read_text()
 
         app_title = pn.Row(
-            pn.layout.HSpacer(),
             pn.pane.Markdown(f"[{app_title}]({app_url})", css_classes=["app-title"],),
-            pn.layout.HSpacer(),
             width=SIDEBAR_WIDTH,
+            sizing_mode="stretch_height",
         )
         header = pn.Row(
             app_title, pn.layout.HSpacer(), sizing_mode="stretch_width", height=HEADER_HEIGHT,

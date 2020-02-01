@@ -22,6 +22,7 @@ TECHNICAL = Tag(name="Technical")
 TUTORIAL = Tag(name="Tutorial")
 VIDEO = Tag(name="Video")
 VOILA = Tag(name="Voila")
+VTK = Tag(name="VTK")
 
 # Please keep this list sorted alphabetically
 TAGS = [
@@ -44,4 +45,5 @@ TAGS = [
     TUTORIAL,
     VIDEO,
     VOILA,
+    VTK,
 ]

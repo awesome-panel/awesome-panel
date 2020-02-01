@@ -59,7 +59,7 @@ nav {
   border-right-width: 0.1px;
   border-right-style: solid;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 main {

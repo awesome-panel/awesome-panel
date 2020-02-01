@@ -105,6 +105,12 @@ DAMIAN_FARRELL = Author(
     github_url="https://github.com/dmnfarrell",
     github_avatar_url="https://avatars0.githubusercontent.com/u/7859189",
 )
+XAVARTLEY = Author(
+    name="xavArtely",
+    url="https://github.com/xavArtley",
+    github_url="https://github.com/xavArtley",
+    github_avatar_url="https://avatars1.githubusercontent.com/u/18531147",
+)
 
 AUTHORS = [
     AWESOME_PANEL_ORG,
@@ -122,4 +128,5 @@ AUTHORS = [
     PLOTLY,
     STREAMLIT,
     VOILA,
+    XAVARTLEY
 ]

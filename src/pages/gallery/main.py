@@ -124,7 +124,7 @@ class GalleryCard(Column):
     """A Card consisting of an image and a button"""
 
     def __init__(
-        self, page: Resource, page_outlet, **kwargs,
+        self, page: Resource, page_outlet, sizing_mode="fixed", **kwargs,
     ):
         """A Card consisting of an image and a button
 
@@ -144,6 +144,7 @@ class GalleryCard(Column):
             name="gallery-item-" + page.name,
             width=400,
             margin=10,
+            sizing_mode=sizing_mode,
             css_classes=["card"],
             **kwargs,
         )

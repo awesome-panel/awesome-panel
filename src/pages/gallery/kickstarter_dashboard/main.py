@@ -21,9 +21,6 @@ My evaluation is
 - The fourth I've also experienced
 see this [discussion](https://discourse.holoviz.org/t/how-to-create-a-parameterized-dashboard-with-seperation-between-data-transforms-and-data-views/53/13).
 
-I can see that I made a lot of mistakes because it takes time for me to understand how the api works.
-There is a lot to I need to learn across the HoloViz suite of tools.
-
 You can find an alternative version of this Dashboard in Streamlit at
 [awesome-streamlit.org](https://awesome-streamlit.org)
 """
@@ -63,13 +60,6 @@ CMAP = {
     "successful": "green",
     "suspended": "orange",
 }
-
-INFO = """\
-Please note that zooming on the parent, stacker chart and having the child, bar chart update
-accordingly is currently buggy. If you do the child, bar chart will stop updating.
-The zoom will be supported in Panel 0.71.
-"""
-
 
 class KickstarterDashboard(param.Parameterized):
     # pylint: disable=line-too-long
@@ -156,19 +146,19 @@ There is a lot to I need to learn across the HoloViz suite of tools.
         """A Reactive View of the KickstarterDashboard"""
         return pn.Column(
             pn.pane.Markdown(__doc__),
-            InfoAlert(INFO),
             pn.layout.HSpacer(height=25),
             pn.Row(
                 pn.Column(
-                    self.scatter_plot_view, self.bar_chart_view, sizing_mode="stretch_width",
+                    self.scatter_plot_view, self.bar_chart_view, sizing_mode="stretch_width"
                 ),
                 pn.Param(
                     self.param.categories,
                     widgets={"categories": {"max_width": 125, "size": len(self.categories),}},
+                    width=150, height=500, sizing_mode="fixed",
                 ),
                 sizing_mode="stretch_width",
             ),
-            sizing_mode="stretch_width",
+            sizing_mode="stretch_width"
         )
 
     @staticmethod
