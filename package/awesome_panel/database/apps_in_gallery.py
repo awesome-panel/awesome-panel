@@ -157,14 +157,6 @@ APPS_IN_GALLERY = [
         author=authors.MARC_SKOV_MADSEN,
     ),
     Resource(
-        name="Test PyDeck",
-        url=GITHUB_GALLERY_URL + "awesome_panel_express_tests/test_pydeck.py",
-        thumbnail_path=THUMBNAILS_ROOT + "test_pydeck.png",
-        tags=[tags.CODE, tags.APP_IN_GALLERY,],
-        is_awesome=True,
-        author=authors.MARC_SKOV_MADSEN,
-    ),
-    Resource(
         name="Test Share Links",
         url=GITHUB_GALLERY_URL + "awesome_panel_express_tests/test_share_links.py",
         thumbnail_path=THUMBNAILS_ROOT + "test_share_links.png",
