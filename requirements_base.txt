@@ -2,7 +2,7 @@
 # - https://github.com/holoviz/panel/issues/883
 # - https://github.com/holoviz/panel/pull/867
 panel
-tornado==5.1.1 # See https://discourse.holoviz.org/t/how-can-i-show-spinner-when-code-is-running/30/4
+tornado
 hvplot
 
 # Data Engineering and Science
