@@ -1,15 +1,9 @@
-"""Panel does not have a pane for code. I've created a `Code` pane in `awesome_panel.express`
-
-Please note that in order to include the Code Hilite CSS for code syntax highlighting, you need
-to run `Code.extend()`.
-"""
+"""Panel does not have a pane for code. I've created a `Code` pane in `awesome_panel.express`"""
 
 import panel as pn
 
 import awesome_panel.express as pnx
 from awesome_panel.express.testing import TestApp
-
-pnx.Code.extend()
 
 
 def test_code():
@@ -31,7 +25,7 @@ def view() -> pn.Column:
     Returns:
         pn.Column -- A Column containing all the tests
     """
-    return pn.Column(pnx.Markdown(__doc__), test_code(),)
+    return pn.Column(pn.pane.Markdown(__doc__), test_code(),)
 
 
 if __name__.startswith("bk"):

@@ -25,7 +25,6 @@ class BootstrapDashboardTemplate(pn.Template):
     ):
         pn.config.raw_css.append(BOOTSTRAP_DASHBOARD_CSS.read_text())
         pn.config.raw_css.append(SCROLLBAR_PANEL_EXPRESS_CSS.read_text())
-        pnx.Code.extend()
         pnx.bootstrap.extend()
         pnx.fontawesome.extend()
         template = BOOTSTRAP_DASHBOARD_TEMPLATE.read_text()

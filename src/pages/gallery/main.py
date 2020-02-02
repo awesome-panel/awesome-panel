@@ -10,12 +10,10 @@ from panel.layout import HSpacer
 from panel.widgets import Button
 
 from awesome_panel import database
-from awesome_panel.express import (
-    Divider,
-    spinners,
-)
+from panel.layout import Divider
+from awesome_panel.express import spinners
 from awesome_panel.express.bootstrap import InfoAlert
-from awesome_panel.express.pane.panes import Markdown
+from panel.pane import Markdown
 from awesome_panel.shared.models import Resource
 
 ROOT = str(pathlib.Path.cwd())

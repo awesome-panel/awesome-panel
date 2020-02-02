@@ -48,7 +48,7 @@ def view() -> pn.Column:
     """
     table = pn.Pane(_get_table_data(), sizing_mode="stretch_width",)
     return pn.Column(
-        pnx.Markdown(TEXT),
+        pn.pane.Markdown(TEXT),
         # pn.pane.PNG(str(IMAGE_PATH), max_width=600, sizing_mode="scale_both"),
         pnx.Title("Dashboard"),
         pn.layout.Divider(),

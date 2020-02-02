@@ -24,7 +24,7 @@ class About(pn.Column):
     """The About Page tells why we build the BootStrap Dashboard App"""
 
     def __init__(self,):
-        about = pnx.Markdown(path=ABOUT_PATH)
+        about = pn.pane.Markdown(ABOUT_PATH.read_text())
         image = pn.pane.PNG(str(IMAGE_PATH), max_width=600, sizing_mode="scale_both",)
         info = pnx.InfoAlert(
             """\

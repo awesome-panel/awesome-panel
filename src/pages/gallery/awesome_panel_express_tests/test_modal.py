@@ -12,10 +12,7 @@ The implementation is inspired by
 
 import panel as pn
 
-from awesome_panel.express import (
-    Divider,
-    InfoAlert,
-)
+from awesome_panel.express import InfoAlert
 from awesome_panel.express.bootstrap.modal import Modal
 from awesome_panel.express.testing import TestApp
 

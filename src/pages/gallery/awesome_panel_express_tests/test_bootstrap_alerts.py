@@ -18,7 +18,8 @@ pnx.bootstrap.extend()
 
 
 def test_info_alert():
-    """We can show an InfoAlert
+    """
+    We can show an InfoAlert
 
     - Blue Div with normal and bold text
     - Full width by default
@@ -64,7 +65,7 @@ def view() -> pn.Column:
         pn.Column -- A Column containing all the tests
     """
     return pn.Column(
-        pnx.Markdown(__doc__),
+        pn.pane.Markdown(__doc__),
         test_info_alert(),
         test_error_alert(),
         test_warning_alert(),

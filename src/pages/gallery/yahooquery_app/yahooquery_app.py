@@ -660,7 +660,6 @@ def view():
 
 if __name__.startswith("bk"):
     pn.extension()
-    pnx.Code.extend()
     pnx.fontawesome.extend()
     pnx.bootstrap.extend()
     pn.config.sizing_mode="stretch_width"

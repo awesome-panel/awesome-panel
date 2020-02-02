@@ -2,8 +2,7 @@
 from typing import Callable
 
 from panel.layout import Column
-
-from awesome_panel.express.pane.panes import Markdown
+from panel.pane import Markdown
 
 
 class TestApp(Column):
@@ -24,10 +23,14 @@ class TestApp(Column):
             test_func {Callable} -- The function to create an app from.
         """
         text_str = test_func.__name__.replace("_", " ",).capitalize()
-        text_str = "# " + text_str
+        text_str = "    # " + text_str
 
         if test_func.__doc__:
-            text_str += "\n\n" + test_func.__doc__
+            if test_func.__doc__.startswith("    "):
+                text_str += "\n\n" + test_func.__doc__
+            else:
+                text_str += "\n\n    " + test_func.__doc__
+
         text = Markdown(text_str)
 
         if "sizing_mode" not in kwargs and "width" not in kwargs and "height" not in kwargs:

@@ -101,7 +101,7 @@ def main() -> pn.Pane:
         sizing_mode="stretch_height",
     )
     share = pn.Column(
-        pnx.Markdown("#### Share"),
+        pn.pane.Markdown("#### Share"),
         pn.Row(
             pnx.fontawesome.share_link.ShareOnTwitter().view(),
             pnx.fontawesome.share_link.ShareOnLinkedIn().view(),
@@ -111,7 +111,7 @@ def main() -> pn.Pane:
         ),
         margin=(10, 10, 0, 10,),
     )
-    info = pn.Column(pnx.Markdown(INFO), margin=(0, 10, 0, 10,), sizing_mode="stretch_both",)
+    info = pn.Column(pn.pane.Markdown(INFO), margin=(0, 10, 0, 10,), sizing_mode="stretch_both",)
     app.sidebar[:] = [
         navigation_menu,
         share,

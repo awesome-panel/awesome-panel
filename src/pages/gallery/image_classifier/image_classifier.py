@@ -396,7 +396,7 @@ def view():
 
     app = pn.Column(
         pnx.Header("Image Classification with Keras and Tensorflow.", height=40,),
-        pnx.Markdown(__doc__),
+        pn.pane.Markdown(__doc__),
         image_classifier_app.resources_view,
         pnx.SubHeader("Classifier"),
         pn.Param(

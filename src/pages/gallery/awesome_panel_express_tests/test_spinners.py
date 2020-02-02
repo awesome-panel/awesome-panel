@@ -64,7 +64,7 @@ def view() -> pn.Column:
         pn.Column -- A Column containing all the tests
     """
     return pn.Column(
-        pnx.Markdown(__doc__),
+        pn.pane.Markdown(__doc__),
         test_default_spinner(),
         test_all_spinners(),
         test_spinner_while_python_executing(),

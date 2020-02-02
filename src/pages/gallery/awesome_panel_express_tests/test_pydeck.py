@@ -79,7 +79,7 @@ def view() -> pn.Column:
     Returns:
         pn.Column -- A Column containing all the tests
     """
-    return pn.Column(pnx.Markdown(__doc__), test_pydeck_pane,)
+    return pn.Column(pn.pane.Markdown(__doc__), test_pydeck_pane,)
 
 
 if __name__.startswith("bk"):

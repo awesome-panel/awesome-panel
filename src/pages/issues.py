@@ -3,11 +3,11 @@ import pathlib
 
 from panel import Column
 
-from awesome_panel.express.pane.panes import Markdown
+from panel.pane import Markdown
 
 ISSUES_PATH = pathlib.Path(__file__).parent / "issues.md"
 
 
 def view() -> Column:
     """The issues view of awesome-panel.org"""
-    return Column(Markdown(path=ISSUES_PATH), sizing_mode="stretch_both", name="Issues",)
+    return Column(Markdown(ISSUES_PATH.read_text()), sizing_mode="stretch_both", name="Issues",)

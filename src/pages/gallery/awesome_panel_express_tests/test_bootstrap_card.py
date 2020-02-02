@@ -9,9 +9,6 @@ Please note that
 experience, so I've had to create a custom version for Panel/ Bokeh.
     - in order to use the bootstrap functionality you need to run
     `awesome_panel.express.bootstrap.extend()` to import the relevant css.
-- the **MARKDOWN WITH `SIZING_MODE=STRETCH_WIDTH`
-CAUSES A LOT OF EMPTY SPACE IN THE EXAMPLES BELOW. THIS SHOULD BE FIXED IN v. 0.71**. See
-[Issue 848](https://github.com/holoviz/panel/issues/848)
 - I'm not sure this is the right way to implement a new Layout. **Is there some better way
 to implement this using the api of Panel and Bokeh?**.
 """
@@ -43,7 +40,7 @@ def test_card():
     And the card it self is full width responsive by default.
     """
 
-    card = pnx.Card("Card - Header and Body", TEXT,)
+    card = pnx.Card("Card - Header and Body", TEXT, sizing_mode="stretch_width")
     return TestApp(test_card, card, width=600, background="ghostwhite",)
 
 
@@ -55,7 +52,7 @@ def test_card_fixed_width():
 
     And the card it self is fixed to 300px
     """
-    card = pnx.Card("Card - Fixed Width", TEXT, width=300, sizing_mode="stretch_width", )
+    card = pnx.Card("Card - Fixed Width", TEXT, width=300, sizing_mode="fixed",)
     return TestApp(test_card_fixed_width, card, background="ghostwhite",)
 
 
@@ -104,7 +101,7 @@ def test_card_with_plot():
     - A header with lightgray background
     - A Plot Body
 
-    And the card it self is fixed is full width responsive
+    And the card it self is has a fixed width
     """
     card = pnx.Card("Card With Plot", _holoviews_chart(), width=600,)
     return TestApp(test_card_with_plot, card,)
@@ -121,9 +118,6 @@ def test_card_with_multiple_panels():
 
     Please note that due to some Bokeh formatting I've not been able to create
     a divider line that stretches to full width.
-
-    Please note that due to a bug in Panel there is **currently no top divider line for the
-    HoloViews plot**. See [Issue 902](https://github.com/holoviz/panel/issues/902)
     """
     card = pnx.Card(
         "Card With Plot",
@@ -175,7 +169,7 @@ def view() -> pn.Column:
         pn.Column -- A Column containing all the tests
     """
     return pn.Column(
-        pnx.Markdown(__doc__),
+        pn.pane.Markdown(__doc__),
         pn.layout.Divider(),
         test_card(),
         pn.layout.Divider(),

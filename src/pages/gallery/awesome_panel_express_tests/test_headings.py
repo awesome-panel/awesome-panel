@@ -55,7 +55,7 @@ def view() -> pn.Column:
         pn.Column -- A Column containing all the tests
     """
     return pn.Column(
-        pnx.Markdown(__doc__), test_headings(), test_title_centered_white(), test_with_url(),
+        pn.pane.Markdown(__doc__), test_headings(), test_title_centered_white(), test_with_url(),
     )
 
 

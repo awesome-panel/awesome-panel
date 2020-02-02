@@ -52,7 +52,7 @@ def view() -> pn.Column:
         pn.Column -- A Column containing all the tests
     """
     return pn.Column(
-        pnx.Markdown(__doc__), test_get_default_formatters, sizing_mode="stretch_width",
+        pn.pane.Markdown(__doc__), test_get_default_formatters, sizing_mode="stretch_width",
     )
 
 

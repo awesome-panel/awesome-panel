@@ -21,7 +21,7 @@ def view() -> pn.Column:
     Returns:
         pn.Column -- A Column containing all the tests
     """
-    return pn.Column(pnx.Markdown(__doc__), test_divider(),)
+    return pn.Column(pn.pane.Markdown(__doc__), test_divider(),)
 
 
 if __name__.startswith("bk"):
