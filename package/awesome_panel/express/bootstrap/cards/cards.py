@@ -70,8 +70,8 @@ class Card(pn.Column):
         if objects:
             header, body = objects
             return super().clone(header.object, body, **params)
-        else:
-            return super().clone(**params)
+
+        return super().clone(**params)
 
     def _get_card_content(self, panels: List[pn.viewable.Viewable],) -> pn.viewable.Viewable:
         """Combines the list of Viewables into a Viewable with the right css classes
