@@ -55,8 +55,8 @@ def test_card_fixed_width():
 
     And the card it self is fixed to 300px
     """
-    card = pnx.Card("Card - Fixed Width", TEXT, width=300,)
-    return TestApp(test_card_fixed_width, card, width=600, background="ghostwhite",)
+    card = pnx.Card("Card - Fixed Width", TEXT, width=300, sizing_mode="stretch_width", )
+    return TestApp(test_card_fixed_width, card, background="ghostwhite",)
 
 
 def _get_chart_data() -> pd.DataFrame:
@@ -156,7 +156,16 @@ def test_card_collapsable():
         collapsable=True,
         width=600,
     )
-    return TestApp(test_card_collapsable, card, pn.layout.HSpacer(height=500),)
+    return TestApp(test_card_collapsable, card,)
+
+
+def test_card_with_code():
+    """We test that we can create a card with code content"""
+    code = """\
+        card = pnx.Card("Code", pnx.Code(code),)
+        return TestApp(test_card_collapsable, card)"""
+    card = pnx.Card("Code", pnx.Code(code))
+    return TestApp(test_card_with_code, card, width=600)
 
 
 def view() -> pn.Column:
@@ -167,16 +176,18 @@ def view() -> pn.Column:
     """
     return pn.Column(
         pnx.Markdown(__doc__),
-        pnx.Divider(),
+        pn.layout.Divider(),
         test_card(),
-        pnx.Divider(),
+        pn.layout.Divider(),
         test_card_fixed_width(),
-        pnx.Divider(),
+        pn.layout.Divider(),
         test_card_with_plot(),
-        pnx.Divider(),
+        pn.layout.Divider(),
         test_card_with_multiple_panels(),
-        pnx.Divider(),
+        pn.layout.Divider(),
         test_card_collapsable(),
+        pn.layout.Divider(),
+        test_card_with_code(),
         sizing_mode="stretch_width",
     )
 

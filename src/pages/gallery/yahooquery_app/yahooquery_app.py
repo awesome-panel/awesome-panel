@@ -143,7 +143,7 @@ def pnx_json(python_object: object, indent=2,) -> pn.viewable.Viewable:
         pn.viewable.Viewable: [description]
     """
     return pnx.Card(
-        "Response", pnx.Code(json.dumps(python_object, indent=indent,), language="json",),
+        "Response", pn.pane.JSON(python_object, depth=5, theme="light"),
     )
 
 
@@ -507,16 +507,16 @@ class HistoryPage(Page):
             chart = (
                 alt.Chart(dataframe.reset_index())
                 .mark_line()
-                .encode(alt.Y("close:Q", scale=alt.Scale(zero=False),), x="dates", color="symbol",)
+                .encode(alt.Y("close:Q", scale=alt.Scale(zero=False),), x="dates", color="symbol", tooltip=["dates", "close", "symbol"])
             )
         else:
             chart = (
                 alt.Chart(dataframe.reset_index())
                 .mark_line()
-                .encode(alt.Y("close:Q", scale=alt.Scale(zero=False),), x="dates:T",)
+                .encode(alt.Y("close:Q", scale=alt.Scale(zero=False),), x="dates:T", tooltip=["dates", "close"])
             )
 
-        chart = chart.properties(width=800, height=300,)
+        chart = chart.properties(width="container", height=300,)
         return chart
 
     @param.depends("symbols")
@@ -663,6 +663,7 @@ if __name__.startswith("bk"):
     pnx.Code.extend()
     pnx.fontawesome.extend()
     pnx.bootstrap.extend()
+    pn.config.sizing_mode="stretch_width"
 
     # import ptvsd
 
@@ -670,8 +671,15 @@ if __name__.startswith("bk"):
     # print("Ready to attach the VS Code debugger")
     # ptvsd.wait_for_attach()  # Only include this line if you always wan't to attach the debugger
 
+    # HomePage().view().servable()
     # BasePage().view().servable()
     # BaseMultiplePage().view().servable()
     # OptionsPage().view().servable()
-    HistoryPage().view().servable()
-    # view().servable()
+    # HistoryPage().view().servable()
+    view().servable()
+    # code = """\
+    # from yahooquery import Ticker
+
+    # tickers = Ticker("ORSTED.CO"")"""
+    # code_card(code).servable()
+

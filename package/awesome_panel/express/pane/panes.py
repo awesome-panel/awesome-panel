@@ -17,27 +17,6 @@ MARKDOWN_EXTENSIONS = [
 _EXTENDED = False
 
 
-class Divider(pn.pane.HTML):
-    """A HTML Divider"""
-
-    def __init__(
-        self, sizing_mode="stretch_width", **kwargs,
-    ):
-        """A HTML Divider
-
-        The HTML
-
-        Arguments:
-            pn {[type]} -- [description]
-
-        Keyword Arguments:
-            sizing_policy {str} -- [description] (default: {"stretch_width"})
-        """
-        super().__init__(
-            "<hr>", height=10, sizing_mode=sizing_mode, **kwargs,
-        )
-
-
 class Markdown(pn.pane.HTML):
     """Extension of the original Markdown pane
 

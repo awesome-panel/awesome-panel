@@ -17,7 +17,6 @@ from awesome_panel.express.pane._headings import (
 )
 from awesome_panel.express.pane.panes import (
     Code,
-    Divider,
     Markdown,
 )
 from awesome_panel.express.pane.pydeck import PyDeck

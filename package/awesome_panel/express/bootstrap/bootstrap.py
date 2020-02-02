@@ -59,6 +59,11 @@ class InfoAlert(Markdown):
                 "alert",
                 "alert-info",
             ]
+        if not "margin" in kwargs:
+            kwargs["margin"] = (0, 0, 25, 0)
+        if not "sizing_mode" in kwargs:
+            kwargs["sizing_mode"] = "stretch_width"
+
         super().__init__(
             text, **kwargs,
         )
@@ -113,6 +118,11 @@ class WarningAlert(pn.pane.Markdown):
                 "alert",
                 "alert-warning",
             ]
+        if not "margin" in kwargs:
+            kwargs["margin"] = (0, 0, 25, 0)
+        if not "sizing_mode" in kwargs:
+            kwargs["sizing_mode"] = "stretch_width"
+
         super().__init__(
             text, **kwargs,
         )
@@ -167,6 +177,12 @@ class ErrorAlert(pn.pane.Markdown):
                 "alert",
                 "alert-error",
             ]
+
+        if not "margin" in kwargs:
+            kwargs["margin"] = (0, 0, 25, 0)
+        if not "sizing_mode" in kwargs:
+            kwargs["sizing_mode"] = "stretch_width"
+
         super().__init__(
             text, **kwargs,
         )

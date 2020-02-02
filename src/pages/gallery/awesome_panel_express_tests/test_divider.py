@@ -1,4 +1,9 @@
-"""Here we test the Divider provided by `awesome_panel.express`."""
+"""This test is here for legacy reasons. Originally the `pn.layout.divider` was no documented
+so I created my own because I did not know better.
+
+The `pn.layout.divider` reference example is now available
+(here)[https://panel.holoviz.org/reference/layouts/Divider.html#layouts-gallery-divider]
+"""
 import panel as pn
 
 import awesome_panel.express as pnx
@@ -7,7 +12,7 @@ from awesome_panel.express.testing import TestApp
 
 def test_divider():
     """A manual test of the horizontal divider stretching to full width"""
-    return TestApp(test_divider, pnx.Divider(), sizing_mode="stretch_width",)
+    return TestApp(test_divider, pn.layout.Divider())
 
 
 def view() -> pn.Column:
@@ -20,4 +25,6 @@ def view() -> pn.Column:
 
 
 if __name__.startswith("bk"):
+    pn.config.sizing_mode = "stretch_width"
+
     view().servable("test_divider")

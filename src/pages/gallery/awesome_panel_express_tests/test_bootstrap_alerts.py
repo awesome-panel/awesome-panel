@@ -21,7 +21,8 @@ def test_info_alert():
     """We can show an InfoAlert
 
     - Blue Div with normal and bold text
-    - Curently not full width
+    - Full width by default
+    - With a nice bottom margin
     """
     return TestApp(
         test_info_alert, pnx.InfoAlert("This is an **Info Alert**!"), sizing_mode="stretch_width",
@@ -32,7 +33,8 @@ def test_warning_alert():
     """We can show a Warning Alert
 
     - Yellow Div with normal and bold text
-    - Curently not full width
+    - Full width by default
+    - With a nice bottom margin
     """
     return TestApp(
         test_warning_alert,
@@ -45,28 +47,12 @@ def test_error_alert():
     """We can show an Error Alert
 
     - Red Div with normal and bold text
-    - Curently not full width
+    - Full width by default
+    - With a nice bottom margin
     """
     return TestApp(
         test_error_alert,
         pnx.ErrorAlert("This is an **Error Alert**!"),
-        sizing_mode="stretch_width",
-    )
-
-
-def test_info_alert_height_problem():
-    """The Bokeh Layout Engine does not layout the height of the Markdown Alerts very well.
-
-    We see that the height of the InfoAlert is much greater than it needs to be. This is a general
-    problem for the Panel Markdown pane. See [Issue 829](https://github.com/holoviz/panel/issues/829)
-    """
-    text = """\
-Navigate to the **Dashboard Page** via the **Sidebar** to see the result.
-Or Navigate to the **Limitations Page** to learn of some of the limitations of Panel that
-I've experienced."""
-    return TestApp(
-        test_info_alert_height_problem,
-        pnx.InfoAlert(text, sizing_mode="stretch_width",),
         sizing_mode="stretch_width",
     )
 
@@ -82,7 +68,6 @@ def view() -> pn.Column:
         test_info_alert(),
         test_error_alert(),
         test_warning_alert(),
-        test_info_alert_height_problem(),
         sizing_mode="stretch_width",
     )
 

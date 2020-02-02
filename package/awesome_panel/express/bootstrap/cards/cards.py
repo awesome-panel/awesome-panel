@@ -68,6 +68,11 @@ class Card(pn.Column):
             header_row, content, **kwargs,
         )
 
+    def clone(self, **kwargs):
+        # Hack. See https://github.com/holoviz/panel/issues/1060
+        header, body = self.objects
+        return super().clone(header.object, body, **kwargs)
+
     def _get_card_content(self, panels: List[pn.viewable.Viewable],) -> pn.viewable.Viewable:
         """Combines the list of Viewables into a Viewable with the right css classes
 

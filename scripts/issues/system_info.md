@@ -1,6 +1,6 @@
 #### System Info
 
-- Panel: 0.7.0
+- Panel: 0.8.0
 - Bokeh: 1.4.0
 - Tornado 5.1.11
 - Python: 3.7.4
