@@ -2,7 +2,6 @@
 import pathlib
 
 from panel import Column
-
 from panel.pane import Markdown
 
 HOME_PATH = pathlib.Path(__file__).parent / "home.md"

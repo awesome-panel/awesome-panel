@@ -1,8 +1,8 @@
+import panel as pn
 from bokeh.io import show
 from bokeh.models import TickFormatter
 from bokeh.plotting import figure
 from bokeh.util.compiler import TypeScript
-import panel as pn
 
 TS_CODE = """
 import {TickFormatter} from "models/formatters/tick_formatter"

@@ -1,14 +1,16 @@
-from typing import Optional
+import datetime
 
-import panel as pn
-import param
-import pandas as pd
 # from src.pages.apps.spread_tracker.models import RiskRewardCalculation
 # from src.pages.apps.spread_tracker.plots import SpreadPlot
 # from src.pages.apps.spread_tracker.services import SpreadService
 # from src.pages.apps.spread_tracker.views import RiskRewardCalculationView, SpreadView
 import pathlib
-import datetime
+from typing import Optional
+
+import pandas as pd
+import panel as pn
+import param
+
 HISTORICAL_SPREADS_PATH = pathlib.Path(__file__).parent / "spreads.csv"
 
 DEFAULT_MARKET = "ttf"
@@ -29,6 +31,7 @@ DAYS_TO_DELIVERY_MIN = 1
 DAYS_TO_DELIVERY_BOUNDS = (DAYS_TO_DELIVERY_MIN, DAYS_TO_DELIVERY_MAX)
 DEFAULT_DAYS_TO_DELIVERY_START = 300
 DEFAULT_DAYS_TO_DELIVERY_END = 10
+
 
 class RiskRewardCalculation(param.Parameterized):
     """A model of a Risk Reward Calculation"""
@@ -93,6 +96,7 @@ class RiskRewardCalculation(param.Parameterized):
         self.payoff_down = round(payoff_down, 1)
         self.risk_reward = round(risk_reward, 1)
 
+
 class RiskRewardCalculationComponent(param.Parameterized):
     risk_reward_calculation: RiskRewardCalculation = param.Parameter(RiskRewardCalculation())
 
@@ -102,7 +106,6 @@ class RiskRewardCalculationComponent(param.Parameterized):
         else:
             self.risk_reward_calculation = RiskRewardCalculation()
         super().__init__(**params)
-
 
     def _risk_reward_settings_view(self):
         return pn.Param(
@@ -186,8 +189,10 @@ class RiskRewardCalculationComponent(param.Parameterized):
 #             self.risk_reward_calculation_component.view,
 #         )
 
+
 def historical_spreads():
     return pd.read_csv(HISTORICAL_SPREADS_PATH, parse_dates=["date"])
+
 
 component = RiskRewardCalculationComponent()
 component.risk_reward_calculation.spreads = historical_spreads()

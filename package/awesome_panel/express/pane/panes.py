@@ -1,6 +1,4 @@
 """A collection of nice panes to use"""
-import pathlib
-from typing import Optional
 
 import panel as pn
 

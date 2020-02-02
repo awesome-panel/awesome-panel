@@ -1,6 +1,7 @@
+import textwrap
+
 import panel as pn
 from panel.pane import Markdown
-import textwrap
 
 wrap = textwrap
 

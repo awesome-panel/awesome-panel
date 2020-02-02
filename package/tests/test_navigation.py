@@ -75,7 +75,9 @@ def test_pn_navigation_with_font_awesome():
     ]
     content = pn.Column()
     sidebar = pn.Column()
-    app = pn.Column(pn.pane.Markdown(test_pn_navigation_with_font_awesome.__doc__), sidebar, content,)
+    app = pn.Column(
+        pn.pane.Markdown(test_pn_navigation_with_font_awesome.__doc__), sidebar, content,
+    )
 
     css_classes = [
         None,

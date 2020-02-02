@@ -1,9 +1,5 @@
 """This module contains a navigation menu to be used to select between different pages"""
-from typing import (
-    List,
-    Optional,
-    Union,
-)
+from typing import List, Optional, Union
 
 import panel as pn
 

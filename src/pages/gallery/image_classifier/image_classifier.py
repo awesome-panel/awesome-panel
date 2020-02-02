@@ -11,12 +11,7 @@ import io
 import os
 from base64 import b64encode
 from functools import lru_cache
-from typing import (
-    Callable,
-    List,
-    NamedTuple,
-    Tuple,
-)
+from typing import Callable, List, NamedTuple, Tuple
 
 import altair as alt
 import keras.backend.tensorflow_backend as tb
@@ -34,10 +29,7 @@ from keras.applications import (
     vgg19,
     xception,
 )
-from keras.preprocessing.image import (
-    img_to_array,
-    load_img,
-)
+from keras.preprocessing.image import img_to_array, load_img
 from PIL import Image
 
 import awesome_panel.express as pnx

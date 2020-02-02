@@ -1,7 +1,4 @@
-from typing import (
-    List,
-    NamedTuple,
-)
+from typing import List, NamedTuple
 
 import panel as pn
 import param

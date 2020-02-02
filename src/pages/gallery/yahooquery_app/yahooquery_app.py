@@ -11,13 +11,8 @@ This version of the app is developed in [Panel](https://panel.pyviz.org/) by [Ma
     (https://datamodelsanalytics.com)
 """
 import datetime
-import json
 from functools import lru_cache
-from typing import (
-    Dict,
-    List,
-    Tuple,
-)
+from typing import Dict, List, Tuple
 
 import altair as alt
 import pandas as pd
@@ -142,9 +137,7 @@ def pnx_json(python_object: object, indent=2,) -> pn.viewable.Viewable:
     Returns:
         pn.viewable.Viewable: [description]
     """
-    return pnx.Card(
-        "Response", pn.pane.JSON(python_object, depth=5, theme="light"),
-    )
+    return pnx.Card("Response", pn.pane.JSON(python_object, depth=5, theme="light"),)
 
 
 def code_card(code: str,) -> pn.viewable.Viewable:
@@ -507,13 +500,22 @@ class HistoryPage(Page):
             chart = (
                 alt.Chart(dataframe.reset_index())
                 .mark_line()
-                .encode(alt.Y("close:Q", scale=alt.Scale(zero=False),), x="dates", color="symbol", tooltip=["dates", "close", "symbol"])
+                .encode(
+                    alt.Y("close:Q", scale=alt.Scale(zero=False),),
+                    x="dates",
+                    color="symbol",
+                    tooltip=["dates", "close", "symbol"],
+                )
             )
         else:
             chart = (
                 alt.Chart(dataframe.reset_index())
                 .mark_line()
-                .encode(alt.Y("close:Q", scale=alt.Scale(zero=False),), x="dates:T", tooltip=["dates", "close"])
+                .encode(
+                    alt.Y("close:Q", scale=alt.Scale(zero=False),),
+                    x="dates:T",
+                    tooltip=["dates", "close"],
+                )
             )
 
         chart = chart.properties(width="container", height=300,)
@@ -662,7 +664,7 @@ if __name__.startswith("bk"):
     pn.extension()
     pnx.fontawesome.extend()
     pnx.bootstrap.extend()
-    pn.config.sizing_mode="stretch_width"
+    pn.config.sizing_mode = "stretch_width"
 
     # import ptvsd
 
@@ -681,4 +683,3 @@ if __name__.startswith("bk"):
 
     # tickers = Ticker("ORSTED.CO"")"""
     # code_card(code).servable()
-

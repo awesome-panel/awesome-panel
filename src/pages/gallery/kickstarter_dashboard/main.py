@@ -27,18 +27,13 @@ You can find an alternative version of this Dashboard in Streamlit at
 # pylint: enable=line-too-long
 # pylint: disable=duplicate-code
 import pathlib
-from typing import (
-    List,
-    Optional,
-)
+from typing import List, Optional
 
 import holoviews as hv
 import hvplot.pandas  # pylint: disable=unused-import
 import pandas as pd
 import panel as pn
 import param
-
-from awesome_panel.express.bootstrap import InfoAlert
 
 # pylint: enable=duplicate-code
 pn.extension()
@@ -60,6 +55,7 @@ CMAP = {
     "successful": "green",
     "suspended": "orange",
 }
+
 
 class KickstarterDashboard(param.Parameterized):
     # pylint: disable=line-too-long
@@ -148,17 +144,17 @@ There is a lot to I need to learn across the HoloViz suite of tools.
             pn.pane.Markdown(__doc__),
             pn.layout.HSpacer(height=25),
             pn.Row(
-                pn.Column(
-                    self.scatter_plot_view, self.bar_chart_view, sizing_mode="stretch_width"
-                ),
+                pn.Column(self.scatter_plot_view, self.bar_chart_view, sizing_mode="stretch_width"),
                 pn.Param(
                     self.param.categories,
                     widgets={"categories": {"max_width": 125, "size": len(self.categories),}},
-                    width=150, height=500, sizing_mode="fixed",
+                    width=150,
+                    height=500,
+                    sizing_mode="fixed",
                 ),
                 sizing_mode="stretch_width",
             ),
-            sizing_mode="stretch_width"
+            sizing_mode="stretch_width",
         )
 
     @staticmethod

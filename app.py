@@ -8,22 +8,13 @@ Creates a Bootstrap Dashboard App
 `awesome_panel.express.templates.BootstrapDashboardTemplate`
 - Start the app by using `panel serve` on this file.
 """
-from typing import (
-    List,
-    Optional,
-)
+from typing import List, Optional
 
 import panel as pn
 
 import awesome_panel.express as pnx
 from awesome_panel.database.apps_in_gallery import APPS_IN_GALLERY
-from src.pages import (
-    about,
-    gallery,
-    home,
-    issues,
-    resources,
-)
+from src.pages import about, gallery, home, issues, resources
 from src.pages.gallery.custom_bokeh_model.custom import Custom  # type: ignore
 
 # Hack to get the custom_bokeh_model app working.

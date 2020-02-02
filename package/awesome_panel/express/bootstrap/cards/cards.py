@@ -4,10 +4,7 @@
 - https://disjfa.github.io/bootstrap-tricks/card-collapse-tricks/
 """
 
-from typing import (
-    List,
-    Union,
-)
+from typing import List, Union
 
 import panel as pn
 
@@ -68,10 +65,13 @@ class Card(pn.Column):
             header_row, content, **kwargs,
         )
 
-    def clone(self, **kwargs):
+    def clone(self, *objects, **params):
         # Hack. See https://github.com/holoviz/panel/issues/1060
-        header, body = self.objects
-        return super().clone(header.object, body, **kwargs)
+        if objects:
+            header, body = objects
+            return super().clone(header.object, body, **params)
+        else:
+            return super().clone(**params)
 
     def _get_card_content(self, panels: List[pn.viewable.Viewable],) -> pn.viewable.Viewable:
         """Combines the list of Viewables into a Viewable with the right css classes
@@ -80,7 +80,8 @@ class Card(pn.Column):
             panels (List[pn.viewable.Viewable]): A list of Viewables
 
         Returns:
-            pn.viewable.Viewable: A Viewable of the input Viewables with the right css classes applied.
+            pn.viewable.Viewable: A Viewable of the input Viewables with the right css classes \
+                applied.
         """
         # Due to https://github.com/holoviz/panel/issues/903 we have to insert the content into a
         # column with relevant margin

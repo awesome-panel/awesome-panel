@@ -1,8 +1,8 @@
 """Bootstrap inspired functionality"""
 import panel as pn
+from panel.pane import Markdown
 
 from awesome_panel.express.assets import BOOTSTRAP_PANEL_EXPRESS_CSS
-from panel.pane import Markdown
 
 BOOTSTRAP_CSS_URL = "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 
@@ -59,9 +59,9 @@ class InfoAlert(Markdown):
                 "alert",
                 "alert-info",
             ]
-        if not "margin" in kwargs:
+        if "margin" not in kwargs:
             kwargs["margin"] = (0, 0, 25, 0)
-        if not "sizing_mode" in kwargs:
+        if "sizing_mode" not in kwargs:
             kwargs["sizing_mode"] = "stretch_width"
 
         super().__init__(
@@ -118,9 +118,9 @@ class WarningAlert(pn.pane.Markdown):
                 "alert",
                 "alert-warning",
             ]
-        if not "margin" in kwargs:
+        if "margin" not in kwargs:
             kwargs["margin"] = (0, 0, 25, 0)
-        if not "sizing_mode" in kwargs:
+        if "sizing_mode" not in kwargs:
             kwargs["sizing_mode"] = "stretch_width"
 
         super().__init__(
@@ -178,9 +178,9 @@ class ErrorAlert(pn.pane.Markdown):
                 "alert-error",
             ]
 
-        if not "margin" in kwargs:
+        if "margin" not in kwargs:
             kwargs["margin"] = (0, 0, 25, 0)
-        if not "sizing_mode" in kwargs:
+        if "sizing_mode" not in kwargs:
             kwargs["sizing_mode"] = "stretch_width"
 
         super().__init__(

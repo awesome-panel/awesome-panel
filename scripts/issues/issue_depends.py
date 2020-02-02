@@ -1,5 +1,5 @@
-import param
 import panel as pn
+import param
 
 
 class Leg(param.Parameterized):

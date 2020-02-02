@@ -1,9 +1,5 @@
 """This module contains functionality to plot an Activity"""
-from typing import (
-    List,
-    Optional,
-    Union,
-)
+from typing import List, Optional, Union
 
 import holoviews as hv
 import hvplot.pandas  # pylint: disable=unused-import

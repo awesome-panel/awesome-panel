@@ -2,11 +2,7 @@
 # pylint: disable=redefined-outer-name,protected-access
 import pytest
 
-from awesome_panel.shared.models import (
-    Author,
-    Resource,
-    Tag,
-)
+from awesome_panel.shared.models import Author, Resource, Tag
 
 
 @pytest.fixture

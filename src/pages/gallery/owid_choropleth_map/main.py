@@ -24,11 +24,7 @@ import geopandas as gpd
 import pandas as pd
 import panel as pn
 import param
-from bokeh.models import (
-    ColorBar,
-    GeoJSONDataSource,
-    LinearColorMapper,
-)
+from bokeh.models import ColorBar, GeoJSONDataSource, LinearColorMapper
 from bokeh.palettes import brewer  # pylint: disable=no-name-in-module
 from bokeh.plotting import figure
 

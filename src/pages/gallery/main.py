@@ -6,14 +6,13 @@ from typing import List
 
 import panel as pn
 from panel import Column
-from panel.layout import HSpacer
+from panel.layout import Divider, HSpacer
+from panel.pane import Markdown
 from panel.widgets import Button
 
 from awesome_panel import database
-from panel.layout import Divider
 from awesome_panel.express import spinners
 from awesome_panel.express.bootstrap import InfoAlert
-from panel.pane import Markdown
 from awesome_panel.shared.models import Resource
 
 ROOT = str(pathlib.Path.cwd())

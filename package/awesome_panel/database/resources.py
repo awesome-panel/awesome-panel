@@ -1,10 +1,7 @@
 """In this module we define all Resources (except apps in the gallery) and exposes
 them via the RESOURCES list.
 """
-from awesome_panel.database import (
-    authors,
-    tags,
-)
+from awesome_panel.database import authors, tags
 from awesome_panel.database.apps_in_gallery import APPS_IN_GALLERY
 from awesome_panel.database.settings import THUMBNAILS_ROOT
 

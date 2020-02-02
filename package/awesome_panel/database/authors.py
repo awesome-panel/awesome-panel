@@ -128,5 +128,5 @@ AUTHORS = [
     PLOTLY,
     STREAMLIT,
     VOILA,
-    XAVARTLEY
+    XAVARTLEY,
 ]
