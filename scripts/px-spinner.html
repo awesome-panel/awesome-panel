@@ -1,0 +1,30 @@
+
+<!-- saved from url=(0069)https://www.predix-ui.com/bower_components/px-spinner/px-spinner.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="import" href="https://www.predix-ui.com/bower_components/polymer/polymer.html">
+<link rel="import" href="https://www.predix-ui.com/bower_components/px-spinner/px-modernizr.html">
+<link rel="import" href="https://www.predix-ui.com/bower_components/px-spinner/css/px-spinner-styles.html">
+
+<!--
+### Usage
+
+    <px-spinner size="50" finished></px-spinner>
+
+### Styling
+The following custom properties are available for styling:
+
+Custom property | Description
+:----------------|:-------------
+`--px-spinner-fill-color` | Fill color for the spinner
+`--px-spinner-background-color` | Background color for the spinner
+
+@element px-spinner
+@blurb Element providing an indication of data or a view loading.
+@homepage index.html
+@demo index.html
+-->
+</head><body><dom-module id="px-spinner">
+  <template></template>
+</dom-module>
+
+<script>Polymer({is:"px-spinner",properties:{finished:{type:Boolean,value:!1},size:{type:Number,value:80,notify:!0},disableSvgAnimation:{type:Boolean,value:!1},_animatedSVGSupport:{type:Boolean,readonly:!0,value:function value(){return Px.Modernizr.smil}}},show:function show(){this.set("finished",!1)},hide:function hide(){this.set("finished",!0)},_shouldRenderAsSVG:function _shouldRenderAsSVG(_animatedSVGSupport,disableSvgAnimation){return _animatedSVGSupport&&!disableSvgAnimation}});</script>
+</body></html>
