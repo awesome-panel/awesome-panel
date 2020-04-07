@@ -117,5 +117,5 @@ def main() -> pn.Pane:
     return app
 
 
-if __name__.startswith("bk_script"):
+if __name__.startswith("bokeh"):
     main().servable("Awesome Panel")

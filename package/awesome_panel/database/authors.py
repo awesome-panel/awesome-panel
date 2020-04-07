@@ -51,6 +51,12 @@ JAMES_BEDNAR = Author(
     github_url="https://github.com/jbednar",
     github_avatar_url="https://avatars0.githubusercontent.com/u/1695496",
 )
+JUSTIN_BOIS = Author(
+    name="Justin Bois",
+    url="http://bois.caltech.edu/",
+    github_url="https://github.com/JUSTIN_BOIS",
+    github_avatar_url="https://avatars3.githubusercontent.com/u/1873517",
+)
 MARC_SKOV_MADSEN = Author(
     name="Marc Skov Madsen",
     url="https://datamodelsanalytics.com",

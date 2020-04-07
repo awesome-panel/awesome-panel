@@ -12,11 +12,27 @@ from awesome_panel.shared.models import Resource
 
 RESOURCES = [
     Resource(
-        name="VTK Examples by xavArtley",
+        name="A tour (of a small part) of the Python visualization landscape",
+        url="https://indico.cern.ch/event/833895/contributions/3577846/attachments/1928191/3205023/PyHEP2019_slides.pdf",
+        thumbnail_path=THUMBNAILS_ROOT + "",
+        is_awesome=True,
+        tags=[tags.ARTICLE],
+        author=authors.PHILIPP_RUDIGER,
+    ),
+    Resource(
+        name="Building Dashboards. Introduction to Data Analysis in Biological Sciences.",
         url="https://xavartley.github.io/#panel/vtk_examples/Gallery_VTK.html",
         thumbnail_path=THUMBNAILS_ROOT + "",
         is_awesome=True,
-        tags=[tags.APP, tags.INSPIRATION, tags.VTK],
+        tags=[tags.APP, tags.INSPIRATION],
+        author=authors.JUSTIN_BOIS,
+    ),
+    Resource(
+        name="VTK Examples by xavArtley",
+        url="http://bebi103.caltech.edu.s3-website-us-east-1.amazonaws.com/2019a/content/recitations/recitation_05/dashboards.html",
+        thumbnail_path=THUMBNAILS_ROOT + "",
+        is_awesome=True,
+        tags=[tags.TUTORIAL, tags.INSPIRATION, tags.VTK],
         author=authors.XAVARTLEY,
     ),
     Resource(

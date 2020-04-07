@@ -207,7 +207,7 @@ cd into the project root folder
 cd awesome-panel
 ```
 
-#### Create virtual environment
+#### Create virtual environment and install Requirements
 
 ##### via python
 
@@ -237,6 +237,12 @@ In a Windows terminal it's
 .venv/Scripts/activate.bat
 ```
 
+Then you should install the local requirements
+
+```bash
+pip install -r requirements_local.txt
+```
+
 ##### or via Anaconda
 
 Create virtual environment named awesome-panel
@@ -256,7 +262,7 @@ On windows please manually install the geopandas requirements as described in [u
 Then you should install the local requirements
 
 ```bash
-pip install -r requirements_local.txt
+conda install --file requirements_local.txt
 ```
 
 ### Build and run the Application Locally

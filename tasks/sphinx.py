@@ -13,8 +13,6 @@ logging.basicConfig(
 ROOT = pathlib.Path(__file__).parent.parent
 ROOT_FILES = [
     "README.md",
-    "contributing.md",
-    "code-of-conduct.md",
 ]
 
 

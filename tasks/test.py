@@ -100,9 +100,7 @@ Running pytest the test framework
 
 
 @task()
-def pylint(
-    command, files=FILES,
-):
+def pylint(command, files=FILES, test_results=False):
     """Runs pylint (linter) on all .py files recursively to identify coding errors
 
     Arguments:
@@ -121,15 +119,17 @@ sniffs for code smells and offers simple refactoring suggestions.
 """
     )
     command_string = f"pylint {files}"
+    if test_results:
+        command_string += (
+            " --output-format=pylint2junit.JunitReporter 2>&1 > test_results/pylint-results-api.xml"
+        )
     command.run(
         command_string, echo=True,
     )
 
 
 @task
-def mypy(
-    command, files=FILES,
-):
+def mypy(command, files=FILES, test_results=False):
     """Runs mypy (static type checker) on all .py files recursively
 
     Arguments:
@@ -143,6 +143,8 @@ Running mypy for identifying Python type errors
 """
     )
     command_string = f"mypy {files}"
+    if test_results:
+        command_string += " --junit-xml test_results/mypy-results-api.xml"
     command.run(
         command_string, echo=True,
     )
