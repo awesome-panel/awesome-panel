@@ -14,7 +14,7 @@ with open(README_FILE_PATH) as f:
 
 s = setup(  # pylint: disable=invalid-name
     name="awesome-panel",
-    version="20200408.1",
+    version="20200408.5",
     license="MIT",
     description="""This package supports the Awesome Panel Project and
     provides highly experimental features!""",
@@ -23,7 +23,8 @@ s = setup(  # pylint: disable=invalid-name
     url="https://github.com/MarcSkovMadsen/awesome-panel",
     author="Marc Skov Madsen",
     author_email="marc.skov.madsen@gmail.com",
-    package_data={"awesome_panel": ["py.typed"]},
+    # package_data={"awesome_panel": ["py.typed"]},
+    include_package_data=True,
     packages=find_packages(include=["awesome_panel", "awesome_panel.*"]),
     install_requires=["panel"],
     python_requires=">= 3.7",
