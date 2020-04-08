@@ -52,5 +52,5 @@ def view():
     return pn.Column(__doc__, pn.pane.Bokeh(layout), width=500)
 
 
-if __name__.startswith("bk"):
+if __name__.startswith("bokeh"):
     view().servable()

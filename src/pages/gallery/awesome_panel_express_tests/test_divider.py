@@ -24,7 +24,7 @@ def view() -> pn.Column:
     return pn.Column(pn.pane.Markdown(__doc__), test_divider(),)
 
 
-if __name__.startswith("bk"):
+if __name__.startswith("bokeh"):
     pn.config.sizing_mode = "stretch_width"
 
     view().servable("test_divider")

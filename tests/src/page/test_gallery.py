@@ -22,5 +22,5 @@ def test_gallery():
     return TestApp(test_gallery, page_outlet,)
 
 
-if __name__.startswith("bk"):
+if __name__.startswith("bokeh"):
     test_gallery().servable()

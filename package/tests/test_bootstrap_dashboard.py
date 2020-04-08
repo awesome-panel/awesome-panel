@@ -25,10 +25,15 @@ def test_app_with_content():
     - The vertical scroll is independent.
     """
     app = pnx.templates.BootstrapDashboardTemplate(
-        "awesome-panel.org", "https://awesome-panel.org",
+        "Awesome Panel", "https://awesome-panel.org",
     )
-    app.header.append(pn.layout.HSpacer(background="red"))
-    app.header.append(pn.Row("Header", background="orange",))
+    header_objects = [
+        *app.header.objects,
+        pn.layout.HSpacer(background="red"),
+        pn.Row("Header", background="orange"),
+    ]
+
+    app.header[:]=header_objects
     app.sidebar[:] = [
         "Sidebar",
         pn.layout.HSpacer(background="blue", height=200,),
@@ -40,5 +45,5 @@ def test_app_with_content():
     return app
 
 
-if __name__.startswith("bk"):
+if __name__.startswith("bokeh"):
     test_app_with_content().servable("test_app_with_content")

@@ -24,6 +24,6 @@ def test_resources():
     return TestApp(test_resources, resources.view(),)
 
 
-if __name__.startswith("bk"):
+if __name__.startswith("bokeh"):
     test_home().servable()
     test_resources().servable()

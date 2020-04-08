@@ -53,5 +53,5 @@ class App(param.Parameterized):
         )
 
 
-if __name__.startswith("bk"):
+if __name__.startswith("bokeh"):
     App().view().servable()

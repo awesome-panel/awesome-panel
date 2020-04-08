@@ -17,5 +17,5 @@ def test_title_awesome():
     Column(title_none, title_test, sizing_mode="stretch_width",).servable()
 
 
-if __name__.startswith("bk"):
+if __name__.startswith("bokeh"):
     test_title_awesome()

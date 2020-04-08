@@ -280,5 +280,5 @@ def view():
     return OwidDashboard().view()
 
 
-if __name__.startswith("bk"):
+if __name__.startswith("bokeh"):
     view().servable()

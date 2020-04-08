@@ -21,5 +21,5 @@ def view() -> pn.Column:
     return pn.Column(pn.pane.Markdown(__doc__), test_athlete_edit_view(),)
 
 
-if __name__.startswith("bk"):
+if __name__.startswith("bokeh"):
     view().servable("test_athlete_view")

@@ -35,5 +35,5 @@ def view():
     return app
 
 
-if __name__.startswith("bk"):
+if __name__.startswith("bokeh"):
     view().servable()

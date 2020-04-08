@@ -106,6 +106,6 @@
 #     )
 
 
-# if __name__.startswith("bk"):
+# if __name__.startswith("bokeh"):
 #     # holoviews_view().servable()
 #     plotly_view().servable()

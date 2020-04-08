@@ -6,7 +6,7 @@ or similar where . is replaced by the path to package root
 """
 import pathlib
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 README_FILE_PATH = pathlib.Path(__file__).parent / "README.md"
 with open(README_FILE_PATH) as f:
@@ -14,7 +14,7 @@ with open(README_FILE_PATH) as f:
 
 s = setup(  # pylint: disable=invalid-name
     name="awesome-panel",
-    version="20200104.1",
+    version="20200408.1",
     license="MIT",
     description="""This package supports the Awesome Panel Project and
     provides highly experimental features!""",
@@ -24,7 +24,7 @@ s = setup(  # pylint: disable=invalid-name
     author="Marc Skov Madsen",
     author_email="marc.skov.madsen@gmail.com",
     package_data={"awesome_panel": ["py.typed"]},
-    packages=["awesome_panel"],
+    packages=find_packages(include=["awesome_panel", "awesome_panel.*"]),
     install_requires=["panel"],
     python_requires=">= 3.7",
     zip_safe=False,

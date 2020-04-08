@@ -161,5 +161,5 @@ class GridBoxWithTwoColumns(pn.GridBox):
         super().__init__(*objects, **params, ncols=2)
 
 
-if __name__.startswith("bk"):
+if __name__.startswith("bokeh"):
     view().servable()

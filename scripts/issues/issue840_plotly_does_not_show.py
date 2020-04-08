@@ -100,6 +100,6 @@ Still only the Holoviews page shows! The Plotly page does not!"""
     return app
 
 
-if __name__.startswith("bk"):
+if __name__.startswith("bokeh"):
     main().servable("issue")
     # plotly_page().servable("plotly_page stand alone works!")

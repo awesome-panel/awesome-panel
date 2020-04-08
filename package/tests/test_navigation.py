@@ -90,7 +90,7 @@ def test_pn_navigation_with_font_awesome():
     app.servable("test_pn_navigation_with_font_awesome")
 
 
-if __name__.startswith("bk"):
+if __name__.startswith("bokeh"):
     test_pn_navigation_button()
     test_pn_navigation()
     test_pn_navigation_with_font_awesome()

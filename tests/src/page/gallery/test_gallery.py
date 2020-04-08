@@ -24,5 +24,5 @@ def view() -> pn.Column:
     return pn.Column(test_gallery_button(), sizing_mode="stretch_width",)
 
 
-if __name__.startswith("bk"):
+if __name__.startswith("bokeh"):
     view().servable()

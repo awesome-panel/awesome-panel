@@ -12,5 +12,5 @@ def view() -> Column:
     return Column(Markdown(HOME_PATH.read_text()), name="Home", sizing_mode="stretch_width",)
 
 
-if __name__.startswith("bk"):
+if __name__.startswith("bokeh"):
     view().servable()

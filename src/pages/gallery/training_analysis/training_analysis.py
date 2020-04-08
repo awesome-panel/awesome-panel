@@ -34,5 +34,5 @@ def view(activity_file: Optional[pathlib.Path] = None,):
     return TrainingAnalysisApp(activity_file=activity_file)
 
 
-if __name__.startswith("bk"):
+if __name__.startswith("bokeh"):
     view(DEFAULT_FIT_FILE).servable()

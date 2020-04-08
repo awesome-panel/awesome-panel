@@ -125,5 +125,5 @@ def main():
     template.servable()
 
 
-if __name__.startswith("bk"):
+if __name__.startswith("bokeh"):
     main()

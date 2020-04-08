@@ -28,5 +28,5 @@ def view() -> pn.Column:
     return pn.Column(test_activity_view())
 
 
-if __name__.startswith("bk"):
+if __name__.startswith("bokeh"):
     view().servable()

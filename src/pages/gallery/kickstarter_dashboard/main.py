@@ -310,5 +310,5 @@ def view() -> KickstarterDashboard:
     return KickstarterDashboard().view()
 
 
-if __name__.startswith("bk"):
+if __name__.startswith("bokeh"):
     view().servable("Kickstarter Dashboard")

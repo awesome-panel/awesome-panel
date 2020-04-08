@@ -197,7 +197,7 @@ def view(nrows: Optional[int] = None):
     return app.view()
 
 
-if __name__.startswith("bk"):
+if __name__.startswith("bokeh"):
     pn.config.sizing_mode = "stretch_width"
     NROWS=None
     view(nrows=NROWS).servable()

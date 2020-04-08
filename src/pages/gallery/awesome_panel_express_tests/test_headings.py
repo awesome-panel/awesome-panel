@@ -59,5 +59,5 @@ def view() -> pn.Column:
     )
 
 
-if __name__.startswith("bk"):
+if __name__.startswith("bokeh"):
     view().servable("test_headings")

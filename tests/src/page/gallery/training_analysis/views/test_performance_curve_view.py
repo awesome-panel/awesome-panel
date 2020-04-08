@@ -23,5 +23,5 @@ def view() -> pn.Column:
     return pn.Column(pn.pane.Markdown(__doc__), test_performance_curve_update_view(),)
 
 
-if __name__.startswith("bk"):
+if __name__.startswith("bokeh"):
     view().servable("test_performance_curveview")
