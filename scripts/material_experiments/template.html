@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Example App</title>
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@next/webcomponents-loader.js"></script>
+    <!-- <script type="module" src="https://unpkg.com/@material/mwc-button@0.14.1/mwc-button.js?module"></script>
+    <script type="module" src="https://unpkg.com/@material/mwc-fab@0.14.1/mwc-fab.js?module"></script>
+    <script type="module" src="https://unpkg.com/@material/mwc-icon@0.14.1/mwc-icon.js?module"></script>
+    <script type="module" src="https://unpkg.com/@material/mwc-checkbox@0.14.1/mwc-checkbox.js?module"></script>
+    <script type="module" src="https://unpkg.com/@material/mwc-radio@0.14.1/mwc-radio.js?module"></script>
+    <script type="module" src="https://unpkg.com/@material/mwc-switch@0.14.1/mwc-switch.js?module"></script> -->
+    <script type="module" src="https://unpkg.com/@material/mwc-ripple@0.14.1/mwc-ripple.js?module"></script>
+    <script type="module" src="https://unpkg.com/@material/mwc-drawer@0.14.1/mwc-drawer.js?module"></script>
+    <script type="module" src="https://unpkg.com/@material/mwc-icon-button@0.14.1/mwc-icon-button.js?module"></script>
+    <script type="module" src="https://unpkg.com/@material/mwc-top-app-bar@0.14.1/mwc-top-app-bar.js?module"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet">
+  </head>
+  <body class="notDefined">
+    <mwc-top-app-bar>
+        <mwc-icon-button slot="navigationIcon" icon="menu"></mwc-icon-button>
+        <div slot="title">Title</div>
+        <mwc-icon-button icon="file_download" slot="actionItems"></mwc-icon-button>
+        <mwc-icon-button icon="print" slot="actionItems"></mwc-icon-button>
+        <mwc-icon-button icon="favorite" slot="actionItems"></mwc-icon-button>
+    </mwc-top-app-bar>
+
+    <style>
+      body {
+        font-family: Google sans, sans-serif;
+        transform: opacity 0.2s;
+        margin: 0px;  /*removes default style*/
+      }
+      body.notDefined {
+        opacity: 0;
+      }
+
+      .box3 {
+        height: 100px;
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid gray;
+        border-radius: 8px;
+      }
+
+      .group {
+        display: flex;
+      }
+      .group > * {
+        margin: 8px;
+      }
+
+       .dark {
+          --mdc-theme-on-primary: black;
+          --mdc-theme-primary: white;
+          --mdc-theme-on-secondary: black;
+          --mdc-theme-secondary: white;
+        }
+
+        .special {
+          --mdc-theme-on-primary: white;
+          --mdc-theme-primary: #e9437a;
+          --mdc-theme-on-secondary: white;
+          --mdc-theme-secondary: #e9437a;
+        }
+
+        mwc-top-app-bar {
+            box-shadow: 5px 5px 20px grey;
+        }
+
+      .light-icon {
+        color: gray;
+      }
+
+      .special-icon {
+        color: #e9437a;
+      }
+    </style>
+    <script>
+      addEventListener('WebComponentsReady', () => document.body.classList.remove('notDefined'))
+    </script>
+  </body>
+</html>
