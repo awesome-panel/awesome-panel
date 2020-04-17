@@ -240,7 +240,7 @@ class FloatSlider(WebComponent):
     component_type = param.String("inputgroup")
     html = param.String("<wired-slider style='width: 100%;height:100%'></wired-slider>")
     attributes_to_watch = param.Dict({"min": "start", "max": "end", "step": "step"})
-    properties_to_watch = param.Dict({"input.value": "value"})
+    properties_to_watch = param.Dict({"value": "value"})
     events_to_watch = param.Dict({"change": None})
 
     def __init__(self, min_height=40, **params):
