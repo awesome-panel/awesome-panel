@@ -2,6 +2,8 @@ from bokeh.layouts import column
 from bokeh.models import Slider
 from bokeh.server.server import Server
 
+import awesome_panel.express.bootstrap
+
 
 def get_app(title="My App"):
     def bkapp(doc):
@@ -32,5 +34,3 @@ if __name__ == "__main__":
 
     server.io_loop.add_callback(server.show, "/")
     server.io_loop.start()
-
-import awesome_panel.express.bootstrap

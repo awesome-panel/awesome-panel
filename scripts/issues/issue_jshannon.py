@@ -2,8 +2,8 @@
 # Import third party libraries.
 import numpy as np
 import pandas as pd
-import plotly.graph_objects as go
 import panel as pn
+import plotly.graph_objects as go
 
 
 # %% Define functions.

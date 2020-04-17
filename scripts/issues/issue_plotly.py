@@ -1,5 +1,5 @@
-import panel as pn
 import pandas as pd
+import panel as pn
 import plotly.express as px
 
 chart_data = {

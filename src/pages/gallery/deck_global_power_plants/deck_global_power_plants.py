@@ -1,12 +1,13 @@
 """In this app we provide visual insights into the worlds power plants using
 DeckGL and PyDeck"""
 
-import panel as pn
-import pydeck as pdk
-import param
-import pandas as pd
 import pathlib
 from typing import Optional
+
+import pandas as pd
+import panel as pn
+import param
+import pydeck as pdk
 
 POWER_PLANT_URL = (
     "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/"
@@ -45,16 +46,16 @@ VIEW_STATES = {
     "Skærbæk, DK": pdk.ViewState(latitude=55.5158503, longitude=9.6207391, zoom=6),
     "Taipei, Taiwan": pdk.ViewState(latitude=25.0318932, longitude=121.5661063, zoom=6),
     "Horns Rev 2, DK": pdk.ViewState(latitude=55.5333558, longitude=7.9658237, zoom=6),
-    "Kuala Lumpur, Malaysis": pdk.ViewState( latitude=3.1116255,longitude=101.663948, zoom=6),
-    "Anholt, DK": pdk.ViewState( latitude=56.5975418,longitude=11.1720228, zoom=6),
-    "Borkum Riffgrund 1, DE": pdk.ViewState( latitude=53.8333333,longitude=5.3793945, zoom=6),
-    "Gode Wind 2, DE": pdk.ViewState( latitude=54.041, longitude=6.995, zoom=6),
-    "London Array, UK": pdk.ViewState( latitude=51.3285692,longitude=1.4211854, zoom=6),
-    "Lincs, UK": pdk.ViewState( latitude=53.1518117,longitude=0.5247279, zoom=6),
-    "Walney": pdk.ViewState( latitude=54.0373667,longitude=-2.9673396, zoom=6),
-    "West of Duddon Sands": pdk.ViewState( latitude=54.106667, longitude=-3.3870134, zoom=6),
-    "Westermost Rough, UK": pdk.ViewState( latitude=53.7810064,longitude=0.2126456, zoom=6),
-    "Race Bank, UK": pdk.ViewState( latitude=53.242301,longitude=0.8377461, zoom=6),
+    "Kuala Lumpur, Malaysis": pdk.ViewState(latitude=3.1116255, longitude=101.663948, zoom=6),
+    "Anholt, DK": pdk.ViewState(latitude=56.5975418, longitude=11.1720228, zoom=6),
+    "Borkum Riffgrund 1, DE": pdk.ViewState(latitude=53.8333333, longitude=5.3793945, zoom=6),
+    "Gode Wind 2, DE": pdk.ViewState(latitude=54.041, longitude=6.995, zoom=6),
+    "London Array, UK": pdk.ViewState(latitude=51.3285692, longitude=1.4211854, zoom=6),
+    "Lincs, UK": pdk.ViewState(latitude=53.1518117, longitude=0.5247279, zoom=6),
+    "Walney": pdk.ViewState(latitude=54.0373667, longitude=-2.9673396, zoom=6),
+    "West of Duddon Sands": pdk.ViewState(latitude=54.106667, longitude=-3.3870134, zoom=6),
+    "Westermost Rough, UK": pdk.ViewState(latitude=53.7810064, longitude=0.2126456, zoom=6),
+    "Race Bank, UK": pdk.ViewState(latitude=53.242301, longitude=0.8377461, zoom=6),
 }
 
 
@@ -199,5 +200,5 @@ def view(nrows: Optional[int] = None):
 
 if __name__.startswith("bokeh"):
     pn.config.sizing_mode = "stretch_width"
-    NROWS=None
+    NROWS = None
     view(nrows=NROWS).servable()

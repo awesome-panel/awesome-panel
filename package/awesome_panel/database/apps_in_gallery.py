@@ -31,6 +31,14 @@ APPS_IN_GALLERY = [
         author=authors.MARC_SKOV_MADSEN,
     ),
     Resource(
+        name="DataExplorer - Loading...",
+        url=GITHUB_GALLERY_URL + "dataexplorer_loading/dataexplorer_loading.py",
+        thumbnail_path=THUMBNAILS_ROOT + "dataexplorer_loading.png",
+        tags=[tags.CODE, tags.APP_IN_GALLERY,],
+        is_awesome=True,
+        author=authors.MARC_SKOV_MADSEN,
+    ),
+    Resource(
         name="Image Classifier",
         url=GITHUB_GALLERY_URL + "image_classifier/image_classifier.py",
         thumbnail_path=THUMBNAILS_ROOT + "image_classifier.png",

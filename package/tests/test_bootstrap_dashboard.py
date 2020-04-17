@@ -24,16 +24,14 @@ def test_app_with_content():
     - There is only vertical scroll in the sidebar and main area.
     - The vertical scroll is independent.
     """
-    app = pnx.templates.BootstrapDashboardTemplate(
-        "Awesome Panel", "https://awesome-panel.org",
-    )
+    app = pnx.templates.BootstrapDashboardTemplate("Awesome Panel", "https://awesome-panel.org",)
     header_objects = [
         *app.header.objects,
         pn.layout.HSpacer(background="red"),
         pn.Row("Header", background="orange"),
     ]
 
-    app.header[:]=header_objects
+    app.header[:] = header_objects
     app.sidebar[:] = [
         "Sidebar",
         pn.layout.HSpacer(background="blue", height=200,),
