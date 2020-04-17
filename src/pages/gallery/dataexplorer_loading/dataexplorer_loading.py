@@ -17,8 +17,8 @@ import param
 EMPTY_DATAFRAME = pd.DataFrame(columns=["x", "y"])
 EMPTY_PLOT = hv.Div("Click UPDATE to load!")
 SPINNER_URL = (
-    "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/"
-    "master/src/pages/gallery/holoviews_plot_loading/spinner.gif"
+    "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/"
+    "src/pages/gallery/dataexplorer_loading/spinner.gif?raw=true"
 )
 SPINNER_HTML = f"<img src='{SPINNER_URL}' style='width:100%'"
 
@@ -33,7 +33,7 @@ class DataExplorer(param.Parameterized):
     def __init__(self, **params):
         super().__init__(**params)
 
-        self.plot_pane = pn.pane.HoloViews(EMPTY_PLOT, sizing_mode="stretch_both")
+        self.plot_pane = pn.pane.HoloViews(EMPTY_PLOT, sizing_mode="stretch_both", min_height=300)
         self.update_action = self.load_data
         self.progress_widget = pn.widgets.Progress(
             name="Progress", sizing_mode="stretch_width", value=0
