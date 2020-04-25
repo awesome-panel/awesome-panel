@@ -1,0 +1,33 @@
+body {
+    font-family: roboto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: 0px;
+    background: var(--mdc-theme-background);
+}
+img {
+    /* we wan't no overflow. Will make it easier to include images in markdown */
+    max-width: 100%;
+}
+table {
+    width: 95%;
+}
+mwc-top-app-bar-fixed {
+    box-shadow: 5px 5px 20px #9E9E9E;
+    font-size: 20px;
+}
+mwc-drawer {
+    height: calc(100vh-64px);
+}
+.appMenu * {
+    width:100%;
+    align-items: left;
+}
+.appMain {
+    margin: 10px;
+}
+div.appContent {
+    height: 200px;
+    overflow-x: hidden;
+    overflow-y: visible;
+}

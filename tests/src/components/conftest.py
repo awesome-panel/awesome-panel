@@ -2,8 +2,10 @@
 import pytest
 import panel as pn
 
+from awesome_panel.components import Application
+from awesome_panel.templates import MaterialTemplate
+
 from awesome_panel.models import (
-    Application,
     MenuItem,
     Page,
     SocialLink,
@@ -14,7 +16,7 @@ from awesome_panel.models import (
 
 @pytest.fixture
 def template():
-    return pn.Template(name="Material")
+    return MaterialTemplate
 
 
 @pytest.fixture

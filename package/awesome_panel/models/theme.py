@@ -1,2 +1,4 @@
-class Theme():
+import param
+
+class Theme(param.Parameterized):
     pass

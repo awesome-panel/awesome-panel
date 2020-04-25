@@ -4,11 +4,11 @@ from .message import Message
 
 
 class Application(param.Parameterized):
-    template = param.ObjectSelector()
-    theme = param.ObjectSelector()
     title = param.String()
-    logo = param.String()
     url = param.String()
+    logo = param.String()
+    theme = param.ObjectSelector()
+    template = param.ObjectSelector()
     page = param.ObjectSelector()
     menu_item = param.ObjectSelector(allow_None=True)
     source_link = param.ObjectSelector(allow_None=True)
@@ -31,5 +31,5 @@ class Application(param.Parameterized):
 
         super().__init__(**params)
 
-        self.progress = Progress()
-        self.message = Message()
+        self.progress = Progress(name="Progress")
+        self.message = Message(name="Message")
