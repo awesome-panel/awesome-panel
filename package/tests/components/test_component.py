@@ -7,4 +7,4 @@ def test_component_has_view_func():
     # When:
     component = Component()
     # Then
-    assert isinstance(component.view, callable)
+    assert callable(component.view)

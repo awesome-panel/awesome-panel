@@ -1,11 +1,22 @@
-from awesome_panel.models import Application as ApplicationModel
+from awesome_panel.models import Application
 from .component import Component
 import panel as pn
+import param
 
-class Application(ApplicationModel, Component):
+class ApplicationComponent(Component):
+    model = param.ClassSelector(class_=Application)
+
+    def __init__(self, **params):
+        super().__init__(**params)
+
+        self.menu = pn.Column()
+        self.sidebar = pn.Column()
+        self.main = pn.Column()
+        self.theme_css = pn.pane.HTML()
+
     def _settings_pane(self):
         return pn.Param(
-            self, parameters=[
+            self.model, parameters=[
                 "template",
                 "theme",
                 "title",
@@ -26,5 +37,4 @@ class Application(ApplicationModel, Component):
 
     def view(self, sizing_mode="stretch_width", **params):
         pn.config.sizing_mode = sizing_mode
-
-        return self.template(application=self)
+        return self.model.template(application=self)

@@ -1,3 +1,3 @@
-from .application import Application
+from .application_component import ApplicationComponent
 from .component import Component
-from .page import Page
+from .page_component import PageComponent

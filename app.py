@@ -2,7 +2,8 @@
 import pytest
 import panel as pn
 
-from awesome_panel.components import Application, Page
+from awesome_panel.components import ApplicationComponent, PageComponent
+from awesome_panel.models import Application, Page
 from awesome_panel.templates import MaterialTemplate
 
 from awesome_panel.models import (
@@ -17,22 +18,25 @@ THEMES = [Theme(name="Dark")]
 TITLE = "Awesome Panel"
 LOGO = "https://panel.holoviz.org/_static/logo_horizontal.png"
 URL = "https://awesome-panel.org"
-PAGES = [Page(name="Home")]
+PAGES = [PageComponent(model=Page(name="Home"))]
 MENU_ITEMS = [MenuItem(name="Item 1")]
 SOURCE_LINKS = [SourceLink(name="GitHub")]
 SOCIAL_LINKS = [SocialLink(name="Twitter")]
+APPLICATION = Application(
+            title=TITLE,
+            logo=LOGO,
+            url=URL,
+            templates=TEMPLATES,
+            themes=THEMES,
+            pages=PAGES,
+            menu_items=MENU_ITEMS,
+            source_links=SOURCE_LINKS,
+            social_links=SOCIAL_LINKS,
+        )
 
 def view():
-    return Application(
-        title=TITLE,
-        logo=LOGO,
-        url=URL,
-        templates=TEMPLATES,
-        themes=THEMES,
-        pages=PAGES,
-        menu_items=MENU_ITEMS,
-        source_links=SOURCE_LINKS,
-        social_links=SOCIAL_LINKS,
+    return ApplicationComponent(
+        model=APPLICATION
     ).view()
 
 pn.config.sizing_mode="stretch_width"
