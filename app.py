@@ -4,7 +4,7 @@ import panel as pn
 
 from awesome_panel.templates import MaterialTemplate
 from awesome_panel.templates import ApplicationTemplateBuilder
-from src.pages import home
+from src.pages import home, about, issues, resources
 import param
 from awesome_panel.components import PageComponent as Page
 from awesome_panel.models import (
@@ -13,6 +13,8 @@ from awesome_panel.models import (
     SourceLink,
     Theme,
 )
+from src.pages.gallery import Gallery
+from src.pages.gallery.kickstarter_dashboard.main import KickstarterDashboard
 
 TITLE = "AWESOME PANEL"
 LOGO = "https://panel.holoviz.org/_static/logo_horizontal.png"
@@ -20,6 +22,11 @@ URL = "https://awesome-panel.org"
 PAGES = [
     Page(name="Home", page=home),
     Page(name="Gallery", page=pn.Column("# Gallery", pn.pane.Markdown("## App 1"), name="Gallery")),
+    Page(name="About", page = about),
+    Page(name="Issues", page = issues),
+    Page(name="Resources", page = resources),
+    # Page(name="Gallery", page = Gallery),
+    Page(name="Kickstarter Dashboard", page = KickstarterDashboard)
 ]
 MENU_ITEMS = [MenuItem(name="Item 1")]
 SOURCE_LINKS = [SourceLink(name="GitHub")]

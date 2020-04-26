@@ -27,7 +27,6 @@ APPLICATION = Application(
     social_links=SOCIAL_LINKS,
 )
 
-
 class ApplicationTemplateBuilder(param.Parameterized):
     title = param.String("Application Title")
     url = param.String()

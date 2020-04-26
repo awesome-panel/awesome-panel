@@ -3,6 +3,7 @@ import panel as pn
 from awesome_panel.models import Application
 import pathlib
 
+SPINNER_URL =
 
 class ApplicationTemplate(pn.Template):
     application = param.ClassSelector(class_=Application)

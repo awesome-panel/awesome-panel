@@ -6,6 +6,9 @@ body {
     background: var(--mdc-theme-background);
     min-height: 100vh;
 }
+.bk-root .bk {
+    font-family: roboto;
+}
 img {
     /* we wan't no overflow. Will make it easier to include images in markdown */
     max-width: 100%;
