@@ -26,6 +26,7 @@ def view():
         logo=LOGO,
         url=URL,
         pages=PAGES,
+        template=MaterialTemplate,
         menu_items=MENU_ITEMS,
         source_links=SOURCE_LINKS,
         social_links=SOCIAL_LINKS,
