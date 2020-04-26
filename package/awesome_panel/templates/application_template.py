@@ -21,7 +21,7 @@ class ApplicationTemplate(pn.Template):
 
         self.menu = pn.Param(self.application.param.menu_item, expand_button=False)
         self.sidebar = pn.Column()
-        self.main = pn.Column(self.application.page.view, sizing_mode="stretch_both",)
+        self.main = pn.Column(self.application.page.view, sizing_mode="stretch_both", margin=(25,50,25,50))
         self.theme_css = pn.pane.HTML(height=0, width=0, sizing_mode="fixed", margin=0)
         self.add_panel(name="menu_item", panel=self.menu)
         self.add_panel(name="main", panel=self.main)

@@ -4,6 +4,7 @@ body {
     overflow-y: hidden;
     margin: 0px;
     background: var(--mdc-theme-background);
+    min-height: 100vh;
 }
 img {
     /* we wan't no overflow. Will make it easier to include images in markdown */
@@ -16,9 +17,6 @@ mwc-top-app-bar-fixed {
     box-shadow: 5px 5px 20px #9E9E9E;
     font-size: 20px;
 }
-mwc-drawer {
-    height: calc(100vh-64px);
-}
 .appMenu * {
     width:100%;
     align-items: left;
@@ -27,9 +25,10 @@ mwc-drawer {
     margin: 10px;
 }
 div.appContent {
-    height: 200px;
     overflow-x: hidden;
-    overflow-y: visible;
+    overflow-y: auto;
+    height: 100vh;
+    width: 100%;
 }
 /* mwc-top-app-bar-fixed p, mwc-top-app-bar-fixed .bk-root .bk-btn, mwc-top-app-bar-fixed .bk-root .bk {
     font-size: 20px;

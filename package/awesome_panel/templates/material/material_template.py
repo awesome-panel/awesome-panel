@@ -34,7 +34,7 @@ class MaterialTemplate(ApplicationTemplate):
 
         self.app_title_link_pane = pn.Param(self, parameters = ["select_title_page"], show_name=False, show_labels=False, sizing_mode="fixed")
         self.app_title_page_pane = pn.Param(self.application.param.page, expand_button=False, show_labels=False, sizing_mode="fixed")
-        self.app_title_pane = pn.Row(self.app_title_link_pane, pn.pane.Markdown("/", sizing_mode="fixed", width=15), self.app_title_page_pane, sizing_mode="fixed")
+        self.app_title_pane = pn.Row(self.app_title_link_pane, pn.pane.Markdown("/", sizing_mode="fixed", width=5), self.app_title_page_pane, sizing_mode="fixed")
 
         self.add_panel(name="app_title", panel=self.app_title_pane)
 

@@ -4,7 +4,9 @@ import panel as pn
 
 from awesome_panel.templates import MaterialTemplate
 from awesome_panel.templates import ApplicationTemplateBuilder
-
+from src.pages import home
+import param
+from awesome_panel.components import PageComponent as Page
 from awesome_panel.models import (
     MenuItem,
     SocialLink,
@@ -12,10 +14,13 @@ from awesome_panel.models import (
     Theme,
 )
 
-TITLE = "Awesome Panel"
+TITLE = "AWESOME PANEL"
 LOGO = "https://panel.holoviz.org/_static/logo_horizontal.png"
 URL = "https://awesome-panel.org"
-PAGES = [pn.pane.Markdown("# Home", name="Home"), pn.Column("# Gallery", pn.pane.Markdown("## App 1"), name="Gallery")]
+PAGES = [
+    Page(name="Home", page=home),
+    Page(name="Gallery", page=pn.Column("# Gallery", pn.pane.Markdown("## App 1"), name="Gallery")),
+]
 MENU_ITEMS = [MenuItem(name="Item 1")]
 SOURCE_LINKS = [SourceLink(name="GitHub")]
 SOCIAL_LINKS = [SocialLink(name="Twitter")]

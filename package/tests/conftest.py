@@ -67,25 +67,25 @@ def page():
 
 @pytest.fixture
 def home_page_component(home_page):
-    return PageComponent.create(object=home_page)
+    return PageComponent(name="Home", page=home_page)
 
 
 @pytest.fixture
 def gallery_page_component(gallery_page):
-    return PageComponent.create(object=gallery_page)
+    return PageComponent(name="Gallery", page=gallery_page)
 
 
 @pytest.fixture
 def page_component(page):
-    return PageComponent.create(object=page)
+    return PageComponent(name="Page", page=page)
 
 @pytest.fixture
-def page_components(home_page_component, gallery_page_component):
-    return [home_page_component, gallery_page_component]
+def page_components(home_page_component, gallery_page_component, page_component):
+    return [home_page_component, gallery_page_component, page_component]
 
 @pytest.fixture
-def pages(home_page, gallery_page_component):
-    return [home_page, gallery_page_component, pn.pane.Markdown("Another Page")]
+def pages(page, home_page, gallery_page):
+    return [home_page, gallery_page, page]
 
 
 @pytest.fixture
