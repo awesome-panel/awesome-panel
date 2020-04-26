@@ -1,1 +1,1 @@
-from .material import MaterialTemplate
+from .material_template import MaterialTemplate

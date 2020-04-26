@@ -11,7 +11,6 @@ def test_can_construct_application_without_exceptions(application):
     assert isinstance(application.logo, str)
     assert isinstance(application.url, str)
     assert issubclass(application.template, pn.Template)
-    assert isinstance(application.theme, models.Theme)
 
     assert "page" in application.param
     assert isinstance(application.page, components.PageComponent)

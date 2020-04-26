@@ -7,7 +7,6 @@ class Application(param.Parameterized):
     title = param.String()
     url = param.String()
     logo = param.String()
-    theme = param.ObjectSelector()
     template = param.ObjectSelector()
     page = param.ObjectSelector()
     menu_item = param.ObjectSelector(allow_None=True)
@@ -17,12 +16,13 @@ class Application(param.Parameterized):
     message = param.ClassSelector(class_=Message)
 
     def __init__(
-        self, templates, themes, pages, menu_items=[], source_links=[], social_links=[], **params
+        self, templates, pages, menu_items=[], source_links=[], social_links=[], **params
     ):
         self.param.template.objects = templates
-        self.param.template.default = templates[0]
-        self.param.theme.objects = themes
-        self.param.theme.default = themes[0]
+        if "template" in params:
+            self.param.template.default = params["template"]
+        else:
+            self.param.template.default = templates[0]
         self.param.page.objects = pages
         self.param.page.default = pages[0]
         self.param.menu_item.objects = menu_items

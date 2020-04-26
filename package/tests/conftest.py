@@ -4,14 +4,13 @@ import panel as pn
 
 from awesome_panel.templates import MaterialTemplate
 from awesome_panel.templates.application_template import ApplicationTemplate
-from awesome_panel.templates.material.material import HTML_PATH, CSS_PATH
+from awesome_panel.templates.material.material_template import HTML_PATH, CSS_PATH
 
-from awesome_panel.components import ApplicationComponent, PageComponent
+from awesome_panel.components import PageComponent
 
 from awesome_panel.models import (
     Application,
     MenuItem,
-    Page,
     SocialLink,
     SourceLink,
     Theme,
@@ -55,37 +54,38 @@ def url():
 
 @pytest.fixture
 def home_page():
-    return Page(name="Home")
+    return pn.pane.Markdown(name="Home")
 
 
 @pytest.fixture
 def gallery_page():
-    return Page(name="Gallery")
-
+    return pn.Column(pn.pane.Markdown("Page 1"), pn.pane.Markdown("Page 2"))
 
 @pytest.fixture
-def page(home_page):
-    return home_page
-
+def page():
+    return pn.pane.Markdown("Page")
 
 @pytest.fixture
 def home_page_component(home_page):
-    return PageComponent(model=home_page)
+    return PageComponent.create(object=home_page)
 
 
 @pytest.fixture
 def gallery_page_component(gallery_page):
-    return PageComponent(model=gallery_page)
+    return PageComponent.create(object=gallery_page)
 
 
 @pytest.fixture
 def page_component(page):
-    return PageComponent(model=page)
-
+    return PageComponent.create(object=page)
 
 @pytest.fixture
 def page_components(home_page_component, gallery_page_component):
     return [home_page_component, gallery_page_component]
+
+@pytest.fixture
+def pages(home_page, gallery_page_component):
+    return [home_page, gallery_page_component, pn.pane.Markdown("Another Page")]
 
 
 @pytest.fixture
@@ -136,12 +136,7 @@ def application(
 
 
 @pytest.fixture
-def application_component(application):
-    return ApplicationComponent(model=application)
-
-
-@pytest.fixture
-def application_template(application_component):
+def application_template(application):
     return ApplicationTemplate(
-        application=application_component, template_path=HTML_PATH, css_path=CSS_PATH
+        application=application, template_path=HTML_PATH, css_path=CSS_PATH
     )

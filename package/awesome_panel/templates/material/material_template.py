@@ -5,8 +5,8 @@ import param
 from awesome_panel.templates.application_template import ApplicationTemplate
 
 ROOT_PATH = pathlib.Path(__file__).parent
-HTML_PATH = ROOT_PATH / "material.html"
-CSS_PATH = ROOT_PATH / "material.css"
+HTML_PATH = ROOT_PATH / "material_template.html"
+CSS_PATH = ROOT_PATH / "material_template.css"
 DEFAULT_NAME = "Material"
 
 THEME_CSS = """
@@ -35,12 +35,12 @@ class MaterialTemplate(ApplicationTemplate):
         self.app_title_pane = pn.pane.HTML(self._get_app_title())
         self.add_panel(name="app_title", panel=self.app_title_pane)
 
-    @param.depends("application.model.title", "application.model.url", watch=True)
+    @param.depends("application.title", "application.url", watch=True)
     def _set_app_title_pane(self):
         self.app_title_pane.object = self._get_app_title()
 
     def _get_app_title(self):
-        return f"<a href='{self.application.model.url}'><h1>{self.application.model.title}</h1></a>"
+        return f"<a href='{self.application.url}'><h1>{self.application.title}</h1></a>"
 
 
 
