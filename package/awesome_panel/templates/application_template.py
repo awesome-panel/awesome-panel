@@ -9,6 +9,8 @@ class ApplicationTemplate(pn.Template):
     template_path = param.ClassSelector(class_=pathlib.Path)
     css_path = param.ClassSelector(class_=pathlib.Path)
 
+    select_title_page = param.Action()
+
     def __init__(self, **params):
         params["template"] = params["template_path"].read_text()
 
@@ -17,7 +19,7 @@ class ApplicationTemplate(pn.Template):
         if self.css_path:
             pn.config.css_files.append(self.css_path.resolve())
 
-        self.menu = pn.Param(self.application.param.menu_item)
+        self.menu = pn.Param(self.application.param.menu_item, expand_button=False)
         self.sidebar = pn.Column()
         self.main = pn.Column(self.application.page.view, sizing_mode="stretch_both",)
         self.theme_css = pn.pane.HTML(height=0, width=0, sizing_mode="fixed", margin=0)
@@ -25,13 +27,16 @@ class ApplicationTemplate(pn.Template):
         self.add_panel(name="main", panel=self.main)
         self.add_panel(name="theme_css", panel=self.theme_css)
 
-    @param.depends("application.title", "application.url", watch=True)
-    def _set_app_title_pane(self):
-        self.app_title_pane.object = self._get_app_title()
-
-    def _get_app_title(self):
-        return f"<a href='{self.application.url}'><h1>{self.application.title}</h1></a>"
+        self.select_title_page = self._select_title_page
+        self._set_select_title_page_label()
 
     @param.depends("application.page", watch=True)
     def _set_main_objects(self):
         self.main[:] = [self.application.page.view]
+
+    @param.depends("application.title", watch=True)
+    def _set_select_title_page_label(self):
+        self.param.select_title_page.label=self.application.title
+
+    def _select_title_page(self, _=None):
+        self.application.page = self.application.param.page.default

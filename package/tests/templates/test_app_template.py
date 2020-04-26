@@ -1,4 +1,5 @@
 import panel as pn
+import param
 
 def test_can_construct_application_template_with_exception(application, application_template):
     # Then
@@ -8,6 +9,7 @@ def test_can_construct_application_template_with_exception(application, applicat
     assert isinstance(application_template.main, pn.layout.Reactive)
     assert application_template.main.objects
     assert isinstance(application_template.theme_css, pn.pane.HTML)
+    assert isinstance(application_template.param.select_title_page, param.Action)
 
 def test_main_content_changes_when_page_changes(application_template, home_page_component, gallery_page_component):
     # Given

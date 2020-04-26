@@ -32,15 +32,18 @@ class MaterialTemplate(ApplicationTemplate):
 
         super().__init__(**params)
 
-        self.app_title_pane = pn.pane.HTML(self._get_app_title())
+        self.app_title_link_pane = pn.Param(self, parameters = ["select_title_page"], show_name=False, show_labels=False, sizing_mode="fixed")
+        self.app_title_page_pane = pn.Param(self.application.param.page, expand_button=False, show_labels=False, sizing_mode="fixed")
+        self.app_title_pane = pn.Row(self.app_title_link_pane, pn.pane.Markdown("/", sizing_mode="fixed", width=15), self.app_title_page_pane, sizing_mode="fixed")
+
         self.add_panel(name="app_title", panel=self.app_title_pane)
 
     @param.depends("application.title", "application.url", watch=True)
-    def _set_app_title_pane(self):
-        self.app_title_pane.object = self._get_app_title()
+    def _set_app_title_link_pane(self):
+        self.app_title_link_pane.object = self._get_app_title()
 
     def _get_app_title(self):
-        return f"<a href='{self.application.url}'><h1>{self.application.title}</h1></a>"
+        return f"<h1 id='top-app-bar-title'><a href='{self.application.url}'>{self.application.title}</a> &sol;</h1>"
 
 
 

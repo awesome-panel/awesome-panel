@@ -15,7 +15,7 @@ from awesome_panel.models import (
 TITLE = "Awesome Panel"
 LOGO = "https://panel.holoviz.org/_static/logo_horizontal.png"
 URL = "https://awesome-panel.org"
-PAGES = [pn.pane.Markdown("# Home"), pn.Column("# Gallery", pn.pane.Markdown("## App 1"))]
+PAGES = [pn.pane.Markdown("# Home", name="Home"), pn.Column("# Gallery", pn.pane.Markdown("## App 1"), name="Gallery")]
 MENU_ITEMS = [MenuItem(name="Item 1")]
 SOURCE_LINKS = [SourceLink(name="GitHub")]
 SOCIAL_LINKS = [SocialLink(name="Twitter")]

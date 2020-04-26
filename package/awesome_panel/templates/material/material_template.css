@@ -31,3 +31,6 @@ div.appContent {
     overflow-x: hidden;
     overflow-y: visible;
 }
+/* mwc-top-app-bar-fixed p, mwc-top-app-bar-fixed .bk-root .bk-btn, mwc-top-app-bar-fixed .bk-root .bk {
+    font-size: 20px;
+} */

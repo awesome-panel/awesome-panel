@@ -17,11 +17,33 @@ class PageComponent(Component):
 class ReactivePageComponent(PageComponent):
     object = param.ClassSelector(class_=pn.layout.Reactive)
 
+    def __init__(self, **params):
+        super().__init__(**params)
+
+        self._set_name()
+
+    @param.depends("object", watch=True)
+    def _set_name(self):
+        if self.object:
+            with param.edit_constant(self):
+                self.name = self.object.name
+
     def view(self):
         return self.object
 
 class ParameterizedClassComponent(PageComponent):
     object = param.ClassSelector(class_=param.Parameterized)
+
+    def __init__(self, **params):
+        super().__init__(**params)
+
+        self._set_name()
+
+    @param.depends("object", watch=True)
+    def _set_name(self):
+        if self.object:
+            with param.edit_constant(self):
+                self.name = self.object.name
 
     def view(self):
         if hasattr(self.object, "view") and callable(self.object.view):

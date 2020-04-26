@@ -20,6 +20,7 @@ def test_can_create_page_component_from_parameterized_class_with_view():
     # Then
     isinstance(component, PageComponent)
     assert component.view() == page.view()
+    assert component.name == page.name
 
 @pytest.mark.parametrize(["reactive"], [
     (pn.pane.Markdown("# Page"), ),
@@ -31,3 +32,4 @@ def test_can_create_page_component_from_reactive(reactive):
     # Then
     isinstance(component, PageComponent)
     assert component.view() == reactive
+    assert component.name == reactive.name
