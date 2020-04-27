@@ -7,9 +7,15 @@ def test_can_construct_application_template_with_exception(application, applicat
     assert isinstance(application_template.menu, pn.layout.Reactive)
     assert isinstance(application_template.sidebar, pn.layout.Reactive)
     assert isinstance(application_template.main, pn.layout.Reactive)
+
     assert application_template.main.objects
     assert isinstance(application_template.theme_css, pn.pane.HTML)
     assert isinstance(application_template.param.select_title_page, param.Action)
+
+    assert isinstance(application_template.spinner_page, pn.layout.Reactive)
+    assert isinstance(application_template.spinner, pn.layout.Reactive)
+    assert application_template.param.spinning.default is False
+
 
 def test_main_content_changes_when_page_changes(application_template, home_page_component, gallery_page_component):
     # Given
@@ -21,11 +27,23 @@ def test_main_content_changes_when_page_changes(application_template, home_page_
     # Then
     assert before != after
 
-# def test_app_title_pane_object_changes_when_application_title_changes(application_template):
-#     # Given
-#     application_template.application.title != "New Title"
-#     # When
-#     application_template.application.title = "New Title"
-#     # Then
-#     application_template.
+def test_can_start_spinning(application_template):
+    # Given
+    url = application_template.spinner.object
+    # When
+    application_template.spinning=True
+    # Then
+    assert application_template.spinner.object != url
+
+def test_can_stop_spinning(application_template):
+    # Given
+    application_template.spinning=True
+    url = application_template.spinner.object
+    # When
+    application_template.spinning=False
+    # Then
+    assert application_template.spinner.object != url
+
+
+def test_can_stop_spinning(application_template):
 

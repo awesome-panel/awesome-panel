@@ -6,7 +6,7 @@ from awesome_panel.templates import MaterialTemplate
 from awesome_panel.templates.application_template import ApplicationTemplate
 from awesome_panel.templates.material.material_template import HTML_PATH, CSS_PATH
 
-from awesome_panel.components import PageComponent
+from awesome_panel.components import PageComponent, ChangePageComponent
 
 from awesome_panel.models import (
     Application,
@@ -140,3 +140,7 @@ def application_template(application):
     return ApplicationTemplate(
         application=application, template_path=HTML_PATH, css_path=CSS_PATH
     )
+
+@pytest.fixture
+def change_page_component(page_component):
+    return ChangePageComponent(page_component=page_component)

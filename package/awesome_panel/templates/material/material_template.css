@@ -1,3 +1,7 @@
+:root {
+    --mdc-theme-primary: green;
+    --mdc-theme-secondary: purple;
+}
 body {
     font-family: roboto;
     overflow-x: hidden;
@@ -19,6 +23,7 @@ table {
 mwc-top-app-bar-fixed {
     box-shadow: 5px 5px 20px #9E9E9E;
     font-size: 20px;
+    z-index: 50;
 }
 .appMenu * {
     width:100%;
@@ -36,3 +41,16 @@ div.appContent {
 /* mwc-top-app-bar-fixed p, mwc-top-app-bar-fixed .bk-root .bk-btn, mwc-top-app-bar-fixed .bk-root .bk {
     font-size: 20px;
 } */
+
+div#spinner {
+    position: fixed;
+    top: 78px;
+    right: 10px;
+    width: 80px;
+    z-index: 100;
+  }
+
+#pageChanging {
+    font-size: 50px;
+    width: 40vw;
+}
