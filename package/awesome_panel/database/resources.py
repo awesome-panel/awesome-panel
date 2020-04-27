@@ -12,6 +12,14 @@ from awesome_panel.shared.models import Resource
 
 RESOURCES = [
     Resource(
+        name="Color Dropper App",
+        url="http://colordropper.herokuapp.com/colordropper",
+        thumbnail_path=THUMBNAILS_ROOT + "",
+        is_awesome=True,
+        tags=[tags.APP],
+        author=authors.ANDREW_HUANG,
+    ),
+    Resource(
         name="A tour (of a small part) of the Python visualization landscape",
         url="https://indico.cern.ch/event/833895/contributions/3577846/attachments/1928191/3205023/PyHEP2019_slides.pdf",
         thumbnail_path=THUMBNAILS_ROOT + "",
