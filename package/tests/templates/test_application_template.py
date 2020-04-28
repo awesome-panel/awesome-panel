@@ -12,7 +12,7 @@ def test_can_construct_application_template_with_exception(application, applicat
     assert isinstance(application_template.theme_css, pn.pane.HTML)
     assert isinstance(application_template.param.select_title_page, param.Action)
 
-    assert isinstance(application_template.spinner_page, pn.layout.Reactive)
+    assert isinstance(application_template.change_page_component_view, pn.layout.Reactive)
     assert isinstance(application_template.spinner, pn.layout.Reactive)
     assert application_template.param.spinning.default is False
 
@@ -43,7 +43,4 @@ def test_can_stop_spinning(application_template):
     application_template.spinning=False
     # Then
     assert application_template.spinner.object != url
-
-
-def test_can_stop_spinning(application_template):
 

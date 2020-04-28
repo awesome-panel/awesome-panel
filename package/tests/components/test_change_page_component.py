@@ -22,9 +22,9 @@ def test_can_handle_none_page_component(change_page_component):
     # When
     change_page_component.page_component = None
     # Then
-    assert change_page_component._text.object == ""
+    assert change_page_component._text.object == '<marquee id="pageChanging" direction="right" scrollamount="20" behavior="alternate">Loading ...</marquee>'
 
 def test_can_show(change_page_component):
     pn.Column(
         change_page_component.view(), width=1000, height=1000, background="gray",
-    ).show()
+    )

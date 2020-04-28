@@ -1,20 +1,22 @@
 # pylint: disable=redefined-outer-name,protected-access,missing-function-docstring
-import pytest
 import panel as pn
+import pytest
 
-from awesome_panel.templates import MaterialTemplate
-from awesome_panel.templates.application_template import ApplicationTemplate
-from awesome_panel.templates.material.material_template import HTML_PATH, CSS_PATH
-
-from awesome_panel.components import PageComponent, ChangePageComponent
-
+from awesome_panel.components import ChangePageComponent, PageComponent
 from awesome_panel.models import (
     Application,
+    Author,
     MenuItem,
+    Page,
+    Resource,
     SocialLink,
     SourceLink,
+    Tag,
     Theme,
 )
+from awesome_panel.templates import MaterialTemplate
+from awesome_panel.templates.application_template import ApplicationTemplate
+from awesome_panel.templates.material.material_template import CSS_PATH, HTML_PATH
 
 
 @pytest.fixture
@@ -61,9 +63,11 @@ def home_page():
 def gallery_page():
     return pn.Column(pn.pane.Markdown("Page 1"), pn.pane.Markdown("Page 2"))
 
+
 @pytest.fixture
 def page():
     return pn.pane.Markdown("Page")
+
 
 @pytest.fixture
 def home_page_component(home_page):
@@ -79,9 +83,11 @@ def gallery_page_component(gallery_page):
 def page_component(page):
     return PageComponent(name="Page", page=page)
 
+
 @pytest.fixture
 def page_components(home_page_component, gallery_page_component, page_component):
     return [home_page_component, gallery_page_component, page_component]
+
 
 @pytest.fixture
 def pages(page, home_page, gallery_page):
@@ -137,10 +143,46 @@ def application(
 
 @pytest.fixture
 def application_template(application):
-    return ApplicationTemplate(
-        application=application, template_path=HTML_PATH, css_path=CSS_PATH
-    )
+    return ApplicationTemplate(application=application, template_path=HTML_PATH, css_path=CSS_PATH)
+
 
 @pytest.fixture
 def change_page_component(page_component):
     return ChangePageComponent(page_component=page_component)
+
+
+@pytest.fixture
+def tag():
+    return Tag(name="Panel")
+
+
+@pytest.fixture
+def tags(tag):
+    return [tag]
+
+
+@pytest.fixture
+def author():
+    return Author(
+        name="panel",
+        url="https://panel.pyviz.org/",
+        github_url="https://github.com/holoviz/",
+        github_avatar_url="https://avatars2.githubusercontent.com/u/51678735",
+    )
+
+
+@pytest.fixture
+def authors(author):
+    return [author]
+
+
+@pytest.fixture
+def resource(tags, author):
+    return Resource(
+            name="Panel",
+            url="https://panel.pyviz.org/",
+            thumbnail_png_path="",
+            is_awesome=True,
+            tags=tags,
+            author=author,
+        )

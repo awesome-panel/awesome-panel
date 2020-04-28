@@ -22,9 +22,9 @@ class ChangePageComponent(Component):
     @param.depends("page_component", watch="True")
     def _update(self):
         if self.page_component:
-            name = self.page_component.name
+            name = "Loading" # self.page_component.name
         else:
-            name = "Loading ..."
+            name = "Loading"
 
         text = f'<marquee id="pageChanging" direction="right" scrollamount="20" behavior="alternate">{name}</marquee>'
 

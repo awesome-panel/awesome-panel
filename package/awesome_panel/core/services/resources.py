@@ -3,7 +3,7 @@ from collections import defaultdict
 from typing import Dict, List, Optional
 
 from awesome_panel.database.resources import RESOURCES
-from awesome_panel.shared.models import Author, Resource, Tag
+from awesome_panel.models import Author, Resource, Tag
 
 
 def filter_by_tags(resources: List[Resource], tags: List[Tag],) -> List[Resource]:

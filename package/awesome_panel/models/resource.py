@@ -1,63 +1,21 @@
 """Models of Resource, Author and Tag used to defined the RESOURCES and APPS_IN_GALLERY list."""
 from typing import List, NamedTuple, Optional
+from .author import Author
+from .tag import Tag
+import param
 
 _IMAGE_DICT = {
     " ": "-",
     "#": "",
 }
 
-
-class Tag(NamedTuple):
-    """Model of a Tag"""
-
-    name: str
-
-    def __str__(self,):
-        return self.name
-
-    def __repr__(self,):
-        return self.name
-
-    def __hash__(self,):
-        return hash(self.name)
-
-
-class Author(NamedTuple):
-    """Model of an Author"""
-
-    name: str
-    url: str
-    github_url: str
-    github_avatar_url: str
-
-    def __str__(self,):
-        return self.name
-
-    def __repr__(self,):
-        return self.name
-
-    def to_html(self, width="20px", height="20px",) -> str:
-        """## A valid HTML string with the GitHub image and GitHub url link
-
-        Returns:
-            str: A valid HTML string with the github avatar link
-        """
-        return (
-            f'<a href="{self.github_url}" title="Author: {self.name}" target="_blank">'
-            f'<img src="{self.github_avatar_url}" alt="{self.name}" '
-            f'style="border-radius: 50%;width: {width};height: {height};'
-            'vertical-align: text-bottom;">'
-            "</img></a>"
-        )
-
-
-class Resource:
+class Resource(param.Parameterized):
     """Model of a Resource
 
         Args:
             name (str): The name of the Resource
             url (str): The url to the resource
-            thumbnail_path (str): A thumbnail image of the resource
+            thumbnail_png_path (str): A thumbnail image of the resource
             is_awesome (bool): Whether or not the Resource should be included in the awesome-panel
             list of awesome resources.
             tags (Optional[List[Tag]], optional): A list of Tags describing the Resource.
@@ -65,24 +23,12 @@ class Resource:
             author (Optional[Author], optional): The author of the resource. Defaults to None.
     """
 
-    def __init__(  # pylint: disable=too-many-arguments
-        self,
-        name: str,
-        url: str,
-        thumbnail_path: str,
-        is_awesome: bool,
-        tags: Optional[List[Tag]] = None,
-        author: Optional[Author] = None,
-    ):
-        self.name = name
-        self.url = url
-        self.thumbnail_path = thumbnail_path
-        self.is_awesome = is_awesome
-        if tags:
-            self.tags = tags
-        else:
-            self.tags = []
-        self.author = author
+    url = param.String()
+    thumbnail_png_path = param.String()
+    is_awesome = param.Boolean()
+    tags = param.List(allow_None=True)
+    author = param.ClassSelector(class_=Author, allow_None=True)
+
 
     def to_markdown_bullet(self,) -> str:
         """A markdown bullet string

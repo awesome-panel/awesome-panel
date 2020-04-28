@@ -1,14 +1,14 @@
 """In this module we define all Resource Tags and exposes them via the TAGS list."""
-from awesome_panel.shared.models import Tag
+from awesome_panel.models import Tag
 
 # Please keep the Tags sorted alphabetically
 ALTERNATIVE = Tag(name="Alternatives")
-APP = Tag("App")
+APP = Tag(name="App")
 APP_IN_GALLERY = Tag(name="App In Gallery")
 ARTICLE = Tag(name="Article")
 AWESOME_PANEL_ORG = Tag(name="Awesome-panel.org")
 AWESOMEPANEL_EXPRESS = Tag(name="awesome_panel.express")
-CODE = Tag("Code")
+CODE = Tag(name="Code")
 DEPLOYMENT = Tag(name="Deployment")
 INSPIRATION = Tag(name="Inspiration")
 FINANCE = Tag(name="Finance")

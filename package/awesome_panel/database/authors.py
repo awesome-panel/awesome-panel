@@ -1,6 +1,6 @@
 """In this module we define all Authors of resources or apps in the gallery and exposes
 them via the AUTHORS list"""
-from awesome_panel.shared.models import Author
+from awesome_panel.models import Author
 
 # Authors
 AWESOME_PANEL_ORG = Author(

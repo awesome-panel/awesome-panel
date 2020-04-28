@@ -13,7 +13,7 @@ from panel.widgets import Button
 from awesome_panel import database
 from awesome_panel.express import spinners
 from awesome_panel.express.bootstrap import InfoAlert
-from awesome_panel.shared.models import Resource
+from awesome_panel.models import Resource
 
 ROOT = str(pathlib.Path.cwd())
 # pylint: disable=line-too-long
@@ -134,7 +134,7 @@ class GalleryCard(Column):
         spacer = pn.layout.HSpacer(height=5)
         super().__init__(
             spacer,
-            pn.pane.PNG(page.thumbnail_path, width=360, height=272, align="center",),
+            pn.pane.PNG(page.thumbnail_png_path, width=360, height=272, align="center",),
             # spacer,
             self.button,
             spacer,
