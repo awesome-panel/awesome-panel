@@ -6,16 +6,16 @@ from .page_component import PageComponent
 ROOT_URL = (
     "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/spinners/"
 )
-SPINNER_URL = ROOT_URL + "spinner_panel_green_light.gif"
-SPINNER_STATIC_URL = ROOT_URL + "spinner_panel_green_light_static.gif"
-
+SPINNER_URL = ROOT_URL + "spinner_panel_blink_400_340.gif"
+SPINNER_STATIC_URL = ROOT_URL + "spinner_panel_blink_400_340.gif"
+https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/spinners/spinner_panel_blink_400_340.gif
 class ChangePageComponent(Component):
     page_component = param.ClassSelector(class_=PageComponent)
 
     def __init__(self, **params):
         super().__init__(**params)
 
-        self._spinner = pn.pane.GIF(SPINNER_URL)
+        self._spinner = pn.pane.GIF(SPINNER_URL, embed=False)
         self._text = pn.pane.HTML()
         self._update()
 
@@ -33,12 +33,12 @@ class ChangePageComponent(Component):
     def view(self, **params):
         content = pn.GridSpec(height=200, sizing_mode="stretch_width")
         content[0, 0]=pn.layout.Spacer()
-        content[0, 1:3]=self._text
+        content[0, 1:3]=self._spinner
         content[0, 3]=pn.layout.Spacer()
 
         return pn.Column(
             pn.layout.VSpacer(),
-            content,
+            pn.layout.HSpacer(), self._spinner, pn.layout.HSpacer(),
             pn.layout.VSpacer(),
             sizing_mode="stretch_both",
         )
