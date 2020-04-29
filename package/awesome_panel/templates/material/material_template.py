@@ -3,6 +3,7 @@ import pathlib
 from awesome_panel.models import Application
 import param
 from awesome_panel.templates.application_template import ApplicationTemplate
+from awesome_panel.utils import holoviews_ext
 
 ROOT_PATH = pathlib.Path(__file__).parent
 HTML_PATH = ROOT_PATH / "material_template.html"
@@ -31,6 +32,8 @@ class MaterialTemplate(ApplicationTemplate):
         params["css_path"] = CSS_PATH
 
         super().__init__(**params)
+
+        holoviews_ext.disable_bokeh_logo()
 
         self.app_title_link_pane = pn.Param(self, parameters = ["select_title_page"], show_name=False, show_labels=False, sizing_mode="fixed")
         self.app_title_page_pane = pn.Param(self.application.param.page, expand_button=False, show_labels=False, sizing_mode="fixed")

@@ -2,7 +2,7 @@
 import panel as pn
 import pytest
 
-from awesome_panel.components import ChangePageComponent, PageComponent
+from awesome_panel.components import LoadingPageComponent, PageComponent
 from awesome_panel.models import (
     Application,
     Author,
@@ -55,33 +55,82 @@ def url():
 
 
 @pytest.fixture
-def home_page():
+def home_page_main():
     return pn.pane.Markdown(name="Home")
 
 
 @pytest.fixture
-def gallery_page():
+def gallery_page_main():
     return pn.Column(pn.pane.Markdown("Page 1"), pn.pane.Markdown("Page 2"))
 
 
 @pytest.fixture
-def page():
+def page_main():
     return pn.pane.Markdown("Page")
 
+@pytest.fixture
+def home_page(author, tags):
+    source = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/app.py"
+    thumbnail = (
+        "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/"
+        "assets/images/thumbnails/awesome-panel-org.png"
+    )
+    return Page(
+        name="Home",
+        author = author,
+        description = "The main page of the application",
+        tags = tags,
+        source_code_url = source,
+        thumbnail_png_url = thumbnail,
+    )
+
 
 @pytest.fixture
-def home_page_component(home_page):
-    return PageComponent(name="Home", page=home_page)
+def gallery_page(author, tags):
+    source = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/app.py"
+    thumbnail = (
+        "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/"
+        "assets/images/thumbnails/awesome-panel-org.png"
+    )
+    return Page(
+        name="Gallery",
+        author = author,
+        description = "A page showing off all the pages",
+        tags = tags,
+        source_code_url = source,
+        thumbnail_png_url = thumbnail,
+    )
 
 
 @pytest.fixture
-def gallery_page_component(gallery_page):
-    return PageComponent(name="Gallery", page=gallery_page)
+def page(author, tags):
+    source = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/app.py"
+    thumbnail = (
+        "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/"
+        "assets/images/thumbnails/awesome-panel-org.png"
+    )
+    return Page(
+        name="Page",
+        author = author,
+        description = "Any Page",
+        tags = tags,
+        source_code_url = source,
+        thumbnail_png_url = thumbnail,
+    )
+
+@pytest.fixture
+def home_page_component(home_page, home_page_main):
+    return PageComponent(name="Home", page=home_page, main=home_page_main, sidebar="sidebar")
 
 
 @pytest.fixture
-def page_component(page):
-    return PageComponent(name="Page", page=page)
+def gallery_page_component(gallery_page, gallery_page_main):
+    return PageComponent(name="Gallery", page=gallery_page, main=gallery_page_main, sidebar="sidebar")
+
+
+@pytest.fixture
+def page_component(page, page_main):
+    return PageComponent(name="Page", page=page, main=page_main, sidebar="sidebar")
 
 
 @pytest.fixture
@@ -147,8 +196,8 @@ def application_template(application):
 
 
 @pytest.fixture
-def change_page_component(page_component):
-    return ChangePageComponent(page_component=page_component)
+def loading_page_component(page_component):
+    return LoadingPageComponent(page_component=page_component)
 
 
 @pytest.fixture

@@ -8,6 +8,7 @@ def test_can_construct_resource(resource):
     assert hasattr(resource, "is_awesome")
     assert hasattr(resource, "tags")
     assert hasattr(resource, "author")
+    assert hasattr(resource, "description")
 
     assert callable(resource.to_markdown_bullet)
     assert isinstance(type(resource).screenshot_file, property)

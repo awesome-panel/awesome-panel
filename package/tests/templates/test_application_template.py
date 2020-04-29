@@ -12,7 +12,7 @@ def test_can_construct_application_template_with_exception(application, applicat
     assert isinstance(application_template.theme_css, pn.pane.HTML)
     assert isinstance(application_template.param.select_title_page, param.Action)
 
-    assert isinstance(application_template.change_page_component_view, pn.layout.Reactive)
+    assert isinstance(application_template.loading_page_component_main, pn.layout.Reactive)
     assert isinstance(application_template.spinner, pn.layout.Reactive)
     assert application_template.param.spinning.default is False
 

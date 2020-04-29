@@ -1,6 +1,12 @@
 """Models of Resource, Author and Tag used to defined the RESOURCES and APPS_IN_GALLERY list."""
-from awesome_panel.models.resource import Resource
 import param
 
-class Page(Resource):
+from awesome_panel.models.tag import Tag
+from awesome_panel.models.author import Author
+
+class Page(param.Parameterized):
+    author = param.ClassSelector(class_=Author, allow_None=True)
     description = param.String()
+    tags = param.List()
+    source_code_url = param.String()
+    thumbnail_png_url = param.String()

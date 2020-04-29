@@ -28,6 +28,7 @@ class Resource(param.Parameterized):
     is_awesome = param.Boolean()
     tags = param.List(allow_None=True)
     author = param.ClassSelector(class_=Author, allow_None=True)
+    description = param.String()
 
 
     def to_markdown_bullet(self,) -> str:
