@@ -10,6 +10,7 @@ def test_can_construct_page(page):
     assert isinstance(page.tags, list)
     assert isinstance(page.source_code_url, str)
     assert isinstance(page.thumbnail_png_url, str)
+    assert hasattr(page, "component")
 
 
 

@@ -10,3 +10,4 @@ class Page(param.Parameterized):
     tags = param.List()
     source_code_url = param.String()
     thumbnail_png_url = param.String()
+    component = param.Parameter()
