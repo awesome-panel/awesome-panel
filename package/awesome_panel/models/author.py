@@ -1,13 +1,18 @@
 """Models of Resource, Author and Tag used to defined the RESOURCES and APPS_IN_GALLERY list."""
 from typing import List, NamedTuple, Optional
 
-class Author(NamedTuple):
+import param
+
+from awesome_panel.utils import OrderByNameMixin
+
+
+class Author(OrderByNameMixin, param.Parameterized):
     """Model of an Author"""
 
-    name: str
-    url: str
-    github_url: str
-    github_avatar_url: str
+    name = param.String()
+    url = param.String()
+    github_url = param.String()
+    github_avatar_url = param.String()
 
     def __str__(self,):
         return self.name
