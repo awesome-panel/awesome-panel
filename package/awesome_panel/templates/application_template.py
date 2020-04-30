@@ -1,7 +1,7 @@
 import param
 import panel as pn
 from awesome_panel.models import Application
-from awesome_panel.components import LoadingPageComponent
+from awesome_panel.components import LoadingPageComponent, PageComponent
 import pathlib
 
 ROOT_URL = (
@@ -53,7 +53,6 @@ class ApplicationTemplate(pn.Template):
 
     @param.depends("application.page", watch=True)
     def _set_main_objects(self):
-        # self.loading_page_component.page_component = self.application_page_instance
         self.main[:] = [self.loading_page_component.main]
         self.main[:] = [self.application_page_instance.main]
 
@@ -75,5 +74,5 @@ class ApplicationTemplate(pn.Template):
     def application_page_instance(self):
         page = self.application.page
         if not page in self._page_instances:
-            self._page_instances[page]=page()
+            self._page_instances[page]=PageComponent.create(page.component)
         return self._page_instances[page]

@@ -119,18 +119,22 @@ def page(author, tags):
     )
 
 @pytest.fixture
-def home_page_component(home_page, home_page_main):
-    return PageComponent(name="Home", page=home_page, main=home_page_main, sidebar="sidebar")
+def pages(page, home_page, gallery_page):
+    return [page, home_page, gallery_page]
+
+@pytest.fixture
+def home_page_component(home_page_main):
+    return PageComponent(name="Home", main=home_page_main, sidebar="sidebar")
 
 
 @pytest.fixture
-def gallery_page_component(gallery_page, gallery_page_main):
-    return PageComponent(name="Gallery", page=gallery_page, main=gallery_page_main, sidebar="sidebar")
+def gallery_page_component(gallery_page_main):
+    return PageComponent(name="Gallery", main=gallery_page_main, sidebar="sidebar")
 
 
 @pytest.fixture
 def page_component(page, page_main):
-    return PageComponent(name="Page", page=page, main=page_main, sidebar="sidebar")
+    return PageComponent(name="Page", main=page_main, sidebar="sidebar")
 
 
 @pytest.fixture

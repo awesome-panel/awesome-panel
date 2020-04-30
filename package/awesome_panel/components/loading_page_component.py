@@ -17,9 +17,6 @@ class LoadingPageComponent(PageComponent):
         if "main" not in params:
             params["main"] = self._get_main()
 
-        if "page" not in params:
-            params["page"] = self._get_page()
-
         super().__init__(**params)
 
     def _get_main(self):
@@ -33,8 +30,4 @@ class LoadingPageComponent(PageComponent):
             ),
         )
 
-    def _get_page(self):
-        return Page(
-            author = author_service.get_default_author(),
-            description = "This Page is shown when changing a page. It shows a spinner by default"
-        )
+

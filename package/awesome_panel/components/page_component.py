@@ -14,11 +14,35 @@ class PageComponent(param.Parameterized):
     toast = param.ClassSelector(class_=Toast)
 
     def __init__(self, **params):
-        if "page" not in params:
-            raise ValueError("No `page` provided!")
         if "progress" not in params:
             params["progress"] = Progress()
         if "toast" not in params:
             params["toast"] = Toast()
 
         super().__init__(**params)
+
+    @classmethod
+    def create(cls, component):
+        if inspect.isclass(component):
+            component = component()
+
+        if issubclass(type(component), cls):
+            return component
+
+        if hasattr(component, "main"):
+            main = component.main
+        elif hasattr(component, "view"):
+            main = component.view
+        else:
+            main = component
+        if callable(main):
+            main = main()
+
+        if hasattr(component, "sidebar"):
+            sidebar = component.sidebar
+        else:
+            sidebar = None
+        if callable(sidebar):
+            sidebar = sidebar()
+
+        return cls(main=main, sidebar=sidebar)

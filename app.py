@@ -22,8 +22,14 @@ TITLE = "AWESOME PANEL"
 LOGO = "https://panel.holoviz.org/_static/logo_horizontal.png"
 URL = "https://awesome-panel.org"
 
+LOADING_PAGE = Page(
+    name="Loading Page",
+    author=author_service.get_default_author(),
+    component=LoadingPageComponent,
+)
+
 PAGES = [
-    LoadingPageComponent
+    LOADING_PAGE,
     # Page(name="Change Page", page=),
     # Page(name="Home", page=home),
     # Page(name="Gallery", page=pn.Column("# Gallery", pn.pane.Markdown("## App 1"), name="Gallery")),
