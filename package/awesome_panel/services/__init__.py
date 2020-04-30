@@ -1,5 +1,4 @@
-from .tag_service import TagService
-from .author_service import AuthorService
-
-TAG_SERVICE = TagService()
-AUTHOR_SERVICE = AuthorService()
+"""Exports"""
+from .tag_service import TAG_SERVICE
+from .author_service import AUTHOR_SERVICE
+from .page_service import PAGE_SERVICE

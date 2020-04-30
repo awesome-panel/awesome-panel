@@ -103,3 +103,5 @@ class AuthorService(param.Parameterized):
             self.create(author)
         with param.edit_constant(self):
             self.default_author = author
+
+AUTHOR_SERVICE = AuthorService()
