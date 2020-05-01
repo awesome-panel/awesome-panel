@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Example App</title>
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@next/webcomponents-loader.js"></script>
+    <script type="module" src="https://unpkg.com/@material/mwc-button?module"></script>
+    <script type="module" src="https://unpkg.com/@material/mwc-drawer?module"></script>
+    <script type="module" src="https://unpkg.com/@material/mwc-icon-button?module"></script>
+    <script type="module" src="https://unpkg.com/@material/mwc-slider?module"></script>
+    <script type="module" src="https://unpkg.com/@material/mwc-top-app-bar?module"></script>
+    <script type="module" src="https://unpkg.com/@material/mwc-top-app-bar?module"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet">
+   </head>
+<body>
+<mwc-drawer hasHeader type="dismissible">
+    <span slot="title">Drawer Title</span>
+    <span slot="subtitle">subtitle</span>
+    <div>
+        <p>Drawer content!</p>
+        <mwc-icon-button icon="gesture"></mwc-icon-button>
+        <mwc-icon-button icon="gavel"></mwc-icon-button>
+    </div>
+    <div slot="appContent">
+        <mwc-top-app-bar>
+            <mwc-icon-button slot="navigationIcon" icon="menu"></mwc-icon-button>
+            <div slot="title">Title</div>
+        </mwc-top-app-bar>
+        <div>
+            <p>Main Content!</p>
+        </div>
+    </div>
+</mwc-drawer>
+<script>
+  var drawer = document.getElementsByTagName('mwc-drawer')[0];
+  var container = drawer.parentNode;
+  container.addEventListener('MDCTopAppBar:nav', function(e) {
+    drawer.open = !drawer.open;
+  });
+</script>
+</body>
+</html>

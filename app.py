@@ -14,9 +14,12 @@ from awesome_panel.models import (
     Theme,
     Author,
 )
-from src.pages.gallery import Gallery
-from src.pages.gallery.kickstarter_dashboard.main import KickstarterDashboard
+# from src.pages.gallery import Gallery
 from awesome_panel.services import author_service
+from src import config
+from awesome_panel.services import PAGE_SERVICE, AUTHOR_SERVICE
+# from src.pages.gallery.custom_bokeh_model.custom import Custom
+# Custom()
 
 TITLE = "AWESOME PANEL"
 LOGO = "https://panel.holoviz.org/_static/logo_horizontal.png"
@@ -24,21 +27,11 @@ URL = "https://awesome-panel.org"
 
 LOADING_PAGE = Page(
     name="Loading Page",
-    author=author_service.get_default_author(),
+    author=AUTHOR_SERVICE.default_author,
     component=LoadingPageComponent,
 )
 
-PAGES = [
-    LOADING_PAGE,
-    # Page(name="Change Page", page=),
-    # Page(name="Home", page=home),
-    # Page(name="Gallery", page=pn.Column("# Gallery", pn.pane.Markdown("## App 1"), name="Gallery")),
-    # Page(name="About", page = about),
-    # Page(name="Issues", page = issues),
-    # Page(name="Resources", page = resources),
-    # # Page(name="Gallery", page = Gallery),
-    # Page(name="Kickstarter Dashboard", page = KickstarterDashboard)
-]
+PAGES = PAGE_SERVICE.pages
 MENU_ITEMS = [MenuItem(name="Item 1")]
 SOURCE_LINKS = [SourceLink(name="GitHub")]
 SOCIAL_LINKS = [SocialLink(name="Twitter")]

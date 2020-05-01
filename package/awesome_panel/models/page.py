@@ -12,3 +12,6 @@ class Page(OrderByNameMixin, param.Parameterized):
     source_code_url = param.String()
     thumbnail_png_url = param.String()
     component = param.Parameter()
+
+    def __hash__(self,):
+        return hash(self.name)

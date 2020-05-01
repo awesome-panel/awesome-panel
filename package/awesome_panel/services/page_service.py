@@ -84,7 +84,7 @@ class PageService(param.Parameterized):
 
     def _set_default_page_to_application_page(self):
         page = Page(
-            page="Home",
+            name="Home",
             author=AUTHOR_SERVICE.default_author,
             description="The Home Page of the Application",
             tags=[],
