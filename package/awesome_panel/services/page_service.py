@@ -21,11 +21,13 @@ class PageService(param.Parameterized):
     default_page = param.ClassSelector(class_=Page, constant=True)
 
     def __init__(self, **params):
+        if not "default_page" in params:
+            if "pages" in params and params["pages"]:
+                params["default_page"] = params["pages"][0]
+
         super().__init__(**params)
 
         self._pages = {page.name: page for page in self.pages}
-        if not self.default_page:
-            self._set_default_page_to_application_page()
 
     def create(self, page: Page):
         """Creates the specified Page
@@ -82,28 +84,16 @@ class PageService(param.Parameterized):
         self._pages = {**old_pages, **new_pages}
         self._update_pages_list()
 
-    def _set_default_page_to_application_page(self):
-        page = Page(
-            name="Home",
-            author=AUTHOR_SERVICE.default_author,
-            description="The Home Page of the Application",
-            tags=[],
-            source_code_url="",
-            thumbnail_png_url="",
-            component="# Home Page",
-        )
-        self.set_default_page(page)
-
     def set_default_page(self, page: Page):
         """Change the default_page to the specified page
 
         Args:
             page (Page): The new default_page
         """
-
         if not page in self.pages:
             self.create(page)
         with param.edit_constant(self):
             self.default_page = page
+
 
 PAGE_SERVICE = PageService()

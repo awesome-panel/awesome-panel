@@ -17,8 +17,43 @@ from awesome_panel.services import PAGE_SERVICE
 GITHUB_GALLERY_URL = GITHUB_BLOB_MASTER_URL + "src/pages/gallery/"
 
 # Please keep this list sorted by name
+PAGE_SERVICE.set_default_page(
+    Page(
+        name="Home",
+        source_code_url=GITHUB_GALLERY_URL + "home/home.py",
+        thumbnail_png_url=THUMBNAILS_ROOT + "home.png",
+        tags=[tags.CODE, tags.APP_IN_GALLERY,],
+        component=pages.home,
+        author=authors.MARC_SKOV_MADSEN,
+    ),
+)
+
 PAGE_SERVICE.bulk_create(
     [
+        Page(
+            name="About",
+            source_code_url=GITHUB_GALLERY_URL + "about/about.py",
+            thumbnail_png_url=THUMBNAILS_ROOT + "about.png",
+            tags=[tags.CODE, tags.APP_IN_GALLERY,],
+            component=pages.about,
+            author=authors.MARC_SKOV_MADSEN,
+        ),
+        Page(
+            name="Issues",
+            source_code_url=GITHUB_GALLERY_URL + "issues/issues.py",
+            thumbnail_png_url=THUMBNAILS_ROOT + "issues.png",
+            tags=[tags.CODE, tags.APP_IN_GALLERY,],
+            component=pages.issues,
+            author=authors.MARC_SKOV_MADSEN,
+        ),
+        Page(
+            name="Resources",
+            source_code_url=GITHUB_GALLERY_URL + "resources/resources.py",
+            thumbnail_png_url=THUMBNAILS_ROOT + "resources.png",
+            tags=[tags.CODE, tags.APP_IN_GALLERY,],
+            component=pages.resources,
+            author=authors.MARC_SKOV_MADSEN,
+        ),
         Page(
             name="Bootstrap Dashboard",
             source_code_url=GITHUB_GALLERY_URL + "bootstrap_dashboard/main.py",

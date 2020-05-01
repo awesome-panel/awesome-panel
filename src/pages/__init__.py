@@ -19,3 +19,7 @@ from src.pages.kickstarter_dashboard import kickstarter_dashboard
 from src.pages.owid_choropleth_map import owid_choropleth_map
 from src.pages.param_reference_example import param_reference_example
 from src.pages.yahooquery_app import yahooquery_app
+from src.pages.about import about
+from src.pages.home import home
+from src.pages.resources import resources
+from src.pages.issues import issues

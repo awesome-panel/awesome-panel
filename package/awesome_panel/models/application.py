@@ -2,7 +2,6 @@ import param
 from .progress import Progress
 from .message import Message
 
-
 class Application(param.Parameterized):
     title = param.String()
     url = param.String()
@@ -24,7 +23,8 @@ class Application(param.Parameterized):
         else:
             self.param.template.default = templates[0]
         self.param.page.objects = pages
-        self.param.page.default = pages[0]
+        if pages:
+            self.param.page.default = pages[0]
         self.param.menu_item.objects = menu_items
         self.param.source_link.objects = source_links
         self.param.social_link.objects = social_links

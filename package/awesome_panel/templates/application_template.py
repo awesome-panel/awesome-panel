@@ -3,6 +3,7 @@ import panel as pn
 from awesome_panel.models import Application
 from awesome_panel.components import LoadingPageComponent, PageComponent
 import pathlib
+from awesome_panel.services import PAGE_SERVICE
 
 ROOT_URL = (
     "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/spinners/"
@@ -50,6 +51,10 @@ class ApplicationTemplate(pn.Template):
 
         self.select_title_page = self._select_title_page
         self._set_select_title_page_label()
+
+        if PAGE_SERVICE.default_page:
+            self.application.param.page.default=PAGE_SERVICE.default_page
+            self.application.page = PAGE_SERVICE.default_page
 
     @param.depends("application.page", watch=True)
     def _set_main_objects(self):
