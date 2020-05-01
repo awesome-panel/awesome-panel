@@ -36,8 +36,6 @@ import panel as pn
 import param
 
 # pylint: enable=duplicate-code
-pn.extension()
-
 KICKSTARTER_PATH = pathlib.Path(__file__).parent / "kickstarter-cleaned.csv"
 COLUMNS = [
     "created_at",

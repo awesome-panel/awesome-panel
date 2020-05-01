@@ -29,7 +29,7 @@ from bokeh.core.properties import Instance, String
 from bokeh.layouts import column
 from bokeh.models import HTMLBox, Slider
 
-CUSTOM_TS = pathlib.Path(__file__).parent / "custom.ts"
+CUSTOM_TS = pathlib.Path(__file__).parent / "custom_bokeh_model.ts"
 CUSTOM_TS_STR = str(CUSTOM_TS.resolve())
 
 
