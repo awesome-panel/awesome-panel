@@ -116,7 +116,7 @@ class ProgressService(param.Parameterized):
             self.update(value=new_value, message=message, value_max=value_max)
 
     @contextmanager
-    def is_active(
+    def mark_active(
         self, message: str
     ):
         """Signals that the application is active

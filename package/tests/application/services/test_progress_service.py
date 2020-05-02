@@ -110,11 +110,11 @@ def test_can_use_increment_func_as_decorator(progress_service):
     assert progress_service.progress.message == ""
 
 def test_can_use_active_count(progress_service):
-    @progress_service.is_active("Loading...")
+    @progress_service.mark_active("Loading...")
     def load():
         assert progress_service.progress.active_count == 1
         assert progress_service.progress.message == "Loading..."
-        @progress_service.is_active("Transforming...")
+        @progress_service.mark_active("Transforming...")
         def transform():
             assert progress_service.progress.active_count == 2
             assert progress_service.progress.message == "Transforming..."
