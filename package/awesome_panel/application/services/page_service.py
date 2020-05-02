@@ -3,8 +3,8 @@ from typing import List, Optional
 
 import param
 
-from awesome_panel.models import Page
-from awesome_panel.services import AUTHOR_SERVICE
+from awesome_panel.application.models import Page
+from awesome_panel.application.services import AUTHOR_SERVICE
 
 
 class PageService(param.Parameterized):

@@ -1,8 +1,8 @@
 import panel as pn
 import pathlib
-from awesome_panel.models import Application
+from awesome_panel.application.models import Application
 import param
-from awesome_panel.templates.application_template import ApplicationTemplate
+from awesome_panel.application.templates.application_template import ApplicationTemplate
 from awesome_panel.utils import holoviews_ext
 
 ROOT_PATH = pathlib.Path(__file__).parent

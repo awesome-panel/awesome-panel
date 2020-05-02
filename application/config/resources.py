@@ -6,7 +6,7 @@ from awesome_panel.database.apps_in_gallery import APPS_IN_GALLERY
 from awesome_panel.database.settings import THUMBNAILS_ROOT
 
 # pylint: disable=line-too-long
-from awesome_panel.models import Resource
+from awesome_panel.application.models import Resource
 
 # panel FILE ROOTS
 

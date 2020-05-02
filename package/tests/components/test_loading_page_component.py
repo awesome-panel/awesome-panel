@@ -1,6 +1,6 @@
 # pylint: disable=redefined-outer-name,protected-access,missing-function-docstring
 import param
-from awesome_panel.components import LoadingPageComponent, PageComponent
+from awesome_panel.application.components import LoadingPageComponent, PageComponent
 import panel as pn
 
 

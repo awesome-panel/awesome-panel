@@ -6,12 +6,12 @@ Please note that all pages in the list
 application/gallery
 """
 from application.config.settings import GITHUB_BLOB_MASTER_URL, THUMBNAILS_ROOT
-from awesome_panel.models import Page
+from awesome_panel.application.models import Page
 from application.pages import gallery
 from application import pages
 # from application.pages import bootstrap_dashboard, custom_bokeh_model
 from application.config import authors, tags
-from awesome_panel.services import PAGE_SERVICE
+from awesome_panel.application.services import PAGE_SERVICE
 
 GITHUB_GALLERY_URL = GITHUB_BLOB_MASTER_URL + "application/pages/gallery/"
 

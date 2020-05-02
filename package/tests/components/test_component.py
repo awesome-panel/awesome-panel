@@ -1,4 +1,4 @@
-from awesome_panel.components import Component
+from awesome_panel.application.components import Component
 
 def test_can_construct_component():
     component = Component()

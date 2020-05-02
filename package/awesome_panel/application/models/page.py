@@ -1,8 +1,8 @@
 """Models of Resource, Author and Tag used to defined the RESOURCES and APPS_IN_GALLERY list."""
 import param
 
-from awesome_panel.models.tag import Tag
-from awesome_panel.models.author import Author
+from awesome_panel.application.models.tag import Tag
+from awesome_panel.application.models.author import Author
 from awesome_panel.utils import OrderByNameMixin
 
 class Page(OrderByNameMixin, param.Parameterized):

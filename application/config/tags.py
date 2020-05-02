@@ -1,6 +1,6 @@
 """In this module we create all tags"""
-from awesome_panel.models import Tag
-from awesome_panel.services import TAG_SERVICE
+from awesome_panel.application.models import Tag
+from awesome_panel.application.services import TAG_SERVICE
 
 ALTERNATIVE = Tag(name="Alternatives")
 APP = Tag(name="App")

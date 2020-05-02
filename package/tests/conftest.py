@@ -2,8 +2,8 @@
 import panel as pn
 import pytest
 
-from awesome_panel.components import LoadingPageComponent, PageComponent
-from awesome_panel.models import (
+from awesome_panel.application.components import LoadingPageComponent, PageComponent
+from awesome_panel.application.models import (
     Application,
     Author,
     MenuItem,
@@ -14,9 +14,9 @@ from awesome_panel.models import (
     Tag,
     Theme,
 )
-from awesome_panel.templates import MaterialTemplate
-from awesome_panel.templates.application_template import ApplicationTemplate
-from awesome_panel.templates.material.material_template import CSS_PATH, HTML_PATH
+from awesome_panel.application.templates import MaterialTemplate
+from awesome_panel.application.templates.application_template import ApplicationTemplate
+from awesome_panel.application.templates.material.material_template import CSS_PATH, HTML_PATH
 
 
 @pytest.fixture

@@ -3,7 +3,7 @@ import inspect
 import panel as pn
 import param
 
-from awesome_panel.models import Page, Progress, Toast
+from awesome_panel.application.models import Page, Progress, Toast
 
 
 class PageComponent(param.Parameterized):

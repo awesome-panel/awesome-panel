@@ -2,7 +2,7 @@
 import panel as pn
 
 import awesome_panel.express as pnx
-from awesome_panel.services import PAGE_SERVICE
+from awesome_panel.application.services import PAGE_SERVICE
 from awesome_panel.express.testing import TestApp
 from application.pages.gallery import gallery
 

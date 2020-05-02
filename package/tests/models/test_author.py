@@ -1,5 +1,5 @@
 ## # pylint: disable=redefined-outer-name,protected-access, missing-function-docstring
-from awesome_panel.models import Author
+from awesome_panel.application.models import Author
 
 
 def test_can_construct_author(author):

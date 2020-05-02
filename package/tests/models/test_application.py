@@ -1,9 +1,10 @@
 ## # pylint: disable=redefined-outer-name,protected-access, missing-function-docstring
-from awesome_panel import models
-from awesome_panel import components
-import pytest
 import panel as pn
 import param
+import pytest
+
+from awesome_panel.application import components, models
+
 
 def test_can_construct_application_without_exceptions(application):
     # Then

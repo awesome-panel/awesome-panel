@@ -2,8 +2,8 @@
 # pylint: disable=missing-function-docstring,missing-module-docstring,missing-class-docstring
 import pytest
 
-from awesome_panel.models import Page
-from awesome_panel.services.page_service import PageService
+from awesome_panel.application.models import Page
+from awesome_panel.application.services.page_service import PageService
 
 
 @pytest.fixture
@@ -56,4 +56,4 @@ def test_can_bulk_create_and_is_sorted(page_service):
 
 def test_a_common_page_service_exists():
     # pylint: disable=import-outside-toplevel, unused-import
-    from awesome_panel.services import PAGE_SERVICE
+    from awesome_panel.application.services import PAGE_SERVICE

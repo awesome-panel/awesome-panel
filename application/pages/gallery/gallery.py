@@ -12,7 +12,7 @@ from panel.widgets import Button
 
 from awesome_panel.express import spinners
 from awesome_panel.express.bootstrap import InfoAlert
-from awesome_panel.models import Resource
+from awesome_panel.application.models import Resource
 from application.config import settings
 
 ROOT = str(pathlib.Path.cwd())

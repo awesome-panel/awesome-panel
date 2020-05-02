@@ -1,6 +1,6 @@
 # pylint: disable=redefined-outer-name,protected-access,missing-function-docstring
 import pytest
-from awesome_panel.templates import ApplicationTemplateBuilder
+from awesome_panel.application.templates import ApplicationTemplateBuilder
 from panel.template import Template
 
 

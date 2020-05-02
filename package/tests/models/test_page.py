@@ -1,4 +1,4 @@
-from awesome_panel.models import Page, Author, Tag
+from awesome_panel.application.models import Page, Author, Tag
 import pytest
 
 def test_can_construct_page(page):

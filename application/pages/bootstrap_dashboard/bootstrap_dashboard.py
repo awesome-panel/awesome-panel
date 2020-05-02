@@ -15,7 +15,7 @@ import panel as pn
 
 import awesome_panel.express as pnx
 
-from awesome_panel.models import page
+from awesome_panel.application.models import page
 
 IMAGE_PATH = (
     pathlib.Path(__file__).parent

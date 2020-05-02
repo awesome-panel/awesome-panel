@@ -1,12 +1,12 @@
 """Test of the app services"""
-from awesome_panel.core.services import other
+from awesome_panel.utils import module_to_github_url
 from application.pages.bootstrap_dashboard import bootstrap_dashboard
 
 
 def test_module_to_github_url():
     """An extrac test of the module_to_github_url function as I had problems making it work"""
     # When
-    actual = other.module_to_github_url(bootstrap_dashboard)
+    actual = module_to_github_url.module_to_github_url(bootstrap_dashboard)
     # Then
     assert actual == (
         "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/"

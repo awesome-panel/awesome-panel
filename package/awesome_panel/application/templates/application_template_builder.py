@@ -1,8 +1,8 @@
 import param
 import panel as pn
-from awesome_panel.models import Application, Theme, MenuItem, SourceLink, SocialLink
-from awesome_panel.components import PageComponent
-from awesome_panel.templates.application_template import ApplicationTemplate
+from awesome_panel.application.models import Application, Theme, MenuItem, SourceLink, SocialLink
+from awesome_panel.application.components import PageComponent
+from awesome_panel.application.templates.application_template import ApplicationTemplate
 from . import MaterialTemplate
 
 TEMPLATES = [MaterialTemplate]

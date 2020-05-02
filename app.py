@@ -2,12 +2,12 @@
 import pytest
 import panel as pn
 
-from awesome_panel.templates import MaterialTemplate
-from awesome_panel.templates import ApplicationTemplateBuilder
+from awesome_panel.application.templates import MaterialTemplate
+from awesome_panel.application.templates import ApplicationTemplateBuilder
 from application.pages import home, about, issues, resources
 import param
-from awesome_panel.components import PageComponent as Page, LoadingPageComponent
-from awesome_panel.models import (
+from awesome_panel.application.components import PageComponent as Page, LoadingPageComponent
+from awesome_panel.application.models import (
     MenuItem,
     SocialLink,
     SourceLink,
@@ -15,9 +15,9 @@ from awesome_panel.models import (
     Author,
 )
 # from application.pages import Gallery
-from awesome_panel.services import author_service
+from awesome_panel.application.services import author_service
 from application import config
-from awesome_panel.services import PAGE_SERVICE, AUTHOR_SERVICE
+from awesome_panel.application.services import PAGE_SERVICE, AUTHOR_SERVICE
 # from application.pages.custom_bokeh_model.custom import Custom
 # Custom()
 

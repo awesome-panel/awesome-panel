@@ -1,9 +1,9 @@
 import param
 import panel as pn
-from awesome_panel.models import Application
-from awesome_panel.components import LoadingPageComponent, PageComponent
+from awesome_panel.application.models import Application
+from awesome_panel.application.components import LoadingPageComponent, PageComponent
 import pathlib
-from awesome_panel.services import PAGE_SERVICE
+from awesome_panel.application.services import PAGE_SERVICE
 
 ROOT_URL = (
     "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/spinners/"
