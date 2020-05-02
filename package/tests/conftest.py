@@ -15,7 +15,11 @@ from awesome_panel.application.templates.application_template import \
     ApplicationTemplate
 from awesome_panel.application.templates.material.material_template import (
     CSS_PATH, HTML_PATH)
+from awesome_panel.application.services import progress_service as _progress_service
 
+@pytest.fixture(autouse=True)
+def reset_services():
+    _progress_service.reset()
 
 @pytest.fixture
 def template():
@@ -245,5 +249,5 @@ def progress():
 
 
 @pytest.fixture
-def progress_service(progress):
-    return ProgressService()
+def progress_service():
+    return _progress_service

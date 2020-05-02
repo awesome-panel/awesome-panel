@@ -43,4 +43,3 @@ def test_can_stop_spinning(application_template):
     application_template.spinning=False
     # Then
     assert application_template.spinner.object != url
-

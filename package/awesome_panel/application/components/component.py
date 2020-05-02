@@ -1,5 +1,5 @@
-import param
+# import param
 
-class Component(param.Parameterized):
-    def view(self, **params):
-        raise NotImplementedError
+# class Component(param.Parameterized):
+#     def view(self, **params):
+#         raise NotImplementedError
