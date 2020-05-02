@@ -28,7 +28,7 @@ class Author(OrderByNameMixin, param.Parameterized):
         """
         return (
             f'<a href="{self.github_url}" title="Author: {self.name}" target="_blank">'
-            f'<img src="{self.github_avatar_url}" alt="{self.name}" '
+            f'<img application="{self.github_avatar_url}" alt="{self.name}" '
             f'style="border-radius: 50%;width: {width};height: {height};'
             'vertical-align: text-bottom;">'
             "</img></a>"

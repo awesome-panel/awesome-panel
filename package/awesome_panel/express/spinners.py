@@ -23,7 +23,7 @@ class SpinnerBase(pn.pane.HTML):
         self, *args, **kwargs,
     ):
         """A Spinner"""
-        text = f'<img src="{self.url}"></img>'
+        text = f'<img application="{self.url}"></img>'
         super().__init__(
             text, width=self.width, height=self.height, *args, **kwargs,
         )

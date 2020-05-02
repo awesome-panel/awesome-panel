@@ -4,7 +4,7 @@ import panel as pn
 
 from awesome_panel.templates import MaterialTemplate
 from awesome_panel.templates import ApplicationTemplateBuilder
-from src.pages import home, about, issues, resources
+from application.pages import home, about, issues, resources
 import param
 from awesome_panel.components import PageComponent as Page, LoadingPageComponent
 from awesome_panel.models import (
@@ -14,11 +14,11 @@ from awesome_panel.models import (
     Theme,
     Author,
 )
-# from src.pages.gallery import Gallery
+# from application.pages import Gallery
 from awesome_panel.services import author_service
-from src import config
+from application import config
 from awesome_panel.services import PAGE_SERVICE, AUTHOR_SERVICE
-# from src.pages.gallery.custom_bokeh_model.custom import Custom
+# from application.pages.custom_bokeh_model.custom import Custom
 # Custom()
 
 TITLE = "AWESOME PANEL"

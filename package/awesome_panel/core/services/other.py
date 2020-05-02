@@ -3,7 +3,7 @@ import inspect
 import pathlib
 from types import ModuleType
 
-from awesome_panel.database.settings import GITHUB_BLOB_MASTER_URL
+from application.config.settings import GITHUB_BLOB_MASTER_URL
 
 ROOT_PATH = str(pathlib.Path.cwd()).lower()
 

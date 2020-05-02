@@ -9,9 +9,9 @@ import pathlib
 
 from invoke import task
 
-TEST_FILES = " ".join(["tests", "package/tests", "src/pages/gallery/awesome_panel_express_tests",])
+TEST_FILES = " ".join(["tests", "package/tests", "application/pages/gallery/awesome_panel_express_tests",])
 TEST_RESULTS = "test_results"
-FILES = " ".join(["app.py", "docs", "package", "tasks", "src", "tests",])
+FILES = " ".join(["app.py", "docs", "package", "tasks", "application", "tests",])
 
 
 @task

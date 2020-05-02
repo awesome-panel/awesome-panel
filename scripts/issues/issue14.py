@@ -12,7 +12,7 @@ Or alternative by default adding `max-width: 100%` to the styling of the `pn.pan
 
 """
 
-# <img src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/gallery/bootstrap_dashboard/assets/images/info_alert_scrollbar_problem.png?raw=true" style="max-width: 100%" />
+# <img application="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/gallery/bootstrap_dashboard/assets/images/info_alert_scrollbar_problem.png?raw=true" style="max-width: 100%" />
 
 markdown = pn.pane.Markdown(text)
 app = pn.Column(markdown, width=500,)
