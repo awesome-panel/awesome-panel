@@ -13,6 +13,7 @@ class Page(OrderByNameMixin, param.Parameterized):
     thumbnail_png_url = param.String()
     component = param.Parameter()
     show_loading_page = param.Boolean(default=False)
+    restrict_max_width = param.Boolean(default=True)
 
     def __hash__(self,):
         return hash(self.name)

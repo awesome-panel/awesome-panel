@@ -20,6 +20,7 @@ class ApplicationTemplate(pn.Template):
 
     select_title_page = param.Action()
     spinning = param.Boolean()
+    main_max_width = param.Integer(default=1140)
 
     loading_page_component = param.ClassSelector(class_=LoadingPageComponent)
     _page_instances = param.Dict()
@@ -38,15 +39,19 @@ class ApplicationTemplate(pn.Template):
 
         self.menu = pn.Param(self.application.param.menu_item, expand_button=False)
         self.sidebar = pn.Column()
+        self._main_spacer = pn.Spacer(height=0, margin=0)
         self.main = pn.Column(
-            self.application_page_instance.main, sizing_mode="stretch_both", margin=(25, 50, 25, 50)
+            name="main", css_classes=["main"],
+            sizing_mode="stretch_both",
+            margin=(25, 50, 50, 50),
         )
-        self.theme_css = pn.pane.HTML(height=0, width=0, sizing_mode="fixed", margin=0)
+        self._update_main_container()
+        self.template_css = pn.pane.HTML(height=0, width=0, sizing_mode="fixed", margin=0)
         self.spinner = pn.pane.PNG(SPINNER_STATIC_URL, sizing_mode="fixed", height=40)
 
         self.add_panel(name="menu_item", panel=self.menu)
         self.add_panel(name="main", panel=self.main)
-        self.add_panel(name="theme_css", panel=self.theme_css)
+        self.add_panel(name="template_css", panel=self.template_css)
         self.add_panel(name="spinner", panel=self.spinner)
 
         self.select_title_page = self._select_title_page
@@ -57,17 +62,24 @@ class ApplicationTemplate(pn.Template):
             self.application.page = PAGE_SERVICE.default_page
 
     @param.depends("application.page", watch=True)
-    def _set_main_objects(self):
+    def _update_main_container(self):
         if self.application.page.show_loading_page:
             self.main[:] = [self.loading_page_component.main]
-        self.main[:] = [self.application_page_instance.main]
+
+        main_instance = self.application_page_instance.main
+        main_instance.align="center"
+        main_instance.sizing_mode="stretch_width"
+
+        self.main[:] = [
+            self._main_spacer, # Trick to force main to stretch to full width of appContent
+            main_instance]
 
     @param.depends("application.title", watch=True)
     def _set_select_title_page_label(self):
         self.param.select_title_page.label = self.application.title
 
     def _select_title_page(self, _=None):
-        self.application_page_instance = self.application.param.page.default
+        self.application.page = self.application.param.page.default
 
     @param.depends("spinning", watch=True)
     def _update_spinner(self):
@@ -80,5 +92,20 @@ class ApplicationTemplate(pn.Template):
     def application_page_instance(self):
         page = self.application.page
         if not page in self._page_instances:
-            self._page_instances[page]=PageComponent.create(page.component)
+            instance = PageComponent.create(page.component)
+            self._page_instances[page]=instance
+
+            # Todo: Setup test and refactor
+            if instance.main and not isinstance(instance.main, pn.layout.Reactive):
+                instance.main = pn.panel(instance.main)
+            if instance.sidebar and not isinstance(instance.sidebar, pn.layout.Reactive):
+                instance.sidebar = pn.panel(instance.sidebar)
+
+            if instance.main and self.application.page.restrict_max_width:
+                instance.main.max_width=1140
+            else:
+                instance.main.max_width=None
+
         return self._page_instances[page]
+
+

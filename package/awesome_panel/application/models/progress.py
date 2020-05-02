@@ -2,14 +2,11 @@ import param
 
 
 class Progress(param.Parameterized):
-    value = param.Integer(default=0, bounds=(0, 100))
-    active_counts = param.Integer(default=0, bounds=(0, None))
+    value = param.Integer(default=0, bounds=(0, None), constant=True)
+    value_max = param.Integer(default=100, bounds=(0, None), constant=True)
+    message = param.String(constant=True)
+    active_count = param.Integer(bounds=(0, None), constant=True)
 
-    def is_active(self):
-        return self.active_counts > 0
-
-    def increment_active_counts(self):
-        self.active_counts += 1
-
-    def decrement_active_counts(self):
-        self.active_counts = max(0, self.active_counts - 1)
+    @property
+    def active(self):
+        return self.value > 0 or self.message or self.active_count > 0

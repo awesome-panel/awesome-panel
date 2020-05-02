@@ -12,6 +12,7 @@ def test_can_construct_page(page):
     assert isinstance(page.thumbnail_png_url, str)
     assert hasattr(page, "component")
     assert page.show_loading_page == False
+    assert page.restrict_max_width is True
 
 
 

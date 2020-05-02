@@ -136,6 +136,7 @@ PAGE_SERVICE.bulk_create(
             component=pages.test_bootstrap_card,
             author=authors.MARC_SKOV_MADSEN,
             show_loading_page=True,
+            restrict_max_width=False,
         ),
         Page(
             name="Test Code",

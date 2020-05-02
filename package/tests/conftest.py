@@ -2,21 +2,19 @@
 import panel as pn
 import pytest
 
-from awesome_panel.application.components import LoadingPageComponent, PageComponent
-from awesome_panel.application.models import (
-    Application,
-    Author,
-    MenuItem,
-    Page,
-    Resource,
-    SocialLink,
-    SourceLink,
-    Tag,
-    Theme,
-)
+from awesome_panel.application.components import (LoadingPageComponent,
+                                                  PageComponent)
+from awesome_panel.application.models import (Application, Author, MenuItem,
+                                              Page, Progress, Resource,
+                                              SocialLink, SourceLink, Tag,
+                                              Theme)
+from awesome_panel.application.services._progress_service import \
+    ProgressService
 from awesome_panel.application.templates import MaterialTemplate
-from awesome_panel.application.templates.application_template import ApplicationTemplate
-from awesome_panel.application.templates.material.material_template import CSS_PATH, HTML_PATH
+from awesome_panel.application.templates.application_template import \
+    ApplicationTemplate
+from awesome_panel.application.templates.material.material_template import (
+    CSS_PATH, HTML_PATH)
 
 
 @pytest.fixture
@@ -239,3 +237,13 @@ def resource(tags, author):
             tags=tags,
             author=author,
         )
+
+
+@pytest.fixture
+def progress():
+    return Progress()
+
+
+@pytest.fixture
+def progress_service(progress):
+    return ProgressService()
