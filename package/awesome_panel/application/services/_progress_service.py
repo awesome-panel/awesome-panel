@@ -39,9 +39,7 @@ class ProgressService(param.Parameterized):
 
         super().__init__(**params)
 
-    def update(
-        self, value: int, message: str, value_max: int = 100,
-    ):
+    def update(self, value: int, message: str, value_max: int = 100, active_count: int = 0):
         """Updates the value and message
 
         Args:
@@ -50,9 +48,7 @@ class ProgressService(param.Parameterized):
         """
         # Please note the order matters as the Widgets updates two times. One for each change
         progress = Progress(
-            value=value,
-            value_max=value_max,
-            message=message,
+            value=value, value_max=value_max, message=message, active_count=active_count,
         )
         with param.edit_constant(self):
             self.progress = progress
@@ -65,10 +61,7 @@ class ProgressService(param.Parameterized):
 
     @contextmanager
     def report(
-        self,
-        value: int = 0,
-        message: str = "",
-        value_max: int = 100,
+        self, value: int = 0, message: str = "", value_max: int = 100, active_count: int = 0,
     ):
         """Report the value and message.
 
@@ -85,10 +78,11 @@ class ProgressService(param.Parameterized):
         Yields:
             None: Nothing is yielded
         """
-
-        self.update(value=value, message=message, value_max=value_max)
+        previous_progress = self.progress
+        self.update(value=value, message=message, value_max=value_max, active_count=active_count)
         yield
-        self.reset()
+        with param.edit_constant(self):
+            self.progress = previous_progress
 
     @contextmanager
     def increment(
@@ -110,15 +104,44 @@ class ProgressService(param.Parameterized):
         """
         value_half = int(value / 2)
         new_value = min(self.progress.value + value_half, value_max,)
-
-
         self.update(
             value=new_value, value_max=value_max, message=message,
         )
 
         yield
-        new_value = max(self.progress.value + value_half, value_max)
+        new_value = self.progress.value + value_half
         if new_value >= value_max:
             self.reset()
         else:
             self.update(value=new_value, message=message, value_max=value_max)
+
+    @contextmanager
+    def is_active(
+        self, message: str
+    ):
+        """Signals that the application is active
+
+        Can be used as context manager or decorator.
+
+        Args:
+            message (str): A message for the user describing what is happening
+
+        Yields:
+            None: Nothing is yielded
+        """
+        previous_message = self.progress.message
+        self.update(
+            value=self.progress.value,
+            value_max=self.progress.value_max,
+            message=message,
+            active_count=self.progress.active_count+1
+        )
+
+        yield
+
+        self.update(
+            value=self.progress.value,
+            value_max=self.progress.value_max,
+            message=previous_message,
+            active_count=max(0, self.progress.active_count-1)
+        )
