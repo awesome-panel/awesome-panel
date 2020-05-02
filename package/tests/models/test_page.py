@@ -11,6 +11,7 @@ def test_can_construct_page(page):
     assert isinstance(page.source_code_url, str)
     assert isinstance(page.thumbnail_png_url, str)
     assert hasattr(page, "component")
+    assert page.show_loading_page == False
 
 
 

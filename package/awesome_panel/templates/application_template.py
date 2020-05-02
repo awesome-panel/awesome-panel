@@ -58,7 +58,8 @@ class ApplicationTemplate(pn.Template):
 
     @param.depends("application.page", watch=True)
     def _set_main_objects(self):
-        self.main[:] = [self.loading_page_component.main]
+        if self.application.page.show_loading_page:
+            self.main[:] = [self.loading_page_component.main]
         self.main[:] = [self.application_page_instance.main]
 
     @param.depends("application.title", watch=True)

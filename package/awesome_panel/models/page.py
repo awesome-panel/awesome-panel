@@ -12,6 +12,7 @@ class Page(OrderByNameMixin, param.Parameterized):
     source_code_url = param.String()
     thumbnail_png_url = param.String()
     component = param.Parameter()
+    show_loading_page = param.Boolean(default=False)
 
     def __hash__(self,):
         return hash(self.name)

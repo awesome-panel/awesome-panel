@@ -92,6 +92,7 @@ PAGE_SERVICE.bulk_create(
             tags=[tags.CODE, tags.APP_IN_GALLERY,],
             component=pages.kickstarter_dashboard,
             author=authors.MARC_SKOV_MADSEN,
+            show_loading_page=True,
         ),
         Page(
             name="Owid Choropleth Map",
@@ -100,6 +101,7 @@ PAGE_SERVICE.bulk_create(
             tags=[tags.CODE, tags.APP_IN_GALLERY,],
             component=pages.owid_choropleth_map,
             author=authors.MARC_SKOV_MADSEN,
+            show_loading_page=True,
         ),
 
         Page(
@@ -133,6 +135,7 @@ PAGE_SERVICE.bulk_create(
             tags=[tags.CODE, tags.APP_IN_GALLERY, tags.AWESOMEPANEL_EXPRESS,],
             component=pages.test_bootstrap_card,
             author=authors.MARC_SKOV_MADSEN,
+            show_loading_page=True,
         ),
         Page(
             name="Test Code",
