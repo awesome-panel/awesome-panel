@@ -1,5 +1,6 @@
 import panel as pn
 import param
+from awesome_panel.application.models import Theme
 
 def test_can_construct_application_template_with_exception(application, application_template):
     # Then
@@ -15,6 +16,8 @@ def test_can_construct_application_template_with_exception(application, applicat
     assert isinstance(application_template.loading_page_component_main, pn.layout.Reactive)
     assert isinstance(application_template.spinner, pn.layout.Reactive)
     assert application_template.param.spinning.default is False
+
+    assert isinstance(application.theme, Theme)
 
 
 def test_main_content_changes_when_page_changes(application_template, home_page_component, gallery_page_component):

@@ -1,4 +1,5 @@
 from contextlib import contextmanager
+from typing import Optional
 
 import param
 
@@ -39,7 +40,13 @@ class ProgressService(param.Parameterized):
 
         super().__init__(**params)
 
-    def update(self, value: int, message: str, value_max: int = 100, active_count: int = 0):
+    def update(
+        self,
+        value: Optional[int] = None,
+        message: Optional[str] = None,
+        value_max: Optional[int] = None,
+        active_count: Optional[int] = None,
+    ):
         """Updates the value and message
 
         Args:
@@ -47,6 +54,16 @@ class ProgressService(param.Parameterized):
             message (str): A message for the user describing what is happening
         """
         # Please note the order matters as the Widgets updates two times. One for each change
+        old_progress = self.progress
+        if value is None:
+            value = old_progress.value
+        if value_max is None:
+            value_max = old_progress.value_max
+        if message is None:
+            message = old_progress.message
+        if active_count is None:
+            active_count = old_progress.active_count
+
         progress = Progress(
             value=value, value_max=value_max, message=message, active_count=active_count,
         )
@@ -116,9 +133,7 @@ class ProgressService(param.Parameterized):
             self.update(value=new_value, message=message, value_max=value_max)
 
     @contextmanager
-    def mark_active(
-        self, message: str
-    ):
+    def mark_active(self, message: str):
         """Signals that the application is active
 
         Can be used as context manager or decorator.
@@ -131,19 +146,16 @@ class ProgressService(param.Parameterized):
         """
         previous_message = self.progress.message
         self.update(
-            value=self.progress.value,
-            value_max=self.progress.value_max,
             message=message,
-            active_count=self.progress.active_count+1
+            active_count=self.progress.active_count + 1,
         )
 
         yield
 
         self.update(
-            value=self.progress.value,
-            value_max=self.progress.value_max,
             message=previous_message,
-            active_count=max(0, self.progress.active_count-1)
+            active_count=max(0, self.progress.active_count - 1),
         )
 
-progress_service = ProgressService() # pylint: disable=invalid-name
+
+progress_service = ProgressService()  # pylint: disable=invalid-name

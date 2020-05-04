@@ -30,6 +30,14 @@ PAGE_SERVICE.set_default_page(
 PAGE_SERVICE.bulk_create(
     [
         Page(
+            name="Test Progress Service",
+            source_code_url=GITHUB_GALLERY_URL + "about/about.py",
+            thumbnail_png_url=THUMBNAILS_ROOT + "about.png",
+            tags=[tags.CODE, tags.APP_IN_GALLERY,],
+            component=pages.TestProgressServicePageComponent,
+            author=authors.MARC_SKOV_MADSEN,
+        ),
+        Page(
             name="About",
             source_code_url=GITHUB_GALLERY_URL + "about/about.py",
             thumbnail_png_url=THUMBNAILS_ROOT + "about.png",

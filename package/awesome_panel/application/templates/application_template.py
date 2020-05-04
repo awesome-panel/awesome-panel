@@ -1,9 +1,9 @@
 import param
 import panel as pn
-from awesome_panel.application.models import Application
-from awesome_panel.application.components import LoadingPageComponent, PageComponent
+from awesome_panel.application.models import Application, Theme
+from awesome_panel.application.components import LoadingPageComponent, PageComponent, ProgressSpinnerComponent
 import pathlib
-from awesome_panel.application.services import PAGE_SERVICE, progress_service
+from awesome_panel.application.services import PAGE_SERVICE, progress_service, ProgressService
 
 ROOT_URL = (
     "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/spinners/"
@@ -13,13 +13,31 @@ SPINNER_URL = "https://panel.holoviz.org/_static/logo.png"
 SPINNER_STATIC_URL = "https://panel.holoviz.org/_static/logo_stacked.png"
 
 
+STATIC = "<img src='https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/spinners/spinner_panel_static_light_400_340.gif' style='height:100%' title=''></img>"
+BREATH = "<img src='https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/spinners/spinner_panel_breath_light_400_340.gif' style='height:100%' title=''></img>"
+
+class Spinner(pn.pane.HTML):
+    spinning = param.Boolean(default=False)
+    static_url = param.String(STATIC)
+    spinning_url = param.String(BREATH)
+
+    def __init__(self, **params):
+        super().__init__(**params)
+
+        self._update()
+
+    def _update(self, _=None):
+        if self.spinning:
+            self.object = BREATH
+        else:
+            self.object = STATIC
+
 class ApplicationTemplate(pn.Template):
     application = param.ClassSelector(class_=Application)
     template_path = param.ClassSelector(class_=pathlib.Path)
     css_path = param.ClassSelector(class_=pathlib.Path)
 
     select_title_page = param.Action()
-    spinning = param.Boolean()
     main_max_width = param.Integer(default=1140)
 
     loading_page_component = param.ClassSelector(class_=LoadingPageComponent)
@@ -37,6 +55,9 @@ class ApplicationTemplate(pn.Template):
         if self.css_path:
             pn.config.css_files.append(self.css_path.resolve())
 
+        self.spinner = ProgressSpinnerComponent().view
+        self.spinner.sizing_mode="fixed"
+        self.spinner.height=40
         self.menu = pn.Param(self.application.param.menu_item, expand_button=False)
         self.sidebar = pn.Column()
         self._main_spacer = pn.Spacer(height=0, margin=0)
@@ -47,7 +68,7 @@ class ApplicationTemplate(pn.Template):
         )
         self._update_main_container()
         self.template_css = pn.pane.HTML(height=0, width=0, sizing_mode="fixed", margin=0)
-        self.spinner = pn.pane.PNG(SPINNER_STATIC_URL, sizing_mode="fixed", height=40)
+
 
         self.add_panel(name="menu_item", panel=self.menu)
         self.add_panel(name="main", panel=self.main)
@@ -63,16 +84,17 @@ class ApplicationTemplate(pn.Template):
 
     @param.depends("application.page", watch=True)
     def _update_main_container(self):
-        if self.application.page.show_loading_page:
-            self.main[:] = [self.loading_page_component.main]
+        with progress_service.mark_active(f"Loading {self.application.page.name}"):
+            if self.application.page.show_loading_page:
+                self.main[:] = [self.loading_page_component.main]
 
-        main_instance = self.application_page_instance.main
-        main_instance.align="center"
-        main_instance.sizing_mode="stretch_width"
+            main_instance = self.application_page_instance.main
+            main_instance.align="center"
+            main_instance.sizing_mode="stretch_width"
 
-        self.main[:] = [
-            self._main_spacer, # Trick to force main to stretch to full width of appContent
-            main_instance]
+            self.main[:] = [
+                self._main_spacer, # Trick to force main to stretch to full width of appContent
+                main_instance]
 
     @param.depends("application.title", watch=True)
     def _set_select_title_page_label(self):
@@ -80,13 +102,6 @@ class ApplicationTemplate(pn.Template):
 
     def _select_title_page(self, _=None):
         self.application.page = self.application.param.page.default
-
-    @param.depends("spinning", watch=True)
-    def _update_spinner(self):
-        if self.spinning:
-            self.spinner.object = SPINNER_URL
-        else:
-            self.spinner.object = SPINNER_STATIC_URL
 
     @property
     def application_page_instance(self):

@@ -3,23 +3,28 @@ import panel as pn
 import pytest
 
 from awesome_panel.application.components import (LoadingPageComponent,
-                                                  PageComponent)
+                                                  PageComponent,
+                                                  ProgressSpinnerComponent)
 from awesome_panel.application.models import (Application, Author, MenuItem,
                                               Page, Progress, Resource,
                                               SocialLink, SourceLink, Tag,
                                               Theme)
-from awesome_panel.application.services._progress_service import \
+from awesome_panel.application.services import \
+    progress_service as _progress_service
+from awesome_panel.application.services import theme_service as _theme_service
+from awesome_panel.application.services import \
     ProgressService
 from awesome_panel.application.templates import MaterialTemplate
 from awesome_panel.application.templates.application_template import \
     ApplicationTemplate
 from awesome_panel.application.templates.material.material_template import (
     CSS_PATH, HTML_PATH)
-from awesome_panel.application.services import progress_service as _progress_service
+
 
 @pytest.fixture(autouse=True)
 def reset_services():
     _progress_service.reset()
+    _theme_service.reset()
 
 @pytest.fixture
 def template():
@@ -251,3 +256,11 @@ def progress():
 @pytest.fixture
 def progress_service():
     return _progress_service
+
+@pytest.fixture
+def theme_service():
+    return _theme_service
+
+@pytest.fixture
+def progress_spinner_component(theme):
+    return ProgressSpinnerComponent(theme=theme)
