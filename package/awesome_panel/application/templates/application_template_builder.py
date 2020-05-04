@@ -1,9 +1,11 @@
-import param
 import panel as pn
-from awesome_panel.application.models import Application, Theme, MenuItem, SourceLink, SocialLink
+import param
+
 from awesome_panel.application.components import PageComponent
+from awesome_panel.application.models import Application, MenuItem, SocialLink, SourceLink, Theme
 from awesome_panel.application.templates.application_template import ApplicationTemplate
-from . import MaterialTemplate
+
+from awesome_panel.application.templates.material.material_template import MaterialTemplate
 
 TEMPLATES = [MaterialTemplate]
 
@@ -26,6 +28,7 @@ APPLICATION = Application(
     source_links=SOURCE_LINKS,
     social_links=SOCIAL_LINKS,
 )
+
 
 class ApplicationTemplateBuilder(param.Parameterized):
     title = param.String("Application Title")
@@ -52,4 +55,4 @@ class ApplicationTemplateBuilder(param.Parameterized):
             source_links=self.source_links,
             social_links=self.social_links,
         )
-        return self.template(application=application)
+        return self.template(application=application) # pylint: disable=not-callable

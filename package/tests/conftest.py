@@ -2,29 +2,36 @@
 import panel as pn
 import pytest
 
-from awesome_panel.application.components import (LoadingPageComponent,
-                                                  PageComponent,
-                                                  ProgressSpinnerComponent)
-from awesome_panel.application.models import (Application, Author, MenuItem,
-                                              Page, Progress, Resource,
-                                              SocialLink, SourceLink, Tag,
-                                              Theme)
-from awesome_panel.application.services import \
-    progress_service as _progress_service
+from awesome_panel.application.components import (
+    LoadingPageComponent,
+    PageComponent,
+    ProgressSpinnerComponent,
+)
+from awesome_panel.application.models import (
+    Application,
+    Author,
+    MenuItem,
+    Page,
+    Progress,
+    Resource,
+    SocialLink,
+    SourceLink,
+    Tag,
+    Theme,
+)
+from awesome_panel.application.services import ProgressService
+from awesome_panel.application.services import progress_service as _progress_service
 from awesome_panel.application.services import theme_service as _theme_service
-from awesome_panel.application.services import \
-    ProgressService
 from awesome_panel.application.templates import MaterialTemplate
-from awesome_panel.application.templates.application_template import \
-    ApplicationTemplate
-from awesome_panel.application.templates.material.material_template import (
-    CSS_PATH, HTML_PATH)
+from awesome_panel.application.templates.application_template import ApplicationTemplate
+from awesome_panel.application.templates.material.material_template import CSS_PATH, HTML_PATH
 
 
 @pytest.fixture(autouse=True)
 def reset_services():
     _progress_service.reset()
     _theme_service.reset()
+
 
 @pytest.fixture
 def template():
@@ -75,6 +82,7 @@ def gallery_page_main():
 def page_main():
     return pn.pane.Markdown("Page")
 
+
 @pytest.fixture
 def home_page(author, tags):
     source = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/app.py"
@@ -84,11 +92,11 @@ def home_page(author, tags):
     )
     return Page(
         name="Home",
-        author = author,
-        description = "The main page of the application",
-        tags = tags,
-        source_code_url = source,
-        thumbnail_png_url = thumbnail,
+        author=author,
+        description="The main page of the application",
+        tags=tags,
+        source_code_url=source,
+        thumbnail_png_url=thumbnail,
     )
 
 
@@ -101,11 +109,11 @@ def gallery_page(author, tags):
     )
     return Page(
         name="Gallery",
-        author = author,
-        description = "A page showing off all the pages",
-        tags = tags,
-        source_code_url = source,
-        thumbnail_png_url = thumbnail,
+        author=author,
+        description="A page showing off all the pages",
+        tags=tags,
+        source_code_url=source,
+        thumbnail_png_url=thumbnail,
     )
 
 
@@ -118,16 +126,13 @@ def page(author, tags):
     )
     return Page(
         name="Page",
-        author = author,
-        description = "Any Page",
-        tags = tags,
-        source_code_url = source,
-        thumbnail_png_url = thumbnail,
+        author=author,
+        description="Any Page",
+        tags=tags,
+        source_code_url=source,
+        thumbnail_png_url=thumbnail,
     )
 
-@pytest.fixture
-def pages(page, home_page, gallery_page):
-    return [page, home_page, gallery_page]
 
 @pytest.fixture
 def home_page_component(home_page_main):
@@ -239,13 +244,13 @@ def authors(author):
 @pytest.fixture
 def resource(tags, author):
     return Resource(
-            name="Panel",
-            url="https://panel.pyviz.org/",
-            thumbnail_png_path="",
-            is_awesome=True,
-            tags=tags,
-            author=author,
-        )
+        name="Panel",
+        url="https://panel.pyviz.org/",
+        thumbnail_png_path="",
+        is_awesome=True,
+        tags=tags,
+        author=author,
+    )
 
 
 @pytest.fixture
@@ -257,9 +262,11 @@ def progress():
 def progress_service():
     return _progress_service
 
+
 @pytest.fixture
 def theme_service():
     return _theme_service
+
 
 @pytest.fixture
 def progress_spinner_component(theme):

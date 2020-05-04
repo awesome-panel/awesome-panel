@@ -146,15 +146,13 @@ class ProgressService(param.Parameterized):
         """
         previous_message = self.progress.message
         self.update(
-            message=message,
-            active_count=self.progress.active_count + 1,
+            message=message, active_count=self.progress.active_count + 1,
         )
 
         yield
 
         self.update(
-            message=previous_message,
-            active_count=max(0, self.progress.active_count - 1),
+            message=previous_message, active_count=max(0, self.progress.active_count - 1),
         )
 
 

@@ -3,8 +3,8 @@
 import panel as pn
 
 import awesome_panel.express as pnx
-from awesome_panel.express.testing import TestApp
 from application.pages.training_analysis.views.athlete_view import AthleteUpdateView
+from awesome_panel.express.testing import TestApp
 
 
 def test_athlete_edit_view():

@@ -1,12 +1,27 @@
+"""The PageComponent is an abstract base class.
+
+Don't use it directly. But use it for
+
+- Creating SubClass implementations
+- Creating PageComponents from other components
+"""
+
 import inspect
 
-import panel as pn
 import param
 
 from awesome_panel.application.models import Page, Progress, Toast
 
 
 class PageComponent(param.Parameterized):
+    """The PageComponent defines a page
+
+Use it for
+
+- Creating an instance by providing its parameters
+- Creating SubClass implementations
+- Creating PageComponents from many types of components via the `create` function
+"""
     page = param.ClassSelector(class_=Page)
     main = param.Parameter()
     sidebar = param.Parameter()
@@ -22,7 +37,21 @@ class PageComponent(param.Parameterized):
         super().__init__(**params)
 
     @classmethod
-    def create(cls, component):
+    def create(cls, component) -> 'PageComponent':
+        """Creates a PageComponent from the component
+
+        This method
+
+        Args:
+            component Anything that is a Panel or Panel can convert to a Panel.
+
+                - Also supports functions, classes and modules that have main, view and/ or sidebar
+                attributes or functions.
+                - If the object is already a PageComponent it is just returned.
+
+        Returns:
+            PageComponent: An instance of PageComponent
+        """
         if inspect.isclass(component):
             component = component()
 

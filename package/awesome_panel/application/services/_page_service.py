@@ -4,7 +4,7 @@ from typing import List, Optional
 import param
 
 from awesome_panel.application.models import Page
-from awesome_panel.application.services import AUTHOR_SERVICE
+from awesome_panel.application.services import author_service
 
 
 class PageService(param.Parameterized):
@@ -96,4 +96,4 @@ class PageService(param.Parameterized):
             self.default_page = page
 
 
-PAGE_SERVICE = PageService()
+page_service = PageService()

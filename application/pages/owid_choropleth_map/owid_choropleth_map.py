@@ -115,8 +115,8 @@ class OwidDashboard(param.Parameterized):
             str: A HTML link
         """
         download_icon = (
-            '<img application="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/'
-            'icons/download_icon.png?raw=true" height="16px" width="16px"/>'
+            '<img application="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/'
+            'assets/images/icons/download_icon.png?raw=true" height="16px" width="16px"/>'
         )
         if self.dataset_name:
             download_link = self.owid_data_sets.loc[self.dataset_name].url
@@ -229,7 +229,7 @@ class OwidDashboard(param.Parameterized):
         plot = figure(title=title, plot_height=500, tools="", sizing_mode="stretch_width",)
         plot.xgrid.grid_line_color = None
         plot.ygrid.grid_line_color = None
-        plot.patches(
+        plot.patches( # pylint: disable=too-many-function-args
             "xs",
             "ys",
             source=geosource,

@@ -1,9 +1,9 @@
-## # pylint: disable=redefined-outer-name,protected-access, missing-function-docstring
-from awesome_panel.application.components import PageComponent
-from awesome_panel.application.models import Page, Progress, Toast
-import param
+# pylint: disable=redefined-outer-name,protected-access
+# pylint: disable=missing-function-docstring,missing-module-docstring,missing-class-docstring
 import panel as pn
-import pytest
+
+from awesome_panel.application.components import PageComponent
+from awesome_panel.application.models import Progress, Toast
 
 
 def test_can_construct_page_component(page_component):
@@ -61,8 +61,9 @@ def test_can_create_page_component_from_callable():
 
 def test_can_create_page_component_from_class_with_view_func():
     # Given
-    class MyClass:
-        def view(self):
+    class MyClass: # pylint: disable=too-few-methods
+        @staticmethod
+        def view():
             return "A"
 
     component = MyClass

@@ -10,12 +10,14 @@ from awesome_panel.application.services.author_service import AuthorService
 def author_service():
     return AuthorService()
 
+
 def test_can_construct_author_service(author_service):
     assert hasattr(author_service, "authors")
     assert hasattr(author_service, "default_author")
 
     assert author_service.default_author
     assert author_service.default_author in author_service.authors
+
 
 def test_can_create_author(author_service, author):
     # Given
@@ -24,6 +26,7 @@ def test_can_create_author(author_service, author):
     author_service.create(author)
     # Then
     assert author in author_service.authors
+
 
 def test_can_read_author_by_name(author_service, author):
     # Given
@@ -34,12 +37,14 @@ def test_can_read_author_by_name(author_service, author):
     # Then
     assert actual == author
 
+
 def test_can_delete_author(author_service, author):
     # When
     author_service.create(author)
     author_service.delete(author)
     # Then
     assert author not in author_service.authors
+
 
 def test_can_bulk_create_and_is_sorted(author_service):
     # Given
@@ -54,6 +59,7 @@ def test_can_bulk_create_and_is_sorted(author_service):
     # Then
     assert actual == [author_a, author_b, author_c, author_service.default_author]
 
+
 def test_a_common_author_service_exists():
     # pylint: disable=import-outside-toplevel, unused-import
-    from awesome_panel.application.services import AUTHOR_SERVICE
+    from awesome_panel.application.services import author_service

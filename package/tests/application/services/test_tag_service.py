@@ -10,8 +10,10 @@ from awesome_panel.application.services.tag_service import TagService
 def tag_service():
     return TagService()
 
+
 def test_can_construct_tag_service(tag_service):
     assert hasattr(tag_service, "tags")
+
 
 def test_can_create_tag(tag_service, tag):
     # Given
@@ -20,6 +22,7 @@ def test_can_create_tag(tag_service, tag):
     tag_service.create(tag)
     # Then
     assert tag in tag_service.tags
+
 
 def test_can_read_tag_by_name(tag_service, tag):
     # Given
@@ -30,12 +33,14 @@ def test_can_read_tag_by_name(tag_service, tag):
     # Then
     assert actual == tag
 
+
 def test_can_delete_tag(tag_service, tag):
     # When
     tag_service.create(tag)
     tag_service.delete(tag)
     # Then
     assert tag not in tag_service.tags
+
 
 def test_can_bulk_create_and_is_sorted(tag_service,):
     # Given
@@ -50,6 +55,7 @@ def test_can_bulk_create_and_is_sorted(tag_service,):
     # Then
     assert actual == [tag_a, tag_b, tag_c]
 
+
 def test_a_common_tag_service_exists():
     # pylint: disable=import-outside-toplevel, unused-import
-    from awesome_panel.application.services import TAG_SERVICE
+    from awesome_panel.application.services import tag_service

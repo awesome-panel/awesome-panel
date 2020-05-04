@@ -1,8 +1,10 @@
 from awesome_panel.utils import OrderByNameMixin
 
+
 class Tag(OrderByNameMixin):
     def __init__(self, name):
         self.name = name
+
 
 def test_can_order():
     # Given

@@ -1,6 +1,5 @@
 """In this module we create all tags"""
 from awesome_panel.application.models import Tag
-from awesome_panel.application.services import TAG_SERVICE
 
 ALTERNATIVE = Tag(name="Alternatives")
 APP = Tag(name="App")
@@ -24,27 +23,26 @@ VIDEO = Tag(name="Video")
 VOILA = Tag(name="Voila")
 VTK = Tag(name="VTK")
 
-TAG_SERVICE.bulk_create(
-    [
-        ALTERNATIVE,
-        APP,
-        APP_IN_GALLERY,
-        ARTICLE,
-        AWESOMEPANEL_EXPRESS,
-        AWESOME_PANEL_ORG,
-        CODE,
-        DEPLOYMENT,
-        INSPIRATION,
-        FINANCE,
-        IMAGE_RECOGNITION,
-        MACHINE_LEARNING,
-        NLP,
-        SOCIAL,
-        PANEL,
-        TECHNICAL,
-        TUTORIAL,
-        VIDEO,
-        VOILA,
-        VTK,
-    ]
-)
+
+TAGS = [
+    ALTERNATIVE,
+    APP,
+    APP_IN_GALLERY,
+    ARTICLE,
+    AWESOMEPANEL_EXPRESS,
+    AWESOME_PANEL_ORG,
+    CODE,
+    DEPLOYMENT,
+    INSPIRATION,
+    FINANCE,
+    IMAGE_RECOGNITION,
+    MACHINE_LEARNING,
+    NLP,
+    SOCIAL,
+    PANEL,
+    TECHNICAL,
+    TUTORIAL,
+    VIDEO,
+    VOILA,
+    VTK,
+]

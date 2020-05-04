@@ -5,6 +5,7 @@ import param
 
 from awesome_panel.application.models import Tag
 
+
 class TagService(param.Parameterized):
     """A CRUD Service for Tags
 
@@ -14,6 +15,7 @@ class TagService(param.Parameterized):
     - DON'T change the tags list manually. Use the functions of the service
 
     """
+
     tags = param.List(constant=True)
 
     def __init__(self, **params):
@@ -76,4 +78,5 @@ class TagService(param.Parameterized):
         self._tags = {**old_tags, **new_tags}
         self._update_tags_list()
 
-TAG_SERVICE=TagService()
+
+tag_service = TagService()

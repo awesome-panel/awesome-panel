@@ -1,5 +1,2 @@
 """Exports and other stuff"""
-from . import tags
-from . import authors
-from . import pages
-from . import settings
+from . import application, authors, menu_items, pages, settings, social_links, source_links, tags

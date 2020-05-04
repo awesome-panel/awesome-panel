@@ -1,13 +1,14 @@
-"""Models of Resource, Author and Tag used to defined the RESOURCES and APPS_IN_GALLERY list."""
-from typing import List, NamedTuple, Optional
-from .author import Author
-from .tag import Tag
+"""In this Module we define the Resource model"""
+
 import param
+
+from .author import Author
 
 _IMAGE_DICT = {
     " ": "-",
     "#": "",
 }
+
 
 class Resource(param.Parameterized):
     """Model of a Resource
@@ -30,7 +31,6 @@ class Resource(param.Parameterized):
     author = param.ClassSelector(class_=Author, allow_None=True)
     description = param.String()
 
-
     def to_markdown_bullet(self,) -> str:
         """A markdown bullet string
 
@@ -41,6 +41,7 @@ class Resource(param.Parameterized):
         if self.author:
             result += f" by [{self.author.name}]({self.author.url})"
         if self.tags:
+            # pylint: disable=not-an-iterable
             result += " (#" + ", #".join(sorted([tag.name for tag in self.tags])) + ")"
 
         return result

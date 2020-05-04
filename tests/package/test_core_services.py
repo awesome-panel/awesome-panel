@@ -1,6 +1,6 @@
 """Test of the app services"""
-from awesome_panel.utils import module_to_github_url
 from application.pages.bootstrap_dashboard import bootstrap_dashboard
+from awesome_panel.utils import module_to_github_url
 
 
 def test_module_to_github_url():

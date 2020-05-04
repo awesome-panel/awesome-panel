@@ -3,10 +3,10 @@
 import panel as pn
 
 import awesome_panel.express as pnx
-from awesome_panel.express.testing import TestApp
 from application.pages.training_analysis.views.performance_curve_view import (
     PerformanceCurveUpdateView,
 )
+from awesome_panel.express.testing import TestApp
 
 
 def test_performance_curve_update_view():

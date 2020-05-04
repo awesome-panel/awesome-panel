@@ -8,4 +8,3 @@ GITHUB_THUMBNAILS_URL = (
 THUMBNAILS_ROOT = (
     "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/"
 )
-

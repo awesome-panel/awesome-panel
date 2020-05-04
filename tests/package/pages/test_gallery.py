@@ -3,13 +3,13 @@ import pytest
 from panel.layout import Column
 
 import awesome_panel.express as pnx
-from awesome_panel.application.services import PAGE_SERVICE
-from awesome_panel.express.testing import TestApp
 from application.pages.gallery import gallery
+from awesome_panel.application.services import page_service
+from awesome_panel.express.testing import TestApp
 
 pnx.bootstrap.extend()
 pnx.fontawesome.extend()
-APPS_IN_GALLERY =  PAGE_SERVICE.pages
+APPS_IN_GALLERY = page_service.pages
 
 
 @pytest.mark.panel

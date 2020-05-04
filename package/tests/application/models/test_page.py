@@ -1,5 +1,5 @@
-from awesome_panel.application.models import Page, Author, Tag
-import pytest
+from awesome_panel.application.models import Author, Page, Tag
+
 
 def test_can_construct_page(page):
     assert issubclass(type(page), Page)
@@ -13,6 +13,3 @@ def test_can_construct_page(page):
     assert hasattr(page, "component")
     assert page.show_loading_page == False
     assert page.restrict_max_width is True
-
-
-

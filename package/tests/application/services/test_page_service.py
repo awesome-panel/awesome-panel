@@ -10,12 +10,14 @@ from awesome_panel.application.services.page_service import PageService
 def page_service():
     return PageService()
 
+
 def test_can_construct_page_service(page_service):
     assert hasattr(page_service, "pages")
     assert hasattr(page_service, "default_page")
 
     assert page_service.default_page
     assert page_service.default_page in page_service.pages
+
 
 def test_can_create_page(page_service, page):
     # Given
@@ -24,6 +26,7 @@ def test_can_create_page(page_service, page):
     page_service.create(page)
     # Then
     assert page in page_service.pages
+
 
 def test_can_read_page_by_name(page_service, page):
     # Given
@@ -34,12 +37,14 @@ def test_can_read_page_by_name(page_service, page):
     # Then
     assert actual == page
 
+
 def test_can_delete_page(page_service, page):
     # When
     page_service.create(page)
     page_service.delete(page)
     # Then
     assert page not in page_service.pages
+
 
 def test_can_bulk_create_and_is_sorted(page_service):
     # Given
@@ -54,6 +59,7 @@ def test_can_bulk_create_and_is_sorted(page_service):
     # Then
     assert actual == [page_a, page_b, page_c, page_service.default_page]
 
+
 def test_a_common_page_service_exists():
     # pylint: disable=import-outside-toplevel, unused-import
-    from awesome_panel.application.services import PAGE_SERVICE
+    from awesome_panel.application.services import page_service

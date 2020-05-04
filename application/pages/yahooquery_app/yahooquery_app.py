@@ -127,12 +127,11 @@ def pnx_help(python_object: object,) -> pn.viewable.Viewable:
 
 
 # TTodo: Move to pnx and create tests
-def pnx_json(python_object: object, indent=2,) -> pn.viewable.Viewable:
+def pnx_json(python_object: object) -> pn.viewable.Viewable:
     """Converts and json serialisabe object into Viewable
 
     Args:
         python_object (object): Any json serializable object
-        indent (int, optional): The indentation level of the json output. Defaults to 2.
 
     Returns:
         pn.viewable.Viewable: [description]

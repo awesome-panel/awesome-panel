@@ -1,8 +1,14 @@
+"""In this module we define the Application model.
+
+It provides the basic parameters of an application"""
 import param
-from .progress import Progress
+
 from .message import Message
+from .progress import Progress
+
 
 class Application(param.Parameterized):
+    """The Application Model provides the basic parameters of an application"""
     title = param.String()
     url = param.String()
     logo = param.String()
@@ -14,9 +20,7 @@ class Application(param.Parameterized):
     progress = param.ClassSelector(class_=Progress)
     message = param.ClassSelector(class_=Message)
 
-    def __init__(
-        self, templates, pages, menu_items=[], source_links=[], social_links=[], **params
-    ):
+    def __init__(self, templates, pages, menu_items=None, source_links=None, social_links=[], **params):
         self.param.template.objects = templates
         if "template" in params:
             self.param.template.default = params["template"]
@@ -25,9 +29,19 @@ class Application(param.Parameterized):
         self.param.page.objects = pages
         if pages:
             self.param.page.default = pages[0]
-        self.param.menu_item.objects = menu_items
-        self.param.source_link.objects = source_links
-        self.param.social_link.objects = social_links
+
+        if menu_items:
+            self.param.menu_item.objects = menu_items
+        else:
+            self.param.menu_item.objects = []
+        if source_links:
+            self.param.source_link.objects = source_links
+        else:
+            self.param.source_link.objects = []
+        if social_links:
+            self.param.social_link.objects = social_links
+        else:
+            self.param.social_link.objects = []
 
         super().__init__(**params)
 

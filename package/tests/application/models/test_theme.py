@@ -1,5 +1,5 @@
-from holoviews import Cycle as HoloviewsCycle
 from bokeh.themes.theme import Theme as BokehTheme
+from holoviews import Cycle as HoloviewsCycle
 
 
 def test_can_construct(theme):

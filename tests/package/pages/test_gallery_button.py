@@ -2,12 +2,12 @@
 import panel as pn
 
 import awesome_panel.express as pnx
-from awesome_panel.application.services import PAGE_SERVICE
-from awesome_panel.express.testing import TestApp
 from application.pages.gallery import gallery
+from awesome_panel.application.services import page_service
+from awesome_panel.express.testing import TestApp
 
 pnx.fontawesome.extend()
-APPS_IN_GALLERY =  PAGE_SERVICE.pages
+APPS_IN_GALLERY = page_service.pages
 
 
 def test_gallery_button():

@@ -1,10 +1,12 @@
 # pylint: disable=redefined-outer-name,protected-access,missing-function-docstring
-import pytest
-from awesome_panel.application.templates import ApplicationTemplateBuilder
 from panel.template import Template
 
+from awesome_panel.application.templates import ApplicationTemplateBuilder
 
-def test_can_create_template_from_models(title, logo, url, page_components, menu_items, source_links, social_links):
+
+def test_can_create_template_from_models(
+    title, logo, url, page_components, menu_items, source_links, social_links
+):
     # When
     actual = ApplicationTemplateBuilder(
         title=title,

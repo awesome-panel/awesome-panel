@@ -1,12 +1,10 @@
 """In this module we define all Resources (except apps in the gallery) and exposes
 them via the RESOURCES list.
 """
-from awesome_panel.database import authors, tags
-from awesome_panel.database.apps_in_gallery import APPS_IN_GALLERY
-from awesome_panel.database.settings import THUMBNAILS_ROOT
-
 # pylint: disable=line-too-long
 from awesome_panel.application.models import Resource
+from application.config import authors, tags
+from application.config.settings import THUMBNAILS_ROOT
 
 # panel FILE ROOTS
 
@@ -262,7 +260,6 @@ RESOURCES = [
         tags=[tags.ALTERNATIVE],
         author=authors.STREAMLIT,
     ),
-] + APPS_IN_GALLERY
+]
 
-TAGS = sorted(list({tag for resource in RESOURCES for tag in resource.tags }))
-
+TAGS = sorted(list({tag for resource in RESOURCES for tag in resource.tags}))

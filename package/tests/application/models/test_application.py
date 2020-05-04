@@ -1,7 +1,6 @@
 ## # pylint: disable=redefined-outer-name,protected-access, missing-function-docstring
 import panel as pn
 import param
-import pytest
 
 from awesome_panel.application import components, models
 

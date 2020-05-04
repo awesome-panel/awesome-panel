@@ -13,7 +13,8 @@ It seems **the api of Custom Bokeh Models is changing** towards Bokeh v. 2.0.
 The best starting point for Custom Bokeh Models is to get inspiration from
 
 - [Bokeh Python Models](https://github.com/bokeh/bokeh/tree/master/bokeh/models)
-- [Bokeh TypeScript Models](https://github.com/bokeh/bokeh/tree/master/bokehjs/application/lib/models)
+- [Bokeh TypeScript Models]\
+    (https://github.com/bokeh/bokeh/tree/master/bokehjs/application/lib/models)
 - [Panel Models](https://github.com/holoviz/panel/tree/master/panel/models)
 
 With some help I succeeded in creating the below Bokeh Custom Model.

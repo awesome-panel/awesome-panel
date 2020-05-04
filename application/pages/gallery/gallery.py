@@ -10,10 +10,10 @@ from panel.layout import Divider, HSpacer
 from panel.pane import Markdown
 from panel.widgets import Button
 
+from application.config import settings
+from awesome_panel.application.models import Resource
 from awesome_panel.express import spinners
 from awesome_panel.express.bootstrap import InfoAlert
-from awesome_panel.application.models import Resource
-from application.config import settings
 
 ROOT = str(pathlib.Path.cwd())
 # pylint: disable=line-too-long

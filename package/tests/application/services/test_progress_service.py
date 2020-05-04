@@ -13,10 +13,10 @@ The ProgressService provides
 
 # pylint: disable=redefined-outer-name,protected-access
 # pylint: disable=missing-function-docstring,missing-module-docstring,missing-class-docstring
-import pytest
 
 from awesome_panel.application.models import Progress
 from awesome_panel.application.services import ProgressService
+
 
 def test_can_be_constructed_with_default_values(progress_service):
     assert isinstance(progress_service, ProgressService)
@@ -109,15 +109,18 @@ def test_can_use_increment_func_as_decorator(progress_service):
     assert progress_service.progress.value == 0
     assert progress_service.progress.message == ""
 
+
 def test_can_use_active_count(progress_service):
     @progress_service.mark_active("Loading...")
     def load():
         assert progress_service.progress.active_count == 1
         assert progress_service.progress.message == "Loading..."
+
         @progress_service.mark_active("Transforming...")
         def transform():
             assert progress_service.progress.active_count == 2
             assert progress_service.progress.message == "Transforming..."
+
         assert progress_service.progress.active_count == 1
         assert progress_service.progress.message == "Loading..."
         transform()
@@ -127,6 +130,7 @@ def test_can_use_active_count(progress_service):
     load()
     assert progress_service.progress.active_count == 0
     assert progress_service.progress.message == ""
+
 
 def test_can_update_value_only(progress_service):
     # Given
@@ -143,6 +147,7 @@ def test_can_update_value_only(progress_service):
     assert new_progress.message == old_progress.message
     assert new_progress.active_count == old_progress.active_count
 
+
 def test_can_update_value_max_only(progress_service):
     # Given
     progress_service.update(value=1, value_max=2, message="A", active_count=3)
@@ -158,6 +163,7 @@ def test_can_update_value_max_only(progress_service):
     assert new_progress.message == old_progress.message
     assert new_progress.active_count == old_progress.active_count
 
+
 def test_can_update_message_only(progress_service):
     # Given
     progress_service.update(value=1, value_max=2, message="A", active_count=3)
@@ -172,6 +178,7 @@ def test_can_update_message_only(progress_service):
     assert new_progress.value_max == old_progress.value_max
     assert new_progress.message == "B"
     assert new_progress.active_count == old_progress.active_count
+
 
 def test_can_update_active_count_only(progress_service):
     # Given

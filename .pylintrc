@@ -5,7 +5,7 @@ load-plugins=pylint.extensions.mccabe, pylint.extensions.docparams
 max-line-length=100
 
 [MESSAGES CONTROL]
-disable=bad-continuation,duplicate-code
+disable=bad-continuation,duplicate-code,no-member
 
 [DESIGN]
 max-parents=13

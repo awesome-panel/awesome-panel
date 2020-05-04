@@ -1,7 +1,7 @@
 """In this module we define all Authors of resources or apps in the gallery and exposes
 them via the AUTHORS list"""
 from awesome_panel.application.models import Author
-from awesome_panel.application.services import AUTHOR_SERVICE
+from awesome_panel.application.services import author_service
 
 # Authors
 AWESOME_PANEL_ORG = Author(
@@ -119,7 +119,8 @@ XAVARTLEY = Author(
     github_avatar_url="https://avatars1.githubusercontent.com/u/18531147",
 )
 
-AUTHOR_SERVICE.bulk_create([
+
+AUTHORS = [
     AWESOME_PANEL_ORG,
     BOKEH,
     DASH,
@@ -136,4 +137,4 @@ AUTHOR_SERVICE.bulk_create([
     STREAMLIT,
     VOILA,
     XAVARTLEY,
-])
+]
