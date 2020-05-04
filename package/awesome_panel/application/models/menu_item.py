@@ -3,5 +3,5 @@ import param
 
 
 class MenuItem(param.Parameterized):
-"""A MenuItem Model"""
+    """A MenuItem Model"""
     pass

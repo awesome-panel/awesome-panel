@@ -46,4 +46,4 @@ if __name__.startswith("bokeh"):
     view().servable()
 else:
     APP_ROUTES = {"": view}
-    pn.serve(APP_ROUTES, port=14033, dev=False, title="Awesome Panel")
+    pn.serve(APP_ROUTES, port=80, dev=False, title="Awesome Panel")
