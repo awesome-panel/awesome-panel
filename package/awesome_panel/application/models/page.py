@@ -2,7 +2,6 @@
 import param
 
 from awesome_panel.application.models.author import Author
-from awesome_panel.application.models.tag import Tag
 from awesome_panel.utils import OrderByNameMixin
 
 
@@ -11,6 +10,7 @@ class Page(OrderByNameMixin, param.Parameterized):
 
     - page component (For example a PageComponent)
     - meta parameters like author and description"""
+
     author = param.ClassSelector(class_=Author, allow_None=True)
     description = param.String()
     tags = param.List()

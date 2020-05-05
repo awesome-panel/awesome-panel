@@ -14,8 +14,7 @@ The awesome_panel.application framework provides
 import panel as pn
 
 from application import config
-from awesome_panel.application.services import (author_service, page_service,
-                                                tag_service)
+from awesome_panel.application.services import author_service, page_service, tag_service
 from awesome_panel.application.templates import ApplicationTemplateBuilder
 from awesome_panel.application.templates.material.material_template import MaterialTemplate
 

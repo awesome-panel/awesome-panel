@@ -5,6 +5,7 @@ import param
 class Progress(param.Parameterized):
     """The Progress model is used to communicate the Progress of the Application,
     the active PageComponent etc."""
+
     value = param.Integer(default=0, bounds=(0, None))
     value_max = param.Integer(default=100, bounds=(0, None))
     message = param.String()

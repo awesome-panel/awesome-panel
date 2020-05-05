@@ -1,7 +1,7 @@
 # pylint: disable=redefined-outer-name,protected-access
 # pylint: disable=missing-function-docstring,missing-module-docstring,missing-class-docstring
 from awesome_panel.application.components import ProgressSpinnerComponent
-from awesome_panel.application.models import Progress, Theme
+from awesome_panel.application.models import Theme
 
 
 def test_can_construct(progress_service):

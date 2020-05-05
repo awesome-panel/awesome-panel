@@ -105,4 +105,4 @@ class AuthorService(param.Parameterized):
             self.default_author = author
 
 
-author_service = AuthorService()
+author_service = AuthorService() # pylint: disable=invalid-name

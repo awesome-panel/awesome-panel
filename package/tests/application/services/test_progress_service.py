@@ -1,7 +1,7 @@
 """In this module we test the ProgressService
 
-The purpose of the ProgressService is to enable one shared service for progress_service reporting across
-the application.
+The purpose of the ProgressService is to enable one shared service for progress_service reporting
+across the application.
 
 The ProgressService provides
 

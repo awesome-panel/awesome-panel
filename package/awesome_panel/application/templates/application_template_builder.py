@@ -1,36 +1,35 @@
-import panel as pn
+"""This module implements the ApplicationTempalteBuild"""
 import param
 
-from awesome_panel.application.components import PageComponent
-from awesome_panel.application.models import Application, MenuItem, SocialLink, SourceLink, Theme
+from awesome_panel.application.models import Application
 from awesome_panel.application.templates.application_template import ApplicationTemplate
-
 from awesome_panel.application.templates.material.material_template import MaterialTemplate
 
 TEMPLATES = [MaterialTemplate]
 
-THEMES = [Theme(name="Dark")]
-TITLE = "Awesome Panel"
-LOGO = "https://panel.holoviz.org/_static/logo_horizontal.png"
-URL = "https://awesome-panel.org"
-PAGES = [pn.pane.Markdown("# Home"), pn.pane.Markdown("# Gallery")]
-MENU_ITEMS = [MenuItem(name="Item 1")]
-SOURCE_LINKS = [SourceLink(name="GitHub")]
-SOCIAL_LINKS = [SocialLink(name="Twitter")]
-APPLICATION = Application(
-    title=TITLE,
-    logo=LOGO,
-    url=URL,
-    templates=TEMPLATES,
-    # themes=THEMES,
-    pages=PAGES,
-    menu_items=MENU_ITEMS,
-    source_links=SOURCE_LINKS,
-    social_links=SOCIAL_LINKS,
-)
+# THEMES = [Theme(name="Dark")]
+# TITLE = "Awesome Panel"
+# LOGO = "https://panel.holoviz.org/_static/logo_horizontal.png"
+# URL = "https://awesome-panel.org"
+# PAGES = [pn.pane.Markdown("# Home"), pn.pane.Markdown("# Gallery")]
+# MENU_ITEMS = [MenuItem(name="Item 1")]
+# SOURCE_LINKS = [SourceLink(name="GitHub")]
+# SOCIAL_LINKS = [SocialLink(name="Twitter")]
+# APPLICATION = Application(
+#     title=TITLE,
+#     logo=LOGO,
+#     url=URL,
+#     templates=TEMPLATES,
+#     # themes=THEMES,
+#     pages=PAGES,
+#     menu_items=MENU_ITEMS,
+#     source_links=SOURCE_LINKS,
+#     social_links=SOCIAL_LINKS,
+# )
 
 
 class ApplicationTemplateBuilder(param.Parameterized):
+    """The Application Template Builder makes i easier to build your ApplicationTemplate"""
     title = param.String("Application Title")
     url = param.String()
     logo = param.String()
@@ -43,7 +42,12 @@ class ApplicationTemplateBuilder(param.Parameterized):
     source_links = param.List()
     social_links = param.List()
 
-    def create(self):
+    def create(self) -> Application:
+        """Returns an application
+
+        Returns:
+            Application: An application
+        """
         application = Application(
             title=self.title,
             url=self.url,
@@ -55,4 +59,4 @@ class ApplicationTemplateBuilder(param.Parameterized):
             source_links=self.source_links,
             social_links=self.social_links,
         )
-        return self.template(application=application) # pylint: disable=not-callable
+        return self.template(application=application)  # pylint: disable=not-callable

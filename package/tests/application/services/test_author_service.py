@@ -3,7 +3,7 @@
 import pytest
 
 from awesome_panel.application.models import Author
-from awesome_panel.application.services.author_service import AuthorService
+from awesome_panel.application.services._author_service import AuthorService
 
 
 @pytest.fixture

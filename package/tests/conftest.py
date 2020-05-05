@@ -1,4 +1,5 @@
-# pylint: disable=redefined-outer-name,protected-access,missing-function-docstring
+# pylint: disable=redefined-outer-name,protected-access
+# pylint: disable=missing-function-docstring,missing-module-docstring,missing-class-docstring
 import panel as pn
 import pytest
 
@@ -19,7 +20,6 @@ from awesome_panel.application.models import (
     Tag,
     Theme,
 )
-from awesome_panel.application.services import ProgressService
 from awesome_panel.application.services import progress_service as _progress_service
 from awesome_panel.application.services import theme_service as _theme_service
 from awesome_panel.application.templates import MaterialTemplate
@@ -145,7 +145,7 @@ def gallery_page_component(gallery_page_main):
 
 
 @pytest.fixture
-def page_component(page, page_main):
+def page_component(page_main):
     return PageComponent(name="Page", main=page_main, sidebar="sidebar")
 
 
@@ -190,7 +190,7 @@ def social_links(social_link):
 
 
 @pytest.fixture
-def application(
+def application( # pylint: disable=too-many-arguments
     title, logo, url, templates, themes, page_components, menu_items, source_links, social_links
 ):
     return Application(

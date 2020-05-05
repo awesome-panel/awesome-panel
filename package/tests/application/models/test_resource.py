@@ -1,7 +1,5 @@
-## # pylint: disable=redefined-outer-name,protected-access, missing-function-docstring
-from awesome_panel.application.models import Resource
-
-
+# pylint: disable=redefined-outer-name,protected-access
+# pylint: disable=missing-function-docstring,missing-module-docstring,missing-class-docstring
 def test_can_construct_resource(resource):
     assert hasattr(resource, "name")
     assert hasattr(resource, "url")

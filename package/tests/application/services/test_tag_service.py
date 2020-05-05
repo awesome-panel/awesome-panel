@@ -3,7 +3,7 @@
 import pytest
 
 from awesome_panel.application.models import Tag
-from awesome_panel.application.services.tag_service import TagService
+from awesome_panel.application.services._tag_service import TagService
 
 
 @pytest.fixture

@@ -229,7 +229,7 @@ class OwidDashboard(param.Parameterized):
         plot = figure(title=title, plot_height=500, tools="", sizing_mode="stretch_width",)
         plot.xgrid.grid_line_color = None
         plot.ygrid.grid_line_color = None
-        plot.patches( # pylint: disable=too-many-function-args
+        plot.patches(  # pylint: disable=too-many-function-args
             "xs",
             "ys",
             source=geosource,

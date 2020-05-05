@@ -4,7 +4,6 @@ from typing import List, Optional
 import param
 
 from awesome_panel.application.models import Page
-from awesome_panel.application.services import author_service
 
 
 class PageService(param.Parameterized):
@@ -21,7 +20,7 @@ class PageService(param.Parameterized):
     default_page = param.ClassSelector(class_=Page, constant=True)
 
     def __init__(self, **params):
-        if not "default_page" in params:
+        if "default_page" not in params:
             if "pages" in params and params["pages"]:
                 params["default_page"] = params["pages"][0]
 
@@ -96,4 +95,4 @@ class PageService(param.Parameterized):
             self.default_page = page
 
 
-page_service = PageService()
+page_service = PageService() # pylint: disable=invalid-name

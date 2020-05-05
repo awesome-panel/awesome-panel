@@ -9,6 +9,7 @@ from .progress import Progress
 
 class Application(param.Parameterized):
     """The Application Model provides the basic parameters of an application"""
+
     title = param.String()
     url = param.String()
     logo = param.String()
@@ -20,7 +21,9 @@ class Application(param.Parameterized):
     progress = param.ClassSelector(class_=Progress)
     message = param.ClassSelector(class_=Message)
 
-    def __init__(self, templates, pages, menu_items=None, source_links=None, social_links=[], **params):
+    def __init__( # pylint: disable=too-many-arguments
+        self, templates, pages, menu_items=None, source_links=None, social_links=None, **params
+    ):
         self.param.template.objects = templates
         if "template" in params:
             self.param.template.default = params["template"]

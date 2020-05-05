@@ -15,13 +15,13 @@ from awesome_panel.application.models import Page
 GITHUB_PAGE_URL = GITHUB_BLOB_MASTER_URL + "application/pages/"
 
 HOME = Page(
-        name="Home",
-        source_code_url=GITHUB_PAGE_URL + "home/home.py",
-        thumbnail_png_url=THUMBNAILS_ROOT + "home.png",
-        tags=[tags.CODE, tags.APP_IN_GALLERY,],
-        component=pages.home,
-        author=authors.MARC_SKOV_MADSEN,
-    )
+    name="Home",
+    source_code_url=GITHUB_PAGE_URL + "home/home.py",
+    thumbnail_png_url=THUMBNAILS_ROOT + "home.png",
+    tags=[tags.CODE, tags.APP_IN_GALLERY,],
+    component=pages.home,
+    author=authors.MARC_SKOV_MADSEN,
+)
 TEST_PROGRESS_SERVICE = Page(
     name="Test Progress Service",
     source_code_url=GITHUB_PAGE_URL + "about/about.py",
@@ -106,8 +106,7 @@ OWID_CHOROPLETH_MAP = Page(
 )
 PARAM_REFERENCE_EXAMPLE = Page(
     name="Param Reference Example",
-    source_code_url=GITHUB_PAGE_URL
-    + "param_reference_example/param_reference_example.py",
+    source_code_url=GITHUB_PAGE_URL + "param_reference_example/param_reference_example.py",
     thumbnail_png_url=THUMBNAILS_ROOT + "param_reference_example.png",
     tags=[tags.CODE, tags.APP_IN_GALLERY,],
     component=pages.param_reference_example,
@@ -123,8 +122,7 @@ YAHOO_QUERY = Page(
 )
 TEST_BOOTSTRAP_ALERTS = Page(
     name="Test Bootstrap Alerts",
-    source_code_url=GITHUB_PAGE_URL
-    + "awesome_panel_express_tests/test_bootstrap_alerts.py",
+    source_code_url=GITHUB_PAGE_URL + "awesome_panel_express_tests/test_bootstrap_alerts.py",
     thumbnail_png_url=THUMBNAILS_ROOT + "test_bootstrap_alerts.png",
     tags=[tags.CODE, tags.APP_IN_GALLERY, tags.AWESOMEPANEL_EXPRESS,],
     component=pages.test_bootstrap_alerts,
@@ -132,8 +130,7 @@ TEST_BOOTSTRAP_ALERTS = Page(
 )
 TEST_BOOTSTRAP_CARD = Page(
     name="Test Bootstrap Card",
-    source_code_url=GITHUB_PAGE_URL
-    + "awesome_panel_express_tests/test_bootstrap_card.py",
+    source_code_url=GITHUB_PAGE_URL + "awesome_panel_express_tests/test_bootstrap_card.py",
     thumbnail_png_url=THUMBNAILS_ROOT + "test_bootstrap_card.png",
     tags=[tags.CODE, tags.APP_IN_GALLERY, tags.AWESOMEPANEL_EXPRESS,],
     component=pages.test_bootstrap_card,

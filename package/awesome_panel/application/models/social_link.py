@@ -4,4 +4,3 @@ import param
 
 class SocialLink(param.Parameterized):
     """A model of a link to some social site"""
-    pass

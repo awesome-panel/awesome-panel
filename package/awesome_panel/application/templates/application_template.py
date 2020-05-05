@@ -14,36 +14,12 @@ from awesome_panel.application.components import (
 from awesome_panel.application.models import Application
 from awesome_panel.application.services import page_service, progress_service
 
-ROOT_URL = (
-    "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/spinners/"
-)
-
-SPINNER_URL = "https://panel.holoviz.org/_static/logo.png"
-SPINNER_STATIC_URL = "https://panel.holoviz.org/_static/logo_stacked.png"
-
-
-STATIC = "<img src='https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/spinners/spinner_panel_static_light_400_340.gif' style='height:100%' title=''></img>"
-BREATH = "<img src='https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/spinners/spinner_panel_breath_light_400_340.gif' style='height:100%' title=''></img>"
-
-
-class Spinner(pn.pane.HTML):
-    spinning = param.Boolean(default=False)
-    static_url = param.String(STATIC)
-    spinning_url = param.String(BREATH)
-
-    def __init__(self, **params):
-        super().__init__(**params)
-
-        self._update()
-
-    def _update(self, _=None):
-        if self.spinning:
-            self.object = BREATH
-        else:
-            self.object = STATIC
-
-
 class ApplicationTemplate(pn.Template):
+    """The ApplicationTemplate implements the common functionality to be used by all Templates
+
+    This is an abstract, base class. Use an implementation like MaterialTemplate"""
+
+
     application = param.ClassSelector(class_=Application)
     template_path = param.ClassSelector(class_=pathlib.Path)
     css_path = param.ClassSelector(class_=pathlib.Path)
@@ -55,7 +31,7 @@ class ApplicationTemplate(pn.Template):
     _page_instances = param.Dict()
 
     def __init__(self, **params):
-        pn.config.sizing_mode="stretch_width"
+        pn.config.sizing_mode = "stretch_width"
 
         params["template"] = params["template_path"].read_text()
         if "loading_page_component" not in params:
@@ -98,7 +74,7 @@ class ApplicationTemplate(pn.Template):
             if self.application.page.show_loading_page:
                 self.main[:] = [self.loading_page_component.main]
 
-            main_instance = self.application_page_instance.main
+            main_instance = self._application_page_instance.main
             main_instance.align = "center"
             main_instance.sizing_mode = "stretch_width"
 
@@ -115,13 +91,14 @@ class ApplicationTemplate(pn.Template):
         self.application.page = self.application.param.page.default
 
     @property
-    def application_page_instance(self):
+    def _application_page_instance(self):
+        # pylint: disable=unsubscriptable-object,unsupported-membership-test
+        # pylint: disable=unsupported-assignment-operation
         page = self.application.page
         if not page in self._page_instances:
             instance = PageComponent.create(page.component)
             self._page_instances[page] = instance
 
-            # Todo: Setup test and refactor
             if instance.main and not isinstance(instance.main, pn.layout.Reactive):
                 instance.main = pn.panel(instance.main)
             if instance.sidebar and not isinstance(instance.sidebar, pn.layout.Reactive):
@@ -132,5 +109,4 @@ class ApplicationTemplate(pn.Template):
             else:
                 instance.main.max_width = None
 
-        # pylint: disable=unsubscriptable-object, unsupported-membership-test
         return self._page_instances[page]

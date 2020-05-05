@@ -24,6 +24,7 @@ class Theme(param.Parameterized):
 - Provide theming to your Template and Application
 - implement a custom subclass Theme
 """
+
     spinner_static_url = param.String(assets.SPINNER_PANEL_STATIC_LIGHT_400_340)
     spinner_url = param.String(assets.SPINNER_PANEL_BREATH_LIGHT_400_340)
     css = param.String()

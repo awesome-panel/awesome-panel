@@ -22,6 +22,7 @@ Use it for
 - Creating SubClass implementations
 - Creating PageComponents from many types of components via the `create` function
 """
+
     page = param.ClassSelector(class_=Page)
     main = param.Parameter()
     sidebar = param.Parameter()
@@ -37,7 +38,7 @@ Use it for
         super().__init__(**params)
 
     @classmethod
-    def create(cls, component) -> 'PageComponent':
+    def create(cls, component) -> "PageComponent":
         """Creates a PageComponent from the component
 
         This method

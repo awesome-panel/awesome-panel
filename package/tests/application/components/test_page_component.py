@@ -61,7 +61,7 @@ def test_can_create_page_component_from_callable():
 
 def test_can_create_page_component_from_class_with_view_func():
     # Given
-    class MyClass: # pylint: disable=too-few-methods
+    class MyClass:  # pylint: disable=too-few-public-methods
         @staticmethod
         def view():
             return "A"
@@ -76,8 +76,9 @@ def test_can_create_page_component_from_class_with_view_func():
 
 def test_can_create_page_component_from_instance_with_view_func():
     # Given
-    class MyClass:
-        def view(self):
+    class MyClass: # pylint: disable=too-few-public-methods
+        @staticmethod
+        def view():
             return "A"
 
     component = MyClass()
@@ -108,11 +109,13 @@ def test_can_create_page_component_from_string():
 
 def test_can_create_page_component_from_class_with_main_and_sidebar():
     # Given
-    class MyClass(PageComponent):
-        def main(self):
+    class MyClass(PageComponent): # pylint: disable=too-few-public-methods
+        @staticmethod
+        def main():
             return "A"
 
-        def sidebar(self):
+        @staticmethod
+        def sidebar():
             return "B"
 
     component = MyClass
@@ -127,10 +130,12 @@ def test_can_create_page_component_from_class_with_main_and_sidebar():
 def test_can_create_page_component_from_instance_with_main_and_sidebar():
     # Given
     class MyClass(PageComponent):
-        def main(self):
+        @staticmethod
+        def main():
             return "A"
 
-        def sidebar(self):
+        @staticmethod
+        def sidebar():
             return "B"
 
     component = MyClass()

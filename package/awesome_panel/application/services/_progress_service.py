@@ -1,3 +1,7 @@
+"""In this module we define the ProgressService
+
+The ProgressService provides functionality to update and watch the Progress of the application.
+"""
 from contextlib import contextmanager
 from typing import Optional
 
@@ -52,6 +56,8 @@ class ProgressService(param.Parameterized):
         Args:
             value (int): A value between 0 and 100
             message (str): A message for the user describing what is happening
+            value_max (int, optional): The value should be between value and value_max
+            active_count (int, optional): Used to mark that the application is in_progress
         """
         # Please note the order matters as the Widgets updates two times. One for each change
         old_progress = self.progress
@@ -89,8 +95,9 @@ class ProgressService(param.Parameterized):
         Args:
             value (int, optional): A value between 0 and 100. Default is 0.
             value_max(int): The maximum value the progress value can be
-            message (str, optional): A message for the user describing what is happening. Default
-            is ""
+            message (str, optional): A message for the user describing what is happening.
+            active_count (int, optional): Used to mark that the application is in_progress
+            ""
 
         Yields:
             None: Nothing is yielded
@@ -107,7 +114,8 @@ class ProgressService(param.Parameterized):
     ):
         """Increment the value and report the message.
 
-        When the function or code is finished the progress is NOT reset unless progress.value >= 100.
+        When the function or code is finished the progress is NOT reset unless
+        progress.value >= 100.
 
         Can be used as context manager or decorator.
 

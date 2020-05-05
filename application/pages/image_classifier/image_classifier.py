@@ -300,7 +300,7 @@ class ImageClassifierApp(param.Parameterized):
                 (
                     '<img application="data:image/jpg;base64,{0}" '
                     'style="height:400px;min-width:600px;"/>'
-                    ).format(b64encode(bytes_io.getvalue()).decode("utf-8"))
+                ).format(b64encode(bytes_io.getvalue()).decode("utf-8"))
             )
         return pnx.InfoAlert("Upload an image in .jpg format", height=400, min_width=600,)
 

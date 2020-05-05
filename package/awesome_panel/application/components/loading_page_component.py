@@ -6,9 +6,11 @@ import param
 from awesome_panel.application.components.page_component import PageComponent
 from awesome_panel.application.components.progress_spinner_component import ProgressSpinnerComponent
 
+
 class LoadingPageComponent(PageComponent):
     """The LoadingPageComponent provides a Page to show while loading a new Page that takes
     considerable time to load"""
+
     name = param.String("Loading")
 
     def __init__(self, **params):

@@ -3,7 +3,7 @@
 import pytest
 
 from awesome_panel.application.models import Page
-from awesome_panel.application.services.page_service import PageService
+from awesome_panel.application.services._page_service import PageService
 
 
 @pytest.fixture

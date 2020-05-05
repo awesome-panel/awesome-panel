@@ -32,6 +32,7 @@ mwc-drawer {
 class MaterialTemplate(ApplicationTemplate):
     """An ApplicationTemplate based on Material design and the mwc web components
     """
+
     def __init__(self, **params):
         params["template_path"] = HTML_PATH
         params["css_path"] = CSS_PATH

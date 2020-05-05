@@ -1,10 +1,11 @@
 """In this module we define all Resources (except apps in the gallery) and exposes
 them via the RESOURCES list.
 """
-# pylint: disable=line-too-long
-from awesome_panel.application.models import Resource
 from application.config import authors, tags
 from application.config.settings import THUMBNAILS_ROOT
+
+# pylint: disable=line-too-long
+from awesome_panel.application.models import Resource
 
 # panel FILE ROOTS
 

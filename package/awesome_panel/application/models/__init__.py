@@ -1,3 +1,4 @@
+"""This module provides access to the application models"""
 from .application import Application
 from .author import Author
 from .menu_item import MenuItem
