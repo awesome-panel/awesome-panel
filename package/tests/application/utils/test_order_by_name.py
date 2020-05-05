@@ -3,7 +3,7 @@
 from awesome_panel.utils import OrderByNameMixin
 
 
-class Tag(OrderByNameMixin): # pylint: disable=too-few-public-methods
+class Tag(OrderByNameMixin):  # pylint: disable=too-few-public-methods
     def __init__(self, name):
         self.name = name
 

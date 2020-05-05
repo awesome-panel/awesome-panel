@@ -5,15 +5,15 @@ from panel.template import Template
 from awesome_panel.application.templates import ApplicationTemplateBuilder
 
 
-def test_can_create_template_from_models( # pylint: disable=too-many-arguments
-    title, logo, url, page_components, menu_items, source_links, social_links
+def test_can_create_template_from_models(  # pylint: disable=too-many-arguments
+    title, logo, url, pages, menu_items, source_links, social_links
 ):
     # When
     actual = ApplicationTemplateBuilder(
         title=title,
         logo=logo,
         url=url,
-        pages=page_components,
+        pages=pages,
         menu_items=menu_items,
         source_links=source_links,
         social_links=social_links,

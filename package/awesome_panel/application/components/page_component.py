@@ -23,11 +23,12 @@ Use it for
 - Creating PageComponents from many types of components via the `create` function
 """
 
-    page = param.ClassSelector(class_=Page)
-    main = param.Parameter()
-    sidebar = param.Parameter()
+    page = param.ClassSelector(class_=Page, allow_None=False)
+    main = param.Parameter(allow_None=False)
+    sidebar = param.Parameter(allow_None=True)
     progress = param.ClassSelector(class_=Progress)
     toast = param.ClassSelector(class_=Toast)
+    show_loading_page = param.Boolean(default=False, allow_None=False)
 
     def __init__(self, **params):
         if "progress" not in params:

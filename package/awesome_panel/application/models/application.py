@@ -21,7 +21,7 @@ class Application(param.Parameterized):
     progress = param.ClassSelector(class_=Progress)
     message = param.ClassSelector(class_=Message)
 
-    def __init__( # pylint: disable=too-many-arguments
+    def __init__(  # pylint: disable=too-many-arguments
         self, templates, pages, menu_items=None, source_links=None, social_links=None, **params
     ):
         self.param.template.objects = templates

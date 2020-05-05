@@ -14,11 +14,11 @@ from awesome_panel.application.components import (
 from awesome_panel.application.models import Application
 from awesome_panel.application.services import page_service, progress_service
 
+
 class ApplicationTemplate(pn.Template):
     """The ApplicationTemplate implements the common functionality to be used by all Templates
 
     This is an abstract, base class. Use an implementation like MaterialTemplate"""
-
 
     application = param.ClassSelector(class_=Application)
     template_path = param.ClassSelector(class_=pathlib.Path)

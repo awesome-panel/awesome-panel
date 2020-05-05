@@ -3,7 +3,7 @@
 import panel as pn
 import param
 
-from awesome_panel.application import components, models
+from awesome_panel.application import models
 
 
 def test_can_construct_application_without_exceptions(application):
@@ -14,8 +14,8 @@ def test_can_construct_application_without_exceptions(application):
     assert issubclass(application.template, pn.Template)
 
     assert "page" in application.param
-    assert isinstance(application.page, components.PageComponent)
-    assert isinstance(application.param.page.default, components.PageComponent)
+    assert isinstance(application.page, models.Page)
+    assert isinstance(application.param.page.default, models.Page)
 
     assert "menu_item" in application.param
     assert not application.menu_item

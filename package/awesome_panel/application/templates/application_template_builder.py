@@ -30,6 +30,7 @@ TEMPLATES = [MaterialTemplate]
 
 class ApplicationTemplateBuilder(param.Parameterized):
     """The Application Template Builder makes i easier to build your ApplicationTemplate"""
+
     title = param.String("Application Title")
     url = param.String()
     logo = param.String()

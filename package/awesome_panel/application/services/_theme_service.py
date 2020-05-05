@@ -4,6 +4,7 @@ import param
 
 class ThemeService(param.Parameterized):
     """ThemeService"""
+
     def reset(self):
         """Resets the ThemeService
 
@@ -12,4 +13,4 @@ class ThemeService(param.Parameterized):
         """
 
 
-theme_service = ThemeService() # pylint: disable=invalid-name
+theme_service = ThemeService()  # pylint: disable=invalid-name

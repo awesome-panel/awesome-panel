@@ -94,5 +94,10 @@ class PageService(param.Parameterized):
         with param.edit_constant(self):
             self.default_page = page
 
+    def reset(self):
+        """Resets to the defaults"""
+        self.pages = []
+        self.default_page = self.param.default_page.default
 
-page_service = PageService() # pylint: disable=invalid-name
+
+page_service = PageService()  # pylint: disable=invalid-name

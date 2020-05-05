@@ -20,6 +20,7 @@ from awesome_panel.application.models import (
     Tag,
     Theme,
 )
+from awesome_panel.application.services import page_service as _page_service
 from awesome_panel.application.services import progress_service as _progress_service
 from awesome_panel.application.services import theme_service as _theme_service
 from awesome_panel.application.templates import MaterialTemplate
@@ -84,7 +85,7 @@ def page_main():
 
 
 @pytest.fixture
-def home_page(author, tags):
+def home_page(author, tags, home_page_main):
     source = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/app.py"
     thumbnail = (
         "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/"
@@ -97,11 +98,12 @@ def home_page(author, tags):
         tags=tags,
         source_code_url=source,
         thumbnail_png_url=thumbnail,
+        component=home_page_main,
     )
 
 
 @pytest.fixture
-def gallery_page(author, tags):
+def gallery_page(author, tags, gallery_page_main):
     source = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/app.py"
     thumbnail = (
         "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/"
@@ -114,6 +116,7 @@ def gallery_page(author, tags):
         tags=tags,
         source_code_url=source,
         thumbnail_png_url=thumbnail,
+        component=gallery_page_main,
     )
 
 
@@ -131,6 +134,7 @@ def page(author, tags):
         tags=tags,
         source_code_url=source,
         thumbnail_png_url=thumbnail,
+        component="Page",
     )
 
 
@@ -190,8 +194,8 @@ def social_links(social_link):
 
 
 @pytest.fixture
-def application( # pylint: disable=too-many-arguments
-    title, logo, url, templates, themes, page_components, menu_items, source_links, social_links
+def application(  # pylint: disable=too-many-arguments
+    title, logo, url, templates, themes, pages, menu_items, source_links, social_links
 ):
     return Application(
         title=title,
@@ -199,7 +203,7 @@ def application( # pylint: disable=too-many-arguments
         url=url,
         templates=templates,
         themes=themes,
-        pages=page_components,
+        pages=pages,
         menu_items=menu_items,
         source_links=source_links,
         social_links=social_links,
@@ -269,5 +273,11 @@ def theme_service():
 
 
 @pytest.fixture
-def progress_spinner_component(theme):
-    return ProgressSpinnerComponent(theme=theme)
+def progress_spinner_component(theme, progress_service):
+    return ProgressSpinnerComponent(theme=theme, progress_service=progress_service)
+
+
+@pytest.fixture
+def page_service(pages):
+    _page_service.bulk_create(pages)
+    return _page_service

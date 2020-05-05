@@ -1,27 +1,18 @@
 # pylint: disable=redefined-outer-name,protected-access
 # pylint: disable=missing-function-docstring,missing-module-docstring,missing-class-docstring
-import pytest
 
 from awesome_panel.application.models import Page
 from awesome_panel.application.services._page_service import PageService
-
-
-@pytest.fixture
-def page_service():
-    return PageService()
 
 
 def test_can_construct_page_service(page_service):
     assert hasattr(page_service, "pages")
     assert hasattr(page_service, "default_page")
 
-    assert page_service.default_page
-    assert page_service.default_page in page_service.pages
 
-
-def test_can_create_page(page_service, page):
+def test_can_create_page(page):
     # Given
-    assert page not in page_service.pages
+    page_service = PageService()
     # When
     page_service.create(page)
     # Then
@@ -46,8 +37,9 @@ def test_can_delete_page(page_service, page):
     assert page not in page_service.pages
 
 
-def test_can_bulk_create_and_is_sorted(page_service):
+def test_can_bulk_create_and_is_sorted():
     # Given
+    page_service = PageService()
     page_a = Page(name="a", url="", github_url="", github_avatar_url="")
     page_b = Page(name="b", url="", github_url="", github_avatar_url="")
     page_c = Page(name="c", url="", github_url="", github_avatar_url="")
@@ -57,7 +49,7 @@ def test_can_bulk_create_and_is_sorted(page_service):
     page_service.bulk_create(pages)
     actual = page_service.pages
     # Then
-    assert actual == [page_a, page_b, page_c, page_service.default_page]
+    assert actual == [page_a, page_b, page_c]
 
 
 def test_a_common_page_service_exists():

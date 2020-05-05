@@ -22,14 +22,6 @@ HOME = Page(
     component=pages.home,
     author=authors.MARC_SKOV_MADSEN,
 )
-TEST_PROGRESS_SERVICE = Page(
-    name="Test Progress Service",
-    source_code_url=GITHUB_PAGE_URL + "about/about.py",
-    thumbnail_png_url=THUMBNAILS_ROOT + "about.png",
-    tags=[tags.CODE, tags.APP_IN_GALLERY,],
-    component=pages.TestProgressServicePageComponent,
-    author=authors.MARC_SKOV_MADSEN,
-)
 ABOUT = Page(
     name="About",
     source_code_url=GITHUB_PAGE_URL + "about/about.py",
@@ -213,7 +205,6 @@ TEST_SPINNERS = Page(
 
 PAGES = [
     HOME,
-    TEST_PROGRESS_SERVICE,
     ABOUT,
     ISSUES,
     RESOURCES,
