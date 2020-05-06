@@ -2,7 +2,7 @@
 # pylint: disable=missing-function-docstring,missing-module-docstring,missing-class-docstring
 
 from awesome_panel.application.models import Page
-from awesome_panel.application.services._page_service import PageService
+from awesome_panel.application.services import PageService
 
 
 def test_can_construct_page_service(page_service):
@@ -50,8 +50,3 @@ def test_can_bulk_create_and_is_sorted():
     actual = page_service.pages
     # Then
     assert actual == [page_a, page_b, page_c]
-
-
-def test_a_common_page_service_exists():
-    # pylint: disable=import-outside-toplevel, unused-import
-    from awesome_panel.application.services import page_service

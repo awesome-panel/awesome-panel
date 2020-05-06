@@ -4,12 +4,12 @@ from panel.layout import Column
 
 import awesome_panel.express as pnx
 from application.pages.gallery import gallery
-from awesome_panel.application.services import page_service
+from awesome_panel.application.services import PageService
 from awesome_panel.express.testing import TestApp
 
 pnx.bootstrap.extend()
 pnx.fontawesome.extend()
-APPS_IN_GALLERY = page_service.pages
+APPS_IN_GALLERY = PageService.pages
 
 
 @pytest.mark.panel

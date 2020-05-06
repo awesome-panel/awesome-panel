@@ -12,6 +12,7 @@ from awesome_panel.application.models import (
     Application,
     Author,
     MenuItem,
+    Message,
     Page,
     Progress,
     Resource,
@@ -19,24 +20,26 @@ from awesome_panel.application.models import (
     SourceLink,
     Tag,
     Theme,
+    Template,
 )
-from awesome_panel.application.services import page_service as _page_service
-from awesome_panel.application.services import progress_service as _progress_service
-from awesome_panel.application.services import theme_service as _theme_service
+from awesome_panel.application.services import (
+    TagService,
+    AuthorService,
+    PageService,
+    ProgressService,
+    ThemeService,
+    Services,
+    NavigationService,
+    MessageService,
+)
 from awesome_panel.application.templates import MaterialTemplate
 from awesome_panel.application.templates.application_template import ApplicationTemplate
 from awesome_panel.application.templates.material.material_template import CSS_PATH, HTML_PATH
 
 
-@pytest.fixture(autouse=True)
-def reset_services():
-    _progress_service.reset()
-    _theme_service.reset()
-
-
 @pytest.fixture
 def template():
-    return MaterialTemplate
+    return Template(name="Material")
 
 
 @pytest.fixture
@@ -194,30 +197,28 @@ def social_links(social_link):
 
 
 @pytest.fixture
-def application(  # pylint: disable=too-many-arguments
-    title, logo, url, templates, themes, pages, menu_items, source_links, social_links
-):
+def application(
+    title, logo, url, home_page, pages, template, templates
+):  # pylint: disable=too-many-arguments
     return Application(
         title=title,
         logo=logo,
         url=url,
-        templates=templates,
-        themes=themes,
+        default_page=home_page,
         pages=pages,
-        menu_items=menu_items,
-        source_links=source_links,
-        social_links=social_links,
+        default_template=template,
+        templates=templates,
     )
 
 
 @pytest.fixture
-def application_template(application):
-    return ApplicationTemplate(application=application, template_path=HTML_PATH, css_path=CSS_PATH)
+def application_template(application, services):
+    return ApplicationTemplate(application=application, services=services, template_path=HTML_PATH, css_path=CSS_PATH)
 
 
 @pytest.fixture
-def loading_page_component(page_component):
-    return LoadingPageComponent(page_component=page_component)
+def loading_page_component(progress_service, theme_service):
+    return LoadingPageComponent(progress_service=progress_service, theme_service=theme_service)
 
 
 @pytest.fixture
@@ -258,26 +259,61 @@ def resource(tags, author):
 
 
 @pytest.fixture
+def message():
+    return Message()
+
+
+@pytest.fixture
 def progress():
     return Progress()
 
 
 @pytest.fixture
-def progress_service():
-    return _progress_service
+def tag_service(tags):
+    _tag_service = TagService(tags=tags)
+    return TagService()
 
 
 @pytest.fixture
-def theme_service():
-    return _theme_service
+def author_service(authors):
+    return AuthorService(authors=authors)
 
 
 @pytest.fixture
-def progress_spinner_component(theme, progress_service):
-    return ProgressSpinnerComponent(theme=theme, progress_service=progress_service)
+def page_service(page, pages):
+    return PageService(page=page, pages=pages)
 
 
 @pytest.fixture
-def page_service(pages):
-    _page_service.bulk_create(pages)
-    return _page_service
+def progress_service(progress):
+    return ProgressService(progress=progress)
+
+
+@pytest.fixture
+def navigation_service(page):
+    return NavigationService(page=page)
+
+
+@pytest.fixture
+def message_service(message):
+    return MessageService(message=message)
+
+
+@pytest.fixture
+def theme_service(theme, themes):
+    return ThemeService(theme=theme, themes=themes)
+
+
+@pytest.fixture
+def services(progress_service, page_service, message_service, theme_service):
+    return Services(
+        progress_service=progress_service,
+        page_service=page_service,
+        message_service=message_service,
+        theme_service=theme_service,
+    )
+
+
+@pytest.fixture
+def progress_spinner_component(progress_service, theme_service):
+    return ProgressSpinnerComponent(progress_service=progress_service, theme_service=theme_service)

@@ -17,6 +17,7 @@ class PageService(param.Parameterized):
     """
 
     pages = param.List(constant=True)
+    page = param.ObjectSelector(allow_None=False, doc="The currently active page")
     default_page = param.ClassSelector(class_=Page, constant=True)
 
     def __init__(self, **params):

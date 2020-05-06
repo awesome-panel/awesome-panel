@@ -3,7 +3,7 @@
 import pytest
 
 from awesome_panel.application.models import Tag
-from awesome_panel.application.services._tag_service import TagService
+from awesome_panel.application.services import TagService
 
 
 @pytest.fixture
@@ -54,8 +54,3 @@ def test_can_bulk_create_and_is_sorted(tag_service,):
     actual = tag_service.tags
     # Then
     assert actual == [tag_a, tag_b, tag_c]
-
-
-def test_a_common_tag_service_exists():
-    # pylint: disable=import-outside-toplevel, unused-import
-    from awesome_panel.application.services import tag_service

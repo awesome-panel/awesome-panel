@@ -12,7 +12,7 @@ from awesome_panel.application.components import (
     ProgressSpinnerComponent,
 )
 from awesome_panel.application.models import Application
-from awesome_panel.application.services import page_service, progress_service
+from awesome_panel.application.services import Services
 
 
 class ApplicationTemplate(pn.Template):
@@ -27,15 +27,20 @@ class ApplicationTemplate(pn.Template):
     select_title_page = param.Action()
     main_max_width = param.Integer(default=1140)
 
-    loading_page_component = param.ClassSelector(class_=LoadingPageComponent)
+    loading_page_component = param.ClassSelector(class_=LoadingPageComponent, constant=True)
     _page_instances = param.Dict()
+
+    services = param.ClassSelector(class_=Services)
 
     def __init__(self, **params):
         pn.config.sizing_mode = "stretch_width"
 
         params["template"] = params["template_path"].read_text()
         if "loading_page_component" not in params:
-            params["loading_page_component"] = LoadingPageComponent()
+            services = params["services"]
+            params["loading_page_component"] = LoadingPageComponent(
+                progress_service=services.progress_service, theme_service=services.theme_service
+            )
         if "_page_instances" not in params:
             params["_page_instances"] = {}
 
@@ -44,10 +49,11 @@ class ApplicationTemplate(pn.Template):
         if self.css_path:
             pn.config.css_files.append(self.css_path.resolve())
 
-        self.spinner = ProgressSpinnerComponent().view
+        self.spinner = ProgressSpinnerComponent(
+            progress_service=self.services.progress_service, theme_service=self.services.theme_service
+        ).view
         self.spinner.sizing_mode = "fixed"
         self.spinner.height = 40
-        self.menu = pn.Param(self.application.param.menu_item, expand_button=False)
         self.sidebar = pn.Column()
         self._main_spacer = pn.Spacer(height=0, margin=0)
         self.main = pn.Column(
@@ -56,7 +62,7 @@ class ApplicationTemplate(pn.Template):
         self._update_main_container()
         self.template_css = pn.pane.HTML(height=0, width=0, sizing_mode="fixed", margin=0)
 
-        self.add_panel(name="menu_item", panel=self.menu)
+        self.add_panel(name="sidebar", panel=self.sidebar)
         self.add_panel(name="main", panel=self.main)
         self.add_panel(name="template_css", panel=self.template_css)
         self.add_panel(name="spinner", panel=self.spinner)
@@ -64,14 +70,10 @@ class ApplicationTemplate(pn.Template):
         self.select_title_page = self._select_title_page
         self._set_select_title_page_label()
 
-        if page_service.default_page:
-            self.application.param.page.default = page_service.default_page
-            self.application.page = page_service.default_page
-
-    @param.depends("application.page", watch=True)
+    @param.depends("services.page_service.page", watch=True)
     def _update_main_container(self):
-        with progress_service.mark_active(f"Loading {self.application.page.name}"):
-            if self.application.page.show_loading_page:
+        with self.services.progress_service.mark_active(f"Loading {self.services.page_service.page.name}"):
+            if self.services.page_service.page.show_loading_page:
                 self.main[:] = [self.loading_page_component.main]
 
             main_instance = self._application_page_instance.main
@@ -88,13 +90,13 @@ class ApplicationTemplate(pn.Template):
         self.param.select_title_page.label = self.application.title
 
     def _select_title_page(self, _=None):
-        self.application.page = self.application.param.page.default
+        self.services.page_service.page = self.application.param.page.default
 
     @property
     def _application_page_instance(self):
         # pylint: disable=unsubscriptable-object,unsupported-membership-test
         # pylint: disable=unsupported-assignment-operation
-        page = self.application.page
+        page = self.services.page_service.page
         if not page in self._page_instances:
             instance = PageComponent.create(page.component)
             self._page_instances[page] = instance
@@ -104,7 +106,7 @@ class ApplicationTemplate(pn.Template):
             if instance.sidebar and not isinstance(instance.sidebar, pn.layout.Reactive):
                 instance.sidebar = pn.panel(instance.sidebar)
 
-            if instance.main and self.application.page.restrict_max_width:
+            if instance.main and self.services.page_service.page.restrict_max_width:
                 instance.main.max_width = 1140
             else:
                 instance.main.max_width = None

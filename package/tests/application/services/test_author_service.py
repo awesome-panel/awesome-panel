@@ -3,7 +3,7 @@
 import pytest
 
 from awesome_panel.application.models import Author
-from awesome_panel.application.services._author_service import AuthorService
+from awesome_panel.application.services import AuthorService
 
 
 @pytest.fixture
@@ -58,8 +58,3 @@ def test_can_bulk_create_and_is_sorted(author_service):
     actual = author_service.authors
     # Then
     assert actual == [author_a, author_b, author_c, author_service.default_author]
-
-
-def test_a_common_author_service_exists():
-    # pylint: disable=import-outside-toplevel, unused-import
-    from awesome_panel.application.services import author_service

@@ -4,6 +4,7 @@ import param
 
 class ThemeService(param.Parameterized):
     """ThemeService"""
+    theme = param.ObjectSelector()
 
     def reset(self):
         """Resets the ThemeService
