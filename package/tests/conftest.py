@@ -3,38 +3,22 @@
 import panel as pn
 import pytest
 
-from awesome_panel.application.components import (
-    LoadingPageComponent,
-    PageComponent,
-    ProgressSpinnerComponent,
-)
+from awesome_panel.application.components import (ApplicationComponent,
+                                                  LoadingPageComponent,
+                                                  PageComponent,
+                                                  ProgressSpinnerComponent)
 from awesome_panel.application.models import (
-    Application,
-    Author,
-    MenuItem,
-    Message,
-    Page,
-    Progress,
-    Resource,
-    SocialLink,
-    SourceLink,
-    Tag,
-    Theme,
-    Template,
-)
+    Application, Author, MenuItem, Message, Page, Progress, Resource,
+    SocialLink, SourceLink, Tag, Template, Theme)
 from awesome_panel.application.services import (
-    TagService,
-    AuthorService,
-    PageService,
-    ProgressService,
-    ThemeService,
-    Services,
-    NavigationService,
-    MessageService,
-)
+    AuthorService, MessageService, NavigationService, PageService,
+    ProgressService, Services, TagService, ThemeService)
 from awesome_panel.application.templates import MaterialTemplate
-from awesome_panel.application.templates.application_template import ApplicationTemplate
-from awesome_panel.application.templates.material.material_template import CSS_PATH, HTML_PATH
+from awesome_panel.application.templates.application_template import \
+    ApplicationTemplate
+from awesome_panel.application.templates.material.material_template import (
+    CSS_PATH, HTML_PATH)
+from awesome_panel.application.views import ApplicationView
 
 
 @pytest.fixture
@@ -317,3 +301,11 @@ def services(progress_service, page_service, message_service, theme_service):
 @pytest.fixture
 def progress_spinner_component(progress_service, theme_service):
     return ProgressSpinnerComponent(progress_service=progress_service, theme_service=theme_service)
+
+@pytest.fixture
+def application_view():
+    return ApplicationView()
+
+@pytest.fixture
+def application_component(application, services, application_view):
+    return ApplicationComponent(application=application, services=services, view=application_view)
