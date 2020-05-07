@@ -78,5 +78,3 @@ class TagService(param.Parameterized):
         self._tags = {**old_tags, **new_tags}
         self._update_tags_list()
 
-
-tag_service = TagService()  # pylint: disable=invalid-name

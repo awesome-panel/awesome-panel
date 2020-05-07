@@ -19,6 +19,7 @@ class PageService(param.Parameterized):
     pages = param.List(constant=True)
     page = param.ObjectSelector(allow_None=False, doc="The currently active page")
     default_page = param.ClassSelector(class_=Page, constant=True)
+    load_default_page = param.Action()
 
     def __init__(self, **params):
         if "default_page" not in params:
@@ -28,6 +29,7 @@ class PageService(param.Parameterized):
         super().__init__(**params)
 
         self._pages = {page.name: page for page in self.pages}
+        self.load_default_page = self._load_default_page
 
     def create(self, page: Page):
         """Creates the specified Page
@@ -100,5 +102,5 @@ class PageService(param.Parameterized):
         self.pages = []
         self.default_page = self.param.default_page.default
 
-
-page_service = PageService()  # pylint: disable=invalid-name
+    def _load_default_page(self, event=None):
+        self.page = self.default_page

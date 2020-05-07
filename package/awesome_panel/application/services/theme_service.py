@@ -12,6 +12,3 @@ class ThemeService(param.Parameterized):
         Args:
             param ([type]): [description]
         """
-
-
-theme_service = ThemeService()  # pylint: disable=invalid-name

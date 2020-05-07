@@ -162,6 +162,3 @@ class ProgressService(param.Parameterized):
         self.update(
             message=previous_message, active_count=max(0, self.progress.active_count - 1),
         )
-
-
-progress_service = ProgressService()  # pylint: disable=invalid-name

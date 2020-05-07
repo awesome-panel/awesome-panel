@@ -6,6 +6,7 @@ import pytest
 from awesome_panel.application.components import (ApplicationComponent,
                                                   LoadingPageComponent,
                                                   PageComponent,
+                                                  PageNavigationComponent,
                                                   ProgressSpinnerComponent)
 from awesome_panel.application.models import (
     Application, Author, MenuItem, Message, Page, Progress, Resource,
@@ -305,6 +306,10 @@ def progress_spinner_component(progress_service, theme_service):
 @pytest.fixture
 def application_view():
     return ApplicationView()
+
+@pytest.fixture
+def page_navigation_component(page_service):
+    return PageNavigationComponent(page_service=page_service)
 
 @pytest.fixture
 def application_component(application, services, application_view):
