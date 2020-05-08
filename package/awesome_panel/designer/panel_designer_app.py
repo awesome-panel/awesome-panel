@@ -2,13 +2,26 @@ import param
 import panel as pn
 import importlib
 import sys
+from awesome_panel.application import assets
 
 
 class PanelDesignerApp(param.Parameterized):
+    title = param.String("Awesome Panel Designer")
+    logo_url = param.String(assets.)
     modules_to_reload = param.List()
-    get_component_view = param.Action()
+
+
+
 
     view = param.ClassSelector(class_=pn.Column)
+    main_pane = param.ClassSelector(class_=pn.Column)
+    design_pane = param.ClassSelector(class_=pn.Column)
+    action_pane = param.ClassSelector(class_=pn.Column)
+    sub_component_pane = param.ClassSelector(class_=pn.Column)
+    css_pane = param.ClassSelector(class_=pn.Column)
+    js_pane = param.ClassSelector(class_=pn.Column)
+    logo_pane = param.ClassSelector(class_=pn.pane.HTML)
+
 
     _reload_component_action = param.Action(label="RELOAD COMPONENT")
 
