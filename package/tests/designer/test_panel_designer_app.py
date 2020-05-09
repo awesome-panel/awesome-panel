@@ -1,14 +1,14 @@
 import param
 
 from awesome_panel.designer.panel_designer_app import PanelDesignerApp
-
+import pytest
+import panel as pn
 
 def test_can_construct():
     panel_designer_app = PanelDesignerApp()
     assert panel_designer_app.title == "Awesome Panel Designer"
     assert panel_designer_app.logo_url
-    assert panel_designer_app.param.sub_component_parameters == []
-    assert panel_designer_app.sub_component_parameters == [
+    assert panel_designer_app.design_parameters == [
         "background",
         "height",
         "sizing_mode",
@@ -18,22 +18,27 @@ def test_can_construct():
     assert not panel_designer_app.css_path
     assert not panel_designer_app.js_path
     assert not panel_designer_app.component
+    assert not panel_designer_app.component_parameters
     assert not panel_designer_app.component_instance
-    assert panel_designer_app.modules_to_reload==[]
+    assert panel_designer_app.modules_to_reload == []
 
-def test_fixture_is_as_expected(panel_designer_app, component, component_parameters, css_path, js_path):
+
+def test_fixture_is_as_expected(
+    panel_designer_app, component, component_parameters, css_path, js_path
+):
     isinstance(panel_designer_app, PanelDesignerApp)
 
     assert panel_designer_app.component == component
-    assert panel_designer_app.component_instance
     assert panel_designer_app.component_parameters == component_parameters
+    assert panel_designer_app.component_instance
 
     assert panel_designer_app.css_path == css_path
     assert panel_designer_app.js_path == js_path
 
-    assert len(panel_designer.param.sub_component.objects) > 1
-    assert panel_designer.param.sub_component.default == panel_designer_app.component_instance
-    assert panel_designer.sub_component == panel_designer_app.component_instance
+    # assert len(panel_designer_app.param.sub_component_instance.objects) > 1
+    assert panel_designer_app.param.sub_component_instance.default == panel_designer_app.component_instance
+    assert panel_designer_app.sub_component_instance == panel_designer_app.component_instance
+
 
 # endregion
 # region: Actions
@@ -56,41 +61,83 @@ def test_can_reload_js_file(panel_designer_app):
     panel_designer_app.reload_js_file()
 
 
-def test_can_start_and_stop_server_without_error(panel_designer_app):
+@pytest.mark.skip
+def test_can_start_and_kill_server_without_error(panel_designer_app):
     panel_designer_app.show()
-    panel_designer_app.stop_server()
+    panel_designer_app.kill_server()
 
 
 # region Panes
 
-def test_has_view(panel_design_app):
-    panel_design_app.view
 
-def test_has_main_pane(panel_design_app):
-    panel_design_app.component_pane
+def test_has_view(panel_designer_app):
+    assert panel_designer_app.view
 
 
-def test_has_design_pane(panel_design_app):
-    panel_design_app.design_pane
-
-def test_has_action_pane(panel_design_app):
-    panel_design_app.action_pane
+def test_has_component_pane(panel_designer_app):
+    assert panel_designer_app.component_pane
 
 
-def test_has_sub_component_pane(panel_design_app):
-    panel_design_app.sub_component_pane
+def test_has_design_pane(panel_designer_app):
+    assert panel_designer_app.design_pane
 
 
-def test_has_css_pane(panel_design_app):
-    panel_design_app.css_pane
+def test_has_action_pane(panel_designer_app):
+    assert panel_designer_app.action_pane
 
 
-def test_has_js_pane(panel_design_app):
-    panel_design_app.js_pane
+def test_has_settings_pane(panel_designer_app):
+    assert panel_designer_app.settings_pane
 
 
-def test_has_logo_pane(panel_design_app):
-    panel_design_app.logo_pane
+def test_has_css_pane(panel_designer_app):
+    assert panel_designer_app.css_pane is not None
 
+
+def test_has_js_pane(panel_designer_app):
+    assert panel_designer_app.js_pane is not None
+
+
+def test_has_logo_pane(panel_designer_app):
+    assert panel_designer_app.logo_pane
+
+def test_has_error_pane(panel_designer_app):
+    assert panel_designer_app.error_pane
+
+
+def test_show(css_path, js_path, modules_to_reload, component, component_parameters):
+    app = PanelDesignerApp(
+        component=component,
+        component_parameters=component_parameters,
+        css_path=css_path,
+        js_path=js_path,
+        modules_to_reload=modules_to_reload,
+    )
+    # pn.Column("Hello", app.param.reload_component_instance, app.component_pane, sizing_mode="stretch_both").show()
+    app.view.show()
 
 # endregion
+if __name__.startswith("__main__") or __name__.startswith("bokeh"):
+    import pathlib
+    from fixtures.component import Component
+    FIXTURES = pathlib.Path(__file__).parent / "fixtures"
+    COMPONENT_CSS = FIXTURES / "component.css"
+    COMPONENT_JS = FIXTURES / "component.js"
+    component_parameters = {
+        "css_path": COMPONENT_CSS,
+        "js_path": COMPONENT_CSS,
+        "modules_to_reload": [],
+    }
+
+    app = PanelDesignerApp(
+        name="Test App",
+        component=Component,
+        component_parameters=component_parameters,
+        css_path=COMPONENT_CSS,
+        js_path=COMPONENT_JS,
+        modules_to_reload=[],
+    )
+    if __name__.startswith("__main__"):
+        app.show()
+    else:
+        app.view.servable()
