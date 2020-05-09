@@ -1,8 +1,12 @@
 import param
 
 from awesome_panel.designer.panel_designer_app import PanelDesignerApp
+from awesome_panel.designer import components
 import pytest
 import panel as pn
+
+class MyComponent(pn.Column):
+        pass
 
 def test_can_construct():
     panel_designer_app = PanelDesignerApp()
@@ -17,9 +21,9 @@ def test_can_construct():
     ]
     assert not panel_designer_app.css_path
     assert not panel_designer_app.js_path
-    assert not panel_designer_app.component
+    assert panel_designer_app.component == components.EmptyComponent
     assert not panel_designer_app.component_parameters
-    assert not panel_designer_app.component_instance
+    assert isinstance(panel_designer_app.component_instance, components.EmptyComponent)
     assert panel_designer_app.modules_to_reload == []
 
 
@@ -51,6 +55,14 @@ def test_can_reload_component(panel_designer_app):
     panel_designer_app.reload_component_instance()
     # Then: I have a new component instance
     assert panel_designer_app.component_instance != old_instance
+
+def test_can_reload_reactive_component(panel_designer_app):
+    # Given: MyComponent
+    # When
+    panel_designer_app.component = MyComponent
+    panel_designer_app.reload_component_instance()
+    # Then
+    assert isinstance(panel_designer_app.component_instance, MyComponent)
 
 
 def test_can_reload_css_file(panel_designer_app):
