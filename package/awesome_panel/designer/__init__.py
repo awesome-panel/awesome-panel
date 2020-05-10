@@ -1,1 +1,1 @@
-from .panel_designer_app import PanelDesignerApp
+from awesome_panel.designer.panel_designer_app import PanelDesignerApp
