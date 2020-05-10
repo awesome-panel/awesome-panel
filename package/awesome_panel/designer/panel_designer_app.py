@@ -15,28 +15,22 @@ from awesome_panel.designer.components import (
     CenteredComponent,
     TitleComponent,
 )
+from awesome_panel.designer.services import ReloadService
+
+ACTION_PANE_INDEX = 3
 
 
 class PanelDesignerApp(param.Parameterized):
-    component = param.Parameter()
-    component_parameters = param.Dict()
-    component_instance = param.Parameter()
-    css_path = param.Parameter(constant=True)
-    js_path = param.Parameter(constant=True)
-    modules_to_reload = param.List()
-    action_pane = param.ClassSelector(class_=pn.Column, constant=True)
-    settings_pane = param.ClassSelector(class_=pn.Param, constant=True)
+    reload_service = param.ObjectSelector(label="Component")
 
-    reload_component_instance = param.Action(label="RELOAD COMPONENT")
-    reload_css_file = param.Action(label="RELOAD CSS")
-    reload_js_file = param.Action(label="RELOAD JS")
+    action_pane = param.ClassSelector(class_=pn.Param, constant=True)
+    settings_pane = param.ClassSelector(class_=pn.Param, constant=True)
+    settings_scroll_pane = param.ClassSelector(class_=pn.Column, constant=True)
+    font_pane = param.ClassSelector(class_=pn.pane.HTML, constant=True)
+
     css_pane = param.ClassSelector(class_=pn.pane.HTML, constant=True)
     js_pane = param.ClassSelector(class_=pn.pane.HTML, constant=True)
     error_pane = param.ClassSelector(class_=pn.pane.Markdown, constant=True)
-    last_reload = param.String(constant=True)
-
-    show = param.Action(label="SHOW")
-    stop_server = param.Action(label="STOP SERVER AND EXIT")
 
     title_component = param.ClassSelector(
         class_=TitleComponent, constant=True, label="Title Component"
@@ -46,190 +40,232 @@ class PanelDesignerApp(param.Parameterized):
     component_pane = param.ClassSelector(class_=CenteredComponent, constant=True)
     stop_server_pane = param.ClassSelector(class_=pn.Param, constant=True)
 
-    view = param.ClassSelector(class_=pn.Column, constant=True)
+    view = param.ClassSelector(class_=pn.Row, constant=True)
+
+    show = param.Action(label="SHOW")
+    stop_server = param.Action(label="STOP SERVER AND EXIT")
 
     server = param.Parameter(constant=True)
 
-
-    def __init__(self, **params):
-        if not "name" in params:
-            params["name"] = "Awesome Panel Designers App"
-        if not "component_parameters" in params or params["component_parameters"] is None:
-            params["component_parameters"] = {}
-
-        if "title_component" not in params:
-            params["title_component"] = TitleComponent()
-        if "css_pane" not in params:
-            params["css_pane"] = pn.pane.HTML(
-                name="CSS Pane",
-                sizing_mode="fixed",
-                width=0,
-                height=0,
-                margin=0,
-                css_classes=["designer-css-pane"],
-            )
-        if "js_pane" not in params:
-            params["js_pane"] = pn.pane.HTML(
-                name="JS Pane",
-                sizing_mode="fixed",
-                width=0,
-                height=0,
-                margin=0,
-                css_classes=["designer-js-pane"],
-            )
-        if "component_pane" not in params:
-            params["component_pane"] = CenteredComponent(
-                name="Component Pane",
-                sizing_mode="stretch_both",
-                css_classes=["designer-component-pane"],
-            )
-        if "designer_pane" not in params:
-            params["designer_pane"] = pn.WidgetBox(
-                sizing_mode="stretch_height",
-                width=410,
-                background="#F5F5F5",
-                margin=(0, 0, 0, 0),
-                css_classes=["designer-design-pane"],
-            )
-        if "action_pane" not in params:
-            params["action_pane"] = pn.Column(
-                pn.Param(
-                    self,
-                    sizing_mode="stretch_width",
-                    parameters=config.ACTION_PARAMETERS,
-                    widgets=config.ACTION_WIDGETS,
-                    show_name=False,
-                    css_classes=["designer-action-pane"],
-                ),
-                sizing_mode="stretch_width",
-            )
-        if "settings_pane" not in params:
-            params["settings_pane"] = pn.Param(
-                sizing_mode="stretch_both",
-                css_classes=["designer-settings-pane"],
-                margin=(10, 25, 10, 5),
-            )
-        if "error_pane" not in params:
-            params["error_pane"] = pn.pane.Markdown(
-                sizing_mode="stretch_both", css_classes=["designer-error-pane"]
-            )
-        if "stop_server_pane" not in params:
-            params["stop_server_pane"] = pn.Param(
-                self,
-                parameters=["stop_server"],
-                widgets={"stop_server": {"button_type": "danger"}},
-                sizing_mode="stretch_width",
-                show_name=False,
-            )
-        if "view" not in params:
-            params["view"] = pn.Column(
-                sizing_mode="stretch_both",
-                margin=(0, 0, 0, 0),
-                name="Panel Designer View",
-                css_classes=["designer-view"],
-            )
-
-        super().__init__(**params)
-
+    def __init__(self, reload_services):
         pn.config.raw_css.append(config.CSS)
 
-        self.designer_pane[:] = [
-            self.title_component.view,
-            pn.layout.Divider(margin=(20, 10, 10, 10)),
-            self.action_pane,
-            pn.layout.Divider(margin=(20, 10, 10, 10)),
-            pn.Column(
-                self.settings_pane,
-                css_classes=["designer-settings-scroll"],
-                sizing_mode="stretch_both",
-                scroll=True,
-                max_height=350,
-            ),
-            pn.layout.Divider(margin=(20, 10, 10, 10)),
-            self.stop_server_pane,
-            pn.pane.HTML(
-                '<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">'
-            ),
-            self.css_pane,
-            self.js_pane,
-        ]
+        self.param.reload_service.objects = reload_services
+        self.param.reload_service.default = reload_services[0]
 
-        self.view[:] = [
-            pn.Row(self.component_pane, self.designer_pane, sizing_mode="stretch_both"),
-        ]
+        super().__init__(reload_services=reload_services)
 
-        self.reload_component_instance = self._reload_component_instance
-        self.reload_css_file = self._reload_css_file
-        self.reload_js_file = self._reload_js_file
-        self.show = self._show
-        self.stop_server = self._stop_server
-
-        self.reload_component_instance()
-        self.reload_css_file()
-        self.reload_js_file()
-
-    def _reload_component_instance(self, _=None):
-        self.title_component.start_spinning()
-        self._update_last_reload()
-        try:
-            print("reload start", self.name, datetime.datetime.now())
-            if self.component is None:
-                with param.edit_constant(self):
-                    self.component = EmptyComponent
-
-            if self.component_instance is None:
-                self.component_instance = self.component(**self.component_parameters)
-            else:
-                self._reload_component()
-                self.component_instance = self.component(**self.component_parameters)
-
-            if isinstance(self.component_instance, pn.layout.Reactive):
-                component_view = self.component_instance
-            elif hasattr(self.component_instance, "view"):
-                component_view = self.component_instance.view
-            else:
-                raise NotImplementedError
-
-            self.component_pane.component = component_view
-            self.component_pane._update()
-            self.settings_pane.object = self.component_instance
-
-            print("reload end", self.name, datetime.datetime.now())
-        except Exception as ex:
-            self.error_pane.object = "# Error " + traceback.format_exc()
-            self.component_pane.component = self.error_pane
-        self.title_component.stop_spinning()
-
-    def _update_last_reload(self):
         with param.edit_constant(self):
-            self.last_reload = str(datetime.datetime.now())
+            self.name = "Panel Designer App"
+            self.title_component = TitleComponent()
+            self.css_pane = self._create_css_pane()
+            self.js_pane = self._create_js_pane()
+            self.component_pane = self._create_component_pane()
+            self.action_pane = self._create_action_pane()
+            self.settings_pane = self._create_settings_pane()
+            self.settings_scroll_pane = self._create_settings_scroll_pane(self.settings_pane)
+            self.font_pane = self._create_font_pane()
+            self.error_pane = self._create_error_pane()
+            self.stop_server_pane = self._create_stop_server_pane()
+            self.designer_pane = self._create_designer_pane(
+                title_component=self.title_component,
+                action_pane=self.action_pane,
+                settings_scroll_pane=self.settings_scroll_pane,
+                stop_server_pane=self.stop_server_pane,
+                font_pane=self.font_pane,
+                css_pane=self.css_pane,
+                js_pane=self.js_pane,
+            )
+            self.view = self._create_view(self.component_pane, self.designer_pane)
+            self.show = self._show
+            self.stop_server = self._stop_server
 
-    def _reload_component(self):
-        for mod in self.modules_to_reload:
-            importlib.reload(mod)
+        self._create_watchers(reload_services)
+        self._handle_reload_service_change()
 
-        mod = sys.modules[self.component.__module__]
-        importlib.reload(mod)
+    def _create_watchers(self, reload_services):
+        for reload_service in reload_services:
+            reload_service.param.watch(self._update_css_pane, ["css_text"], onlychanged=True)
+            reload_service.param.watch(self._update_js_pane, ["js_text"], onlychanged=True)
+
+    @param.depends("reload_service", watch=True)
+    def _handle_reload_service_change(self):
+        self.reload_service.reload_component()
+        self.reload_service.reload_css_file()
+        self.reload_service.reload_js_file()
+
+        self._update_component()
+        self._update_css_pane()
+        self._update_js_pane()
+
+    def _update_component(self):
+        action_pane_index = self.designer_pane.objects.index(self.action_pane)
         with param.edit_constant(self):
-            self.component = getattr(mod, self.component.__name__)
+            self.action_pane = self._create_action_pane()
+        self.designer_pane[action_pane_index] = self.action_pane
 
-    def _reload_css_file(self, _=None):
-        if not self.css_path:
-            pass
-        elif isinstance(self.css_path, pathlib.Path):
-            self.css_pane.object = "<style>" + self.css_path.read_text() + "</style>"
+        self.settings_pane.object = self.reload_service.component_instance
+
+        if isinstance(self.reload_service.component_instance, pn.layout.Reactive):
+            component_view = self.reload_service.component_instance
+        elif hasattr(self.reload_service.component_instance, "view"):
+            component_view = self.reload_service.component_instance.view
         else:
             raise NotImplementedError
-        self._update_last_reload()
+        self.component_pane.component = component_view
+        self.component_pane._update()
 
-    def _reload_js_file(self, _=None):
-        if not self.js_path:
-            pass
-        elif isinstance(self.js_path, pathlib.Path):
-            self.js_pane.object = "<script>" + self.js_path.read_text() + "</script>"
-        else:
-            raise NotImplementedError
-        self._update_last_reload()
+    def _update_css_pane(self, *events):
+        self.css_pane.object = f"<style>{self.reload_service.css_text}</style>"
+        print(self.reload_service, self.css_pane.object)
+
+    def _update_js_pane(self, *events):
+        self.js_pane.object = f"<script>{self.reload_service.js_text}</script>"
+        print(self.reload_service, self.js_pane.object)
+
+
+
+    @staticmethod
+    def _create_css_pane():
+        return pn.pane.HTML(
+            name="CSS Pane",
+            sizing_mode="fixed",
+            width=0,
+            height=0,
+            margin=0,
+            css_classes=["designer-css-pane"],
+        )
+
+    @staticmethod
+    def _create_js_pane():
+        return pn.pane.HTML(
+            name="JS Pane",
+            sizing_mode="fixed",
+            width=0,
+            height=0,
+            margin=0,
+            css_classes=["designer-js-pane"],
+        )
+
+    @staticmethod
+    def _create_component_pane():
+        return CenteredComponent(
+            pn.pane.Markdown("hello"),
+            name="Component Pane",
+            sizing_mode="stretch_both",
+            css_classes=["designer-component-pane"],
+        )
+
+    def _create_designer_pane(
+        self,
+        title_component,
+        action_pane,
+        settings_scroll_pane,
+        stop_server_pane,
+        font_pane,
+        css_pane,
+        js_pane,
+    ):
+
+        return pn.WidgetBox(
+            title_component.view,
+            pn.layout.Divider(margin=(20, 10, 10, 10)),
+            pn.Param(
+                self,
+                parameters=["reload_service"],
+                show_name=False,
+                expand_button=False,
+                sizing_mode="stretch_width",
+            ),
+            action_pane,
+            pn.layout.Divider(margin=(20, 10, 10, 10)),
+            settings_scroll_pane,
+            pn.layout.Divider(margin=(20, 10, 10, 10)),
+            stop_server_pane,
+            font_pane,
+            css_pane,
+            js_pane,
+            name="Designer Pane",
+            sizing_mode="stretch_height",
+            width=410,
+            background="#F5F5F5",
+            margin=(0, 0, 0, 0),
+            css_classes=["designer-design-pane"],
+        )
+
+    def _create_action_pane(self):
+
+        widgets = {
+            "reload_component": {
+                "button_type": "success",
+                "disabled": not self.reload_service.component,
+            },
+            "reload_css_file": {"disabled": not self.reload_service.css_path},
+            "reload_js_file": {"disabled": not self.reload_service.js_path},
+        }
+
+        return pn.Param(
+            self.reload_service,
+            name="Action Pane",
+            sizing_mode="stretch_width",
+            parameters=config.ACTION_PARAMETERS,
+            widgets=widgets,
+            show_name=False,
+            css_classes=["designer-action-pane"],
+        )
+
+    def _create_settings_pane(self):
+        return pn.Param(
+            name="Settings Pane",
+            sizing_mode="stretch_both",
+            css_classes=["designer-settings-pane"],
+            margin=(10, 25, 10, 5),
+            show_name=False,
+        )
+
+    @staticmethod
+    def _create_settings_scroll_pane(settings_pane):
+        return pn.Column(
+            settings_pane,
+            name="Settings Scroll Pane",
+            css_classes=["designer-settings-scroll"],
+            sizing_mode="stretch_width",
+            scroll=True,
+            height=300,
+        )
+
+    @staticmethod
+    def _create_error_pane():
+        return pn.pane.Markdown(
+            name="Error Pane", sizing_mode="stretch_both", css_classes=["designer-error-pane"]
+        )
+
+    def _create_stop_server_pane(self):
+        return pn.Param(
+            self,
+            name="Stop Server Pane",
+            parameters=["stop_server"],
+            widgets={"stop_server": {"button_type": "danger"}},
+            sizing_mode="stretch_width",
+            show_name=False,
+        )
+
+    @staticmethod
+    def _create_view(component_pane, designer_pane):
+        return pn.Row(
+            component_pane,
+            designer_pane,
+            name="Panel Designer View",
+            sizing_mode="stretch_both",
+            margin=(0, 0, 0, 0),
+            css_classes=["designer-view"],
+        )
+
+    @staticmethod
+    def _create_font_pane():
+        return pn.pane.HTML(
+            '<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">'
+        )
 
     def _show(self, _=None):
         if not self.server:
@@ -247,7 +283,7 @@ class PanelDesignerApp(param.Parameterized):
         raise SystemExit
 
     def __repr__(self):
-        return f"PanelDesigner(self.__name__)"
+        return f"PanelDesigner({self.name})"
 
     def __str__(self):
-        return f"PanelDesigner(self.__name__)"
+        return f"PanelDesigner({self.name})"

@@ -2,7 +2,7 @@ from awesome_panel.designer import PanelDesignerApp
 import pathlib
 import pytest
 from .fixtures.component import Component
-from awesome_panel.designer.models import ComponentConfiguration
+from awesome_panel.designer.services import ReloadService
 
 FIXTURES = pathlib.Path(__file__).parent / "fixtures"
 COMPONENT_CSS = FIXTURES / "component.css"
@@ -22,7 +22,7 @@ def modules_to_reload():
 
 @pytest.fixture
 def component():
-    return PanelDesignerApp
+    return Component
 
 @pytest.fixture
 def component_parameters(css_path, js_path, modules_to_reload):
@@ -33,20 +33,20 @@ def component_parameters(css_path, js_path, modules_to_reload):
     }
 
 @pytest.fixture
-def component_configuration(component, css_path, js_path, component_parameters):
-    return ComponentConfiguration(
+def reload_service(component, css_path, js_path, component_parameters):
+    return ReloadService(
         component = component,
         css_path = css_path,
         js_path = js_path,
-        parameters = component_parameters,
+        component_parameters = component_parameters,
     )
 
 @pytest.fixture
-def panel_designer_app(css_path, js_path, modules_to_reload, component, component_parameters):
+def reload_services(reload_service):
+    return [reload_service]
+
+@pytest.fixture
+def panel_designer_app(reload_services):
     return PanelDesignerApp(
-        component=component,
-        component_parameters=component_parameters,
-        css_path=css_path,
-        js_path=js_path,
-        modules_to_reload=modules_to_reload,
+        reload_services=reload_services
     )

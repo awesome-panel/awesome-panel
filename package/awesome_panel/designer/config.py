@@ -1,13 +1,9 @@
 ACTION_PARAMETERS = [
-    "reload_component_instance",
+    "reload_component",
     "reload_css_file",
     "reload_js_file",
     "last_reload",
 ]
-
-ACTION_WIDGETS = {
-    "reload_component_instance": {"button_type": "success"},
-}
 
 CSS = """
 body {

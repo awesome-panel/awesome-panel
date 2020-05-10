@@ -1,1 +1,0 @@
-from awesome_panel.designer.models.component_configuration import ComponentConfiguration

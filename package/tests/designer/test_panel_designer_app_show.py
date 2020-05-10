@@ -4,36 +4,36 @@ import panel as pn
 import param
 import pytest
 
-from awesome_panel.designer import PanelDesignerApp, models, components
+from awesome_panel.designer import PanelDesignerApp, services, components
 
 
 FIXTURES = pathlib.Path(__file__).parent / "fixtures"
 COMPONENT_CSS = FIXTURES / "component.css"
 COMPONENT_JS = FIXTURES / "component.js"
+COMPONENT2_JS = FIXTURES / "component2.js"
 
-TITLE_COMPONENT = models.ComponentConfiguration(
+TITLE_COMPONENT = services.ReloadService(
     component=components.TitleComponent, css_path=COMPONENT_CSS, js_path=COMPONENT_JS,
 )
-CENTERED_COMPONENT = models.ComponentConfiguration(
-    component=components.CenteredComponent,
-    css_path=COMPONENT_CSS,
-    js_path=COMPONENT_JS,
-    parameters={"component": components.TitleComponent()},
+EMPTY_COMPONENT = services.ReloadService(
+    component=components.EmptyComponent, css_path=COMPONENT_CSS, js_path=COMPONENT2_JS,
 )
+# CENTERED_COMPONENT = services.ReloadService(
+#     component=components.CenteredComponent,
+#     css_path=COMPONENT_CSS,
+#     js_path=COMPONENT_JS,
+#     component_parameters={"component": components.TitleComponent()},
+# )
 
-COMPONENT_CONFIGS = [
+RELOAD_SERVICES = [
     TITLE_COMPONENT,
-    CENTERED_COMPONENT,
+    EMPTY_COMPONENT,
 ]
 
 
 def test_app():
-    config = TITLE_COMPONENT
     return PanelDesignerApp(
-        component=config.component,
-        css_path=config.css_path,
-        js_path=config.js_path,
-        component_parameters=config.parameters,
+        reload_services=RELOAD_SERVICES
     ).show()
 
 

@@ -36,3 +36,9 @@ class CenteredComponent(pn.Column):
             main_content,
             self._vspacer,
         ]
+
+    def __repr__(self):
+        return f"PanelDesigner(self.__name__)"
+
+    def __str__(self):
+        return f"PanelDesigner(self.__name__)"

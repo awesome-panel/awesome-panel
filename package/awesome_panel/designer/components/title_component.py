@@ -70,3 +70,9 @@ class TitleComponent(param.Parameterized):
 
     def _stop_spinning(self, _=None):
         self.spinning = False
+
+    def __repr__(self):
+        return f"TitleComponent({self.name})"
+
+    def __str__(self):
+        return f"TitleComponent({self.name})"

@@ -8,57 +8,15 @@ import panel as pn
 class MyComponent(pn.Column):
         pass
 
-def test_can_construct():
-    panel_designer_app = PanelDesignerApp()
-    assert panel_designer_app.title_component is not None
-    assert not panel_designer_app.css_path
-    assert not panel_designer_app.js_path
-    assert panel_designer_app.component == components.EmptyComponent
-    assert not panel_designer_app.component_parameters
-    assert isinstance(panel_designer_app.component_instance, components.EmptyComponent)
-    assert panel_designer_app.modules_to_reload == []
-
-
-def test_fixture_is_as_expected(
-    panel_designer_app, component, component_parameters, css_path, js_path
+def test_can_construct_fixture(
+    panel_designer_app, reload_services
 ):
     isinstance(panel_designer_app, PanelDesignerApp)
-
-    assert panel_designer_app.component == component
-    assert panel_designer_app.component_parameters == component_parameters
-    assert panel_designer_app.component_instance
-
-    assert panel_designer_app.css_path == css_path
-    assert panel_designer_app.js_path == js_path
+    assert panel_designer_app.param.reload_service.objects == reload_services
 
 
 # endregion
 # region: Actions
-
-
-def test_can_reload_component(panel_designer_app):
-    # Given: I have my panel_designer_app with an existing component_instance
-    old_instance = panel_designer_app.component_instance
-    # When: I reload the component
-    panel_designer_app.reload_component_instance()
-    # Then: I have a new component instance
-    assert panel_designer_app.component_instance != old_instance
-
-def test_can_reload_reactive_component(panel_designer_app):
-    # Given: MyComponent
-    # When
-    panel_designer_app.component = MyComponent
-    panel_designer_app.reload_component_instance()
-    # Then
-    assert isinstance(panel_designer_app.component_instance, MyComponent)
-
-
-def test_can_reload_css_file(panel_designer_app):
-    panel_designer_app.reload_css_file()
-
-
-def test_can_reload_js_file(panel_designer_app):
-    panel_designer_app.reload_js_file()
 
 
 def test_has_view(panel_designer_app):
@@ -87,7 +45,6 @@ def test_has_css_pane(panel_designer_app):
 
 def test_has_js_pane(panel_designer_app):
     assert panel_designer_app.js_pane is not None
-
 
 def test_has_error_pane(panel_designer_app):
     assert panel_designer_app.error_pane
