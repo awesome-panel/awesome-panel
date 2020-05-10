@@ -1,22 +1,12 @@
-DESIGN_PARAMETERS = [
-    "background",
-    "height",
-    "sizing_mode",
-    "style",
-    "width",
-]
-
 ACTION_PARAMETERS = [
     "reload_component_instance",
     "reload_css_file",
     "reload_js_file",
-    "stop_server",
     "last_reload",
 ]
 
 ACTION_WIDGETS = {
     "reload_component_instance": {"button_type": "success"},
-    "stop_server": {"button_type": "danger"},
 }
 
 CSS = """

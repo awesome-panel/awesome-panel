@@ -18,27 +18,30 @@ embed pdf https://zwiftinsider.com/wp-content/uploads/2019/10/Watopia-2.11.pdf h
 Panel Designer
 
 xMove CSS into PanelDesigner
+x- Refactor into TitleComponent
+x    - Make sure Target is _blank
+x- Communicate on Twitter and LinkedIn
 
-
-- Refactor into TitleComponent
-    - Make sure Target is _blank
 - Refactor in to Parameter Explorer
-  - Add Scroll to Parameter Explorer
-  - Explorer widget parameters into of showing parameters
+  x- Add Scroll to Parameter Explorer
+  - Explorer widget parameters instead of showing parameters
 - Update into ReloaderComponent
     - Remove CSS or JS button if not available
     - Add RELOAD COMPONENT PARAMETERS
     - Add auto reload
     - Add Breathing Panel
     - Mark the Component Area.
+- Enable multiple components
+    - ComponentConfiguration
+- DesignerSettings
+- Provide better example
 - Documentation example
     - etl.py
     - component.py
-    - componen_dependcy.py
+    - component_dependence.py
     - component.css
     - component.js
 - Make Panel Designer Full Height
-- Communicate on Twitter and LinkedIn
 - Considering watching and reloading all modules.
 - Provide Dark Theme
-- Enable multiple components
+
