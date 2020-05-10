@@ -25,7 +25,14 @@ class CenteredComponent(pn.Column):
             self[:]=[self._spacer]
             return
 
-        main_content = self.component
+        component = self.component
+        if isinstance(component, pn.layout.Reactive):
+            main_content = component
+        elif hasattr(component, "view") and component.view:
+            main_content = component.view
+        else:
+            raise NotImplementedError
+
         main_content.align="center"
         if main_content.css_classes is None:
             main_content.css_classes = []

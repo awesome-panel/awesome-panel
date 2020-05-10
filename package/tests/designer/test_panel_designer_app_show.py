@@ -18,16 +18,17 @@ TITLE_COMPONENT = services.ReloadService(
 EMPTY_COMPONENT = services.ReloadService(
     component=components.EmptyComponent, css_path=COMPONENT_CSS, js_path=COMPONENT2_JS,
 )
-# CENTERED_COMPONENT = services.ReloadService(
-#     component=components.CenteredComponent,
-#     css_path=COMPONENT_CSS,
-#     js_path=COMPONENT_JS,
-#     component_parameters={"component": components.TitleComponent()},
-# )
+CENTERED_COMPONENT = services.ReloadService(
+    component=components.CenteredComponent,
+    css_path=COMPONENT_CSS,
+    js_path=COMPONENT_JS,
+    component_parameters={"component": components.TitleComponent()},
+)
 
 RELOAD_SERVICES = [
     TITLE_COMPONENT,
     EMPTY_COMPONENT,
+    CENTERED_COMPONENT,
 ]
 
 

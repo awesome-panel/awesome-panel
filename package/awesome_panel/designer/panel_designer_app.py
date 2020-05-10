@@ -85,6 +85,7 @@ class PanelDesignerApp(param.Parameterized):
 
     def _create_watchers(self, reload_services):
         for reload_service in reload_services:
+            reload_service.param.watch(self._update_component, ["component_instance"], onlychanged=True)
             reload_service.param.watch(self._update_css_pane, ["css_text"], onlychanged=True)
             reload_service.param.watch(self._update_js_pane, ["js_text"], onlychanged=True)
 
@@ -98,32 +99,47 @@ class PanelDesignerApp(param.Parameterized):
         self._update_css_pane()
         self._update_js_pane()
 
-    def _update_component(self):
+    def _update_component(self, *events):
         action_pane_index = self.designer_pane.objects.index(self.action_pane)
         with param.edit_constant(self):
             self.action_pane = self._create_action_pane()
         self.designer_pane[action_pane_index] = self.action_pane
 
-        self.settings_pane.object = self.reload_service.component_instance
+        if self.reload_service.error_message:
+            self._set_error_message()
+            return
 
-        if isinstance(self.reload_service.component_instance, pn.layout.Reactive):
-            component_view = self.reload_service.component_instance
-        elif hasattr(self.reload_service.component_instance, "view"):
-            component_view = self.reload_service.component_instance.view
-        else:
-            raise NotImplementedError
-        self.component_pane.component = component_view
-        self.component_pane._update()
+        if self.reload_service.component_instance:
+            self.settings_pane.object = self.reload_service.component_instance
+
+            if isinstance(self.reload_service.component_instance, pn.layout.Reactive):
+                component_view = self.reload_service.component_instance
+            elif hasattr(self.reload_service.component_instance, "view"):
+                component_view = self.reload_service.component_instance.view
+            else:
+                raise NotImplementedError
+
+            self.component_pane.component = component_view
+            self.component_pane._update()
+
+        print("_update_component", self.reload_service)
 
     def _update_css_pane(self, *events):
         self.css_pane.object = f"<style>{self.reload_service.css_text}</style>"
-        print(self.reload_service, self.css_pane.object)
+        if self.reload_service.error_message:
+            self._set_error_message()
+        print("_update_css_pane", self.reload_service)
 
     def _update_js_pane(self, *events):
         self.js_pane.object = f"<script>{self.reload_service.js_text}</script>"
-        print(self.reload_service, self.js_pane.object)
+        if self.reload_service.error_message:
+            self._set_error_message()
+        print("_update_js_pane", self.reload_service)
 
-
+    def _set_error_message(self):
+        component_view = pn.pane.Markdown(self.reload_service.error_message)
+        self.component_pane.component = component_view
+        self.component_pane._update()
 
     @staticmethod
     def _create_css_pane():

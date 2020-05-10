@@ -4,7 +4,7 @@ from awesome_panel.application import assets
 
 
 class TitleComponent(param.Parameterized):
-    title = param.String("Panel Designer")
+    title = param.String("Panel Designers")
     title_url = param.String("https://panel.holoviz.org")
     subtitle = param.String("awesome-panel.org")
     subtitle_url = param.String("https://awesome-panel.org")
