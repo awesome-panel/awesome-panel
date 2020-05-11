@@ -1,10 +1,15 @@
-import param
+"""This module implements the TitleComponent which provides a nice looking Title Bar to the
+Designer"""
 import panel as pn
+import param
+
 from awesome_panel.application import assets
 
 
 class TitleComponent(param.Parameterized):
-    title = param.String("Panel Designers")
+    """The TitleComponent provides a nice looking Title Bar to the Designer"""
+
+    title = param.String("Panel Designer")
     title_url = param.String("https://panel.holoviz.org")
     subtitle = param.String("awesome-panel.org")
     subtitle_url = param.String("https://awesome-panel.org")
@@ -41,7 +46,15 @@ class TitleComponent(param.Parameterized):
             css_classes=["designer-title-component"],
         )
 
-    @param.depends("title", "title_url", "subtitle", "subtitle_url", "logo_url", "logo_spinning_url", watch=True)
+    @param.depends(
+        "title",
+        "title_url",
+        "subtitle",
+        "subtitle_url",
+        "logo_url",
+        "logo_spinning_url",
+        watch=True,
+    )
     def _update_title_pane(self):
         html = f"""\
 <h1><a href="{self.title_url}" target="_blank">{self.title}</a></h1>

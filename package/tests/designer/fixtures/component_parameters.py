@@ -1,4 +1,6 @@
+"""Dummy function used for testing"""
+
+
 def get_component_parameters():
-    return {
-        "name": "Hello World"
-    }
+    """Dummy function used for testing"""
+    return {"name": "Hello World"}

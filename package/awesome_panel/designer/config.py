@@ -1,3 +1,4 @@
+"""Configuration and settings for the Designer. TO BE REFACTORED."""
 ACTION_PARAMETERS = [
     "reload_component",
     "reload_css_file",

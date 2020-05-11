@@ -1,13 +1,13 @@
-import time
-from watchdog.observers import Observer
-from watchdog.events import PatternMatchingEventHandler
-
-import param
 import panel as pn
+import param
+from watchdog.events import PatternMatchingEventHandler
+from watchdog.observers import Observer
+
 
 class FileEvent(param.Parameterized):
     path = param.String(constant=True)
     event_type = param.String(constant=True)
+
 
 class FileObserverService(param.Parameterized):
     file_event = param.ClassSelector(class_=FileEvent)
@@ -36,6 +36,7 @@ class FileObserverService(param.Parameterized):
     def view(self):
         return pn.Param(self)
 
+
 class FileObserver(param.Parameterized):
     path = param.String(constant=True)
     file_observer_service = param.ClassSelector(class_=FileObserverService, constant=True)
@@ -48,7 +49,9 @@ class FileObserver(param.Parameterized):
         ignore_directories = False
         case_sensitive = True
 
-        my_event_handler = PatternMatchingEventHandler(patterns, ignore_patterns, ignore_directories, case_sensitive)
+        my_event_handler = PatternMatchingEventHandler(
+            patterns, ignore_patterns, ignore_directories, case_sensitive
+        )
         my_event_handler.on_created = file_observer_service.on_created
         my_event_handler.on_deleted = file_observer_service.on_deleted
         my_event_handler.on_modified = file_observer_service.on_modified
@@ -66,6 +69,7 @@ class FileObserver(param.Parameterized):
     def stop(self):
         self.observer.stop()
         self.observer.join()
+
 
 if __name__.startswith("__main__"):
     file_observer_service = FileObserverService()

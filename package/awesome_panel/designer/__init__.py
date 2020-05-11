@@ -1,1 +1,3 @@
-from awesome_panel.designer.panel_designer_app import PanelDesignerApp
+"""Exports"""
+from awesome_panel.designer.designer import Designer
+from awesome_panel.designer.services.reload_service import ReloadService

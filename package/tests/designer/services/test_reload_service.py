@@ -1,16 +1,24 @@
-from awesome_panel.designer.services import ReloadService
+# pylint: disable=redefined-outer-name,protected-access
+# pylint: disable=missing-function-docstring,missing-module-docstring,missing-class-docstring
 import panel as pn
 import param
+
+from awesome_panel.designer.services import ReloadService
+
 
 class MyComponent(pn.Column):
     pass
 
+
 class ComponentWithError(pn.Column):
     def __init__(self, **params):
+        super().__init__(**params)
         raise ValueError()
+
 
 def test_can_construct_fixture(reload_service):
     assert isinstance(reload_service, ReloadService)
+
 
 def test_can_reload_component(reload_service, component):
     # Given: I have my reload_service with an existing component_instance
@@ -22,6 +30,7 @@ def test_can_reload_component(reload_service, component):
     assert not reload_service.error_message
     assert isinstance(new_instance, component)
     assert reload_service.component_instance != old_instance
+
 
 def test_can_reload_reactive_component(reload_service):
     # Given: MyComponent
@@ -35,13 +44,15 @@ def test_can_reload_reactive_component(reload_service):
     assert isinstance(new_instance, MyComponent)
     assert reload_service.component_instance != old_instance
 
+
 def test_can_reload_css_file(reload_service):
     # Given
     reload_service.css_text = "dummy"
     # When
     reload_service.reload_css_file()
     # Then
-    assert reload_service.css_text!="dummy"
+    assert reload_service.css_text != "dummy"
+
 
 def test_can_reload_js_file(reload_service):
     # Given
@@ -49,10 +60,12 @@ def test_can_reload_js_file(reload_service):
     # When
     reload_service.reload_js_file()
     # Then
-    assert reload_service.js_text!="dummy"
+    assert reload_service.js_text != "dummy"
+
 
 def test_can_communicate_reloading_progress(reload_service):
     assert isinstance(reload_service.param.reloading, param.Boolean)
+
 
 def test_can_handle_reload_error(reload_service):
     # Given
@@ -61,5 +74,3 @@ def test_can_handle_reload_error(reload_service):
     reload_service.reload_component()
     # Then
     assert reload_service.error_message
-
-

@@ -1,14 +1,43 @@
+"""This module implements the ReloadService. The ReloadService is used by the Designer.
+For each component you want access to in the Designer you should provide a seperate
+Reload Service"""
+
 import datetime
 import importlib
+import pathlib
 import sys
 import traceback
-import pathlib
+
 import param
 
-from awesome_panel.designer.components.empty_component import EmptyComponent
 
+class ReloadService(param.Parameterized):  # pylint: disable=too-many-instance-attributes
+    """The ReloadService is used by the Designer.
+For each component you want access to in the Designer you should provide a seperate
+Reload Service
 
-class ReloadService(param.Parameterized):
+Args:
+    component ([type]): For now the components that are know to be supported are
+
+    - subclasses of `pn.layout.Reactive`
+    - subclasses of `param.Parameterized` with a `view` parameter which is a subclass of
+    `pn.layout.Reactive`
+
+Please NOTE that in order for the reload service to be able to reload the compoonent, the component
+specified cannot be defined in the __main__ file.
+
+Example
+-------
+
+```python
+TITLE_COMPONENT = ReloadService(
+    component=components.TitleComponent, css_path=COMPONENT_CSS, js_path=COMPONENT_JS,
+)
+EMPTY_COMPONENT = ReloadService(
+    component=components.EmptyComponent, css_path=COMPONENT_CSS, js_path=COMPONENT2_JS,
+)
+```"""
+
     component = param.Parameter(allow_None=False)
     component_parameters = param.Dict()
     component_instance = param.Parameter()
@@ -27,13 +56,14 @@ class ReloadService(param.Parameterized):
     last_reload = param.String(constant=True)
     error_message = param.String()
 
-    def __init__(self, **params):
-        if "component" not in params:
-            params["component"] = EmptyComponent
+    def __init__(self, component, **params):
+        if not isinstance(params, dict):
+            params = {}
+        params["component"] = component
         super().__init__(**params)
 
         with param.edit_constant(self):
-            self.name=self.component.name
+            self.name = self.component.name
 
         self.reload_component = self._reload_component
         self.reload_css_file = self._reload_css_file
@@ -50,7 +80,7 @@ class ReloadService(param.Parameterized):
             self._signal_reload_start()
 
             if self.component_instance is not None:
-                for mod in self.modules_to_reload:
+                for mod in self.modules_to_reload:  # pylint: disable=not-an-iterable
                     importlib.reload(mod)
 
                 mod = sys.modules[self.component.__module__]
@@ -59,12 +89,13 @@ class ReloadService(param.Parameterized):
                     self.component = getattr(mod, self.component.__name__)
 
             if self.component_parameters:
+                # pylint: disable=not-a-mapping
                 self.component_instance = self.component(**self.component_parameters)
             else:
                 self.component_instance = self.component()
 
             self._reset_error_message()
-        except Exception as ex:
+        except Exception as ex:  # pylint: disable=broad-except
             self._report_exception(ex)
         finally:
             self._signal_reload_end()
@@ -80,7 +111,7 @@ class ReloadService(param.Parameterized):
                 raise NotImplementedError
 
             self._reset_error_message()
-        except Exception as ex:
+        except Exception as ex:  # pylint: disable=broad-except
             self._report_exception(ex)
         finally:
             self._signal_reload_end()
@@ -96,7 +127,7 @@ class ReloadService(param.Parameterized):
                 raise NotImplementedError
 
             self._reset_error_message()
-        except Exception as ex:
+        except Exception as ex:  # pylint: disable=broad-except
             self._report_exception(ex)
         finally:
             self._signal_reload_end()
@@ -105,7 +136,7 @@ class ReloadService(param.Parameterized):
         self.reloading = True
         print("reload start", self.name, datetime.datetime.now())
 
-    def _report_exception(self, ex):
+    def _report_exception(self, ex):  # pylint: disable=unused-argument
         self.error_message = "# Error " + traceback.format_exc()
         print(self.name, self.error_message)
 
