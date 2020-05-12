@@ -10,12 +10,6 @@ class MyComponent(pn.Column):
     pass
 
 
-class ComponentWithError(pn.Column):
-    def __init__(self, **params):
-        super().__init__(**params)
-        raise ValueError()
-
-
 def test_can_construct_fixture(reload_service):
     assert isinstance(reload_service, ReloadService)
 
@@ -67,10 +61,10 @@ def test_can_communicate_reloading_progress(reload_service):
     assert isinstance(reload_service.param.reloading, param.Boolean)
 
 
-def test_can_handle_reload_error(reload_service):
+def test_can_handle_reload_error(reload_service_with_error):
     # Given
-    reload_service.component = ComponentWithError
+
     # When
-    reload_service.reload_component()
+    reload_service_with_error.reload_component()
     # Then
-    assert reload_service.error_message
+    assert reload_service_with_error.error_message

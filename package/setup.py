@@ -14,7 +14,7 @@ with open(README_FILE_PATH) as f:
 
 s = setup(  # pylint: disable=invalid-name
     name="awesome-panel",
-    version="20200511.1",
+    version="20200512.1",
     license="MIT",
     description="""This package supports the Awesome Panel Project and
     provides highly experimental features!""",

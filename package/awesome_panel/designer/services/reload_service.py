@@ -10,6 +10,8 @@ import traceback
 
 import param
 
+from awesome_panel.designer.views import ErrorView
+
 
 class ReloadService(param.Parameterized):  # pylint: disable=too-many-instance-attributes
     """The ReloadService is used by the Designer.
@@ -62,8 +64,13 @@ EMPTY_COMPONENT = ReloadService(
         params["component"] = component
         super().__init__(**params)
 
+        try:
+            name = self.component.name
+        except AttributeError:
+            name = self.component.__name__
+
         with param.edit_constant(self):
-            self.name = self.component.name
+            self.name = name
 
         self.reload_component = self._reload_component
         self.reload_css_file = self._reload_css_file
@@ -137,7 +144,8 @@ EMPTY_COMPONENT = ReloadService(
         print("reload start", self.name, datetime.datetime.now())
 
     def _report_exception(self, ex):  # pylint: disable=unused-argument
-        self.error_message = "# Error " + traceback.format_exc()
+        self.error_message = traceback.format_exc()
+        self.component_instance = ErrorView(error_message=self.error_message)
         print(self.name, self.error_message)
 
     def _signal_reload_end(self):

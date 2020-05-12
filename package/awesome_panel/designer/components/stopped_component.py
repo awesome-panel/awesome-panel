@@ -3,10 +3,17 @@ user when he/ she exits the Designer"""
 import panel as pn
 import param
 
-MESSAGE = """\
+from awesome_panel.application import assets
+
+MESSAGE = f"""\
 # Stopped
 
-Thanks for using the Panel Designer by awesome-panel.org
+Thanks for using the Awesome Panel Designer by awesome-panel.org
+
+<br>
+
+![Logo]({assets.SPINNER_PANEL_STATIC_LIGHT_400_340})
+
 """
 
 

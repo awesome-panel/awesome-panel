@@ -8,6 +8,8 @@ import pathlib
 import panel as pn
 
 from awesome_panel.designer import Designer, ReloadService, components
+from awesome_panel.designer.components.component_with_error import ComponentWithError
+from awesome_panel.designer.views import ErrorView
 from awesome_panel.express import Card
 from awesome_panel.express.assets import BOOTSTRAP_PANEL_EXPRESS_CSS
 
@@ -41,6 +43,16 @@ CARD_COMPONENT = ReloadService(
         "collapsable": True,
     },
 )
+COMPONENT_WITH_ERROR = ReloadService(component=ComponentWithError)
+# pylint: disable=line-too-long
+ERROR_MESSAGE = 'Traceback (most recent call last):\n  File "c:\\repos\\private\\awesome-panel\\package\\awesome_panel\\designer\\services\\reload_service.py", line 100, in _reload_component\n    self.component_instance = self.component()\n  File "c:\\repos\\private\\awesome-panel\\package\\awesome_panel\\designer\\components\\component_with_error.py", line 3, in __init__\n    raise NotImplementedError()\nNotImplementedError\n'
+# pylint: enable=line-too-long
+ERROR_VIEW = ReloadService(
+    component=ErrorView,
+    css_path=COMPONENT_CSS,
+    js_path=COMPONENT_JS,
+    component_parameters={"error_message": ERROR_MESSAGE},
+)
 
 
 RELOAD_SERVICES = [
@@ -49,6 +61,8 @@ RELOAD_SERVICES = [
     CENTERED_COMPONENT,
     STOPPED_COMPONENT,
     CARD_COMPONENT,
+    COMPONENT_WITH_ERROR,
+    ERROR_VIEW,
 ]
 
 

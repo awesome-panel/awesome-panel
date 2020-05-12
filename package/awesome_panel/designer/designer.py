@@ -21,6 +21,7 @@ import param
 from awesome_panel.designer import config
 from awesome_panel.designer.components import CenteredComponent, StoppedComponent, TitleComponent
 from awesome_panel.designer.services import ReloadService
+from awesome_panel.designer.views import ErrorView
 
 
 class Designer(param.Parameterized):  # pylint: disable=too-many-instance-attributes
@@ -165,7 +166,7 @@ if __name__.startswith("__main__") or __name__.startswith("bokeh"):
     def _create_watchers(self, reload_services):
         for reload_service in reload_services:
             reload_service.param.watch(
-                self._update_component, ["component_instance"], onlychanged=True
+                self._update_component, ["component_instance", "error_message"], onlychanged=False
             )
             reload_service.param.watch(self._update_css_pane, ["css_text"], onlychanged=True)
             reload_service.param.watch(self._update_js_pane, ["js_text"], onlychanged=True)
@@ -199,10 +200,6 @@ if __name__.startswith("__main__") or __name__.startswith("bokeh"):
             self.action_pane = self._create_action_pane()
         self.designer_pane[action_pane_index] = self.action_pane
 
-        if self.reload_service_.error_message:
-            self._set_error_message()
-            return
-
         if self.reload_service_.component_instance:
             self.settings_pane.object = self.reload_service_.component_instance
 
@@ -231,7 +228,7 @@ if __name__.startswith("__main__") or __name__.startswith("bokeh"):
         print("_update_js_pane", self.reload_service)
 
     def _set_error_message(self):
-        component_view = pn.pane.Markdown(self.reload_service_.error_message)
+        component_view = ErrorView(self.reload_service_.error_message)
         self.component_pane.component = component_view
         self.component_pane._update()  # pylint: disable=protected-access
 

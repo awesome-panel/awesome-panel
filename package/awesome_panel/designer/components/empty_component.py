@@ -12,4 +12,4 @@ class EmptyComponent(param.Parameterized):
     def __init__(self, **params):
         super().__init__(**params)
 
-        self.view = pn.Column("# Empty Component")
+        self.view = pn.Column(pn.pane.Markdown("# Empty Component"))

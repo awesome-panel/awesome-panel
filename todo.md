@@ -45,3 +45,5 @@ x- Communicate on Twitter and LinkedIn
 - Considering watching and reloading all modules.
 - Provide Dark Theme
 
+- All error message should go to std.err as well
+- ability to minimize designer

@@ -5,6 +5,7 @@ import pathlib
 import pytest
 
 from awesome_panel.designer import Designer
+from awesome_panel.designer.components.component_with_error import ComponentWithError
 from awesome_panel.designer.services import ReloadService
 
 from .fixtures.component import Component
@@ -35,6 +36,11 @@ def component():
 
 
 @pytest.fixture
+def component_with_error():
+    return ComponentWithError
+
+
+@pytest.fixture
 def component_parameters(css_path, js_path, modules_to_reload):
     return {
         "css_path": css_path,
@@ -54,8 +60,13 @@ def reload_service(component, css_path, js_path, component_parameters):
 
 
 @pytest.fixture
-def reload_services(reload_service):
-    return [reload_service]
+def reload_service_with_error(component_with_error):
+    return ReloadService(component=component_with_error)
+
+
+@pytest.fixture
+def reload_services(reload_service, reload_service_with_error):
+    return [reload_service, reload_service_with_error]
 
 
 @pytest.fixture
