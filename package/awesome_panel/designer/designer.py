@@ -166,7 +166,7 @@ if __name__.startswith("__main__") or __name__.startswith("bokeh"):
     def _create_watchers(self, reload_services):
         for reload_service in reload_services:
             reload_service.param.watch(
-                self._update_component, ["component_instance", "error_message"], onlychanged=False
+                self._update_component, ["component_instance"], onlychanged=False
             )
             reload_service.param.watch(self._update_css_pane, ["css_text"], onlychanged=True)
             reload_service.param.watch(self._update_js_pane, ["js_text"], onlychanged=True)
