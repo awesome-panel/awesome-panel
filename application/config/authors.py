@@ -3,6 +3,15 @@ them via the AUTHORS list"""
 from awesome_panel.application.models import Author
 
 # Authors
+ANDREW_HUANG = Author(
+    name="Andrew Huang",
+    url="https://twitter.com/iateandrew1",
+    github_url="https://github.com/ahuang11",
+    github_avatar_url=(
+        "https://avatars3.githubusercontent.com/u/"
+        "15331990?s=400&u=6f855e2f82d576fd22110f2ac9b1b7ec4825d916&v=4"
+    ),
+)
 AWESOME_PANEL_ORG = Author(
     name="Awesome-panel.org",
     url="https://awesome-panel.org",
@@ -120,6 +129,7 @@ XAVARTLEY = Author(
 
 
 AUTHORS = [
+    ANDREW_HUANG,
     AWESOME_PANEL_ORG,
     BOKEH,
     DASH,

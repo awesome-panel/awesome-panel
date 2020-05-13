@@ -1,0 +1,1 @@
+console.log("component2.js")
