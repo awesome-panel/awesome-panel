@@ -77,4 +77,3 @@ class TagService(param.Parameterized):
         new_tags = {tag.name: tag for tag in tags}
         self._tags = {**old_tags, **new_tags}
         self._update_tags_list()
-

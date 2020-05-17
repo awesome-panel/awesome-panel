@@ -1,9 +1,17 @@
-import param
+"""This module implements the PageNavigationComponent"""
 import panel as pn
+import param
+
 from awesome_panel.application.models import Application
 from awesome_panel.application.services import PageService
 
+
 class PageNavigationComponent(pn.Row):
+    """The PageNavigationComponent enables the user to select and navigate to
+    - any page
+    - the default page
+    """
+
     def __init__(self, application: Application, page_service: PageService, **params):
         super().__init__(self, **params)
 
@@ -32,7 +40,7 @@ class PageNavigationComponent(pn.Row):
             expand_button=False,
             show_name=False,
             show_labels=False,
-            sizing_mode="stretch_width"
+            sizing_mode="stretch_width",
         )
 
         return [

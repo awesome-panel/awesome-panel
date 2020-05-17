@@ -1,11 +1,16 @@
-import param
+"""In this module we define the ApplicationView
+
+The ApplicationView contains the different subviews like main, sidebar, topbar, navigation etc
+as well as other functionality like spinner, application_css, application_js, theme_css, theme_js,
+..."""
 import panel as pn
-import pathlib
+import param
 
 
 class ApplicationView(pn.Template):
-    # template_path = param.ClassSelector(class_=pathlib.Path, allow_None=False, constant=True)
-    # css_path = param.ClassSelector(class_=pathlib.Path, allow_None=False, constant=True)
+    """The ApplicationView contains the different subviews like main, sidebar, topbar, navigation
+    etc as well as other functionality like spinner, application_css, application_js, theme_css,
+    theme_js, ..."""
 
     main = param.ClassSelector(class_=pn.layout.Reactive, allow_None=False, constant=True)
     sidebar = param.ClassSelector(class_=pn.layout.Reactive, allow_None=False, constant=True)
@@ -25,16 +30,8 @@ class ApplicationView(pn.Template):
     def __init__(self, **params):
         # if "template" not in params:
         #     params["template"] = params["template_path"].read_text()
-        if "main" not in params:
-            params["main"] = self._get_main()
-        if "sidebar" not in params:
-            params["sidebar"] = self._get_sidebar()
-        if "topbar" not in params:
-            params["topbar"] = self._get_topbar()
-        if "spinner" not in params:
-            params["spinner"] = self._get_spinner()
-        if "navigation" not in params:
-            params["navigation"] = self._get_navigation()
+        self._init_panes(params)
+
         if "application_css" not in params:
             params["application_css"] = self._get_invisible_html_pane("aplication_css")
         if "application_js" not in params:
@@ -50,6 +47,21 @@ class ApplicationView(pn.Template):
 
         super().__init__(**params)
 
+        self._add_panels()
+
+    def _init_panes(self, params):
+        if "main" not in params:
+            params["main"] = self._get_main()
+        if "sidebar" not in params:
+            params["sidebar"] = self._get_sidebar()
+        if "topbar" not in params:
+            params["topbar"] = self._get_topbar()
+        if "spinner" not in params:
+            params["spinner"] = self._get_spinner()
+        if "navigation" not in params:
+            params["navigation"] = self._get_navigation()
+
+    def _add_panels(self):
         self.add_panel(name="main", panel=self.main)
         self.add_panel(name="sidebar", panel=self.sidebar)
         self.add_panel(name="topbar", panel=self.topbar)

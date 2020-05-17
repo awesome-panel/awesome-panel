@@ -3,22 +3,39 @@
 import panel as pn
 import pytest
 
-from awesome_panel.application.components import (ApplicationComponent,
-                                                  LoadingPageComponent,
-                                                  PageComponent,
-                                                  PageNavigationComponent,
-                                                  ProgressSpinnerComponent)
+from awesome_panel.application.components import (
+    ApplicationComponent,
+    LoadingPageComponent,
+    PageComponent,
+    PageNavigationComponent,
+    ProgressSpinnerComponent,
+)
 from awesome_panel.application.models import (
-    Application, Author, MenuItem, Message, Page, Progress, Resource,
-    SocialLink, SourceLink, Tag, Template, Theme)
+    Application,
+    Author,
+    MenuItem,
+    Message,
+    Page,
+    Progress,
+    Resource,
+    SocialLink,
+    SourceLink,
+    Tag,
+    Template,
+    Theme,
+)
 from awesome_panel.application.services import (
-    AuthorService, MessageService, NavigationService, PageService,
-    ProgressService, Services, TagService, ThemeService)
-from awesome_panel.application.templates import MaterialTemplate
-from awesome_panel.application.templates.application_template import \
-    ApplicationTemplate
-from awesome_panel.application.templates.material.material_template import (
-    CSS_PATH, HTML_PATH)
+    AuthorService,
+    MessageService,
+    NavigationService,
+    PageService,
+    ProgressService,
+    Services,
+    TagService,
+    ThemeService,
+)
+from awesome_panel.application.templates.application_template import ApplicationTemplate
+from awesome_panel.application.templates.material.material_template import CSS_PATH, HTML_PATH
 from awesome_panel.application.views import ApplicationView
 
 
@@ -198,7 +215,9 @@ def application(
 
 @pytest.fixture
 def application_template(application, services):
-    return ApplicationTemplate(application=application, services=services, template_path=HTML_PATH, css_path=CSS_PATH)
+    return ApplicationTemplate(
+        application=application, services=services, template_path=HTML_PATH, css_path=CSS_PATH
+    )
 
 
 @pytest.fixture
@@ -303,13 +322,16 @@ def services(progress_service, page_service, message_service, theme_service):
 def progress_spinner_component(progress_service, theme_service):
     return ProgressSpinnerComponent(progress_service=progress_service, theme_service=theme_service)
 
+
 @pytest.fixture
 def application_view():
     return ApplicationView()
 
+
 @pytest.fixture
-def page_navigation_component(page_service):
-    return PageNavigationComponent(page_service=page_service)
+def page_navigation_component(application, page_service):
+    return PageNavigationComponent(application=application, page_service=page_service)
+
 
 @pytest.fixture
 def application_component(application, services, application_view):

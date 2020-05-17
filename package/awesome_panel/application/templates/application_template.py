@@ -37,7 +37,7 @@ class ApplicationTemplate(pn.Template):
 
         params["template"] = params["template_path"].read_text()
         if "services" not in params:
-            params["services"]=Services()
+            params["services"] = Services()
         if "loading_page_component" not in params:
             services = params["services"]
             params["loading_page_component"] = LoadingPageComponent(
@@ -51,7 +51,8 @@ class ApplicationTemplate(pn.Template):
             pn.config.css_files.append(self.css_path.resolve())
 
         self.spinner = ProgressSpinnerComponent(
-            progress_service=self.services.progress_service, theme_service=self.services.theme_service
+            progress_service=self.services.progress_service,
+            theme_service=self.services.theme_service,
         ).view
         self.spinner.sizing_mode = "fixed"
         self.spinner.height = 40
@@ -73,7 +74,9 @@ class ApplicationTemplate(pn.Template):
 
     @param.depends("services.page_service.page", watch=True)
     def _update_main_container(self):
-        with self.services.progress_service.mark_active(f"Loading {self.services.page_service.page.name}"):
+        with self.services.progress_service.mark_active(
+            f"Loading {self.services.page_service.page.name}"
+        ):
             if self.services.page_service.page.show_loading_page:
                 self.main[:] = [self.loading_page_component.main]
 

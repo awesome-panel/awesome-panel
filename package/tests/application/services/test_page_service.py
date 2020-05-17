@@ -51,6 +51,7 @@ def test_can_bulk_create_and_is_sorted():
     # Then
     assert actual == [page_a, page_b, page_c]
 
+
 def test_can_load_default_page(page_service, gallery_page):
     # Given
     page_service.page = gallery_page
@@ -58,7 +59,3 @@ def test_can_load_default_page(page_service, gallery_page):
     page_service.load_default_page()
     # Then
     assert page_service.page == page_service.default_page
-
-
-
-

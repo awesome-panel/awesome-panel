@@ -2,14 +2,16 @@
 import panel as pn
 import param
 
-from awesome_panel.application.services import ProgressService, ThemeService
 from awesome_panel.application import assets
+from awesome_panel.application.services import ProgressService, ThemeService
 
 
 class ProgressSpinnerComponent(pn.pane.HTML):
     """The ProgressSpinnerComponent view method shows a spinner if there is Progress"""
 
-    progress_service = param.ClassSelector(class_=ProgressService, instantiate=False, allow_None=False)
+    progress_service = param.ClassSelector(
+        class_=ProgressService, instantiate=False, allow_None=False
+    )
     theme_service = param.ClassSelector(class_=ThemeService, instantiate=False, allow_None=False)
     view = param.Parameter(constant=True, allow_None=False)
 

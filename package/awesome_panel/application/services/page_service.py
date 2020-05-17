@@ -102,5 +102,5 @@ class PageService(param.Parameterized):
         self.pages = []
         self.default_page = self.param.default_page.default
 
-    def _load_default_page(self, event=None):
+    def _load_default_page(self, _=None):
         self.page = self.default_page

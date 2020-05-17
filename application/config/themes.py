@@ -1,3 +1,4 @@
+"""This module contains definitions of the THEMES available to the application"""
 from awesome_panel.application.models import Theme
 
 MATERIAL_GREEN_PURPLE_LIGHT = Theme()

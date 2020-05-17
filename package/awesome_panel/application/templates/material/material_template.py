@@ -48,7 +48,10 @@ class MaterialTemplate(ApplicationTemplate):
             sizing_mode="fixed",
         )
         self.app_title_page_pane = pn.Param(
-            self.services.page_service.param.page, expand_button=False, show_labels=False, sizing_mode="fixed"
+            self.services.page_service.param.page,
+            expand_button=False,
+            show_labels=False,
+            sizing_mode="fixed",
         )
         self.app_title_pane = pn.Row(
             self.app_title_link_pane,

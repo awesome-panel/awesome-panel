@@ -1,4 +1,9 @@
+"""This module implements the MessageService
+
+The MessageService enables sending and receiving messages
+"""
 import param
 
+
 class MessageService(param.Parameterized):
-    pass
+    """The MessageService enables sending and receiving messages"""

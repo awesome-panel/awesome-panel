@@ -3,6 +3,7 @@
 
 from awesome_panel.application.models import Page, Template
 
+
 def test_can_construct_application(application):
     # Then
     assert isinstance(application.title, str)
@@ -12,4 +13,3 @@ def test_can_construct_application(application):
     assert isinstance(application.default_page, Page)
     assert isinstance(application.templates, list)
     assert isinstance(application.default_template, Template)
-
