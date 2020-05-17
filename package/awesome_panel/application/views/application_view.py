@@ -4,8 +4,8 @@ import pathlib
 
 
 class ApplicationView(pn.Template):
-    template_path = param.ClassSelector(class_=pathlib.Path, allow_None=False, constant=True)
-    css_path = param.ClassSelector(class_=pathlib.Path, allow_None=False, constant=True)
+    # template_path = param.ClassSelector(class_=pathlib.Path, allow_None=False, constant=True)
+    # css_path = param.ClassSelector(class_=pathlib.Path, allow_None=False, constant=True)
 
     main = param.ClassSelector(class_=pn.layout.Reactive, allow_None=False, constant=True)
     sidebar = param.ClassSelector(class_=pn.layout.Reactive, allow_None=False, constant=True)
@@ -23,8 +23,8 @@ class ApplicationView(pn.Template):
     page_js = param.ClassSelector(class_=pn.pane.HTML, allow_None=False, constant=True)
 
     def __init__(self, **params):
-        if "template" not in params:
-            params["template"] = params["template_path"].read_text()
+        # if "template" not in params:
+        #     params["template"] = params["template_path"].read_text()
         if "main" not in params:
             params["main"] = self._get_main()
         if "sidebar" not in params:
@@ -49,9 +49,6 @@ class ApplicationView(pn.Template):
             params["page_js"] = self._get_invisible_html_pane("page_js")
 
         super().__init__(**params)
-
-        pn.config.sizing_mode = "stretch_width"
-        pn.config.css_files.append(self.css_path.resolve())
 
         self.add_panel(name="main", panel=self.main)
         self.add_panel(name="sidebar", panel=self.sidebar)

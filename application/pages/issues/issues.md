@@ -1,46 +1,25 @@
 # Issues Experienced During Development of this Project
 
-Let me start out by saying that I think that **Panel is already very powerfull and usefull**.
+Let me start out by saying that I think that **Panel is very, very powerfull and usefull**.
 
-But I have experienced som issues and rough edges as I've developed this site.
+But there still are some rough edges its nice to know about. By discussing them here I hope to give you an impression of the current issues and rough edges of developing a multipage application in Panel.
 
-By discussing them here I hope to give you an impression of the current issues and rough edges of developing a multipage application in Panel. I also hope they well get attention by the community (including me) and be solved to lower the friction of create awesome analytical apps in Panel.
+I also hope the issues will get attention by the community (including me) and be solved to lower the friction of create awesome analytical apps in Panel.
 
-You can find an overview of all my +50 open and closed issues + feature requests [here](https://github.com/holoviz/panel/issues?utf8=%E2%9C%93&q=author%3AMarcSkovMadsen+).
+You can find an overview of all my open and closed issues + feature requests via
+
+- [Open Issues](https://github.com/holoviz/panel/issues?q=author%3AMarcSkovMadsen+is%3Aopen).
+- [Closed Issues](https://github.com/holoviz/panel/issues?q=author%3AMarcSkovMadsen+is%3Aclosed)
+- [Open PRs](https://github.com/holoviz/panel/pulls/MarcSkovMadsen)
+- [Closed PRs](https://github.com/holoviz/panel/pulls?q=is%3Apr+author%3AMarcSkovMadsen+is%3Aclosed)
 
 ## The Bokeh Layout Engine is not always your friend
 
 - The Bokeh layout engine can work against you when you try to create advanced layouts. Things do not perform or render as expected.
 
-To circumvent these issues my most important learning is to **KEEP IT SIMPLE STUPID!**
+To circumvent these issues my most important learning is to **KEEP IT SIMPLE STUPID!**. Read my small tips and tricks for creating performance Panel apps [here](https://awesome-panel.readthedocs.io/en/latest/performance.html)
 
-- Use the [Template](https://panel.pyviz.org/user_guide/Templates.html) system whenever you can.
-- Don't do lots of nested Columns and Rows in Panel.
-- Don't configure layout settings like width, height, margin etc. of Panel Columns and Rows via Css.
-    - Use Column and Row attributes in Panel for that.
-
-### Solved
-
-- Panel/ Bokeh applications are especially slow in Chrome. See [Bokeh Issue 9515](https://github.com/bokeh/bokeh/issues/9515)
-
-## The Bokeh server does not Support Multiprocessing in Practice
-
-- See [Issue 897](https://github.com/holoviz/panel/issues/897)
-
-## Community and Documentation is difficult to use
-
-See GitHub issues
-
-- Please add more structure, search, navigation and content to Panel Documentation. [Issue 833](https://github.com/holoviz/panel/issues/833)
-- Please add the wonderfull help text to the docstrings to get context help in editor. [Issue 837](https://github.com/holoviz/panel/issues/837)
-
-### Solved
-
-- Create Discuss Forum to foster community discussions and knowledge sharing on Panel. [Issue 831](https://github.com/holoviz/panel/issues/831)
-- Make Panel help text readable on Windows in Command Prompt and Git bash. [Issue 836](https://github.com/holoviz/panel/issues/836)
-- Change search functionality at [https://panel.pyviz.org/](https://panel.pyviz.org/) to return Panel specific results. [Issue 832](https://github.com/holoviz/panel/issues/832)
-
-## Markdown is not well supported
+## Markdown is not always well supported
 
 See
 
@@ -48,29 +27,11 @@ See
     - If there is a large image in the markdown the page is not rendered correctly. The Bokeh layout engine does not get the height and width correctly.
 - Wide Images can overflow. Would be nice if `max-width: 100%` was set by default.
 
-### Solved
-
-- Support rendering of indented markdown. [Issue 828](https://github.com/holoviz/panel/issues/828).
-- No Code syntax highlighting. [Issue 391](https://github.com/holoviz/panel/issues/391)
-- Cannot get full width widthout lots of empty space at bottom. [Issue 848](https://github.com/holoviz/panel/issues/848)
-
-## Plotly Plots are not well supported
-
-- Plotly is not yet responsive in Panel. See [Issue 822](https://github.com/holoviz/panel/issues/822)
-
-## Panels, Panes and Widgets are not full width, responsive by default
-
-Panes and Widgets are not configured to be full width, responsive by default. I always have to set `sizing_policy="stretch_width"`. This is just overhead and friction.
-
 ## Rough edges for being a first mover
 
 I believe I experience some rough edges for being one of the first to create a multipage app in Panel with markdown (with images and code). For example
 
-- DataFrame widget raises exception if two columns have the same names. See [Issue 821](https://github.com/holoviz/panel/issues/821).
-- Cannot dynamically add and remove panes [Issue 838](https://github.com/holoviz/panel/issues/838)
-- Images does not support src urls and alt texts [Issue 841](https://github.com/holoviz/panel/issues/841)
-
-and I sometimes get error messages like this
+For examle sometimes I get error messages like this
 
 ```bash
 2019-12-03 09:34:57,514 Cannot apply patch to 1291 which is not in the document anymore
@@ -84,12 +45,6 @@ and I sometimes get error messages like this
 ```
 
 I've been told I can ignore these as they don't matter.
-
-### Solved
-
-- Sizing_mode="stretch_width" does not work for DataFrame panes. See [Issue 823](https://github.com/holoviz/panel/issues/823)
-- Css_classes attribute does not work for the Holoviews Panel [Issue 902](https://github.com/holoviz/panel/issues/902)
-- Plotly does not show when dynamically adding and removing pages without adding plotly extension. See [Issue 840](https://github.com/holoviz/panel/issues/840)
 
 ## Bootstrap CSS and Javascript does not play nicely with Bokeh HTML, CSS and Javascript
 
@@ -125,15 +80,17 @@ BUT. I FOUND A WAY TO IMPLEMENT IT MY SELF.
 
 ## Hot reload is slow and slows down development-test cycle
 
-See [issue 849](https://github.com/holoviz/panel/issues/849)
+See [issue 849](https://github.com/holoviz/panel/issues/849). I've developed the Awesome Panel Designer to circumvent this. See [Awesome Panel Designer](https://discourse.holoviz.org/t/awesome-panel-designer/643).)
 
-## There is no Browser URL widget
+## There is no Browser Location widget
 
-There is not functionality or Widget in Panel to use the Browser and  URLs like `example.com/page1/?year=1976` for navigation, bookmarking and sharing links. See [issue 811](https://github.com/holoviz/panel/issues/811).
+There is no functionality or Widget in Panel to use the Browser and  URLs like `example.com/page1/?year=1976` for navigation, bookmarking and sharing links.
 
 I would like to be able to keep the server app state in sync with the client app state via the browser url. I.e.
 
 - If the user/ client navigates to a url my app state should be updated using the full url including parameters
 - If I change my app state the parameters of my state should be available in the browser url for bookmarking and sharing.
 
-BUT. I FOUND A WAY TO PARTIALLY IMPLEMENT IT MY SELF via Javascript.
+The Location component has been merged into master but not yet released. See [PR 1150](https://github.com/holoviz/panel/pull/1150).
+
+<br/><br/><br/>

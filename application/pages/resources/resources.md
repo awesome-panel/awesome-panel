@@ -81,3 +81,5 @@
 - [Turn any Notebook into a Deployable Dashboard | SciPy 2019 | James Bednar](https://www.youtube.com/watch?v=L91rd1D6XTA&t=274s) by [James A. Bednar](https://github.com/jbednar) (#Tutorial, #Video)
 - [Turn any notebook into a deployable dashboard|PyData Berlin 2019](https://www.youtube.com/watch?v=Ohr29FJjBi0&list=PLGVZCDnMOq0pNHTYo3i56zYU-Tdw5Uguw) by [Philipp Rudiger](http://philippjfr.com/) (#Tutorial, #Video)
 - [Visualize any Data Easily, from Notebooks to Dashboards](https://www.youtube.com/watch?v=7deGS4IPAQ0&t=1326s) by [James A. Bednar](https://github.com/jbednar) (#Tutorial, #Video)
+
+<br/><br/><br/>

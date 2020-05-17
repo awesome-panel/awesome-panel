@@ -36,7 +36,6 @@ class MaterialTemplate(ApplicationTemplate):
     def __init__(self, **params):
         params["template_path"] = HTML_PATH
         params["css_path"] = CSS_PATH
-
         super().__init__(**params)
 
         holoviews_ext.disable_bokeh_logo()

@@ -53,7 +53,7 @@ class NavigationMenu(pn.Column):
         page_outlet: pn.layout.ListPanel,
         *args,
         css_classes: Optional[List[Optional[List[str]]]] = None,
-        title: str = "Navigation",
+        title: str = "",
         sizing_mode: str = "stretch_width",
         **kwargs,
     ):

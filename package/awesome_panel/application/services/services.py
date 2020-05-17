@@ -10,7 +10,7 @@ class Services(param.Parameterized):
     progress_service = param.ClassSelector(class_=ProgressService, allow_None=False)
     theme_service = param.ClassSelector(class_=ThemeService, allow_None=False)
 
-    def __init_(self, **params):
+    def __init__(self, **params):
         if "progress_service" not in params:
             params["progress_service"]=ProgressService()
         if "page_service" not in params:

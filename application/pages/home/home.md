@@ -19,11 +19,11 @@ This application provides
 - A **gallery** of awesome panel applications.
 - This app as a **best practice multi page app** with a nice layout developed in Panel.
 
-Please **use FireFox, Safari or Edge** if you can. Alternatively Chrome - but it's [slower](https://github.com/bokeh/bokeh/issues/9515). This page does not render nicely in Internet Explorer and it's not supported.
+This page does not render nicely in Internet Explorer and it's not supported.
 
 ## The Power of Panel
 
-The only way to truly understand how powerfull Panel is to play around with it. But if you need to be convinced first, then take a look at the first **4 minutes** of this **introduction to Panel**.
+The only way to truly understand how powerfull Panel is to play around with it. But if you need to be convinced first, then take a look at the first **4 minutes** of this **introduction to Panel**. The video is by **Philipp Rudiger**, the creator of Panel.
 
 Afterwards you can go to the [Panel Getting Started Guide](http://panel.pyviz.org/getting_started/index.html) or visit the [Panel Gallery](http://panel.pyviz.org/gallery/index.html) and the [Panel Reference Gallery](https://panel.pyviz.org/reference/index.html).
 
@@ -43,3 +43,4 @@ Panel is developed and maintained by developers from [Anaconda](https://anaconda
 
 [<img src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/anaconda-logo.png?raw=true" width="200">](https://anaconda.com)
 
+<br/><br/><br/>

@@ -3,6 +3,7 @@ import panel as pn
 import param
 
 from awesome_panel.application.services import ProgressService, ThemeService
+from awesome_panel.application import assets
 
 
 class ProgressSpinnerComponent(pn.pane.HTML):
@@ -22,10 +23,17 @@ class ProgressSpinnerComponent(pn.pane.HTML):
     @param.depends("progress_service.progress", "theme_service.theme", watch=True)
     def _update(self, _=None):
         # pylint: disable=no-member
-        if self.progress_service.progress.active:
-            url = self.theme_service.theme.spinner_url
+        if self.theme_service.theme:
+            if self.progress_service.progress.active:
+                url = self.theme_service.theme.spinner_url
+            else:
+                url = self.theme_service.theme.spinner_static_url
         else:
-            url = self.theme_service.theme.spinner_static_url
+            if self.progress_service.progress.active:
+                url = assets.SPINNER_PANEL_BREATH_LIGHT_400_340
+            else:
+                url = assets.SPINNER_PANEL_STATIC_LIGHT_400_340
+
         self.view.object = self._to_img_html(url)
 
     def _to_img_html(self, url):

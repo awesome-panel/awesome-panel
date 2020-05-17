@@ -36,6 +36,8 @@ class ApplicationTemplate(pn.Template):
         pn.config.sizing_mode = "stretch_width"
 
         params["template"] = params["template_path"].read_text()
+        if "services" not in params:
+            params["services"]=Services()
         if "loading_page_component" not in params:
             services = params["services"]
             params["loading_page_component"] = LoadingPageComponent(
@@ -43,7 +45,6 @@ class ApplicationTemplate(pn.Template):
             )
         if "_page_instances" not in params:
             params["_page_instances"] = {}
-
         super().__init__(**params)
 
         if self.css_path:
@@ -90,7 +91,7 @@ class ApplicationTemplate(pn.Template):
         self.param.select_title_page.label = self.application.title
 
     def _select_title_page(self, _=None):
-        self.services.page_service.page = self.application.param.page.default
+        self.services.page_service.page = self.services.page_service.default_page
 
     @property
     def _application_page_instance(self):

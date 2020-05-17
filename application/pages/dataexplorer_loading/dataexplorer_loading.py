@@ -1,8 +1,7 @@
 """This example was created by as response to
 <a href=https://discourse.holoviz.org/t/how-to-show-a-loading-indication-during-computation/508"
 target="_blank"> Discourse 508</a> <strong>How to show a loading indication during
-computation</strong>. You can find a live version in the Gallery at
-<a href="https://awesome-panel.org">awesome-panel.org</a>.
+computation</strong>.
 """
 
 import math
