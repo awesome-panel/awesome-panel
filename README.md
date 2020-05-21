@@ -237,6 +237,8 @@ In a Windows terminal it's
 .venv/Scripts/activate.bat
 ```
 
+On windows please manually install the geopandas requirements as described in [using-geopandas-windows](https://geoffboeing.com/2014/09/using-geopandas-windows/)
+
 Then you should install the local requirements
 
 ```bash
