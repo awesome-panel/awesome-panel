@@ -7,14 +7,8 @@
             "type": "python",
             "request": "launch",
             "program": "app.py",
-            "console": "integratedTerminal"
-        },
-        {
-            "name": "Python: Current File",
-            "type": "python",
-            "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal"
+            "console": "integratedTerminal",
+            "justMyCode": true,
         },
         {
             "name": "Python: Current File",

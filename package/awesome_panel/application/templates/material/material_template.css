@@ -55,12 +55,8 @@ div#spinner {
     width: 400px;
 }
 #resourcesmenu {
-    --mdc-menu-min-width: 125px;
-    --mdc-menu-item-height: 500px;
     z-index: 99;
 }
 #socialmenu {
-    --mdc-menu-min-width: 175px;
-    --mdc-menu-item-height: 50px;
     z-index: 101;
 }

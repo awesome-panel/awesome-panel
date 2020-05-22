@@ -111,6 +111,7 @@ YAHOO_QUERY = Page(
     tags=[tags.CODE, tags.APP_IN_GALLERY,],
     component=pages.yahooquery_app,
     author=authors.MARC_SKOV_MADSEN,
+    show_loading_page=True,
 )
 TEST_BOOTSTRAP_ALERTS = Page(
     name="Test Bootstrap Alerts",
@@ -227,4 +228,15 @@ PAGES = [
     TEST_PROGRESS_EXTENSION,
     TEST_SHARE_LINKS,
     TEST_SPINNERS,
+]
+
+NON_GALLERY_PAGES = [
+    HOME,
+    ABOUT,
+    ISSUES,
+    RESOURCES,
+]
+
+GALLERY_PAGES = [
+    page for page in PAGES if page not in NON_GALLERY_PAGES
 ]

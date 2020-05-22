@@ -16,7 +16,7 @@ class GalleryPageView(pn.Column):
 
     def __init__(self, page: Page, **params):
         self._rename["clicks"] = None
-        params["name"] = "gallery-item-" + page.component.name
+        params["name"] = "gallery-item-" + page.name
         params["sizing_mode"] = "fixed"
         params["width"] = 400
         params["height"] = 332
@@ -33,6 +33,7 @@ class GalleryPageView(pn.Column):
             sizing_mode="fixed",
             width=400,
             height=300,
+            embed=False,
         )
 
         self[:] = [

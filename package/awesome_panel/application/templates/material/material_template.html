@@ -2,14 +2,7 @@
 
 <!-- goes in body -->
 {% block postamble %}
-<script src="https://unpkg.com/@webcomponents/webcomponentsjs@next/webcomponents-loader.js"></script>
-<script type="module" src="https://unpkg.com/@material/mwc-button?module"></script>
-<script type="module" src="https://unpkg.com/@material/mwc-menu?module"></script>
-<script type="module" src="https://unpkg.com/@material/mwc-list@0.15.0/mwc-list-item.js?module"></script>
-<script type="module" src="https://unpkg.com/@material/mwc-drawer?module"></script>
-<script type="module" src="https://unpkg.com/@material/mwc-icon-button?module"></script>
-<script type="module" src="https://unpkg.com/@material/mwc-slider?module"></script>
-<script type="module" src="https://unpkg.com/@material/mwc-top-app-bar-fixed?module"></script>
+<script type="module" src="https://cdn.jsdelivr.net/gh/marcskovmadsen/awesome-panel@c09359e34e0f0fbce4acb9381a7e6261232dac11/assets/js/mwc.bundled.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"/>
@@ -26,11 +19,11 @@
         <div style="position: relative;" slot="actionItems">
             <mwc-icon-button id="socialbutton" icon="share"></mwc-icon-button>
             <mwc-menu id="socialmenu">
-                <mwc-list-item><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fawesome-panel.org&amp;text=Checkout" class="button-share-link" target="_blank"><i class="fab fa-twitter" title="Share on Twitter">&nbsp;Share on Twitter</i></a></mwc-list-item><br/>
-                <mwc-list-item><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fawesome-panel.org&amp;title=Checkout" class="button-share-link" title="Share on LinkedIn" target="_blank"><i class="fab fa-linkedin-in">&nbsp;Share on LinkedIn</i></a></mwc-list-item><br/>
-                <mwc-list-item><a href="https://reddit.com/submit?url=https%3A%2F%2Fawesome-panel.org&amp;title=Checkout" class="button-share-link" target="_blank"><i class="fab fa-reddit-alien" title="Share on Reddit">&nbsp;Share on Reddit</i></a></mwc-list-item><br/>
-                <mwc-list-item><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fawesome-panel.org" class="button-share-link" target="_blank"><i class="fab fa-facebook-f" title="Share on Facebook">&nbsp;Share on Facebook</i></a></mwc-list-item><br/>
-                <mwc-list-item><a href="mailto:?subject=https%3A%2F%2Fawesome-panel.org&amp;body=Checkout&nbsp;https%3A%2F%2Fawesome-panel.org" class="button-share-link" target="_blank"><i class="fas fa-envelope" title="Share by mail">&nbsp;Share by mail</i></a></mwc-list-item><br/>
+                <mwc-list-item title="Share on Twitter"><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fawesome-panel.org&amp;text=Checkout" class="button-share-link" target="_blank"><i class="fab fa-twitter"></i>&nbsp;Share on Twitter</a></mwc-list-item><br/>
+                <mwc-list-item title="Share on LinkedIn"><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fawesome-panel.org&amp;title=Checkout" class="button-share-link" target="_blank"><i class="fab fa-linkedin-in"></i>&nbsp;Share on LinkedIn</a></mwc-list-item><br/>
+                <mwc-list-item title="Share on Reddit"><a href="https://reddit.com/submit?url=https%3A%2F%2Fawesome-panel.org&amp;title=Checkout" class="button-share-link" target="_blank"><i class="fab fa-reddit-alien"></i>&nbsp;Share on Reddit</a></mwc-list-item><br/>
+                <mwc-list-item title="Share on Facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fawesome-panel.org" class="button-share-link" target="_blank"><i class="fab fa-facebook-f"></i>&nbsp;Share on Facebook</a></mwc-list-item><br/>
+                <mwc-list-item title="Share by mail"><a href="mailto:?subject=https%3A%2F%2Fawesome-panel.org&amp;body=Checkout&nbsp;https%3A%2F%2Fawesome-panel.org" class="button-share-link" target="_blank"><i class="fas fa-envelope"></i>&nbsp;Share by mail</a></mwc-list-item><br/>
             </mwc-menu>
         </div>
         <script>
@@ -42,10 +35,10 @@
         <div style="position: relative;" slot="actionItems">
             <mwc-icon-button id="resourcesbutton" icon="build"></mwc-icon-button>
             <mwc-menu id="resourcesmenu">
-                <mwc-list-item><a href="https://github.com/marcskovmadsen/awesome-panel" target="_blank"><i class="fab fa-github" title="Awesome Panel Repo">&nbsp;GitHub</i></a></mwc-list-item><br/>
-                <mwc-list-item><a href="https://awesome-panel.readthedocs.io/en/latest/" target="_blank"><i class="fas fa-book" title="Awesome Panel Docs">&nbsp;Read the Docs</i></a></mwc-list-item><br/>
-                <mwc-list-item><a href="https://pypi.org/project/awesome-panel/" target="_blank"><i class="fas fa-cubes" title="Awesome Panel Python Package">&nbsp;PyPi</i></a></mwc-list-item><br/>
-                <mwc-list-item><a href="https://hub.docker.com/r/marcskovmadsen/awesome-panel" target="_blank"><i class="fab fa-docker" title="Awesome Panel Docker Container">&nbsp;Docker Hub</i></a></mwc-list-item><br/>
+                <mwc-list-item title="Awesome Panel Repo"><a href="https://github.com/marcskovmadsen/awesome-panel" target="_blank"><i class="fab fa-github"></i>&nbsp;Awesome Panel Repo</a></mwc-list-item><br/>
+                <mwc-list-item title="Awesome Panel Docs"><a href="https://awesome-panel.readthedocs.io/en/latest/" target="_blank"><i class="fas fa-book"></i>&nbsp;Awesome Panel Docs</a></mwc-list-item><br/>
+                <mwc-list-item title="Awesome Panel Python Package"><a href="https://pypi.org/project/awesome-panel/" target="_blank"><i class="fas fa-cubes"></i>&nbsp;Awesome Panel Package</a></mwc-list-item><br/>
+                <mwc-list-item title="Awesome Panel Docker Container"><a href="https://hub.docker.com/r/marcskovmadsen/awesome-panel" target="_blank"><i class="fab fa-docker"></i>&nbsp;Awesome Panel Container</a></mwc-list-item><br/>
             </mwc-menu>
         </div>
         <script>
@@ -57,19 +50,6 @@
         <mwc-icon-button disabled icon="person" slot="actionItems"></mwc-icon-button>
     </mwc-top-app-bar-fixed>
     <mwc-drawer hasHeader type="dismissible">
-        <span slot="title">Awesome Panel</span>
-        <p style="text-align: center">
-            <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fawesome-panel.org&amp;text=Checkout" class="button-share-link"><i class="fab fa-twitter" title="Share on Twitter"></i></a>
-            <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fawesome-panel.org&amp;title=Checkout" class="button-share-link" title="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://reddit.com/submit?url=https%3A%2F%2Fawesome-panel.org&amp;title=Checkout" class="button-share-link"><i class="fab fa-reddit-alien" title="Share on Reddit"></i></a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fawesome-panel.org" class="button-share-link"><i class="fab fa-facebook-f" title="Share on Facebook"></i></a>
-            <a href="mailto:?subject=https%3A%2F%2Fawesome-panel.org&amp;body=Checkout&nbsp;https%3A%2F%2Fawesome-panel.org" class="button-share-link"><i class="fas fa-envelope" title="Share by mail"></i></a>
-        </p><p style="text-align: center">
-            <a href="https://github.com/marcskovmadsen/awesome-panel" target="_blank"><i class="fab fa-github" title="Awesome Panel Repo"></i></a>
-            <a docs"="" href="https://awesome-panel.readthedocs.io/en/latest/" target="_blank"><i class="fas fa-book" title="Awesome Panel Docs"></i></a>
-            <a href="https://pypi.org/project/awesome-panel/" target="_blank"><i class="fas fa-cubes" title="Awesome Panel Python Package"></i></a>
-            <a href="https://hub.docker.com/r/marcskovmadsen/awesome-panel" target="_blank"><i class="fab fa-docker" title="Awesome Panel Docker Container"></i></a>
-        </p>
         <div class="appMenu">
             {{ embed(roots.sidebar) }}
         </div>
