@@ -22,6 +22,9 @@ def module_to_github_url(module: ModuleType,) -> str:
     file_absolute = inspect.getfile(module).lower()
     if not file_absolute.startswith(ROOT_PATH):
         raise ValueError("Module is not in project!")
-    file_relative = file_absolute.replace(ROOT_PATH, "",)
+    if ROOT_PATH == "/app":
+        file_relative = file_absolute.replace("/app/", "/",)
+    else:
+        file_relative = file_absolute.replace(ROOT_PATH, "")
     file_relative = file_relative[1:].replace("\\", "/",)
     return GITHUB_BLOB_MASTER_URL + file_relative
