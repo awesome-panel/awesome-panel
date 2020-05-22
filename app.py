@@ -55,4 +55,3 @@ else:
     address = os.getenv("BOKEH_ADDRESS", "0.0.0.0")
     APP_ROUTES = {"": view}
     pn.serve(APP_ROUTES, port=80, dev=False, title="Awesome Panel", address=address)
-    # view().servable("Awesome Panel")
