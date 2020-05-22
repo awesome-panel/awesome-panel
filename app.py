@@ -1,121 +1,62 @@
-"""# BootstrapDashboard App.
+# pylint: disable=redefined-outer-name,protected-access,missing-function-docstring
+"""In this module we configure our awesome-panel.org app and serve it using the
+awesome_panel.application framework.
 
-Creates a Bootstrap Dashboard App
+The awesome_panel.application framework provides
 
-- inspired by the [GetBoostrap Dashboard Template]
-(https://getbootstrap.com/docs/4.4/examples/dashboard/)
-- implemented using the `awesome_panel' Python package and in particular the
-`awesome_panel.express.templates.BootstrapDashboardTemplate`
-- Start the app by using `panel serve` on this file.
+- Templates: One or more Templates to layout your app(s). A template might provide `main`,
+`sidebar`, `topbar` layouts where you can put your content.
+- Components: Smaller constitutents used to create the Template or PageComponents
+- Views: Layout+Styling of Components
+- Services: Services that can be used by the Template and components. For example a progress_service
+- Models: Like Application, Page, Author, Tag, Progress etc.
 """
-from typing import List, Optional
+import os
 
 import panel as pn
 
-import awesome_panel.express as pnx
-from awesome_panel.database.apps_in_gallery import APPS_IN_GALLERY
-from src.pages import about, gallery, home, issues, resources
-from src.pages.gallery.custom_bokeh_model.custom import Custom  # type: ignore
-
-# Hack to get the custom_bokeh_model app working.
-# We need to instantiate the model before running servable
-Custom()
-
-MENU_BUTTON_CSS_CLASSES: Optional[List[Optional[List[str]]]] = [
-    ["navigation", "pas", "pa-home",],
-    ["navigation", "pas", "pa-link",],
-    ["navigation", "pas", "pa-images",],
-    ["navigation", "pas", "pa-bug",],
-    ["navigation", "pas", "pa-address-card",],
-]
-
-CONTACT = """<p>
-<a href="https://github.com/marcskovmadsen/awesome-panel" target="_blank"><i class="fab fa-github" title="GitHub"></i></a>
-<a Docs" href="https://awesome-panel.readthedocs.io/en/latest/" target="_blank"><i class="fas fa-book" title="Read the Docs"></i></a>
-<a href="https://pypi.org/project/awesome-panel/" target="_blank"><i class="fas fa-cubes" title="PyPi"></i></a>
-<a href="https://hub.docker.com/r/marcskovmadsen/awesome-panel" target="_blank"><i class="fab fa-docker" title="Docker"></i></a>
-</p>"""
-
-INFO = """\
-#### Contribute
-
-This an **open source project** and you are very welcome to contribute your awesome comments,
-questions, resources and apps as
-[issues and feature requests](https://github.com/MarcSkovMadsen/awesome-panel/issues/new/choose)
-or
-[pull requests](https://github.com/marcskovmadsen/awesome-panel/pulls).
-"""
-
-SHARE_LINK_STYLE = """
-nav .bk a.button-share-link {
-    font-size: 1rem;
-    color: #343a40;
-    margin-left: 2px;
-}
-"""
+from application import config
+from awesome_panel.application.components import GalleryComponent
+from awesome_panel.application.models import Application
+from awesome_panel.application.services import Services
+from awesome_panel.application.templates import MaterialTemplate
 
 
-def main() -> pn.Pane:
-    """## Bootstrap Dashboard App
+def view():
 
-    Creates a Bootstrap Dashboard App
+    services = Services()
 
-    - inspired by the [GetBoostrap Dashboard Template]
-    (https://getbootstrap.com/docs/4.4/examples/dashboard/)
-    - implemented using the `awesome_panel' Python package and in particular the
-    `awesome_panel.express.templates.BootstrapDashboardTemplate`
-
-    Returns:
-        pn.Pane -- The Bootstrap Dashboard App
-    """
-    pn.extension("vega")
-    pnx.fontawesome.extend()
-    pnx.PyDeck.extend()
-    pn.config.raw_css.append(SHARE_LINK_STYLE)
-    pn.config.sizing_mode = "stretch_width"
-
-    app = pnx.templates.BootstrapDashboardTemplate(app_title="Awesome Panel")
-
-    pages = [
-        # Hack for some reason I need to instantiate this otherwise the layout is not nice
-        home.view(),
-        resources.view,
-        gallery.Gallery(page_outlet=app.main, apps_in_gallery=APPS_IN_GALLERY,).view,
-        issues.view,
-        about.view,
+    gallery_pages = [
+        page for page in config.pages.PAGES if page not in config.pages.NON_GALLERY_PAGES
     ]
-    navigation_menu = pnx.NavigationMenu(
-        pages=pages,
-        page_outlet=app.main,
-        css_classes=MENU_BUTTON_CSS_CLASSES,
-        width=190,
-        sizing_mode="stretch_height",
-    )
-    share = pn.Column(
-        pn.pane.Markdown("#### Share"),
-        pn.Row(
-            pnx.fontawesome.share_link.ShareOnTwitter().view(),
-            pnx.fontawesome.share_link.ShareOnLinkedIn().view(),
-            pnx.fontawesome.share_link.ShareOnReddit().view(),
-            pnx.fontawesome.share_link.ShareOnFacebook().view(),
-            pnx.fontawesome.share_link.ShareOnMail().view(),
-        ),
-        margin=(10, 10, 0, 10,),
-    )
-    info = pn.Column(pn.pane.Markdown(INFO), margin=(0, 10, 0, 10,), sizing_mode="stretch_both",)
-    app.sidebar[:] = [
-        navigation_menu,
-        share,
-        info,
-    ]
+    gallery_page = GalleryComponent.create_gallery_component(gallery_pages, services.page_service)
+    pages = list(config.pages.PAGES)
+    pages.insert(1, gallery_page)
 
-    contact = pn.pane.HTML(
-        CONTACT, width=200, height=58 - 10, sizing_mode="fixed", margin=(10, 50, 0, 0)
+    services.page_service.set_default_page(config.pages.HOME)
+    services.page_service.bulk_create(pages)
+    services.page_service.param.page.objects = pages
+    services.page_service.param.page.default = config.pages.HOME
+    services.page_service.page = config.pages.HOME
+    services.theme_service.param.theme.objects = config.themes.THEMES
+    services.theme_service.param.theme.default = config.themes.MATERIAL_GREEN_PURPLE_LIGHT
+    services.theme_service.theme = config.themes.MATERIAL_GREEN_PURPLE_LIGHT
+
+    application = Application(
+        title=config.application.TITLE,
+        logo=config.application.LOGO,
+        url=config.application.URL,
+        pages=services.page_service.pages,
+        default_template=config.templates.MaterialTemplate,
+        templates=config.templates.TEMPLATES,
     )
-    app.header.append(contact)
-    # app.header.append(pn.layout.VSpacer(width=25))
-    return app
+    template = MaterialTemplate(application=application, services=services)
+    return template
 
 
 if __name__.startswith("bokeh"):
-    main().servable("Awesome Panel")
+    view().servable()
+else:
+    address = os.getenv("BOKEH_ADDRESS", "0.0.0.0")
+    APP_ROUTES = {"": view}
+    pn.serve(APP_ROUTES, port=80, dev=False, title="Awesome Panel", address=address)

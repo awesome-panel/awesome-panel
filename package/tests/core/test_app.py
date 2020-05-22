@@ -2,7 +2,7 @@
 import pytest
 from panel.layout import Column
 
-import awesome_panel.core as core
+from awesome_panel.utils.title_awesome import title_awesome
 
 
 @pytest.mark.panel
@@ -12,8 +12,8 @@ def test_title_awesome():
     - one with additional text
     - one with additional 'Test' text
     """
-    title_none = core.title_awesome("")
-    title_test = core.title_awesome("Test")
+    title_none = title_awesome("")
+    title_test = title_awesome("Test")
     Column(title_none, title_test, sizing_mode="stretch_width",).servable()
 
 

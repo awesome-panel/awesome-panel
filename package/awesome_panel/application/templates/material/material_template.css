@@ -1,0 +1,62 @@
+:root {
+    --mdc-theme-primary: green;
+    --mdc-theme-secondary: purple;
+}
+body {
+    font-family: roboto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: 0px;
+    background: var(--mdc-theme-background);
+    min-height: 100vh;
+}
+.bk-root .bk {
+    font-family: roboto;
+}
+img {
+    /* we wan't no overflow. Will make it easier to include images in markdown */
+    max-width: 100%;
+}
+table {
+    width: 95%;
+}
+mwc-top-app-bar-fixed {
+    box-shadow: 5px 5px 20px #9E9E9E;
+    font-size: 20px;
+    z-index: 50;
+}
+.appMenu * {
+    width:100%;
+    align-items: left;
+}
+.appMain {
+    margin: 10px;
+}
+div.appContent {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100vh;
+    width: 100%;
+}
+/* mwc-top-app-bar-fixed p, mwc-top-app-bar-fixed .bk-root .bk-btn, mwc-top-app-bar-fixed .bk-root .bk {
+    font-size: 20px;
+} */
+
+div#spinner {
+    position: fixed;
+    top: 78px;
+    right: 10px;
+    width: 80px;
+    z-index: 100;
+  }
+
+#pageChanging {
+    font-size: 50px;
+    width: 400px;
+}
+#resourcesmenu {
+    z-index: 99;
+}
+#socialmenu {
+    z-index: 101;
+}

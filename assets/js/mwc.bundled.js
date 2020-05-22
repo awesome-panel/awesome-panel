@@ -320,7 +320,7 @@
      *    * (") then any non-("), or
      *    * (') then any non-(')
      */
-    const lastAttributeNameRegex = 
+    const lastAttributeNameRegex =
     // eslint-disable-next-line no-control-regex
     /([ \x09\x0a\x0c\x0d])([^\0-\x1F\x7F-\x9F "'>=/]+)([ \x09\x0a\x0c\x0d]*=[ \x09\x0a\x0c\x0d]*(?:[^ \x09\x0a\x0c\x0d"'`<>=]*|"[^"]*|'[^']*))$/;
 
@@ -2455,7 +2455,7 @@
      *
      */
     function query(selector) {
-        return (protoOrDescriptor, 
+        return (protoOrDescriptor,
         // tslint:disable-next-line:no-any decorator
         name) => {
             const descriptor = {
@@ -2507,7 +2507,7 @@
      *     }
      */
     function queryAsync(selector) {
-        return (protoOrDescriptor, 
+        return (protoOrDescriptor,
         // tslint:disable-next-line:no-any decorator
         name) => {
             const descriptor = {
@@ -2537,7 +2537,7 @@
                 Object.assign(clazz.prototype[element.key], options);
             } });
     };
-    const legacyEventOptions = 
+    const legacyEventOptions =
     // tslint:disable-next-line:no-any legacy decorator
     (options, proto, name) => {
         Object.assign(proto[name], options);
@@ -2701,7 +2701,7 @@
                 // The last item is kept to try to preserve the cascade order with the
                 // assumption that it's most important that last added styles override
                 // previous styles.
-                const addStyles = (styles, set) => styles.reduceRight((set, s) => 
+                const addStyles = (styles, set) => styles.reduceRight((set, s) =>
                 // Note: On IE set.add() does not return the set
                 Array.isArray(s) ? addStyles(s, set) : (set.add(s), set), set);
                 // Array.from does not work on Set in IE, otherwise return
@@ -6579,7 +6579,7 @@
         return passiveSupported;
     }
 
-    const observer = (observer) => 
+    const observer = (observer) =>
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (proto, propName) => {
         // if we haven't wrapped `updated` in this class, do so
@@ -7477,10 +7477,10 @@
             containsEventTarget: (target) => interactionNode.contains(target),
             registerInteractionHandler: (type, handler) => interactionNode.addEventListener(type, handler, applyPassive()),
             deregisterInteractionHandler: (type, handler) => interactionNode.removeEventListener(type, handler, applyPassive()),
-            registerDocumentInteractionHandler: (evtType, handler) => 
+            registerDocumentInteractionHandler: (evtType, handler) =>
             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             document.documentElement.addEventListener(evtType, handler, applyPassive()),
-            deregisterDocumentInteractionHandler: (evtType, handler) => 
+            deregisterDocumentInteractionHandler: (evtType, handler) =>
             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             document.documentElement.removeEventListener(evtType, handler, applyPassive()),
             registerResizeHandler: (handler) => window.addEventListener('resize', handler),

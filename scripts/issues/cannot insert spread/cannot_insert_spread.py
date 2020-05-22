@@ -1,9 +1,9 @@
 import datetime
 
-# from src.pages.apps.spread_tracker.models import RiskRewardCalculation
-# from src.pages.apps.spread_tracker.plots import SpreadPlot
-# from src.pages.apps.spread_tracker.services import SpreadService
-# from src.pages.apps.spread_tracker.views import RiskRewardCalculationView, SpreadView
+# from application.pages.apps.spread_tracker.models import RiskRewardCalculation
+# from application.pages.apps.spread_tracker.plots import SpreadPlot
+# from application.pages.apps.spread_tracker.services import SpreadService
+# from application.pages.apps.spread_tracker.views import RiskRewardCalculationView, SpreadView
 import pathlib
 from typing import Optional
 

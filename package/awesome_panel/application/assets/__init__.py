@@ -1,6 +1,6 @@
 """Asset exports"""
 ROOT_SPINNER_URL = (
-    "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/" "assets/images/spinners/"
+    "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/spinners/"
 )
 SPINNER_AQUA = ROOT_SPINNER_URL + "spinner_aqua.png"
 SPINNER_PANEL_BLINK_LIGHT_400_340 = ROOT_SPINNER_URL + "spinner_panel_blink_light_400_340.gif"

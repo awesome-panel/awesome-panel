@@ -1,0 +1,88 @@
+{% extends base %}
+
+<!-- goes in body -->
+{% block postamble %}
+<script type="module" src="https://cdn.jsdelivr.net/gh/marcskovmadsen/awesome-panel@be59521090b7c9d9ba5eb16e936034e412e2c86b/assets/js/mwc.bundled.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"/>
+<link rel="icon"
+      type="image/png"
+      href="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/2781d86d4ed141889d633748879a120d7d8e777a/assets/images/favicon.ico">
+{% endblock %}
+
+<!-- goes in body -->
+{% block contents %}
+<div id="spinner">{{ embed(roots.spinner) }}</div>
+<div class="material-template">
+    <mwc-top-app-bar-fixed class="appBar">
+        <mwc-icon-button icon="menu" slot="navigationIcon" class="appDrawerToggleButton"></mwc-icon-button>
+        <div slot="title">{{ embed(roots.app_title) }}</div>
+        <mwc-icon-button disabled icon="file_download" slot="actionItems"></mwc-icon-button>
+        <div style="position: relative;" slot="actionItems">
+            <mwc-icon-button id="socialbutton" icon="share"></mwc-icon-button>
+            <mwc-menu id="socialmenu">
+                <mwc-list-item title="Share on Twitter"><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fawesome-panel.org&amp;text=Checkout" class="button-share-link" target="_blank"><i class="fab fa-twitter"></i>&nbsp;Share on Twitter</a></mwc-list-item><br/>
+                <mwc-list-item title="Share on LinkedIn"><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fawesome-panel.org&amp;title=Checkout" class="button-share-link" target="_blank"><i class="fab fa-linkedin-in"></i>&nbsp;Share on LinkedIn</a></mwc-list-item><br/>
+                <mwc-list-item title="Share on Reddit"><a href="https://reddit.com/submit?url=https%3A%2F%2Fawesome-panel.org&amp;title=Checkout" class="button-share-link" target="_blank"><i class="fab fa-reddit-alien"></i>&nbsp;Share on Reddit</a></mwc-list-item><br/>
+                <mwc-list-item title="Share on Facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fawesome-panel.org" class="button-share-link" target="_blank"><i class="fab fa-facebook-f"></i>&nbsp;Share on Facebook</a></mwc-list-item><br/>
+                <mwc-list-item title="Share by mail"><a href="mailto:?subject=https%3A%2F%2Fawesome-panel.org&amp;body=Checkout&nbsp;https%3A%2F%2Fawesome-panel.org" class="button-share-link" target="_blank"><i class="fas fa-envelope"></i>&nbsp;Share by mail</a></mwc-list-item><br/>
+            </mwc-menu>
+        </div>
+        <script>
+            socialmenu.anchor = socialbutton;
+            socialbutton.addEventListener('click', function (e) {
+                socialmenu.open = true;
+            });
+        </script>
+        <div style="position: relative;" slot="actionItems">
+            <mwc-icon-button id="resourcesbutton" icon="build"></mwc-icon-button>
+            <mwc-menu id="resourcesmenu">
+                <mwc-list-item title="Awesome Panel Repo"><a href="https://github.com/marcskovmadsen/awesome-panel" target="_blank"><i class="fab fa-github"></i>&nbsp;Awesome Panel Repo</a></mwc-list-item><br/>
+                <mwc-list-item title="Awesome Panel Docs"><a href="https://awesome-panel.readthedocs.io/en/latest/" target="_blank"><i class="fas fa-book"></i>&nbsp;Awesome Panel Docs</a></mwc-list-item><br/>
+                <mwc-list-item title="Awesome Panel Python Package"><a href="https://pypi.org/project/awesome-panel/" target="_blank"><i class="fas fa-cubes"></i>&nbsp;Awesome Panel Package</a></mwc-list-item><br/>
+                <mwc-list-item title="Awesome Panel Docker Container"><a href="https://hub.docker.com/r/marcskovmadsen/awesome-panel" target="_blank"><i class="fab fa-docker"></i>&nbsp;Awesome Panel Container</a></mwc-list-item><br/>
+            </mwc-menu>
+        </div>
+        <script>
+        resourcesmenu.anchor = resourcesbutton;
+        resourcesbutton.addEventListener('click', function (e) {
+            resourcesmenu.open = true;
+        });
+        </script>
+        <mwc-icon-button disabled icon="person" slot="actionItems"></mwc-icon-button>
+    </mwc-top-app-bar-fixed>
+    <mwc-drawer hasHeader type="dismissible">
+        <div class="appMenu">
+            {{ embed(roots.sidebar) }}
+        </div>
+        <div class="appContent" slot="appContent">
+            {{ embed(roots.main) }}
+            <br/><br/><br/>
+        </div>
+    </mwc-drawer>
+    <script>
+    var templates = document.getElementsByClassName("material-template");
+
+    <!-- Enables toggling of multiple drawers -->
+    for (let template of templates){
+        var button = template.getElementsByClassName('appDrawerToggleButton')[0];
+        button.drawer = template.getElementsByTagName("mwc-drawer")[0];
+
+        button.onclick = function(e) {
+        var button = e.target;
+        var drawer = button.drawer;
+        console.log(button)
+        console.log(drawer)
+        drawer.open = !drawer.open;
+        };
+
+        <!-- Enables displaying the bar in a notebook cell instead of full window -->
+        var bar = template.getElementsByClassName('appBar')[0];
+        bar.scrollTarget = template.getElementsByClassName('appContent')[0];
+    }
+    </script>
+    {{ embed(roots.template_css) }}
+</div>
+{% endblock %}
+
