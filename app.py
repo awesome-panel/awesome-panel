@@ -12,6 +12,7 @@ The awesome_panel.application framework provides
 - Models: Like Application, Page, Author, Tag, Progress etc.
 """
 import panel as pn
+import os
 from application import config
 from awesome_panel.application.models import Application
 from awesome_panel.application.services import Services
@@ -51,5 +52,7 @@ def view():
 if __name__.startswith("bokeh"):
     view().servable()
 else:
+    address = os.getenv("BOKEH_ADDRESS", "0.0.0.0")
     APP_ROUTES = {"": view}
-    pn.serve(APP_ROUTES, address="0.0.0.0", port=80, dev=False, title="Awesome Panel")
+    pn.serve(APP_ROUTES, port=80, dev=False, title="Awesome Panel", address=address)
+    # view().servable("Awesome Panel")
