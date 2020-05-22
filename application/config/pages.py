@@ -237,6 +237,4 @@ NON_GALLERY_PAGES = [
     RESOURCES,
 ]
 
-GALLERY_PAGES = [
-    page for page in PAGES if page not in NON_GALLERY_PAGES
-]
+GALLERY_PAGES = [page for page in PAGES if page not in NON_GALLERY_PAGES]

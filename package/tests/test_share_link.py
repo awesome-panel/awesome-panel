@@ -13,7 +13,7 @@ def test_base():
 
         @property
         def href(self,):
-            return f"test"
+            return "test"
 
     base = ShareOnTest(url=url)
     # Then

@@ -11,21 +11,26 @@ The awesome_panel.application framework provides
 - Services: Services that can be used by the Template and components. For example a progress_service
 - Models: Like Application, Page, Author, Tag, Progress etc.
 """
-import panel as pn
 import os
+
+import panel as pn
+
 from application import config
+from awesome_panel.application.components import GalleryComponent
 from awesome_panel.application.models import Application
 from awesome_panel.application.services import Services
 from awesome_panel.application.templates import MaterialTemplate
-from awesome_panel.application.components import GalleryComponent
+
 
 def view():
 
     services = Services()
 
-    gallery_pages = [page for page in config.pages.PAGES if page not in config.pages.NON_GALLERY_PAGES]
+    gallery_pages = [
+        page for page in config.pages.PAGES if page not in config.pages.NON_GALLERY_PAGES
+    ]
     gallery_page = GalleryComponent.create_gallery_component(gallery_pages, services.page_service)
-    pages = [page for page in config.pages.PAGES]
+    pages = list(config.pages.PAGES)
     pages.insert(1, gallery_page)
 
     services.page_service.set_default_page(config.pages.HOME)

@@ -6,7 +6,6 @@ import param
 
 from awesome_panel.application.templates.application_template import ApplicationTemplate
 from awesome_panel.utils import holoviews_ext
-from awesome_panel.express.fontawesome import fontawesome
 
 ROOT_PATH = pathlib.Path(__file__).parent
 HTML_PATH = ROOT_PATH / "material_template.html"
@@ -40,7 +39,6 @@ class MaterialTemplate(ApplicationTemplate):
         super().__init__(**params)
 
         holoviews_ext.disable_bokeh_logo()
-
 
         self.app_title_link_pane = pn.Param(
             self,

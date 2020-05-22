@@ -124,7 +124,7 @@ class KerasApplication(NamedTuple):
         model = self.get_model()
 
         report_progress_func(
-            f"Processing image ... ", 67,
+            "Processing image ... ", 67,
         )
         image = self.preprocess_input(image)
 
