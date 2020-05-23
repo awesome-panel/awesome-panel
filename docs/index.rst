@@ -31,6 +31,7 @@ This is the documentation of the **Awesome Panel Project** including the
 
    How to use VS Code with Panel <vscode.md>
    Tips+Tricks for creating performant Apps <performance.md>
+   Prebuilt Bokeh Model Extensions <prebuilt_bokeh_model_extensions.md>
 
 
 Indices and tables
