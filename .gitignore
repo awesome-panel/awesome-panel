@@ -107,4 +107,8 @@ src/pages/gallery/panel-examples/
 .venv2/
 tmp/
 scripts/implement_later.py
+<<<<<<< HEAD
 node_modules
+=======
+node_modules/
+>>>>>>> web-component-experiment
