@@ -1,8 +1,8 @@
-import { div, label } from "@bokehjs/core/dom"
-import * as p from "@bokehjs/core/properties"
-import { HTMLBox, HTMLBoxView } from "@bokehjs/models/layouts/html_box"
-import {ColumnDataSource} from "@bokehjs/models/sources/column_data_source"
-import { bk_input_group } from "@bokehjs/styles/widgets/inputs"
+import { div, label } from "@bokeh/bokehjs/core/dom"
+import * as p from "@bokeh/bokehjs/core/properties"
+import { HTMLBox, HTMLBoxView } from "@bokeh/bokehjs/models/layouts/html_box"
+import {ColumnDataSource} from "@bokeh/bokehjs/models/sources/column_data_source"
+import { bk_input_group } from "@bokeh/bokehjs/styles/widgets/inputs"
 
 function htmlDecode(input: string): string | null {
   var doc = new DOMParser().parseFromString(input, "text/html");

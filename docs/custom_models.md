@@ -64,3 +64,18 @@ For convenience I also added
 
 to `tsconfig.json` in order in order to use import `{ div, label } from "@bokehjs/core/dom"` like @philippjfr does in Panel.
 
+In the `index.ts` file I imported my models
+
+```ts
+import * as AwesomePanel from "./express/models/"
+export {AwesomePanel}
+
+import {register_models} from "@bokehjs/base"
+register_models(AwesomePanel as any)
+```
+
+In the `express/models/index.ts` file I exported the `WebComponent`.
+
+```ts
+export {WebComponent} from "./web_component"
+```
