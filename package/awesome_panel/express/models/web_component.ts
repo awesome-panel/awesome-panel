@@ -365,7 +365,7 @@ export class WebComponent extends HTMLBox {
     super(attrs)
   }
 
-  static __module__ = "panel.models.web_component"
+  static __module__ = "awesome_panel.express.models.web_component"
 
   static init_WebComponent(): void {
     this.prototype.default_view = WebComponentView;

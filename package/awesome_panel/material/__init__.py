@@ -1,8 +1,6 @@
 import param
 
-from awesome_panel.express.models.web_component import WebComponent as BKWebComponent
 from awesome_panel.express.pane.web_component import WebComponent
-BKWebComponent()
 
 MWC_ICONS = [
     None,
@@ -27,4 +25,6 @@ class MWCButton(WebComponent):
 
 button = MWCButton()
 import panel as pn
+import pathlib
+pn.config.js_files["awesome-panel"]="static/awesome-panel.js"
 pn.Column(button, pn.Param(button.param.clicks)).servable()

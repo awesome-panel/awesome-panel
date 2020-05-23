@@ -1,8 +1,8 @@
-import { HTMLBox, HTMLBoxView } from "models/layouts/html_box"
+import { HTMLBox, HTMLBoxView } from "@bokehjs/models/layouts/html_box"
 
-import { div } from "core/dom"
-import * as p from "core/properties"
-import { Slider } from "models/widgets/slider"
+import { div } from "@bokehjs/core/dom"
+import * as p from "@bokehjs/core/properties"
+import { Slider } from "@bokehjs/models/widgets/slider"
 
 export class CustomView extends HTMLBoxView {
     model: Custom
