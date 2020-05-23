@@ -6,6 +6,7 @@ bokeh==2.0.2
 tornado
 holoviews==1.13.2
 hvplot
+lxml
 
 # Data Engineering and Science
 pandas==0.25.2
