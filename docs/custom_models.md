@@ -51,18 +51,48 @@ with
 
 See [bokeh init issue](https://github.com/bokeh/bokeh/issues/10055).
 
-For convenience I also added
+I also replaced the `tsconfig.json` contents with
 
 ```ts
-"paths": {
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "strictBindCallApply": false,
+    "strictFunctionTypes": false,
+    "strictPropertyInitialization": false,
+    "alwaysStrict": true,
+    "noErrorTruncation": true,
+    "noEmitOnError": false,
+    "declaration": true,
+    "sourceMap": true,
+    "importHelpers": false,
+    "experimentalDecorators": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "target": "ES2017",
+    "lib": ["es2017", "dom", "dom.iterable"],
+    "baseUrl": ".",
+    "outDir": "./dist/lib",
+    "paths": {
       "@bokehjs/*": [
         "./node_modules/@bokeh/bokehjs/build/js/lib/*",
         "./node_modules/@bokeh/bokehjs/build/js/types/*"
       ]
     }
+  },
+  "include": ["./**/*.ts"]
+}
 ```
 
-to `tsconfig.json` in order in order to use import `{ div, label } from "@bokehjs/core/dom"` like @philippjfr does in Panel.
+At least including the `path` section is needed to be able to `import { div, label } from "@bokehjs/core/dom"` like @philippjfr does in Panel.
 
 In the `index.ts` file I imported my models
 
@@ -79,3 +109,17 @@ In the `express/models/index.ts` file I exported the `WebComponent`.
 ```ts
 export {WebComponent} from "./web_component"
 ```
+
+The I could `build` my extension
+
+```bash
+$ panel build
+Working directory: C:\repos\private\awesome-panel\package\awesome_panel
+Using C:\repos\private\awesome-panel\package\awesome_panel\tsconfig.json
+Compiling TypeScript (3 files)
+Linking modules
+Output written to C:\repos\private\awesome-panel\package\awesome_panel\dist
+All done.
+```
+
+The result is in the `dist` folder.
