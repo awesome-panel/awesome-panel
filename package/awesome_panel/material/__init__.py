@@ -23,8 +23,11 @@ class MWCButton(WebComponent):
     events_to_watch = param.Dict({"click": "clicks"})
     clicks = param.Integer()
 
-button = MWCButton()
+button = MWCButton(name="Click me")
 import panel as pn
 import pathlib
-pn.config.js_files["awesome-panel"]="static/awesome-panel.js"
+JS = "https://cdn.jsdelivr.net/gh/marcskovmadsen/awesome-panel@96c60e21de6d6a0e7ecc275980c55715c4bda108/assets/js/awesome-panel.min.js"
+MATERIAL = "https://cdn.jsdelivr.net/gh/marcskovmadsen/awesome-panel@be59521090b7c9d9ba5eb16e936034e412e2c86b/assets/js/mwc.bundled.js"
+pn.config.js_files["material"]=MATERIAL
+pn.config.js_files["awesome-panel"]=JS
 pn.Column(button, pn.Param(button.param.clicks)).servable()
