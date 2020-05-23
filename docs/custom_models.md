@@ -1,11 +1,11 @@
-# Bokeh Extensions
+# Prebuilt Bokeh Extensions
 
-In this document I will describe how I got **prebuilt bokeh extensions** setup
+In this document I will describe how I got **prebuilt bokeh model extensions** setup
 as a part of the awesome-panel package. I needed it temporarily while waiting for the `WebComponent` PR to be reviewed and released by Panel.
 
 Setting up prebuilt extensions using `Bokeh init --interactive` is briefly described in the Bokeh Docs. See [Bokeh Pre-built extensions](https://docs.bokeh.org/en/latest/docs/user_guide/extensions.html).
 
-I hope this description can help others who would like to create custom bokeh models for Bokeh or Panel.
+I hope this description can help others who would like to create prebuilt custom bokeh models for Bokeh or Panel.
 
 ## Steps
 
@@ -63,3 +63,4 @@ For convenience I also added
 ```
 
 to `tsconfig.json` in order in order to use import `{ div, label } from "@bokehjs/core/dom"` like @philippjfr does in Panel.
+
