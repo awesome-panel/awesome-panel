@@ -23,11 +23,16 @@ class MWCButton(WebComponent):
     events_to_watch = param.Dict({"click": "clicks"})
     clicks = param.Integer()
 
-button = MWCButton(name="Click me")
+button = MWCButton(name="Thanks Bokeh and Panel")
 import panel as pn
 import pathlib
-JS = "https://cdn.jsdelivr.net/gh/marcskovmadsen/awesome-panel@96c60e21de6d6a0e7ecc275980c55715c4bda108/assets/js/awesome-panel.min.js"
 MATERIAL = "https://cdn.jsdelivr.net/gh/marcskovmadsen/awesome-panel@be59521090b7c9d9ba5eb16e936034e412e2c86b/assets/js/mwc.bundled.js"
 pn.config.js_files["material"]=MATERIAL
-pn.config.js_files["awesome-panel"]=JS
-pn.Column(button, pn.Param(button.param.clicks)).servable()
+font_pane = pn.pane.HTML(
+    """
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet">
+    """, width=0, height=0, margin=0,
+)
+
+pn.Column(font_pane, button, pn.Param(button.param.clicks)).servable()
