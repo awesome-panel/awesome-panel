@@ -60,3 +60,17 @@ div#spinner {
 #socialmenu {
     z-index: 101;
 }
+.id-page-selection select.bk-input, .id-page-selection select.bk-input:focus{
+    background: green;
+    color: white;
+    font: roboto;
+    font-size: 14px;
+    font-weight: 500;
+    border-color: lightgrey;
+    text-transform: uppercase;
+}
+.id-page-selection option, .id-page-selection option:focus{
+    background: white;
+    color: black;
+}
+

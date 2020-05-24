@@ -1,4 +1,5 @@
-"""Implementation of the wired WebComponent"""
+"""Implementation of the WebComponent"""
+# pylint: skip-file
 import ast
 import json
 from html.parser import HTMLParser
@@ -8,12 +9,10 @@ from typing import Dict, Optional, Set
 # Or shoudl we find another solution like regex or similar?
 import lxml.html as LH
 import param
-
-from ..models import WebComponent as _BkWebComponent
 from panel.util import escape
 from panel.widgets.base import Widget
 
-
+from ..models import WebComponent as _BkWebComponent
 
 # Defines how to convert from attribute string value to parameter value
 PARAMETER_TYPE = {
@@ -292,7 +291,7 @@ class WebComponent(Widget):
         if not self.param.events_to_watch.default:
             self.param.events_to_watch.default = {}
         if not self.param.parameters_to_watch.default:
-            self.param.parameters_to_watch.default = {}
+            self.param.parameters_to_watch.default = []
         else:
             params["html"] = self._get_initial_html_from_parameters_to_watch(**params)
 
@@ -322,8 +321,8 @@ class WebComponent(Widget):
 
     def _process_param_change(self, msg):
         msg = super(WebComponent, self)._process_param_change(msg)
-        if 'innerHTML' in msg:
-            msg['innerHTML'] = escape(msg['innerHTML'])
+        if "innerHTML" in msg:
+            msg["innerHTML"] = escape(msg["innerHTML"])
         return msg
 
     def _handle_parameters_to_watch_change(self, event):
@@ -541,7 +540,7 @@ class WebComponent(Widget):
         """
         parameter_item = self.param[parameter]
 
-        if value is None or value=="":
+        if value is None or value == "":
             return value
         if isinstance(parameter_item, param.Boolean):
             if value == True:
@@ -604,7 +603,6 @@ class WebComponent(Widget):
             old_value = getattr(self, parameter)
             if old_value != new_value:
                 setattr(self, parameter, new_value)
-
 
     def _handle_events_count_last_change(self, event):
         if not self.events_to_watch or not event.new:

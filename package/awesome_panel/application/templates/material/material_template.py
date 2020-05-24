@@ -4,6 +4,7 @@ import pathlib
 import panel as pn
 import param
 
+from awesome_panel.express.components import material
 from awesome_panel.application.templates.application_template import ApplicationTemplate
 from awesome_panel.utils import holoviews_ext
 
@@ -43,12 +44,20 @@ class MaterialTemplate(ApplicationTemplate):
         self.app_title_link_pane = pn.Param(
             self,
             parameters=["select_title_page"],
-            show_name=False,
-            show_labels=False,
+            widgets={"select_title_page": material.MWCButton},
+            width=175,
             sizing_mode="fixed",
+            show_name=False,
         )
         self.app_title_page_pane = pn.Param(
             self.services.page_service.param.page,
+            widgets={
+                "page": {
+                    "type": pn.widgets.Select,
+                    "css_classes": ["id-page-selection"],
+                    "height": 36,
+                }
+            },
             expand_button=False,
             show_labels=False,
             sizing_mode="fixed",
