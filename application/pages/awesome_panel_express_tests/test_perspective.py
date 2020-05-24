@@ -17,7 +17,7 @@ Go to GitHub and upvote
 
 - [Panel Feature 1107](https://github.com/holoviz/panel/issues/1107) and
 [Perspective Feature 942](https://github.com/finos/perspective/issues/942) if you want Perspective
-included in Panel
+included in Panel.
 - [Panel PR 1261](https://github.com/holoviz/panel/pull/1261) if you want an example notebook
 added to the Panel gallery.
 
@@ -100,6 +100,7 @@ def create_app(**params) -> pn.Column:
             margin=0,
             background=DARK_BACKGROUND,
         ),
+        pn.layout.HSpacer(height=50),
         **params
     )
 
