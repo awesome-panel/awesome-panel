@@ -113,6 +113,14 @@ YAHOO_QUERY = Page(
     author=authors.MARC_SKOV_MADSEN,
     show_loading_page=True,
 )
+MATERIAL_COMPONENTS = Page(
+    name="Material Components",
+    source_code_url=GITHUB_PAGE_URL + "dataexplorer_loading/dataexplorer_loading.py",
+    thumbnail_png_url=THUMBNAILS_ROOT + "dataexplorer_loading.png",
+    tags=[tags.CODE, tags.APP_IN_GALLERY,],
+    component=pages.test_material,
+    author=authors.MARC_SKOV_MADSEN,
+)
 TEST_BOOTSTRAP_ALERTS = Page(
     name="Test Bootstrap Alerts",
     source_code_url=GITHUB_PAGE_URL + "awesome_panel_express_tests/test_bootstrap_alerts.py",
@@ -213,6 +221,7 @@ PAGES = [
     DATA_EXPLORER,
     IMAGE_CLASSIFIER,
     KICKSTARTER_DASHBOARD,
+    MATERIAL_COMPONENTS,
     OWID_CHOROPLETH_MAP,
     PARAM_REFERENCE_EXAMPLE,
     YAHOO_QUERY,

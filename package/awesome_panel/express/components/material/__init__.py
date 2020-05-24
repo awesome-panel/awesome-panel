@@ -6,13 +6,23 @@ from awesome_panel.express.pane.web_component import WebComponent
 
 from .config import FONTS_HTML, MWC_ICONS, MWC_JS
 
+MWC_SLIDER_HTML = """
+<mwc-slider
+    step="5"
+    pin
+    markers
+    max="50"
+    value="10">
+</mwc-slider>
+"""
+
 
 def fonts_pane():
     """HTML pane containing the `link` imports for the Roboto font and the Material Icons"""
     return pn.pane.HTML(FONTS_HTML, width=0, height=0, margin=0, sizing_mode="fixed")
 
 
-class MWCButton(WebComponent): # pylint: disable=abstract-method
+class MWCButton(WebComponent):  # pylint: disable=abstract-method
     """Implementation of mwc-button
 
     Set the `name` to set the text shown to the user
@@ -20,6 +30,7 @@ class MWCButton(WebComponent): # pylint: disable=abstract-method
 
     Set `unelevated` or `raised` to change the style
     """
+
     html = param.String("<mwc-button style='width:100%'></mwc-button")
     attributes_to_watch = param.Dict(
         {"label": "name", "icon": "icon", "raised": "raised", "unelevated": "unelevated"}
@@ -106,8 +117,16 @@ class MWCSelect(WebComponent):
         if self._index == "":
             self.value = None
         elif isinstance(self.options, list):
-            self.value = self.options[int(self._index)] # pylint: disable=unsubscriptable-object
+            self.value = self.options[int(self._index)]  # pylint: disable=unsubscriptable-object
         elif isinstance(self.options, dict):
             self.value = list(self.options)[int(self._index)]
         else:
             self.value = None
+
+
+class MWCSlider(WebComponent):
+    html = param.String(MWC_SLIDER_HTML)
+    properties_to_watch = param.Dict({"value": "value"})
+
+    value = param.Integer(default=10, bounds=(0, 50), step=5)
+    height = param.Integer(default=50)
