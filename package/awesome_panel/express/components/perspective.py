@@ -101,8 +101,7 @@ class PerspectiveViewer(WebComponent):  # pylint: disable=abstract-method
     html = param.String(
         """
     <perspective-viewer class='perspective-viewer-material-dark' \
-style="height:100%;width:100%"></perspective-viewer>
-    """
+style="height:100%;width:100%"></perspective-viewer>"""
     )
     attributes_to_watch = param.Dict(
         {
