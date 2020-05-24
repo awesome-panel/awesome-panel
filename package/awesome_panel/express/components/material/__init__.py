@@ -5,6 +5,7 @@ import param
 from awesome_panel.express.pane.web_component import WebComponent
 
 from .config import FONTS_HTML, MWC_ICONS, MWC_JS
+# pylint: disable=abstract-method
 
 MWC_SLIDER_HTML = """
 <mwc-slider
@@ -22,7 +23,7 @@ def fonts_pane():
     return pn.pane.HTML(FONTS_HTML, width=0, height=0, margin=0, sizing_mode="fixed")
 
 
-class MWCButton(WebComponent):  # pylint: disable=abstract-method
+class MWCButton(WebComponent):
     """Implementation of mwc-button
 
     Set the `name` to set the text shown to the user
@@ -125,6 +126,10 @@ class MWCSelect(WebComponent):
 
 
 class MWCSlider(WebComponent):
+    """Implementation of mwc-slider
+
+    You can change the behaviour by changning the `bounds` and `step` value.
+    """
     html = param.String(MWC_SLIDER_HTML)
     properties_to_watch = param.Dict({"value": "value"})
 
