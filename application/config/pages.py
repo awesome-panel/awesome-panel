@@ -188,9 +188,9 @@ TEST_MATERIAL = Page(
     author=authors.MARC_SKOV_MADSEN,
 )
 TEST_PERSPECTIVE = Page(
-    name="Test Perspective Component",
-    source_code_url=GITHUB_PAGE_URL + "awesome_panel_express_tests/test_material.py",
-    thumbnail_png_url=THUMBNAILS_ROOT + "test_material_components.png",
+    name="Test Perspective Viewer",
+    source_code_url=GITHUB_PAGE_URL + "awesome_panel_express_tests/test_perspective.py",
+    thumbnail_png_url=THUMBNAILS_ROOT + "test_perspective.png",
     tags=[tags.CODE, tags.APP_IN_GALLERY,],
     component=pages.test_perspective,
     author=authors.MARC_SKOV_MADSEN,
