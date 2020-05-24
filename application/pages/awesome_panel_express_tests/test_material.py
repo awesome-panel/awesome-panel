@@ -28,7 +28,7 @@ def section(component, message=None, show_html=False):
     """
     title = "## " + str(type(component)).split(".")[4][:-2]
 
-    parameterset = set(component._child_parameters()) # pylint: disable=protected-access
+    parameterset = set(component._child_parameters())  # pylint: disable=protected-access
     if show_html:
         parameterset.add("html")
     for parameter in component.parameters_to_watch:

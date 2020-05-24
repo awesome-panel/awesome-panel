@@ -20,10 +20,11 @@ from awesome_panel.application.components import GalleryComponent
 from awesome_panel.application.models import Application
 from awesome_panel.application.services import Services
 from awesome_panel.application.templates import MaterialTemplate
+from awesome_panel.express.components.perspective import PerspectiveViewer
 
 
 def view():
-
+    PerspectiveViewer.config()
     services = Services()
 
     gallery_pages = [

@@ -4,8 +4,8 @@ This is used for development and manual testing
 """
 import panel as pn
 
-from awesome_panel.express.components import material
 from awesome_panel.designer import Designer, ReloadService
+from awesome_panel.express.components import material
 
 
 def view() -> pn.Column:
@@ -27,6 +27,7 @@ def view() -> pn.Column:
     pn.config.js_files["mwc"] = material.MWC_JS
 
     return pn.Column(designer.view, material.fonts_pane, sizing_mode="stretch_both",)
+
 
 if __name__.startswith("__main__"):
     view().show()

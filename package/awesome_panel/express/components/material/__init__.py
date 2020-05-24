@@ -5,6 +5,7 @@ import param
 from awesome_panel.express.pane.web_component import WebComponent
 
 from .config import FONTS_HTML, MWC_ICONS, MWC_JS
+
 # pylint: disable=abstract-method
 
 MWC_SLIDER_HTML = """
@@ -130,6 +131,7 @@ class MWCSlider(WebComponent):
 
     You can change the behaviour by changning the `bounds` and `step` value.
     """
+
     html = param.String(MWC_SLIDER_HTML)
     properties_to_watch = param.Dict({"value": "value"})
 

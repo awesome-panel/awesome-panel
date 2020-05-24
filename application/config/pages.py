@@ -187,6 +187,15 @@ TEST_MATERIAL = Page(
     component=pages.test_material,
     author=authors.MARC_SKOV_MADSEN,
 )
+TEST_PERSPECTIVE = Page(
+    name="Test Perspective Component",
+    source_code_url=GITHUB_PAGE_URL + "awesome_panel_express_tests/test_material.py",
+    thumbnail_png_url=THUMBNAILS_ROOT + "test_material_components.png",
+    tags=[tags.CODE, tags.APP_IN_GALLERY,],
+    component=pages.test_perspective,
+    author=authors.MARC_SKOV_MADSEN,
+    restrict_max_width=False,
+)
 TEST_PROGRESS_EXTENSION = Page(
     name="Test Progress Extension",
     source_code_url=GITHUB_PAGE_URL + "awesome_panel_express_tests/test_progress_ext.py",
@@ -233,6 +242,7 @@ PAGES = [
     TEST_HEADINGS,
     TEST_MARKDOWN,
     TEST_MATERIAL,
+    TEST_PERSPECTIVE,
     TEST_PROGRESS_EXTENSION,
     TEST_SHARE_LINKS,
     TEST_SPINNERS,

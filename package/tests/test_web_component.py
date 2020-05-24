@@ -165,12 +165,9 @@ def test_web_component_parameter_attribute_change(document, comm, CustomWebCompo
     model = component.get_root(document, comm=comm)
     assert component._models[model.ref["id"]][0] is model
     assert type(model).__name__ == "WebComponent"
-    assert (
-        model.innerHTML
-        == (
-            "&lt;div string=&quot;&quot; integer=&quot;0&quot; number=&quot;"
-            "0.0&quot;&gt;&lt;/div&gt;"
-        )
+    assert model.innerHTML == (
+        "&lt;div string=&quot;&quot; integer=&quot;0&quot; number=&quot;"
+        "0.0&quot;&gt;&lt;/div&gt;"
     )
     assert model.attributesToWatch == {
         "boolean": "boolean",

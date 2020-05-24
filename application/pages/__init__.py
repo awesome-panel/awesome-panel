@@ -10,6 +10,7 @@ from application.pages.awesome_panel_express_tests import (
     test_headings,
     test_markdown,
     test_material,
+    test_perspective,
     test_progress_ext,
     test_share_links,
     test_spinners,
