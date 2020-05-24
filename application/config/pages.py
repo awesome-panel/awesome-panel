@@ -113,14 +113,6 @@ YAHOO_QUERY = Page(
     author=authors.MARC_SKOV_MADSEN,
     show_loading_page=True,
 )
-MATERIAL_COMPONENTS = Page(
-    name="Material Components",
-    source_code_url=GITHUB_PAGE_URL + "dataexplorer_loading/dataexplorer_loading.py",
-    thumbnail_png_url=THUMBNAILS_ROOT + "dataexplorer_loading.png",
-    tags=[tags.CODE, tags.APP_IN_GALLERY,],
-    component=pages.test_material,
-    author=authors.MARC_SKOV_MADSEN,
-)
 TEST_BOOTSTRAP_ALERTS = Page(
     name="Test Bootstrap Alerts",
     source_code_url=GITHUB_PAGE_URL + "awesome_panel_express_tests/test_bootstrap_alerts.py",
@@ -187,6 +179,14 @@ TEST_MARKDOWN = Page(
     component=pages.test_markdown,
     author=authors.MARC_SKOV_MADSEN,
 )
+TEST_MATERIAL = Page(
+    name="Test Material Components",
+    source_code_url=GITHUB_PAGE_URL + "awesome_panel_express_tests/test_material.py",
+    thumbnail_png_url=THUMBNAILS_ROOT + "test_material_components.png",
+    tags=[tags.CODE, tags.APP_IN_GALLERY,],
+    component=pages.test_material,
+    author=authors.MARC_SKOV_MADSEN,
+)
 TEST_PROGRESS_EXTENSION = Page(
     name="Test Progress Extension",
     source_code_url=GITHUB_PAGE_URL + "awesome_panel_express_tests/test_progress_ext.py",
@@ -221,7 +221,6 @@ PAGES = [
     DATA_EXPLORER,
     IMAGE_CLASSIFIER,
     KICKSTARTER_DASHBOARD,
-    MATERIAL_COMPONENTS,
     OWID_CHOROPLETH_MAP,
     PARAM_REFERENCE_EXAMPLE,
     YAHOO_QUERY,
@@ -233,6 +232,7 @@ PAGES = [
     TEST_FONT_AWESOME,
     TEST_HEADINGS,
     TEST_MARKDOWN,
+    TEST_MATERIAL,
     TEST_PROGRESS_EXTENSION,
     TEST_SHARE_LINKS,
     TEST_SPINNERS,
