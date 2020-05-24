@@ -4,7 +4,7 @@ WORKDIR /app
 ADD . ./
 
 RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
-RUN panel build
+RUN panel build package/awesome_panel
 
 # Default port for Azure Web App for containers is 80
 # Please note that port and serverPort in the config.toml file
