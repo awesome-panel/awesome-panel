@@ -1,5 +1,5 @@
 """
-# Echart
+# ECharts
 
 
 [ECharts](https://www.echartsjs.com/en/index.html) is an open-sourced JavaScript
@@ -55,7 +55,7 @@ ECHARTS_HTML = """\
 
 
 class ECharts(WebComponent):  # pylint: disable=too-few-public-methods
-    """# Echart
+    """# ECharts
 
 [ECharts](https://www.echartsjs.com/en/index.html) is an open-sourced JavaScript
 visualization tool, which can run fluently on PC and mobile devices.

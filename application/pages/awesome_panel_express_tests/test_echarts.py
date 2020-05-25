@@ -1,5 +1,5 @@
 """
-# Echart
+# ECharts
 
 
 [ECharts](https://www.echartsjs.com/en/index.html) is an open-sourced JavaScript
@@ -23,14 +23,16 @@ If you would like Panel to support WebComponents and ECharts then please upvote
 [Marc Skov Madsen](https://datamodelsanalytics.com) ([awesome-panel.org](https://awesome-panel.org))
 
 **Tags:**
-[Panel](https://panel.holoviz.org/)
-[Echarts](https://www.echartsjs.com/en/index.html)
-[PyeChart](https://pyecharts.org/#/en-us/)
-[Pane](https://panel.holoviz.org/user_guide/Components.html)
-[WebComponent](https://panel.holoviz.org/reference/panes/WebComponent.html)
+[Panel](https://panel.holoviz.org/),
+[Echarts](https://www.echartsjs.com/en/index.html),
+[PyeChart](https://pyecharts.org/#/en-us/),
+[Pane](https://panel.holoviz.org/user_guide/Components.html),
+[WebComponent](https://panel.holoviz.org/reference/panes/WebComponent.html),
 [Python](https://www.python.org/)
 
 **Resources:**
+[Code](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/\
+awesome_panel_express_tests/test_echarts.py),
 [Echarts intro Video](https://www.youtube.com/watch?v=MF34Cgk5Rp0)
 """
 

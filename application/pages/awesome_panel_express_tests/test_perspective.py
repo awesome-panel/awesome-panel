@@ -25,11 +25,13 @@ Example.
 ([awesome-panel.org](https://awesome-panel.org))
 
 **Tags:**
-[Perspective](https://github.com/finos/perspective#readme)
-[Panel](https://panel.holoviz.org/)
+[Perspective](https://github.com/finos/perspective#readme),
+[Panel](https://panel.holoviz.org/),
 [Python](https://www.python.org/)
 
 **Resources:**
+[Code](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/\
+awesome_panel_express_tests/test_perspective.py),
 [Data](https://datahub.io/core/s-and-p-500-companies-financials)
 """
 
