@@ -147,6 +147,14 @@ TEST_DATAFRAME = Page(
     component=pages.test_dataframe,
     author=authors.MARC_SKOV_MADSEN,
 )
+TEST_ECHARTS = Page(
+    name="Test ECharts",
+    source_code_url=GITHUB_PAGE_URL + "awesome_panel_express_tests/test_echarts.py",
+    thumbnail_png_url=THUMBNAILS_ROOT + "test_echarts.png",
+    tags=[tags.CODE, tags.APP_IN_GALLERY, tags.AWESOMEPANEL_EXPRESS,],
+    component=pages.test_echarts,
+    author=authors.MARC_SKOV_MADSEN,
+)
 TEST_DIVIDER = Page(
     name="Test Divider",
     source_code_url=GITHUB_PAGE_URL + "awesome_panel_express_tests/test_divider.py",

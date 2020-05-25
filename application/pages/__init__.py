@@ -6,6 +6,7 @@ from application.pages.awesome_panel_express_tests import (
     test_code,
     test_dataframe,
     test_divider,
+    test_echarts,
     test_fontawesome,
     test_headings,
     test_markdown,
