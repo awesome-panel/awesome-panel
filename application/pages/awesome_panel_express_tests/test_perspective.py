@@ -13,14 +13,13 @@ in Python.
 
 In this example we demonstrate how to use the `perspective-viewer` web component with Panel.
 
-Go to GitHub and upvote
+If you want Perspective supported in Panel, then go to GitHub and upvote
 
-- [Panel Feature 1107](https://github.com/holoviz/panel/issues/1107) and
-[Perspective Feature 942](https://github.com/finos/perspective/issues/942) if you want Perspective
-included in Panel.
-- [Panel PR 1261](https://github.com/holoviz/panel/pull/1261) if you want an example notebook
-added to the Panel gallery.
-
+- [Panel Feature 1107](https://github.com/holoviz/panel/issues/1107): Add Perspective widget.
+- [Perspective Feature 942](https://github.com/finos/perspective/issues/942): Enable Perspective in
+Panel.
+- [Panel PR 1261](https://github.com/holoviz/panel/pull/1261): Perspective-Viewer WebComponent
+Example.
 
 **Author:** [Marc Skov Madsen](https://datamodelanalytics.com)
 ([awesome-panel.org](https://awesome-panel.org))
@@ -30,8 +29,8 @@ added to the Panel gallery.
 [Panel](https://panel.holoviz.org/)
 [Python](https://www.python.org/)
 
-**Data:**
-[Source](https://datahub.io/core/s-and-p-500-companies-financials)
+**Resources:**
+[Data](https://datahub.io/core/s-and-p-500-companies-financials)
 """
 
 import pathlib

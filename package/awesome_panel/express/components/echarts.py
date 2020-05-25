@@ -13,12 +13,6 @@ including Standalone, Flask, Django and Jupyter Notebooks.
 Below we develop an `ECharts` pane capable of showing Echarts dicts and Pyecharts objects
 **enabling us to develop awesome analytics apps using the power of Echarts, Panel and Python**.
 
-If you would like Panel to support WebComponents and ECharts then please upvote
-
-- [Panel FR 1133](https://github.com/holoviz/panel/issues/1133) Add support for ECharts
-- [Panel PR 1286](https://github.com/holoviz/panel/pull/1286) ECharts WebComponent Example
-- [Panel PR 1252](https://github.com/holoviz/panel/pull/1252) Add WebComponent model and component
-
 **Author:**
 [Marc Skov Madsen](https://datamodelsanalytics.com) ([awesome-panel.org](https://awesome-panel.org))
 

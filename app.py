@@ -24,7 +24,6 @@ from awesome_panel.express.components.perspective import PerspectiveViewer
 
 
 def view():
-    PerspectiveViewer.config()
     services = Services()
 
     gallery_pages = [

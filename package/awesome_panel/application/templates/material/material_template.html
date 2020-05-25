@@ -3,13 +3,22 @@
 <!-- goes in body -->
 {% block postamble %}
 <script type="module" src="https://cdn.jsdelivr.net/gh/marcskovmadsen/awesome-panel@be59521090b7c9d9ba5eb16e936034e412e2c86b/assets/js/mwc.bundled.js"></script>
-<script src="https://cdn.bootcss.com/echarts/3.7.2/echarts.min.js" async></script>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"/>
 <link rel="icon"
-      type="image/png"
-      href="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/2781d86d4ed141889d633748879a120d7d8e777a/assets/images/favicon.ico">
+type="image/png"
+href="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/2781d86d4ed141889d633748879a120d7d8e777a/assets/images/favicon.ico">
+
+<script src="https://cdn.bootcss.com/echarts/3.7.2/echarts.min.js" async></script>
+<script type="text/javascript" src="https://unpkg.com/@finos/perspective@0.4.7/dist/umd/perspective.js" async></script>
+<script type="text/javascript" src="https://unpkg.com/@finos/perspective-viewer@0.4.7/dist/umd/perspective-viewer.js" async></script>
+<script type="text/javascript" src="https://unpkg.com/@finos/perspective-viewer-datagrid@0.4.7/dist/umd/perspective-viewer-datagrid.js" async></script>
+<script type="text/javascript" src="https://unpkg.com/@finos/perspective-viewer-hypergrid@0.4.7/dist/umd/perspective-viewer-hypergrid.js" async></script>
+<script type="text/javascript" src="https://unpkg.com/@finos/perspective-viewer-d3fc@0.4.7/dist/umd/perspective-viewer-d3fc.js" async></script>
+
+<link rel="stylesheet" href="https://unpkg.com/@finos/perspective-viewer@0.4.7/dist/umd/all-themes.css" type="text/css" media="none" onload="if(media!='all')media='all'">
+
 {% endblock %}
 
 <!-- goes in body -->
