@@ -1,5 +1,5 @@
 """This example was created by as response to
-<a href=https://discourse.holoviz.org/t/how-to-show-a-loading-indication-during-computation/508"
+<a href=https://discourse.holoviz.org/t/how-to-show-a-loading-indication-during-computation/508
 target="_blank"> Discourse 508</a> <strong>How to show a loading indication during
 computation</strong>.
 """
