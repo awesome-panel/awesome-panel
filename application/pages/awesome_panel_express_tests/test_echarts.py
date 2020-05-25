@@ -30,6 +30,7 @@ Below we showcase an `ECharts` pane capable of showing Echarts dicts and Pyechar
 
 import panel as pn
 import param
+
 from awesome_panel.express.components import ECharts
 from awesome_panel.express.components.echarts import ECHART_JS_SERVER
 
@@ -38,6 +39,7 @@ BOUNDS = (0, 100)
 
 class EchartsApp(param.Parameterized):
     """An Echarts app that showcases the Echart component"""
+
     title = param.String("Awesome Panel")
     plot_type = param.ObjectSelector("bar", objects=["bar", "scatter"], label="Plot Type")
 
@@ -125,8 +127,17 @@ class EchartsApp(param.Parameterized):
         )
 
         return pn.Column(
-            pn.pane.Markdown(__doc__), top_app_bar, pn.layout.HSpacer(height=50), pn.Row(self.plot, settings_pane,),
+            pn.pane.Markdown(__doc__),
+            top_app_bar,
+            pn.layout.HSpacer(height=50),
+            pn.Row(self.plot, settings_pane,),
         )
+
+
+def view():
+    app = EchartsApp()
+    return app.view()
+
 
 if __name__.startswith("bokeh"):
     pn.config.js_files["echart"] = ECHART_JS_SERVER

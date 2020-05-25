@@ -374,10 +374,12 @@ class WebComponent(Widget):
             for example icon="favorite"
 
         """
-        raise NotImplementedError(
-            """You need to do a custom implementation of this because the parameters_to_watch list
-            is not empty"""
-        )
+        if self.parameters_to_watch:
+            raise NotImplementedError(
+                """You need to do a custom implementation of this because the parameters_to_watch list
+                is not empty"""
+            )
+        return self.html
 
     def _child_parameters(self) -> Set:
         """Returns a set of any new parameters added on self compared to WebComponent.

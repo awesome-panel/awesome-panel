@@ -13,6 +13,12 @@ including Standalone, Flask, Django and Jupyter Notebooks.
 Below we develop an `ECharts` pane capable of showing Echarts dicts and Pyecharts objects
 **enabling us to develop awesome analytics apps using the power of Echarts, Panel and Python**.
 
+If you would like Panel to support WebComponents and ECharts then please upvote
+
+- [Panel FR 1133](https://github.com/holoviz/panel/issues/1133) Add support for ECharts
+- [Panel PR 1286](https://github.com/holoviz/panel/pull/1286) ECharts WebComponent Example
+- [Panel PR 1252](https://github.com/holoviz/panel/pull/1252) Add WebComponent model and component
+
 **Author:**
 [Marc Skov Madsen](https://datamodelsanalytics.com) ([awesome-panel.org](https://awesome-panel.org))
 
@@ -21,7 +27,6 @@ Below we develop an `ECharts` pane capable of showing Echarts dicts and Pyechart
 [Echarts](https://www.echartsjs.com/en/index.html)
 [PyeChart](https://pyecharts.org/#/en-us/)
 [Pane](https://panel.holoviz.org/user_guide/Components.html)
-[WebComponent](https://panel.holoviz.org/reference/panes/WebComponent.html)
 [Python](https://www.python.org/)
 
 **Resources:**
@@ -31,8 +36,8 @@ Below we develop an `ECharts` pane capable of showing Echarts dicts and Pyechart
 import json
 import sys
 
-import panel as pn
 import param
+
 from awesome_panel.express.pane.web_component import WebComponent
 
 # Configure and import js in Notebook
@@ -54,7 +59,8 @@ ECHARTS_HTML = """\
     myDiv.after_layout = myChart.resize; // Resizes the chart after layout of parent element
 </script>"""
 
-class ECharts(WebComponent): # pylint: disable=too-few-public-methods
+
+class ECharts(WebComponent):  # pylint: disable=too-few-public-methods
     """# Echart
 
 [ECharts](https://www.echartsjs.com/en/index.html) is an open-sourced JavaScript
