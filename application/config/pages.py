@@ -195,6 +195,14 @@ TEST_MATERIAL = Page(
     component=pages.test_material,
     author=authors.MARC_SKOV_MADSEN,
 )
+TEST_MODEL_VIEWER = Page(
+    name="Test Model Viewer",
+    source_code_url=GITHUB_PAGE_URL + "awesome_panel_express_tests/test_material.py",
+    thumbnail_png_url=THUMBNAILS_ROOT + "test_material_components.png",
+    tags=[tags.CODE, tags.APP_IN_GALLERY,],
+    component=pages.test_model_viewer,
+    author=authors.MARC_SKOV_MADSEN,
+)
 TEST_PERSPECTIVE = Page(
     name="Test Perspective Viewer",
     source_code_url=GITHUB_PAGE_URL + "awesome_panel_express_tests/test_perspective.py",
@@ -251,6 +259,7 @@ PAGES = [
     TEST_HEADINGS,
     TEST_MARKDOWN,
     TEST_MATERIAL,
+    TEST_MODEL_VIEWER,
     TEST_PERSPECTIVE,
     TEST_PROGRESS_EXTENSION,
     TEST_SHARE_LINKS,
