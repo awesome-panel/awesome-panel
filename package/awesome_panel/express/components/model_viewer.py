@@ -1,8 +1,15 @@
+"""\
+## Model Viewer
+
+Google has developed the `model-viewer` web component for interactively viewing very large and
+detailed 3D models.
+"""
 import panel as pn
 import param
 
 from awesome_panel.express.pane.web_component import WebComponent
 
+# pylint: disable=line-too-long
 JS = """
 <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.2.7/webcomponents-loader.js"></script>
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
@@ -10,7 +17,7 @@ JS = """
 <script src="https://unpkg.com/resize-observer-polyfill@1.5.1/dist/ResizeObserver.js"></script>
 """
 
-HTML="""
+HTML = """
 <model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" alt="A 3D model of an astronaut"
 auto-rotate camera-controls>
 </model-viewer>
@@ -30,15 +37,16 @@ MODELS = {
     "Transparency Test": "https://modelviewer.dev/shared-assets/models/alpha-blend-litmus.glb",
     "Metal Rough Spheres": "https://modelviewer.dev/shared-assets/models/glTF-Sample-Models/2.0/MetalRoughSpheres/glTF/MetalRoughSpheres.gltf",
 }
+# pylint: disable=line-too-long
 
 SRC_DEFAULT = MODELS["Flight Helmet"]
 
 HEIGHT_DEFAULT = 600
-HEIGHT_BOUNDS = (50,1000)
+HEIGHT_BOUNDS = (50, 1000)
 WIDTH_DEFAULT = 600
-WIDTH_BOUNDS = (50,1000)
+WIDTH_BOUNDS = (50, 1000)
 
-BACKGROUND="#9E9E9E"
+BACKGROUND = "#9E9E9E"
 
 PARAMETERS = [
     "src",
@@ -49,15 +57,19 @@ PARAMETERS = [
     # "camera_controls",
 ]
 
+
 class ModelViewer(WebComponent):
     """A Wired ModelViewer"""
+
     html = param.String(HTML)
-    attributes_to_watch= param.Dict({"src": "src"})
-    properties_to_watch= param.Dict({
-        "exposure": "exposure",
-        "auto-rotate": "auto_rotate",
-        "camera-controls": "camera_controls",
-    })
+    attributes_to_watch = param.Dict({"src": "src"})
+    properties_to_watch = param.Dict(
+        {
+            "exposure": "exposure",
+            "auto-rotate": "auto_rotate",
+            "camera-controls": "camera_controls",
+        }
+    )
 
     src = param.ObjectSelector(default=SRC_DEFAULT, objects=MODELS)
     exposure = param.Number(1.0, bounds=(0, 2))
@@ -77,24 +89,25 @@ class ModelViewer(WebComponent):
 
         self._update_height_and_width()
 
-    def view(self):
-        return pn.Column(
-            self,
-            self.js_pane,
-            self.css_pane,
-            sizing_mode="stretch_both",
-        )
+    def view(self) -> pn.Column:
+        """Returns the main view of the ModelViewer
+
+        Returns:
+            pn.Column: The main view of the ModelViewer
+        """
+
+        return pn.Column(self, self.js_pane, self.css_pane, sizing_mode="stretch_both",)
 
     @param.depends("height", "width", watch=True)
     def _update_height_and_width(self):
         if self.height:
-            height=self.height
+            height = self.height
         else:
-            height=HEIGHT_DEFAULT
+            height = HEIGHT_DEFAULT
         if self.width:
-            width=self.width
+            width = self.width
         else:
-            width=WIDTH_DEFAULT
+            width = WIDTH_DEFAULT
 
         self.css_pane.object = f"""
 <style>

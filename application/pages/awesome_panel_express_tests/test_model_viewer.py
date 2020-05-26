@@ -1,7 +1,7 @@
 """\
 ## Model Viewer
 
-Google has developed a `model-viewer` web component for interactively viewing very large and
+Google has developed the `model-viewer` web component for interactively viewing very large and
 detailed 3D models.
 
 In this example we will demonstrate how to use the it in a Panel appliccation.
@@ -12,20 +12,24 @@ the parameters and models of the `model-viewer`.
 If you would like a `model-viewer` example notebook to be an integral part of the Panel gallery go
 to GitHub and upvote [PR 1281](https://github.com/holoviz/panel/pull/1281).
 
--
-
 **Author:** [Marc Skov Madsen](datamodelsanalytics.com) ([awesome-panel.org](https://awesomepanel.org))
 
+**Code**
+[Test Model Viewer]\
+(https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/\
+awesome_panel_express_tests/test_model_viewer.py),
+[ModelViewer Component](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/package/awesome_panel/\
+express/components/model_viewer.py)
+
 **Resources:**
-[modelviewer.dev](https://modelviewer.dev/).
-[examples](https://modelviewer.dev/examples/tester.html)
-[codelabs](https://codelabs.developers.google.com/codelabs/model-viewer/index.html?index=..%2F..index#0)
+[modelviewer.dev](https://modelviewer.dev/),
+[examples](https://modelviewer.dev/examples/tester.html),
+[codelabs](https://codelabs.developers.google.com/codelabs/model-viewer/index.html?index=..%2F..index#0),
 [model-viewer Github](https://github.com/google/model-viewer/tree/master/packages/model-viewer)
 
 **Tags:**
-[model-viewer](https://modelviewer.dev/)
+[model-viewer](https://modelviewer.dev/),
 [Panel](https://panel.holoviz.org/index.html)
-[Python](https://www.python.org/)
 """
 
 import panel as pn
@@ -44,7 +48,9 @@ def create_app(**params):
     top_app_bar = pn.Column(
         pn.layout.Row(
             pn.pane.HTML(MODELVIEWER_LOGO, width=50, sizing_mode="fixed"),
-            pn.pane.Markdown("## model-viewer", width=250, sizing_mode="fixed", margin=(0,5,10,5)),
+            pn.pane.Markdown(
+                "## model-viewer", width=250, sizing_mode="fixed", margin=(0, 5, 10, 5)
+            ),
             # pn.pane.HTML(PANEL_LOGO, width=75),
             sizing_mode="stretch_width",
         ),
