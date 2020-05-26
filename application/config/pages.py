@@ -197,8 +197,8 @@ TEST_MATERIAL = Page(
 )
 TEST_MODEL_VIEWER = Page(
     name="Test Model Viewer",
-    source_code_url=GITHUB_PAGE_URL + "awesome_panel_express_tests/test_material.py",
-    thumbnail_png_url=THUMBNAILS_ROOT + "test_material_components.png",
+    source_code_url=GITHUB_PAGE_URL + "awesome_panel_express_tests/test_model_viewer.py",
+    thumbnail_png_url=THUMBNAILS_ROOT + "test_model_viewer.png",
     tags=[tags.CODE, tags.APP_IN_GALLERY,],
     component=pages.test_model_viewer,
     author=authors.MARC_SKOV_MADSEN,
