@@ -1,5 +1,5 @@
 """
-# Asynchronous Jobs
+# Asynchronous Tasks
 
 When creating awesome analytics apps you sometimes wants to run jobs in the background or provide
 streaming analytics to your users.
@@ -7,17 +7,18 @@ streaming analytics to your users.
 Panel also supports these use cases as its running on top of the asynchronous web server Tornado.
 
 Below we show case how a user can start a background thread that updates a progressbar while
-the rest of the application remains responsible and usefull.
+the rest of the application remains responsive.
 
 This example is based on the discussion [Can I load data asynchronously in Panel?]\
 (https://discourse.holoviz.org/t/can-i-load-data-asynchronously-in-panel/452).
 
-**Author:**
+**Authors:**
 [Jochem Smit](https://github.com/Jhsmit), [Marc Skov Madsen](https://github.com/MarcSkovMadsen)
 
 **Code:**
-[Code](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/\
-awesome_panel_express_tests/test_echarts.py),
+[Code](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/\
+application/pages/async_tasks/async_tasks.py
+)
 
 **Resources:**
 [tornado.ioloop.IOLoop](https://www.tornadoweb.org/en/stable/ioloop.html),
