@@ -140,7 +140,7 @@ class AsyncApp(param.Parameterized):
 
     def do_calc(self, num_tasks=10):
         """Runs background tasks num_tasks times"""
-        num_tasks = 10
+        num_tasks = 20
         progress.num_tasks = num_tasks
         loop = IOLoop.current()
         for _ in range(num_tasks):
@@ -155,7 +155,7 @@ class AsyncApp(param.Parameterized):
 
     @staticmethod
     def _blocking_task():
-        time.sleep(np.random.randint(1, 5))
+        time.sleep(np.random.randint(1, 2))
         return 5
 
 
