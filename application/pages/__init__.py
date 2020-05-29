@@ -17,6 +17,7 @@ from application.pages.awesome_panel_express_tests import (
     test_progress_ext,
     test_share_links,
     test_spinners,
+    test_wired,
 )
 from application.pages.bootstrap_dashboard import bootstrap_dashboard
 from application.pages.custom_bokeh_model import custom_bokeh_model

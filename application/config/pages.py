@@ -244,6 +244,15 @@ TEST_SPINNERS = Page(
     component=pages.test_spinners,
     author=authors.MARC_SKOV_MADSEN,
 )
+TEST_WIRED = Page(
+    name="Test Wired",
+    source_code_url=GITHUB_PAGE_URL + "awesome_panel_express_tests/test_wired.py",
+    thumbnail_png_url=THUMBNAILS_ROOT + "test_wired.png",
+    tags=[tags.CODE, tags.APP_IN_GALLERY, tags.AWESOMEPANEL_EXPRESS,],
+    component=pages.test_wired,
+    author=authors.MARC_SKOV_MADSEN,
+    show_loading_page=True,
+)
 
 PAGES = [
     HOME,
@@ -273,6 +282,7 @@ PAGES = [
     TEST_PROGRESS_EXTENSION,
     TEST_SHARE_LINKS,
     TEST_SPINNERS,
+    TEST_WIRED,
     ISSUES,
 ]
 
