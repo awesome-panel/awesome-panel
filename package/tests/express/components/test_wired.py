@@ -1,11 +1,10 @@
 """Test of the wired components"""
-# pylint: disable=protected-access
+# pylint: disable=redefined-outer-name,protected-access
+# pylint: disable=missing-function-docstring,missing-module-docstring,missing-class-docstring
 import datetime as dt
 from collections import OrderedDict
 
-import pandas as pd
 import panel as pn
-import param
 import pytest
 
 from awesome_panel.express.components import wired
@@ -21,9 +20,11 @@ def test_base():
 def test_button_constructor():
     button = wired.Button()
 
+    # pylint: disable=unsupported-membership-test
     assert "disabled" in button.attributes_to_watch
     assert "elevation" in button.attributes_to_watch
     assert "name" in button.parameters_to_watch
+    # pylint: enable=unsupported-membership-test
 
     assert button.html.startswith("<wired-button")
     assert button.html.endswith("</wired-button>")
@@ -162,14 +163,20 @@ def test_icon_button():
 def test_float_slider():
     # When/ Then
     slider = wired.FloatSlider(attributes_to_watch={"value": "value"})
-    slider.html = '<wired-slider id="slider" value="40.507407407407406" knobradius="15" class="wired-rendered" style="margin: 0px"></wired-slider>'
+    slider.html = (
+        '<wired-slider id="slider" value="40.507407407407406" knobradius="15" '
+        'class="wired-rendered" style="margin: 0px"></wired-slider>'
+    )
     assert slider.value == 40.507407407407406
 
 
 def test_int_slider():
     # When/ Then
     slider = wired.IntSlider(attributes_to_watch={"value": "value"})
-    slider.html = '<wired-slider id="slider" value="2" knobradius="15" class="wired-rendered" style="margin: 0px"></wired-slider>'
+    slider.html = (
+        '<wired-slider id="slider" value="2" knobradius="15" class="wired-rendered" '
+        'style="margin: 0px"></wired-slider>'
+    )
     assert slider.value == 2
 
 
@@ -228,7 +235,10 @@ def test_searchinput():
     search.update_html_from_attributes_to_watch()
     assert (
         search.html
-        == '<wired-search-input placeholder="New Search" autocomplete="on" disabled></wired-search-input>'
+        == (
+            '<wired-search-input placeholder="New Search" autocomplete="on" '
+            'disabled></wired-search-input>'
+        )
     )
 
 
@@ -278,7 +288,7 @@ def test_toggle():
     # When/ Then
     toggle = wired.Toggle()
     assert toggle.html == "<wired-toggle></wired-toggle>"
-    assert toggle.disabled == False
+    assert toggle.disabled is False
 
 
 def test_literal_input_value_from_client():

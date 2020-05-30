@@ -2,7 +2,6 @@
 from collections import defaultdict
 from typing import Dict, List, Optional
 
-from application.config.resources import RESOURCES
 from awesome_panel.application.models import Author, Resource, Tag
 
 
@@ -62,11 +61,12 @@ def sort_resources(resources: List[Resource],) -> List[Resource]:
 
 
 def get_resources(
-    tags: List[Tag], author: Optional[Author] = None, awesome_resources_only: bool = True,
+    resources: List[Resource], tags: List[Tag], author: Optional[Author] = None, awesome_resources_only: bool = True,
 ) -> List[Resource]:
     """A list of resources
 
     Arguments:
+        resources {List[Resources]} -- The list of resources
         tags {List[Tag]} -- If non-empty then the list of Resources is reduced to
         Resources having one of the specified tags
 
@@ -79,7 +79,6 @@ def get_resources(
     Returns:
         List[Resource] -- A list of Resources
     """
-    resources = RESOURCES
     if author:
         resources = filter_by_author(resources, author,)
     if awesome_resources_only:
@@ -121,11 +120,12 @@ def to_markdown(resources: List[Resource], report_by_tag: bool = True,) -> str:
 
 
 def get_resources_markdown(
-    tags: List[Tag], author: Optional[Author] = None, awesome_resources_only: bool = True,
+    resources: List[Resource], tags: List[Tag], author: Optional[Author] = None, awesome_resources_only: bool = True,
 ) -> str:
     """A bulleted Markdown list of resources filtered as specified
 
     Arguments:
+        resources {List[Resource]} -- The list of resources
         tags {List[Tag]} -- A list of tags to filter to. If the list is empty [] then we
 do no filtering on Tags
 
@@ -137,5 +137,5 @@ then we do no filtering on author. (default: {None})
     Returns:
         str -- A bulleted Markdown list of resources filtered as specified
     """
-    resources = get_resources(tags, author, awesome_resources_only,)
+    resources = get_resources(resources, tags, author, awesome_resources_only,)
     return to_markdown(resources, not tags,)

@@ -28,26 +28,7 @@
 
 ### Code
 
-- [Bootstrap Dashboard](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/bootstrap_dashboard/main.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
-- [Custom Bokeh Model](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/custom_bokeh_model/custom.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
-- [DataExplorer - Loading...](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/dataexplorer_loading/dataexplorer_loading.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
-- [Image Classifier](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/image_classifier/image_classifier.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
-- [Kickstarter Dashboard](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/kickstarter_dashboard/main.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
-- [Owid Choropleth Map](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/owid_choropleth_map/main.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
-- [Param Reference Example](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/param_reference_example/param_reference_example.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
-- [Test Bootstrap Alerts](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/awesome_panel_express_tests/test_bootstrap_alerts.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #awesome_panel.express)
-- [Test Bootstrap Card](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/awesome_panel_express_tests/test_bootstrap_card.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #awesome_panel.express)
-- [Test Code](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/awesome_panel_express_tests/test_code.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #awesome_panel.express)
-- [Test DataFrame](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/awesome_panel_express_tests/test_dataframe.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #awesome_panel.express)
-- [Test Divider](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/awesome_panel_express_tests/test_divider.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #awesome_panel.express)
-- [Test FontAwesome](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/awesome_panel_express_tests/test_fontawesome.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #awesome_panel.express)
-- [Test Headings](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/awesome_panel_express_tests/test_headings.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #awesome_panel.express)
-- [Test Markdown](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/awesome_panel_express_tests/test_markdown.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #awesome_panel.express)
-- [Test Modal](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/awesome_panel_express_tests/test_modal.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #awesome_panel.express)
-- [Test Progress Extension](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/awesome_panel_express_tests/test_progress_ext.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #awesome_panel.express)
-- [Test Share Links](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/awesome_panel_express_tests/test_share_links.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #awesome_panel.express)
-- [Test Spinners](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/awesome_panel_express_tests/test_spinners.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #awesome_panel.express)
-- [Yahoo Query](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/src/pages/gallery/yahooquery_app/yahooquery_app.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
+- [Elvis - Golden Layout](https://github.com/LeonvanKouwen/elvis) by [Leon van Kouwen](https://github.com/LeonvanKouwen) (#Code)
 
 ### Inspiration
 
@@ -81,5 +62,3 @@
 - [Turn any Notebook into a Deployable Dashboard | SciPy 2019 | James Bednar](https://www.youtube.com/watch?v=L91rd1D6XTA&t=274s) by [James A. Bednar](https://github.com/jbednar) (#Tutorial, #Video)
 - [Turn any notebook into a deployable dashboard|PyData Berlin 2019](https://www.youtube.com/watch?v=Ohr29FJjBi0&list=PLGVZCDnMOq0pNHTYo3i56zYU-Tdw5Uguw) by [Philipp Rudiger](http://philippjfr.com/) (#Tutorial, #Video)
 - [Visualize any Data Easily, from Notebooks to Dashboards](https://www.youtube.com/watch?v=7deGS4IPAQ0&t=1326s) by [James A. Bednar](https://github.com/jbednar) (#Tutorial, #Video)
-
-<br/><br/><br/>

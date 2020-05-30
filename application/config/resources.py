@@ -3,7 +3,6 @@ them via the RESOURCES list.
 """
 from application.config import authors, tags
 from application.config.settings import THUMBNAILS_ROOT
-
 # pylint: disable=line-too-long
 from awesome_panel.application.models import Resource
 
@@ -11,9 +10,17 @@ from awesome_panel.application.models import Resource
 
 RESOURCES = [
     Resource(
+        name="Elvis - Golden Layout",
+        url="https://github.com/LeonvanKouwen/elvis",
+        thumbnail_png_path=THUMBNAILS_ROOT + "",
+        is_awesome=True,
+        tags=[tags.CODE],
+        author=authors.LEON_VAN_KOUWEN,
+    ),
+    Resource(
         name="Color Dropper App",
         url="http://colordropper.herokuapp.com/colordropper",
-        thumbnail_path=THUMBNAILS_ROOT + "",
+        thumbnail_png_path=THUMBNAILS_ROOT + "",
         is_awesome=True,
         tags=[tags.APP],
         author=authors.ANDREW_HUANG,

@@ -75,6 +75,12 @@ JUSTIN_BOIS = Author(
     github_url="https://github.com/JUSTIN_BOIS",
     github_avatar_url="https://avatars3.githubusercontent.com/u/1873517",
 )
+LEON_VAN_KOUWEN = Author(
+    name="Leon van Kouwen",
+    url="https://github.com/LeonvanKouwen",
+    github_url="https://github.com/LeonvanKouwen",
+    github_avatar_url="https://avatars3.githubusercontent.com/u/6023630",
+)
 MARC_SKOV_MADSEN = Author(
     name="Marc Skov Madsen",
     url="https://datamodelsanalytics.com",

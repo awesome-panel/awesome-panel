@@ -1,5 +1,7 @@
 """We test that new widgets like wired or material has the same parameters as the
 corresponding panel original widgets in order for them to be useable via pn.Param"""
+# pylint: disable=redefined-outer-name,protected-access
+# pylint: disable=missing-function-docstring,missing-module-docstring,missing-class-docstring
 import panel as pn
 import pytest
 
@@ -17,6 +19,7 @@ PARAMETERS_NOT_TO_TEST = {
         "callback_policy",
         "direction",
         "show_value",
+        "format",
     },
     wired.Button: {"button_type"},
     wired.IconButton: {"button_type"},
@@ -30,6 +33,7 @@ PARAMETERS_NOT_TO_TEST = {
         "callback_policy",
         "direction",
         "show_value",
+        "format",
     },
     wired.Progress: {"bar_color", "active"},
     wired.ProgressSpinner: {"max", "bar_color", "value"},
@@ -40,7 +44,7 @@ PARAMETERS_NOT_TO_TEST = {
         "time",
         "default_layout",
         "volume",
-    },  # Todo: Feature Request to Wired for these Properties
+    },
 }
 
 ORIGINAL_NEW_LIST = [
