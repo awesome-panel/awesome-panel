@@ -24,7 +24,8 @@ please file them at <wired-link href="https://github.com/marcskovmadsen/awesome-
 (<wired-link href="https://awesome-panel.org">awesome-panel.org</wired-link>)
 
 **Code**
-
+[This Page](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/awesome_panel_express_tests/test_wired.py)
+[Wired Elements](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/package/awesome_panel/express/components/wired.py)
 
 **Resources:**
 <wired-link href="https://github.com/wiredjs/wired-elements">Wired GitHub</wired-link>
