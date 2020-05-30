@@ -3,7 +3,7 @@ FROM marcskovmadsen/awesome-panel_base:latest
 WORKDIR /app
 ADD . ./
 
-RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt -f https://download.pytorch.org/whl/torch_stable.html
 RUN panel build package/awesome_panel
 
 # Default port for Azure Web App for containers is 80

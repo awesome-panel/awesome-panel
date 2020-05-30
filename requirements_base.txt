@@ -61,5 +61,5 @@ doc8 # Doc8 is an opinionated style checker for rst (with basic support for plai
 # nbsphinx # Enables you to write your documentation in Jupyter Notebooks. See https://nbsphinx.readthedocs.io/en/0.4.2/
 yahooquery==1.0.11
 pydeck==0.2.0
-torch==1.5.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
-torchvision==0.6.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
+torch==1.5.0+cpu
+torchvision==0.6.0+cpu
