@@ -17,7 +17,7 @@ I have tried to mature the implementation by
 - Cleaning up the code so that its satisfies simple code quality checks like Pylint and MyPy
 - Implementing some basic tests
 
-Please note this app is running on low end, cheap hardware which explains the low performance.
+Please note this app is running on very low end, cheap hardware which explains the low performance.
 
 **Author:**
 [Marc Skov Madsen](https://datamodelsanalytics.com)
@@ -69,10 +69,15 @@ COLORS = [
 class DETRApp(param.Parameterized):
     "A Panel App for object detection using DE:TR:"
     title = param.String("DE:TR: Object Detection App")
+
+    progress = param.Parameter()
+
     input_image_url = param.String(config.DEFAULT_URL, label="Input Image URL")
     run_detr = param.Action(label="Run DE:TR:")
     set_random_image = param.Action(label="Random Image")
+
     plot = param.Parameter()
+
     suppression_enabled = param.Boolean(config.SUPPRESSION_ENABLED, label="Enabled")
     suppression = param.Number(
         config.SUPPRESSION_DEFAULT,
@@ -82,10 +87,11 @@ class DETRApp(param.Parameterized):
     confidence = param.Number(
         config.CONFIDENCE_DEFAULT, bounds=config.CONFIDENCE_BOUNDS, label="Confidence Treshold"
     )
+
     view = param.Parameter()
 
     def __init__(self, **params):
-        params["plot"], params["view"] = self._get_view()
+        params["progress"], params["plot"], params["view"] = self._get_view()
         params["set_random_image"] = self._set_random_image
         params["run_detr"] = self._update_plot
 
@@ -94,16 +100,22 @@ class DETRApp(param.Parameterized):
         self.run_detr()  # pylint: disable=not-callable
 
     def _get_view(self):
+        style = pn.pane.HTML(config.STYLE, width=0, height=0, margin=0, sizing_mode="fixed")
+
         description = pn.pane.Markdown(__doc__)
+        progress = pn.widgets.Progress(
+            bar_color="secondary", width=285, sizing_mode="fixed", margin=(0, 5, 10, 5)
+        )
+        progress.active = False
         app_bar = pn.Row(
             pn.pane.Markdown(
                 "# " + self.title, sizing_mode="stretch_width", margin=(None, None, None, 25)
             ),
             sizing_mode="stretch_width",
-            margin=(25, 5, 25, 5),
+            margin=(25, 5, 0, 5),
             css_classes=["app-bar"],
         )
-        style = pn.pane.HTML(config.STYLE, width=0, height=0, margin=0, sizing_mode="fixed")
+
         top_selections = pn.Row(
             pn.Param(self, parameters=["input_image_url"], default_layout=pn.Row, show_name=False,),
             pn.Param(
@@ -127,8 +139,16 @@ class DETRApp(param.Parameterized):
             pn.Param(self, parameters=["suppression_enabled"], show_name=False,),
         )
         plot = pn.pane.Plotly(height=600, config={"responsive": True})
-        app_view = pn.Column(style, description, app_bar, top_selections, plot, bottom_selections)
-        return plot, app_view
+        app_view = pn.Column(
+            style,
+            description,
+            app_bar,
+            pn.Row(pn.Spacer(), progress),
+            top_selections,
+            plot,
+            bottom_selections,
+        )
+        return progress, plot, app_view
 
     def _set_random_image(self, _=None):
         urls = config.RANDOM_URLS
@@ -141,12 +161,14 @@ class DETRApp(param.Parameterized):
         self._update_plot()
 
     def _update_plot(self, _=None):
+        self.progress.active = True
         self.plot.object = get_figure(
             apply_nms=self.suppression_enabled,
             iou=self.suppression,
             confidence=self.confidence,
             url=self.input_image_url,
         )
+        self.progress.active = False
 
 
 def view():
@@ -227,7 +249,7 @@ def _pil_to_fig(image: Image, showlegend=False, title: Optional[str] = None) -> 
     return fig
 
 
-def _add_bbox( # pylint: disable=too-many-arguments
+def _add_bbox(  # pylint: disable=too-many-arguments
     fig,
     xx0,
     yy0,
