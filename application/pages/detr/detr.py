@@ -17,6 +17,8 @@ I have tried to mature the implementation by
 - Cleaning up the code so that its satisfies simple code quality checks like Pylint and MyPy
 - Implementing some basic tests
 
+Please note this app is running on low end, cheap hardware which explains the low performance.
+
 **Author:**
 [Marc Skov Madsen](https://datamodelsanalytics.com)
 
