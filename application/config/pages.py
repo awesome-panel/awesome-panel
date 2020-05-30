@@ -79,9 +79,9 @@ DATA_EXPLORER = Page(
     author=authors.MARC_SKOV_MADSEN,
 )
 DETR = Page(
-    name="DE:TR:",
+    name="DE:TR: Object Detection",
     source_code_url=GITHUB_PAGE_URL + "detr/detr.py",
-    thumbnail_png_url=THUMBNAILS_ROOT + "dataexplorer_loading.png",
+    thumbnail_png_url=THUMBNAILS_ROOT + "detr.png",
     tags=[tags.CODE, tags.APP_IN_GALLERY,],
     component=pages.detr,
     author=authors.MARC_SKOV_MADSEN,
