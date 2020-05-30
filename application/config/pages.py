@@ -85,6 +85,7 @@ DETR = Page(
     tags=[tags.CODE, tags.APP_IN_GALLERY,],
     component=pages.detr,
     author=authors.MARC_SKOV_MADSEN,
+    show_loading_page=True,
 )
 IMAGE_CLASSIFIER = Page(
     name="Image Classifier",
