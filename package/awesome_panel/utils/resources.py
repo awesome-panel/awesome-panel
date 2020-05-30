@@ -61,7 +61,10 @@ def sort_resources(resources: List[Resource],) -> List[Resource]:
 
 
 def get_resources(
-    resources: List[Resource], tags: List[Tag], author: Optional[Author] = None, awesome_resources_only: bool = True,
+    resources: List[Resource],
+    tags: List[Tag],
+    author: Optional[Author] = None,
+    awesome_resources_only: bool = True,
 ) -> List[Resource]:
     """A list of resources
 
@@ -120,7 +123,10 @@ def to_markdown(resources: List[Resource], report_by_tag: bool = True,) -> str:
 
 
 def get_resources_markdown(
-    resources: List[Resource], tags: List[Tag], author: Optional[Author] = None, awesome_resources_only: bool = True,
+    resources: List[Resource],
+    tags: List[Tag],
+    author: Optional[Author] = None,
+    awesome_resources_only: bool = True,
 ) -> str:
     """A bulleted Markdown list of resources filtered as specified
 
