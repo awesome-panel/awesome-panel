@@ -21,7 +21,14 @@ I have tried to mature the implementation by
 [Marc Skov Madsen](https://datamodelsanalytics.com)
 
 **Code:**
+[App]\
+(https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/detr/detr.py),
+[Tests]\
+(https://github.com/MarcSkovMadsen/awesome-panel/blob/master/tests/application/detr/test_detr.py)
 
+**Resources:**
+[Dash DE:TR: Demo]\
+(https://dash-gallery.plotly.host/dash-detr/)
 
 **Tags:**
 [Panel](https://panel.holoviz.org/),
