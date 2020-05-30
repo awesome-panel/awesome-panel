@@ -241,7 +241,7 @@ On windows please manually install the geopandas requirements as described in [u
 Then you should install the local requirements
 
 ```bash
-pip install -r requirements_local.txt
+pip install -r requirements_local.txt -f https://download.pytorch.org/whl/torch_stable.html
 ```
 
 ##### or via Anaconda
