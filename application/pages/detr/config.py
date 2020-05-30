@@ -1,3 +1,4 @@
+"""Settings and configuration for DE:TR: app"""
 # Source: https://github.com/plotly/dash-detr/blob/master/random_urls.txt
 RANDOM_URLS = [
     "http://farm5.staticflickr.com/4115/4808627642_46feddf8c3_z.jpg",
