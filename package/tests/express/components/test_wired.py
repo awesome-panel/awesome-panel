@@ -233,12 +233,9 @@ def test_searchinput():
     search.autocomplete = "on"
     assert search.attributes_last_change == {"autocomplete": "on"}
     search.update_html_from_attributes_to_watch()
-    assert (
-        search.html
-        == (
-            '<wired-search-input placeholder="New Search" autocomplete="on" '
-            'disabled></wired-search-input>'
-        )
+    assert search.html == (
+        '<wired-search-input placeholder="New Search" autocomplete="on" '
+        "disabled></wired-search-input>"
     )
 
 

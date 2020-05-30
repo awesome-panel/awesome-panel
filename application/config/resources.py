@@ -3,6 +3,7 @@ them via the RESOURCES list.
 """
 from application.config import authors, tags
 from application.config.settings import THUMBNAILS_ROOT
+
 # pylint: disable=line-too-long
 from awesome_panel.application.models import Resource
 

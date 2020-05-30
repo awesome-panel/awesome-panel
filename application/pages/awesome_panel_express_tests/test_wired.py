@@ -55,14 +55,14 @@ import param
 from awesome_panel.express.components import wired
 
 
-def test_wired_view(): # pylint: disable=too-many-locals
+def test_wired_view():  # pylint: disable=too-many-locals
     """Returns a column with all the wired elements"""
     show_html = False
 
     def section(component, message=None, show_html=show_html):
         title = "## " + str(type(component)).split(".")[4][:-2]
 
-        parameterset = set(component._child_parameters()) # pylint: disable=protected-access
+        parameterset = set(component._child_parameters())  # pylint: disable=protected-access
         if show_html:
             parameterset.add("html")
         for parameter in component.parameters_to_watch:
@@ -152,8 +152,10 @@ or markdown text""",
 
 def test_param_view():
     """Returns a Column that showcases how to use wired elements with pn.Param"""
+
     class BaseClass(param.Parameterized):
         """Parameterized Class used to show case pn.Param and wired elements"""
+
         x = param.Parameter(default=3.14, doc="X position")
         y = param.Parameter(default="Not editable", constant=True)
         string_value = param.String(default="str", doc="A string")
@@ -174,9 +176,7 @@ def test_param_view():
 
         boolean = param.Boolean(True, doc="A sample Boolean parameter")
         color = param.Color(default="#FFFFFF")
-        date = param.Date(
-            dt.date(2017, 1, 1), bounds=wired.DATE_BOUNDS
-        )
+        date = param.Date(dt.date(2017, 1, 1), bounds=wired.DATE_BOUNDS)
         dataframe = param.DataFrame(pd.util.testing.makeDataFrame().iloc[:3])
         select_string = param.ObjectSelector(default="yellow", objects=["red", "yellow", "green"])
         select_fn = param.ObjectSelector(default=list, objects=[list, set, dict])

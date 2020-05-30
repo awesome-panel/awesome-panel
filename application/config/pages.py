@@ -6,6 +6,7 @@ Please note that all pages in the list
 application/gallery
 """
 from application import pages
+
 # from application.pages import bootstrap_dashboard, custom_bokeh_model
 from application.config import authors, tags
 from application.config.settings import GITHUB_BLOB_MASTER_URL, THUMBNAILS_ROOT
@@ -75,6 +76,14 @@ DATA_EXPLORER = Page(
     thumbnail_png_url=THUMBNAILS_ROOT + "dataexplorer_loading.png",
     tags=[tags.CODE, tags.APP_IN_GALLERY,],
     component=pages.DataExplorer,
+    author=authors.MARC_SKOV_MADSEN,
+)
+DETR = Page(
+    name="DE:TR:",
+    source_code_url=GITHUB_PAGE_URL + "detr/detr.py",
+    thumbnail_png_url=THUMBNAILS_ROOT + "dataexplorer_loading.png",
+    tags=[tags.CODE, tags.APP_IN_GALLERY,],
+    component=pages.detr,
     author=authors.MARC_SKOV_MADSEN,
 )
 IMAGE_CLASSIFIER = Page(
@@ -261,6 +270,7 @@ PAGES = [
     BOOTSTRAP_DASHBOARD,
     CUSTOM_BOKEH_MODEL,
     DATA_EXPLORER,
+    DETR,
     IMAGE_CLASSIFIER,
     KICKSTARTER_DASHBOARD,
     OWID_CHOROPLETH_MAP,

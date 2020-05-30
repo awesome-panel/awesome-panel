@@ -38,13 +38,7 @@ PARAMETERS_NOT_TO_TEST = {
     wired.Progress: {"bar_color", "active"},
     wired.ProgressSpinner: {"max", "bar_color", "value"},
     wired.Toggle: {"button_type"},
-    wired.Video: {
-        "paused",
-        "throttle",
-        "time",
-        "default_layout",
-        "volume",
-    },
+    wired.Video: {"paused", "throttle", "time", "default_layout", "volume",},
 }
 
 ORIGINAL_NEW_LIST = [

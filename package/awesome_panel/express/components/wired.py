@@ -72,6 +72,7 @@ class Button(WiredBase):
 
 class Checkbox(WiredBase):
     """wired-checkbox"""
+
     html = param.String("<wired-checkbox></wired-checkbox>")
     properties_to_watch = param.Dict({"checked": "value"})
     parameters_to_watch = param.List(["name"])
@@ -90,6 +91,7 @@ class Checkbox(WiredBase):
 
 class DatePicker(WiredBase):
     """wired-calendar"""
+
     component_type = param.String("inputgroup")
     html = param.String(
         '<wired-calendar initials="" role="dialog tabindex="0">Button</wired-calendar>'
@@ -179,6 +181,7 @@ class DatePicker(WiredBase):
 
 class Dialog(WebComponent):
     """wired-dialog"""
+
     html = param.String("<wired-dialog></wired-checkbox>")
     attributes_to_watch = param.Dict({"open": "is_open"})
     parameters_to_watch = param.List(["text"])
@@ -192,6 +195,7 @@ class Dialog(WebComponent):
 
 class Divider(WebComponent):
     """wired-divider"""
+
     html = param.String("<wired-divider></wired-divider>")
 
     def __init__(self, min_height=20, **params):
@@ -203,6 +207,7 @@ class Divider(WebComponent):
 
 class Fab(WiredBase):
     """wired-fab"""
+
     html = param.String("<wired-fab><mwc-icon>favorite</mwc-icon></wired-fab>")
     parameters_to_watch = param.List(["icon"])
 
@@ -227,6 +232,7 @@ class Fab(WiredBase):
 # https://github.com/wiredjs/wired-elements/issues/121#issue-573516963
 class FloatSlider(WebComponent):
     """wired-slider for floats"""
+
     component_type = param.String("inputgroup")
     html = param.String("<wired-slider style='width: 100%;height:100%'></wired-slider>")
     attributes_to_watch = param.Dict({"min": "start", "max": "end", "step": "step"})
@@ -244,6 +250,7 @@ class FloatSlider(WebComponent):
 
 class IconButton(WiredBase):
     """wired-icon-button"""
+
     html = param.String("<wired-icon-button><mwc-icon>favorite</mwc-icon><wired-icon-button>")
     parameters_to_watch = param.List(["icon"])
     events_to_watch = param.Dict(default={"click": "clicks"})
@@ -285,6 +292,7 @@ class Image(WebComponent):
 # https://github.com/wiredjs/wired-elements/issues/121#issue-573516963
 class IntSlider(FloatSlider):
     """wired-slider for int"""
+
     def __init__(self, min_height=40, **params):
         super().__init__(min_height=min_height, **params)
 
@@ -296,6 +304,7 @@ class IntSlider(FloatSlider):
 
 class Link(WebComponent):
     """wired-link"""
+
     html = param.String("<wired-link></wired-link>")
     attributes_to_watch = param.Dict({"href": "href", "target": "target"})
     parameters_to_watch = param.List(["text"])
@@ -310,6 +319,7 @@ class Link(WebComponent):
 
 class LiteralInput(WiredBase):
     """wired-input for list and dict"""
+
     component_type = param.String("inputgroup")
     html = param.String("""<wired-input style="width:100%"></wired-input>""")
     attributes_to_watch = param.Dict({"placeholder": "placeholder",})
@@ -383,6 +393,7 @@ class LiteralInput(WiredBase):
 
 class Progress(WebComponent):
     """wired-progress"""
+
     html = param.String("<wired-progress></wired-progress>")
     attributes_to_watch = param.Dict({"value": "value", "percentage": "percentage", "max": "max"})
 
@@ -421,6 +432,7 @@ class RadioButton(WebComponent):
 
 class SearchInput(WiredBase):
     """wired-search-input"""
+
     html = param.String("<wired-search-input></wired-search-input>")
     attributes_to_watch = param.Dict({"placeholder": "placeholder", "autocomplete": "autocomplete"})
     properties_to_watch = param.Dict({"textInput.value": "value"})
@@ -447,6 +459,7 @@ class SearchInput(WiredBase):
 
 class ProgressSpinner(WebComponent):
     """wired-spinnner"""
+
     html = param.String("<wired-spinner></wired-spinner>")
     attributes_to_watch = param.Dict({"spinning": "active", "duration": "duration"})
 
@@ -459,6 +472,7 @@ class ProgressSpinner(WebComponent):
 
 class TextAreaInput(WiredBase):
     """wired-textarea"""
+
     component_type = param.String("inputgroup")
     html = param.String('<wired-textarea placeholder="Enter text"></wired-textarea>')
     attributes_to_watch = param.Dict({"placeholder": "placeholder"})
@@ -498,6 +512,7 @@ class TextAreaInput(WiredBase):
 
 class TextInput(WiredBase):
     """wired-input for text"""
+
     component_type = param.String("inputgroup")
     html = param.String("""<wired-input style="width:100%;height:100%"></wired-input>""")
     attributes_to_watch = param.Dict(
@@ -532,8 +547,10 @@ class TextInput(WiredBase):
     type_ = param.ObjectSelector("", objects=["", "password"])
     value = param.String()
 
+
 class Toggle(WiredBase):
     """wired-toggle"""
+
     html = param.String("<wired-toggle></wired-toggle>")
     properties_to_watch = param.Dict({"checked": "value"})
     events_to_watch = param.Dict({"change": None})
@@ -546,6 +563,7 @@ class Toggle(WiredBase):
 
 class Select(WebComponent):
     """wired-combo"""
+
     component_type = param.String("inputgroup")
     html = param.String("""<wired-combo></wired-combo>""")
     properties_to_watch = param.Dict({"selected": "value"})
@@ -589,6 +607,7 @@ class Select(WebComponent):
 
 class Video(WebComponent):
     """wired-video"""
+
     html = param.String(
         """<wired-video autoplay="" playsinline="" muted="" loop="" style="height: 80%;"\
 src="https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_480_1_5MG.mp4">\
