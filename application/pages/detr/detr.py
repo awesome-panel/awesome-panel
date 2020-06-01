@@ -129,6 +129,24 @@ class DETRApp(param.Parameterized):
                 sizing_mode="fixed",
             ),
         )
+        top_selections = pn.Row(
+            pn.Param(
+                self,
+                parameters=["input_image_url", "run_detr", "set_random_image"],
+                widgets={
+                    "set_random_image": {
+                        "button_type": "success",
+                        "align": "end",
+                        "width": 125,
+                        "sizing_mode": "fixed",
+                    },
+                    "run_detr": {"align": "end", "width": 125, "sizing_mode": "fixed"},
+                },
+                default_layout=pn.Row,
+                show_name=False,
+                width=900,
+            )
+        )
         bottom_selections = pn.Column(
             pn.Param(
                 self,
