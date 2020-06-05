@@ -31,8 +31,7 @@ import json
 import sys
 
 import param
-
-from awesome_panel.express.pane.web_component import WebComponent
+from panel.widgets import WebComponent
 
 # Configure and import js in Notebook
 ECHART_JS_NOTEBOOK = "https://pyecharts.github.io/jupyter-echarts/echarts/echarts.min.js"

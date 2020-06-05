@@ -5,7 +5,8 @@ from awesome_panel.express.pane._headings import Header, SubHeader, Title
 from awesome_panel.express.pane.panes import Code
 from awesome_panel.express.pane.pydeck import PyDeck
 from awesome_panel.express.widgets.browserurl import BrowserUrlMixin
-from awesome_panel.express.widgets.navigation import NavigationButton, NavigationMenu
+from awesome_panel.express.widgets.navigation import (NavigationButton,
+                                                      NavigationMenu)
 from awesome_panel.express.widgets.progress_ext import ProgressExt
 
 from .bootstrap.cards.cards import Card

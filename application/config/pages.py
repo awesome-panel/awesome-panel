@@ -6,7 +6,6 @@ Please note that all pages in the list
 application/gallery
 """
 from application import pages
-
 # from application.pages import bootstrap_dashboard, custom_bokeh_model
 from application.config import authors, tags
 from application.config.settings import GITHUB_BLOB_MASTER_URL, THUMBNAILS_ROOT

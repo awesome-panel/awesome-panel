@@ -2,8 +2,10 @@
 # pylint: disable=missing-function-docstring,missing-module-docstring,missing-class-docstring
 import panel as pn
 
-from awesome_panel.application.components.gallery_component import GalleryComponent
-from awesome_panel.application.components.gallery_page_component import GalleryPageComponent
+from awesome_panel.application.components.gallery_component import \
+    GalleryComponent
+from awesome_panel.application.components.gallery_page_component import \
+    GalleryPageComponent
 from awesome_panel.application.models import Author, Page, Tag
 from awesome_panel.designer import Designer, ReloadService
 

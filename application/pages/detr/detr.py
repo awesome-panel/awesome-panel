@@ -49,7 +49,8 @@ import requests
 from PIL import Image
 
 from application.pages.detr import config
-from application.pages.detr.model import CLASSES, DEVICE, detect, detr, filter_boxes, transform
+from application.pages.detr.model import (CLASSES, DEVICE, detect, detr,
+                                          filter_boxes, transform)
 
 # colors for visualization
 COLORS = [

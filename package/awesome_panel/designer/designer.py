@@ -19,7 +19,9 @@ import panel as pn
 import param
 
 from awesome_panel.designer import config
-from awesome_panel.designer.components import CenteredComponent, StoppedComponent, TitleComponent
+from awesome_panel.designer.components import (CenteredComponent,
+                                               StoppedComponent,
+                                               TitleComponent)
 from awesome_panel.designer.services import ReloadService
 from awesome_panel.designer.views import ErrorView
 
@@ -203,7 +205,7 @@ if __name__.startswith("__main__") or __name__.startswith("bokeh"):
         if self.reload_service_.component_instance:
             self.settings_pane.object = self.reload_service_.component_instance
 
-            if isinstance(self.reload_service_.component_instance, pn.layout.Reactive):
+            if isinstance(self.reload_service_.component_instance, pn.reactive.Reactive):
                 component_view = self.reload_service_.component_instance
             elif hasattr(self.reload_service_.component_instance, "view"):
                 component_view = self.reload_service_.component_instance.view

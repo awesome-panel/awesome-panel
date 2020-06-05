@@ -6,11 +6,9 @@ import pathlib
 import panel as pn
 import param
 
-from awesome_panel.application.components import (
-    LoadingPageComponent,
-    PageComponent,
-    ProgressSpinnerComponent,
-)
+from awesome_panel.application.components import (LoadingPageComponent,
+                                                  PageComponent,
+                                                  ProgressSpinnerComponent)
 from awesome_panel.application.models import Application
 from awesome_panel.application.services import Services
 
@@ -105,9 +103,9 @@ class ApplicationTemplate(pn.Template):
             instance = PageComponent.create(page.component)
             self._page_instances[page] = instance
 
-            if instance.main and not isinstance(instance.main, pn.layout.Reactive):
+            if instance.main and not isinstance(instance.main, pn.reactive.Reactive):
                 instance.main = pn.panel(instance.main)
-            if instance.sidebar and not isinstance(instance.sidebar, pn.layout.Reactive):
+            if instance.sidebar and not isinstance(instance.sidebar, pn.reactive.Reactive):
                 instance.sidebar = pn.panel(instance.sidebar)
 
             if instance.main and self.services.page_service.page.restrict_max_width:

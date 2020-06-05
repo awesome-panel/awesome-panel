@@ -5,9 +5,9 @@ import json
 from typing import Optional
 
 import param
+from panel.widgets import WebComponent
 
 from awesome_panel.express.components.material import MWC_ICONS
-from awesome_panel.express.pane.web_component import WebComponent
 
 # @Philippfr. Should we load the full bundle or individual bundles?
 # @Philippfr. How should users load the js pn.extions("wired") or?

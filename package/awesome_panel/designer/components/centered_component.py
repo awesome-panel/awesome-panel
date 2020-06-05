@@ -31,7 +31,7 @@ class CenteredComponent(pn.Column):
             return
 
         component = self.component
-        if isinstance(component, pn.layout.Reactive):
+        if isinstance(component, pn.reactive.Reactive):
             main_content = component
         elif hasattr(component, "view") and component.view:
             main_content = component.view

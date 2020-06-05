@@ -5,8 +5,7 @@ from typing import List
 import panel as pn
 import param
 from bokeh.models import ColumnDataSource
-
-from awesome_panel.express.pane.web_component import WebComponent
+from panel.widgets import WebComponent
 
 # pylint: disable=line-too-long
 JS_FILES = {

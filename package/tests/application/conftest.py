@@ -3,39 +3,21 @@
 import panel as pn
 import pytest
 
-from awesome_panel.application.components import (
-    ApplicationComponent,
-    LoadingPageComponent,
-    PageComponent,
-    PageNavigationComponent,
-    ProgressSpinnerComponent,
-)
+from awesome_panel.application.components import (ApplicationComponent,
+                                                  LoadingPageComponent,
+                                                  PageComponent,
+                                                  PageNavigationComponent,
+                                                  ProgressSpinnerComponent)
 from awesome_panel.application.models import (
-    Application,
-    Author,
-    MenuItem,
-    Message,
-    Page,
-    Progress,
-    Resource,
-    SocialLink,
-    SourceLink,
-    Tag,
-    Template,
-    Theme,
-)
+    Application, Author, MenuItem, Message, Page, Progress, Resource,
+    SocialLink, SourceLink, Tag, Template, Theme)
 from awesome_panel.application.services import (
-    AuthorService,
-    MessageService,
-    NavigationService,
-    PageService,
-    ProgressService,
-    Services,
-    TagService,
-    ThemeService,
-)
-from awesome_panel.application.templates.application_template import ApplicationTemplate
-from awesome_panel.application.templates.material.material_template import CSS_PATH, HTML_PATH
+    AuthorService, MessageService, NavigationService, PageService,
+    ProgressService, Services, TagService, ThemeService)
+from awesome_panel.application.templates.application_template import \
+    ApplicationTemplate
+from awesome_panel.application.templates.material.material_template import (
+    CSS_PATH, HTML_PATH)
 from awesome_panel.application.views import ApplicationView
 
 

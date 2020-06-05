@@ -5,7 +5,8 @@ import pathlib
 import pytest
 
 from awesome_panel.designer import Designer
-from awesome_panel.designer.components.component_with_error import ComponentWithError
+from awesome_panel.designer.components.component_with_error import \
+    ComponentWithError
 from awesome_panel.designer.services import ReloadService
 
 from .fixtures.component import Component
