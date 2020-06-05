@@ -14,6 +14,7 @@ def test_base():
     base = wired.WiredBase()
 
     assert not base.disabled
+    breakpoint()
     assert "disabled" in base._child_parameters()
 
 
