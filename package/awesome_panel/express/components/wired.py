@@ -42,8 +42,7 @@ class WiredBase(WebComponent):
         super().__init__(**params)
 
     def _child_parameters(self):
-        breakpoint()
-        parameters = super()._child_parameters()
+        parameters = set(self.param.objects()) - set(WebComponent.param.objects())
         parameters.add("disabled")
         return parameters
 

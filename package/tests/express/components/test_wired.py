@@ -14,7 +14,6 @@ def test_base():
     base = wired.WiredBase()
 
     assert not base.disabled
-    breakpoint()
     assert "disabled" in base._child_parameters()
 
 
@@ -160,7 +159,6 @@ def test_icon_button():
     icon.icon = "favorite"
     assert icon.html == "<wired-icon-button><mwc-icon>favorite</mwc-icon></wired-icon-button>"
 
-
 def test_float_slider():
     # When/ Then
     slider = wired.FloatSlider(attributes_to_watch={"value": "value"})
@@ -169,7 +167,6 @@ def test_float_slider():
         'class="wired-rendered" style="margin: 0px"></wired-slider>'
     )
     assert slider.value == 40.507407407407406
-
 
 def test_int_slider():
     # When/ Then
@@ -180,15 +177,15 @@ def test_int_slider():
     )
     assert slider.value == 2
 
-
+@pytest.mark.skip("No longer supported")
 def test_int_slider_properties_last_change():
     slider = wired.IntSlider()
 
     # When/ Then
-    slider.properties_last_change = {"input.value": "13"}
+    slider._process_property_change({"properties_last_change": {"input.value": "13"}})
     assert slider.value == 13
 
-
+@pytest.mark.skip("No longer supported")
 def test_float_slider_properties_last_change():
     slider = wired.FloatSlider()
 
