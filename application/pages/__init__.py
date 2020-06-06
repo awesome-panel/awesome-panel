@@ -28,6 +28,7 @@ from application.pages.image_classifier import image_classifier
 from application.pages.issues import issues
 from application.pages.kickstarter_dashboard import kickstarter_dashboard
 from application.pages.owid_choropleth_map import owid_choropleth_map
+from application.pages.pandas_profiling_app import pandas_profiling_app
 from application.pages.param_reference_example import param_reference_example
 from application.pages.resources import resources
 from application.pages.yahooquery_app import yahooquery_app

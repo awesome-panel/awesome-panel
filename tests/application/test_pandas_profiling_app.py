@@ -4,7 +4,7 @@
 import pandas as pd
 import pytest
 
-from application.pages.pandas_profiling_app.pandas_profiling_app import PandasProfilingApp, view
+from application.pages.pandas_profiling_app.pandas_profiling_app import Config, PandasProfilingApp
 
 
 @pytest.fixture
@@ -23,15 +23,20 @@ def app():
 
 
 def test_can_be_constructed():
-    PandasProfilingApp()
+    # When
+    app = PandasProfilingApp()
+    # Then
+    app.minimal_report = True
 
-
-def test_has_title(app):
-    assert isinstance(app.title, str)
 
 def test_has_csv_url(app):
     assert isinstance(app.csv_url, str)
     assert app.csv_url
+
+
+def test_can_configure(app):
+    assert isinstance(app.config, Config)
+
 
 def test_can_be_viewed(app):
     assert app.view
@@ -49,6 +54,7 @@ def test_can_load_data_from_url(app, csv_url):
     assert isinstance(app.dataframe, pd.DataFrame)
     assert not app.dataframe.empty
 
+
 @pytest.mark.skip("slow")
 @pytest.mark.integrationtest
 def test_can_load_random_report(app):
@@ -64,6 +70,3 @@ def test_can_load_random_report(app):
     assert not app.dataframe.empty
     assert app.report
     assert app.html_report
-
-
-
