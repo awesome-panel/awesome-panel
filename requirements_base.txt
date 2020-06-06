@@ -63,3 +63,4 @@ yahooquery==1.0.11
 pydeck==0.2.0
 torch==1.5.0+cpu
 torchvision==0.6.0+cpu
+pandas-profiling==2.8.0
