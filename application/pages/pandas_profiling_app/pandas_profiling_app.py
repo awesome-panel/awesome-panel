@@ -1,10 +1,11 @@
 """# Pandas Profiling with Panel
 
 [Pandas Profiling](https://github.com/pandas-profiling/pandas-profiling) provides profile reports
-from Pandas DataFrames.
+from Pandas DataFrames. I hope this provides you with an impression of how this can be integrated
+in a [Panel](https://panel.holoviz.org/) context.
 
-I hope this provides you with an impression of how this can be integrated in a
-[Panel](https://panel.holoviz.org/) context.
+This app was originally created as a response to this [question on Discourse]\
+(https://discourse.holoviz.org/t/cant-display-pandas-profiling-report/760/2).
 
 This app is restricted to profile a **maximum of 200 rows** to minimize the impact on the server.
 
