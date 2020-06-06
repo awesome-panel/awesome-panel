@@ -113,6 +113,15 @@ OWID_CHOROPLETH_MAP = Page(
     author=authors.MARC_SKOV_MADSEN,
     show_loading_page=True,
 )
+PANDAS_PROFILING = Page(
+    name="Pandas Profiling",
+    source_code_url=GITHUB_PAGE_URL + "pandas_profiling_app/pandas_profiling_app.py",
+    thumbnail_png_url=THUMBNAILS_ROOT + "pandas_profiling_app.png",
+    tags=[tags.CODE, tags.APP_IN_GALLERY,],
+    component=pages.pandas_profiling_app,
+    author=authors.MARC_SKOV_MADSEN,
+    show_loading_page=False,
+)
 PARAM_REFERENCE_EXAMPLE = Page(
     name="Param Reference Example",
     source_code_url=GITHUB_PAGE_URL + "param_reference_example/param_reference_example.py",
@@ -275,6 +284,7 @@ PAGES = [
     IMAGE_CLASSIFIER,
     KICKSTARTER_DASHBOARD,
     OWID_CHOROPLETH_MAP,
+    PANDAS_PROFILING,
     PARAM_REFERENCE_EXAMPLE,
     YAHOO_QUERY,
     TEST_BOOTSTRAP_ALERTS,
