@@ -21,7 +21,6 @@ from awesome_panel.application.models import Application
 from awesome_panel.application.services import Services
 from awesome_panel.application.templates import MaterialTemplate
 
-
 def view():
     services = Services()
 

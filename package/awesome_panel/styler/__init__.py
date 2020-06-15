@@ -1,0 +1,1 @@
+from .styler import AwesomePanelStyler

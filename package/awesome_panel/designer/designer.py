@@ -379,7 +379,7 @@ if __name__.startswith("__main__") or __name__.startswith("bokeh"):
     def _show(self, _=None):
         if not self.server:
             with param.edit_constant(self):
-                self.server = self.view.show()
+                self.server = self.view.show(port=5007)
         else:
             raise NotImplementedError
 

@@ -49,7 +49,7 @@ import requests
 from PIL import Image
 
 from application.pages.detr import config
-from application.pages.detr.model import CLASSES, DEVICE, detect, detr, filter_boxes, transform
+from application.pages.detr.model import load_model, CLASSES, DEVICE, detect, detr, filter_boxes, transform
 
 # colors for visualization
 COLORS = [
@@ -91,6 +91,8 @@ class DETRApp(param.Parameterized):
     view = param.Parameter()
 
     def __init__(self, **params):
+        load_model()
+
         params["progress"], params["plot"], params["view"] = self._get_view()
         params["set_random_image"] = self._set_random_image
         params["run_detr"] = self._update_plot
