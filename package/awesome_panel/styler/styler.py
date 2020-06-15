@@ -183,7 +183,7 @@ class AwesomePanelStylerView(pn.Column):
             css_classes=["app-bar"],
         )
         self._data_pane = pn.pane.DataFrame(
-            designer.data, sizing_mode="stretch_both", margin=10, scroll=True
+            designer.data, sizing_mode="stretch_both", margin=10
         )
         self._data_container = pn.Column(
             pn.Row(pn.pane.Markdown("#### DataFrame"), sizing_mode="stretch_width", align="center"),
@@ -247,8 +247,9 @@ class AwesomePanelStylerView(pn.Column):
         )
         self.setting_tab_pane.active = 2 # HvPlot
         self._settings_pane = pn.Column(
-            pn.pane.Markdown("### Settings", align="center"),
-            designer.param.theme,
+            pn.pane.Markdown("### Theme"),
+            pn.Param(designer, parameters=["theme"], show_name=False, show_labels=False, sizing_mode="stretch_width"),
+            pn.pane.Markdown("### Style"),
             self.setting_tab_pane,
             width=400,
             sizing_mode="stretch_height",
@@ -291,7 +292,7 @@ Downloads per Month
             "Button", "Checkboxgroup", sizing_mode="stretch_width",
         )
         self._widgets_container = pn.Column(
-            pn.Row(pn.pane.Markdown("### Widgets"), align="center", sizing_mode="stretch_width"),
+            pn.Row(pn.pane.Markdown("### Widgets", sizing_mode="stretch_width", align="center"), align="center", sizing_mode="stretch_width"),
             self._widgets_tab,
             css_classes=["app-container"],
             margin=25,
@@ -299,7 +300,7 @@ Downloads per Month
             sizing_mode="stretch_width",
         )
         self._material_widgets_container = pn.Column(
-            pn.Row(pn.pane.Markdown("### Material"), align="center", sizing_mode="stretch_width"),
+            pn.Row(pn.pane.Markdown("### Material", sizing_mode="stretch_width", align="center"), align="center", sizing_mode="stretch_width"),
             self._material_widgets_tab,
             css_classes=["app-container"],
             margin=25,
