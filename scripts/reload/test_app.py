@@ -10,5 +10,5 @@ def test_app():
     component = ReloadComponent(get_component_view=get_app_view)
     component.view.show(threaded=True)
 
-
+breakpoint()
 test_app()

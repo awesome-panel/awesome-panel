@@ -8,6 +8,7 @@ from bokeh import themes
 from bokeh.themes import Theme
 import pandas as pd
 import holoviews as hv
+from awesome_panel.styler import app
 
 MATERIAL_LIGHT = "material-light"
 MATERIAL_DARK = "material-dark"
@@ -78,30 +79,58 @@ MATERIAL_DARK_JSON = {
 CSS_STYLES = {
     "None": "",
     "caliber": """
+.app-bar {
+    color:white;
+    background: green;
+    box-shadow: 5px 5px 20px #9E9E9E;
+    z-index: 50;
+}
 .app-container {
+    color:black;
+    background:white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px lightgrey;
+}
+    """,
+    "dark_minimal": """
+.app-container {
+    color:white;
+    background:black;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px lightgrey;
+}
+.app-bar {
+    color:black;
+    background:white;
+    color:white;
+    background:black;
+    z-index: 50;
+}
+    """,
+    "material-light": """
+.app-body {
+    font-family: roboto, sans-serif, Verdana;
+}
+.app-container {
+    color:black;
+    background:white;
     border-radius: 5px;
     box-shadow: 2px 2px 2px lightgrey;
 }
 .app-bar {
     color:white;
-    box-shadow: 5px 5px 20px #9E9E9E;
-    z-index: 50;
-}
-    """,
-    "material-light": """
-.app-container {
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px lightgrey;
-}
-.app-bar {
-    color:white
     font-family:roboto;
     box-shadow: 5px 5px 20px #9E9E9E;
     z-index: 50;
 }
     """,
     "material-dark": """
+.app-body {
+    font-family: roboto, sans-serif, Verdana;
+}
 .app-container {
+    color:black;
+    background:white;
     border-radius: 5px;
     box-shadow: 2px 2px 2px lightgrey;
 }
@@ -111,6 +140,8 @@ CSS_STYLES = {
 }
     """,
 }
+
+CSS_STYLES["light-minimal"] = CSS_STYLES["caliber"]
 
 MATERIAL_LIGHT_JSON = {
     "attrs": {
@@ -141,7 +172,13 @@ MATERIAL_LIGHT_JSON = {
 }
 
 KINDS = ["area", "bar", "barh", "line", "scatter", "step", "table"]
-BACKGROUND_COLORS = {"caliber": "#f2f2f2", "material-light": "#f2f2f2", "material-dark": "#f2f2f2"}
+BACKGROUND_COLORS = {
+    "caliber": "#f2f2f2",
+    "dark_minimal": "#000000",
+    "light_minimal": "#f2f2f2",
+    "material-light": "#f2f2f2",
+    "material-dark": "#f2f2f2",
+}
 
 
 class HvPlotOptions(param.Parameterized):
@@ -176,15 +213,12 @@ class AwesomePanelStylerView(pn.Column):
         self._options_pane = pn.Pane(designer.options)
         self._bar_pane = pn.Row(
             pn.pane.Markdown(
-                "## Awesome Panel - Styler", sizing_mode="stretch_width", margin=(10, 5, 10, 25)
+                "# Awesome Panel - Styler", sizing_mode="stretch_width", margin=(10, 5, 10, 25)
             ),
-            background="green",
             sizing_mode="stretch_width",
             css_classes=["app-bar"],
         )
-        self._data_pane = pn.pane.DataFrame(
-            designer.data, sizing_mode="stretch_both", margin=10
-        )
+        self._data_pane = pn.pane.DataFrame(designer.data, sizing_mode="stretch_both", margin=10)
         self._data_container = pn.Column(
             pn.Row(pn.pane.Markdown("#### DataFrame"), sizing_mode="stretch_width", align="center"),
             self._data_pane,
@@ -202,9 +236,7 @@ class AwesomePanelStylerView(pn.Column):
         self._app_settings_settings_pane = pn.Column(
             "Background", "Color", "Divider", name="Settings", sizing_mode="stretch_width",
         )
-        self._app_info_settings_pane = pn.Column(
-            name="Info", sizing_mode="stretch_width",
-        )
+        self._app_info_settings_pane = pn.Column(name="Info", sizing_mode="stretch_width",)
         self._app_bar_settings_pane = pn.Column(
             "Background", "Color", "Shadow", name="Bar", sizing_mode="stretch_width",
         )
@@ -245,10 +277,16 @@ class AwesomePanelStylerView(pn.Column):
             sizing_mode="stretch_width",
             margin=(15, 5, 10, 5),
         )
-        self.setting_tab_pane.active = 2 # HvPlot
+        self.setting_tab_pane.active = 2  # HvPlot
         self._settings_pane = pn.Column(
             pn.pane.Markdown("### Theme"),
-            pn.Param(designer, parameters=["theme"], show_name=False, show_labels=False, sizing_mode="stretch_width"),
+            pn.Param(
+                designer,
+                parameters=["theme"],
+                show_name=False,
+                show_labels=False,
+                sizing_mode="stretch_width",
+            ),
             pn.pane.Markdown("### Style"),
             self.setting_tab_pane,
             width=400,
@@ -260,7 +298,7 @@ class AwesomePanelStylerView(pn.Column):
             hv.Curve({}), sizing_mode="stretch_both", css_classes=["hvplot"], margin=10
         )
         self._plot_container = pn.Column(
-            pn.Row(pn.pane.Markdown("#### HvPlot"), sizing_mode="stretch_width", align="center"),
+            pn.Row(pn.pane.Markdown("#### HoloViews"), sizing_mode="stretch_width", align="center"),
             self._plot_pane,
             margin=25,
             sizing_mode="stretch_both",
@@ -269,21 +307,7 @@ class AwesomePanelStylerView(pn.Column):
         )
         info = []
         for i in range(0, 4):
-            info_container = pn.Column(
-                pn.pane.Markdown(
-                    """\
-#### 62.000
-
-Downloads per Month
-""",
-                    sizing_mode="stretch_width",
-                    margin=15,
-                ),
-                sizing_mode="stretch_both",
-                css_classes=["app-container"],
-                margin=25,
-                background="white",
-            )
+            info_container = app.InfoCard(value=62000, text="Downloads per month")
             info.append(info_container)
 
         self._info_row = pn.Row(*info, sizing_mode="stretch_width")
@@ -292,7 +316,11 @@ Downloads per Month
             "Button", "Checkboxgroup", sizing_mode="stretch_width",
         )
         self._widgets_container = pn.Column(
-            pn.Row(pn.pane.Markdown("### Widgets", sizing_mode="stretch_width", align="center"), align="center", sizing_mode="stretch_width"),
+            pn.Row(
+                pn.pane.Markdown("### Widgets", sizing_mode="stretch_width", align="center"),
+                align="center",
+                sizing_mode="stretch_width",
+            ),
             self._widgets_tab,
             css_classes=["app-container"],
             margin=25,
@@ -300,7 +328,11 @@ Downloads per Month
             sizing_mode="stretch_width",
         )
         self._material_widgets_container = pn.Column(
-            pn.Row(pn.pane.Markdown("### Material", sizing_mode="stretch_width", align="center"), align="center", sizing_mode="stretch_width"),
+            pn.Row(
+                pn.pane.Markdown("### Material", sizing_mode="stretch_width", align="center"),
+                align="center",
+                sizing_mode="stretch_width",
+            ),
             self._material_widgets_tab,
             css_classes=["app-container"],
             margin=25,
@@ -328,6 +360,7 @@ Downloads per Month
             pn.layout.HSpacer(height=10),
             self._main_pane,
             background=designer.background_color,
+            css_classes=["app-body"],
             **params
         )
 
