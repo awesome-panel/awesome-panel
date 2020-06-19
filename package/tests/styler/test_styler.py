@@ -76,3 +76,9 @@ def test_can_create_bokeh_themes():
     assert "light_minimal" in bokeh_themes
     assert "material-light" in bokeh_themes
     assert "material-dark" in bokeh_themes
+
+if __name__.startswith("bokeh"):
+    import pathlib
+    path = pathlib.Path.cwd() / "application/pages/kickstarter_dashboard/kickstarter-cleaned.csv"
+    data = pd.read_csv(path).sample(10)
+    AwesomePanelStyler(data=data).view.servable()
