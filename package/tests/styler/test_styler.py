@@ -76,14 +76,3 @@ def test_can_create_bokeh_themes():
     assert "light_minimal" in bokeh_themes
     assert "material-light" in bokeh_themes
     assert "material-dark" in bokeh_themes
-
-if __name__.startswith("__main__"):
-    from awesome_panel.designer import Designer, ReloadService
-    from awesome_panel.styler import app
-    import pandas as pd
-    import pathlib
-    path = pathlib.Path.cwd() / "application/pages/kickstarter_dashboard/kickstarter-cleaned.csv"
-
-    data = pd.read_csv(path).sample(10)
-    reload_service = ReloadService(component=AwesomePanelStyler, component_parameters={"data": data}, modules_to_reload=[app])
-    Designer(reload_services=[reload_service]).show()

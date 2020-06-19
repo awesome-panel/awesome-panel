@@ -9,6 +9,7 @@ from bokeh.themes import Theme
 import pandas as pd
 import holoviews as hv
 from awesome_panel.styler import app
+from awesome_panel.styler.stylers.app_styler import AppStyler
 
 MATERIAL_LIGHT = "material-light"
 MATERIAL_DARK = "material-dark"
@@ -76,73 +77,6 @@ MATERIAL_DARK_JSON = {
     }
 }
 
-CSS_STYLES = {
-    "None": "",
-    "caliber": """
-.app-bar {
-    color:white;
-    background: green;
-    box-shadow: 5px 5px 20px #9E9E9E;
-    z-index: 50;
-}
-.app-container {
-    color:black;
-    background:white;
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px lightgrey;
-}
-    """,
-    "dark_minimal": """
-.app-container {
-    color:white;
-    background:black;
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px lightgrey;
-}
-.app-bar {
-    color:black;
-    background:white;
-    color:white;
-    background:black;
-    z-index: 50;
-}
-    """,
-    "material-light": """
-.app-body {
-    font-family: roboto, sans-serif, Verdana;
-}
-.app-container {
-    color:black;
-    background:white;
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px lightgrey;
-}
-.app-bar {
-    color:white;
-    font-family:roboto;
-    box-shadow: 5px 5px 20px #9E9E9E;
-    z-index: 50;
-}
-    """,
-    "material-dark": """
-.app-body {
-    font-family: roboto, sans-serif, Verdana;
-}
-.app-container {
-    color:black;
-    background:white;
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px lightgrey;
-}
-.app-bar {
-    color:white;
-    font-family:roboto;
-}
-    """,
-}
-
-CSS_STYLES["light-minimal"] = CSS_STYLES["caliber"]
-
 MATERIAL_LIGHT_JSON = {
     "attrs": {
         "Axis": {
@@ -188,11 +122,18 @@ class HvPlotOptions(param.Parameterized):
 
 class AwesomePanelStylerView(pn.Column):
     _designer = param.Parameter()
+    _app_styler = param.Parameter()
 
     def __init__(self, designer, **params):
         self._rename["_designer"] = None
         params["_designer"] = designer
         params["sizing_mode"] = params.get("sizing_mode", "stretch_both")
+        params["css_classes"]=["app-body"]
+        params["_app_styler"]=designer.stylers[0]
+
+        super().__init__("", **params) # "" is needed to avoid exception
+
+
         self._js_pane = pn.pane.HTML(
             """\
 <script type="module" src="https://cdn.jsdelivr.net/gh/marcskovmadsen/awesome-panel@be59521090b7c9d9ba5eb16e936034e412e2c86b/assets/js/mwc.bundled.js"></script>
@@ -204,9 +145,8 @@ class AwesomePanelStylerView(pn.Column):
             margin=0,
             sizing_mode="fixed",
         )
-        self._css_pane = pn.pane.HTML(
-            "<style>" + designer.css + "</style>", width=0, height=0, margin=0, sizing_mode="fixed"
-        )
+        self._app_styler = designer.stylers[0]
+        self._css_pane = self._app_styler.css_pane
 
         self._progress_widget = pn.widgets.Progress()
         # self._curve_pane = pn.Param()
@@ -240,18 +180,7 @@ class AwesomePanelStylerView(pn.Column):
         self._app_bar_settings_pane = pn.Column(
             "Background", "Color", "Shadow", name="Bar", sizing_mode="stretch_width",
         )
-        self._app_settings_pane = pn.Column(
-            designer.param.background_color,
-            pn.Tabs(
-                self._app_bar_settings_pane,
-                self._app_container_settings_pane,
-                self._app_info_settings_pane,
-                self._app_settings_settings_pane,
-                sizing_mode="stretch_width",
-            ),
-            name="App",
-            sizing_mode="stretch_width",
-        )
+        self._app_settings_pane = self._app_styler.view
         self._hvplot_settings_pane = pn.Column(
             designer.param.kind,
             # self._curve_pane,
@@ -353,35 +282,18 @@ class AwesomePanelStylerView(pn.Column):
             sizing_mode="stretch_both",
         )
 
-        super().__init__(
+        self[:]=[
             self._js_pane,
             self._css_pane,
             self._bar_pane,
             pn.layout.HSpacer(height=10),
             self._main_pane,
-            background=designer.background_color,
-            css_classes=["app-body"],
-            **params
-        )
-
-    @param.depends("_designer.background_color", watch=True)
-    def _update_background_color(self):
-        self.background = self._designer.background_color
-
-    @param.depends("_designer.active", watch=True)
-    def _update_progress(self):
-        print("view: update progress")
-        self._progress_widget.active = self._designer.active
+        ]
 
     @param.depends("_designer.plot", watch=True)
     def _update_plot(self):
         print("view: update plot")
         self._plot_pane.object = self._designer.plot
-
-    @param.depends("_designer.css", watch=True)
-    def _update_css(self):
-        self._css_pane.object = "<style>" + self._designer.css + "</style>"
-
 
 class AwesomePanelStyler(param.Parameterized):
     data = param.DataFrame()
@@ -397,6 +309,7 @@ class AwesomePanelStyler(param.Parameterized):
     update_plot = param.Action(label="UPDATE")
 
     view = param.ClassSelector(class_=pn.layout.Reactive)
+    stylers = param.List()
 
     def __init__(self, **params):
         default_data = pd.DataFrame()
@@ -409,6 +322,7 @@ class AwesomePanelStyler(param.Parameterized):
 
         params["options"] = params.get("options", HvPlotOptions())
         params["update_plot"] = self._update_plot
+        params["stylers"] = [AppStyler()]
 
         super().__init__(**params)
 
@@ -434,7 +348,6 @@ class AwesomePanelStyler(param.Parameterized):
         hv.renderer("bokeh").theme = Theme(json=self.custom_theme)
         if self.options.x and self.options.x in self.data.columns:
             self.data = self.data.sort_values(self.options.x)
-        self.css = CSS_STYLES.get(self.theme, "")
         self.background_color = BACKGROUND_COLORS.get(self.theme, WHITE)
         self.plot = self.data.hvplot(
             x=self.options.x,
@@ -449,3 +362,6 @@ class AwesomePanelStyler(param.Parameterized):
     @param.depends("theme", watch=True)
     def _update_custom_theme(self):
         self.custom_theme = self.get_bokeh_themes()[self.theme]
+        for styler in self.stylers:
+            styler.apply_theme(self.theme)
+        print("end change theme")
