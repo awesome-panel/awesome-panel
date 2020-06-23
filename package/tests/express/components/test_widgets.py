@@ -80,7 +80,7 @@ def get_original_new_parameter_list():
 
 
 @pytest.mark.parametrize(["original", "new", "parameter"], get_original_new_parameter_list())
-def test_original_and_new_widget_have_save_parameters(original, new, parameter):
+def test_original_and_new_widget_have_same_parameters(original, new, parameter):
     """The purpose of this test is to test that new (new) widgets can be used as drop in
     replacements for the original (original) Panel widgets"""
     assert hasattr(new, parameter), parameter

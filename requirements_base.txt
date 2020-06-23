@@ -1,11 +1,11 @@
 # Panel. We use github version because of
 # - https://github.com/holoviz/panel/issues/883
 # - https://github.com/holoviz/panel/pull/867
-panel==0.9.5
-bokeh==2.0.2
+panel==0.9.6
+bokeh==2.1
 tornado
 holoviews==1.13.2
-hvplot
+hvplot==0.6.0
 lxml
 
 # Data Engineering and Science

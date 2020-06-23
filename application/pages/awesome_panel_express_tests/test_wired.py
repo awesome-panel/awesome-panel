@@ -51,6 +51,7 @@ import datetime as dt
 import pandas as pd
 import panel as pn
 import param
+import pytest
 
 from awesome_panel.express.components import wired
 
@@ -149,7 +150,7 @@ or markdown text""",
         name="Elements",
     )
 
-
+@pytest.mark.skip()
 def test_param_view():
     """Returns a Column that showcases how to use wired elements with pn.Param"""
 

@@ -12,6 +12,7 @@ The awesome_panel.application framework provides
 - Models: Like Application, Page, Author, Tag, Progress etc.
 """
 import os
+import platform
 
 import panel as pn
 
@@ -58,4 +59,11 @@ if __name__.startswith("bokeh"):
 else:
     address = os.getenv("BOKEH_ADDRESS", "0.0.0.0")
     APP_ROUTES = {"": view}
-    pn.serve(APP_ROUTES, port=80, dev=False, title="Awesome Panel", address=address)
+
+    if platform.system() == "Windows":
+        pn.serve(APP_ROUTES, port=80, dev=False, title="Awesome Panel", address=address)
+    else:
+        print("num_procs=0")
+        pn.serve(
+            APP_ROUTES, port=80, dev=False, title="Awesome Panel", address=address, num_procs=4
+        )

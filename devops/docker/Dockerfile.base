@@ -25,4 +25,8 @@ RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements_base
 ARG bokeh_allow_ws_origin=192.168.99.100,localhost,awesome-panel.azurewebsites.net,awesome-panel.org,www.awesome-panel.org,52.233.133.121,52.232.38.244,52.233.185.35,52.166.75.172,13.81.1.156,52.136.254.253,51.144.165.65
 ENV BOKEH_ALLOW_WS_ORIGIN=$bokeh_allow_ws_origin
 
+# Downloads models
+ADD application/pages/detr/model.py application/pages/detr/model.py
+RUN python application/pages/detr/model.py
+
 ENTRYPOINT [ "/bin/bash" ]

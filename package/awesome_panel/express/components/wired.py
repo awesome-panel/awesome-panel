@@ -123,9 +123,9 @@ class DatePicker(WiredBase):
     Example: selected="Jul 4, 2019"""
     )
     selects = param.Integer(bounds=(0, None))
-    value = param.Date(default=None, bounds=DATE_BOUNDS)
-    start = param.Date(bounds=DATE_BOUNDS)
-    end = param.Date(bounds=DATE_BOUNDS)
+    value = param.CalendarDate(default=None, bounds=DATE_BOUNDS)
+    start = param.CalendarDate(bounds=DATE_BOUNDS)
+    end = param.CalendarDate(bounds=DATE_BOUNDS)
 
     def __init__(self, min_height=340, min_width=300, **params):
         super().__init__(min_height=min_height, min_width=min_width, **params)
