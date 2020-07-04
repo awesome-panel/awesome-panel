@@ -105,6 +105,14 @@ class PempDashoardApp(param.Parameterized):
     def _init_view(self):
         appbar = pn.Row(
             pn.pane.Markdown("# Classic Dashboard in Panel ", margin=(10, 5, 10, 25)),
+            pn.Spacer(height=0),
+            pn.pane.PNG(
+                "https://panel.holoviz.org/_static/logo_horizontal.png",
+                width=200,
+                sizing_mode="fixed",
+                align="center",
+                margin=(10, 50, 10, 5),
+            ),
             css_classes=["app-bar"],
         )
         settings_bar = pn.Row(
@@ -113,11 +121,7 @@ class PempDashoardApp(param.Parameterized):
                 parameters=["tool", "variable"],
                 widgets={
                     "tool": {"align": "center", "width": 75, "sizing_mode": "fixed"},
-                    "variable": {
-                        "type": pn.widgets.RadioBoxGroup,
-                        "inline": True,
-                        "align": "end",
-                    },
+                    "variable": {"type": pn.widgets.RadioBoxGroup, "inline": True, "align": "end",},
                 },
                 default_layout=pn.Row,
                 show_name=False,
@@ -175,6 +179,7 @@ class PempDashoardApp(param.Parameterized):
     @property
     def get_color(self):
         return process_cmap(self.color_map, 1)[0]
+
 
 def view():
     return PempDashoardApp().view
