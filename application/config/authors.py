@@ -87,6 +87,12 @@ MARC_SKOV_MADSEN = Author(
     github_url="https://github.com/marcskovmadsen",
     github_avatar_url="https://avatars0.githubusercontent.com/u/42288570",
 )
+MATTEO_NICOLI = Author(
+    name="Matteo Nicol",
+    url="https://twitter.com/My_Carta",
+    github_url="https://github.com/mycarta",
+    github_avatar_url="https://avatars3.githubusercontent.com/u/7424763",
+)
 OURWORLDINDATA = Author(
     name="Our World in Data",
     url="https://ourworldindata.org/",

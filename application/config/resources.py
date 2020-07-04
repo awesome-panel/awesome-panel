@@ -1,6 +1,7 @@
 """In this module we define all Resources (except apps in the gallery) and exposes
 them via the RESOURCES list.
 """
+from application.config.tags import CODE
 from application.config import authors, tags
 from application.config.settings import THUMBNAILS_ROOT
 
@@ -10,6 +11,14 @@ from awesome_panel.application.models import Resource
 # panel FILE ROOTS
 
 RESOURCES = [
+    Resource(
+        name="Colormap Distorsions",
+        url="https://github.com/mycarta/Colormap-distorsions-Panel-app",
+        thumbnail_png_path=THUMBNAILS_ROOT + "",
+        is_awesome=True,
+        tags=[tags.CODE, tags.APP],
+        author=authors.MATTEO_NICOLI
+    ),
     Resource(
         name="Elvis - Golden Layout",
         url="https://github.com/LeonvanKouwen/elvis",

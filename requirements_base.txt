@@ -1,10 +1,10 @@
 # Panel. We use github version because of
 # - https://github.com/holoviz/panel/issues/883
 # - https://github.com/holoviz/panel/pull/867
-panel==0.9.6
-bokeh==2.1
+panel==0.9.7
+bokeh==2.1.1
 tornado
-holoviews==1.13.2
+holoviews==1.13.3
 hvplot==0.6.0
 lxml
 
@@ -14,7 +14,7 @@ geopandas # To `pip install geopandas` on windows please follow https://geoffboe
 xlrd==1.2.0 # For importing xls files
 
 # Data Visualization
-plotly==4.3.0
+plotly==4.8.2
 altair==4.0.0
 # seaborn==0.9.0
 # matplotlib==3.1.1
