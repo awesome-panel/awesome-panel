@@ -5,15 +5,16 @@ import pandas as pd
 import panel as pn
 import holoviews as hv
 import bokeh
-from bokeh.resources import INLINE
 import hvplot.pandas
+from holoviews.plotting.util import process_cmap
+
 
 hv.extension("bokeh")
 pn.extension()
 pn.config.sizing_mode = "stretch_width"
 
 EMPTY_PLOT = hv.Curve({})
-
+COLOR_MAPS = hv.plotting.util.list_cmaps()
 STYLE = """
 body {
     margin: 0px;
@@ -25,7 +26,7 @@ body {
     font-family: roboto, sans-serif, Verdana;
 }
 .bk.app-bar {
-    background: #2196F3;
+    background: #212121;
     border-color: white;
     box-shadow: 5px 5px 20px #9E9E9E;
     color: #ffffff;
@@ -80,6 +81,7 @@ class PempDashoardApp(param.Parameterized):
         default="Cut Distance",
         objects=["Cut Distance", "Removed Volume", "Av. uncut chip thickness"],
     )
+    color_map = param.ObjectSelector(default="winter", objects=COLOR_MAPS)
 
     insert_plot_pane = param.ClassSelector(class_=pn.pane.HoloViews)
     edge_plot_pane = param.ClassSelector(class_=pn.pane.HoloViews)
@@ -106,19 +108,32 @@ class PempDashoardApp(param.Parameterized):
             css_classes=["app-bar"],
         )
         settings_bar = pn.Row(
-            pn.pane.Markdown("Tool & Variable: ", width=100, sizing_mode="fixed", margin=(10, 5, 10, 25)),
             pn.Param(
                 self,
                 parameters=["tool", "variable"],
                 widgets={
                     "tool": {"align": "center", "width": 75, "sizing_mode": "fixed"},
-                    "variable": {"type": pn.widgets.RadioBoxGroup, "inline": True, "align": "center"}
+                    "variable": {
+                        "type": pn.widgets.RadioBoxGroup,
+                        "inline": True,
+                        "align": "end",
+                    },
                 },
                 default_layout=pn.Row,
                 show_name=False,
-                show_labels=False,
                 align="center",
             ),
+            pn.Spacer(height=0),
+            pn.Param(
+                self,
+                parameters=["color_map"],
+                width=200,
+                align="center",
+                sizing_mode="fixed",
+                show_name=False,
+                margin=(10, 25, 10, 5),
+            ),
+            sizing_mode="stretch_width",
             css_classes=["app-container"],
             margin=(50, 25, 25, 25),
         )
@@ -135,27 +150,31 @@ class PempDashoardApp(param.Parameterized):
             pn.layout.VSpacer(),
         ]
 
-    @pn.depends("tool", "variable", watch=True)
+    @pn.depends("tool", "variable", "color_map", watch=True)
     def _update_insert_plot(self):
         plot_data = data_A.loc[self.tool]
-        self.insert_plot_pane.object = plot_data.hvplot(
-            x="Xo", y="Yo", kind="paths", line_width=4, tools=["hover"], colorbar=True
-        ).opts(cmap="winter")
+        data = [(plot_data["Xo"], plot_data["Yo"], plot_data[self.variable])]
+        self.insert_plot_pane.object = hv.Path(data, vdims=self.variable).opts(
+            cmap=self.color_map, color=self.variable, line_width=4, colorbar=True
+        )
 
-    @pn.depends("tool", "variable", watch=True)
+    @pn.depends("tool", "variable", "color_map", watch=True)
     def _update_edge_plot(self):
         plot_data = data_A.loc[self.tool]
         self.edge_plot_pane.object = plot_data.hvplot(
-            x="Number", y=self.variable, kind="area", alpha=0.6, tools=["hover"]
+            x="Number", y=self.variable, kind="area", alpha=0.6, color=self.get_color
         )
 
-    @pn.depends("tool", watch=True)
+    @pn.depends("tool", "color_map", watch=True)
     def _update_history_plot(self):
         plot_data = data_B.loc[self.tool]
         self.history_plot_pane.object = plot_data.hvplot(
             x="Cut Distance", y="Feed", kind="line", line_width=4
-        ).opts(tools=["hover"])
+        ).opts(color=self.get_color)
 
+    @property
+    def get_color(self):
+        return process_cmap(self.color_map, 1)[0]
 
 def view():
     return PempDashoardApp().view
