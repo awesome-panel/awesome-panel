@@ -70,6 +70,14 @@ CUSTOM_BOKEH_MODEL = Page(
     component=pages.custom_bokeh_model,
     author=authors.MARC_SKOV_MADSEN,
 )
+DASHBOARD = Page(
+    name="Dashboard",
+    source_code_url=GITHUB_PAGE_URL + "dashboard/dashboard.py",
+    thumbnail_png_url=THUMBNAILS_ROOT + "dashboard.png",
+    tags=[tags.CODE, tags.APP_IN_GALLERY,],
+    component=pages.Dashboard,
+    author=authors.MARC_SKOV_MADSEN,
+)
 DATA_EXPLORER = Page(
     name="DataExplorer - Loading...",
     source_code_url=GITHUB_PAGE_URL + "dataexplorer_loading/dataexplorer_loading.py",
@@ -279,6 +287,7 @@ PAGES = [
     ASYNC_TASKS,
     BOOTSTRAP_DASHBOARD,
     CUSTOM_BOKEH_MODEL,
+    DASHBOARD,
     DATA_EXPLORER,
     DETR,
     IMAGE_CLASSIFIER,

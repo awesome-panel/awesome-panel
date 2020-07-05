@@ -1,7 +1,6 @@
 """In this module we define all Resources (except apps in the gallery) and exposes
 them via the RESOURCES list.
 """
-from application.config.tags import CODE
 from application.config import authors, tags
 from application.config.settings import THUMBNAILS_ROOT
 
@@ -17,7 +16,7 @@ RESOURCES = [
         thumbnail_png_path=THUMBNAILS_ROOT + "",
         is_awesome=True,
         tags=[tags.CODE, tags.APP],
-        author=authors.MATTEO_NICOLI
+        author=authors.MATTEO_NICOLI,
     ),
     Resource(
         name="Elvis - Golden Layout",

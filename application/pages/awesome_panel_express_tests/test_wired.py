@@ -150,6 +150,7 @@ or markdown text""",
         name="Elements",
     )
 
+
 @pytest.mark.skip()
 def test_param_view():
     """Returns a Column that showcases how to use wired elements with pn.Param"""
