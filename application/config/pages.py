@@ -77,6 +77,7 @@ DASHBOARD = Page(
     tags=[tags.CODE, tags.APP_IN_GALLERY,],
     component=pages.Dashboard,
     author=authors.MARC_SKOV_MADSEN,
+    show_loading_page=True,
 )
 DATA_EXPLORER = Page(
     name="DataExplorer - Loading...",

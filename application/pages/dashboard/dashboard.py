@@ -9,7 +9,7 @@ The Dashboard app shows how to create a **Classic Dashboard** in **Panel** with
 
 This app was kick started by [Pemp](https://discourse.holoviz.org/u/pemp) in a
 [discussion on Discourse]\
-(https://discourse.holoviz.org/t/error-not-supported-between-instances-of-select-and-select/929)
+(https://discourse.holoviz.org/t/error-not-supported-between-instances-of-select-and-select/929).
 
 **Author:**
 [Marc Skov Madsen](https://datamodelsanalytics.com),
