@@ -28,6 +28,7 @@
 
 ### Code
 
+- [Colormap Distorsions](https://github.com/mycarta/Colormap-distorsions-Panel-app) by [Matteo Nicol](https://twitter.com/My_Carta) (#App, #Code)
 - [Elvis - Golden Layout](https://github.com/LeonvanKouwen/elvis) by [Leon van Kouwen](https://github.com/LeonvanKouwen) (#Code)
 
 ### Inspiration

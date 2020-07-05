@@ -3,7 +3,7 @@
 The Dashboard app shows how to create a **Classic Dashboard** in **Panel** with
 
 - [Linked Brushing](http://holoviews.org/user_guide/Linked_Brushing.html) (Not yet supported)
-- Classic Layout
+- Classic Layout and awesome design
 - Responsiveness
 - User Selections
 
