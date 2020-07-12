@@ -104,6 +104,14 @@ IMAGE_CLASSIFIER = Page(
     component=pages.image_classifier,
     author=authors.MARC_SKOV_MADSEN,
 )
+JS_ACTIONS = Page(
+    name="JS Actions",
+    source_code_url=GITHUB_PAGE_URL + "js_actions/js_actions.py",
+    thumbnail_png_url=THUMBNAILS_ROOT + "js_actions.png",
+    tags=[tags.CODE, tags.APP_IN_GALLERY,],
+    component=pages.js_actions,
+    author=authors.MARC_SKOV_MADSEN,
+)
 KICKSTARTER_DASHBOARD = Page(
     name="Kickstarter Dashboard",
     source_code_url=GITHUB_PAGE_URL + "kickstarter_dashboard/main.py",
@@ -292,6 +300,7 @@ PAGES = [
     DATA_EXPLORER,
     DETR,
     IMAGE_CLASSIFIER,
+    JS_ACTIONS,
     KICKSTARTER_DASHBOARD,
     OWID_CHOROPLETH_MAP,
     PANDAS_PROFILING,

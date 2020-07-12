@@ -27,6 +27,7 @@ from application.pages.detr import detr
 from application.pages.home import home
 from application.pages.image_classifier import image_classifier
 from application.pages.issues import issues
+from application.pages.js_actions import js_actions
 from application.pages.kickstarter_dashboard import kickstarter_dashboard
 from application.pages.owid_choropleth_map import owid_choropleth_map
 from application.pages.pandas_profiling_app import pandas_profiling_app
