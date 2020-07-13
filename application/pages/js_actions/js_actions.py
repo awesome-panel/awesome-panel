@@ -1,4 +1,4 @@
-"""# JS Actions:
+"""# JS Actions
 
 Once in a while you might want sprinkle in some Javascript actions in your Panel Application. The
 basics are described in the [Links Section](https://panel.holoviz.org/user_guide/Links.html) of the
