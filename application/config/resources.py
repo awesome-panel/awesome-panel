@@ -16,7 +16,7 @@ RESOURCES = [
         thumbnail_png_path=THUMBNAILS_ROOT + "",
         is_awesome=True,
         tags=[tags.CODE, tags.APP],
-        author=authors.MATTEO_NICOLI,
+        author=authors.MATTEO_NICCOLI,
     ),
     Resource(
         name="Elvis - Golden Layout",
