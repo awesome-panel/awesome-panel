@@ -12,23 +12,25 @@ This is the documentation of the **Awesome Panel Project** including the
 
 .. toctree::
    :maxdepth: 1
-   :caption: Awesome Panel Docs!
+   :caption: Awesome Panel!
 
-   Repo readme <_copy_of_project_root/README>
+   Repo README <_copy_of_project_root/README>
    Awesome Panel Resources list! <awesome-list.md>
-   Awesome Panel Package <awesome_panel/awesome_panel.rst>
-
-.. toctree::
-   :maxdepth: 1
-   :caption: About the Project
-
    How to Contribute <_copy_of_project_root/contributing>
    How to Conduct as a Contributor <_copy_of_project_root/code-of-conduct>
 
 .. toctree::
    :maxdepth: 1
-   :caption: Tutorials
+   :caption: Packages
 
+   awesome-panel <awesome_panel/awesome_panel.rst>
+   awesome-panel-extensions <packages/awesome-panel-extensions/index.md>
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Guides
+
+   Awesome Panel Extensions Guide <guides/awesome-panel-extensions-guide/index.rst>
    How to use VS Code with Panel <vscode.md>
    Tips+Tricks for creating performant Apps <performance.md>
    Prebuilt Bokeh Model Extensions <prebuilt_bokeh_model_extensions.md>

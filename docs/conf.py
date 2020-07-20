@@ -31,6 +31,7 @@ def setup(app,):
     app.connect(
         "autodoc-process-docstring", docstring,
     )
+    app.add_stylesheet("css/awesome-panel.css")
 
 
 # -- Project information -----------------------------------------------------
@@ -57,6 +58,7 @@ release = ""
 extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
+    "sphinx_markdown_tables",
     # "sphinx.ext.doctest",
     # "sphinx.ext.todo",
     # "sphinx.ext.coverage",
@@ -209,11 +211,6 @@ epub_exclude_files = ["search.html"]
 # # Font for the blockdiag extension
 # blockdiag_fontpath = "source/_static/fonts/arial.ttf"
 # actdiag_fontpath = blockdiag_fontpath
-
-
-# def setup(app):
-#     """Custom setup of the Sphinx app"""
-#     app.add_stylesheet("my_theme.css")
 
 # We copy the project root markdown files into the _copy_of_project_root folder for inclusion in
 # the docs

@@ -110,7 +110,7 @@ In the `express/models/index.ts` file I exported the `WebComponent`.
 export {WebComponent} from "./web_component"
 ```
 
-The I could `build` my extension
+Then I could `build` my extension
 
 ```bash
 $ panel build
