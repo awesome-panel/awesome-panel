@@ -32,7 +32,7 @@ from an existing layout, pane or widget.
 
 - Another important sub category of inheritence extensions is called **Composed Extensions**. These extensions are created by composing existing Panel components in a layout.
 
-- An upcoming, important sub category of Inheritance Extensions are called **Web Component Extensions**. They will provide you with the super powers of the Bokeh Extensions below for 80% of your use cases. But they require a minimum of javascript skills and are faster to develop.
+- An upcoming, important sub category of Inheritance Extensions are called **Web Component Extensions**. They are essentially a more advanced `HTML` pane that supports bidirectional communication. They will provide you with the super powers of the Bokeh Extensions below for 80% of your use cases. But they require a minimum of javascript skills and are faster to develop.
 
 **Bokeh Extensions** on the other hand supports efficient, bidirectional
 communication from server (Python) to the browser (Javascript) and back.
