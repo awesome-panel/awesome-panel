@@ -58,5 +58,6 @@ Detailed Guides
    Composed Extensions <composed-extensions.md>
    Bokeh Extensions <bokeh-extensions.md>
    Sharing Extensions <sharing.md>
+   Other <other.md>
 
 .. _upcoming: https://github.com/holoviz/panel/blob/master/panel/pane/ipywidget.py
