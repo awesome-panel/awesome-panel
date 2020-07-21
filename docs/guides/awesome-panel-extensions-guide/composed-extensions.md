@@ -4,7 +4,7 @@
 
 In this example we will develop a `DataFramePlotter` extension that enables a Panel user to select a column of a given DataFrame and see the associated `distplot`.
 
-[![Data FramePlotter](dataframe-plotter.gif)](https://github.com/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/tutorial/data_plotter.py)
+[![Data FramePlotter](dataframe-plotter.gif)](https://github.com/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/guide/dataframe_plotter.py)
 
 We start by importing the requirements
 
@@ -41,8 +41,8 @@ class DataFramePlotter(pn.Column):
 
         columns = data.columns.values
         self.param.column.objects = columns
-        self.column = columns[0]
         # I need to set self.column to show a plot initially
+        self.column = columns[0]
 
     def _update_plot_pane(self, _):
         # - I get exception if plt.close is below ax line. See https://github.com/holoviz/panel/issues/1482
@@ -64,4 +64,8 @@ DataFramePlotter(df, width=300, height=300).servable()
 
 **Click the images** below to see the code.
 
-[![DataFrame Plotter](dataframe-plotter.gif)](https://github.com/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/tutorial/data_plotter.py)
+COMING UP
+
+## Official Panel Examples
+
+COMING UP

@@ -7,26 +7,26 @@ Please note that in order for Bokeh Extensions to compile you will need to have 
 Before you read on I would ask you to quickly study the offical Bokeh documentation [Extending Bokeh](https://docs.bokeh.org/en/latest/docs/user_guide/extensions.html). You don't need to code and run the examples. After having read the official documentation I hope you have a basic understanding of
 
 - the existence and location of official Bokeh documentation
-- what a Bokeh extension is and how it is build.
+- what a Bokeh extension is and how it is developed.
 
 We will now focus on Bokeh Extensions for Panel example.
+
+## Example
 
 In this example we will create a Panel `HTMLButton` extension that enables a user
 to catch a click event from any HTML element he/ she would like as shown below.
 
-[![html_button.py](html-button.gif)](https://github.com/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/tutorial/html_button/html_button.py)
+[![html_button.py](html-button.gif)](https://github.com/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/guide/html_button/html_button.py)
 
 CLICK ON THE VIDEO TO SEE THE CODE - WALK THROUGH COMING UP
 
-## Example
+## Other Examples
 
 **Click the images** below to see the code.
 
-[![Custom Bokeh Model](custom-bokeh-model.gif)](https://github.com/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/tutorial/custom_bokeh_model)
+[![Custom Bokeh Model](custom-bokeh-model.gif)](https://github.com/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/guide/custom_bokeh_model)
 
-[![html_button.py](html-button.gif)](https://github.com/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/tutorial/html_button/html_button.py)
-
-## Examples from Panel
+## Official Panel Examples
 
 Every layout, pane or widget in Panel is essentially a Bokeh Extension so a good place to get inspiration is to navigate the [Panel Reference Gallery](https://panel.holoviz.org/reference/index.html) to find an extension similar to the one you would like to implement and then study the code
 

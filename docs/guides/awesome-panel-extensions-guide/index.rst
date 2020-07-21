@@ -47,16 +47,16 @@ extension as an IPyWidget. This might come at a performance
 cost in relation to bundle size and general performance. If this matters
 in practice is yet to be confirmed.
 
-For more see
+Detailed Guides
+---------------
 
 .. toctree::
    :maxdepth: 1
    :caption: Examples and Resources
 
-   Bokeh Extensions <bokeh-extensions.md>
-   Composed Extensions <composed-extensions.md>
    HTML Extensions <html-extensions.md>
-   Sharing <sharing.md>
-
+   Composed Extensions <composed-extensions.md>
+   Bokeh Extensions <bokeh-extensions.md>
+   Sharing Extensions <sharing.md>
 
 .. _upcoming: https://github.com/holoviz/panel/blob/master/panel/pane/ipywidget.py

@@ -6,7 +6,7 @@
 
 In this example we will develop a `Dynamic Number` extension that can display a number with the fontsize and green+alpha color ratios depending on the value.
 
-[![Dynamic Number Video](dynamic-number.gif)](https://github.com/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/tutorial/dynamic_number.py)
+[![Dynamic Number Video](dynamic-number.gif)](https://github.com/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/guide/dynamic_number.py)
 
 We start by importing the dependencies
 
@@ -59,15 +59,15 @@ app = pn.Column(
 app.servable()
 ```
 
-#### More HTML Extension Examples
+## More Examples
 
 **Click the images** below to see the code.
 
-[![Dynamic Number Video](dynamic-number.gif)](https://github.com/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/tutorial/dynamic_number.py)
-
-[![Echarts Gauge Video](echarts-gauge-oneway.gif)](https://github.com/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/tutorial/echarts_gauge_oneway.py)
+[![Echarts Gauge Video](echarts-gauge-oneway.gif)](https://github.com/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/guide/echarts_gauge_oneway.py)
 
 [![Pandas Profile Report](pandas-profile-report-pane.gif)](https://github.com/MarcSkovMadsen/awesome-panel-extensions/blob/master/awesome_panel_extensions/panes/pandas_profile_report.py)
+
+## Official Panel Examples
 
 The [Panel Gallery](https://panel.holoviz.org/gallery/index.html) contains more examples in the section called *External libraries*. Please note that these are not implemented by inheriting from the HTML pane. They just use it. It's not difficult to see how the examples could be converted to inheritance examples though.
 
