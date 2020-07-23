@@ -20,10 +20,9 @@ This is the documentation of the **Awesome Panel Project** including the
    How to Conduct as a Contributor <_copy_of_project_root/code-of-conduct>
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
    :caption: Packages
 
-   awesome-panel <awesome_panel/awesome_panel.rst>
    awesome-panel-extensions <packages/awesome-panel-extensions/index.md>
 
 .. toctree::

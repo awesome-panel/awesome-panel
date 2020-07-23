@@ -2,8 +2,6 @@
 
 The Awesome Panel Extensions package contains Panel Extensions that add to the power of Panel.
 
-
-
 ## Installation
 
 You can install the package via
@@ -12,13 +10,22 @@ You can install the package via
 pip install awesome-panel-extensions
 ```
 
-CONDA COMING UP
-
 Each individual extension might depend on additional packages. For example the `awesome_panel_extensions.panes.PandasProfileReport` depends on the [Pandas Profiling](https://github.com/pandas-profiling/pandas-profiling) package.
-
 
 ## Reference Gallery
 
-###  Panes
+Check out the extensions by clicking the images below.
 
-[![Pandas Profile Report Reference Notebook](pandas-profile-report-notebook.png)](https://github.com/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/reference_gallery/panes/PandasProfileReport.ipynb)
+### Panes
+
+#### PandasProfileReport
+
+[<img src="https://mybinder.org/badge_logo.svg" style="height:25px;display:inline;margin:5px">](https://mybinder.org/v2/gh/MarcSkovMadsen/awesome-panel-extensions/master?filepath=examples%2Freference_gallery%2Fpanes%2FPandasProfileReport.ipynb) [<img src="https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg" style="height:25px;display:inline;margin:5px">](https://nbviewer.jupyter.org/github/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/reference_gallery/panes/PandasProfileReport.ipynb)
+
+[![PandasProfileReport](pandas-profile-report-notebook.png)](https://github.com/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/reference_gallery/panes/PandasProfileReport.ipynb)
+
+#### WebComponent
+
+[<img src="https://mybinder.org/badge_logo.svg" style="height:25px;display:inline;margin:5px">](https://mybinder.org/v2/gh/MarcSkovMadsen/awesome-panel-extensions/master?filepath=examples%2Freference_gallery%2Fpanes%2FWebComponent.ipynb) [<img src="https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg" style="height:25px;display:inline;margin:5px">](https://nbviewer.jupyter.org/github/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/reference_gallery/panes/WebComponent.ipynb)
+
+[![WebComponent](web-component-notebook.png)](https://notebooks.gesis.org/binder/jupyter/user/marcskovmadsen--anel-extensions-0qfh9k4a/notebooks/examples/reference_gallery/panes/WebComponent.ipynb)

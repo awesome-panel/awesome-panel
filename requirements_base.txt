@@ -8,6 +8,8 @@ holoviews==1.13.3
 hvplot==0.6.0
 lxml
 
+awesome-panel-extensions
+
 # Data Engineering and Science
 pandas==0.25.2
 geopandas # To `pip install geopandas` on windows please follow https://geoffboeing.com/2014/09/using-geopandas-windows/

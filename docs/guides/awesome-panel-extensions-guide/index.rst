@@ -47,15 +47,13 @@ extension as an IPyWidget. This might come at a performance
 cost in relation to bundle size and general performance. If this matters
 in practice is yet to be confirmed.
 
-Detailed Guides
----------------
-
 .. toctree::
    :maxdepth: 1
-   :caption: Examples and Resources
+   :caption: Specific Guides and Resources
 
    HTML Extensions <html-extensions.md>
    Composed Extensions <composed-extensions.md>
+   WebComponent Extensions <webcomponent-extensions.md>
    Bokeh Extensions <bokeh-extensions.md>
    Sharing Extensions <sharing.md>
    Other <other.md>

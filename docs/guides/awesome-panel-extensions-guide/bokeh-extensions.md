@@ -47,34 +47,40 @@ and the underlying Bokeh extensions via
 
 COPY FROM AWESOME-PANEL.ORG REPO - TO BE REVISED
 
-In this document I will describe how I got **prebuilt bokeh model extensions** setup
-as a part of the awesome-panel package. I needed it temporarily while waiting for the `WebComponent` PR to be reviewed and released by Panel.
+There are two ways in which the Bokeh `.ts` models can be built.
 
-Setting up prebuilt extensions using `Bokeh init --interactive` is briefly described in the Bokeh Docs. See [Bokeh Pre-built extensions](https://docs.bokeh.org/en/latest/docs/user_guide/extensions.html).
+- Automatically when you run the code.
+  1. If you instantiate your extension before running you use `.servable` then the extension will automatically be built and registered by Bokeh.
+- Manually up front using the `panel build` command.
+  2. This is referred to as *prebuilt Bokeh extensions*.
 
-I hope this description can help others who would like to create prebuilt custom bokeh models for Bokeh or Panel.
+In this document I will describe how I setup the awesome-panel-extensions package for **prebuilt bokeh extensions**. **This is nescessary if you want to distribute your extensions as a package.**
 
-### Steps
+I hope this description can help others who would like to develop and share Bokeh Extensions for Panel.
 
-I navigated to the root of the awesome-panel package
+Setting up prebuilt extensions using `Bokeh init --interactive` is described in the Bokeh Docs. See [Bokeh Pre-built extensions](https://docs.bokeh.org/en/latest/docs/user_guide/extensions.html).
+
+### Steps for the `awesome-panel-extensions` Package as of 20200721 Bokeh 2.1.0
+
+I navigated to the `awesome_panel_extensions` folder (!= root of project).
 
 ```bash
-cd awesome-panel/package
+cd awesome_panel_extensions
 ```
 
-ran `bokeh init --interactive`
+I ran `bokeh init --interactive`
 
 ```bash
 $ bokeh init --interactive
-Working directory: C:\repos\private\awesome-panel\package\awesome_panel
-Wrote C:\repos\private\awesome-panel\package\awesome_panel\bokeh.ext.json
+Working directory: ...\awesome_panel_extensions
+Wrote ...\awesome_panel_extensions\bokeh.ext.json
 Create package.json? This will allow you to specify external dependencies. [y/n] y
-  What's the extension's name? [awesome_panel]
+  What's the extension's name? [awesome_panel_extensions]
   What's the extension's version? [0.0.1]
-  What's the extension's description? []
-Wrote C:\repos\private\awesome-panel\package\awesome_panel\package.json
+  What's the extension's description? [] A collection of awesome extensions for Panel
+Wrote ...\awesome_panel_extensions\package.json
 Create tsconfig.json? This will allow for customized configuration and improved IDE experience. [y/n] y
-Wrote C:\repos\private\awesome-panel\package\awesome_panel\tsconfig.json
+Wrote ...\awesome_panel_extensions\tsconfig.json
 Created empty index.ts. This is the entry point of your extension.
 You can build your extension with bokeh build
 All done.
@@ -84,7 +90,7 @@ In the `package.json` I had to replace
 
 ```ts
 "dependencies": {
-    "bokehjs": "^2.0.2"
+    "bokehjs": "^2.1.0"
   },
 ```
 
@@ -92,11 +98,11 @@ with
 
 ```ts
 "dependencies": {
-    "@bokeh/bokehjs": "^2.0.2"
+    "@bokeh/bokehjs": "^2.1.0"
   },
 ```
 
-See [bokeh init issue](https://github.com/bokeh/bokeh/issues/10055).
+in order to import from bokehjs in the same way as Panel does. See [bokeh init issue](https://github.com/bokeh/bokeh/issues/10055) for more info.
 
 I also replaced the `tsconfig.json` contents with
 
@@ -139,19 +145,19 @@ I also replaced the `tsconfig.json` contents with
 }
 ```
 
-At least including the `path` section is needed to be able to `import { div, label } from "@bokehjs/core/dom"` like @philippjfr does in Panel.
+At least including the `paths` section is needed to be able to `import { div, label } from "@bokehjs/core/dom"` like @philippjfr does in Panel.
 
 In the `index.ts` file I imported my models
 
 ```ts
-import * as AwesomePanel from "./express/models/"
-export {AwesomePanel}
+import * as AwesomePanelExtensions from "./bokeh_extensions/"
+export {AwesomePanelExtensions}
 
 import {register_models} from "@bokehjs/base"
-register_models(AwesomePanel as any)
+register_models(AwesomePanelExtensions as any)
 ```
 
-In the `express/models/index.ts` file I exported the `WebComponent`.
+In the `bokeh_extensions/index.ts` file I exported the `WebComponent`.
 
 ```ts
 export {WebComponent} from "./web_component"
@@ -171,6 +177,8 @@ All done.
 
 The result is in the `dist` folder.
 
-I discovered I did not even have to `serve` the `awesome_panel.js` file.
+I discovered I did not even have to do anything to `serve` the `awesome_panel_extensions.js` file.
 
-I could just `panel serve` something
+I could just `panel serve` something.
+
+I also added `awesome_panel_extensions/node_modules/*`to my `.gitignore` file.
