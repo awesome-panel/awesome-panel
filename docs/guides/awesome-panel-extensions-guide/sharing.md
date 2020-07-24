@@ -21,6 +21,18 @@ The [Packaging Python Projects](https://packaging.python.org/tutorials/packaging
 
 You can also study the [Awesome Panel Extensions Repository](https://github.com/marcskovmadsen/awesome-panel-extensions) to see how a specific Panel Extensions Package is set up. You can find the `awesome-panel-extensions` package on PyPi [here](https://pypi.org/project/awesome-panel-extensions/).
 
+If your extension contains Bokeh extensions, you have to make sure your bokeh `bokeh.ext.json` and your build `dist`files are shipped with your package.
+
+- In [setup.py](https://github.com/MarcSkovMadsen/awesome-panel-extensions/blob/master/setup.py) you need to set `include_package_data=True` to enable the use of a `Manifest.in` file.
+- Your [Manifest.in](https://github.com/MarcSkovMadsen/awesome-panel-extensions/blob/master/Manifest.in) file then needs to include something like
+
+```bash
+include awesome_panel_extensions/*.json
+include awesome_panel_extensions/index.ts
+include awesome_panel_extensions/bokeh_extensions/*.ts
+graft awesome_panel_extensions/dist
+```
+
 ## Contributing Your Extension to Panel
 
 It's as easy as suggesting it as a Feature Request or providing it as a Pull request on the [Panel Github site](https://github.com/holoviz/panel).

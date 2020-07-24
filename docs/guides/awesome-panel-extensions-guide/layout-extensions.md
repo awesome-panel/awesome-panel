@@ -1,8 +1,10 @@
-# Composed Extensions
+# Layout Extensions
+
+**Layout Extensions** are created by inheriting from a layout. The extensions developed is composed of panes, layouts and widgets. The extension developed is often a widget and not a layout.
 
 ## Example
 
-In this example we will develop a `DataFramePlotter` extension that enables a Panel user to select a column of a given DataFrame and see the associated `distplot`.
+In this example we will inherit from `panel.Column`. We will develop a `DataFramePlotter` extension that enables a Panel user to select a column of a given DataFrame and see the associated `distplot`.
 
 [![Data FramePlotter](dataframe-plotter.gif)](https://github.com/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/guide/dataframe_plotter.py)
 
@@ -16,7 +18,7 @@ import param
 import seaborn as sns
 ```
 
-Then we implement the *Composable Extension*.
+Then we implement the *Layout Extension*.
 
 ```python
 class DataFramePlotter(pn.Column):

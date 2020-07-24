@@ -99,10 +99,6 @@ To be determined:
 
 - How to convert Plotly Dash? [jupyter-plotly-dash](https://pypi.org/project/jupyter-plotly-dash/)?
 
-## FAQ
-
-### Should I define default values on the Bokeh .ts, Bokeh .py or Panel .py Model?
-
 TBD
 
 ## Roadmap

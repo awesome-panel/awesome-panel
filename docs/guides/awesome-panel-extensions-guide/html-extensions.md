@@ -63,12 +63,10 @@ app.servable()
 
 **Click the images** below to see the code.
 
-[![Echarts Gauge Video](echarts-gauge-oneway.gif)](https://github.com/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/guide/echarts_gauge_oneway.py)
-
 [![Pandas Profile Report](pandas-profile-report-pane.gif)](https://github.com/MarcSkovMadsen/awesome-panel-extensions/blob/master/awesome_panel_extensions/panes/pandas_profile_report.py)
 
 ## Official Panel Examples
 
 The [Panel Gallery](https://panel.holoviz.org/gallery/index.html) contains more examples in the section called *External libraries*. Please note that these are not implemented by inheriting from the HTML pane. They just use it. It's not difficult to see how the examples could be converted to inheritance examples though.
 
-[![External Libraries](panel-gallery-external-libraries.png)](https://panel.holoviz.org/gallery/index.html)
+[![External Libraries](panel-gallery-external-libraries.png)](https://panel.holoviz.org/gallery/index.html).
