@@ -1,5 +1,7 @@
 # Markdown Extensions
 
+UPDATE: THE EXAMPLE BELOW DOES NOT WORK. SEE https://github.com/holoviz/panel/issues/1483
+
 **Markdown Extensions** are created by inheriting from the `Markdown` pane. You can use Markdown (including HTML, CSS and/ or JS) to create amazing extensions to Panel. These extensions cannot communicate from the browser (Javascript) back to the server (Python).
 
 ## Markdown Example

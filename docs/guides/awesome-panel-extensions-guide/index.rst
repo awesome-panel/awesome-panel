@@ -1,6 +1,8 @@
 The Awesome Panel Extensions Guide
 ==================================
 
+WORK IN PROGRESS: I AM TRYING TO UNDERSTAND AND FORM THIS (as of 20200725)
+
 Maybe your code base has started to grow and you start to think about how you can refactor your it into smaller reusable components or extensions. For example like this user who asks `How to create a self-contained custom Panel? <https://discourse.holoviz.org/t/how-to-create-a-self-contained-custom-panel/985>`_.
 
 Maybe you have started wondering how you can share your extensions with your team? Or maybe even with the Panel community?
@@ -41,6 +43,7 @@ The table below summarizes the types of extensions that Panel supports.
 from an existing layout, pane or widget. Please note that the extension created is often a widget even though its created by inheriting from a layout or pane. Inheritance Extensions are a bit more difficult to develop than View extensions because you need to be a bit more carefull when you inherit. See the detailed guides for more info.
 
 - An important sub category of Inheritence Extensions is called **HTML Extensions**. You create these when you inherit from the `HTML` pane. You can use HTML, CSS and/ or JS to create amazing extensions to Panel. Often the resulting extension works as a widget and not as a pane. The **HTML extensions** cannot communicate from the browser (Javascript) back to the server (Python). The extension developed is often a widget and not a pane.
+UPDATE: PANE (INCLUDING HTML) INHERITANCE DOES NOT WORK. SEE https://github.com/holoviz/panel/issues/1483
 
 - Another important sub category of inheritence extensions is called **Layout Extensions**. These extensions are created by inheriting from a Layout and filling it with panes, layouts and widgets. The extension developed is often a widget and not a layout.
 

@@ -231,7 +231,7 @@ I hope this description can help others who would like to develop and share Boke
 
 Setting up prebuilt extensions using `Bokeh init --interactive` is described in the Bokeh Docs. See [Bokeh Pre-built extensions](https://docs.bokeh.org/en/latest/docs/user_guide/extensions.html).
 
-### Steps for the `awesome-panel-extensions` Package as of 20200721 Bokeh 2.1.0
+### Steps for the `awesome-panel-extensions` Package as of 20200721 Panel 0.9.7/ Bokeh 2.1.1
 
 I navigated to the `awesome_panel_extensions` inside the project.
 
