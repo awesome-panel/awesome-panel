@@ -1,7 +1,5 @@
 # HTML Extensions
 
-UPDATE: THE EXAMPLE BELOW DOES NOT WORK. SEE https://github.com/holoviz/panel/issues/1483
-
 **HTML Extensions** are created by inheriting from the `HTML` pane. You can use HTML, CSS and/ or JS to create amazing extensions to Panel. These extensions cannot communicate from the browser (Javascript) back to the server (Python).
 
 ## Example
@@ -24,17 +22,23 @@ class DynamicNumber(pn.pane.HTML):
     """Extension Implementation"""
     value = param.Integer(default=30, bounds=(0,100))
 
+    # In order to not be selected by the `pn.panel` selection process
+    # Cf. https://github.com/holoviz/panel/issues/1494#issuecomment-663219654
+    priority = 0
+
     def __init__(self, **params):
         # The _rename dict is used to keep track of Panel parameters to sync to Bokeh properties.
         # As value is not a property on the Bokeh model we should set it to None
         self._rename["value"]=None
 
         super().__init__(**params)
-        self._update_object()
+        self._update_object_from_parameters()
 
-    # Don't name the function `_update` as this will override a function in the parent class
+    # Don't name the function
+    # `_update`, `_update_object`, `_update_model` or `_update_pane`
+    # as this will override a function in the parent class.
     @param.depends("value", watch=True)
-    def _update_object(self, *events):
+    def _update_object_from_parameters(self, *events):
         self.object = self._get_html(self.value)
 
     def _get_html(self, value):
