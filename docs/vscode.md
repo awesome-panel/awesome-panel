@@ -66,7 +66,7 @@ Please **note** that I often experience that my terminal freezes during debuggin
 
 You can also use the **integrated debugger** in VS Code via the [ptvsd](https://github.com/microsoft/ptvsd) Python package
 
-Debugging with ptvsd on Windows with python 3.7.4 is working really well but there are reports in the Streamlit community that running ptvsd on ubuntu 18.04.3 LTS with Python 3.6.8 does not work. See [Streamlit Issue 648](https://github.com/panel/streamlit/issues/648).
+Debugging with ptvsd on Windows with python 3.7.4 is working really well but there are reports in the Streamlit community that running ptvsd on ubuntu 18.04.3 LTS with Python 3.6.8 does not work. See [Streamlit Issue 648](https://github.com/streamlit/streamlit/issues/648).
 
 First you should `pip install ptvsd`.
 

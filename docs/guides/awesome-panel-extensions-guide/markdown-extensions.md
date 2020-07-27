@@ -32,17 +32,26 @@ class BinderButton(pn.pane.Markdown):
     # Cf. https://github.com/holoviz/panel/issues/1494#issuecomment-663219654
     priority = 0
 
-    width = param.Integer(default=200, bounds=(0,None))
-    height = param.Integer(default=50, bounds=(0,None))
+    width = param.Integer(default=200, bounds=(0, None), doc="""
+        The width of the component (in pixels). This can be either
+        fixed or preferred width, depending on width sizing policy.""")
+
+    # The _rename dict is used to keep track of Panel parameters to sync to Bokeh properties.
+    # As value is not a property on the Bokeh model we should set it to None
+    _rename = {
+        **pn.pane.Markdown._rename,
+        "repository": None,
+        "branch": None,
+        "folder": None,
+        "notebook": None,
+    }
 
     def __init__(self, **params):
-        # The _rename dict is used to keep track of Panel parameters to sync to Bokeh properties.
-        # As value is not a property on the Bokeh model we should set it to None
-        self._rename.update({"repository": None, "branch": None, "folder": None, "notebook": None})
         super().__init__(**params)
 
         self._update_object_from_parameters()
 
+    # Note:
     # Don't name the function
     # `_update`, `_update_object`, `_update_model` or `_update_pane`
     # as this will override a function in the parent class.
@@ -89,8 +98,10 @@ button = BinderButton(
     folder="examples/panes",
     notebook="WebComponent.ipynb",
 )
-settings_pane = pn.Param(
-    button, parameters=["repository", "branch", "folder", "notebook", "height", "width", "sizing_mode", "margin"], background="lightgray", sizing_mode="stretch_width"
+settings_pane = pn.WidgetBox(
+    pn.Param(
+        button, parameters=["repository", "branch", "folder", "notebook", "height", "width", "sizing_mode", "margin"], sizing_mode="stretch_width"
+    )
 )
 app = pn.Column(button, settings_pane, width=500, height=800)
 # Serve the app

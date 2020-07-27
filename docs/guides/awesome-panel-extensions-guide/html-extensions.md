@@ -25,12 +25,14 @@ class DynamicNumber(pn.pane.HTML):
     # In order to not be selected by the `pn.panel` selection process
     # Cf. https://github.com/holoviz/panel/issues/1494#issuecomment-663219654
     priority = 0
+    # The _rename dict is used to keep track of Panel parameters to sync to Bokeh properties.
+    # As value is not a property on the Bokeh model we should set it to None
+    _rename = {
+        **pn.pane.HTML._rename,
+        "value": None,
+    }
 
     def __init__(self, **params):
-        # The _rename dict is used to keep track of Panel parameters to sync to Bokeh properties.
-        # As value is not a property on the Bokeh model we should set it to None
-        self._rename["value"]=None
-
         super().__init__(**params)
         self._update_object_from_parameters()
 
@@ -69,7 +71,7 @@ app.servable()
 
 **Click the images** below to see the code.
 
-[![Pandas Profile Report](pandas-profile-report-pane.gif)](https://github.com/MarcSkovMadsen/awesome-panel-extensions/blob/master/awesome_panel_extensions/panes/pandas_profile_report.py)
+[![Pandas Profile Report](pandas-profile-report-pane.gif)](https://github.com/MarcSkovMadsen/awesome-panel-extensions/blob/master/awesome_panel_extensions/pane/pandas_profile_report.py)
 
 ## Official Panel Examples
 

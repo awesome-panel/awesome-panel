@@ -1,7 +1,7 @@
 The Awesome Panel Extensions Guide
 ==================================
 
-Maybe your code base has started to grow and you start to think about how you can refactor your it into smaller reusable components or extensions. For example like this user who asks `How to create a self-contained custom Panel? <https://discourse.holoviz.org/t/how-to-create-a-self-contained-custom-panel/985>`_.
+Maybe your code base has started to grow and you start to think about how you can refactor it into smaller reusable components or extensions. For example like this user who asks `How to create a self-contained custom Panel? <https://discourse.holoviz.org/t/how-to-create-a-self-contained-custom-panel/985>`_.
 
 Maybe you have started wondering how you can share your extensions with your team? Or maybe even with the Panel community?
 
