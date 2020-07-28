@@ -142,18 +142,19 @@ CLASSES = [
     "toothbrush",
 ]
 
+def get_transform_detr_and_device():
+    # Load model
+    print("Loading DETR model")
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    detr = torch.hub.load("facebookresearch/detr", "detr_resnet50", pretrained=True)
+    detr.eval().to(device)
 
-# Load model
-print("Loading DETR model")
-DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-detr = torch.hub.load("facebookresearch/detr", "detr_resnet50", pretrained=True)
-detr.eval().to(DEVICE)
-
-# standard PyTorch mean-std input image normalization
-transform = T.Compose(
-    [T.Resize(500), T.ToTensor(), T.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])]
-)
-print("Loading DETR model...DONE")
+    # standard PyTorch mean-std input image normalization
+    transform = T.Compose(
+        [T.Resize(500), T.ToTensor(), T.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])]
+    )
+    print("Loading DETR model...DONE")
+    return transform, detr, device
 
 
 # The following are imported in app:

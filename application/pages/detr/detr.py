@@ -49,7 +49,12 @@ import requests
 from PIL import Image
 
 from application.pages.detr import config
-from application.pages.detr.model import CLASSES, DEVICE, detect, detr, filter_boxes, transform
+from application.pages.detr.model import (
+    CLASSES,
+    detect,
+    filter_boxes,
+    get_transform_detr_and_device,
+)
 
 # colors for visualization
 COLORS = [
@@ -96,6 +101,8 @@ class DETRApp(param.Parameterized):
         params["run_detr"] = self._update_plot
 
         super().__init__(**params)
+
+        self.transform, self.detr, self.device = get_transform_detr_and_device()
 
         self.run_detr()  # pylint: disable=not-callable
 
@@ -185,6 +192,9 @@ class DETRApp(param.Parameterized):
             iou=self.suppression,
             confidence=self.confidence,
             url=self.input_image_url,
+            transform=self.transform,
+            detr=self.detr,
+            device=self.device,
         )
         self.progress.active = False
 
@@ -298,7 +308,7 @@ def _add_bbox(  # pylint: disable=too-many-arguments
     )
 
 
-def get_figure(apply_nms: bool, iou: float, confidence: float, url: str) -> go.Figure:
+def get_figure(apply_nms: bool, iou: float, confidence: float, url: str, detr, transform, device) -> go.Figure:
     """Return a plotly figure of the specified url with objects identified and bounding boxes shown
 
     Args:
@@ -317,7 +327,7 @@ def get_figure(apply_nms: bool, iou: float, confidence: float, url: str) -> go.F
 
     tstart = time.time()
 
-    scores, boxes = detect(im, detr, transform, device=DEVICE)
+    scores, boxes = detect(im, detr, transform, device=device)
     scores, boxes = filter_boxes(scores, boxes, confidence=confidence, iou=iou, apply_nms=apply_nms)
 
     scores = scores.data.numpy()
