@@ -28,23 +28,18 @@ class BinderButton(pn.pane.Markdown):
     folder = param.String()
     notebook = param.String()
 
-    # In order to not be selected by the `pn.panel` selection process
-    # Cf. https://github.com/holoviz/panel/issues/1494#issuecomment-663219654
-    priority = 0
-
     width = param.Integer(default=200, bounds=(0, None), doc="""
         The width of the component (in pixels). This can be either
         fixed or preferred width, depending on width sizing policy.""")
 
+
+    # In order to not be selected by the `pn.panel` selection process
+    # Cf. https://github.com/holoviz/panel/issues/1494#issuecomment-663219654
+    priority = 0
+
     # The _rename dict is used to keep track of Panel parameters to sync to Bokeh properties.
-    # As value is not a property on the Bokeh model we should set it to None
-    _rename = {
-        **pn.pane.Markdown._rename,
-        "repository": None,
-        "branch": None,
-        "folder": None,
-        "notebook": None,
-    }
+    # As repository etc. is not a property on the Bokeh model we should set it to None
+    _rename = dict(pn.pane.Markdown._rename, repository=None, branch=None, folder=None, notebook=None)
 
     def __init__(self, **params):
         super().__init__(**params)

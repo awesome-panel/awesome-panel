@@ -26,11 +26,8 @@ class DynamicNumber(pn.pane.HTML):
     # Cf. https://github.com/holoviz/panel/issues/1494#issuecomment-663219654
     priority = 0
     # The _rename dict is used to keep track of Panel parameters to sync to Bokeh properties.
-    # As value is not a property on the Bokeh model we should set it to None
-    _rename = {
-        **pn.pane.HTML._rename,
-        "value": None,
-    }
+    # As value is not a property on the Bokeh model, we set the it to None
+    _rename = dict(pn.pane.HTML._rename, value=None)
 
     def __init__(self, **params):
         super().__init__(**params)
