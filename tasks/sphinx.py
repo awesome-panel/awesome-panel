@@ -59,6 +59,7 @@ def build(command,):
         command.run("sphinx-build -b html . _build")
         command.run("start _build/index.html")
 
+
 @task(pre=[copy_from_project_root])
 def linkcheck(command,):
     """Build local version of site and open in a browser

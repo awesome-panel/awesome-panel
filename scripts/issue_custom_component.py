@@ -18,5 +18,6 @@ def MyCustomWidget(data):
 
     return interact()
 
+
 df = pd.DataFrame(data={"x": [1, 2, 3, 4, 5, 6, 7], "y": [1, 2, 2, 4, 5, 9, 7]})
 MyCustomWidget(df).servable()

@@ -142,6 +142,7 @@ CLASSES = [
     "toothbrush",
 ]
 
+
 def get_transform_detr_and_device():
     # Load model
     print("Loading DETR model")

@@ -1,17 +1,18 @@
-import pandas as pd
-import param
-import panel as pn
 import hvplot.pandas
+import pandas as pd
+import panel as pn
+import param
 
 data = {
-    "obs": [1,2,3,4,5,6,7,8],
-    "label": ["a","b", "a", "b", "a","b", "a", "b"],
-    "gene_identifier": ["1","1", "2", "2", "2","2", "1", "1"],
-    "value": [1,2,2,4,7,6,9,8],
+    "obs": [1, 2, 3, 4, 5, 6, 7, 8],
+    "label": ["a", "b", "a", "b", "a", "b", "a", "b"],
+    "gene_identifier": ["1", "1", "2", "2", "2", "2", "1", "1"],
+    "value": [1, 2, 2, 4, 7, 6, 9, 8],
 }
 des = pd.DataFrame(data)
 gene_list = list(des["gene_identifier"].unique())
 comparison_list = list(des["label"].unique())
+
 
 class VolcanoPlots(param.Parameterized):
     comparison = param.Selector(objects=comparison_list)
@@ -45,6 +46,7 @@ class VolcanoPlots(param.Parameterized):
         self._table_pane.object = self.transform_data
 
     def panel(self):
-        return pn.Column(pn.Row(self._selections_pane,self._plot_pane),self._table_pane)
+        return pn.Column(pn.Row(self._selections_pane, self._plot_pane), self._table_pane)
+
 
 obj = VolcanoPlots(source_data=des).panel().servable()

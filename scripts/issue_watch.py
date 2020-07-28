@@ -1,6 +1,6 @@
-import param
-import panel as pn
 import holoviews as hv
+import panel as pn
+import param
 from param import parameterized
 
 

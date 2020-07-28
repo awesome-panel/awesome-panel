@@ -308,7 +308,9 @@ def _add_bbox(  # pylint: disable=too-many-arguments
     )
 
 
-def get_figure(apply_nms: bool, iou: float, confidence: float, url: str, detr, transform, device) -> go.Figure:
+def get_figure( # pylint: disable=too-many-arguments
+    apply_nms: bool, iou: float, confidence: float, url: str, detr, transform, device
+) -> go.Figure:
     """Return a plotly figure of the specified url with objects identified and bounding boxes shown
 
     Args:
@@ -316,6 +318,9 @@ def get_figure(apply_nms: bool, iou: float, confidence: float, url: str, detr, t
         iou (float): The iou value. A number between 0 and 1.
         confidence (float): The confidence treshold. A number between 0 and 1
         url (str): The location of the image
+        detr (Any): The DETR model
+        transform (Any): The DETR transform
+        device (Any): The DETR torch.device
 
     Returns:
         go.Figure: A plotly figure of the specified image

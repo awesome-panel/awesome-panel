@@ -36,7 +36,7 @@ class AttributeParser(HTMLParser):
     def handle_starttag(self, tag, attrs):
         if self.first_tag:
             for attr in attrs:
-                    self.attr_dict[attr[0]] = attr[1]
+                self.attr_dict[attr[0]] = attr[1]
             self.first_tag = False
 
 
