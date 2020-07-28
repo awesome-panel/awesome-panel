@@ -11,7 +11,7 @@ lxml
 awesome-panel-extensions
 
 # Data Engineering and Science
-pandas==0.25.2
+pandas==0.25.3
 geopandas # To `pip install geopandas` on windows please follow https://geoffboeing.com/2014/09/using-geopandas-windows/
 xlrd==1.2.0 # For importing xls files
 
@@ -41,7 +41,7 @@ selenium # To Web Test Automation. See https://selenium-python.readthedocs.io/
 # ------------------------------------------------------------------------------
 # flake8==3.7.5  # https://github.com/PyCQA/flake8
 isort>=4.3.15 # Sort import statements. We need 4.3.15 to correctly sort dataclasses
-pylint # Linter.
+pylint<5 # Linter.
 pylint2junit # Used to generate junit xml reports in azure pipelines https://pypi.org/project/pylint2junit/
 black # Auto formatter.
 autoflake # Automatically removes unused imports and unused variables. See https://github.com/myint/autoflake
