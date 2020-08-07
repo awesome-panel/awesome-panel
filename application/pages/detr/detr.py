@@ -308,7 +308,7 @@ def _add_bbox(  # pylint: disable=too-many-arguments
     )
 
 
-def get_figure( # pylint: disable=too-many-arguments
+def get_figure(  # pylint: disable=too-many-arguments
     apply_nms: bool, iou: float, confidence: float, url: str, detr, transform, device
 ) -> go.Figure:
     """Return a plotly figure of the specified url with objects identified and bounding boxes shown
