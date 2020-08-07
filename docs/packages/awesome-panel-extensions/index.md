@@ -79,4 +79,6 @@ For more info click the link below.
 
 * [Awesome Panel Designer Docs](designer.md)
 
-![awesome-panel-designer](awesome-panel-designer.gif)
+![Awesome Panel Designer Gif](awesome-panel-designer-guide.gif)
+
+
