@@ -11,7 +11,7 @@ This is for **developing any Python object that Panel can display**:
 
 <video width="100%" height="600" poster="__POSTER__.jpg" controls autoplay>
     <source src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/docs/packages/awesome-panel-extensions/awesome-panel-designer-guide.mp4?raw=true" type="video/mp4" />
-</video>
+</video><br>
 
 You can read the motivation for why I created the Awesome Panel Designer [here](#what-problem-does-the-designer-solve).
 
@@ -223,17 +223,17 @@ But I also want to develop robust code efficiently using a lot of tools a and be
     - Search and navigation across large code bases
 - Automated testing using Pytest.
     - Test Driven Development TDD with refactoring.
-- Code Quality chcks using Black, Pylint and MyPy
+- Code Quality checks using Black, Pylint and MyPy
 - Documentation with Docstrings and Sphinx.
 - Collaboration on GitHub, Azure DevOps etc.
 - The ability to break down my tools, visualizations, dashboards and apps into smaller components.
 - Develop `reactive` applications where I can `subscribe` to `events` like in modern front end frameworks.
-    - Panel and Param is perfect for that.
+    - Panel with Param is perfect for that.
 - Develop streaming applications.
-    - Panel. HoloViews and Param is perfect for that.
+    - Panel. HoloViews, Streamz and Param is perfect for that.
 - Develop applications powered by Python and extensible from Python.
     - Not from the frontend in Javascript, Typescript, React, Vue, Angular etc.
-        - My data science colleagues cannot use these languages and frameworks. So the languages and frameworks become bottlenecks.
+        - My data friends and colleagues do not master these languages and frameworks. And my users do not care about Themes, Styles, Transitions etc. (I do though :-). So the frontend languages and frameworks become bottlenecks.
     - Panel, HoloViews, Streamz, Param are perfect because they are well integrated and Panel holds state on the Python side and can push from Python to Frontend. Something Voila also provides, but Streamlit and Dash do not.
 
 ### As Is: This Holds Me Back
@@ -242,18 +242,14 @@ But I also want to develop robust code efficiently using a lot of tools a and be
 
 I can't just update a code file and see the output update immediately.
 
-- In my editor or terminal I have to wait for Bokeh server to reload which takes +10 secs.
+- In my editor or terminal I have to wait for python to start or the Bokeh server to reload which takes +10 secs.
 - I also have to reload data from file or database which can take a long time as well. Or alternative save sample datasets locally.
 - In Jupyter Notebook I can `importlib.reload` or `%run` my code from code files. But it is tedius to setup, use and maintain in my experience.
 - In BI Tools I can drag and drop components, browse parameters and update to see changes. I cant do that efficiently from an editor today. But using BI tools is not what I believe in for other than rapid prototyping. I believe in code and the power of Python for building long term, powerfull and flexible solutions.
 
-##### Slow to navigate across multiple programs
-
-VS Code -> Jupyter Notebook -> Browser and back. I want to stay in my IDE.
-
 ##### Slow to browse through and update the parameters of my components
 
-When running from my editor or the terminal its not that efficient to browse through the parameters of components and experiement with changes.
+When running from my editor or the terminal its not that efficient to browse through the parameters of components and experiment with changes.
 
 ##### Cannot efficiently test what happens when changing parameters
 
@@ -261,7 +257,7 @@ Not possible in editor without doing a breakpoint and updating.
 
 ###### Cannot experiment efficiently with layout and styles
 
-Sometimes you need a bit of styling via CSS I want to have a CSS file update it and see the changes. I did not have access to that. Or you need to change the layout of your app. Today that is simply too slow for me du to the +10secs reload time for the Bokeh/ Tornado server.
+Sometimes you need a bit of styling via CSS I want to have a CSS file update it and see the changes. I did not have access to that. Or you need to change the layout of your app. Today that is simply too slow for me due to the slow reload times.
 
 ##### Notebook Experience is not efficient for me - not even inside editor
 
