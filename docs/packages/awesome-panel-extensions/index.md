@@ -79,6 +79,6 @@ For more info click the link below.
 
 * [Awesome Panel Designer Docs](designer.md)
 
-![Awesome Panel Designer Gif](awesome-panel-designer-guide.gif)
-
-
+<video width="640" height="360" poster="__POSTER__.jpg" controls autoplay>
+    <source src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/docs/packages/awesome-panel-extensions/awesome-panel-designer-guide.mp4?raw=true" type="video/mp4" />
+</video>

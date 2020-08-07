@@ -9,7 +9,9 @@ This is for **developing any Python object that Panel can display**:
 - Matplotlib, Vega/ Altair, ECharts, Deck.gl, Bokeh, Plotly, HvPlot/ HoloViews, ...
 - Panel layouts, widgets, extensions and apps
 
-![awesome-panel-designer-guide](awesome-panel-designer-guide.gif)
+<video width="640" height="360" poster="__POSTER__.jpg" controls autoplay>
+    <source src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/docs/packages/awesome-panel-extensions/awesome-panel-designer-guide.mp4?raw=true" type="video/mp4" />
+</video>
 
 You can read the motivation for why I created the Awesome Panel Designer [here](#what-problem-does-the-designer-solve).
 
