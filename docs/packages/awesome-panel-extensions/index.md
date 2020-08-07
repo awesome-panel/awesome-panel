@@ -60,9 +60,9 @@ Please note that the Material Widgets **do not work in older browsers** like Int
 
 [![Material Button](material-button.png)](https://mybinder.org/v2/gh/marcskovmadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fframeworks%2Fmaterial%2FMaterialButton.ipynb)
 
-#### Developer Tools
+### Developer Tools
 
-##### Awesome Panel Designer
+#### Awesome Panel Designer
 
 The *Awesome Panel Designer* is my attempt to create an **efficient workflow for data exploration and development of data apps** in Python **from an editor or IDE**.
 
