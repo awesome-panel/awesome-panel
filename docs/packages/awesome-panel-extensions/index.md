@@ -73,6 +73,8 @@ This is for **developing any Python object that Panel can display**:
 - Matplotlib, Vega/ Altair, ECharts, Deck.gl, Bokeh, Plotly, HvPlot/ HoloViews, ...
 - Panel layouts, widgets, extensions and apps
 
+Use it via `from awesome_panel_extensions.developer_tools.designer import Designer`.
+
 For more info click the link below.
 
 * [Awesome Panel Designer Docs](designer.md)
