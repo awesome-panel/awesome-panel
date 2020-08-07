@@ -9,6 +9,8 @@ This is for **developing any Python object that Panel can display**:
 - Matplotlib, Vega/ Altair, ECharts, Deck.gl, Bokeh, Plotly, HvPlot/ HoloViews, ...
 - Panel layouts, widgets, extensions and apps
 
+![awesome-panel-designer](awesome-panel-designer.gif)
+
 Take a look at the video below where I show case how I can use the Designer to quickly develop different plots and Panel components.
 
 VIDEO COMING UP.

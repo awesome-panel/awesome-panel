@@ -62,4 +62,19 @@ Please note that the Material Widgets **do not work in older browsers** like Int
 
 #### Developer Tools
 
-* [Awesome Panel Designer](designer.md.md)
+##### Awesome Panel Designer
+
+The *Awesome Panel Designer* is my attempt to create an **efficient workflow for data exploration and development of data apps** in Python **from an editor or IDE**.
+
+This is for **developing any Python object that Panel can display**:
+
+- Strings, Markdown, HTML/ Css/ Javascript
+- DataFrames
+- Matplotlib, Vega/ Altair, ECharts, Deck.gl, Bokeh, Plotly, HvPlot/ HoloViews, ...
+- Panel layouts, widgets, extensions and apps
+
+For more info click the link below.
+
+* [Awesome Panel Designer Docs](designer.md)
+
+![awesome-panel-designer](awesome-panel-designer.gif)
