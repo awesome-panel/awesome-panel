@@ -9,7 +9,7 @@ This is for **developing any Python object that Panel can display**:
 - Matplotlib, Vega/ Altair, ECharts, Deck.gl, Bokeh, Plotly, HvPlot/ HoloViews, ...
 - Panel layouts, widgets, extensions and apps
 
-<video width="640" height="360" poster="__POSTER__.jpg" controls autoplay>
+<video width="100%" height="600" poster="__POSTER__.jpg" controls autoplay>
     <source src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/docs/packages/awesome-panel-extensions/awesome-panel-designer-guide.mp4?raw=true" type="video/mp4" />
 </video>
 
@@ -33,7 +33,7 @@ def matplotlib_plot():
 5. Run or debug the file from the IDE or terminal.
 6. Navigate to [http://localhost:5007](http://localhost:5007) in your browser.
 
-That it. Now you can start the develop and test cycle.
+That is it. Now you can start the develop and test cycle.
 
 - Change your code in the Editor.
 - Click *reload* in the Designer.
