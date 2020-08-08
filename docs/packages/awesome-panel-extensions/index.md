@@ -88,6 +88,14 @@ Use it via `awesome_panel_extensions.frameworks.material.Button`
 
 Use it via `awesome_panel_extensions.frameworks.material.Select`
 
+#### Material IntSlider
+
+[<img src="https://mybinder.org/badge_logo.svg" style="height:25px;display:inline;margin:5px">](https://mybinder.org/v2/gh/MarcSkovMadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fframeworks%2Fmaterial%2FMaterialIntSlider.ipynb) [<img src="https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg" style="height:25px;display:inline;margin:5px">](https://nbviewer.jupyter.org/github/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/reference/frameworks/material/MaterialIntSlider.ipynb)
+
+[![Material IntSlider](mwc-slider.png)](https://mybinder.org/v2/gh/marcskovmadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fframeworks%2Fmaterial%2FMaterialIntSlider.ipynb)
+
+Use it via `awesome_panel_extensions.frameworks.material.IntSlider`.
+
 ### Developer Tools
 
 #### Awesome Panel Designer
