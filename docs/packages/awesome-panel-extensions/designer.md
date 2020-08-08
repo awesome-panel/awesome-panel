@@ -286,7 +286,7 @@ Especially `.show` provides a very, very efficient experience when running toget
 - Add in the ability to reload the start up parameters and data.
 - Add in the some style editor like a Material Design Style editor for easy styling.
 - Implement more clever module reloading.
-    - Right now I'm just reload the one file containing the component. But it works great.
+    - Right now I'm just reloading the module containing the component. But it works great.
 - Improve parameter exploration via `pn.Param`.
 - Make it easy to transfer changes from Parameters explorer back to code.
 
