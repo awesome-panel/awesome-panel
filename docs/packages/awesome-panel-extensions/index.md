@@ -65,6 +65,18 @@ Use it via `from awesome_panel_extensions.widgets.perspective_viewer import Pers
 
 [![PerspectiveViewer](perspective-viewer-finos.gif)](https://mybinder.org/v2/gh/marcskovmadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fwidgets%2FPerspectiveViewer.ipynb)
 
+#### Tabulator
+
+The `Tabulator` widget is an awesome table for showing, editing and streaming data. Checkout [tabulator.info](https://tabulator.info) for inspiration.
+
+Use it via `from awesome_panel_extensions.widgets.tabulator import Tabulator`.
+
+[<img src="https://mybinder.org/badge_logo.svg" style="height:25px;display:inline;margin:5px">](https://mybinder.org/v2/gh/MarcSkovMadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fwidgets%2FTabulator.ipynb) [<img src="https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg" style="height:25px;display:inline;margin:5px">](https://nbviewer.jupyter.org/github/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/reference/widgets/Tabulator.ipynb)
+
+<video style="max-width:100%;max-height:500px;" autoplay controls>
+  <source src="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-extensions/master/assets/videos/Tabulator.mp4" type="video/mp4" controls>
+    You browser does not support video
+</video>
 
 ### Frameworks
 
