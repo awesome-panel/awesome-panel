@@ -65,6 +65,18 @@ Use it via `from awesome_panel_extensions.widgets.perspective_viewer import Pers
 
 [![PerspectiveViewer](perspective-viewer-finos.gif)](https://mybinder.org/v2/gh/marcskovmadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fwidgets%2FPerspectiveViewer.ipynb)
 
+#### PerspectiveViewer
+
+The `PivotTable` is a nice, interactive widget for getting insights from data.
+
+Use it via `from awesome_panel_extensions.widgets.pivot_table import PivotTable`
+
+[<img src="https://mybinder.org/badge_logo.svg" style="height:25px;display:inline;margin:5px">](https://mybinder.org/v2/gh/MarcSkovMadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fwidgets%2FPivotTable.ipynb) [<img src="https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg" style="height:25px;display:inline;margin:5px">](https://nbviewer.jupyter.org/github/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/reference/widgets/PivotTable.ipynb)
+
+<video width="640" height="360" poster="__POSTER__.jpg" controls autoplay>
+    <source src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/docs/packages/awesome-panel-extensions/pivot-table.mp4?raw=true" type="video/mp4" />
+</video>
+
 #### Tabulator
 
 The `Tabulator` widget is an awesome table for showing, editing and streaming data. Checkout [tabulator.info](https://tabulator.info) for inspiration.
