@@ -74,7 +74,7 @@ Use it via `from awesome_panel_extensions.widgets.pivot_table import PivotTable`
 [<img src="https://mybinder.org/badge_logo.svg" style="height:25px;display:inline;margin:5px">](https://mybinder.org/v2/gh/MarcSkovMadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fwidgets%2FPivotTable.ipynb) [<img src="https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg" style="height:25px;display:inline;margin:5px">](https://nbviewer.jupyter.org/github/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/reference/widgets/PivotTable.ipynb)
 
 <video style="max-width:100%;max-height:500px;" autoplay controls>
-  <source src="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-extensions/master/docs\guides\awesome-panel-extensions-guide\pivot-table.mp4" type="video/mp4" controls>
+  <source src="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/blob/master/docs/packages/awesome-panel-extensions/pandas-profile-report-reference.mp4" type="video/mp4" controls>
     You browser does not support video
 </video>
 
