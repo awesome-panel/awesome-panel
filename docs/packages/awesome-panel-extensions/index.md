@@ -65,7 +65,7 @@ Use it via `from awesome_panel_extensions.widgets.perspective_viewer import Pers
 
 [![PerspectiveViewer](perspective-viewer-finos.gif)](https://mybinder.org/v2/gh/marcskovmadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fwidgets%2FPerspectiveViewer.ipynb)
 
-#### PerspectiveViewer
+#### PivotTable
 
 The `PivotTable` is a nice, interactive widget for getting insights from data.
 
