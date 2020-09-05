@@ -89,13 +89,15 @@ Use it via `from awesome_panel_extensions.widgets.tabulator import Tabulator`.
 <video style="max-width:100%;max-height:500px;" autoplay controls>
   <source src="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-extensions/master/assets/videos/Tabulator.mp4" type="video/mp4" controls>
     You browser does not support video
-</video>
+</video><br/>
 
 ### Frameworks
 
 #### Fast
 
 The Fast extensions are based on the [fast.design](https://fast.design/) web components web component which are open sourced by Microsoft and probably will power the VS Code and Microsoft Office experience in the future.
+
+[![Fast Logo](fast-logo.png)](https://fast.design/)
 
 Please note that you can only use the Fast widgets inside a custom Panel template that
 
