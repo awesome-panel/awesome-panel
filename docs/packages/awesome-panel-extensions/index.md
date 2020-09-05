@@ -93,6 +93,30 @@ Use it via `from awesome_panel_extensions.widgets.tabulator import Tabulator`.
 
 ### Frameworks
 
+#### Fast
+
+The Fast extensions are based on the [fast.design](https://fast.design/) web components web component which are open sourced by Microsoft and probably will power the VS Code and Microsoft Office experience in the future.
+
+Please note that you can only use the Fast widgets inside a custom Panel template that
+
+- Wraps the content of the `<body>` html tag inside the `<fast-design-system-provider>` tag.
+- Loads the  Fast `javascript` module dependencies.
+
+We provide the `FastTemplate` for easy usage.
+
+You can also develop your own custom [Panel template](https://panel.holoviz.org/user_guide/Templates.html) if you need something special. For example combining it with more [fast.design](https://fast.design/) web components and the [Fluent Design System](https://www.microsoft.com/design/fluent/#/) to create **VS Code** and **Microsoft Office** like experiences.
+
+Please also note that the Fast components do not work on legacy browser like Internet Explorer.
+
+#### FastButton
+
+Use it via `from awesome_panel_extensions.frameworks.fast import FastButton`
+
+[<img src="https://mybinder.org/badge_logo.svg" style="height:25px;display:inline;margin:5px">](https://mybinder.org/v2/gh/MarcSkovMadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fframeworks%2Ffast%2FFastButton.ipynb) [<img src="https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg" style="height:25px;display:inline;margin:5px">](https://nbviewer.jupyter.org/github/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/reference/frameworks/fast/FastButton.ipynb)
+
+[![Fast Button](fast-button.png)](https://mybinder.org/v2/gh/marcskovmadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fframeworks%2Ffast%2FFastButton.ipynb)
+
+
 #### Material
 
 The Material Extensions are based on the [MWC Material Web Components](https://github.com/material-components/material-components-web-components) and [Material Design](https://material.io/design).
