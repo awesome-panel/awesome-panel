@@ -99,10 +99,10 @@ The Fast extensions are based on the [fast.design](https://fast.design/) web com
 
 [![Fast Logo](fast-logo.png)](https://fast.design/)
 
-Please note that you can only use the Fast widgets inside a custom Panel template that
+Please note that you can only use the Fast components inside a custom Panel template that
 
-- Wraps the content of the `<body>` html tag inside the `<fast-design-system-provider>` tag.
-- Loads the  Fast `javascript` module dependencies.
+- Loads the  [Fast `javascript` library](https://www.fast.design/docs/components/getting-started#from-cdn).
+- Wraps the content of the `<body>` html tag inside the [fast-design-system-provider](https://www.fast.design/docs/components/getting-started#add-components) tag.
 
 We provide the `FastTemplate` for easy usage.
 
@@ -118,6 +118,13 @@ Use it via `from awesome_panel_extensions.frameworks.fast import FastButton`
 
 [![Fast Button](fast-button.png)](https://mybinder.org/v2/gh/marcskovmadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fframeworks%2Ffast%2FFastButton.ipynb)
 
+#### FastCheckbox
+
+Use it via `from awesome_panel_extensions.frameworks.fast import FastCheckbox`
+
+[<img src="https://mybinder.org/badge_logo.svg" style="height:25px;display:inline;margin:5px">](https://mybinder.org/v2/gh/MarcSkovMadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fframeworks%2Ffast%2FFastCheckbox.ipynb) [<img src="https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg" style="height:25px;display:inline;margin:5px">](https://nbviewer.jupyter.org/github/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/reference/frameworks/fast/FastCheckbox.ipynb)
+
+[![Fast Checkbox](fast-checkbox.png)](https://mybinder.org/v2/gh/marcskovmadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fframeworks%2Ffast%2FFastCheckbox.ipynb)
 
 #### Material
 
