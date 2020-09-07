@@ -110,6 +110,14 @@ You can also develop your own custom [Panel template](https://panel.holoviz.org/
 
 Please also note that the Fast components do not work on legacy browser like Internet Explorer.
 
+#### FastAnchor
+
+Use it via `from awesome_panel_extensions.frameworks.fast import FastAnchor`
+
+[<img src="https://mybinder.org/badge_logo.svg" style="height:25px;display:inline;margin:5px">](https://mybinder.org/v2/gh/MarcSkovMadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fframeworks%2Ffast%2FFastAnchor.ipynb) [<img src="https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg" style="height:25px;display:inline;margin:5px">](https://nbviewer.jupyter.org/github/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/reference/frameworks/fast/FastAnchor.ipynb)
+
+[![Fast Anchor](fast-anchor.png)](https://mybinder.org/v2/gh/marcskovmadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fframeworks%2Ffast%2FFastAnchor.ipynb)
+
 #### FastButton
 
 Use it via `from awesome_panel_extensions.frameworks.fast import FastButton`
