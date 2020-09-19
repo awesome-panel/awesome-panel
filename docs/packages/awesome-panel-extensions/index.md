@@ -16,7 +16,15 @@ Each individual extension might depend on additional packages. For example the `
 
 Check out the extensions by clicking the images below.
 
-### Panes
+### Models
+
+#### Panes
+
+Use it via `from awesome_panel_extensions.models import Icon`.
+
+[<img src="https://mybinder.org/badge_logo.svg" style="height:25px;display:inline;margin:5px">](https://mybinder.org/v2/gh/MarcSkovMadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fmodels%2FIcon.ipynb) [<img src="https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg" style="height:25px;display:inline;margin:5px">](https://nbviewer.jupyter.org/github/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/reference/models/Icon.ipynb)
+
+[![Icon](icon.png)](https://github.com/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/reference/models/Icon.ipynb)
 
 #### PandasProfileReport
 
