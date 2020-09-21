@@ -39,7 +39,7 @@ Panel is developed and maintained by [Anaconda](https://www.anaconda.com/) devel
 
 ![Anaconda](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/anaconda-logo.png?raw=true)
 
-## Awesome Resources
+# Awesome Panel Resources ![Awesome Badge](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)
 
 A curated list of awesome panel resources. Inspired by [awesome-python](https://github.com/vinta/awesome-python) and [awesome-pandas](https://github.com/tommyod/awesome-pandas).
 
@@ -54,6 +54,7 @@ A curated list of awesome panel resources. Inspired by [awesome-python](https://
 
 - [Building Dashboards. Introduction to Data Analysis in Biological Sciences.](https://xavartley.github.io/#panel/vtk_examples/Gallery_VTK.html) by [Justin Bois](http://bois.caltech.edu/) (#App, #Inspiration)
 - [Color Dropper App](http://colordropper.herokuapp.com/colordropper) by [Andrew Huang](https://twitter.com/iateandrew1) (#App)
+- [Panel Dashboards by Nic Fox](https://dev.to/nicfoxds/how-to-create-an-interactive-dashboard-in-python-using-holoviz-panel-5bhp) by [Nic Fox](https://dev.to/nicfoxds) (#App, #Code)
 - [XrViz](https://github.com/intake/xrviz) by [Intake](https://github.com/intake) (#App, #Code, #Inspiration)
 
 ### Article
@@ -71,6 +72,7 @@ A curated list of awesome panel resources. Inspired by [awesome-python](https://
 
 ### Code
 
+- [Colormap Distorsions](https://github.com/mycarta/Colormap-distorsions-Panel-app) by [Matteo Niccoli](https://twitter.com/My_Carta) (#App, #Code)
 - [Elvis - Golden Layout](https://github.com/LeonvanKouwen/elvis) by [Leon van Kouwen](https://github.com/LeonvanKouwen) (#Code)
 
 ### Inspiration
@@ -96,7 +98,9 @@ A curated list of awesome panel resources. Inspired by [awesome-python](https://
 ### Tutorial
 
 - [HoloViz.org - Awesome Resources and Tutorials](http://holoviz.org/index.html) by [HoloViz](http://holoviz.org/) (#Tutorial)
+- [How to Create an Interactive Dashboard in Python Using HoloViz Panel](https://dev.to/nicfoxds/how-to-create-an-interactive-dashboard-in-python-using-holoviz-panel-5bhp) by [Nic Fox](https://dev.to/nicfoxds) (#Code, #Tutorial)
 - [Information is Beautiful](https://towardsdatascience.com/how-to-build-a-time-series-dashboard-in-python-with-panel-altair-and-a-jupyter-notebook-c0ed40f02289) by [Bokeh](https://bendoesdata.github.io/) (#Article, #Tutorial)
+- [Panel Tutorial by vda-lab](https://vda-lab.github.io/visualisation-tutorial/holoviz-what-is-panel.html#) by [VDA Lab](http://vda-lab.github.io/) (#App, #Code, #Tutorial)
 - [VTK Examples by xavArtley](http://bebi103.caltech.edu.s3-website-us-east-1.amazonaws.com/2019a/content/recitations/recitation_05/dashboards.html) by [xavArtely](https://github.com/xavArtley) (#Inspiration, #Tutorial, #VTK)
 
 ### Video

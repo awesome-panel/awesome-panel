@@ -1,6 +1,7 @@
 """In this module we define all Resources (except apps in the gallery) and exposes
 them via the RESOURCES list.
 """
+from application.config.tags import APP
 from application.config import authors, tags
 from application.config.settings import THUMBNAILS_ROOT
 
@@ -10,6 +11,30 @@ from awesome_panel.application.models import Resource
 # panel FILE ROOTS
 
 RESOURCES = [
+    Resource(
+        name="Panel Tutorial by vda-lab",
+        url="https://vda-lab.github.io/visualisation-tutorial/holoviz-what-is-panel.html#",
+        thumbnail_png_path=THUMBNAILS_ROOT + "",
+        is_awesome=True,
+        tags=[tags.TUTORIAL, tags.CODE, tags.APP],
+        author=authors.VDA_LAB,
+    ),
+    Resource(
+        name="Panel Dashboards by Nic Fox",
+        url="https://dev.to/nicfoxds/how-to-create-an-interactive-dashboard-in-python-using-holoviz-panel-5bhp",
+        thumbnail_png_path=THUMBNAILS_ROOT + "",
+        is_awesome=True,
+        tags=[tags.APP, tags.CODE, ],
+        author=authors.NIC_FOX,
+    ),
+    Resource(
+        name="How to Create an Interactive Dashboard in Python Using HoloViz Panel",
+        url="https://dev.to/nicfoxds/how-to-create-an-interactive-dashboard-in-python-using-holoviz-panel-5bhp",
+        thumbnail_png_path=THUMBNAILS_ROOT + "",
+        is_awesome=True,
+        tags=[tags.TUTORIAL, tags.CODE, ],
+        author=authors.NIC_FOX,
+    ),
     Resource(
         name="Colormap Distorsions",
         url="https://github.com/mycarta/Colormap-distorsions-Panel-app",

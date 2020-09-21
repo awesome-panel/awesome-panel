@@ -93,6 +93,12 @@ MATTEO_NICCOLI = Author(
     github_url="https://github.com/mycarta",
     github_avatar_url="https://avatars3.githubusercontent.com/u/7424763",
 )
+NIC_FOX = Author(
+    name="Nic Fox",
+    url="https://dev.to/nicfoxds",
+    github_url="https://github.com/foxnic",
+    github_avatar_url="https://avatars3.githubusercontent.com/u/39113566",
+)
 OURWORLDINDATA = Author(
     name="Our World in Data",
     url="https://ourworldindata.org/",
@@ -129,6 +135,12 @@ STREAMLIT = Author(
     github_url="https://github.com/streamlit",
     github_avatar_url="https://avatars1.githubusercontent.com/u/45109972",
 )
+VDA_LAB = Author(
+    name="VDA Lab",
+    url="http://vda-lab.github.io/",
+    github_url="https://github.com/vda-lab",
+    github_avatar_url="https://avatars3.githubusercontent.com/u/13289096",
+)
 VOILA = Author(
     name="Voila",
     url="https://github.com/voila-dashboards",
@@ -159,12 +171,14 @@ AUTHORS = [
     INTAKE,
     JAMES_BEDNAR,
     MARC_SKOV_MADSEN,
+    NIC_FOX,
     OURWORLDINDATA,
     PANEL,
     PHILIPP_RUDIGER,
     QUANSIGHT,
     PLOTLY,
     STREAMLIT,
+    VDA_LAB,
     VOILA,
     XAVARTLEY,
 ]
