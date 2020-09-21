@@ -54,7 +54,7 @@ A curated list of awesome panel resources. Inspired by [awesome-python](https://
 
 - [Building Dashboards. Introduction to Data Analysis in Biological Sciences.](https://xavartley.github.io/#panel/vtk_examples/Gallery_VTK.html) by [Justin Bois](http://bois.caltech.edu/) (#App, #Inspiration)
 - [Color Dropper App](http://colordropper.herokuapp.com/colordropper) by [Andrew Huang](https://twitter.com/iateandrew1) (#App)
-- [Panel Dashboards by Nic Fox](https://dev.to/nicfoxds/how-to-create-an-interactive-dashboard-in-python-using-holoviz-panel-5bhp) by [Nic Fox](https://dev.to/nicfoxds) (#App, #Code)
+- [Panel Dashboards by Nic Fox](https://foxnic.github.io/projects.html) by [Nic Fox](https://dev.to/nicfoxds) (#App, #Code)
 - [XrViz](https://github.com/intake/xrviz) by [Intake](https://github.com/intake) (#App, #Code, #Inspiration)
 
 ### Article

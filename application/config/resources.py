@@ -21,7 +21,7 @@ RESOURCES = [
     ),
     Resource(
         name="Panel Dashboards by Nic Fox",
-        url="https://dev.to/nicfoxds/how-to-create-an-interactive-dashboard-in-python-using-holoviz-panel-5bhp",
+        url="https://foxnic.github.io/projects.html",
         thumbnail_png_path=THUMBNAILS_ROOT + "",
         is_awesome=True,
         tags=[tags.APP, tags.CODE, ],
