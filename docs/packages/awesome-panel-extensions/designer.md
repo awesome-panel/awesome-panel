@@ -245,7 +245,7 @@ I can't just update a code file and see the output update immediately.
 - In my editor or terminal I have to wait for python to start or the Bokeh server to reload which takes +10 secs.
 - I also have to reload data from file or database which can take a long time as well. Or alternative save sample datasets locally.
 - In Jupyter Notebook I can `importlib.reload` or `%run` my code from code files. But it is tedius to setup, use and maintain in my experience.
-- In BI Tools I can drag and drop components, browse parameters and update to see changes. I cant do that efficiently from an editor today. But using BI tools is not what I believe in for other than rapid prototyping. I believe in code and the power of Python for building long term, powerfull and flexible solutions.
+- In BI Tools I can drag and drop components, browse parameters and update to see changes. I cant do that efficiently from an editor today. But using BI tools is not what I believe in for other than rapid prototyping. I believe in code and the power of Python for building long term, pwerful and flexible solutions.
 
 ##### Slow to browse through and update the parameters of my components
 

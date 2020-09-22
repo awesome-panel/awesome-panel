@@ -2,7 +2,7 @@
 
 [<img src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/panel-logo.png?raw=true" align="right" height="75">](https://panel.pyviz.org/)
 
-> A powerfull, high-level app and dashboarding solution for **Python**!
+> A pwerful, high-level app and dashboarding solution for **Python**!
 
 A repository for sharing knowledge on the use of [Panel](https://panel.pyviz.org/) for developing **awesome analytics apps** in Python.
 
@@ -19,7 +19,7 @@ Visit the app at [awesome-panel.org](https://awesome-panel.org)!
 
 ## The Power of Panel
 
-The only way to truly understand how powerfull Panel is to play around with it. But if you need to be convinced first, then here is the **30 minute introduction** to Panel!
+The only way to truly understand how pwerful Panel is to play around with it. But if you need to be convinced first, then here is the **30 minute introduction** to Panel!
 
 Afterwards you can go to the [Panel Getting Started Guide](http://panel.pyviz.org/getting_started/index.html) or visit the [Panel Gallery](http://panel.pyviz.org/gallery/index.html).
 
