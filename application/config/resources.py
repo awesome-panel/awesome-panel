@@ -1,9 +1,9 @@
 """In this module we define all Resources (except apps in the gallery) and exposes
 them via the RESOURCES list.
 """
-from application.config.tags import APP
 from application.config import authors, tags
 from application.config.settings import THUMBNAILS_ROOT
+from application.config.tags import APP, VIDEO
 
 # pylint: disable=line-too-long
 from awesome_panel.application.models import Resource
@@ -11,6 +11,14 @@ from awesome_panel.application.models import Resource
 # panel FILE ROOTS
 
 RESOURCES = [
+    Resource(
+        name="Experimental Machine Learning with HoloViz and PyTorch in Jupyterlab ",
+        url="https://pyvideo.org/pydata-la-2019/experimental-machine-learning-with-holoviz-and-pytorch-in-jupyterlab.html",
+        thumbnail_png_path=THUMBNAILS_ROOT + "",
+        is_awesome=True,
+        tags=[tags.TUTORIAL, tags.VIDEO],
+        author=authors.HAYLEY_SONG,
+    ),
     Resource(
         name="Panel Tutorial by vda-lab",
         url="https://vda-lab.github.io/visualisation-tutorial/holoviz-what-is-panel.html#",
@@ -24,7 +32,7 @@ RESOURCES = [
         url="https://foxnic.github.io/projects.html",
         thumbnail_png_path=THUMBNAILS_ROOT + "",
         is_awesome=True,
-        tags=[tags.APP, tags.CODE, ],
+        tags=[tags.APP, tags.CODE,],
         author=authors.NIC_FOX,
     ),
     Resource(
@@ -32,7 +40,7 @@ RESOURCES = [
         url="https://dev.to/nicfoxds/how-to-create-an-interactive-dashboard-in-python-using-holoviz-panel-5bhp",
         thumbnail_png_path=THUMBNAILS_ROOT + "",
         is_awesome=True,
-        tags=[tags.TUTORIAL, tags.CODE, ],
+        tags=[tags.TUTORIAL, tags.CODE,],
         author=authors.NIC_FOX,
     ),
     Resource(

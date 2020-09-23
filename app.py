@@ -17,6 +17,7 @@ import platform
 import panel as pn
 
 from application import config
+from application.pages.fast_gallery.fast_gallery import get_fast_gallery
 from awesome_panel.application.components import GalleryComponent
 from awesome_panel.application.models import Application
 from awesome_panel.application.services import Services
@@ -58,12 +59,11 @@ if __name__.startswith("bokeh"):
     view().servable()
 else:
     address = os.getenv("BOKEH_ADDRESS", "0.0.0.0")
-    APP_ROUTES = {"": view}
+    APP_ROUTES = {"": view, "gallery": get_fast_gallery}
 
     if platform.system() == "Windows":
         pn.serve(APP_ROUTES, port=80, dev=False, title="Awesome Panel", address=address)
     else:
-        print("num_procs=0")
         pn.serve(
             APP_ROUTES, port=80, dev=False, title="Awesome Panel", address=address, num_procs=4
         )

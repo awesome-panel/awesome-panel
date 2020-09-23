@@ -1,11 +1,9 @@
-from os import name
 from application.config.pages import GALLERY_PAGES
 
 for page in GALLERY_PAGES:
     tags = ""
     for tag in page.tags:
         tags += f"'{tag.name}',"
-
 
     text = f"""\
 ApplicationMetaData(

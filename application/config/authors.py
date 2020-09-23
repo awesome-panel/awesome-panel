@@ -36,6 +36,12 @@ DASH = Author(
     github_url="https://github.com/plotly/dash",
     github_avatar_url="https://avatars2.githubusercontent.com/u/5997976",
 )
+HAYLEY_SONG = Author(
+    name="Hayley Song",
+    url="http://holoviz.org/",
+    github_url="https://github.com/cocoaaa",
+    github_avatar_url="https://avatars0.githubusercontent.com/u/8037983",
+)
 HOLOVIZ = Author(
     name="HoloViz",
     url="http://holoviz.org/",
@@ -167,6 +173,7 @@ AUTHORS = [
     BOKEH,
     DASH,
     DAMIAN_FARRELL,
+    HAYLEY_SONG,
     HOLOVIZ,
     INTAKE,
     JAMES_BEDNAR,

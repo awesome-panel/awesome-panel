@@ -1,12 +1,14 @@
-import panel as pn
-import param
-import geoviews as gv
+import traceback
+
+import geopandas as gpd
 import holoviews as hv
 import pandas as pd
-import geopandas as gpd
+import panel as pn
+import param
 from datashader.utils import lnglat_to_meters
 from shapely.geometry import Point, box
-import traceback
+
+import geoviews as gv
 
 gv.extension("bokeh", logo=False)
 pn.extension()
