@@ -41,10 +41,15 @@ Please **use FireFox, Safari or Edge** if you can. Alternatively you can use Chr
 
 def info():
     """An InfoAlert with relevant text"""
-    return Column(InfoAlert(text=INFO_TEXT), sizing_mode="stretch_width",)
+    return Column(
+        InfoAlert(text=INFO_TEXT),
+        sizing_mode="stretch_width",
+    )
 
 
-def page_code_url_to_html(page: Resource,) -> str:
+def page_code_url_to_html(
+    page: Resource,
+) -> str:
     """Converts a page to html link to the code with a font awesome icon
 
     Make sure to run pnx.fontawesome.extend() for this to work
@@ -60,7 +65,9 @@ def page_code_url_to_html(page: Resource,) -> str:
     )
 
 
-def to_module_function(gallery_url: str,) -> ModuleType:
+def to_module_function(
+    gallery_url: str,
+) -> ModuleType:
     """Converts a link to a Python gallery file to a module string
 
     Arguments:
@@ -71,10 +78,22 @@ def to_module_function(gallery_url: str,) -> ModuleType:
     """
 
     module_str = (
-        gallery_url.replace(settings.GITHUB_BLOB_MASTER_URL, "",)
-        .replace(".py", "",)
-        .replace("/", ".",)
-        .replace("\\", ".",)
+        gallery_url.replace(
+            settings.GITHUB_BLOB_MASTER_URL,
+            "",
+        )
+        .replace(
+            ".py",
+            "",
+        )
+        .replace(
+            "/",
+            ".",
+        )
+        .replace(
+            "\\",
+            ".",
+        )
     )
     return importlib.import_module(module_str)
 
@@ -85,7 +104,10 @@ class GalleryButton(Button):
     When clicked the page of the GalleryButton loads"""
 
     def __init__(
-        self, page: Resource, page_outlet, **kwargs,
+        self,
+        page: Resource,
+        page_outlet,
+        **kwargs,
     ):
         """## Button that loads page
 
@@ -97,12 +119,16 @@ class GalleryButton(Button):
             page_outlet {[type]} -- The page_outlet to load the page to
         """
         super().__init__(
-            name=page.name, button_type="primary", **kwargs,
+            name=page.name,
+            button_type="primary",
+            **kwargs,
         )
         self.page = page
         self.page_outlet = page_outlet
 
-        def click_handler(event,):  # pylint: disable=unused-argument
+        def click_handler(
+            event,
+        ):  # pylint: disable=unused-argument
             text = (
                 f"<h1>Gallery / {page.name}</h1>"
                 f"<p>{page.author.to_html()}, {page_code_url_to_html(page)}</p>"
@@ -121,7 +147,11 @@ class GalleryCard(Column):
     """A Card consisting of an image and a button"""
 
     def __init__(
-        self, page: Resource, page_outlet, sizing_mode="fixed", **kwargs,
+        self,
+        page: Resource,
+        page_outlet,
+        sizing_mode="fixed",
+        **kwargs,
     ):
         """A Card consisting of an image and a button
 
@@ -130,7 +160,13 @@ class GalleryCard(Column):
             page {Resource} -- The page to load
             page_outlet {[type]} -- The page to load to
         """
-        self.button = GalleryButton(page, page_outlet, width=365, align="center", **kwargs,)
+        self.button = GalleryButton(
+            page,
+            page_outlet,
+            width=365,
+            align="center",
+            **kwargs,
+        )
         spacer = pn.layout.HSpacer(height=5)
         super().__init__(
             spacer,
@@ -151,7 +187,9 @@ class Gallery:  # pylint: disable=too-few-public-methods
     """The Gallery page"""
 
     def __init__(
-        self, page_outlet: pn.Column, apps_in_gallery: List[Resource],
+        self,
+        page_outlet: pn.Column,
+        apps_in_gallery: List[Resource],
     ):
         """Constructs a Gallery
 
@@ -162,11 +200,18 @@ class Gallery:  # pylint: disable=too-few-public-methods
         self.page_outlet = page_outlet
         self.apps_in_gallery = apps_in_gallery
 
-    def view(self,) -> Column:
+    def view(
+        self,
+    ) -> Column:
         """The gallery view of awesome-panel.org"""
         buttons = []
         for app in self.apps_in_gallery:
-            buttons.append(GalleryCard(app, self.page_outlet,))
+            buttons.append(
+                GalleryCard(
+                    app,
+                    self.page_outlet,
+                )
+            )
 
         return Column(
             Markdown(TEXT),

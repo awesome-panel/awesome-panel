@@ -27,7 +27,11 @@ def test_markdown():
     """
     return TestApp(
         test_markdown,
-        pn.pane.Markdown("# Header", name="basic", background="lightblue",),
+        pn.pane.Markdown(
+            "# Header",
+            name="basic",
+            background="lightblue",
+        ),
         sizing_mode="stretch_width",
         background="lightgray",
         max_width=600,
@@ -42,7 +46,11 @@ def test_markdown_from_file():
     """
     return TestApp(
         test_markdown_from_file,
-        pn.pane.Markdown(TEST_MD_FILE.read_text(), name="file", background="lightblue",),
+        pn.pane.Markdown(
+            TEST_MD_FILE.read_text(),
+            name="file",
+            background="lightblue",
+        ),
     )
 
 
@@ -50,9 +58,11 @@ def test_markdown_indendation():
     """
     We test the Markdown pane
 
-    - can handle leading spaces, i.e. this line shows as a bullited list and not in mono-space
-"""
-    return TestApp(test_markdown_indendation, sizing_mode="stretch_width",)
+    - can handle leading spaces, i.e. this line shows as a bullited list and not in mono-space"""
+    return TestApp(
+        test_markdown_indendation,
+        sizing_mode="stretch_width",
+    )
 
 
 def test_markdown_code_block():
@@ -75,7 +85,11 @@ def test_markdown_code_block():
 
     return TestApp(
         test_markdown_code_block,
-        pn.pane.Markdown(code_block, name="code block", background="lightblue",),
+        pn.pane.Markdown(
+            code_block,
+            name="code block",
+            background="lightblue",
+        ),
     )
 
 

@@ -4,9 +4,9 @@ import panel as pn
 def copy_to_clipboard():
     """### Copy to Clipboard Example
 
-This example was developed as a response to
-[Discourse Post 949](https://discourse.holoviz.org/t/using-panel-with-javascript-to-make-a-copy-text-to-clipboard-button/949)
-by [ShanzyHolm](https://discourse.holoviz.org/u/ShanzyHolm/summary).
+    This example was developed as a response to
+    [Discourse Post 949](https://discourse.holoviz.org/t/using-panel-with-javascript-to-make-a-copy-text-to-clipboard-button/949)
+    by [ShanzyHolm](https://discourse.holoviz.org/u/ShanzyHolm/summary).
     """
     text = pn.pane.Markdown(copy_to_clipboard.__doc__)
     source_textarea = pn.widgets.TextAreaInput(

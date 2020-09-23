@@ -54,7 +54,11 @@ class RiskRewardCalculation(param.Parameterized):
     risk_reward = param.Number()
 
     @param.depends(
-        "days_to_delivery_start", "days_to_delivery_end", "aggregation", "spreads", watch=True,
+        "days_to_delivery_start",
+        "days_to_delivery_end",
+        "aggregation",
+        "spreads",
+        watch=True,
     )
     def _update(self):
         print("_update")
@@ -64,7 +68,9 @@ class RiskRewardCalculation(param.Parameterized):
         spreads_on_days_to_delivery = self.spreads[spreads_filter]
 
         analysis = spreads_on_days_to_delivery.pivot(
-            columns="days_to_delivery", values="value", index="spread",
+            columns="days_to_delivery",
+            values="value",
+            index="spread",
         )
         analysis["change"] = (
             analysis[self.days_to_delivery_end] - analysis[self.days_to_delivery_start]
@@ -119,7 +125,11 @@ class RiskRewardCalculationComponent(param.Parameterized):
     def _risk_reward_results_view(self):
         return pn.Param(
             self.risk_reward_calculation,
-            parameters=["payoff_up", "payoff_down", "risk_reward",],
+            parameters=[
+                "payoff_up",
+                "payoff_down",
+                "risk_reward",
+            ],
             default_layout=pn.Row,
             sizing_mode="stretch_width",
             show_name=False,
@@ -128,7 +138,9 @@ class RiskRewardCalculationComponent(param.Parameterized):
     def _risk_reward_analysis_view(self):
         return pn.Param(
             self.risk_reward_calculation,
-            parameters=["analysis",],
+            parameters=[
+                "analysis",
+            ],
             sizing_mode="stretch_width",
             show_name=False,
         )

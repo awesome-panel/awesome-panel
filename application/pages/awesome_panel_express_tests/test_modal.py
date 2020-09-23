@@ -24,7 +24,10 @@ an interactive dashboard.
 
 Click 'X' to close the Modal dialogue
 """
-MODAL = Modal(title="Modal", body=[TEXT1],)
+MODAL = Modal(
+    title="Modal",
+    body=[TEXT1],
+)
 
 STYLE = pn.pane.HTML(f"<style>{MODAL.get_css()}</style>")
 
@@ -37,7 +40,10 @@ BODY_OPTIONS = {
 def test_modal():
     """A test that a modal can be opened using a button"""
     open_button = MODAL.get_open_modal_button("Open")
-    return TestApp(test_modal, open_button,)
+    return TestApp(
+        test_modal,
+        open_button,
+    )
 
 
 def test_modal_settings():
@@ -53,13 +59,18 @@ def test_modal_settings():
 
     options = list(BODY_OPTIONS)
     body_selector = pn.widgets.CheckBoxGroup(
-        name="Select body of modal", value=options[0:1], options=options,
+        name="Select body of modal",
+        value=options[0:1],
+        options=options,
     )
 
     @pn.depends(
-        body_selector, watch=True,
+        body_selector,
+        watch=True,
     )
-    def set_modal_body(_,):  # pylint: disable=unused-variable
+    def set_modal_body(
+        _,
+    ):  # pylint: disable=unused-variable
         if body_selector.value:
             # pylint: disable=not-an-iterable
             MODAL.body = [BODY_OPTIONS[option] for option in body_selector.value]

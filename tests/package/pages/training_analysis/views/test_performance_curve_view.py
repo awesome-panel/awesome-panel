@@ -11,7 +11,10 @@ from awesome_panel.express.testing import TestApp
 
 def test_performance_curve_update_view():
     """The attributes of the Athlete can be edited"""
-    return TestApp(test_performance_curve_update_view, PerformanceCurveUpdateView(),)
+    return TestApp(
+        test_performance_curve_update_view,
+        PerformanceCurveUpdateView(),
+    )
 
 
 def view() -> pn.Column:
@@ -20,7 +23,10 @@ def view() -> pn.Column:
     Returns:
         pn.Column -- A Column containing all the tests
     """
-    return pn.Column(pn.pane.Markdown(__doc__), test_performance_curve_update_view(),)
+    return pn.Column(
+        pn.pane.Markdown(__doc__),
+        test_performance_curve_update_view(),
+    )
 
 
 if __name__.startswith("bokeh"):

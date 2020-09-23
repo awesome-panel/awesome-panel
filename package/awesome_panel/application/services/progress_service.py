@@ -71,12 +71,17 @@ class ProgressService(param.Parameterized):
             active_count = old_progress.active_count
 
         progress = Progress(
-            value=value, value_max=value_max, message=message, active_count=active_count,
+            value=value,
+            value_max=value_max,
+            message=message,
+            active_count=active_count,
         )
         with param.edit_constant(self):
             self.progress = progress
 
-    def reset(self,):
+    def reset(
+        self,
+    ):
         """Resets the progress to its default values"""
         # Please note the order matters as the Widgets updates two times. One for each change
         with param.edit_constant(self):
@@ -84,7 +89,11 @@ class ProgressService(param.Parameterized):
 
     @contextmanager
     def report(
-        self, value: int = 0, message: str = "", value_max: int = 100, active_count: int = 0,
+        self,
+        value: int = 0,
+        message: str = "",
+        value_max: int = 100,
+        active_count: int = 0,
     ):
         """Report the value and message.
 
@@ -110,7 +119,10 @@ class ProgressService(param.Parameterized):
 
     @contextmanager
     def increment(
-        self, value: int, message: str, value_max: int = 100,
+        self,
+        value: int,
+        message: str,
+        value_max: int = 100,
     ):
         """Increment the value and report the message.
 
@@ -128,9 +140,14 @@ class ProgressService(param.Parameterized):
             None: Nothing is yielded
         """
         value_half = int(value / 2)
-        new_value = min(self.progress.value + value_half, value_max,)
+        new_value = min(
+            self.progress.value + value_half,
+            value_max,
+        )
         self.update(
-            value=new_value, value_max=value_max, message=message,
+            value=new_value,
+            value_max=value_max,
+            message=message,
         )
 
         yield
@@ -154,11 +171,13 @@ class ProgressService(param.Parameterized):
         """
         previous_message = self.progress.message
         self.update(
-            message=message, active_count=self.progress.active_count + 1,
+            message=message,
+            active_count=self.progress.active_count + 1,
         )
 
         yield
 
         self.update(
-            message=previous_message, active_count=max(0, self.progress.active_count - 1),
+            message=previous_message,
+            active_count=max(0, self.progress.active_count - 1),
         )

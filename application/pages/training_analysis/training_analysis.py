@@ -29,7 +29,9 @@ class TrainingAnalysisApp(pn.Column):
         super().__init__(self.activity, **kwargs)
 
 
-def view(activity_file: Optional[pathlib.Path] = None,):
+def view(
+    activity_file: Optional[pathlib.Path] = None,
+):
     """Run this to run the application"""
     return TrainingAnalysisApp(activity_file=activity_file)
 

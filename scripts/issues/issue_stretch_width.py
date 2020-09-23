@@ -12,7 +12,14 @@ svg = pn.pane.SVG(
 )
 
 app = pn.Column(
-    spacer, svg, button, spacer, name="gallery-item", width=400, margin=10, sizing_mode="fixed",
+    spacer,
+    svg,
+    button,
+    spacer,
+    name="gallery-item",
+    width=400,
+    margin=10,
+    sizing_mode="fixed",
 )
 
 app.servable()

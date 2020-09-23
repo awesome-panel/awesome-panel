@@ -26,7 +26,11 @@ def view() -> pn.Column:
     designer = Designer(reload_services=reload_services)
     pn.config.js_files["mwc"] = material.MWC_JS
 
-    return pn.Column(designer.view, material.fonts_pane, sizing_mode="stretch_both",)
+    return pn.Column(
+        designer.view,
+        material.fonts_pane,
+        sizing_mode="stretch_both",
+    )
 
 
 if __name__.startswith("__main__"):

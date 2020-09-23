@@ -71,7 +71,12 @@ def view():
     )
     example_tabs = pn.Tabs(copy_to_clipboard())
     info = pn.pane.Markdown(__doc__)
-    return pn.Column(info, style, app_bar, example_tabs,)
+    return pn.Column(
+        info,
+        style,
+        app_bar,
+        example_tabs,
+    )
 
 
 if __name__.startswith("bokeh"):

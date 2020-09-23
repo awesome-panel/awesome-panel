@@ -42,7 +42,9 @@ def test_can_delete_tag(tag_service, tag):
     assert tag not in tag_service.tags
 
 
-def test_can_bulk_create_and_is_sorted(tag_service,):
+def test_can_bulk_create_and_is_sorted(
+    tag_service,
+):
     # Given
     tag_a = Tag(name="a")
     tag_b = Tag(name="b")

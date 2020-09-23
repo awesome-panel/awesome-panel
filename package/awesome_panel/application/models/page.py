@@ -20,5 +20,7 @@ class Page(OrderByNameMixin, param.Parameterized):
     show_loading_page = param.Boolean(default=False)
     restrict_max_width = param.Boolean(default=True)
 
-    def __hash__(self,):
+    def __hash__(
+        self,
+    ):
         return hash(self.name)

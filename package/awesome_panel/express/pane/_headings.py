@@ -35,7 +35,9 @@ class HeadingBase(pn.pane.Markdown):
         else:
             kwargs["style"] = {"text-align": text_align}
         super().__init__(
-            heading, sizing_mode=sizing_mode, **kwargs,
+            heading,
+            sizing_mode=sizing_mode,
+            **kwargs,
         )
 
 
@@ -60,7 +62,12 @@ class Title(HeadingBase):
             url {Optional[str]} -- If not None the heading will link to the url
         """
         super().__init__(
-            text=text, level=1, sizing_mode=sizing_mode, text_align=text_align, url=url, **kwargs,
+            text=text,
+            level=1,
+            sizing_mode=sizing_mode,
+            text_align=text_align,
+            url=url,
+            **kwargs,
         )
 
 
@@ -85,7 +92,12 @@ class Header(HeadingBase):
             url {Optional[str]} -- If not None the heading will link to the url
         """
         super().__init__(
-            text=text, level=2, sizing_mode=sizing_mode, text_align=text_align, url=url, **kwargs,
+            text=text,
+            level=2,
+            sizing_mode=sizing_mode,
+            text_align=text_align,
+            url=url,
+            **kwargs,
         )
 
 
@@ -110,5 +122,10 @@ class SubHeader(HeadingBase):
             url {Optional[str]} -- If not None the heading will link to the url
         """
         super().__init__(
-            text=text, level=3, sizing_mode=sizing_mode, text_align=text_align, url=url, **kwargs,
+            text=text,
+            level=3,
+            sizing_mode=sizing_mode,
+            text_align=text_align,
+            url=url,
+            **kwargs,
         )

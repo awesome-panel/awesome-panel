@@ -59,7 +59,10 @@ class ApplicationTemplate(pn.Template):
         self.sidebar = pn.Column()
         self._main_spacer = pn.Spacer(height=0, margin=0)
         self.main = pn.Column(
-            name="main", css_classes=["main"], sizing_mode="stretch_both", margin=(25, 50, 50, 50),
+            name="main",
+            css_classes=["main"],
+            sizing_mode="stretch_both",
+            margin=(25, 50, 50, 50),
         )
         self._update_main_container()
         self.template_css = pn.pane.HTML(height=0, width=0, sizing_mode="fixed", margin=0)

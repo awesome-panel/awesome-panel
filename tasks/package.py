@@ -9,7 +9,9 @@ from invoke import task
 
 
 @task
-def build(command,):
+def build(
+    command,
+):
     """Builds the awesome-panel package)"""
     with command.cd("package"):
         command.run("python setup.py sdist bdist_wheel")

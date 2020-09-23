@@ -18,7 +18,11 @@ from awesome_panel.express import ProgressExt
 def test_constructor():
     """We test the ProgressExt constructor"""
     # When
-    progress = ProgressExt(value=10, message="hello world", bar_color="primary",)
+    progress = ProgressExt(
+        value=10,
+        message="hello world",
+        bar_color="primary",
+    )
     # Then
     assert progress.value == 10
     assert progress.message == "hello world"
@@ -31,7 +35,8 @@ def test_update():
     progress = ProgressExt()
     # When
     progress.update(
-        20, "hello again",
+        20,
+        "hello again",
     )
     # Then
     assert progress.value == 20
@@ -41,7 +46,11 @@ def test_update():
 def test_reset():
     """We test the ProgressExt reset method"""
     # Given
-    progress = ProgressExt(value=10, message="hello world", bar_color="primary",)
+    progress = ProgressExt(
+        value=10,
+        message="hello world",
+        bar_color="primary",
+    )
     # When
     progress.reset()
     # Then

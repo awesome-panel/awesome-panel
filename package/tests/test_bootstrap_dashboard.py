@@ -8,13 +8,31 @@ def test_app_attributes():
     """Test of the attributes of the Template"""
     app = pnx.templates.BootstrapDashboardTemplate()
 
-    assert hasattr(app, "header",)
-    assert hasattr(app, "main",)
-    assert hasattr(app, "sidebar",)
+    assert hasattr(
+        app,
+        "header",
+    )
+    assert hasattr(
+        app,
+        "main",
+    )
+    assert hasattr(
+        app,
+        "sidebar",
+    )
 
-    assert isinstance(app.header, pn.layout.Panel,)
-    assert isinstance(app.main, pn.layout.Panel,)
-    assert isinstance(app.sidebar, pn.layout.Panel,)
+    assert isinstance(
+        app.header,
+        pn.layout.Panel,
+    )
+    assert isinstance(
+        app.main,
+        pn.layout.Panel,
+    )
+    assert isinstance(
+        app.sidebar,
+        pn.layout.Panel,
+    )
 
 
 def test_app_with_content():
@@ -24,7 +42,10 @@ def test_app_with_content():
     - There is only vertical scroll in the sidebar and main area.
     - The vertical scroll is independent.
     """
-    app = pnx.templates.BootstrapDashboardTemplate("Awesome Panel", "https://awesome-panel.org",)
+    app = pnx.templates.BootstrapDashboardTemplate(
+        "Awesome Panel",
+        "https://awesome-panel.org",
+    )
     header_objects = [
         *app.header.objects,
         pn.layout.HSpacer(background="red"),
@@ -34,11 +55,17 @@ def test_app_with_content():
     app.header[:] = header_objects
     app.sidebar[:] = [
         "Sidebar",
-        pn.layout.HSpacer(background="blue", height=200,),
+        pn.layout.HSpacer(
+            background="blue",
+            height=200,
+        ),
     ]
     app.main[:] = [
         "Main",
-        pn.layout.HSpacer(background="green", height=4000,),
+        pn.layout.HSpacer(
+            background="green",
+            height=4000,
+        ),
     ]
     return app
 

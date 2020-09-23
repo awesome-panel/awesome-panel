@@ -24,7 +24,8 @@ class TitleComponent(param.Parameterized):
     view = param.ClassSelector(class_=pn.Row)
 
     def __init__(
-        self, **params,
+        self,
+        **params,
     ):
         params["start_spinning"] = self._start_spinning
         params["stop_spinning"] = self._stop_spinning

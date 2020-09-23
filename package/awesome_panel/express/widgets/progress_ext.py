@@ -69,7 +69,9 @@ class ProgressExt(param.Parameterized):
     bar_color = param.String(default="info")
 
     def update(
-        self, value: int, message: str,
+        self,
+        value: int,
+        message: str,
     ):
         """Updates the value and message
 
@@ -81,16 +83,22 @@ class ProgressExt(param.Parameterized):
         self.value = value
         self.message = message
 
-    def reset(self,):
+    def reset(
+        self,
+    ):
         """Resets the value and message"""
         # Please note the order matters as the Widgets updates two times. One for each change
         self.message = ""
         self.value = 0
 
     @param.depends(
-        "value", "message", "bar_color",
+        "value",
+        "message",
+        "bar_color",
     )
-    def view(self,) -> pn.viewable.Viewable:
+    def view(
+        self,
+    ) -> pn.viewable.Viewable:
         """View the widget
 
         Returns:
@@ -99,11 +107,19 @@ class ProgressExt(param.Parameterized):
         content = []
         if self.value:
             content.append(
-                pn.widgets.Progress(value=self.value, bar_color=self.bar_color, align="center",)
+                pn.widgets.Progress(
+                    value=self.value,
+                    bar_color=self.bar_color,
+                    align="center",
+                )
             )
         elif self.message:
             content.append(
-                pn.widgets.Progress(active=True, bar_color=self.bar_color, align="center",)
+                pn.widgets.Progress(
+                    active=True,
+                    bar_color=self.bar_color,
+                    align="center",
+                )
             )
         if self.value and not self.message:
             content.append(pn.pane.Str(" "))  # Hack: To stop progressbar from jumping vertically
@@ -113,7 +129,9 @@ class ProgressExt(param.Parameterized):
 
     @contextmanager
     def report(
-        self, value: int = 0, message: str = "",
+        self,
+        value: int = 0,
+        message: str = "",
     ):
         """Report the value and message.
 
@@ -130,14 +148,17 @@ class ProgressExt(param.Parameterized):
             None: Nothing is yielded
         """
         self.update(
-            value, message,
+            value,
+            message,
         )
         yield
         self.reset()
 
     @contextmanager
     def increment(
-        self, value: int, message: str,
+        self,
+        value: int,
+        message: str,
     ):
         """Increment the value and report the message.
 
@@ -154,7 +175,10 @@ class ProgressExt(param.Parameterized):
         """
         value_half = int(value / 2)
 
-        self.value = min(self.value + value_half, 100,)
+        self.value = min(
+            self.value + value_half,
+            100,
+        )
         self.message = message
 
         yield

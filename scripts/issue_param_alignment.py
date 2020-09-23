@@ -29,7 +29,9 @@ class DETRApp(param.Parameterized):
                 width=900,
             )
         )
-        app_view = pn.Column(top_selections,)
+        app_view = pn.Column(
+            top_selections,
+        )
         return app_view
 
 

@@ -57,17 +57,17 @@ ECHARTS_HTML = """\
 class ECharts(WebComponent):  # pylint: disable=too-few-public-methods
     """# ECharts
 
-[ECharts](https://www.echartsjs.com/en/index.html) is an open-sourced JavaScript
-visualization tool, which can run fluently on PC and mobile devices.
-It is compatible with most modern Web Browsers. Its also an **Apache incubator project**.
-The library is very fast with a modern look and feel.
+    [ECharts](https://www.echartsjs.com/en/index.html) is an open-sourced JavaScript
+    visualization tool, which can run fluently on PC and mobile devices.
+    It is compatible with most modern Web Browsers. Its also an **Apache incubator project**.
+    The library is very fast with a modern look and feel.
 
-[Pyecharts](https://pyecharts.org/#/en-us/) is a Python api for using ECharts in Python
-including Standalone, Flask, Django and Jupyter Notebooks.
+    [Pyecharts](https://pyecharts.org/#/en-us/) is a Python api for using ECharts in Python
+    including Standalone, Flask, Django and Jupyter Notebooks.
 
-Below we develop an `ECharts` pane capable of showing Echarts dicts and Pyecharts objects
-**enabling us to develop awesome analytics apps using the power of Echarts, Panel and Python**.
-"""
+    Below we develop an `ECharts` pane capable of showing Echarts dicts and Pyecharts objects
+    **enabling us to develop awesome analytics apps using the power of Echarts, Panel and
+    Python**."""
 
     html = param.String(ECHARTS_HTML)
     properties_to_watch = param.Dict({"option": "option"})

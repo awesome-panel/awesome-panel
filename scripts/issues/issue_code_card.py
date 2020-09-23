@@ -4,13 +4,18 @@ import param
 
 class Card(pn.Column):
     def __init__(
-        self, header, body, **kwargs,
+        self,
+        header,
+        body,
+        **kwargs,
     ):
         print("__init__")
         content = pn.Row(body)
         header_pane = pn.pane.HTML(f"<h5>{header}</h5>")
         super().__init__(
-            header_pane, content, **kwargs,
+            header_pane,
+            content,
+            **kwargs,
         )
         return
 

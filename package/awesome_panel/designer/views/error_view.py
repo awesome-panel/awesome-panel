@@ -9,11 +9,11 @@ BACKGROUND = "#f8d7da"
 class ErrorView(pn.Column):
     """The ErrorView displays the error_message nicely formatted
 
-        Args:
-            error_message (str): A stack trace or similar
-            params: Parameters normally accepted by panel.Column
+    Args:
+        error_message (str): A stack trace or similar
+        params: Parameters normally accepted by panel.Column
 
-        """
+    """
 
     def __init__(self, error_message: str, **params):
         error = error_message

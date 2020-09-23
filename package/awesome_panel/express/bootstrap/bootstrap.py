@@ -39,7 +39,9 @@ class InfoAlert(Markdown):
     """
 
     def __init__(
-        self, text: str, **kwargs,
+        self,
+        text: str,
+        **kwargs,
     ):
         """An Info Alert that renders Markdown
 
@@ -65,7 +67,8 @@ class InfoAlert(Markdown):
             kwargs["sizing_mode"] = "stretch_width"
 
         super().__init__(
-            text, **kwargs,
+            text,
+            **kwargs,
         )
 
     raw_css = """
@@ -98,7 +101,9 @@ class WarningAlert(pn.pane.Markdown):
     """
 
     def __init__(
-        self, text: str, **kwargs,
+        self,
+        text: str,
+        **kwargs,
     ):
         """A Warning Alert that renders Markdown
 
@@ -124,7 +129,8 @@ class WarningAlert(pn.pane.Markdown):
             kwargs["sizing_mode"] = "stretch_width"
 
         super().__init__(
-            text, **kwargs,
+            text,
+            **kwargs,
         )
 
     raw_css = """
@@ -157,7 +163,9 @@ class ErrorAlert(pn.pane.Markdown):
     """
 
     def __init__(
-        self, text: str, **kwargs,
+        self,
+        text: str,
+        **kwargs,
     ):
         """An Error Alert that renders Markdown
 
@@ -184,7 +192,8 @@ class ErrorAlert(pn.pane.Markdown):
             kwargs["sizing_mode"] = "stretch_width"
 
         super().__init__(
-            text, **kwargs,
+            text,
+            **kwargs,
         )
 
     raw_css = """

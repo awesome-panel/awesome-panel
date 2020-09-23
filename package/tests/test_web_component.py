@@ -253,7 +253,9 @@ def test_custom_web_component_attributes_comm(document, comm):
 
 def test_attributes_last_change_change_to_none(document, comm, CustomWebComponent):
     # Given
-    component = CustomWebComponent(html="<div></div>",)
+    component = CustomWebComponent(
+        html="<div></div>",
+    )
 
     component.param.boolean.default = True
     component.param.boolean.allow_None = False

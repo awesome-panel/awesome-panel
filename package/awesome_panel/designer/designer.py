@@ -26,79 +26,79 @@ from awesome_panel.designer.views import ErrorView
 
 class Designer(param.Parameterized):  # pylint: disable=too-many-instance-attributes
     """The Awesome Panel Designer provides an integrated experience between editor/ IDE and the
-Panel Server to enable a quick experiment+develop+test cycle.
+    Panel Server to enable a quick experiment+develop+test cycle.
 
-Use it from your code or test file.
+    Use it from your code or test file.
 
-Args:
-    reload_services (List[ReloadService]): A list of ReloadServices one for each component
-    or app you want access to in the designer.
+    Args:
+        reload_services (List[ReloadService]): A list of ReloadServices one for each component
+        or app you want access to in the designer.
 
-Example
--------
+    Example
+    -------
 
-The below example can be run via `python`, `panel serve`, `python -m panel serve --dev --show`,
-`pytest` or via the integrated `run` or `debug` in your editor which provides a lot of flexibility.
+    The below example can be run via `python`, `panel serve`, `python -m panel serve --dev --show`,
+    `pytest` or via the integrated `run` or `debug` in your editor which provides a lot of
+    flexibility.
 
-```python
-import pathlib
+    ```python
+    import pathlib
 
-import panel as pn
-import param
+    import panel as pn
+    import param
 
-from awesome_panel.designer import Designer, ReloadService, components
-from awesome_panel.express import Card
-from awesome_panel.express.assets import BOOTSTRAP_PANEL_EXPRESS_CSS
+    from awesome_panel.designer import Designer, ReloadService, components
+    from awesome_panel.express import Card
+    from awesome_panel.express.assets import BOOTSTRAP_PANEL_EXPRESS_CSS
 
-FIXTURES = pathlib.Path(__file__).parent / "fixtures"
-COMPONENT_CSS = FIXTURES / "component.css"
-COMPONENT_JS = FIXTURES / "component.js"
-COMPONENT2_JS = FIXTURES / "component2.js"
+    FIXTURES = pathlib.Path(__file__).parent / "fixtures"
+    COMPONENT_CSS = FIXTURES / "component.css"
+    COMPONENT_JS = FIXTURES / "component.js"
+    COMPONENT2_JS = FIXTURES / "component2.js"
 
-TITLE_COMPONENT = ReloadService(
-    component=components.TitleComponent, css_path=COMPONENT_CSS, js_path=COMPONENT_JS,
-)
-EMPTY_COMPONENT = ReloadService(
-    component=components.EmptyComponent, css_path=COMPONENT_CSS, js_path=COMPONENT2_JS,
-)
-CENTERED_COMPONENT = ReloadService(
-    component=components.CenteredComponent,
-    css_path=COMPONENT_CSS,
-    js_path=COMPONENT_JS,
-    component_parameters={"component": components.TitleComponent()},
-)
-STOPPED_COMPONENT = ReloadService(
-    component=components.StoppedComponent, css_path=COMPONENT_CSS, js_path=COMPONENT_JS,
-)
-CARD_COMPONENT = ReloadService(
-    component=Card,
-    css_path=BOOTSTRAP_PANEL_EXPRESS_CSS,
-    js_path=COMPONENT_JS,
-    component_parameters={
-        "header": "Test Card",
-        "body": pn.pane.Markdown("Awesome Panel " * 50),
-        "collapsable": True,
-    },
-)
-
-
-RELOAD_SERVICES = [
-    TITLE_COMPONENT,
-    EMPTY_COMPONENT,
-    CENTERED_COMPONENT,
-    STOPPED_COMPONENT,
-    CARD_COMPONENT,
-]
+    TITLE_COMPONENT = ReloadService(
+        component=components.TitleComponent, css_path=COMPONENT_CSS, js_path=COMPONENT_JS,
+    )
+    EMPTY_COMPONENT = ReloadService(
+        component=components.EmptyComponent, css_path=COMPONENT_CSS, js_path=COMPONENT2_JS,
+    )
+    CENTERED_COMPONENT = ReloadService(
+        component=components.CenteredComponent,
+        css_path=COMPONENT_CSS,
+        js_path=COMPONENT_JS,
+        component_parameters={"component": components.TitleComponent()},
+    )
+    STOPPED_COMPONENT = ReloadService(
+        component=components.StoppedComponent, css_path=COMPONENT_CSS, js_path=COMPONENT_JS,
+    )
+    CARD_COMPONENT = ReloadService(
+        component=Card,
+        css_path=BOOTSTRAP_PANEL_EXPRESS_CSS,
+        js_path=COMPONENT_JS,
+        component_parameters={
+            "header": "Test Card",
+            "body": pn.pane.Markdown("Awesome Panel " * 50),
+            "collapsable": True,
+        },
+    )
 
 
-def test_designer():
-    return Designer(reload_services=RELOAD_SERVICES).show()
+    RELOAD_SERVICES = [
+        TITLE_COMPONENT,
+        EMPTY_COMPONENT,
+        CENTERED_COMPONENT,
+        STOPPED_COMPONENT,
+        CARD_COMPONENT,
+    ]
 
 
-if __name__.startswith("__main__") or __name__.startswith("bokeh"):
-    test_designer()
-```
-"""
+    def test_designer():
+        return Designer(reload_services=RELOAD_SERVICES).show()
+
+
+    if __name__.startswith("__main__") or __name__.startswith("bokeh"):
+        test_designer()
+    ```"""
 
     reload_service = param.ObjectSelector(label="Component")
 

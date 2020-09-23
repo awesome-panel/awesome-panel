@@ -17,6 +17,15 @@ I've experienced."""
 
 about = pn.layout.Row(pn.pane.Markdown(ABOUT))
 image = pn.pane.PNG(IMAGE)
-info = pn.layout.Row(pn.pane.Markdown(INFO, background="#d1ecf1",))
-app = pn.Column(about, image, info,)
+info = pn.layout.Row(
+    pn.pane.Markdown(
+        INFO,
+        background="#d1ecf1",
+    )
+)
+app = pn.Column(
+    about,
+    image,
+    info,
+)
 app.servable()

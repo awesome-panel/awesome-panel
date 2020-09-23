@@ -70,19 +70,30 @@ def get_fontawesome_panel_express() -> str:
     return _to_fontawesome_panel_express(fontawesome_css)
 
 
-def _to_fontawesome_panel_express(font_awesome_css: str,) -> str:
+def _to_fontawesome_panel_express(
+    font_awesome_css: str,
+) -> str:
     """Converts a css string like FONTAWESOME_CSS_URL into it's panel
     representation
 
     Returns:
         str -- [description]
     """
-    css = font_awesome_css.replace("}.", "}\n.",)
+    css = font_awesome_css.replace(
+        "}.",
+        "}\n.",
+    )
     lines_in = css.split("\n")
     lines_out = []
     for line in lines_in:
         if ":before{" in line:
-            line = line.replace(".fa-", "div.bk.pa-",)
-            line = line.replace(":before{", " div.bk *::before{",)
+            line = line.replace(
+                ".fa-",
+                "div.bk.pa-",
+            )
+            line = line.replace(
+                ":before{",
+                " div.bk *::before{",
+            )
             lines_out.append(line)
     return _FONTAWESOME_PANEL_EXPRESS_HEADER + "\n".join(lines_out)

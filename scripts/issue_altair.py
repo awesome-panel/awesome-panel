@@ -20,7 +20,10 @@ def make_plot():
         alt.Chart(source)
         .mark_rect()
         .encode(x="x:O", y="y:O", color="z:Q")
-        .properties(height=500, width="container",),
+        .properties(
+            height=500,
+            width="container",
+        ),
         sizing_mode="stretch_width",
     )
 

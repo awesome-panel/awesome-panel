@@ -14,7 +14,10 @@ DEFAULT_Y_SERIES = [
 
 
 def map_plot(
-    data: Union[pd.DataFrame, None,]
+    data: Union[
+        pd.DataFrame,
+        None,
+    ]
 ):
     """A map plotting the activity
 
@@ -28,12 +31,18 @@ def map_plot(
     if data is None or data.empty:
         return None
 
-    fig = px.scatter_mapbox(data, lat="lat", lon="long",)
+    fig = px.scatter_mapbox(
+        data,
+        lat="lat",
+        lon="long",
+    )
     return fig
 
 
 def activity_plot(
-    data: pd.DataFrame, x_series: str = "timestamp", y_series: str = "power",
+    data: pd.DataFrame,
+    x_series: str = "timestamp",
+    y_series: str = "power",
 ):
     """A plot of two columns of the Activity Data
 
@@ -45,11 +54,17 @@ def activity_plot(
     Returns:
         Plot: A plot
     """
-    return data.hvplot(x=x_series, y=y_series,)
+    return data.hvplot(
+        x=x_series,
+        y=y_series,
+    )
 
 
 def activity_plots(
-    data: Union[pd.DataFrame, None,],
+    data: Union[
+        pd.DataFrame,
+        None,
+    ],
     x_series: Optional[List[str]] = None,
     y_series: Optional[List[str]] = None,
 ) -> hv.Layout:
@@ -76,5 +91,11 @@ def activity_plots(
 
     for xss in x_series:
         for yss in y_series:
-            layout.items.append(activity_plot(data, xss, yss,))
+            layout.items.append(
+                activity_plot(
+                    data,
+                    xss,
+                    yss,
+                )
+            )
     return layout

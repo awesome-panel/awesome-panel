@@ -15,7 +15,10 @@ class Card(pn.Column):
     def __init__(
         self,
         header: str,
-        body: Union[pn.viewable.Viewable, List[pn.viewable.Viewable],],
+        body: Union[
+            pn.viewable.Viewable,
+            List[pn.viewable.Viewable],
+        ],
         collapsable: bool = False,
         **kwargs,
     ):
@@ -25,7 +28,10 @@ class Card(pn.Column):
             kwargs["css_classes"].append("card")
         if "sizing_mode" not in kwargs and "width" not in kwargs:
             kwargs["sizing_mode"] = "stretch_width"
-        if not isinstance(body, list,):
+        if not isinstance(
+            body,
+            list,
+        ):
             panels = [body]
         else:
             panels = body
@@ -38,15 +44,22 @@ class Card(pn.Column):
         if not collapsable:
             header_pane = self.get_card_header(header)
             super().__init__(
-                header_pane, content, **kwargs,
+                header_pane,
+                content,
+                **kwargs,
             )
             return
 
         collapse_button = pn.widgets.Button(
-            name="-", width=30, sizing_mode="stretch_height", css_classes=["flat"],
+            name="-",
+            width=30,
+            sizing_mode="stretch_height",
+            css_classes=["flat"],
         )
 
-        def click_callback(event,):
+        def click_callback(
+            event,
+        ):
             if event.new % 2 == 1:
                 self.remove(content)
                 collapse_button.name = "+"
@@ -62,7 +75,9 @@ class Card(pn.Column):
             css_classes=["card-header"],
         )
         super().__init__(
-            header_row, content, **kwargs,
+            header_row,
+            content,
+            **kwargs,
         )
 
     def clone(self, *objects, **params):
@@ -70,7 +85,10 @@ class Card(pn.Column):
         header, body = self.objects
         return super().clone(header.object, body, **params)
 
-    def _get_card_content(self, panels: List[pn.viewable.Viewable],) -> pn.viewable.Viewable:
+    def _get_card_content(
+        self,
+        panels: List[pn.viewable.Viewable],
+    ) -> pn.viewable.Viewable:
         """Combines the list of Viewables into a Viewable with the right css classes
 
         Args:
@@ -87,7 +105,12 @@ class Card(pn.Column):
             *[self.get_card_panel(panel) for panel in panels],
             css_classes=["card-body"],
             sizing_mode="stretch_width",
-            margin=(0, 2, 2, 0,),
+            margin=(
+                0,
+                2,
+                2,
+                0,
+            ),
         )
         # Due to Bokeh formatting every card-panel is 5px inside the card-body
         # and thus we cannot get borders to overlap.
@@ -101,7 +124,10 @@ class Card(pn.Column):
         return content
 
     @staticmethod
-    def get_card_header(text: str, **kwargs,) -> pn.pane.HTML:
+    def get_card_header(
+        text: str,
+        **kwargs,
+    ) -> pn.pane.HTML:
         """[summary]
 
         Arguments:
@@ -121,10 +147,16 @@ class Card(pn.Column):
             kwargs["margin"] = 0
         object_ = f'<h5 class="card-header"">{text}</h5>'
 
-        return pn.pane.HTML(object_, **kwargs,)
+        return pn.pane.HTML(
+            object_,
+            **kwargs,
+        )
 
     @staticmethod
-    def get_card_panel(obj, **kwargs,) -> pn.viewable.Viewable:
+    def get_card_panel(
+        obj,
+        **kwargs,
+    ) -> pn.viewable.Viewable:
         """A Card Panel to be inserted into the body of the Card
 
         Arguments:
@@ -141,7 +173,16 @@ class Card(pn.Column):
         if "sizing_mode" not in kwargs and "width" not in kwargs:
             kwargs["sizing_mode"] = "stretch_width"
 
-        if isinstance(obj, str,):
-            return pn.pane.Markdown(obj, **kwargs,)
+        if isinstance(
+            obj,
+            str,
+        ):
+            return pn.pane.Markdown(
+                obj,
+                **kwargs,
+            )
 
-        return pn.panel(obj, **kwargs,)
+        return pn.panel(
+            obj,
+            **kwargs,
+        )

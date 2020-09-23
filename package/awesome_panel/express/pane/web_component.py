@@ -298,10 +298,30 @@ class WebComponent(Widget):
         super().__init__(**params)
 
         self.parser: HTMLParser = AttributeParser()
-        self.param.watch(self._update_parameters, ["html",])
-        self.param.watch(self._handle_attributes_last_change, ["attributes_last_change",])
-        self.param.watch(self._handle_properties_last_change, ["properties_last_change",])
-        self.param.watch(self._handle_events_count_last_change, ["events_count_last_change",])
+        self.param.watch(
+            self._update_parameters,
+            [
+                "html",
+            ],
+        )
+        self.param.watch(
+            self._handle_attributes_last_change,
+            [
+                "attributes_last_change",
+            ],
+        )
+        self.param.watch(
+            self._handle_properties_last_change,
+            [
+                "properties_last_change",
+            ],
+        )
+        self.param.watch(
+            self._handle_events_count_last_change,
+            [
+                "events_count_last_change",
+            ],
+        )
 
         if self.attributes_to_watch:
             parameters_to_watch = [value for value in self.attributes_to_watch.values() if value]
@@ -382,9 +402,7 @@ class WebComponent(Widget):
         return self.html
 
     def _child_parameters(self) -> Set:
-        """Returns a set of any new parameters added on self compared to WebComponent.
-
-        """
+        """Returns a set of any new parameters added on self compared to WebComponent."""
         return set(self.param.objects()) - set(WebComponent.param.objects())
 
     def parse_html_to_dict(self, html):

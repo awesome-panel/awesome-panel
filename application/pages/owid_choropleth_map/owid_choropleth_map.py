@@ -55,16 +55,22 @@ Windows then please follow the
 class OwidDashboard(param.Parameterized):
     """A Dashboard showing the Owid World Data like 'Annual CO2 Emissions'
 
-        Args:
-            shape_data (Optional[gpd.geodataframe.GeoDataFrame], optional): The Map shape data.
-            Defaults to None.
-            owid_data_sets (Optional[pd.DataFrame], optional): A DataFrame listing the available
-            datasets. Defaults to None.
-            kwargs: Any other parameters
+    Args:
+        shape_data (Optional[gpd.geodataframe.GeoDataFrame], optional): The Map shape data.
+        Defaults to None.
+        owid_data_sets (Optional[pd.DataFrame], optional): A DataFrame listing the available
+        datasets. Defaults to None.
+        kwargs: Any other parameters
     """
 
     dataset_name = param.ObjectSelector()
-    year = param.Integer(2010, bounds=(1950, 2018,),)
+    year = param.Integer(
+        2010,
+        bounds=(
+            1950,
+            2018,
+        ),
+    )
 
     def __init__(
         self,
@@ -90,25 +96,42 @@ class OwidDashboard(param.Parameterized):
         super().__init__(**kwargs)
 
     @param.depends(
-        "dataset_name", "year",
+        "dataset_name",
+        "year",
     )
-    def map_plot(self,):
+    def map_plot(
+        self,
+    ):
         """The Bokeh Map"""
-        return self._map_plot(self.dataset_name, self.year,)
+        return self._map_plot(
+            self.dataset_name,
+            self.year,
+        )
 
     @lru_cache(2048)
     def _map_plot(
-        self, name: str, year: int,
+        self,
+        name: str,
+        year: int,
     ):
         if name and year:
             (shape_data, key,) = self.get_owid_data(
-                self.owid_data_sets, self.shape_data, name=name, year=year,
+                self.owid_data_sets,
+                self.shape_data,
+                name=name,
+                year=year,
             )
-            return self.get_map_plot(shape_data, key, key,)
+            return self.get_map_plot(
+                shape_data,
+                key,
+                key,
+            )
         return None
 
     @param.depends("dataset_name")
-    def download_link(self,) -> str:
+    def download_link(
+        self,
+    ) -> str:
         """A HTML string to enable download of the data
 
         Returns:
@@ -128,7 +151,13 @@ class OwidDashboard(param.Parameterized):
     @lru_cache(2048)
     def get_shape_data() -> gpd.geodataframe.GeoDataFrame:
         """Loads the shape data of the map"""
-        shape_data = gpd.read_file(SHAPEFILE)[["ADMIN", "ADM0_A3", "geometry",]]
+        shape_data = gpd.read_file(SHAPEFILE)[
+            [
+                "ADMIN",
+                "ADM0_A3",
+                "geometry",
+            ]
+        ]
         shape_data.columns = [
             "country",
             "country_code",
@@ -149,7 +178,9 @@ class OwidDashboard(param.Parameterized):
 
     @staticmethod
     @lru_cache(2048)
-    def get_owid_df(url,) -> pd.DataFrame:
+    def get_owid_df(
+        url,
+    ) -> pd.DataFrame:
         """The DataFrame of data from Owid"""
         return pd.read_csv(url)
 
@@ -179,7 +210,12 @@ class OwidDashboard(param.Parameterized):
         owid_data = cls.get_owid_df(url)
         if year is not None:
             owid_data = owid_data[owid_data["Year"] == year]
-        merged = shape_data.merge(owid_data, left_on="country", right_on="Entity", how="left",)
+        merged = shape_data.merge(
+            owid_data,
+            left_on="country",
+            right_on="Entity",
+            how="left",
+        )
 
         if key is None:
             key = owid_data.columns[2]
@@ -190,7 +226,9 @@ class OwidDashboard(param.Parameterized):
         )
 
     @staticmethod
-    def to_geo_json_data_source(data: gpd.geodataframe.GeoDataFrame,) -> GeoJSONDataSource:
+    def to_geo_json_data_source(
+        data: gpd.geodataframe.GeoDataFrame,
+    ) -> GeoJSONDataSource:
         """Convert the data to a GeoJSONDataSource
 
         Args:
@@ -209,24 +247,33 @@ class OwidDashboard(param.Parameterized):
         value_column: Optional[str] = None,
         title: str = "",
     ):
-        """Plot GeoDataFrame as a map
-
-
-        """
+        """Plot GeoDataFrame as a map"""
         geosource = cls.to_geo_json_data_source(shape_data)
         palette = brewer["OrRd"][8]
         palette = palette[::-1]
         vals = shape_data[value_column]
-        color_mapper = LinearColorMapper(palette=palette, low=vals.min(), high=vals.max(),)
+        color_mapper = LinearColorMapper(
+            palette=palette,
+            low=vals.min(),
+            high=vals.max(),
+        )
         color_bar = ColorBar(
             color_mapper=color_mapper,
             label_standoff=8,
             height=20,
-            location=(0, 0,),
+            location=(
+                0,
+                0,
+            ),
             orientation="horizontal",
         )
 
-        plot = figure(title=title, plot_height=500, tools="", sizing_mode="stretch_width",)
+        plot = figure(
+            title=title,
+            plot_height=500,
+            tools="",
+            sizing_mode="stretch_width",
+        )
         plot.xgrid.grid_line_color = None
         plot.ygrid.grid_line_color = None
         plot.patches(  # pylint: disable=too-many-function-args
@@ -236,15 +283,21 @@ class OwidDashboard(param.Parameterized):
             fill_alpha=1,
             line_width=0.5,
             line_color="black",
-            fill_color={"field": value_column, "transform": color_mapper,},
+            fill_color={
+                "field": value_column,
+                "transform": color_mapper,
+            },
         )
         plot.add_layout(
-            color_bar, "below",
+            color_bar,
+            "below",
         )
         plot.toolbar.logo = None
         return plot
 
-    def view(self,):
+    def view(
+        self,
+    ):
         """Map dashboard"""
         css = """
 .bk.owid-card {
@@ -260,16 +313,32 @@ class OwidDashboard(param.Parameterized):
             self.param.dataset_name,
             self.map_plot,
             self.param.year,
-            pn.Row(pn.layout.HSpacer(), self.download_link, sizing_mode="stretch_width",),
+            pn.Row(
+                pn.layout.HSpacer(),
+                self.download_link,
+                sizing_mode="stretch_width",
+            ),
             css_classes=["owid-content"],
-            margin=(10, 12, 12, 10,),
+            margin=(
+                10,
+                12,
+                12,
+                10,
+            ),
             sizing_mode="stretch_width",
         )
         card = pn.Column(
-            content, css_classes=["owid-card"], sizing_mode="stretch_width", max_width=1000,
+            content,
+            css_classes=["owid-card"],
+            sizing_mode="stretch_width",
+            max_width=1000,
         )
         app = pn.Column(
-            pn.pane.Markdown(__doc__), pn.pane.HTML(style), card, INFO, sizing_mode="stretch_width",
+            pn.pane.Markdown(__doc__),
+            pn.pane.HTML(style),
+            card,
+            INFO,
+            sizing_mode="stretch_width",
         )
         return app
 

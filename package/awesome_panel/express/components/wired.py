@@ -220,7 +220,9 @@ class Fab(WiredBase):
     )
 
     def __init__(
-        self, min_height=40, **params,
+        self,
+        min_height=40,
+        **params,
     ):
         super().__init__(min_height=min_height, **params)
 
@@ -265,7 +267,9 @@ class IconButton(WiredBase):
     clicks = param.Integer()
 
     def __init__(
-        self, min_height=40, **params,
+        self,
+        min_height=40,
+        **params,
     ):
         super().__init__(min_height=min_height, **params)
 
@@ -322,7 +326,11 @@ class LiteralInput(WiredBase):
 
     component_type = param.String("inputgroup")
     html = param.String("""<wired-input style="width:100%"></wired-input>""")
-    attributes_to_watch = param.Dict({"placeholder": "placeholder",})
+    attributes_to_watch = param.Dict(
+        {
+            "placeholder": "placeholder",
+        }
+    )
     properties_to_watch = param.Dict({"textInput.value": "value"})
     events_to_watch = param.Dict({"change": None})
 

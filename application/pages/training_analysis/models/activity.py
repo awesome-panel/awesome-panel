@@ -25,17 +25,22 @@ class Activity(param.Parameterized):
     data = param.DataFrame(doc="The records of the file")
 
     @param.depends(
-        "file", watch=True,
+        "file",
+        watch=True,
     )
     @progress.report(message="Parsing Activity File")
-    def parse_file(self,):
+    def parse_file(
+        self,
+    ):
         """Converts the file to the training_data"""
         if self.file:
             self.data = fit_file_services.parse_fit_file(self.file)
 
     @param.depends("data")
     @progress.report(message="Creating Activity Plots")
-    def activity_plots(self,):
+    def activity_plots(
+        self,
+    ):
         """A layout of plots of the activity data. For example timestamp vs power.
 
         Returns:
@@ -45,7 +50,9 @@ class Activity(param.Parameterized):
 
     @param.depends("data")
     @progress.report(message="Creating Map")
-    def map_plot(self,):
+    def map_plot(
+        self,
+    ):
         """The route on a map
 
         Returns:
@@ -53,10 +60,16 @@ class Activity(param.Parameterized):
         """
         return activity_plot.map_plot(self.data)
 
-    def view(self,) -> pn.viewable.Viewable:
+    def view(
+        self,
+    ) -> pn.viewable.Viewable:
         """A view of the Activity
 
         Returns:
             pn.viewable.Viewable: A view of the Activity
         """
-        return activity_view.ActivityView(self.param, self.map_plot, self.activity_plots,)
+        return activity_view.ActivityView(
+            self.param,
+            self.map_plot,
+            self.activity_plots,
+        )

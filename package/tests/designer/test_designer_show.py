@@ -19,10 +19,14 @@ COMPONENT_JS = FIXTURES / "component.js"
 COMPONENT2_JS = FIXTURES / "component2.js"
 
 TITLE_COMPONENT = ReloadService(
-    component=components.TitleComponent, css_path=COMPONENT_CSS, js_path=COMPONENT_JS,
+    component=components.TitleComponent,
+    css_path=COMPONENT_CSS,
+    js_path=COMPONENT_JS,
 )
 EMPTY_COMPONENT = ReloadService(
-    component=components.EmptyComponent, css_path=COMPONENT_CSS, js_path=COMPONENT2_JS,
+    component=components.EmptyComponent,
+    css_path=COMPONENT_CSS,
+    js_path=COMPONENT2_JS,
 )
 CENTERED_COMPONENT = ReloadService(
     component=components.CenteredComponent,
@@ -31,7 +35,9 @@ CENTERED_COMPONENT = ReloadService(
     component_parameters={"component": components.TitleComponent()},
 )
 STOPPED_COMPONENT = ReloadService(
-    component=components.StoppedComponent, css_path=COMPONENT_CSS, js_path=COMPONENT_JS,
+    component=components.StoppedComponent,
+    css_path=COMPONENT_CSS,
+    js_path=COMPONENT_JS,
 )
 CARD_COMPONENT = ReloadService(
     component=Card,

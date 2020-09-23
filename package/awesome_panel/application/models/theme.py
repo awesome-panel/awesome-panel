@@ -21,9 +21,8 @@ _COLOR_CYCLE = tuple(Cycle.default_cycles["Category20"])
 class Theme(param.Parameterized):
     """The Theme model provides parameters and functionality like links to spinner images and css.
 
-- Provide theming to your Template and Application
-- implement a custom subclass Theme
-"""
+    - Provide theming to your Template and Application
+    - implement a custom subclass Theme"""
 
     spinner_static_url = param.String(assets.SPINNER_PANEL_STATIC_LIGHT_400_340)
     spinner_url = param.String(assets.SPINNER_PANEL_BREATH_LIGHT_400_340)

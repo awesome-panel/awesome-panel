@@ -36,7 +36,8 @@ def test__convert_units():
     fit_file_services._convert_units(dataframe)
     # Then
     pd.testing.assert_frame_equal(
-        dataframe, expected_dataframe,
+        dataframe,
+        expected_dataframe,
     )
 
 
@@ -48,5 +49,8 @@ def test_parse_fit_file():
     # When
     actual = fit_file_services.parse_fit_file(fit_file)
     # Then
-    assert isinstance(actual, pd.DataFrame,)
+    assert isinstance(
+        actual,
+        pd.DataFrame,
+    )
     assert not actual.empty

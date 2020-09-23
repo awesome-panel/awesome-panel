@@ -16,7 +16,11 @@ def test_mwc_select_fixture(mwc_select):
 
 
 @pytest.mark.parametrize(
-    ["options"], [(["a", "b", "c"],), ({"a": "aaa", "b": "bbb", "c": "ccc"},),]
+    ["options"],
+    [
+        (["a", "b", "c"],),
+        ({"a": "aaa", "b": "bbb", "c": "ccc"},),
+    ],
 )
 def test_mwc_select_can_set_value(options):
     # Given
@@ -28,7 +32,11 @@ def test_mwc_select_can_set_value(options):
 
 
 @pytest.mark.parametrize(
-    ["options"], [(["a", "b", "c"],), ({"a": "aaa", "b": "bbb", "c": "ccc"},),]
+    ["options"],
+    [
+        (["a", "b", "c"],),
+        ({"a": "aaa", "b": "bbb", "c": "ccc"},),
+    ],
 )
 def test_mwc_select_can_get_value(options):
     # Given

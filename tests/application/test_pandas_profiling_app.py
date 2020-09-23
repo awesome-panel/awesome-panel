@@ -14,7 +14,12 @@ def csv_url():
 
 @pytest.fixture
 def dataframe():
-    return pd.DataFrame({"x": list(range(0, 50)), "y": list(range(50, 100)),})
+    return pd.DataFrame(
+        {
+            "x": list(range(0, 50)),
+            "y": list(range(50, 100)),
+        }
+    )
 
 
 @pytest.fixture

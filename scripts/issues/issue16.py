@@ -15,7 +15,10 @@ p {
 pn.config.raw_css.append(CSS)
 
 app_markdown = pn.Column(
-    pn.pane.Markdown(TEXT, background="yellow",),
+    pn.pane.Markdown(
+        TEXT,
+        background="yellow",
+    ),
     pn.layout.HSpacer(),
     sizing_mode="stretch_width",
     background="blue",
@@ -24,13 +27,21 @@ app_markdown = pn.Column(
 app_markdown.servable()
 
 app_html = pn.Column(
-    pn.pane.HTML(TEXT, background="yellow",), sizing_mode="stretch_width", background="blue",
+    pn.pane.HTML(
+        TEXT,
+        background="yellow",
+    ),
+    sizing_mode="stretch_width",
+    background="blue",
 )
 
 app_html.servable()
 
 app_markdown_html = pn.Column(
-    pn.pane.HTML(markdown.markdown(TEXT), background="yellow",),
+    pn.pane.HTML(
+        markdown.markdown(TEXT),
+        background="yellow",
+    ),
     sizing_mode="stretch_width",
     background="blue",
 )

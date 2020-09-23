@@ -13,8 +13,17 @@ pnx.fontawesome.extend()
 def test_gallery_button(page):
     """Test of the Gallery Button"""
 
-    app = pn.Column(name="app", sizing_mode="stretch_width",)
+    app = pn.Column(
+        name="app",
+        sizing_mode="stretch_width",
+    )
 
-    gallery_button = gallery.GalleryButton(page, app,)
+    gallery_button = gallery.GalleryButton(
+        page,
+        app,
+    )
     app[:] = [gallery_button]
-    return TestApp(test_gallery_button, app,)
+    return TestApp(
+        test_gallery_button,
+        app,
+    )

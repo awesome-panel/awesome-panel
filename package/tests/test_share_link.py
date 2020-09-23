@@ -12,7 +12,9 @@ def test_base():
         "Helper Test Class"
 
         @property
-        def href(self,):
+        def href(
+            self,
+        ):
             return "test"
 
     base = ShareOnTest(url=url)

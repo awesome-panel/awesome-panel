@@ -15,7 +15,12 @@ from recommonmark.parser import CommonMarkParser  # type: ignore
 
 
 def docstring(
-    app, what, name, obj, options, lines,
+    app,
+    what,
+    name,
+    obj,
+    options,
+    lines,
 ):  # pylint: disable=unused-argument, too-many-arguments
     """Helper function to render docstring using markdown"""
     md = "\n".join(lines)
@@ -26,10 +31,13 @@ def docstring(
         lines.append(line)
 
 
-def setup(app,):
+def setup(
+    app,
+):
     """Setups the Sphinx app"""
     app.connect(
-        "autodoc-process-docstring", docstring,
+        "autodoc-process-docstring",
+        docstring,
     )
     app.add_stylesheet("css/awesome-panel.css")
 
@@ -159,7 +167,13 @@ latex_elements: Dict[str, str,] = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, "AwesomePanel.tex", "Awesome Panel Documentation", "Marc Skov Madsen", "manual",)
+    (
+        master_doc,
+        "AwesomePanel.tex",
+        "Awesome Panel Documentation",
+        "Marc Skov Madsen",
+        "manual",
+    )
 ]
 
 
@@ -167,7 +181,15 @@ latex_documents = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [(master_doc, "AwesomePanel", "Awesome Panel Documentation", [author], 1,)]
+man_pages = [
+    (
+        master_doc,
+        "AwesomePanel",
+        "Awesome Panel Documentation",
+        [author],
+        1,
+    )
+]
 
 
 # -- Options for Texinfo output ----------------------------------------------

@@ -13,15 +13,15 @@ _IMAGE_DICT = {
 class Resource(param.Parameterized):
     """Model of a Resource
 
-        Args:
-            name (str): The name of the Resource
-            url (str): The url to the resource
-            thumbnail_png_path (str): A thumbnail image of the resource
-            is_awesome (bool): Whether or not the Resource should be included in the awesome-panel
-            list of awesome resources.
-            tags (Optional[List[Tag]], optional): A list of Tags describing the Resource.
-            Used to search for Resources. Defaults to None.
-            author (Optional[Author], optional): The author of the resource. Defaults to None.
+    Args:
+        name (str): The name of the Resource
+        url (str): The url to the resource
+        thumbnail_png_path (str): A thumbnail image of the resource
+        is_awesome (bool): Whether or not the Resource should be included in the awesome-panel
+        list of awesome resources.
+        tags (Optional[List[Tag]], optional): A list of Tags describing the Resource.
+        Used to search for Resources. Defaults to None.
+        author (Optional[Author], optional): The author of the resource. Defaults to None.
     """
 
     url = param.String()
@@ -31,7 +31,9 @@ class Resource(param.Parameterized):
     author = param.ClassSelector(class_=Author, allow_None=True)
     description = param.String()
 
-    def to_markdown_bullet(self,) -> str:
+    def to_markdown_bullet(
+        self,
+    ) -> str:
         """A markdown bullet string
 
         Returns:
@@ -46,20 +48,32 @@ class Resource(param.Parameterized):
 
         return result
 
-    def __str__(self,):
+    def __str__(
+        self,
+    ):
         return self.name
 
-    def __repr__(self,):
+    def __repr__(
+        self,
+    ):
         return f"Resource(name={self.name})"
 
     @property
-    def screenshot_file(self,) -> str:
+    def screenshot_file(
+        self,
+    ) -> str:
         """The file name of a screenshot of the resource
 
         Returns:
             str: The file name of screenshot of the resource
         """
         file = f"{self.name.lower()}.png"
-        for (original, new,) in _IMAGE_DICT.items():
-            file = file.replace(original, new,)
+        for (
+            original,
+            new,
+        ) in _IMAGE_DICT.items():
+            file = file.replace(
+                original,
+                new,
+            )
         return file

@@ -1,6 +1,5 @@
 import panel as pn
 import param
-
 from awesome_panel_extensions.pane import WebComponent
 
 MWC_ICONS = [

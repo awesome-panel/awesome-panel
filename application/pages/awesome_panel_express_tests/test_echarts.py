@@ -138,7 +138,10 @@ class EchartsApp(param.Parameterized):
             pn.pane.Markdown(__doc__),
             top_app_bar,
             pn.layout.HSpacer(height=50),
-            pn.Row(self.plot, settings_pane,),
+            pn.Row(
+                self.plot,
+                settings_pane,
+            ),
         )
 
 

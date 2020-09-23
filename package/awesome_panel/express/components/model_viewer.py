@@ -96,7 +96,12 @@ class ModelViewer(WebComponent):
             pn.Column: The main view of the ModelViewer
         """
 
-        return pn.Column(self, self.js_pane, self.css_pane, sizing_mode="stretch_both",)
+        return pn.Column(
+            self,
+            self.js_pane,
+            self.css_pane,
+            sizing_mode="stretch_both",
+        )
 
     @param.depends("height", "width", watch=True)
     def _update_height_and_width(self):

@@ -31,7 +31,12 @@ def detect(im, model, transform, device="cpu"):
     # keep only predictions with confidence above threshold
     probas = outputs["pred_logits"].softmax(-1)[0, :, :-1].cpu()
     # convert boxes from [0; 1] to image scales
-    bboxes_scaled = rescale_bboxes(outputs["pred_boxes"][0,].cpu(), im.size)
+    bboxes_scaled = rescale_bboxes(
+        outputs["pred_boxes"][
+            0,
+        ].cpu(),
+        im.size,
+    )
     return probas, bboxes_scaled
 
 

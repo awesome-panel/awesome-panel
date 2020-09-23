@@ -8,12 +8,15 @@ import awesome_panel.express as pnx
 
 
 class _Country(
-    pnx.BrowserUrlMixin, param.Parameterized,
+    pnx.BrowserUrlMixin,
+    param.Parameterized,
 ):
     country = param.String()
 
     @param.depends("country")
-    def set_browser_url_parameters(self,):
+    def set_browser_url_parameters(
+        self,
+    ):
         return super().set_browser_url_parameters()
 
 
@@ -32,27 +35,30 @@ def test_url():
 
 def test_pn_url():
     """
-Manual Tests
+    Manual Tests
 
-- opening
-[http://localhost:5006/test_browser_url](http://localhost:5006/test_browser_url)
-works without error
-- opening
-[http://localhost:5006/test_browser_url?country=](http://localhost:5006/test_browser_url?country=)
-works without error
-- opening
-[http://localhost:5006/test_browser_url?country=Denmark]
-(http://localhost:5006/test_browser_url?country=Denmark)
-then the country widget parameter is set to Denmark
-- Changing the country widget parameter to Norway changes the browser url to
-[http://localhost:5006/test_browser_url?country=Norway]
-(http://localhost:5006/test_browser_url?country=Norway)
+    - opening
+    [http://localhost:5006/test_browser_url](http://localhost:5006/test_browser_url)
+    works without error
+    - opening
+    [http://localhost:5006/test_browser_url?country=]\
+(http://localhost:5006/test_browser_url?country=)
+    works without error
+    - opening
+    [http://localhost:5006/test_browser_url?country=Denmark]
+    (http://localhost:5006/test_browser_url?country=Denmark)
+    then the country widget parameter is set to Denmark
+    - Changing the country widget parameter to Norway changes the browser url to
+    [http://localhost:5006/test_browser_url?country=Norway]
+    (http://localhost:5006/test_browser_url?country=Norway)
     """
     # Given
     country_url = _Country()
 
     panel = pn.Column(
-        test_pn_url.__doc__, country_url.param, country_url.set_browser_url_parameters,
+        test_pn_url.__doc__,
+        country_url.param,
+        country_url.set_browser_url_parameters,
     )
     panel.servable("test")
 

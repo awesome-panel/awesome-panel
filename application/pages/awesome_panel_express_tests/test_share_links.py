@@ -33,7 +33,10 @@ def test_facebook():
     - The link can be instantiated with a link to https://awesome-panel.org
     - It works when clicked
     """
-    return TestApp(test_facebook, ShareOnFacebook(url="https://awesome-panel.org").view(),)
+    return TestApp(
+        test_facebook,
+        ShareOnFacebook(url="https://awesome-panel.org").view(),
+    )
 
 
 def test_linkedin():
@@ -42,7 +45,10 @@ def test_linkedin():
     - The link can be instantiated with a link to https://awesome-panel.org
     - It works when clicked
     """
-    return TestApp(test_linkedin, ShareOnLinkedIn(url="https://awesome-panel.org").view(),)
+    return TestApp(
+        test_linkedin,
+        ShareOnLinkedIn(url="https://awesome-panel.org").view(),
+    )
 
 
 def test_mail():
@@ -51,7 +57,10 @@ def test_mail():
     - The link can be instantiated with a link to https://awesome-panel.org
     - It works when clicked
     """
-    return TestApp(test_mail, ShareOnMail(url="https://awesome-panel.org").view(),)
+    return TestApp(
+        test_mail,
+        ShareOnMail(url="https://awesome-panel.org").view(),
+    )
 
 
 def test_twitter():
@@ -60,7 +69,10 @@ def test_twitter():
     - The link can be instantiated with a link to https://awesome-panel.org
     - It works when clicked
     """
-    return TestApp(test_twitter, ShareOnTwitter(url="https://awesome-panel.org").view(),)
+    return TestApp(
+        test_twitter,
+        ShareOnTwitter(url="https://awesome-panel.org").view(),
+    )
 
 
 def test_reddit():
@@ -69,7 +81,10 @@ def test_reddit():
     - The link can be instantiated with a link to https://awesome-panel.org
     - It works when clicked
     """
-    return TestApp(test_reddit, ShareOnReddit(url="https://awesome-panel.org").view(),)
+    return TestApp(
+        test_reddit,
+        ShareOnReddit(url="https://awesome-panel.org").view(),
+    )
 
 
 def view() -> pn.Column:

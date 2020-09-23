@@ -20,19 +20,43 @@ class Example(param.Parameterized):
 example = Example()
 
 view1 = pn.Column(example.param)
-view2 = pn.Param(example.param, widgets={"show_me2": {"width": 200,}, "show_me3": {"width": 300},},)
+view2 = pn.Param(
+    example.param,
+    widgets={
+        "show_me2": {
+            "width": 200,
+        },
+        "show_me3": {"width": 300},
+    },
+)
 view3 = pn.Param(
     example,
     parameters=["show_me2", "show_me3"],
-    widgets={"show_me2": {"width": 200,}, "show_me3": {"width": 300,}},
+    widgets={
+        "show_me2": {
+            "width": 200,
+        },
+        "show_me3": {
+            "width": 300,
+        },
+    },
 )
 
 app = pn.Column(
     __doc__,
     pn.Row(
-        pn.Column("# 1 - All Parameters", view1,),
-        pn.Column("# 2 - All Parameters - custom Widgets", view2,),
-        pn.Column("# 3 - Selected Parameters - custom widgets", view3,),
+        pn.Column(
+            "# 1 - All Parameters",
+            view1,
+        ),
+        pn.Column(
+            "# 2 - All Parameters - custom Widgets",
+            view2,
+        ),
+        pn.Column(
+            "# 3 - Selected Parameters - custom widgets",
+            view3,
+        ),
     ),
 )
 app.servable()

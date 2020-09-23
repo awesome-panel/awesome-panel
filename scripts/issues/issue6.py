@@ -9,7 +9,10 @@ This is formatted correctly by Markdown!
 """
     app = pn.Column(
         pn.pane.Markdown(text_error),
-        pn.pane.HTML("<hr>", sizing_mode="stretch_width",),
+        pn.pane.HTML(
+            "<hr>",
+            sizing_mode="stretch_width",
+        ),
         pn.pane.Markdown(text_ok),
     )
     app.servable()

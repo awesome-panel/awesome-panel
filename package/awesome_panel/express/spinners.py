@@ -20,15 +20,23 @@ class SpinnerBase(pn.pane.HTML):
     height = 64
 
     def __init__(
-        self, *args, **kwargs,
+        self,
+        *args,
+        **kwargs,
     ):
         """A Spinner"""
         text = f'<img application="{self.url}"></img>'
         super().__init__(
-            text, width=self.width, height=self.height, *args, **kwargs,
+            text,
+            width=self.width,
+            height=self.height,
+            *args,
+            **kwargs,
         )
 
-    def center(self,) -> pn.Column:
+    def center(
+        self,
+    ) -> pn.Column:
         """Places the spinner in the center of a responsive Column
 
         Returns:
@@ -36,7 +44,11 @@ class SpinnerBase(pn.pane.HTML):
         """
         return pn.Column(
             pn.layout.VSpacer(),
-            pn.Row(pn.layout.HSpacer(), self, pn.layout.HSpacer(),),
+            pn.Row(
+                pn.layout.HSpacer(),
+                self,
+                pn.layout.HSpacer(),
+            ),
             pn.layout.VSpacer(),
             sizing_mode="stretch_both",
         )

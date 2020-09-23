@@ -77,7 +77,9 @@ class Modal(param.Parameterized):
         super().__init__(**params)
         self.modal_overlay = pn.pane.HTML('<div class="modal-overlay" id="modal-overlay"></div>')
         self.close_button = pn.widgets.Button(
-            name="X", css_classes=["close-modal-button"], width=50,
+            name="X",
+            css_classes=["close-modal-button"],
+            width=50,
         )
         self.close_button.js_on_click(
             code="""
@@ -92,7 +94,11 @@ class Modal(param.Parameterized):
 
         self.modal = pn.Column(
             pn.Column(
-                pn.Row(self._modal_title, pn.layout.HSpacer(), self.close_button,),
+                pn.Row(
+                    self._modal_title,
+                    pn.layout.HSpacer(),
+                    self.close_button,
+                ),
                 pn.layout.Divider(),
                 self._modal_body,
                 sizing_mode="stretch_width",
@@ -135,15 +141,21 @@ class Modal(param.Parameterized):
         return _CSS
 
     @param.depends(
-        "title", watch=True,
+        "title",
+        watch=True,
     )
-    def set_modal_title(self,):
+    def set_modal_title(
+        self,
+    ):
         """Updates the title of the modal"""
         self._modal_title.object = "# " + self.title
 
     @param.depends(
-        "body", watch=True,
+        "body",
+        watch=True,
     )
-    def set_modal_body(self,):
+    def set_modal_body(
+        self,
+    ):
         """Updates the body of the modal"""
         self._modal_body[:] = self.body

@@ -5,7 +5,10 @@ from typing import Dict, List, Optional
 from awesome_panel.application.models import Author, Resource, Tag
 
 
-def filter_by_tags(resources: List[Resource], tags: List[Tag],) -> List[Resource]:
+def filter_by_tags(
+    resources: List[Resource],
+    tags: List[Tag],
+) -> List[Resource]:
     """The resources having all of the specified Tags
 
     If tags is the empty list all resources are returned
@@ -27,7 +30,9 @@ def filter_by_tags(resources: List[Resource], tags: List[Tag],) -> List[Resource
     return resources
 
 
-def filter_by_is_awesome(resources: List[Resource],) -> List[Resource]:
+def filter_by_is_awesome(
+    resources: List[Resource],
+) -> List[Resource]:
     """The resources being that is_awesome
 
     Arguments:
@@ -39,7 +44,10 @@ def filter_by_is_awesome(resources: List[Resource],) -> List[Resource]:
     return [resource for resource in resources if resource.is_awesome]
 
 
-def filter_by_author(resources: List[Resource], author: Author,) -> List[Resource]:
+def filter_by_author(
+    resources: List[Resource],
+    author: Author,
+) -> List[Resource]:
     """The resources by the specified author
 
     Arguments:
@@ -51,13 +59,18 @@ def filter_by_author(resources: List[Resource], author: Author,) -> List[Resourc
     return [resource for resource in resources if resource.author == author]
 
 
-def sort_resources(resources: List[Resource],) -> List[Resource]:
+def sort_resources(
+    resources: List[Resource],
+) -> List[Resource]:
     """The list of resources sorted by name
 
     Returns:
         [List[Resource]] -- The list of resources sorted by name
     """
-    return sorted(resources, key=lambda x: x.name,)
+    return sorted(
+        resources,
+        key=lambda x: x.name,
+    )
 
 
 def get_resources(
@@ -83,15 +96,24 @@ def get_resources(
         List[Resource] -- A list of Resources
     """
     if author:
-        resources = filter_by_author(resources, author,)
+        resources = filter_by_author(
+            resources,
+            author,
+        )
     if awesome_resources_only:
         resources = filter_by_is_awesome(resources)
     resources = sort_resources(resources)
-    resources = filter_by_tags(resources, tags,)
+    resources = filter_by_tags(
+        resources,
+        tags,
+    )
     return resources
 
 
-def to_markdown(resources: List[Resource], report_by_tag: bool = True,) -> str:
+def to_markdown(
+    resources: List[Resource],
+    report_by_tag: bool = True,
+) -> str:
     """Converts the specified resources to MarkDown
 
     Arguments:
@@ -106,11 +128,17 @@ def to_markdown(resources: List[Resource], report_by_tag: bool = True,) -> str:
 
     if report_by_tag:
         markdown_bullets = []
-        resources_dict: Dict[Tag, List[Resource],] = defaultdict(list)
+        resources_dict: Dict[
+            Tag,
+            List[Resource],
+        ] = defaultdict(list)
         for resource in resources:
             resources_dict[resource.tags[0]].append(resource)
 
-        for tag in sorted(resources_dict.keys(), key=lambda x: x.name,):
+        for tag in sorted(
+            resources_dict.keys(),
+            key=lambda x: x.name,
+        ):
             markdown_bullets.append(f"\n### {tag.name}\n")
             for resource in resources_dict[tag]:
                 markdown_bullets.append(resource.to_markdown_bullet())
@@ -130,18 +158,26 @@ def get_resources_markdown(
 ) -> str:
     """A bulleted Markdown list of resources filtered as specified
 
-    Arguments:
-        resources {List[Resource]} -- The list of resources
-        tags {List[Tag]} -- A list of tags to filter to. If the list is empty [] then we
-do no filtering on Tags
+        Arguments:
+            resources {List[Resource]} -- The list of resources
+            tags {List[Tag]} -- A list of tags to filter to. If the list is empty [] then we
+    do no filtering on Tags
 
-    Keyword Arguments:
-        Author {Author} -- An author to filter to. If author is None
-then we do no filtering on author. (default: {None})
-        awesome_resources_only {bool} -- [description] (default: {True})
+        Keyword Arguments:
+            Author {Author} -- An author to filter to. If author is None
+    then we do no filtering on author. (default: {None})
+            awesome_resources_only {bool} -- [description] (default: {True})
 
-    Returns:
-        str -- A bulleted Markdown list of resources filtered as specified
+        Returns:
+            str -- A bulleted Markdown list of resources filtered as specified
     """
-    resources = get_resources(resources, tags, author, awesome_resources_only,)
-    return to_markdown(resources, not tags,)
+    resources = get_resources(
+        resources,
+        tags,
+        author,
+        awesome_resources_only,
+    )
+    return to_markdown(
+        resources,
+        not tags,
+    )

@@ -16,12 +16,11 @@ from awesome_panel.application.models import Page, Progress, Toast
 class PageComponent(param.Parameterized):
     """The PageComponent defines a page
 
-Use it for
+    Use it for
 
-- Creating an instance by providing its parameters
-- Creating SubClass implementations
-- Creating PageComponents from many types of components via the `create` function
-"""
+    - Creating an instance by providing its parameters
+    - Creating SubClass implementations
+    - Creating PageComponents from many types of components via the `create` function"""
 
     page = param.ClassSelector(class_=Page, allow_None=False)
     main = param.Parameter(allow_None=False)

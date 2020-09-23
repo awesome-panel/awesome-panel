@@ -28,8 +28,28 @@ def test_get_default_formatters():
 
     """
     data = pd.DataFrame(
-        {"int": [1, 2, 3000,], "float": [3.14, 6.28, 9000.42,], "str": ["A", "B", "C",],},
-        index=[1, 2, 3,],
+        {
+            "int": [
+                1,
+                2,
+                3000,
+            ],
+            "float": [
+                3.14,
+                6.28,
+                9000.42,
+            ],
+            "str": [
+                "A",
+                "B",
+                "C",
+            ],
+        },
+        index=[
+            1,
+            2,
+            3,
+        ],
     )
     formatters = dataframe.get_default_formatters(data)
     code = pnx.Code(
@@ -41,7 +61,12 @@ data = pd.DataFrame(
 formatters = dataframe.get_default_formatters(data)"""
     )
     return TestApp(
-        test_get_default_formatters, pn.widgets.DataFrame(data, formatters=formatters,), code,
+        test_get_default_formatters,
+        pn.widgets.DataFrame(
+            data,
+            formatters=formatters,
+        ),
+        code,
     )
 
 
@@ -52,7 +77,9 @@ def view() -> pn.Column:
         pn.Column -- A Column containing all the tests
     """
     return pn.Column(
-        pn.pane.Markdown(__doc__), test_get_default_formatters, sizing_mode="stretch_width",
+        pn.pane.Markdown(__doc__),
+        test_get_default_formatters,
+        sizing_mode="stretch_width",
     )
 
 

@@ -16,7 +16,14 @@ def my_add(a,b):
     return a+b
 """
 
-    return TestApp(test_code, pnx.Code(code, language="python",), sizing_mode="stretch_width",)
+    return TestApp(
+        test_code,
+        pnx.Code(
+            code,
+            language="python",
+        ),
+        sizing_mode="stretch_width",
+    )
 
 
 def view() -> pn.Column:
@@ -25,7 +32,10 @@ def view() -> pn.Column:
     Returns:
         pn.Column -- A Column containing all the tests
     """
-    return pn.Column(pn.pane.Markdown(__doc__), test_code(),)
+    return pn.Column(
+        pn.pane.Markdown(__doc__),
+        test_code(),
+    )
 
 
 if __name__.startswith("bokeh"):

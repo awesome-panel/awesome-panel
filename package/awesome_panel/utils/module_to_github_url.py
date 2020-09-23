@@ -8,7 +8,9 @@ from application.config.settings import GITHUB_BLOB_MASTER_URL
 ROOT_PATH = str(pathlib.Path.cwd()).lower()
 
 
-def module_to_github_url(module: ModuleType,) -> str:
+def module_to_github_url(
+    module: ModuleType,
+) -> str:
     """## The link to the GitHub Source File of the URL
 
     Arguments:
@@ -23,8 +25,14 @@ def module_to_github_url(module: ModuleType,) -> str:
     if not file_absolute.startswith(ROOT_PATH):
         raise ValueError("Module is not in project!")
     if ROOT_PATH == "/app":
-        file_relative = file_absolute.replace("/app/", "/",)
+        file_relative = file_absolute.replace(
+            "/app/",
+            "/",
+        )
     else:
         file_relative = file_absolute.replace(ROOT_PATH, "")
-    file_relative = file_relative[1:].replace("\\", "/",)
+    file_relative = file_relative[1:].replace(
+        "\\",
+        "/",
+    )
     return GITHUB_BLOB_MASTER_URL + file_relative

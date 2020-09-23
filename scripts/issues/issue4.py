@@ -10,10 +10,32 @@ table {
 """
 )
 data = {
-    "Day": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",],
-    "Orders": [15539, 21345, 18483, 24003, 23489, 24092, 12034,],
+    "Day": [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+    ],
+    "Orders": [
+        15539,
+        21345,
+        18483,
+        24003,
+        23489,
+        24092,
+        12034,
+    ],
 }
 dataframe = pd.DataFrame(data)
-pane = pn.Pane(dataframe, sizing_mode="stretch_width",)
-app = pn.Column(pane, sizing_mode="stretch_width",)
+pane = pn.Pane(
+    dataframe,
+    sizing_mode="stretch_width",
+)
+app = pn.Column(
+    pane,
+    sizing_mode="stretch_width",
+)
 app.servable()

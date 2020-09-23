@@ -34,7 +34,8 @@ def test_can_be_constructed_with_custom_values():
 def test_can_update(progress_service):
     # When
     progress_service.update(
-        20, "hello again",
+        20,
+        "hello again",
     )
     # Then
     assert progress_service.progress.value == 20

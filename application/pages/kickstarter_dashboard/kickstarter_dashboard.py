@@ -58,38 +58,43 @@ CMAP = {
 class KickstarterDashboard(param.Parameterized):
     # pylint: disable=line-too-long
     """The purpose of the Kickstarter Dashboard is to test if the claims regarding Bokeh as of Jan 2018 in the
-[bokeh-dash-best-dashboard-framework](https://www.sicara.ai/blog/2018-01-30-bokeh-dash-best-dashboard-framework-python)
-article holds for Panel and the HoloViews suite of tools as of Dec 2019.
+    [bokeh-dash-best-dashboard-framework](https://www.sicara.ai/blog/2018-01-30-bokeh-dash-best-dashboard-framework-python)
+    article holds for Panel and the HoloViews suite of tools as of Dec 2019.
 
-The claims where
+    The claims where
 
-- Data in Bokeh becomes inconsistent
-- Cannot link charts to dataframe
-- Bokeh is slow for big datasets
-- Interactions take a long time to develop
+    - Data in Bokeh becomes inconsistent
+    - Cannot link charts to dataframe
+    - Bokeh is slow for big datasets
+    - Interactions take a long time to develop
 
-You can evaluate this dashboard and the code to make your personal evaluation of the above
-statements.
+    You can evaluate this dashboard and the code to make your personal evaluation of the above
+    statements.
 
-My evaluation is
+    My evaluation is
 
-- the **first two statements does no longer hold**.
-- The third is up for discussion. I would also like the Dashboard updates to be a bit faster. Maybe it's because I don't yet know how to implement this efficiently.
-- The fourth I've also experienced
-see this [discussion](https://discourse.holoviz.org/t/how-to-create-a-parameterized-dashboard-with-seperation-between-data-transforms-and-data-views/53/13).
+    - the **first two statements does no longer hold**.
+    - The third is up for discussion. I would also like the Dashboard updates to be a bit faster. Maybe it's because I don't yet know how to implement this efficiently.
+    - The fourth I've also experienced
+    see this [discussion](https://discourse.holoviz.org/t/how-to-create-a-parameterized-dashboard-with-seperation-between-data-transforms-and-data-views/53/13).
 
-I can see that I made a lot of mistakes because it takes time for me to understand how the api works.
-There is a lot to I need to learn across the HoloViz suite of tools.
-"""
+    I can see that I made a lot of mistakes because it takes time for me to understand how the api works.
+    There is a lot to I need to learn across the HoloViz suite of tools."""
     # pylint: enable=line-too-long
     kickstarter_df = param.DataFrame()
     categories = param.ListSelector()
     scatter_df = param.DataFrame()
     bar_df = param.DataFrame()
-    rangexy = param.ClassSelector(class_=hv.streams.RangeXY, default=hv.streams.RangeXY(),)
+    rangexy = param.ClassSelector(
+        class_=hv.streams.RangeXY,
+        default=hv.streams.RangeXY(),
+    )
 
     def __init__(self, kickstarter_df: Optional[pd.DataFrame] = None, **kwargs):
-        if not isinstance(kickstarter_df, pd.DataFrame,):
+        if not isinstance(
+            kickstarter_df,
+            pd.DataFrame,
+        ):
             kickstarter_df = self.get_kickstarter_df()
         categories = self.get_categories(kickstarter_df)
 
@@ -102,13 +107,22 @@ There is a lot to I need to learn across the HoloViz suite of tools.
         super().__init__(**kwargs)
 
     @param.depends(
-        "kickstarter_df", "categories", watch=True,
+        "kickstarter_df",
+        "categories",
+        watch=True,
     )
-    def _set_scatter_df(self,):
-        self.scatter_df = self.filter_on_categories(self.kickstarter_df, self.categories,)
+    def _set_scatter_df(
+        self,
+    ):
+        self.scatter_df = self.filter_on_categories(
+            self.kickstarter_df,
+            self.categories,
+        )
 
     @param.depends("scatter_df")
-    def scatter_plot_view(self,):
+    def scatter_plot_view(
+        self,
+    ):
         """A Reactive View of the scatter plot"""
         # Potential Improvements
         # Rename columns to Capitalized without under score
@@ -121,9 +135,14 @@ There is a lot to I need to learn across the HoloViz suite of tools.
         return scatter_plot
 
     @param.depends(
-        "scatter_df", "rangexy.x_range", "rangexy.y_range", watch=True,
+        "scatter_df",
+        "rangexy.x_range",
+        "rangexy.y_range",
+        watch=True,
     )
-    def _set_bar_df(self,):
+    def _set_bar_df(
+        self,
+    ):
         """Update the bar_df dataframe"""
         self.bar_df = self.filter_on_ranges(
             self.scatter_df,
@@ -132,11 +151,15 @@ There is a lot to I need to learn across the HoloViz suite of tools.
         )
 
     @param.depends("bar_df")
-    def bar_chart_view(self,):
+    def bar_chart_view(
+        self,
+    ):
         """A Reactive View of the Bar Chart"""
         return self.get_bar_chart(self.bar_df)
 
-    def view(self,):
+    def view(
+        self,
+    ):
         """A Reactive View of the KickstarterDashboard"""
         return pn.Column(
             pn.pane.Markdown(__doc__),
@@ -145,7 +168,12 @@ There is a lot to I need to learn across the HoloViz suite of tools.
                 pn.Column(self.scatter_plot_view, self.bar_chart_view, sizing_mode="stretch_width"),
                 pn.Param(
                     self.param.categories,
-                    widgets={"categories": {"max_width": 125, "size": len(self.categories),}},
+                    widgets={
+                        "categories": {
+                            "max_width": 125,
+                            "size": len(self.categories),
+                        }
+                    },
                     width=150,
                     height=500,
                     sizing_mode="fixed",
@@ -163,10 +191,16 @@ There is a lot to I need to learn across the HoloViz suite of tools.
             pd.DataFrame -- A Dataframe of kickstarter data with
             columns=["created_at", "usd_pledged", "state", "category_slug"]
         """
-        return pd.read_csv(KICKSTARTER_PATH, parse_dates=DATE_COLUMNS,)
+        return pd.read_csv(
+            KICKSTARTER_PATH,
+            parse_dates=DATE_COLUMNS,
+        )
 
     @staticmethod
-    def _transform(source_data: pd.DataFrame, n_samples: int = N_SAMPLES,) -> pd.DataFrame:
+    def _transform(
+        source_data: pd.DataFrame,
+        n_samples: int = N_SAMPLES,
+    ) -> pd.DataFrame:
         """Transform the data by
 
         - adding broader_category,
@@ -185,7 +219,9 @@ There is a lot to I need to learn across the HoloViz suite of tools.
         return source_data.sample(n_samples)
 
     @classmethod
-    def get_kickstarter_df(cls,) -> pd.DataFrame:
+    def get_kickstarter_df(
+        cls,
+    ) -> pd.DataFrame:
         """The Dataframe of Kickstarter Data
 
         Returns:
@@ -196,7 +232,9 @@ There is a lot to I need to learn across the HoloViz suite of tools.
         return kickstarter_df
 
     @staticmethod
-    def get_categories(kickstarter_df,) -> List[str]:
+    def get_categories(
+        kickstarter_df,
+    ) -> List[str]:
         """The list of kickstarter broader categories
 
         Arguments:
@@ -209,7 +247,9 @@ There is a lot to I need to learn across the HoloViz suite of tools.
 
     @classmethod
     def filter_on_categories(
-        cls, kickstarter_df: pd.DataFrame, categories: List[str],
+        cls,
+        kickstarter_df: pd.DataFrame,
+        categories: List[str],
     ) -> pd.DataFrame:
         """Filters the kickstarter_df by the specified categories
 
@@ -226,7 +266,11 @@ There is a lot to I need to learn across the HoloViz suite of tools.
         return kickstarter_df[categories_filter]
 
     @staticmethod
-    def filter_on_ranges(kickstarter_df: pd.DataFrame, x_range, y_range,) -> pd.DataFrame:
+    def filter_on_ranges(
+        kickstarter_df: pd.DataFrame,
+        x_range,
+        y_range,
+    ) -> pd.DataFrame:
         """Filter the kickstarter_df by x_range and y_range
 
         Arguments:
@@ -251,7 +295,9 @@ There is a lot to I need to learn across the HoloViz suite of tools.
         return sub_df
 
     @staticmethod
-    def get_scatter_plot(kickstarter_df: pd.DataFrame,):  # pylint: disable=missing-return-type-doc
+    def get_scatter_plot(
+        kickstarter_df: pd.DataFrame,
+    ):  # pylint: disable=missing-return-type-doc
         """A Scatter plot of the kickstarter_df
 
         Arguments:
@@ -276,7 +322,9 @@ There is a lot to I need to learn across the HoloViz suite of tools.
         )
 
     @staticmethod
-    def get_bar_chart(kickstarter_df: pd.DataFrame,):  # pylint: disable=missing-return-type-doc
+    def get_bar_chart(
+        kickstarter_df: pd.DataFrame,
+    ):  # pylint: disable=missing-return-type-doc
         """A bar chart of the kickstarter_df
 
         Arguments:
@@ -290,15 +338,30 @@ There is a lot to I need to learn across the HoloViz suite of tools.
 
         # Filter
         stacked_barchart_df = (
-            kickstarter_df[["broader_category", "state", "created_at",]]
-            .groupby(["broader_category", "state",])
+            kickstarter_df[
+                [
+                    "broader_category",
+                    "state",
+                    "created_at",
+                ]
+            ]
+            .groupby(
+                [
+                    "broader_category",
+                    "state",
+                ]
+            )
             .count()
             .rename(columns={"created_at": "Number of projects"})
         )
 
         # Plot
         bar_chart = stacked_barchart_df.hvplot.bar(
-            stacked=True, height=400, responsive=True, xlabel="Number of projects", cmap=CMAP,
+            stacked=True,
+            height=400,
+            responsive=True,
+            xlabel="Number of projects",
+            cmap=CMAP,
         )
         return bar_chart
 

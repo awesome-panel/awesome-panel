@@ -22,8 +22,14 @@ def test_html_with_font_awesome():
 
 
     """
-    html = pn.pane.HTML(text, sizing_mode="stretch_width",)
-    return TestApp(test_html_with_font_awesome, html,)
+    html = pn.pane.HTML(
+        text,
+        sizing_mode="stretch_width",
+    )
+    return TestApp(
+        test_html_with_font_awesome,
+        html,
+    )
 
 
 def test_button_with_font_awesome():
@@ -32,11 +38,34 @@ def test_button_with_font_awesome():
     Please note that the 'f' in FontAwesome css classes needs to be changed to 'p' for Panel.
     For example to `css_classes=["pas", "pa-user"]`
     """
-    button_user = pn.widgets.Button(name=" User", css_classes=["pas", "pa-user",],)
-    button_newspaper = pn.widgets.Button(name=" News Paper", css_classes=["pas", "pa-newspaper",],)
-    button_twitter = pn.widgets.Button(name=" Twitter", css_classes=["pab", "pa-twitter",],)
+    button_user = pn.widgets.Button(
+        name=" User",
+        css_classes=[
+            "pas",
+            "pa-user",
+        ],
+    )
+    button_newspaper = pn.widgets.Button(
+        name=" News Paper",
+        css_classes=[
+            "pas",
+            "pa-newspaper",
+        ],
+    )
+    button_twitter = pn.widgets.Button(
+        name=" Twitter",
+        css_classes=[
+            "pab",
+            "pa-twitter",
+        ],
+    )
 
-    return TestApp(test_button_with_font_awesome, button_user, button_newspaper, button_twitter,)
+    return TestApp(
+        test_button_with_font_awesome,
+        button_user,
+        button_newspaper,
+        button_twitter,
+    )
 
 
 def view() -> pn.Column:
@@ -46,7 +75,9 @@ def view() -> pn.Column:
         pn.Column -- A Column containing all the tests
     """
     return pn.Column(
-        pn.pane.Markdown(__doc__), test_html_with_font_awesome(), test_button_with_font_awesome(),
+        pn.pane.Markdown(__doc__),
+        test_html_with_font_awesome(),
+        test_button_with_font_awesome(),
     )
 
 

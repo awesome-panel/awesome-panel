@@ -31,13 +31,16 @@ class PyDeck(param.Parameterized):
     )
 
     def __init__(
-        self, object: pdk.Deck = None, **params,  # pylint: disable=redefined-builtin
+        self,
+        object: pdk.Deck = None,
+        **params,  # pylint: disable=redefined-builtin
     ):
         self.object = object
         super().__init__(**params)
 
     def _get_js(
-        self, container: str = "deck-container",
+        self,
+        container: str = "deck-container",
     ):
         # Get
         json_input = self.object.to_json()
@@ -45,11 +48,23 @@ class PyDeck(param.Parameterized):
         tooltip = self.object.deck_widget.tooltip
 
         # Clean
-        if isinstance(json_input, str,):
-            json_input = json_input.replace('"', "'",)
-        if not isinstance(mapbox_key, str,):
+        if isinstance(
+            json_input,
+            str,
+        ):
+            json_input = json_input.replace(
+                '"',
+                "'",
+            )
+        if not isinstance(
+            mapbox_key,
+            str,
+        ):
             mapbox_key = ""
-        if isinstance(tooltip, bool,):
+        if isinstance(
+            tooltip,
+            bool,
+        ):
             tooltip = str(tooltip).lower()
 
         return f"""\
@@ -65,7 +80,9 @@ const deck = createDeck({{
 }});"""
 
     @param.depends("object")
-    def _repr_html_(self,):
+    def _repr_html_(
+        self,
+    ):
         # Inspired by the implementation of pydeck.Deck.to_html
         # See https://github.com/uber/deck.gl/blob/master/bindings/pydeck/pydeck/bindings/deck.py
         if not self.object:
@@ -81,7 +98,9 @@ const deck = createDeck({{
         return html
 
     @property
-    def as_pane(self,) -> pn.pane.HTML:
+    def as_pane(
+        self,
+    ) -> pn.pane.HTML:
         """Converts the _repr_html_ to a HTML pane"""
         return pn.pane.HTML(self._repr_html_())
 

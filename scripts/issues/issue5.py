@@ -19,9 +19,16 @@ class Code(pn.pane.HTML):
 {code}
 ```
 """
-        code_html = markdown.markdown(code_markdown, extensions=["fenced_code", "codehilite",],)
+        code_html = markdown.markdown(
+            code_markdown,
+            extensions=[
+                "fenced_code",
+                "codehilite",
+            ],
+        )
         super().__init__(
-            code_html, sizing_mode=sizing_mode,
+            code_html,
+            sizing_mode=sizing_mode,
         )
 
 
@@ -117,9 +124,16 @@ class Code(pn.pane.HTML):
 {code}
 ```
 """
-        code_html = markdown.markdown(code_markdown, extensions=["fenced_code", "codehilite",],)
+        code_html = markdown.markdown(
+            code_markdown,
+            extensions=[
+                "fenced_code",
+                "codehilite",
+            ],
+        )
         super().__init__(
-            code_html, sizing_mode=sizing_mode,
+            code_html,
+            sizing_mode=sizing_mode,
         )
 
 

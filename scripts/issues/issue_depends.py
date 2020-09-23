@@ -25,7 +25,10 @@ class Spread(param.Parameterized):
 
 
 spread = Spread()
-pn.Column(spread.leg1.param, pn.Param(spread, parameters=["leg1", "data"]),).servable()
+pn.Column(
+    spread.leg1.param,
+    pn.Param(spread, parameters=["leg1", "data"]),
+).servable()
 
 # from bokeh.plotting import figure
 # import numpy as np

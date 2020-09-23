@@ -10,5 +10,14 @@ def test_64bit():
 
 def test_python_version():
     """We test that Python is the correct version"""
-    (major, minor, _, _, _,) = sys.version_info
-    assert (major, minor,) == (3, 7,)
+    (
+        major,
+        minor,
+        _,
+        _,
+        _,
+    ) = sys.version_info
+    assert (major, minor,) == (
+        3,
+        7,
+    )

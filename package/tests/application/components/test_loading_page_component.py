@@ -13,5 +13,8 @@ def test_can_construct_loading_page_component(loading_page_component):
 
 def test_can_show(loading_page_component):
     pn.Column(
-        loading_page_component.main, width=1000, height=1000, background="gray",
+        loading_page_component.main,
+        width=1000,
+        height=1000,
+        background="gray",
     )

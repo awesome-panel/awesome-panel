@@ -26,7 +26,9 @@ def test_info_alert():
     - With a nice bottom margin
     """
     return TestApp(
-        test_info_alert, pnx.InfoAlert("This is an **Info Alert**!"), sizing_mode="stretch_width",
+        test_info_alert,
+        pnx.InfoAlert("This is an **Info Alert**!"),
+        sizing_mode="stretch_width",
     )
 
 

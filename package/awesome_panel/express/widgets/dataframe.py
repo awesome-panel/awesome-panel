@@ -48,20 +48,35 @@ def get_default_formatters(
     formatters = {}
     for column in data.columns:
         if data[column].dtype == INT_DTYPE:
-            formatters[column] = NumberFormatter(format=int_format, text_align=int_align,)
+            formatters[column] = NumberFormatter(
+                format=int_format,
+                text_align=int_align,
+            )
         elif data[column].dtype == FLOAT_DTYPE:
-            formatters[column] = NumberFormatter(format=float_format, text_align=float_align,)
+            formatters[column] = NumberFormatter(
+                format=float_format,
+                text_align=float_align,
+            )
 
     # Hack: Without a proper name we cannot format the index
     if len(data.index.names) == 1 and not data.index.name:
         data.index.name = "index"
 
-    for (index, name,) in enumerate(data.index.names):
+    for (
+        index,
+        name,
+    ) in enumerate(data.index.names):
         if name:
             dtype = data.index.get_level_values(index).dtype
             if dtype == INT_DTYPE:
-                formatters[name] = NumberFormatter(format=int_format, text_align=int_align,)
+                formatters[name] = NumberFormatter(
+                    format=int_format,
+                    text_align=int_align,
+                )
             elif dtype == FLOAT_DTYPE:
-                formatters[name] = NumberFormatter(format=float_format, text_align=float_align,)
+                formatters[name] = NumberFormatter(
+                    format=float_format,
+                    text_align=float_align,
+                )
 
     return formatters

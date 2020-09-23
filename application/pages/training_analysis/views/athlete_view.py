@@ -18,7 +18,10 @@ class AthleteUpdateView(pn.Column):
 
         super().__init__(
             self.athlete.param["name_"],
-            pn.Param(self.athlete.param["birthday"], widgets={"birthday": pn.widgets.DatePicker},),
+            pn.Param(
+                self.athlete.param["birthday"],
+                widgets={"birthday": pn.widgets.DatePicker},
+            ),
             self.athlete.param["weight"],
             **kwargs,
         )

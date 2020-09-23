@@ -124,7 +124,12 @@ class DETRApp(param.Parameterized):
         )
 
         top_selections = pn.Row(
-            pn.Param(self, parameters=["input_image_url"], default_layout=pn.Row, show_name=False,),
+            pn.Param(
+                self,
+                parameters=["input_image_url"],
+                default_layout=pn.Row,
+                show_name=False,
+            ),
             pn.Param(
                 self,
                 parameters=["run_detr", "set_random_image"],
@@ -161,7 +166,11 @@ class DETRApp(param.Parameterized):
                 default_layout=pn.Row,
                 show_name=False,
             ),
-            pn.Param(self, parameters=["suppression_enabled"], show_name=False,),
+            pn.Param(
+                self,
+                parameters=["suppression_enabled"],
+                show_name=False,
+            ),
         )
         plot = pn.pane.Plotly(height=600, config={"responsive": True})
         app_view = pn.Column(

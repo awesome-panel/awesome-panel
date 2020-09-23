@@ -169,7 +169,9 @@ class PandasProfilingApp(param.Parameterized):
         )
         progress.active = False
         widgets = {
-            "csv_url": {"sizing_mode": "stretch_width",},
+            "csv_url": {
+                "sizing_mode": "stretch_width",
+            },
             "update_report": {"align": "end", "width": 150, "sizing_mode": "fixed"},
             "random_report": {
                 "button_type": "success",
@@ -191,12 +193,18 @@ class PandasProfilingApp(param.Parameterized):
         html_report_pane = pn.pane.HTML(EMPTY_HTML_REPORT, height=900, sizing_mode="stretch_both")
 
         report_tab = pn.Column(
-            top_selections, html_report_pane, sizing_mode="stretch_width", name="Report",
+            top_selections,
+            html_report_pane,
+            sizing_mode="stretch_width",
+            name="Report",
         )
         config_tab = pn.Param(
             config, sizing_mode="stretch_width", name="Configuration", show_name=False
         )
-        tabs = pn.Tabs(report_tab, config_tab,)
+        tabs = pn.Tabs(
+            report_tab,
+            config_tab,
+        )
 
         _view = pn.Column(
             style,

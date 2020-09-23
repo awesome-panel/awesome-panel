@@ -25,11 +25,18 @@ class ShareOnBase(param.Parameterized):
     text = param.String(DEFAULT_TEXT)
 
     @property
-    def _url_parsed(self,):
-        return urllib.parse.quote(self.url).replace("/", "%2F",)
+    def _url_parsed(
+        self,
+    ):
+        return urllib.parse.quote(self.url).replace(
+            "/",
+            "%2F",
+        )
 
     @property
-    def href(self,) -> str:
+    def href(
+        self,
+    ) -> str:
         """The href to goto when clicked
 
         Override this method in a base class
@@ -42,7 +49,9 @@ class ShareOnBase(param.Parameterized):
         """
         raise NotImplementedError()
 
-    def __html__(self,) -> str:
+    def __html__(
+        self,
+    ) -> str:
         """A html string with link and icon tags
 
         Returns:
@@ -54,9 +63,12 @@ class ShareOnBase(param.Parameterized):
         )
 
     @param.depends(
-        "url", "icon_class",
+        "url",
+        "icon_class",
     )
-    def view(self,) -> pn.pane.HTML:
+    def view(
+        self,
+    ) -> pn.pane.HTML:
         """A HTML pane with the a link and icon
 
         Returns:
@@ -71,7 +83,9 @@ class ShareOnFacebook(ShareOnBase):
     icon_class = param.String(FACEBOOK_CLASS)
 
     @property
-    def href(self,):
+    def href(
+        self,
+    ):
         return f"https://www.facebook.com/sharer/sharer.php?u={self._url_parsed}"
 
 
@@ -81,7 +95,9 @@ class ShareOnLinkedIn(ShareOnBase):
     icon_class = param.String(LINKEDIN_CLASS)
 
     @property
-    def href(self,):
+    def href(
+        self,
+    ):
         return (
             f"http://www.linkedin.com/shareArticle?mini=true&url={self._url_parsed}"
             f"&title={self.text}"
@@ -94,7 +110,9 @@ class ShareOnTwitter(ShareOnBase):
     icon_class = param.String(TWITTER_CLASS)
 
     @property
-    def href(self,):
+    def href(
+        self,
+    ):
         return f"https://twitter.com/intent/tweet?url={self._url_parsed}&text={self.text}"
 
 
@@ -104,7 +122,9 @@ class ShareOnReddit(ShareOnBase):
     icon_class = param.String(REDDIT_CLASS)
 
     @property
-    def href(self,):
+    def href(
+        self,
+    ):
         return f"https://reddit.com/submit?url={self._url_parsed}&amp;title={self.text}"
 
 
@@ -114,5 +134,7 @@ class ShareOnMail(ShareOnBase):
     icon_class = param.String(MAIL_CLASS)
 
     @property
-    def href(self,):
+    def href(
+        self,
+    ):
         return f"mailto:?subject={self._url_parsed}&amp;body={self.text}&nbsp;{self._url_parsed}"

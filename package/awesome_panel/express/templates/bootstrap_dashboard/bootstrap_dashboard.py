@@ -21,7 +21,9 @@ class BootstrapDashboardTemplate(pn.Template):
     """A Basic App Template"""
 
     def __init__(
-        self, app_title: str = "App Name", app_url="#",
+        self,
+        app_title: str = "App Name",
+        app_url="#",
     ):
         pn.config.raw_css.append(BOOTSTRAP_DASHBOARD_CSS.read_text())
         pn.config.raw_css.append(SCROLLBAR_PANEL_EXPRESS_CSS.read_text())
@@ -30,17 +32,35 @@ class BootstrapDashboardTemplate(pn.Template):
         template = BOOTSTRAP_DASHBOARD_TEMPLATE.read_text()
 
         app_title = pn.Row(
-            pn.pane.Markdown(f"[{app_title}]({app_url})", css_classes=["app-title"],),
+            pn.pane.Markdown(
+                f"[{app_title}]({app_url})",
+                css_classes=["app-title"],
+            ),
             width=SIDEBAR_WIDTH,
             sizing_mode="stretch_height",
         )
         header = pn.Row(
-            app_title, pn.layout.HSpacer(), sizing_mode="stretch_width", height=HEADER_HEIGHT,
+            app_title,
+            pn.layout.HSpacer(),
+            sizing_mode="stretch_width",
+            height=HEADER_HEIGHT,
         )
         top_spacer = pn.layout.HSpacer(height=15)
         self.header = header
-        self.sidebar = pn.Column(top_spacer, height_policy="max", width=SIDEBAR_WIDTH,)
-        self.main = pn.Column(sizing_mode="stretch_width", margin=(25, 50, 25, 50,),)
+        self.sidebar = pn.Column(
+            top_spacer,
+            height_policy="max",
+            width=SIDEBAR_WIDTH,
+        )
+        self.main = pn.Column(
+            sizing_mode="stretch_width",
+            margin=(
+                25,
+                50,
+                25,
+                50,
+            ),
+        )
 
         items = {
             "header": header,
@@ -48,5 +68,6 @@ class BootstrapDashboardTemplate(pn.Template):
             "main": self.main,
         }
         super().__init__(
-            template=template, items=items,
+            template=template,
+            items=items,
         )

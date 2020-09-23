@@ -31,7 +31,10 @@ RESOURCES = [
         url="https://foxnic.github.io/projects.html",
         thumbnail_png_path=THUMBNAILS_ROOT + "",
         is_awesome=True,
-        tags=[tags.APP, tags.CODE,],
+        tags=[
+            tags.APP,
+            tags.CODE,
+        ],
         author=authors.NIC_FOX,
     ),
     Resource(
@@ -39,7 +42,10 @@ RESOURCES = [
         url="https://dev.to/nicfoxds/how-to-create-an-interactive-dashboard-in-python-using-holoviz-panel-5bhp",
         thumbnail_png_path=THUMBNAILS_ROOT + "",
         is_awesome=True,
-        tags=[tags.TUTORIAL, tags.CODE,],
+        tags=[
+            tags.TUTORIAL,
+            tags.CODE,
+        ],
         author=authors.NIC_FOX,
     ),
     Resource(
@@ -95,7 +101,11 @@ RESOURCES = [
         url="https://github.com/intake/xrviz",
         thumbnail_png_path=THUMBNAILS_ROOT + "",
         is_awesome=True,
-        tags=[tags.APP, tags.CODE, tags.INSPIRATION,],
+        tags=[
+            tags.APP,
+            tags.CODE,
+            tags.INSPIRATION,
+        ],
         author=authors.INTAKE,
     ),
     Resource(
@@ -106,7 +116,10 @@ RESOURCES = [
         ),
         thumbnail_png_path=THUMBNAILS_ROOT + "",
         is_awesome=True,
-        tags=[tags.TUTORIAL, tags.ARTICLE,],
+        tags=[
+            tags.TUTORIAL,
+            tags.ARTICLE,
+        ],
         author=authors.BENJAMIN_COOLEY,
     ),
     Resource(
@@ -250,7 +263,10 @@ RESOURCES = [
         url="https://www.youtube.com/watch?v=L91rd1D6XTA&t=274s",
         thumbnail_png_path=THUMBNAILS_ROOT + "",
         is_awesome=True,
-        tags=[tags.VIDEO, tags.TUTORIAL,],
+        tags=[
+            tags.VIDEO,
+            tags.TUTORIAL,
+        ],
         author=authors.JAMES_BEDNAR,
     ),
     Resource(
@@ -258,7 +274,10 @@ RESOURCES = [
         url="https://www.youtube.com/watch?v=Ohr29FJjBi0&list=PLGVZCDnMOq0pNHTYo3i56zYU-Tdw5Uguw",
         thumbnail_png_path=THUMBNAILS_ROOT + "pydataberlin2019.png?raw=true",
         is_awesome=True,
-        tags=[tags.VIDEO, tags.TUTORIAL,],
+        tags=[
+            tags.VIDEO,
+            tags.TUTORIAL,
+        ],
         author=authors.PHILIPP_RUDIGER,
     ),
     Resource(
@@ -266,7 +285,10 @@ RESOURCES = [
         url="https://www.youtube.com/watch?v=7deGS4IPAQ0&t=1326s",
         thumbnail_png_path=THUMBNAILS_ROOT + "",
         is_awesome=True,
-        tags=[tags.VIDEO, tags.TUTORIAL,],
+        tags=[
+            tags.VIDEO,
+            tags.TUTORIAL,
+        ],
         author=authors.JAMES_BEDNAR,
     ),
     Resource(

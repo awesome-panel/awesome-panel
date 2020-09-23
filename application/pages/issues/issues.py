@@ -9,4 +9,8 @@ ISSUES_PATH = pathlib.Path(__file__).parent / "issues.md"
 
 def view() -> Column:
     """The issues view of awesome-panel.org"""
-    return Column(Markdown(ISSUES_PATH.read_text()), sizing_mode="stretch_both", name="Issues",)
+    return Column(
+        Markdown(ISSUES_PATH.read_text()),
+        sizing_mode="stretch_both",
+        name="Issues",
+    )

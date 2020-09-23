@@ -64,7 +64,10 @@ def test_button_name():
 
 @pytest.mark.parametrize(
     ["value", "expected"],
-    [(dt.date(2020, 5, 3), "May 3, 2020"), (dt.date(2020, 5, 13), "May 13, 2020"),],
+    [
+        (dt.date(2020, 5, 3), "May 3, 2020"),
+        (dt.date(2020, 5, 13), "May 13, 2020"),
+    ],
 )
 def test_datepicker_to_string(value, expected):
     assert wired.DatePicker._to_string(value) == expected

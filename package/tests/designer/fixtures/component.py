@@ -17,5 +17,6 @@ class Component(param.Parameterized):
         super().__init__(**params)
 
         self.view = pn.Column(
-            pn.Param(self, parameters=["click_me", "select_me"]), name="Test Component Parameters",
+            pn.Param(self, parameters=["click_me", "select_me"]),
+            name="Test Component Parameters",
         )
