@@ -5,7 +5,6 @@
 import panel as pn
 import param
 import pydeck as pdk
-
 from awesome_panel.express.assets import DECK_GL_PANEL_EXPRESS_CSS
 
 _EXTENDED = False

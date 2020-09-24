@@ -8,10 +8,9 @@ functionality for sensible defaults. See also [Issue 940]\
 (https://github.com/holoviz/panel/issues/940).
 """
 
+import awesome_panel.express as pnx
 import pandas as pd
 import panel as pn
-
-import awesome_panel.express as pnx
 from awesome_panel.express.testing import TestApp
 from awesome_panel.express.widgets import dataframe
 

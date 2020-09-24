@@ -4,7 +4,6 @@ corresponding panel original widgets in order for them to be useable via pn.Para
 # pylint: disable=missing-function-docstring,missing-module-docstring,missing-class-docstring
 import panel as pn
 import pytest
-
 from awesome_panel.express.components import wired
 
 # @Philippfr: Any of these parameters that are really needed in order to be able to use

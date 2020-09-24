@@ -5,7 +5,6 @@ import pathlib
 
 import panel as pn
 import param
-
 from awesome_panel.application.components import (
     LoadingPageComponent,
     PageComponent,

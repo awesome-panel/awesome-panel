@@ -1,9 +1,8 @@
 """This module contains a navigation menu to be used to select between different pages"""
 from typing import List, Optional, Union
 
-import panel as pn
-
 import awesome_panel.express as pnx
+import panel as pn
 
 
 class NavigationButton(pn.widgets.Button):

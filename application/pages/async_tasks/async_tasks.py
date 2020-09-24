@@ -105,7 +105,7 @@ class AsyncApp(param.Parameterized):
     view = param.Parameter()
 
     def __init__(self, **params):
-        super(AsyncApp, self).__init__(**params)
+        super().__init__(**params)
 
         self.view = pn.Column(
             pn.pane.Markdown(__doc__),

@@ -1,10 +1,10 @@
 """In this module we test the views in the athlete_view module"""
 
-import panel as pn
-
 import awesome_panel.express as pnx
-from application.pages.training_analysis.views.athlete_view import AthleteUpdateView
+import panel as pn
 from awesome_panel.express.testing import TestApp
+
+from application.pages.training_analysis.views.athlete_view import AthleteUpdateView
 
 
 def test_athlete_edit_view():

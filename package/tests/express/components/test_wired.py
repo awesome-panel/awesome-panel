@@ -6,7 +6,6 @@ from collections import OrderedDict
 
 import panel as pn
 import pytest
-
 from awesome_panel.express.components import wired
 
 

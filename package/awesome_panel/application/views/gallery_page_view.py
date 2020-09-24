@@ -4,7 +4,6 @@ The GalleryPageView shows (a thumbnail of) the page and enables the user to navi
 """
 import panel as pn
 import param
-
 from awesome_panel.application.models import Page
 
 

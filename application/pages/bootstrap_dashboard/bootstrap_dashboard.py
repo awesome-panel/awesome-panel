@@ -9,11 +9,10 @@ Creates a Bootstrap Dashboard Page with a Chart and a Table
 """
 import pathlib
 
+import awesome_panel.express as pnx
 import hvplot.pandas  # pylint: disable=unused-import
 import pandas as pd
 import panel as pn
-
-import awesome_panel.express as pnx
 
 IMAGE_PATH = (
     pathlib.Path(__file__).parent

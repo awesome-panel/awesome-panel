@@ -1,7 +1,6 @@
 """This module implements the PageNavigationComponent"""
 import panel as pn
 import param
-
 from awesome_panel.application.models import Application
 from awesome_panel.application.services import PageService
 

@@ -1,6 +1,5 @@
 import panel as pn
 import param
-
 import ptvsd
 
 ptvsd.enable_attach(

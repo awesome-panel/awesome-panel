@@ -3,7 +3,6 @@
 import pathlib
 
 import pytest
-
 from awesome_panel.express import fontawesome
 
 OUT = pathlib.Path(__file__).parent / "out"

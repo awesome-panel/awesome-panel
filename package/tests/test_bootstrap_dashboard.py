@@ -1,7 +1,6 @@
 """Tests of the BootStrapDashboardTemplate"""
-import panel as pn
-
 import awesome_panel.express as pnx
+import panel as pn
 
 
 def test_app_attributes():

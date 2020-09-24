@@ -2,7 +2,6 @@
 # pylint: disable=missing-function-docstring,missing-module-docstring,missing-class-docstring
 import panel as pn
 import param
-
 from awesome_panel.designer.services import ReloadService
 
 

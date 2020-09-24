@@ -2,9 +2,9 @@
 # pylint: disable=redefined-outer-name,protected-access
 import panel as pn
 import param
+from awesome_panel.express.testing import TestApp
 
 from application.pages.training_analysis.views import activity_view
-from awesome_panel.express.testing import TestApp
 
 
 def test_activity_view():

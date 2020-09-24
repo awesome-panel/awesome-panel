@@ -14,6 +14,7 @@ from functools import lru_cache
 from typing import Callable, List, NamedTuple, Tuple
 
 import altair as alt
+import awesome_panel.express as pnx
 import keras.backend.tensorflow_backend as tb
 import numpy as np
 import pandas as pd
@@ -31,8 +32,6 @@ from keras.applications import (
 )
 from keras.preprocessing.image import img_to_array, load_img
 from PIL import Image
-
-import awesome_panel.express as pnx
 
 pn.extension("vega")
 # Hack

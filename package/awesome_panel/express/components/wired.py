@@ -5,7 +5,6 @@ import json
 from typing import Optional
 
 import param
-
 from awesome_panel.express.components.material import MWC_ICONS
 from awesome_panel.express.pane.web_component import WebComponent
 

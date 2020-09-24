@@ -1,9 +1,8 @@
 """An App Template based on Bootstrap with a header, sidebar and main section"""
 import pathlib
 
-import panel as pn
-
 import awesome_panel.express as pnx
+import panel as pn
 from awesome_panel.express.assets import SCROLLBAR_PANEL_EXPRESS_CSS
 
 BOOTSTRAP_DASHBOARD_CSS = pathlib.Path(__file__).parent / "bootstrap_dashboard.css"

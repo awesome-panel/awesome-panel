@@ -1,7 +1,6 @@
 """The ProgressSpinnerComponent view method shows a spinner if there is Progress"""
 import panel as pn
 import param
-
 from awesome_panel.application import assets
 from awesome_panel.application.services import ProgressService, ThemeService
 

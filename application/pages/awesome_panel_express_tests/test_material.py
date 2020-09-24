@@ -13,7 +13,6 @@ You can find the implementation [here](https://github.com/MarcSkovMadsen/awesome
 master/package/awesome_panel/express/components/material/__init__.py),
 """
 import panel as pn
-
 from awesome_panel.express.components import material
 
 

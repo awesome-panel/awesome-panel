@@ -1,8 +1,7 @@
 """Tests of the dataframe module"""
 import pandas as pd
-from bokeh.models.widgets.tables import NumberFormatter
-
 from awesome_panel.express.widgets import dataframe
+from bokeh.models.widgets.tables import NumberFormatter
 
 
 def test_get_default_formatters():

@@ -5,7 +5,6 @@ so I've implemented the functionality and made it available via the
 `awesome_panel.express.bootstrap.share_link` module"""
 
 import panel as pn
-
 from awesome_panel.express import fontawesome
 from awesome_panel.express.fontawesome.share_link import (
     ShareOnFacebook,

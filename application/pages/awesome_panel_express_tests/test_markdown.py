@@ -9,9 +9,8 @@ So here we test that
 """
 import pathlib
 
-import panel as pn
-
 import awesome_panel.express as pnx
+import panel as pn
 from awesome_panel.express.testing import TestApp
 
 TEST_MD_FILE = pathlib.Path(__file__).parent / "data" / "test.md"

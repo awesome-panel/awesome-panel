@@ -6,7 +6,6 @@ from contextlib import contextmanager
 from typing import Optional
 
 import param
-
 from awesome_panel.application.models import Progress
 
 

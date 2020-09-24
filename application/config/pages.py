@@ -5,12 +5,13 @@ Please note that all pages in the list
 - be located in https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/
 application/gallery
 """
+from awesome_panel.application.models import Page
+
 from application import pages
 
 # from application.pages import bootstrap_dashboard, custom_bokeh_model
 from application.config import authors, tags
 from application.config.settings import GITHUB_BLOB_MASTER_URL, THUMBNAILS_ROOT
-from awesome_panel.application.models import Page
 
 GITHUB_PAGE_URL = GITHUB_BLOB_MASTER_URL + "application/pages/"
 

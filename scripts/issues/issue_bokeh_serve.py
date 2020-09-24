@@ -1,8 +1,7 @@
+import awesome_panel.express.bootstrap
 from bokeh.layouts import column
 from bokeh.models import Slider
 from bokeh.server.server import Server
-
-import awesome_panel.express.bootstrap
 
 
 def get_app(title="My App"):

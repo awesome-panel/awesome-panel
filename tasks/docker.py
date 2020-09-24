@@ -35,8 +35,8 @@ def _build(  # pylint: disable=too-many-arguments
     """
     print(
         f"""
-Building the '{DOCKER_REGISTRY}/{image}:{tag}' Docker image
-===================================
+Building the '{image}:{tag}' Docker image
+=========================================
 """
     )
     if rebuild:
@@ -147,7 +147,7 @@ def build(
 @task
 def run(
     c,
-    image="awesome-panel",
+    image="prod",
     tag="latest",
 ):  # pylint: disable=unused-argument
     """Run the Docker container bash terminal interactively.
@@ -167,8 +167,12 @@ Running the '{image}:{tag}' Docker image
 ========================================
 """
     )
+    image_configuration = IMAGES.get(
+        image,
+        IMAGES["prod"],
+    )
     command = (
-        f'docker run -it -p 80:80 --entrypoint "/bin/bash" ' f"{DOCKER_REGISTRY}/{image}:{tag} "
+        f'docker run -it -p 80:80 --entrypoint "/bin/bash" ' f"{image_configuration.image}:{tag} "
     )
     print(command)
     subprocess.run(

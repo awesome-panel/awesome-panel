@@ -1,7 +1,6 @@
 """Implementation of Material Components"""
 import panel as pn
 import param
-
 from awesome_panel.express.pane.web_component import WebComponent
 
 from .config import FONTS_HTML, MWC_ICONS, MWC_JS

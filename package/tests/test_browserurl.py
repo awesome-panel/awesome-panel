@@ -1,10 +1,9 @@
 """Tests of the awesome_panel functionality"""
+import awesome_panel.express as pnx
 import panel as pn
 
 # pylint: disable=protected-access
 import param
-
-import awesome_panel.express as pnx
 
 
 class _Country(

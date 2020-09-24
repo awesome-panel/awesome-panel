@@ -17,7 +17,6 @@ from typing import List
 
 import panel as pn
 import param
-
 from awesome_panel.designer import config
 from awesome_panel.designer.components import CenteredComponent, StoppedComponent, TitleComponent
 from awesome_panel.designer.services import ReloadService

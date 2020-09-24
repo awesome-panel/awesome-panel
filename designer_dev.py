@@ -1,5 +1,6 @@
-from application.pages.pandas_profiling_app.pandas_profiling_app import PandasProfilingApp
 from awesome_panel.designer import Designer, ReloadService
+
+from application.pages.pandas_profiling_app.pandas_profiling_app import PandasProfilingApp
 
 
 def show():

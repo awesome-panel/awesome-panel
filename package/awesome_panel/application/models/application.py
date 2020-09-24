@@ -2,7 +2,6 @@
 
 It provides the basic parameters of an application"""
 import param
-
 from awesome_panel.application.models.page import Page
 
 # from awesome_panel.application.models.template import Template

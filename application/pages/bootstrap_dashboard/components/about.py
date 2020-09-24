@@ -7,9 +7,8 @@ thumbnail_png_path.
 """
 import pathlib
 
-import panel as pn
-
 import awesome_panel.express as pnx
+import panel as pn
 
 ABOUT_PATH = pathlib.Path(__file__).parent / "about.md"
 IMAGE_PATH = (

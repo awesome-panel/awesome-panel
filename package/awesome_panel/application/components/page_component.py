@@ -9,7 +9,6 @@ Don't use it directly. But use it for
 import inspect
 
 import param
-
 from awesome_panel.application.models import Page, Progress, Toast
 
 

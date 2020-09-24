@@ -31,7 +31,6 @@ import json
 import sys
 
 import param
-
 from awesome_panel.express.pane.web_component import WebComponent
 
 # Configure and import js in Notebook

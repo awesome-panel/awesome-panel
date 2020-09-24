@@ -1,8 +1,7 @@
 """Tests of the awesome_panel functionality"""
+import awesome_panel.express as pnx
 import panel as pn
 import pytest
-
-import awesome_panel.express as pnx
 
 
 @pytest.mark.panel

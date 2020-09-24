@@ -3,7 +3,6 @@
 The GalleryComponent enables the user to view the pages in a columnar format and navigate to one.
 """
 import param
-
 from awesome_panel.application.components.gallery_page_component import GalleryPageComponent
 from awesome_panel.application.components.page_component import PageComponent
 from awesome_panel.application.models import Page

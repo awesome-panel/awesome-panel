@@ -39,7 +39,6 @@ import pathlib
 
 import pandas as pd
 import panel as pn
-
 from awesome_panel.express.components import PerspectiveViewer
 
 DARK_BACKGROUND = "rgb(42, 44, 47)"

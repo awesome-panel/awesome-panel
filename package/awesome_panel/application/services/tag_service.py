@@ -2,7 +2,6 @@
 from typing import List, Optional
 
 import param
-
 from awesome_panel.application.models import Tag
 
 

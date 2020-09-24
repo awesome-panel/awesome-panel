@@ -33,7 +33,6 @@ express/components/model_viewer.py)
 """
 
 import panel as pn
-
 from awesome_panel.express.components import ModelViewer
 
 MODELVIEWER_LOGO = '<img src="https://avatars1.githubusercontent.com/u/1342004?v=4&amp;s=40" style="height:50px"></img>'

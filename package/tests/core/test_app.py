@@ -1,8 +1,7 @@
 """Test of the core functionality"""
 import pytest
-from panel.layout import Column
-
 from awesome_panel.utils.title_awesome import title_awesome
+from panel.layout import Column
 
 
 @pytest.mark.panel

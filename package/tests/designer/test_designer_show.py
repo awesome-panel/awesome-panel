@@ -6,7 +6,6 @@ Awesome Panel Designer :-)"""
 import pathlib
 
 import panel as pn
-
 from awesome_panel.designer import Designer, ReloadService, components
 from awesome_panel.designer.components.component_with_error import ComponentWithError
 from awesome_panel.designer.views import ErrorView

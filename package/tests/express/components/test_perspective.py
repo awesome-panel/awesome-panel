@@ -2,9 +2,8 @@
 # pylint: disable=missing-function-docstring,missing-module-docstring,missing-class-docstring
 import pandas as pd
 import panel as pn
-from bokeh.models import ColumnDataSource
-
 from awesome_panel.express.components import PerspectiveViewer
+from bokeh.models import ColumnDataSource
 
 pn.config.sizing_mode = "stretch_width"
 

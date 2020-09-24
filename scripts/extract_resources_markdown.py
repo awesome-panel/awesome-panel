@@ -1,8 +1,9 @@
 import pathlib
 import sys
 
-from application.config.resources import RESOURCES
 from awesome_panel.utils.resources import get_resources_markdown
+
+from application.config.resources import RESOURCES
 
 ROOT = pathlib.Path(__file__).parent.parent
 sys.path.append(str(ROOT))

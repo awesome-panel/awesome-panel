@@ -38,7 +38,6 @@ awesome_panel_express_tests/test_echarts.py),
 
 import panel as pn
 import param
-
 from awesome_panel.express.components import ECharts
 from awesome_panel.express.components.echarts import ECHART_JS_SERVER
 

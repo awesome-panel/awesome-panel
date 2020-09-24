@@ -30,7 +30,7 @@ class BrowserUrlMixin:  # pylint: disable=too-few-public-methods
         *args,
         **kwargs,
     ):
-        super(BrowserUrlMixin, self,).__init__(
+        super().__init__(
             *args,
             **kwargs,
         )

@@ -2,10 +2,10 @@
 
 Please note you need to run `fontawesome.extend()` in order to import the relevant css.
 """
+import awesome_panel.express as pnx
+
 # pylint: disable=protected-access
 import panel as pn
-
-import awesome_panel.express as pnx
 from awesome_panel.express.testing import TestApp
 
 pnx.fontawesome.extend()

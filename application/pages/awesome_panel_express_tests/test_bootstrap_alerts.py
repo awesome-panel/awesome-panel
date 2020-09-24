@@ -9,9 +9,8 @@ experience.
 - The JavaScript we cannot use as it confuses the Bokeh layout engine
 - The CSS has to be rewritten. So that is what I have to done the few things I need.
 """
-import panel as pn
-
 import awesome_panel.express as pnx
+import panel as pn
 from awesome_panel.express.testing import TestApp
 
 pnx.bootstrap.extend()

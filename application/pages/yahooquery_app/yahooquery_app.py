@@ -15,12 +15,11 @@ from functools import lru_cache
 from typing import Dict, List, Tuple
 
 import altair as alt
+import awesome_panel.express as pnx
 import pandas as pd
 import panel as pn
 import param
 from yahooquery import Ticker
-
-import awesome_panel.express as pnx
 
 PERIOD_END_DATE = datetime.datetime.now().date()
 PERIOD_START_DATE = PERIOD_END_DATE - datetime.timedelta(days=365)

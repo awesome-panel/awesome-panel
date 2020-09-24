@@ -3,7 +3,6 @@
 # pylint: disable=missing-function-docstring,missing-module-docstring,missing-class-docstring
 import param
 import pytest
-
 from awesome_panel.express.components.material import MWCSelect
 
 

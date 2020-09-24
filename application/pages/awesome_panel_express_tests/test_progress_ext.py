@@ -32,7 +32,6 @@ which will show the progress and reset every 2 clicks.
 import time
 
 import panel as pn
-
 from awesome_panel.express import ProgressExt
 from awesome_panel.express.testing import TestApp
 

@@ -1,9 +1,9 @@
 """Test of the pages"""
-import pytest
-
 import awesome_panel.express as pnx
-from application.pages import home, resources
+import pytest
 from awesome_panel.express.testing import TestApp
+
+from application.pages import home, resources
 
 pnx.bootstrap.extend()
 

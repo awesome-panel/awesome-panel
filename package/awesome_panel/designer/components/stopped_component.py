@@ -2,7 +2,6 @@
 user when he/ she exits the Designer"""
 import panel as pn
 import param
-
 from awesome_panel.application import assets
 
 MESSAGE = f"""\

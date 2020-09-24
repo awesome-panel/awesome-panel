@@ -9,7 +9,6 @@ import sys
 import traceback
 
 import param
-
 from awesome_panel.designer.views import ErrorView
 
 
@@ -25,8 +24,8 @@ class ReloadService(param.Parameterized):  # pylint: disable=too-many-instance-a
         - subclasses of `param.Parameterized` with a `view` parameter which is a subclass of
         `pn.layout.Reactive`
 
-    Please NOTE that in order for the reload service to be able to reload the compoonent, the component
-    specified cannot be defined in the __main__ file.
+    Please NOTE that in order for the reload service to be able to reload the compoonent, the
+    component specified cannot be defined in the __main__ file.
 
     Example
     -------

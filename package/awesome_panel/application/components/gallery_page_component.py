@@ -1,7 +1,6 @@
 """In this module we define the GalleryPageComponent"""
 import panel as pn
 import param
-
 from awesome_panel.application.models import Page
 from awesome_panel.application.services import PageService
 from awesome_panel.application.views.gallery_page_view import GalleryPageView

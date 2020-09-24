@@ -4,11 +4,10 @@
 import pandas as pd
 import param
 import pytest
+from awesome_panel.express.pane.web_component import PARAMETER_TYPE, WebComponent
 from bokeh.document import Document
 from bokeh.models import ColumnDataSource
 from pyviz_comms import Comm
-
-from awesome_panel.express.pane.web_component import PARAMETER_TYPE, WebComponent
 
 
 @pytest.fixture

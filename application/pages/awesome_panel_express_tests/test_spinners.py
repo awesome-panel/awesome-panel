@@ -8,9 +8,8 @@ was running.
 """
 import time
 
-import panel as pn
-
 import awesome_panel.express as pnx
+import panel as pn
 from awesome_panel.express.testing import TestApp
 
 

@@ -1,7 +1,6 @@
 # pylint: disable=redefined-outer-name,protected-access
 # pylint: disable=missing-function-docstring,missing-module-docstring,missing-class-docstring
 import pytest
-
 from awesome_panel.application.models import Author
 from awesome_panel.application.services import AuthorService
 

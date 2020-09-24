@@ -6,7 +6,6 @@ detailed 3D models.
 """
 import panel as pn
 import param
-
 from awesome_panel.express.pane.web_component import WebComponent
 
 # pylint: disable=line-too-long

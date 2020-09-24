@@ -3,7 +3,6 @@ import pathlib
 
 import panel as pn
 import param
-
 from awesome_panel.application.templates.application_template import ApplicationTemplate
 from awesome_panel.express.components import material
 from awesome_panel.utils import holoviews_ext

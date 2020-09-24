@@ -1,5 +1,6 @@
-import app
 from reload_app import ReloadComponent
+
+import app
 
 
 def get_app_view():

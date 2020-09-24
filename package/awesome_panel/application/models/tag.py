@@ -2,7 +2,6 @@
 
 
 import param
-
 from awesome_panel.utils import OrderByNameMixin
 
 

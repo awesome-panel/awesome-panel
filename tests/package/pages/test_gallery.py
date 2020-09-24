@@ -1,11 +1,11 @@
 """Test of the gallery page"""
-import pytest
-from panel.layout import Column
-
 import awesome_panel.express as pnx
-from application.pages.gallery import gallery
+import pytest
 from awesome_panel.application.services import PageService
 from awesome_panel.express.testing import TestApp
+from panel.layout import Column
+
+from application.pages.gallery import gallery
 
 pnx.bootstrap.extend()
 pnx.fontawesome.extend()

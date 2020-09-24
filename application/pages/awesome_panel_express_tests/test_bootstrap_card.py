@@ -12,11 +12,10 @@ experience, so I've had to create a custom version for Panel/ Bokeh.
 - I'm not sure this is the right way to implement a new Layout. **Is there some better way
 to implement this using the api of Panel and Bokeh?**.
 """
+import awesome_panel.express as pnx
 import hvplot.pandas  # pylint: disable=unused-import
 import pandas as pd
 import panel as pn
-
-import awesome_panel.express as pnx
 from awesome_panel.express.testing import TestApp
 
 pnx.bootstrap.extend()

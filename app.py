@@ -15,13 +15,13 @@ import os
 import platform
 
 import panel as pn
-
-from application import config
-from application.pages.fast_gallery.fast_gallery import get_fast_gallery  # type: ignore
 from awesome_panel.application.components import GalleryComponent
 from awesome_panel.application.models import Application
 from awesome_panel.application.services import Services
 from awesome_panel.application.templates import MaterialTemplate
+
+from application import config
+from application.pages.fast_gallery.fast_gallery import get_fast_gallery  # type: ignore
 
 
 def view():

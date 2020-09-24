@@ -4,9 +4,8 @@ so I created my own because I did not know better.
 The `pn.layout.divider` reference example is now available
 (here)[https://panel.holoviz.org/reference/layouts/Divider.html#layouts-gallery-divider]
 """
-import panel as pn
-
 import awesome_panel.express as pnx
+import panel as pn
 from awesome_panel.express.testing import TestApp
 
 

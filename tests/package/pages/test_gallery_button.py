@@ -1,10 +1,10 @@
 """Test of the gallery functionality"""
+import awesome_panel.express as pnx
 import panel as pn
 import pytest
-
-import awesome_panel.express as pnx
-from application.pages.gallery import gallery
 from awesome_panel.express.testing import TestApp
+
+from application.pages.gallery import gallery
 
 pnx.fontawesome.extend()
 

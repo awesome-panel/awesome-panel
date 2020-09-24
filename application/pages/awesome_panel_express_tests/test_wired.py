@@ -52,7 +52,6 @@ import pandas as pd
 import panel as pn
 import param
 import pytest
-
 from awesome_panel.express.components import wired
 
 

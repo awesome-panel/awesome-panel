@@ -3,7 +3,6 @@
 This is used for development and manual testing
 """
 import panel as pn
-
 from awesome_panel.designer import Designer, ReloadService
 from awesome_panel.express.components import material
 

@@ -76,7 +76,7 @@ Running isort the Python code import sorter
 """
     )
     command.run(
-        "isort -rc .",
+        "isort .",
         echo=True,
     )
 

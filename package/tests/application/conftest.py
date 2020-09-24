@@ -2,7 +2,6 @@
 # pylint: disable=missing-function-docstring,missing-module-docstring,missing-class-docstring
 import panel as pn
 import pytest
-
 from awesome_panel.application.components import (
     ApplicationComponent,
     LoadingPageComponent,
