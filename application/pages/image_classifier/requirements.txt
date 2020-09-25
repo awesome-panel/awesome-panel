@@ -2,5 +2,5 @@ panel==0.7
 numpy==1.17.2
 Keras==2.3.1
 Pillow==7.1.0
-tensorflow==2.0.1
+tensorflow==2.0.3
 altair==4.0.0
