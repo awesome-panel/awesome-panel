@@ -390,11 +390,13 @@ def get_applications():
             ],
         ),
         Application(
-            name="Dialog",
+            name="Dialog Template",
             description="An example of a custom Panel Template with a Modal",
             url="dialog_template",
             thumbnail_url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/application/pages/dialog_template/assets/thumbnail.png",
             code_url="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/dialog_template",
+            mp4_url="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/dialog_template/assets/dialog_template.mp4",
+            gif_url="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/dialog_template/assets/dialog_template.gif",
             author=marc_skov_madsen,
             tags=[
                 "Code",
