@@ -23,7 +23,7 @@ def get_applications():
         avatar_url="https://avatars0.githubusercontent.com/u/42288570",
     )
 
-    return [
+    return sorted([
         Application(
             name="Async Tasks",
             description="We show case how to start a background thread that updates a progressbar while the rest of the application remains responsive.",
@@ -389,7 +389,20 @@ def get_applications():
                 "awesome_panel.express",
             ],
         ),
-    ]
+        Application(
+            name="Dialog",
+            description="An example of a custom Panel Template with a Modal",
+            url="dialog_template",
+            thumbnail_url="https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_wired.png",
+            code_url="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/dialog_template",
+            author=marc_skov_madsen,
+            tags=[
+                "Code",
+                "App In Gallery",
+                "awesome_panel.express",
+            ],
+        ),
+    ])
 
 
 def get_fast_gallery():
