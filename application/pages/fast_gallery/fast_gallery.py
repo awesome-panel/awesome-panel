@@ -393,7 +393,7 @@ def get_applications():
             name="Dialog",
             description="An example of a custom Panel Template with a Modal",
             url="dialog_template",
-            thumbnail_url="https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_wired.png",
+            thumbnail_url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/application/pages/dialog_template/assets/thumbnail.png",
             code_url="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/dialog_template",
             author=marc_skov_madsen,
             tags=[
@@ -404,7 +404,6 @@ def get_applications():
             ],
         ),
     ])
-
 
 def get_fast_gallery():
     """Return a FastGalleryTemplate"""
