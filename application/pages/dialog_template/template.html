@@ -1,0 +1,40 @@
+{% extends base %}
+
+{% block postamble %}
+<!-- https://shoelace.style/ -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.19/dist/shoelace/shoelace.css">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.19/dist/shoelace/shoelace.esm.js"></script>
+<style>
+    body, .bk-root .bk, .bk-root .bk:before, .bk-root .bk:after {
+        font-family: var(--sl-input-font-family);
+    }
+</style>
+{% endblock %}
+
+<!-- goes in body -->
+{% block contents %}
+{{ embed(roots.header) }}
+<div id="main" style="margin: 25px">
+    {{ embed(roots.main) }}
+    <br/>
+    <!-- https://shoelace.style/components/dialog -->
+    <sl-dialog label="{{ dialog_label }}" class="dialog-overview" style="--width: 550px;--height: 500px;">
+        {{ embed(roots.dialog) }}
+    <sl-button slot="footer" type="primary">Close</sl-button>
+    </sl-dialog>
+
+    <sl-button>Open Dialog</sl-button>
+</div>
+
+<script>
+(() => {
+    const dialog = document.querySelector('.dialog-overview');
+    const openButton = dialog.nextElementSibling;
+    const closeButton = dialog.querySelector('sl-button[slot="footer"]');
+
+    openButton.addEventListener('click', () => dialog.show());
+    closeButton.addEventListener('click', () => dialog.hide());
+})();
+</script>
+
+{% endblock %}

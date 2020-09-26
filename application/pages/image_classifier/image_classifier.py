@@ -15,29 +15,13 @@ from typing import Callable, List, NamedTuple, Tuple
 
 import altair as alt
 import awesome_panel.express as pnx
-import keras.backend.tensorflow_backend as tb
 import numpy as np
 import pandas as pd
 import panel as pn
 import param
-from keras.applications import (
-    densenet,
-    imagenet_utils,
-    inception_v3,
-    mobilenet_v2,
-    nasnet,
-    resnet,
-    vgg19,
-    xception,
-)
-from keras.preprocessing.image import img_to_array, load_img
 from PIL import Image
 
 pn.extension("vega")
-# Hack
-# I get a '_thread._local' object has no attribute 'value' error without this
-# See https://github.com/keras-team/keras/issues/13353#issuecomment-545459472
-tb._SYMBOLIC_SCOPE.value = True  # pylint: disable=protected-access
 
 
 class KerasApplication(NamedTuple):
@@ -45,13 +29,16 @@ class KerasApplication(NamedTuple):
 
     name: str
     keras_application: Callable
+    preprocess_input_func: Callable # = imagenet_utils.preprocess_input
+    decode_predictions_func: Callable # = imagenet_utils.decode_predictions
+    load_img_func: Callable
+    img_to_array_func: Callable
     input_shape: Tuple[int, int,] = (
         224,
         224,
     )
-    preprocess_input_func: Callable = imagenet_utils.preprocess_input
-    decode_predictions_func: Callable = imagenet_utils.decode_predictions
     url: str = "https://keras.io/applications/"
+
 
     def load_image(
         self,
@@ -65,7 +52,7 @@ class KerasApplication(NamedTuple):
         Returns:
             Image -- The image loaded
         """
-        return load_img(
+        return self.load_img_func(
             image_path,
             target_size=self.input_shape,
         )
@@ -110,7 +97,7 @@ class KerasApplication(NamedTuple):
         # For an explanation see
         # https://stackoverflow.com/questions/47555829/preprocess-input-method-in-keras
         image = self.to_input_shape(image)
-        image = img_to_array(image)
+        image = self.img_to_array_func(image)
         image = np.expand_dims(
             image,
             axis=0,
@@ -221,80 +208,127 @@ class KerasApplication(NamedTuple):
         return chart
 
 
-# pylint: enable=line-too-long
-
 # See https://keras.io/applications/
 DEFAULT_KERAS_APPLICATION_INDEX = 2
-KERAS_APPLICATIONS: List[KerasApplication] = [
-    KerasApplication(
-        "DenseNet121",
-        keras_application=densenet.DenseNet121,
-        url="https://keras.io/applications/#densenet",
-        preprocess_input_func=densenet.preprocess_input,
-        decode_predictions_func=densenet.decode_predictions,
-    ),
-    KerasApplication(
-        "InceptionV3",
-        keras_application=inception_v3.InceptionV3,
-        input_shape=(
-            299,
-            299,
+KERAS_APPLICATIONS: List[KerasApplication]
+
+# Hack
+# I get a '_thread._local' object has no attribute 'value' error without this
+# See https://github.com/keras-team/keras/issues/13353#issuecomment-545459472
+def config_keras_applications():
+    """Config keras dependencies"""
+    # We need to do these import outside of toplevel because otherwise every time you run python
+    # for testing or running some other script it loads Tensorflow and slows things down.
+    # pylint: disable=import-outside-toplevel
+    global KERAS_APPLICATIONS # pylint: disable=global-statement
+    if not KERAS_APPLICATIONS:
+        return
+
+    import keras.backend.tensorflow_backend as tb
+
+    tb._SYMBOLIC_SCOPE.value = True  # pylint: disable=protected-access
+
+    from keras.applications import (
+        densenet,
+        inception_v3,
+        mobilenet_v2,
+        nasnet,
+        resnet,
+        vgg19,
+        xception,
+    )
+    from keras.preprocessing.image import img_to_array, load_img
+
+
+    KERAS_APPLICATIONS = [
+        KerasApplication(
+            "DenseNet121",
+            keras_application=densenet.DenseNet121,
+            url="https://keras.io/applications/#densenet",
+            preprocess_input_func=densenet.preprocess_input,
+            decode_predictions_func=densenet.decode_predictions,
+            img_to_array_func = img_to_array,
+            load_img_func = load_img,
         ),
-        url="https://keras.io/applications/#inceptionv3",
-        preprocess_input_func=inception_v3.preprocess_input,
-        decode_predictions_func=inception_v3.decode_predictions,
-    ),
-    KerasApplication(
-        "MobileNetV2",
-        keras_application=mobilenet_v2.MobileNetV2,
-        url="https://keras.io/applications/#mobilenet",
-        preprocess_input_func=mobilenet_v2.preprocess_input,
-        decode_predictions_func=mobilenet_v2.decode_predictions,
-    ),
-    KerasApplication(
-        "NASNetMobile",
-        keras_application=nasnet.NASNetMobile,
-        url="https://keras.io/applications/#nasnet",
-        preprocess_input_func=nasnet.preprocess_input,
-        decode_predictions_func=nasnet.decode_predictions,
-    ),
-    KerasApplication(
-        "NASNetLarge",
-        keras_application=nasnet.NASNetLarge,
-        input_shape=(
-            331,
-            331,
+        KerasApplication(
+            "InceptionV3",
+            keras_application=inception_v3.InceptionV3,
+            input_shape=(
+                299,
+                299,
+            ),
+            url="https://keras.io/applications/#inceptionv3",
+            preprocess_input_func=inception_v3.preprocess_input,
+            decode_predictions_func=inception_v3.decode_predictions,
+            img_to_array_func = img_to_array,
+            load_img_func = load_img,
         ),
-        url="https://keras.io/applications/#nasnet",
-        preprocess_input_func=nasnet.preprocess_input,
-        decode_predictions_func=nasnet.decode_predictions,
-    ),
-    KerasApplication(
-        "ResNet50",
-        keras_application=resnet.ResNet50,
-        url="https://keras.io/applications/#resnet",
-        preprocess_input_func=resnet.preprocess_input,
-        decode_predictions_func=resnet.decode_predictions,
-    ),
-    KerasApplication(
-        "VGG19",
-        keras_application=vgg19.VGG19,
-        url="https://keras.io/applications/#vgg19",
-        preprocess_input_func=vgg19.preprocess_input,
-        decode_predictions_func=vgg19.decode_predictions,
-    ),
-    KerasApplication(
-        "Xception",
-        keras_application=xception.Xception,
-        input_shape=(
-            299,
-            299,
+        KerasApplication(
+            "MobileNetV2",
+            keras_application=mobilenet_v2.MobileNetV2,
+            url="https://keras.io/applications/#mobilenet",
+            preprocess_input_func=mobilenet_v2.preprocess_input,
+            decode_predictions_func=mobilenet_v2.decode_predictions,
+            img_to_array_func = img_to_array,
+            load_img_func = load_img,
         ),
-        url="https://keras.io/applications/#inceptionv3",
-        preprocess_input_func=xception.preprocess_input,
-        decode_predictions_func=xception.decode_predictions,
-    ),
-]
+        KerasApplication(
+            "NASNetMobile",
+            keras_application=nasnet.NASNetMobile,
+            url="https://keras.io/applications/#nasnet",
+            preprocess_input_func=nasnet.preprocess_input,
+            decode_predictions_func=nasnet.decode_predictions,
+            img_to_array_func = img_to_array,
+            load_img_func = load_img,
+        ),
+        KerasApplication(
+            "NASNetLarge",
+            keras_application=nasnet.NASNetLarge,
+            input_shape=(
+                331,
+                331,
+            ),
+            url="https://keras.io/applications/#nasnet",
+            preprocess_input_func=nasnet.preprocess_input,
+            decode_predictions_func=nasnet.decode_predictions,
+            img_to_array_func = img_to_array,
+            load_img_func = load_img,
+        ),
+        KerasApplication(
+            "ResNet50",
+            keras_application=resnet.ResNet50,
+            url="https://keras.io/applications/#resnet",
+            preprocess_input_func=resnet.preprocess_input,
+            decode_predictions_func=resnet.decode_predictions,
+            img_to_array_func = img_to_array,
+            load_img_func = load_img,
+        ),
+        KerasApplication(
+            "VGG19",
+            keras_application=vgg19.VGG19,
+            url="https://keras.io/applications/#vgg19",
+            preprocess_input_func=vgg19.preprocess_input,
+            decode_predictions_func=vgg19.decode_predictions,
+            img_to_array_func = img_to_array,
+            load_img_func = load_img,
+        ),
+        KerasApplication(
+            "Xception",
+            keras_application=xception.Xception,
+            input_shape=(
+                299,
+                299,
+            ),
+            url="https://keras.io/applications/#inceptionv3",
+            preprocess_input_func=xception.preprocess_input,
+            decode_predictions_func=xception.decode_predictions,
+            img_to_array_func = img_to_array,
+            load_img_func = load_img,
+        ),
+    ]
+
+
+# pylint: enable=line-too-long
 
 IMAGE_TYPES = [".jpg"]
 
@@ -336,14 +370,20 @@ class ImageClassifierApp(param.Parameterized):
     We define the parameters, views and depencies of the app
     """
 
-    model = param.ObjectSelector(
-        default=KERAS_APPLICATIONS[DEFAULT_KERAS_APPLICATION_INDEX],
-        objects=KERAS_APPLICATIONS,
-    )
+    model = param.ObjectSelector()
     image_file = param.FileSelector()
     top_predictions = param.ClassSelector(class_=list)
     progress_value = param.Integer()
     progress_message = param.String()
+
+    def __init__(self, **params):
+        super().__init__(**params)
+
+        config_keras_applications()
+
+        self.param.model.default = KERAS_APPLICATIONS[DEFAULT_KERAS_APPLICATION_INDEX]
+        self.param.model.objects = KERAS_APPLICATIONS
+        self.model = KERAS_APPLICATIONS[DEFAULT_KERAS_APPLICATION_INDEX]
 
     @param.depends("model")
     def resources_view(

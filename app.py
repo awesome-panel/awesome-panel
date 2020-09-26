@@ -22,7 +22,7 @@ from awesome_panel.application.templates import MaterialTemplate
 
 from application import config
 from application.pages.fast_gallery.fast_gallery import get_fast_gallery  # type: ignore
-
+import application.pages.dialog_template as dialog_template
 
 def view():
     services = Services()
@@ -59,7 +59,7 @@ if __name__.startswith("bokeh"):
     view().servable()
 else:
     address = os.getenv("BOKEH_ADDRESS", "0.0.0.0")
-    APP_ROUTES = {"": view, "gallery": get_fast_gallery}
+    APP_ROUTES = {"": view, "gallery": get_fast_gallery, "dialog_template": dialog_template.view}
 
     if platform.system() == "Windows":
         pn.serve(APP_ROUTES, port=80, dev=False, title="Awesome Panel", address=address)
