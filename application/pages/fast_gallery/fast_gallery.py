@@ -398,8 +398,9 @@ def get_applications():
             author=marc_skov_madsen,
             tags=[
                 "Code",
-                "App In Gallery",
-                "awesome_panel.express",
+                "Awesome Panel",
+                "Shoelace",
+                "Modal",
             ],
         ),
     ])
