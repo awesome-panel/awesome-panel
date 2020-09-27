@@ -105,6 +105,12 @@ NIC_FOX = Author(
     github_url="https://github.com/foxnic",
     github_avatar_url="https://avatars3.githubusercontent.com/u/39113566",
 )
+OGGM_EDU = Author(
+    name="OGGM EDU",
+    url="https://edu.oggm.org/en/latest/index.html",
+    github_url="https://github.com/OGGM",
+    github_avatar_url="https://avatars2.githubusercontent.com/u/14758186",
+)
 OURWORLDINDATA = Author(
     name="Our World in Data",
     url="https://ourworldindata.org/",
@@ -179,6 +185,7 @@ AUTHORS = [
     JAMES_BEDNAR,
     MARC_SKOV_MADSEN,
     NIC_FOX,
+    OGGM_EDU,
     OURWORLDINDATA,
     PANEL,
     PHILIPP_RUDIGER,

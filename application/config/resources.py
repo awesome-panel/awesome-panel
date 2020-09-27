@@ -11,6 +11,14 @@ from application.config.settings import THUMBNAILS_ROOT
 
 RESOURCES = [
     Resource(
+        name="World Glaciers Explorer",
+        url="https://edu.oggm.org/en/latest/explorer.html",
+        thumbnail_png_path=THUMBNAILS_ROOT + "",
+        is_awesome=True,
+        tags=[tags.APP, tags.VIDEO],
+        author=authors.OGGM_EDU,
+    ),
+    Resource(
         name="Experimental Machine Learning with HoloViz and PyTorch in Jupyterlab ",
         url="https://pyvideo.org/pydata-la-2019/experimental-machine-learning-with-holoviz-and-pytorch-in-jupyterlab.html",
         thumbnail_png_path=THUMBNAILS_ROOT + "",
