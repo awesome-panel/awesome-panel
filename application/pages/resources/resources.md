@@ -12,7 +12,7 @@
 - [Building Dashboards. Introduction to Data Analysis in Biological Sciences.](https://xavartley.github.io/#panel/vtk_examples/Gallery_VTK.html) by [Justin Bois](http://bois.caltech.edu/) (#App, #Inspiration)
 - [Color Dropper App](http://colordropper.herokuapp.com/colordropper) by [Andrew Huang](https://twitter.com/iateandrew1) (#App)
 - [Panel Dashboards by Nic Fox](https://foxnic.github.io/projects.html) by [Nic Fox](https://dev.to/nicfoxds) (#App, #Code)
-- [World Glaciers Explorer](https://edu.oggm.org/en/latest/explorer.html) by [OGGM EDU](https://edu.oggm.org/en/latest/index.html) (#App, #Video)
+- [World Glaciers Explorer](https://edu.oggm.org/en/latest/explorer.html) and [Glacier Simulator](https://edu.oggm.org/en/latest/simulator.html) by [OGGM EDU](https://edu.oggm.org) (#App, #Video)
 - [XrViz](https://github.com/intake/xrviz) by [Intake](https://github.com/intake) (#App, #Code, #Inspiration)
 
 ### Article
