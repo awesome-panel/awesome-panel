@@ -15,3 +15,5 @@ text = """# Awesome Panel Resources ![Awesome Badge](https://cdn.rawgit.com/sind
     RESOURCES, []
 )
 RESOURCES_MD.write_text(text)
+
+# python -m scripts.extract_resources_markdown

@@ -12,6 +12,7 @@
 - [Building Dashboards. Introduction to Data Analysis in Biological Sciences.](https://xavartley.github.io/#panel/vtk_examples/Gallery_VTK.html) by [Justin Bois](http://bois.caltech.edu/) (#App, #Inspiration)
 - [Color Dropper App](http://colordropper.herokuapp.com/colordropper) by [Andrew Huang](https://twitter.com/iateandrew1) (#App)
 - [Panel Dashboards by Nic Fox](https://foxnic.github.io/projects.html) by [Nic Fox](https://dev.to/nicfoxds) (#App, #Code)
+- [World Glaciers Explorer](https://edu.oggm.org/en/latest/explorer.html) by [OGGM EDU](https://edu.oggm.org/en/latest/index.html) (#App, #Video)
 - [XrViz](https://github.com/intake/xrviz) by [Intake](https://github.com/intake) (#App, #Code, #Inspiration)
 
 ### Article
@@ -54,6 +55,7 @@
 
 ### Tutorial
 
+- [Experimental Machine Learning with HoloViz and PyTorch in Jupyterlab ](https://pyvideo.org/pydata-la-2019/experimental-machine-learning-with-holoviz-and-pytorch-in-jupyterlab.html) by [Hayley Song](http://holoviz.org/) (#Tutorial, #Video)
 - [HoloViz.org - Awesome Resources and Tutorials](http://holoviz.org/index.html) by [HoloViz](http://holoviz.org/) (#Tutorial)
 - [How to Create an Interactive Dashboard in Python Using HoloViz Panel](https://dev.to/nicfoxds/how-to-create-an-interactive-dashboard-in-python-using-holoviz-panel-5bhp) by [Nic Fox](https://dev.to/nicfoxds) (#Code, #Tutorial)
 - [Information is Beautiful](https://towardsdatascience.com/how-to-build-a-time-series-dashboard-in-python-with-panel-altair-and-a-jupyter-notebook-c0ed40f02289) by [Bokeh](https://bendoesdata.github.io/) (#Article, #Tutorial)
