@@ -20,9 +20,9 @@ class ReloadService(param.Parameterized):  # pylint: disable=too-many-instance-a
     Args:
         component ([type]): For now the components that are know to be supported are
 
-        - subclasses of `pn.layout.Reactive`
+        - subclasses of `pn.reactive.Reactive`
         - subclasses of `param.Parameterized` with a `view` parameter which is a subclass of
-        `pn.layout.Reactive`
+        `pn.reactive.Reactive`
 
     Please NOTE that in order for the reload service to be able to reload the compoonent, the
     component specified cannot be defined in the __main__ file.

@@ -21,7 +21,7 @@ header a:-webkit-any-link {
   width: 100%;
   height: 100vh;
   grid-template: [header-left] "head head" 60px [header-right]
-                 [main-left]   "nav  main" 1fr  [main-right] / 200px 1fr;
+                 [main-left]   "main  main" 1fr  [main-right] / 200px main;
 }
 
 header {

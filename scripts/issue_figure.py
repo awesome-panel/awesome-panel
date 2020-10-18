@@ -3,7 +3,7 @@ from bokeh.sampledata.iris import flowers
 from bokeh.models import ColumnDataSource
 import panel as pn
 
-pn.extension()
+pn.extension("katex")
 
 def create_figure(width):
     p = figure(height=200, width=width, tools='box_select')

@@ -202,7 +202,7 @@ class Designer(param.Parameterized):  # pylint: disable=too-many-instance-attrib
         if self.reload_service_.component_instance:
             self.settings_pane.object = self.reload_service_.component_instance
 
-            if isinstance(self.reload_service_.component_instance, pn.layout.Reactive):
+            if isinstance(self.reload_service_.component_instance, pn.reactive.Reactive):
                 component_view = self.reload_service_.component_instance
             elif hasattr(self.reload_service_.component_instance, "view"):
                 component_view = self.reload_service_.component_instance.view

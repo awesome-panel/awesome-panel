@@ -12,11 +12,11 @@ class ApplicationView(pn.Template):
     etc as well as other functionality like spinner, application_css, application_js, theme_css,
     theme_js, ..."""
 
-    main = param.ClassSelector(class_=pn.layout.Reactive, allow_None=False, constant=True)
-    sidebar = param.ClassSelector(class_=pn.layout.Reactive, allow_None=False, constant=True)
-    topbar = param.ClassSelector(class_=pn.layout.Reactive, allow_None=False, constant=True)
-    spinner = param.ClassSelector(class_=pn.layout.Reactive, allow_None=False, constant=True)
-    navigation = param.ClassSelector(class_=pn.layout.Reactive, allow_None=False, constant=True)
+    main = param.ClassSelector(class_=pn.reactive.Reactive, allow_None=False, constant=True)
+    sidebar = param.ClassSelector(class_=pn.reactive.Reactive, allow_None=False, constant=True)
+    topbar = param.ClassSelector(class_=pn.reactive.Reactive, allow_None=False, constant=True)
+    spinner = param.ClassSelector(class_=pn.reactive.Reactive, allow_None=False, constant=True)
+    navigation = param.ClassSelector(class_=pn.reactive.Reactive, allow_None=False, constant=True)
 
     application_css = param.ClassSelector(class_=pn.pane.HTML, allow_None=False, constant=True)
     application_js = param.ClassSelector(class_=pn.pane.HTML, allow_None=False, constant=True)

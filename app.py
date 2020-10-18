@@ -60,7 +60,6 @@ if __name__.startswith("bokeh"):
 else:
     address = os.getenv("BOKEH_ADDRESS", "0.0.0.0")
     APP_ROUTES = {"": view, "gallery": get_fast_gallery, "dialog_template": dialog_template.view}
-
     if platform.system() == "Windows":
         pn.serve(APP_ROUTES, port=80, dev=False, title="Awesome Panel", address=address)
     else:

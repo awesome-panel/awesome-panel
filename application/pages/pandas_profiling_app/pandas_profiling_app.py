@@ -104,7 +104,7 @@ class PandasProfilingApp(param.Parameterized):
 
     progress = param.Parameter()
     html_report_pane = param.ClassSelector(class_=pn.pane.HTML)
-    view = param.ClassSelector(class_=pn.layout.Reactive)
+    view = param.ClassSelector(class_=pn.reactive.Reactive)
 
     config = param.ClassSelector(class_=Config, instantiate=False)
 

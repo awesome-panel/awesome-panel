@@ -69,12 +69,31 @@ class ParameterizedStorm(param.Parameterized):
         doc="A single storm to plot time-series data from.",
         objects={},
     )
+    view = param.Parameter()
 
     def __init__(self, by_storm_summary: pd.DataFrame):
         super().__init__(by_storm_summary=by_storm_summary)
 
         self._handle_by_storm_summary_change()
         self._handle_single_location_change()
+
+        self._widget_pane = pn.Param(
+            self,
+            parameters=["single_location", "single_storm_number"],
+            widgets={
+                "single_location": pn.widgets.Select,
+                "single_storm_number": pn.widgets.DiscreteSlider,
+            },
+            show_name=False,
+            width=400,
+        )
+        self._text_pane = pn.pane.Str()
+        self.view = pn.Row(
+            pn.WidgetBox(self._widget_pane),
+            self._text_pane,
+            )
+
+
 
     @param.depends("by_storm_summary", watch=True)
     def _handle_by_storm_summary_change(self):
@@ -107,6 +126,7 @@ class ParameterizedStorm(param.Parameterized):
     @param.depends(
         "single_location",
         "single_storm_number",
+        watch=True
     )
     def view_states(self):
         text = (
@@ -116,20 +136,9 @@ class ParameterizedStorm(param.Parameterized):
             )
             + "\nSingle Storm: {}".format(self.single_storm_number)
         )
-        text_pane: pn.pane.Str = pn.pane.Str(object=text)
-        return pn.Row(text_pane)
+        self._text_pane.object = text
 
 
 if __name__ == "__main__":
     the_storm_parmer = ParameterizedStorm(by_storm_summary=BY_STORM_SUMMARY)
-    widget_pane = pn.Param(
-        the_storm_parmer.param,
-        parameters=["single_location", "single_storm_number"],
-        widgets={
-            "single_location": pn.widgets.Select,
-            "single_storm_number": pn.widgets.DiscreteSlider,
-        },
-    )
-
-    p = pn.Row(widget_pane, the_storm_parmer.view_states)
-    p.show(port=5006)
+    the_storm_parmer.view.show(port=5006)

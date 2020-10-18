@@ -1,0 +1,80 @@
+{% from macros import embed %}
+
+<!DOCTYPE html>
+<html lang="en">
+{% block head %}
+<head>
+    {% block inner_head %}
+    <meta charset="utf-8">
+    <title>{% block title %}{{ title | e if title else "Panel App" }}{% endblock %}</title>
+    {% block preamble %}{% endblock %}
+    {% block resources %}
+        {% block css_resources %}
+        {{ bokeh_css | indent(8) if bokeh_css }}
+        {% endblock %}
+        {% block js_resources %}
+        {{ bokeh_js | indent(8) if bokeh_js }}
+        {% endblock %}
+    {% endblock %}
+    {% block postamble %}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.21/dist/shoelace/shoelace.css">
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.21/dist/shoelace/shoelace.esm.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.21/themes/dark.css">
+        <style>
+            {{ app_css | indent(8) if app_css}}
+        </style>
+    {% endblock %}
+    {% endblock %}
+</head>
+{% endblock %}
+{% block body %}
+<body>
+    <section id="page">
+    <header>
+        <div class="app-header">
+            <a class="app-title" href="https://awesome-panel.org" target="_blank">{{ app_title }}</a>
+            <span>/</span>
+            <sl-form class="form-overview" style="display: inline-block;width:200px">
+            <sl-select size="small" name="applications" id="application-selector" onchange="openSelectedApp()" value="https://awesome-panel.org">
+                <sl-menu-item value="https://awesome-panel.org">Home</sl-menu-item>
+                <sl-menu-item value="https://awesome-panel.org/gallery">Gallery</sl-menu-item>
+                <sl-menu-item value="https://awesome-panel.org/about">About</sl-menu-item>
+                <sl-menu-divider></sl-menu-divider>
+                <sl-menu-item value="https://github.com/marcskovmadsen/awesome-panel">Repository</sl-menu-item>
+                <sl-menu-item value="https://awesome-panel.readthedocs.io/en/latest/">Docs</sl-menu-item>
+                <sl-menu-item value="https://pypi.org/project/awesome-panel/">Package</sl-menu-item>
+                <sl-menu-item value="https://hub.docker.com/r/marcskovmadsen/awesome-panel">Docker</sl-menu-item>
+                <sl-menu-divider></sl-menu-divider>
+                <sl-menu-item value="https://hub.docker.com/r/marcskovmadsen/awesome-panel/App1">App 1</sl-menu-item>
+                <sl-menu-item value="https://hub.docker.com/r/marcskovmadsen/awesome-panel/App2">App 2</sl-menu-item>
+            </sl-select>
+            </sl-form>
+        </div>
+    </header>
+    <main>
+    <br/>
+    <sl-alert open>
+    <sl-icon slot="icon" name="info-circle"></sl-icon>
+    This is a standard alert. You can customize its content and even the icon.
+    </sl-alert>
+    <sl-icon-button class="theme-toggle" name="sun" id="theme-toggler"></sl-icon-button>
+    </main>
+    </section>
+    {% block inner_body %}
+    {% block contents %}
+        {% for doc in docs %}
+        {{ embed(doc) if doc.elementid }}
+        {% for root in doc.roots %}
+            {{ embed(root) | indent(10) }}
+        {% endfor %}
+        {% endfor %}
+    {% endblock %}
+    {{ plot_script | indent(8) }}
+    <script type="text/javascript">
+            {{app_js | indent(8) if app_js}}
+        </script>
+    {% endblock %}
+
+</body>
+{% endblock %}
+</html>
