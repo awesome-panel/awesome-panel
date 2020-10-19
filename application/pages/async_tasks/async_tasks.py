@@ -167,7 +167,10 @@ def view() -> pn.Column:
     Returns:
         pn.Column: The view of the AsyncApp
     """
-    return AsyncApp().view
+    import application
+    template = application.utils.get_template()
+    template.main.append(AsyncApp().view)
+    return template
 
 
 if __name__.startswith("bokeh"):
