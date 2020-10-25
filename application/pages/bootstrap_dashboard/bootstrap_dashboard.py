@@ -13,6 +13,7 @@ import awesome_panel.express as pnx
 import hvplot.pandas  # pylint: disable=unused-import
 import pandas as pd
 import panel as pn
+from application.template import get_template
 
 IMAGE_PATH = (
     pathlib.Path(__file__).parent
@@ -23,14 +24,7 @@ IMAGE_PATH = (
 TEXT = """\
 The purpose of this app is to test that a **multi-page Dashboard Layout** similar to the [bootstrap dashboard template](https://getbootstrap.com/docs/4.3/examples/dashboard/) from [getboostrap.com](https://getbootstrap.com/) can be implemented in [Panel](https://panel.pyviz.org/).
 
-The layout with a header, navigation sidebar and a main area is what originally powered [awesome-panel.org](https://awesome-panel.org).
-
-You can see how the template is implemented
-[here](https://github.com/MarcSkovMadsen/awesome-panel/tree/master/package/awesome_panel/express/templates/bootstrap_dashboard)
-
-The template is generally avaiable in the [awesome_panel](https://pypi.org/project/awesome-panel/)
-python package via `awesome_panel.express.templates.BootstrapDashboardTemplate`."""
-
+"""
 
 def view() -> pn.Column:
     """# Bootstrap Dashboard Page.
@@ -49,18 +43,19 @@ def view() -> pn.Column:
         _get_table_data(),
         sizing_mode="stretch_width",
     )
-    return pn.Column(
+    pn.config.sizing_mode="stretch_width"
+    main = [
+        pnx.Header("Bootstrap Dashboard"),
         pn.pane.Markdown(TEXT),
         # pn.pane.PNG(str(IMAGE_PATH), max_width=600, sizing_mode="scale_both"),
-        pnx.Title("Dashboard"),
-        pn.layout.Divider(),
-        _holoviews_chart(),
-        pnx.Title("Section Title"),
-        pn.layout.Divider(),
+        pnx.SubHeader("Dashboard"),
+        pn.layout.Divider(sizing_mode="stretch_width"),
+        pn.pane.HoloViews(_holoviews_chart()),
+        pnx.SubHeader("Section Title"),
+        pn.layout.Divider(sizing_mode="stretch_width"),
         table,
-        sizing_mode="stretch_width",
-        name="Dashboard",
-    )
+    ]
+    return get_template(title="Bootstrap Dashboard", template="bootstrap", main=main)
 
 
 def _holoviews_chart():
@@ -266,3 +261,6 @@ def _get_table_data() -> pd.DataFrame:
             "Header4",
         ],
     ).set_index("Header0")
+
+if __name__.startswith("bokeh"):
+    view().servable()

@@ -1,7 +1,10 @@
 """Utilities used by awesome-panel.org"""
+import pathlib
 from typing import List, Optional
+
 import panel as pn
 
+ROOT = pathlib.Path(__file__).parent
 
 TEMPLATES = {
     "vanilla": pn.template.VanillaTemplate,
@@ -31,6 +34,27 @@ FAVICON = (
 )
 APPLICATION = {"About": "about"}
 
+LINKS_PATH = ROOT / "links.html"
+
+def set_template_css(template, theme):
+    TEMPLATE_CSS_ID = "/* CUSTOM TEMPLATE CSS */\n"
+    # remove other site css
+    pn.config.raw_css=[css for css in pn.config.raw_css if not css.startswith(TEMPLATE_CSS_ID)]
+
+    files = [
+        "all.css",
+        f"all_{theme}.css",
+        f"{template}.css",
+        f"{template}_{theme}.css",
+    ]
+    for file in files:
+        if not file in pn.state.cache:
+            file_css_id = f"/* {file} */\n"
+            text = TEMPLATE_CSS_ID + file_css_id + (ROOT/file).read_text()
+        else:
+            text = pn.state.cache[file]
+            pn.state.cache.pop(file)
+        pn.config.raw_css.append(text)
 
 def set_template_main(template: pn.template.BaseTemplate, main: List):
     if isinstance(template, pn.template.ReactTemplate):
@@ -38,6 +62,10 @@ def set_template_main(template: pn.template.BaseTemplate, main: List):
             template.main[index, 0] = item
     else:
         template.main[:] = main
+
+def get_navigation():
+    LINKS = LINKS_PATH.read_text()
+    return pn.pane.HTML(LINKS, sizing_mode="stretch_width")
 
 def _get_params(value, class_):
     if isinstance(value, class_):
@@ -98,9 +126,10 @@ def get_template(
     if 'sidebar' in params:
         params['sidebar'] = _get_params(params['sidebar'], template_class.param.sidebar.class_)
     if 'modal' in params:
-        params['sidebar'] = _get_params(params['modal'], template_class.param.modal.class_)
+        params['modal'] = _get_params(params['modal'], template_class.param.modal.class_)
 
-    return template_class(
+    set_template_css(template, theme)
+    template = template_class(
         theme=THEMES.get(template, THEMES[DEFAULT_TEMPLATE]).get(theme, DEFAULT_THEME),
         title=title,
         favicon=favicon,
@@ -108,6 +137,8 @@ def get_template(
         site=site,
         **params,
     )
+    template.sidebar.append(get_navigation())
+    return template
 
 def test_get_template():
     template = "material"
@@ -115,6 +146,8 @@ def test_get_template():
 
     # When
     template = get_template(template=template, theme=theme)
+    template.resources.append(*get_site_css(template, theme))
+
     # then
     assert isinstance(template, pn.template.MaterialTemplate)
     assert template.theme == pn.template.material.MaterialDefaultTheme

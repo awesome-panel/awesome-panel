@@ -1,0 +1,21 @@
+.pnx-nav-buttons {
+    display: block;
+}
+.pnx-nav-buttons a {
+    display: block;
+    width: calc(100% - 3em);
+    text-align: left;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-right: 1em;
+    padding-left: 1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 900px;
+}
+.pnx-nav-buttons a:hover {
+    border-radius: 2px;
+}
+.pnx-nav-buttons a:active {
+    border-radius: 2px;
+}

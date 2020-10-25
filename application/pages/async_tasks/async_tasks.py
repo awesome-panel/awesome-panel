@@ -39,6 +39,8 @@ import panel as pn
 import param
 from panel.io.server import unlocked
 from tornado.ioloop import IOLoop
+from panel.template import VanillaTemplate
+from application.template import get_template
 
 
 class ProgressExtMod(param.Parameterized):
@@ -104,10 +106,14 @@ class AsyncApp(param.Parameterized):
     result = param.Number(0)
     view = param.Parameter()
 
-    def __init__(self, **params):
+    def __init__(self, template=None, **params):
         super().__init__(**params)
 
-        self.view = pn.Column(
+        if not template:
+            template = VanillaTemplate
+        self.view = template
+        pn.config.sizing_mode = "stretch_width"
+        self.view.main[:] = [
             pn.pane.Markdown(__doc__),
             pn.layout.Divider(),
             pn.pane.Markdown("## Starts async background tasks"),
@@ -126,8 +132,8 @@ class AsyncApp(param.Parameterized):
                 widgets={"text": {"disabled": True}},
                 show_name=False,
             ),
-            max_width=500,
-        )
+        ]
+        self.view.main_max_width="700px"
 
     @param.depends("slider", "select", watch=True)
     def _on_slider_change(self):
@@ -167,12 +173,9 @@ def view() -> pn.Column:
     Returns:
         pn.Column: The view of the AsyncApp
     """
-    import application
-    template = application.template.get_template()
-    template.main.append(AsyncApp().view)
-    return template
+    template = get_template(title="Async Tasks")
+    return AsyncApp(template=template).view
 
 
 if __name__.startswith("bokeh"):
-    pn.config.sizing_mode = "stretch_width"
     view().servable()

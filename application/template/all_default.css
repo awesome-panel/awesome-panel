@@ -1,0 +1,12 @@
+#sidebar a {
+    color: black;
+}
+.pnx-nav-buttons a {
+    color: black;
+}
+.pnx-nav-buttons a:hover {
+    background-color: #e0e0e0;
+}
+.pnx-nav-buttons a:active {
+    background-color: #9e9e9e;
+}

@@ -15,50 +15,18 @@ import os
 import platform
 
 import panel as pn
-from awesome_panel.application.components import GalleryComponent
-from awesome_panel.application.models import Application
-from awesome_panel.application.services import Services
-from awesome_panel.application.templates import MaterialTemplate
-
 from application import config
 from application.pages.fast_gallery.fast_gallery import get_fast_gallery  # type: ignore
 import application.pages.dialog_template as dialog_template
 
 
-def view():
-    services = Services()
+# links = ""
+# for page in config.pages.NON_GALLERY_PAGES+config.pages.GALLERY_PAGES:
+#     links += f"""\n<a href="{page.url}">{page.name}</a>"""
+# print(links)
+# breakpoint()
 
-    gallery_pages = [
-        page for page in config.pages.PAGES if page not in config.pages.NON_GALLERY_PAGES
-    ]
-    gallery_page = GalleryComponent.create_gallery_component(gallery_pages, services.page_service)
-    pages = list(config.pages.PAGES)
-    pages.insert(1, gallery_page)
-
-    services.page_service.set_default_page(config.pages.HOME)
-    services.page_service.bulk_create(pages)
-    services.page_service.param.page.objects = pages
-    services.page_service.param.page.default = config.pages.HOME
-    services.page_service.page = config.pages.HOME
-    services.theme_service.param.theme.objects = config.themes.THEMES
-    services.theme_service.param.theme.default = config.themes.MATERIAL_GREEN_PURPLE_LIGHT
-    services.theme_service.theme = config.themes.MATERIAL_GREEN_PURPLE_LIGHT
-
-    application = Application(
-        title=config.application.TITLE,
-        logo=config.application.LOGO,
-        url=config.application.URL,
-        pages=services.page_service.pages,
-        default_template=config.templates.MaterialTemplate,
-        templates=config.templates.TEMPLATES,
-    )
-    template = MaterialTemplate(application=application, services=services)
-    return template
-
-
-if __name__.startswith("bokeh"):
-    view().servable()
-else:
+if __name__=="__main__":
     address = os.getenv("BOKEH_ADDRESS", "0.0.0.0")
     APP_ROUTES = {
         **config.pages.URLS,

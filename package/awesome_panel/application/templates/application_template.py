@@ -47,6 +47,7 @@ class ApplicationTemplate(pn.Template):
         super().__init__(**params)
 
         if self.css_path:
+            breakpoint()
             pn.config.css_files.append(self.css_path.resolve())
 
         self.spinner = ProgressSpinnerComponent(
