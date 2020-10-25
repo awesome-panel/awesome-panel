@@ -107,10 +107,10 @@ DASHBOARD = Page(
         tags.CODE,
         tags.APP_IN_GALLERY,
     ],
-    component=pages.Dashboard,
+    component=pages.dashboard,
     author=authors.MARC_SKOV_MADSEN,
     show_loading_page=True,
-    url="url=classic-dashboard"
+    url="classic-dashboard"
 )
 DATA_EXPLORER = Page(
     name="DataExplorer - Loading...",

@@ -1,4 +1,4 @@
-"""# Dashboard
+"""# Classic Dashboard
 
 The Dashboard app shows how to create a **Classic Dashboard** in **Panel** with
 
@@ -36,6 +36,7 @@ import pandas as pd
 import panel as pn
 import param
 from holoviews.plotting.util import process_cmap
+from application.template import get_template
 
 hv.extension("bokeh")
 
@@ -218,7 +219,8 @@ class Dashboard(param.Parameterized):
 
 def view():
     """Returns a instance of the Dashboard.view"""
-    return Dashboard().view
+    main = [Dashboard().view]
+    return get_template(title="Classic Dashboard", main_max_width="", main=main)
 
 
 if __name__.startswith("bokeh") or __name__ == "__main__":

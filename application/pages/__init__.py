@@ -21,7 +21,7 @@ from application.pages.awesome_panel_express_tests import (
 )
 from application.pages.bootstrap_dashboard import bootstrap_dashboard
 from application.pages.custom_bokeh_model import custom_bokeh_model
-from application.pages.dashboard.dashboard import Dashboard
+from application.pages.dashboard import dashboard
 from application.pages.dataexplorer_loading.dataexplorer_loading import DataExplorer
 from application.pages.detr import detr
 from application.pages.home import home
