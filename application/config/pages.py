@@ -25,6 +25,7 @@ HOME = Page(
     ],
     component=pages.home,
     author=authors.MARC_SKOV_MADSEN,
+    url=""
 )
 ABOUT = Page(
     name="About",
@@ -36,6 +37,7 @@ ABOUT = Page(
     ],
     component=pages.about,
     author=authors.MARC_SKOV_MADSEN,
+    url="about"
 )
 ISSUES = Page(
     name="Issues",
@@ -47,6 +49,7 @@ ISSUES = Page(
     ],
     component=pages.issues,
     author=authors.MARC_SKOV_MADSEN,
+    url="issues",
 )
 RESOURCES = Page(
     name="Resources",
@@ -58,6 +61,7 @@ RESOURCES = Page(
     ],
     component=pages.resources,
     author=authors.MARC_SKOV_MADSEN,
+    url="resources",
 )
 ASYNC_TASKS = Page(
     name="Async Tasks",
@@ -69,6 +73,7 @@ ASYNC_TASKS = Page(
     ],
     component=pages.async_tasks,
     author=authors.JOCHEM_SMIT,
+    url="async-tasks"
 )
 BOOTSTRAP_DASHBOARD = Page(
     name="Bootstrap Dashboard",
@@ -80,6 +85,7 @@ BOOTSTRAP_DASHBOARD = Page(
     ],
     component=pages.bootstrap_dashboard,
     author=authors.MARC_SKOV_MADSEN,
+    url="boostrap-dashboard"
 )
 CUSTOM_BOKEH_MODEL = Page(
     name="Custom Bokeh Model",
@@ -91,9 +97,10 @@ CUSTOM_BOKEH_MODEL = Page(
     ],
     component=pages.custom_bokeh_model,
     author=authors.MARC_SKOV_MADSEN,
+    url="custom-bokeh-model"
 )
 DASHBOARD = Page(
-    name="Dashboard",
+    name="Classic Dashboard",
     source_code_url=GITHUB_PAGE_URL + "dashboard/dashboard.py",
     thumbnail_png_url=THUMBNAILS_ROOT + "dashboard.png",
     tags=[
@@ -103,6 +110,7 @@ DASHBOARD = Page(
     component=pages.Dashboard,
     author=authors.MARC_SKOV_MADSEN,
     show_loading_page=True,
+    url="url=classic-dashboard"
 )
 DATA_EXPLORER = Page(
     name="DataExplorer - Loading...",
@@ -114,6 +122,7 @@ DATA_EXPLORER = Page(
     ],
     component=pages.DataExplorer,
     author=authors.MARC_SKOV_MADSEN,
+    url="data-explorer-loading"
 )
 DETR = Page(
     name="DE:TR: Object Detection",
@@ -126,6 +135,7 @@ DETR = Page(
     component=pages.detr,
     author=authors.MARC_SKOV_MADSEN,
     show_loading_page=True,
+    url="de-tr"
 )
 IMAGE_CLASSIFIER = Page(
     name="Image Classifier",
@@ -137,6 +147,7 @@ IMAGE_CLASSIFIER = Page(
     ],
     component=pages.image_classifier,
     author=authors.MARC_SKOV_MADSEN,
+    url="image-classifier"
 )
 JS_ACTIONS = Page(
     name="JS Actions",
@@ -148,6 +159,7 @@ JS_ACTIONS = Page(
     ],
     component=pages.js_actions,
     author=authors.MARC_SKOV_MADSEN,
+    url="js-actions"
 )
 KICKSTARTER_DASHBOARD = Page(
     name="Kickstarter Dashboard",
@@ -160,6 +172,7 @@ KICKSTARTER_DASHBOARD = Page(
     component=pages.kickstarter_dashboard,
     author=authors.MARC_SKOV_MADSEN,
     show_loading_page=True,
+    url="kick-start-dashboard"
 )
 OWID_CHOROPLETH_MAP = Page(
     name="Owid Choropleth Map",
@@ -172,6 +185,7 @@ OWID_CHOROPLETH_MAP = Page(
     component=pages.owid_choropleth_map,
     author=authors.MARC_SKOV_MADSEN,
     show_loading_page=True,
+    url="owid-choropleth"
 )
 PANDAS_PROFILING = Page(
     name="Pandas Profiling",
@@ -184,6 +198,7 @@ PANDAS_PROFILING = Page(
     component=pages.pandas_profiling_app,
     author=authors.MARC_SKOV_MADSEN,
     show_loading_page=False,
+    url="pandas-profiling",
 )
 PARAM_REFERENCE_EXAMPLE = Page(
     name="Param Reference Example",
@@ -195,6 +210,7 @@ PARAM_REFERENCE_EXAMPLE = Page(
     ],
     component=pages.param_reference_example,
     author=authors.MARC_SKOV_MADSEN,
+    url="param-reference",
 )
 YAHOO_QUERY = Page(
     name="Yahoo Query",
@@ -207,6 +223,7 @@ YAHOO_QUERY = Page(
     component=pages.yahooquery_app,
     author=authors.MARC_SKOV_MADSEN,
     show_loading_page=True,
+    url="yahoo-query",
 )
 TEST_BOOTSTRAP_ALERTS = Page(
     name="Test Bootstrap Alerts",
@@ -219,6 +236,7 @@ TEST_BOOTSTRAP_ALERTS = Page(
     ],
     component=pages.test_bootstrap_alerts,
     author=authors.MARC_SKOV_MADSEN,
+    url="ext-alert"
 )
 TEST_BOOTSTRAP_CARD = Page(
     name="Test Bootstrap Card",
@@ -232,7 +250,8 @@ TEST_BOOTSTRAP_CARD = Page(
     component=pages.test_bootstrap_card,
     author=authors.MARC_SKOV_MADSEN,
     show_loading_page=True,
-    restrict_max_width=False,
+    width=False,
+    url="ext-card"
 )
 TEST_CODE = Page(
     name="Test Code",
@@ -245,6 +264,7 @@ TEST_CODE = Page(
     ],
     component=pages.test_code,
     author=authors.MARC_SKOV_MADSEN,
+    url="ext-code",
 )
 TEST_DATAFRAME = Page(
     name="Test DataFrame",
@@ -257,6 +277,7 @@ TEST_DATAFRAME = Page(
     ],
     component=pages.test_dataframe,
     author=authors.MARC_SKOV_MADSEN,
+    url="ext-dataframe"
 )
 TEST_ECHARTS = Page(
     name="Test ECharts",
@@ -269,6 +290,7 @@ TEST_ECHARTS = Page(
     ],
     component=pages.test_echarts,
     author=authors.MARC_SKOV_MADSEN,
+    url="echarts",
 )
 TEST_DIVIDER = Page(
     name="Test Divider",
@@ -281,6 +303,7 @@ TEST_DIVIDER = Page(
     ],
     component=pages.test_divider,
     author=authors.MARC_SKOV_MADSEN,
+    url="ext-divider"
 )
 TEST_FONT_AWESOME = Page(
     name="Test FontAwesome",
@@ -293,6 +316,7 @@ TEST_FONT_AWESOME = Page(
     ],
     component=pages.test_fontawesome,
     author=authors.MARC_SKOV_MADSEN,
+    url="ext-font-awesome",
 )
 TEST_HEADINGS = Page(
     name="Test Headings",
@@ -305,6 +329,7 @@ TEST_HEADINGS = Page(
     ],
     component=pages.test_headings,
     author=authors.MARC_SKOV_MADSEN,
+    url="ext-headings"
 )
 TEST_MARKDOWN = Page(
     name="Test Markdown",
@@ -317,6 +342,7 @@ TEST_MARKDOWN = Page(
     ],
     component=pages.test_markdown,
     author=authors.MARC_SKOV_MADSEN,
+    url="ext-markdown",
 )
 TEST_MATERIAL = Page(
     name="Test Material Components",
@@ -328,6 +354,7 @@ TEST_MATERIAL = Page(
     ],
     component=pages.test_material,
     author=authors.MARC_SKOV_MADSEN,
+    url="ext-material",
 )
 TEST_MODEL_VIEWER = Page(
     name="Test Model Viewer",
@@ -339,6 +366,7 @@ TEST_MODEL_VIEWER = Page(
     ],
     component=pages.test_model_viewer,
     author=authors.MARC_SKOV_MADSEN,
+    url="ext-model-viewer"
 )
 TEST_PERSPECTIVE = Page(
     name="Test Perspective Viewer",
@@ -351,6 +379,7 @@ TEST_PERSPECTIVE = Page(
     component=pages.test_perspective,
     author=authors.MARC_SKOV_MADSEN,
     restrict_max_width=False,
+    url="ext-perspective"
 )
 TEST_PROGRESS_EXTENSION = Page(
     name="Test Progress Extension",
@@ -363,9 +392,10 @@ TEST_PROGRESS_EXTENSION = Page(
     ],
     component=pages.test_progress_ext,
     author=authors.MARC_SKOV_MADSEN,
+    url="ext-perspective"
 )
 TEST_SHARE_LINKS = Page(
-    name="Test Share Links",
+    name="Test Social Links",
     source_code_url=GITHUB_PAGE_URL + "awesome_panel_express_tests/test_share_links.py",
     thumbnail_png_url=THUMBNAILS_ROOT + "test_share_links.png",
     tags=[
@@ -375,6 +405,7 @@ TEST_SHARE_LINKS = Page(
     ],
     component=pages.test_share_links,
     author=authors.MARC_SKOV_MADSEN,
+    url="ext-social-links",
 )
 TEST_SPINNERS = Page(
     name="Test Spinners",
@@ -387,6 +418,7 @@ TEST_SPINNERS = Page(
     ],
     component=pages.test_spinners,
     author=authors.MARC_SKOV_MADSEN,
+    url="ext-spinners",
 )
 TEST_WIRED = Page(
     name="Test Wired",
@@ -400,6 +432,7 @@ TEST_WIRED = Page(
     component=pages.test_wired,
     author=authors.MARC_SKOV_MADSEN,
     show_loading_page=True,
+    url="ext-wired",
 )
 
 PAGES = [
@@ -446,3 +479,5 @@ NON_GALLERY_PAGES = [
 ]
 
 GALLERY_PAGES = [page for page in PAGES if page not in NON_GALLERY_PAGES]
+
+URLS = {page.url: getattr(page.component, "view") for page in NON_GALLERY_PAGES+GALLERY_PAGES}

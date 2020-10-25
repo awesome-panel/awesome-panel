@@ -168,7 +168,7 @@ def view() -> pn.Column:
         pn.Column: The view of the AsyncApp
     """
     import application
-    template = application.utils.get_template()
+    template = application.template.get_template()
     template.main.append(AsyncApp().view)
     return template
 

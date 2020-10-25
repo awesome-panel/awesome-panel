@@ -46,7 +46,7 @@
 #     fig = holoviews_chart()
 #     text = """
 # The [HoloViews](http://holoviews.org/) and [hvplot](https://hvplot.pyviz.org/) I had not used
-# before. Their APIs are different than what I'm used to be also seems pwerful.
+# before. Their APIs are different than what I'm used to be also seems powerful.
 
 # I'm used to Plotly but it does not work well in Panel yet.
 # """
@@ -93,7 +93,7 @@
 #     [DataFrame widget](https://panel.pyviz.org/reference/widgets/DataFrame.html#gallery-dataframe)
 #     in the dashboard because it would not look like the GetBootstrap example.
 #     But I would always use this power full DataFrame widget in practice
-#     because it's so pwerful and nice. It's based on [SlickGrid](https://slickgrid.net/).
+#     because it's so powerful and nice. It's based on [SlickGrid](https://slickgrid.net/).
 #     """
 #     return pn.Column(
 #         pnx.InfoAlert(text),

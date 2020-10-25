@@ -18,6 +18,7 @@ class Page(OrderByNameMixin, param.Parameterized):
     component = param.Parameter()
     show_loading_page = param.Boolean(default=False)
     restrict_max_width = param.Boolean(default=True)
+    url=param.String()
 
     def __hash__(
         self,

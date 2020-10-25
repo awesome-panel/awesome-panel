@@ -8,7 +8,7 @@ It enables analysts and traders at large banks like J.P.Morgan to understand the
 also very usefull for analysts, engineers, scientists, data engineers and data scientists in
 general.
 
-[Panel](https://panel.holoviz.org/) is a pwerful framework for creating awesome analytics apps
+[Panel](https://panel.holoviz.org/) is a powerful framework for creating awesome analytics apps
 in Python.
 
 In this example we demonstrate how to use the `perspective-viewer` web component with Panel.

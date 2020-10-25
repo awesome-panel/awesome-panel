@@ -11,6 +11,14 @@ from application.config.settings import THUMBNAILS_ROOT
 
 RESOURCES = [
     Resource(
+        name="Holo Grid Generator",
+        url="https://github.com/pygridgen/holo-gridgen",
+        thumbnail_png_path=THUMBNAILS_ROOT + "",
+        is_awesome=True,
+        tags=[tags.APP, tags.CODE],
+        author=authors.PYGRIDGEN,
+    ),
+    Resource(
         name="World Glaciers Explorer",
         url="https://edu.oggm.org/en/latest/explorer.html",
         thumbnail_png_path=THUMBNAILS_ROOT + "",

@@ -3,7 +3,7 @@ import panel as pn
 
 TEXT = """# Awesome Panel ![Awesome Badge](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)
 
-Panel is announced as **a high-level app and dashboarding solution for Python**. I think the terms **pwerful** and **full of features** should be added to that.
+Panel is announced as **a high-level app and dashboarding solution for Python**. I think the terms **powerful** and **full of features** should be added to that.
 
 The purpose of the Awesome Panel Project is to share knowledge on how Awesome Panel is and can become."""
 CSS = """

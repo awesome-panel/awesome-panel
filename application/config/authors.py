@@ -135,6 +135,12 @@ PLOTLY = Author(
     github_url="https://github.com/plotly",
     github_avatar_url="https://avatars2.githubusercontent.com/u/5997976",
 )
+PYGRIDGEN = Author(
+    name="PyGridGen",
+    url="https://github.com/pygridgen",
+    github_url="https://github.com/pygridgen",
+    github_avatar_url="https://avatars1.githubusercontent.com/u/36489971",
+)
 QUANSIGHT = Author(
     name="Quansight",
     url="https://www.quansight.com/",
@@ -189,6 +195,7 @@ AUTHORS = [
     OURWORLDINDATA,
     PANEL,
     PHILIPP_RUDIGER,
+    PYGRIDGEN,
     QUANSIGHT,
     PLOTLY,
     STREAMLIT,

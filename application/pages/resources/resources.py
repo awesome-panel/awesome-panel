@@ -1,16 +1,18 @@
 """## The Resources Page of awesome-panel.org"""
 import pathlib
 
-from panel import Column
+from application.template import get_template
 from panel.pane import Markdown
 
 RESOURCES_PATH = pathlib.Path(__file__).parent / "resources.md"
+RESOURCES = RESOURCES_PATH.read_text()
 
 
-def view() -> Column:
+def view():
     """The resources view of awesome-panel.org"""
-    return Column(
-        Markdown(RESOURCES_PATH.read_text()),
-        sizing_mode="stretch_width",
-        name="Resources",
-    )
+    main = [Markdown(RESOURCES, sizing_mode="stretch_width")]
+    template=get_template(title="Resources", main=main)
+    return template
+
+if __name__.startswith("bokeh"):
+    view().servable()

@@ -1,6 +1,6 @@
 # Issues Experienced During Development of this Project
 
-Let me start out by saying that I think that **Panel is very, very pwerful and usefull**.
+Let me start out by saying that I think that **Panel is very, very powerful and usefull**.
 
 But there still are some rough edges its nice to know about. By discussing them here I hope to give you an impression of the current issues and rough edges of developing a multipage application in Panel.
 
