@@ -15,6 +15,7 @@ data on [GitHub](https://github.com/owid/owid-datasets/tree/master/datasets).
 
 """
 
+from application.template import get_template
 import json
 import pathlib
 from functools import lru_cache
@@ -182,6 +183,7 @@ class OwidDashboard(param.Parameterized):
         url,
     ) -> pd.DataFrame:
         """The DataFrame of data from Owid"""
+        print(url)
         return pd.read_csv(url)
 
     @classmethod
@@ -207,6 +209,7 @@ class OwidDashboard(param.Parameterized):
             gpd.geodataframe.GeoDataFrame: The Owid Data Sets merged with the shape data
         """
         url = owid_data_sets.loc[name].url
+        owid_data_sets.to_csv("test.csv")
         owid_data = cls.get_owid_df(url)
         if year is not None:
             owid_data = owid_data[owid_data["Year"] == year]
@@ -309,6 +312,7 @@ class OwidDashboard(param.Parameterized):
 }
         """
         style = f"<style>{css}</style>"
+        pn.config.sizing_mode="stretch_width"
         content = pn.Column(
             self.param.dataset_name,
             self.map_plot,
@@ -333,14 +337,14 @@ class OwidDashboard(param.Parameterized):
             sizing_mode="stretch_width",
             max_width=1000,
         )
-        app = pn.Column(
+        main = [
             pn.pane.Markdown(__doc__),
             pn.pane.HTML(style),
             card,
             INFO,
-            sizing_mode="stretch_width",
-        )
-        return app
+        ]
+        return get_template(title="Owid Choropleth Map", main=main)
+
 
 
 def view():

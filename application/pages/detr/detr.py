@@ -55,6 +55,7 @@ from application.pages.detr.model import (
     filter_boxes,
     get_transform_detr_and_device,
 )
+from application.template import get_template
 
 # colors for visualization
 COLORS = [
@@ -107,6 +108,7 @@ class DETRApp(param.Parameterized):
         self.run_detr()  # pylint: disable=not-callable
 
     def _get_view(self):
+        pn.config.sizing_mode="stretch_width"
         style = pn.pane.HTML(config.STYLE, width=0, height=0, margin=0, sizing_mode="fixed")
 
         description = pn.pane.Markdown(__doc__)
@@ -116,7 +118,7 @@ class DETRApp(param.Parameterized):
         progress.active = False
         app_bar = pn.Row(
             pn.pane.Markdown(
-                "# " + self.title, sizing_mode="stretch_width", margin=(None, None, None, 25)
+                "# " + self.title, sizing_mode="stretch_width", margin=(0, 0, 0, 25)
             ),
             sizing_mode="stretch_width",
             margin=(25, 5, 0, 5),
@@ -173,7 +175,7 @@ class DETRApp(param.Parameterized):
             ),
         )
         plot = pn.pane.Plotly(height=600, config={"responsive": True})
-        app_view = pn.Column(
+        main = [
             style,
             description,
             app_bar,
@@ -181,8 +183,12 @@ class DETRApp(param.Parameterized):
             top_selections,
             plot,
             bottom_selections,
+        ]
+        template = get_template(
+            title="Panel DE:TR",
+            main=main,
         )
-        return progress, plot, app_view
+        return progress, plot, template
 
     def _set_random_image(self, _=None):
         urls = config.RANDOM_URLS
@@ -391,15 +397,7 @@ def _add_bbox_to_figure(scores, index, boxes, existing_classes, fig):
 
 if __name__.startswith("bokeh"):
     # Run using python -m panel serve 'application\pages\detr\detr.py' --dev --show
-    # To get livereloda
-    pn.config.sizing_mode = "stretch_width"
     view().servable()
 if __name__.startswith("__main__"):
     # Run using python 'application\pages\detr\detr.py'
-    # to edit using the Awesome Panel Designer
-    from awesome_panel.designer import Designer, ReloadService
-
-    pn.config.sizing_mode = "stretch_width"
-
-    RELOADSERVICES = [ReloadService(component=DETRApp)]
-    Designer(reload_services=RELOADSERVICES).view.show(port=5006)
+    view().show(port=5007)

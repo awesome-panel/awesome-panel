@@ -74,6 +74,8 @@ def _get_params(value, class_):
         value = [*value]
     elif not isinstance(value, list):
         value = [value]
+    # Important to fx. convert @param.depends functions
+    value = [pn.panel(item) for item in value]
 
     if class_==pn.layout.ListLike:
         return class_(objects=value)
@@ -115,9 +117,8 @@ def get_template(
         theme = pn.state.session_args.get("theme", THEME)
         if isinstance(theme, list):
             theme = theme[0].decode("utf-8")
-
     template_class = TEMPLATES.get(template, TEMPLATES[DEFAULT_TEMPLATE])
-
+    print(template_class)
     # To be fixed with PR https://github.com/holoviz/panel/pull/1694
     if 'header' in params:
         params['header'] = _get_params(params['header'], template_class.param.header.class_)

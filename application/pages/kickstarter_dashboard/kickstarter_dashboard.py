@@ -26,6 +26,7 @@ You can find an alternative version of this Dashboard in Streamlit at
 """
 # pylint: enable=line-too-long
 # pylint: disable=duplicate-code
+from application.template import get_template
 import pathlib
 from typing import List, Optional
 
@@ -161,27 +162,26 @@ class KickstarterDashboard(param.Parameterized):
         self,
     ):
         """A Reactive View of the KickstarterDashboard"""
-        return pn.Column(
+        pn.config.sizing_mode="stretch_width"
+        sidebar = [
+            "## Settings",
+            pn.Param(
+                self.param.categories,
+                widgets={
+                    "categories": {
+                        "size": len(self.categories),
+                    }
+                },
+            )
+        ]
+        main = [
             pn.pane.Markdown(__doc__),
             pn.layout.HSpacer(height=25),
             pn.Row(
                 pn.Column(self.scatter_plot_view, self.bar_chart_view, sizing_mode="stretch_width"),
-                pn.Param(
-                    self.param.categories,
-                    widgets={
-                        "categories": {
-                            "max_width": 125,
-                            "size": len(self.categories),
-                        }
-                    },
-                    width=150,
-                    height=500,
-                    sizing_mode="fixed",
-                ),
-                sizing_mode="stretch_width",
             ),
-            sizing_mode="stretch_width",
-        )
+        ]
+        return get_template(title="Kickstarter Dashboard", main=main, sidebar=sidebar)
 
     @staticmethod
     def _extract() -> pd.DataFrame:

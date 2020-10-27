@@ -29,6 +29,7 @@ rtd/pages/examples.html#showcasing-specific-features)
 [Panel](https://panel.holoviz.org/),
 [Pandas](https://pandas.pydata.org/),
 """
+from application.template import get_template
 import html
 from functools import lru_cache
 from itertools import cycle
@@ -104,7 +105,7 @@ class PandasProfilingApp(param.Parameterized):
 
     progress = param.Parameter()
     html_report_pane = param.ClassSelector(class_=pn.pane.HTML)
-    view = param.ClassSelector(class_=pn.reactive.Reactive)
+    view = param.Parameter()
 
     config = param.ClassSelector(class_=Config, instantiate=False)
 
@@ -142,6 +143,7 @@ class PandasProfilingApp(param.Parameterized):
         self._update_report()
 
     def _get_view(self, config):
+        pn.config.sizing_mode="stretch_width"
         style = pn.pane.HTML(STYLE, width=0, height=0, margin=0, sizing_mode="fixed")
         description = pn.pane.Markdown(__doc__)
         app_bar = pn.Row(
@@ -156,7 +158,7 @@ class PandasProfilingApp(param.Parameterized):
             pn.pane.Markdown(
                 "# Pandas Profiling Report",
                 sizing_mode="stretch_width",
-                margin=(None, None, None, 25),
+                margin=(0, 0, 0, 25),
                 align="center",
             ),
             sizing_mode="stretch_width",
@@ -206,15 +208,15 @@ class PandasProfilingApp(param.Parameterized):
             config_tab,
         )
 
-        _view = pn.Column(
+        main = [
             style,
             description,
             app_bar,
             pn.Row(pn.layout.HSpacer(), progress, sizing_mode="stretch_width"),
             tabs,
             pn.layout.HSpacer(height=400),  # Gives better scrolling
-            sizing_mode="stretch_width",
-        )
+        ]
+        _view = get_template(title="Pandas Profiling App", main=main)
 
         return progress, html_report_pane, _view
 

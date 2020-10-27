@@ -1,17 +1,26 @@
 .pnx-nav-buttons {
     display: block;
-}
-.pnx-nav-buttons a {
-    display: block;
-    width: calc(100% - 3em);
     text-align: left;
+    text-transform: uppercase;
+    width: 100%;
+
+}
+.pnx-nav-buttons details {
+    outline:none;
+    width: 100%;
+}
+.pnx-nav-buttons summary {
+    outline:none;
+    width: 100%;
+}
+
+.pnx-nav-buttons a, .pnx-nav-buttons summary {
+    display: block;
+    text-decoration: none;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     padding-right: 1em;
     padding-left: 1em;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 900px;
 }
 .pnx-nav-buttons a:hover {
     border-radius: 2px;

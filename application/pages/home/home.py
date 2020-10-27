@@ -1,17 +1,36 @@
 """## The Home Page of awesome-panel.org"""
 import pathlib
 
-from panel.pane import Markdown, HTML
-from application.template import get_template, get_navigation
+import panel as pn
+from panel.pane import Markdown, Alert
+from application.template import get_template
 
-HOME_PATH = pathlib.Path(__file__).parent / "home.md"
-HOME = HOME_PATH.read_text()
+HEADER = """<h1>Awesome Panel
+<img alt="Awesome Badge"
+src="https://cdn.rawgit.com/sindresorhus/awesome/\
+d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg">
+</h1>"""
+NEWS_PATH = pathlib.Path(__file__).parent / "news.md"
+
+SECTIONS_PATH = pathlib.Path(__file__).parent / "home.md"
+SECTIONS = SECTIONS_PATH.read_text()
+
 
 def view():
     """The home view of awesome-panel.org"""
-    main = [Markdown(HOME, sizing_mode="stretch_width")]
-    sidebar = [get_navigation()]
-    template=get_template(title="", main=main, sidebar=sidebar)
+    NEWS = NEWS_PATH.read_text()
+
+    pn.config.sizing_mode = "stretch_width"
+    # header = Markdown(HEADER)
+    # news = Alert(NEWS, alert_type="info")
+    sections = Markdown(SECTIONS)
+
+    main = [
+        # header,
+        # news,
+        sections,
+    ]
+    template = get_template(title="", main=main)
     return template
 
 

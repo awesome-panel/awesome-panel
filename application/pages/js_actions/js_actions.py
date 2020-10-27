@@ -6,6 +6,12 @@ Panel user Guide.
 
 Below we provide additional examples.
 
+This example was developed as a response to
+[Discourse Post 949]\
+(https://discourse.holoviz.org/t/\
+using-panel-with-javascript-to-make-a-copy-text-to-clipboard-button/949)
+by [ShanzyHolm](https://discourse.holoviz.org/u/ShanzyHolm/summary).
+
 **Author:**
 [Marc Skov Madsen](https://datamodelsanalytics.com)
 
@@ -17,6 +23,7 @@ application/pages/js_actions/js_actions.py)
 **Tags:**
 [Panel](https://panel.holoviz.org/)
 """
+from application.template import get_template
 import panel as pn
 
 STYLE = """
@@ -29,13 +36,8 @@ STYLE = """
 
 
 def copy_to_clipboard():
-    """This example was developed as a response to
-[Discourse Post 949]\
-(https://discourse.holoviz.org/t/\
-using-panel-with-javascript-to-make-a-copy-text-to-clipboard-button/949)
-by [ShanzyHolm](https://discourse.holoviz.org/u/ShanzyHolm/summary).
+    """Copy
     """
-    text = pn.pane.Markdown(copy_to_clipboard.__doc__)
     source_textarea = pn.widgets.TextAreaInput(
         value="Copy this text to the clipboard by clicking the button"
     )
@@ -44,7 +46,6 @@ by [ShanzyHolm](https://discourse.holoviz.org/u/ShanzyHolm/summary).
     copy_source_button.js_on_click(args={"source": source_textarea}, code=copy_source_code)
     paste_text_area = pn.widgets.TextAreaInput(value="Paste your value here")
     return pn.Column(
-        text,
         pn.Row(source_textarea, copy_source_button, paste_text_area),
         name="✂ Copy to Clipboard",
     )
@@ -54,6 +55,7 @@ def view():
     """Returns a view of the app
 
     Used by the awesome-panel.org gallery"""
+    pn.config.sizing_mode="stretch_width"
     style = pn.pane.HTML(STYLE, width=0, height=0, sizing_mode="fixed", margin=0)
     panel_logo = pn.pane.PNG(
         object="https://panel.holoviz.org/_static/logo_horizontal.png",
@@ -71,17 +73,16 @@ def view():
     )
     example_tabs = pn.Tabs(copy_to_clipboard())
     info = pn.pane.Markdown(__doc__)
-    return pn.Column(
+    main = [
         info,
         style,
         app_bar,
         example_tabs,
-    )
+    ]
+    return get_template(title="JS Actions", main=main)
 
 
 if __name__.startswith("bokeh"):
-    pn.config.sizing_mode = "stretch_width"
     view().servable()
 if __name__ == "__main__":
-    pn.config.sizing_mode = "stretch_width"
     view().show()

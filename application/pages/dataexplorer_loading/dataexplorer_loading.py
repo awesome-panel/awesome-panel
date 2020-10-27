@@ -11,7 +11,9 @@ import holoviews as hv
 import hvplot.pandas  # pylint: disable=unused-import
 import pandas as pd
 import panel as pn
+from panel.template.vanilla import VanillaTemplate
 import param
+from application.template import get_template
 
 EMPTY_DATAFRAME = pd.DataFrame(columns=["x", "y"])
 EMPTY_PLOT = hv.Div("Click UPDATE to load!")
@@ -28,6 +30,7 @@ class DataExplorer(param.Parameterized):
     load_time = param.Integer(default=8, bounds=(1, 4 * 16), label="Load Time (seconds)")
     data = param.DataFrame()
     update_action = param.Action(label="UPDATE")
+    view = param.Parameter()
 
     def __init__(self, **params):
         super().__init__(**params)
@@ -37,6 +40,7 @@ class DataExplorer(param.Parameterized):
         self.progress_widget = pn.widgets.Progress(
             name="Progress", sizing_mode="stretch_width", value=0
         )
+        self.view = self._get_view()
 
     def set_hv_loading_message(self, message: str):
         """Replaces the plot with a loading message"""
@@ -72,9 +76,10 @@ class DataExplorer(param.Parameterized):
         )
         self.plot_pane.object = plot
 
-    def view(self):
+    def _get_view(self):
         """Returns the application view"""
-        return pn.Column(
+        pn.config.sizing_mode="stretch_width"
+        main=[
             pn.pane.Markdown(__doc__),
             pn.pane.Markdown("#### Settings"),
             pn.Param(
@@ -88,8 +93,9 @@ class DataExplorer(param.Parameterized):
             self.progress_widget,
             pn.pane.Markdown("#### Plot"),
             self.plot_pane,
-            sizing_mode="stretch_both",
-        )
+        ]
+        return get_template(title="Data Explorer Loading", main=main)
+
 
 
 def view():
@@ -97,5 +103,7 @@ def view():
 
     Needed for inclusion to awesome-panel.org Gallery
     """
-    component = DataExplorer()
-    return component.view()
+    return DataExplorer().view
+
+if __name__.startswith("bokeh"):
+    view().servable()

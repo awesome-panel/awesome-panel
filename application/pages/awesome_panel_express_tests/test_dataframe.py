@@ -8,6 +8,7 @@ functionality for sensible defaults. See also [Issue 940]\
 (https://github.com/holoviz/panel/issues/940).
 """
 
+from application.template import get_template
 import awesome_panel.express as pnx
 import pandas as pd
 import panel as pn
@@ -75,11 +76,12 @@ def view() -> pn.Column:
     Returns:
         pn.Column -- A Column containing all the tests
     """
-    return pn.Column(
+    pn.config.sizing_mode="stretch_width"
+    main = [
         pn.pane.Markdown(__doc__),
         test_get_default_formatters,
-        sizing_mode="stretch_width",
-    )
+    ]
+    return get_template(title="Test DataFrame", main=main)
 
 
 if __name__.startswith("bokeh"):

@@ -7,6 +7,7 @@ and get a predicted classification in return.
 
 This app is inspired by the awesome [imageNet](https://github.com/iamatulsingh/imageNet-streamlit)
 application developed by [Atul Kumar Singh](https://github.com/iamatulsingh)."""
+from application.template import get_template
 import io
 import os
 from base64 import b64encode
@@ -210,7 +211,7 @@ class KerasApplication(NamedTuple):
 
 # See https://keras.io/applications/
 DEFAULT_KERAS_APPLICATION_INDEX = 2
-KERAS_APPLICATIONS: List[KerasApplication]
+KERAS_APPLICATIONS: List[KerasApplication]=[]
 
 # Hack
 # I get a '_thread._local' object has no attribute 'value' error without this
@@ -221,7 +222,7 @@ def config_keras_applications():
     # for testing or running some other script it loads Tensorflow and slows things down.
     # pylint: disable=import-outside-toplevel
     global KERAS_APPLICATIONS # pylint: disable=global-statement
-    if not KERAS_APPLICATIONS:
+    if KERAS_APPLICATIONS:
         return
 
     import keras.backend.tensorflow_backend as tb
@@ -521,7 +522,8 @@ def view():
 
     image_classifier_app = ImageClassifierApp()
 
-    app = pn.Column(
+    pn.config.sizing_mode="stretch_width"
+    main = [
         pnx.Header(
             "Image Classification with Keras and Tensorflow.",
             height=40,
@@ -550,9 +552,11 @@ def view():
         ),
         image_classifier_app.image_view,
         image_classifier_app.predictions_view,
-        sizing_mode="stretch_width",
+    ]
+    return get_template(
+        title="Image Classifier",
+        main=main,
     )
-    return app
 
 
 if __name__.startswith("bokeh"):

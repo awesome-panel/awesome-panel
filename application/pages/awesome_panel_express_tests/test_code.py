@@ -1,5 +1,6 @@
 """Panel does not have a pane for code. I've created a `Code` pane in `awesome_panel.express`"""
 
+from application.template import get_template
 import awesome_panel.express as pnx
 import panel as pn
 from awesome_panel.express.testing import TestApp
@@ -31,10 +32,11 @@ def view() -> pn.Column:
     Returns:
         pn.Column -- A Column containing all the tests
     """
-    return pn.Column(
+    main = [
         pn.pane.Markdown(__doc__),
         test_code(),
-    )
+    ]
+    return get_template(title="Test Code", main=main)
 
 
 if __name__.startswith("bokeh"):

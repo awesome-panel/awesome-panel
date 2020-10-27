@@ -10,6 +10,7 @@ This app was first developed in Streamlit by [Doug Guthrie](https://github/dpgut
 This version of the app is developed in [Panel](https://panel.pyviz.org/) by [Marc Skov Madsen]\
     (https://datamodelsanalytics.com)
 """
+from application.template import get_template
 import datetime
 from functools import lru_cache
 from typing import Dict, List, Tuple
@@ -791,7 +792,6 @@ to view the data available to you.
 """
             ),
             self._symbols_widget(symbols),
-            pn.layout.VSpacer(height=25),
             PROGRESS.view,
             self.pages_view(pages),
             sizing_mode=sizing_mode,
@@ -876,6 +876,7 @@ class YahooQueryApp(Page):
         Returns:
             pn.viewable.Viewable: Serve this via .servable()
         """
+        pn.config.sizing_mode="stretch_width"
         pages_list = [
             (
                 key,
@@ -884,11 +885,12 @@ class YahooQueryApp(Page):
             for key, value in self.pages.items()
         ]
 
-        return YahooQueryView(
+        main = YahooQueryView(
             self.param.symbols,
             pages_list,
             sizing_mode="stretch_width",
         )
+        return get_template(title="Yahoo Query App", main=main)
 
 
 def view():

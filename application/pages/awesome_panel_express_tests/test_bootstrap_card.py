@@ -12,6 +12,7 @@ experience, so I've had to create a custom version for Panel/ Bokeh.
 - I'm not sure this is the right way to implement a new Layout. **Is there some better way
 to implement this using the api of Panel and Bokeh?**.
 """
+from application.template import get_template
 import awesome_panel.express as pnx
 import hvplot.pandas  # pylint: disable=unused-import
 import pandas as pd
@@ -234,7 +235,8 @@ def view() -> pn.Column:
     Returns:
         pn.Column -- A Column containing all the tests
     """
-    return pn.Column(
+    pn.config.sizing_mode="stretch_width"
+    main = [
         pn.pane.Markdown(__doc__),
         pn.layout.Divider(),
         test_card(),
@@ -248,8 +250,8 @@ def view() -> pn.Column:
         test_card_collapsable(),
         pn.layout.Divider(),
         test_card_with_code(),
-        sizing_mode="stretch_width",
-    )
+    ]
+    return get_template(title="Test Bootstrap Card", main=main)
 
 
 if __name__.startswith("bokeh"):
