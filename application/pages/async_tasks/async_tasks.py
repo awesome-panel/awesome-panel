@@ -179,4 +179,4 @@ def view() -> pn.Column:
 
 
 if __name__.startswith("bokeh"):
-    view().servable() # pylint: disable=no-value-for-parameter
+    view().servable()  # pylint: disable=no-value-for-parameter
