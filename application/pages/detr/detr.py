@@ -97,11 +97,11 @@ class DETRApp(param.Parameterized):
     view = param.Parameter()
 
     def __init__(self, **params):
-        params["progress"], params["plot"], params["view"] = self._get_view()
-        params["set_random_image"] = self._set_random_image
-        params["run_detr"] = self._update_plot
-
         super().__init__(**params)
+
+        self.progress, self.plot, self.view = self._get_view()
+        self.set_random_image = self._set_random_image
+        self.run_detr = self._update_plot
 
         self.transform, self.detr, self.device = get_transform_detr_and_device()
 
