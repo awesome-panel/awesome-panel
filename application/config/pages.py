@@ -120,7 +120,7 @@ DATA_EXPLORER = Page(
         tags.CODE,
         tags.APP_IN_GALLERY,
     ],
-    component=pages.DataExplorer,
+    component=pages.dataexplorer_loading,
     author=authors.MARC_SKOV_MADSEN,
     url="data-explorer-loading",
 )

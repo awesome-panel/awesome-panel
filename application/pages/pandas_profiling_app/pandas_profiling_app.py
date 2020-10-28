@@ -92,7 +92,7 @@ class Config(param.Parameterized):
     minimal = param.Boolean(False)
 
 
-class PandasProfilingApp(param.Parameterized):
+class PandasProfilingApp(param.Parameterized): # pylint: disable=too-many-instance-attributes
     """The PandasProfilingApp showcases how to integrate the Pandas Profiling Report with Panel"""
 
     csv_url = param.String(label="CSV URL")

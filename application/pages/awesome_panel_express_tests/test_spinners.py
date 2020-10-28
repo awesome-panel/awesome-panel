@@ -37,11 +37,7 @@ def test_all_spinners():
 
 
 def test_spinner_while_python_executing():
-    """Show spinner while Python code is running
-
-    It works on Tornado Server 5.1.1 but not 6.0.3. See
-    [Discourse](https://discourse.holoviz.org/t/how-can-i-show-spinner-when-code-is-running/30/2)
-    """
+    """Show spinner while Python code is running"""
     button = pn.widgets.Button(
         name="Run Python Code",
         button_type="primary",

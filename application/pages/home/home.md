@@ -4,7 +4,7 @@ The purpose of the Awesome Panel Project is to share knowledge on how Awesome Pa
 
 Awesome Panel also the [awesome-panel-extensions package](https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html). Checkout more awesome resources in the sidebar.
 
-## Panel is a Framework for Analytics Apps in Python
+## Panel is a Powerful Framework for Analytics Apps in Python
 
 [Panel](https://panel.holoviz.org) is very powerful framework for creating powerful analytics apps in Python **using the tools you know and love &#128013; &#10084; &#65039;**.
 
