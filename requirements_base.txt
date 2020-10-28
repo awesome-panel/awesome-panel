@@ -2,10 +2,10 @@
 # - https://github.com/holoviz/panel/issues/883
 # - https://github.com/holoviz/panel/pull/867
 panel==0.10.0
-bokeh==2.2.1
+bokeh
 tornado
-holoviews==1.13.3
-hvplot==0.6.0
+holoviews
+hvplot
 lxml
 
 awesome-panel-extensions
