@@ -420,11 +420,11 @@ def get_fast_gallery():
         site_name="Awesome Panel",
         site_url="/",
         name="Gallery",
-        url="gallery",
+        url="",
         description="""The purpose of the Awesome Panel Gallery is to inspire and help you create awesome analytics apps in <fast-anchor href="https://panel.holoviz.org" target="_blank" appearance="hypertext">Panel</fast-anchor> using the tools you know and love.""",
         background_image_url="https://ih1.redbubble.net/image.875683605.8623/ur,mug_lifestyle,tall_portrait,750x1000.jpg",
         items=get_applications(),
-        target="_blank",
+        target="_self",
     )
 
 

@@ -15,20 +15,20 @@ It's a super power for you and your team to master a framework like this if you 
     <img
         alt="Classic Dashboard"
         src="https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/videos/classic-dashboard-app.gif?raw=true"
-        style="max-width:40%;max-height:300px"
+        style="max-width:40%;max-height:300px;border-radius:2px;"
     >
 </a><a href="detr">
     <img
         alt="DE:TR"
         src="https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/videos/detr-app.gif?raw=true"
-        style="max-width:40%;max-height:300px"
+        style="max-width:40%;max-height:300px;border-radius:2px;"
     >
 </a>
 <a href="echarts">
     <img
         alt="ECharts"
         src="https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/videos/echarts-app.gif?raw=true"
-        style="max-width:80%;max-height:300px"
+        style="max-width:80%;max-height:300px;border-radius:2px;"
     >
 </a>
 </div>
@@ -44,7 +44,7 @@ Checkout the announcement on [Twitter](https://twitter.com/Panel_org/status/1320
     <img
         alt="Panel 0.10 Announcement"
         src="https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/videos/panel-010-announcement.gif?raw=true"
-        style="max-width: 80%;max-height:400px"
+        style="max-width: 80%;max-height:400px;border-radius:2px;"
     >
 </a>
 </div>
@@ -70,7 +70,7 @@ You can follow the developments via [Awesome Panel Change Log](https://discourse
     <img
         alt="Param App"
         src="https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/videos/param-app.gif?raw=true"
-        style="max-width: 80%;max-height:400px"
+        style="max-width: 80%;max-height:400px;border-radius:2px;"
     >
 </a>
 </div>
@@ -87,7 +87,7 @@ If you need more convincing first, then take a look at the first **4 minutes** o
 
 You also find inspiration examples in the [Panel Example Gallery](http://panel.pyviz.org/gallery/index.html).
 
-## Panel Works in your Jupyter Notebook and Editor
+## Panel Works in your Editor and Jupyter Notebook
 
 You can develop your apps in editors like **VS Code, PyCharm and Spyder**. You can also develop your apps in a **Jupyter Notebook or Labs**. You can also use **ipywidgets** in your Panel apps.
 

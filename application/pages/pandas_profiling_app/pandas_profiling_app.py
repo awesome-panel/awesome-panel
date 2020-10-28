@@ -115,11 +115,10 @@ class PandasProfilingApp(param.Parameterized):
         params["config"] = Config()
         params["update_report"] = self._update_report
         params["random_report"] = self._random_report
-        params["progress"], params["html_report_pane"], params["view"] = self._get_view(
-            params["config"]
-        )
 
         super().__init__(**params)
+
+        self.progress, self.html_report_pane, self.view = self._get_view(self.config)
 
         self._set_random_csv_url()
 
