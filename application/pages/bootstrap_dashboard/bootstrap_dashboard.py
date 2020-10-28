@@ -57,7 +57,9 @@ def view() -> pn.Column:
         pn.layout.Divider(sizing_mode="stretch_width"),
         table,
     ]
-    return get_template(title="Bootstrap Dashboard", template="bootstrap", main=main, main_max_width="800px")
+    return get_template(
+        title="Bootstrap Dashboard", template="bootstrap", main=main, main_max_width="800px"
+    )
 
 
 def _holoviews_chart():

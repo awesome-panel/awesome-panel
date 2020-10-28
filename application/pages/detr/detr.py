@@ -72,7 +72,7 @@ COLORS = [
 ] * 50
 
 
-class DETRApp(param.Parameterized):
+class DETRApp(param.Parameterized): # pylint: disable=too-many-instance-attributes
     "A Panel App for object detection using DE:TR:"
     title = param.String("DE:TR: Object Detection App")
 
