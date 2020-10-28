@@ -8,7 +8,7 @@ Awesome Panel also the [awesome-panel-extensions package](https://awesome-panel.
 
 [Panel](https://panel.holoviz.org) is very powerful framework for creating powerful analytics apps in Python **using the tools you know and love &#128013; &#10084; &#65039;**.
 
-It's a super power for you and your team to master a framework like this if you work with **data, models and analytics**. It's perfect for ML and AI use cases.
+It's a super power for you and your team to master a framework like this if you work with **data, models and analytics**. It's great for **ML and AI** use cases and supports the process from **exploration to production** and back.
 
 <div align="center" style="margin: 2em;">
 <a href="classic-dashboard">
@@ -44,7 +44,7 @@ Checkout the announcement on [Twitter](https://twitter.com/Panel_org/status/1320
     <img
         alt="Panel 0.10 Announcement"
         src="https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/videos/panel-010-announcement.gif?raw=true"
-        style="max-width: 80%;max-height:400px;border-radius:2px;"
+        style="max-width: 500px;max-height:400px;border-radius:2px;"
     >
 </a>
 </div>
