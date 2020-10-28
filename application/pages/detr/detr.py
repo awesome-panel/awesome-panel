@@ -108,7 +108,7 @@ class DETRApp(param.Parameterized):
         self.run_detr()  # pylint: disable=not-callable
 
     def _get_view(self):
-        pn.config.sizing_mode="stretch_width"
+        pn.config.sizing_mode = "stretch_width"
         style = pn.pane.HTML(config.STYLE, width=0, height=0, margin=0, sizing_mode="fixed")
 
         description = pn.pane.Markdown(__doc__)
@@ -117,9 +117,7 @@ class DETRApp(param.Parameterized):
         )
         progress.active = False
         app_bar = pn.Row(
-            pn.pane.Markdown(
-                "# " + self.title, sizing_mode="stretch_width", margin=(0, 0, 0, 25)
-            ),
+            pn.pane.Markdown("# " + self.title, sizing_mode="stretch_width", margin=(0, 0, 0, 25)),
             sizing_mode="stretch_width",
             margin=(25, 5, 0, 5),
             css_classes=["app-bar"],

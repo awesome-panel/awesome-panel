@@ -24,9 +24,6 @@ see this [discussion](https://discourse.holoviz.org/t/how-to-create-a-parameteri
 You can find an alternative version of this Dashboard in Streamlit at
 [awesome-streamlit.org](https://awesome-streamlit.org)
 """
-# pylint: enable=line-too-long
-# pylint: disable=duplicate-code
-from application.template import get_template
 import pathlib
 from typing import List, Optional
 
@@ -35,6 +32,10 @@ import hvplot.pandas  # pylint: disable=unused-import
 import pandas as pd
 import panel as pn
 import param
+
+# pylint: enable=line-too-long
+# pylint: disable=duplicate-code
+from application.template import get_template
 
 # pylint: enable=duplicate-code
 KICKSTARTER_PATH = pathlib.Path(__file__).parent / "kickstarter-cleaned.csv"
@@ -162,9 +163,9 @@ class KickstarterDashboard(param.Parameterized):
         self,
     ):
         """A Reactive View of the KickstarterDashboard"""
-        pn.config.sizing_mode="stretch_width"
+        pn.config.sizing_mode = "stretch_width"
         sidebar = [
-            "## Settings",
+            pn.pane.HTML("<h2>Settings</h2>"),
             pn.Param(
                 self.param.categories,
                 widgets={
@@ -172,7 +173,7 @@ class KickstarterDashboard(param.Parameterized):
                         "size": len(self.categories),
                     }
                 },
-            )
+            ),
         ]
         main = [
             pn.pane.Markdown(__doc__),

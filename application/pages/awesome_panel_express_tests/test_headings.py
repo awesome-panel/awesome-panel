@@ -4,6 +4,8 @@ import awesome_panel.express as pnx
 import panel as pn
 from awesome_panel.express.testing import TestApp
 
+from application.template import get_template
+
 
 def test_headings():
     """We test that we can show
@@ -81,12 +83,13 @@ def view() -> pn.Column:
     Returns:
         pn.Column -- A Column containing all the tests
     """
-    return pn.Column(
+    main = [
         pn.pane.Markdown(__doc__),
         test_headings(),
         test_title_centered_white(),
         test_with_url(),
-    )
+    ]
+    return get_template(title="Test Heading", main=main)
 
 
 if __name__.startswith("bokeh"):

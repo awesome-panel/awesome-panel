@@ -3,11 +3,11 @@
 """
 """
 
+from io import StringIO
+
 import panel as pn
 import param
-
 from bokeh.sampledata.autompg import autompg
-from io import StringIO
 
 
 class DownloadApp(param.Parameterized):

@@ -4,9 +4,9 @@
 .pnx-nav-buttons a {
     color: black;
 }
-.pnx-nav-buttons a:hover {
+.pnx-nav-buttons a:hover, .pnx-nav-buttons summary:hover {
     background-color: #e0e0e0;
 }
-.pnx-nav-buttons a:active {
+.pnx-nav-buttons a:active, .pnx-nav-buttons summary:active {
     background-color: #9e9e9e;
 }

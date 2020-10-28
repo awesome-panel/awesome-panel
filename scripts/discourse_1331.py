@@ -1,9 +1,11 @@
-import param
-import panel as pn
+import time
+from random import randint
+
 import hvplot.pandas
 import pandas as pd
-from random import randint, randrange
-import time
+import panel as pn
+import param
+
 
 class DataHolder(param.Parameterized):
     value_a = param.ObjectSelector(default=1, objects=[1, 2, 3], label="A")
@@ -16,13 +18,13 @@ class DataHolder(param.Parameterized):
     def __init__(self, **params):
         super().__init__(**params)
 
-        self._sleep=0
+        self._sleep = 0
 
         self._create_view()
         self._update_data()
         self._update_plot()
 
-        self._sleep=5
+        self._sleep = 5
 
     def _create_view(self):
         self.settings_panel = pn.Param(self, parameters=["value_a", "value_b", "value_c"])
@@ -30,9 +32,7 @@ class DataHolder(param.Parameterized):
         self.progress = pn.widgets.Progress(sizing_mode="stretch_width", bar_color="primary")
         self.view = pn.Column(
             self.progress,
-            pn.Row(
-                pn.WidgetBox(self.settings_panel), self.plot_panel, sizing_mode="stretch_width"
-            )
+            pn.Row(pn.WidgetBox(self.settings_panel), self.plot_panel, sizing_mode="stretch_width"),
         )
 
     @param.depends("value_a", "value_b", watch=True)
@@ -42,7 +42,7 @@ class DataHolder(param.Parameterized):
         self.data = pd.DataFrame(
             {
                 "x": [i for i in range(0, 10)],
-                "y": [self.value_a + randint(0,10) * self.value_b for i in range(0, 10)],
+                "y": [self.value_a + randint(0, 10) * self.value_b for i in range(0, 10)],
             }
         )
         print("data updated")
@@ -57,5 +57,6 @@ class DataHolder(param.Parameterized):
         data.loc[self.value_c, "y"] = self.value_c + data.loc[self.value_c, "y"]
         self.plot_panel.object = data.hvplot(x="x", y="y")
         print("plot updated")
+
 
 DataHolder().view.servable()

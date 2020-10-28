@@ -8,12 +8,13 @@ functionality for sensible defaults. See also [Issue 940]\
 (https://github.com/holoviz/panel/issues/940).
 """
 
-from application.template import get_template
 import awesome_panel.express as pnx
 import pandas as pd
 import panel as pn
 from awesome_panel.express.testing import TestApp
 from awesome_panel.express.widgets import dataframe
+
+from application.template import get_template
 
 
 def test_get_default_formatters():
@@ -76,7 +77,7 @@ def view() -> pn.Column:
     Returns:
         pn.Column -- A Column containing all the tests
     """
-    pn.config.sizing_mode="stretch_width"
+    pn.config.sizing_mode = "stretch_width"
     main = [
         pn.pane.Markdown(__doc__),
         test_get_default_formatters,

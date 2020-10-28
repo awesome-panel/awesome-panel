@@ -15,10 +15,10 @@ import os
 import platform
 
 import panel as pn
+
+import application.pages.dialog_template as dialog_template
 from application import config
 from application.pages.fast_gallery.fast_gallery import get_fast_gallery  # type: ignore
-import application.pages.dialog_template as dialog_template
-
 
 # links = ""
 # for page in config.pages.NON_GALLERY_PAGES+config.pages.GALLERY_PAGES:
@@ -26,12 +26,12 @@ import application.pages.dialog_template as dialog_template
 # print(links)
 # breakpoint()
 
-if __name__=="__main__":
+if __name__ == "__main__":
     address = os.getenv("BOKEH_ADDRESS", "0.0.0.0")
     APP_ROUTES = {
         **config.pages.URLS,
         "gallery": get_fast_gallery,
-        "dialog_template": dialog_template.view,
+        "dialog-template": dialog_template.view,
     }
     if platform.system() == "Windows":
         pn.serve(APP_ROUTES, port=80, dev=False, title="Awesome Panel", address=address)

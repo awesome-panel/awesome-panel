@@ -1,9 +1,10 @@
 """Panel does not have a pane for code. I've created a `Code` pane in `awesome_panel.express`"""
 
-from application.template import get_template
 import awesome_panel.express as pnx
 import panel as pn
 from awesome_panel.express.testing import TestApp
+
+from application.template import get_template
 
 
 def test_code():

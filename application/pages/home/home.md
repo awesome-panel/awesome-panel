@@ -1,54 +1,116 @@
 # Awesome Panel ![Awesome Badge](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)
 
-Panel is very powerful framework for creating powerful analytics apps in #Python using the tools you know and love.
+The purpose of the Awesome Panel Project is to share knowledge on how Awesome Panel is and can become. Naturally this site is **MADE WITH PANEL**.
 
-## Panel 0.10 just Released
+Awesome Panel also the [awesome-panel-extensions package](https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html). Checkout more awesome resources in the sidebar.
 
-Panel 0.10 just released with lots of new, awesome features.
+## Panel is a Framework for Analytics Apps in Python
 
-It works with almost all markdown flavours (the below blank line matters).
+[Panel](https://panel.holoviz.org) is very powerful framework for creating powerful analytics apps in Python **using the tools you know and love &#128013; &#10084; &#65039;**.
 
-Panel is announced as **a high-level app and dashboarding solution for Python**. I think the terms **powerful** and **full of features** should be added to that.
+It's a super power for you and your team to master a framework like this if you work with **data, models and analytics**. It's perfect for ML and AI use cases.
 
-The purpose of the Awesome Panel Project is to share knowledge on how Awesome Panel is and can become.
+<div align="center" style="margin: 2em;">
+<a href="classic-dashboard">
+    <img
+        alt="Classic Dashboard"
+        src="https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/videos/classic-dashboard-app.gif?raw=true"
+        style="max-width:40%;max-height:300px"
+    >
+</a><a href="detr">
+    <img
+        alt="DE:TR"
+        src="https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/videos/detr-app.gif?raw=true"
+        style="max-width:40%;max-height:300px"
+    >
+</a>
+<a href="echarts">
+    <img
+        alt="ECharts"
+        src="https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/videos/echarts-app.gif?raw=true"
+        style="max-width:80%;max-height:300px"
+    >
+</a>
+</div>
 
-I believe easy to use and powerful frameworks for developing awesome, interactive tools and apps by and for domain experts like analysts, engineers and scientists using the power of Python has a huge potential.
+## Panel 0.10 is Released
 
-I believe Panel could be such an easy to use and powerful framework. But it is not receiving the attentation that it deserves.
+Panel 0.10 comes with a **lots of new features** like easy to use Templates, ipywidgets integration, ECharts and much more.
 
-- Partially because its not really been communicated widely.
-- Partly because there is a little bit of friction to using all the powerful features.
+Checkout the announcement on [Twitter](https://twitter.com/Panel_org/status/1320713884261621760) and the [Panel 0.10 Release Blog](http://blog.holoviz.org/panel_0.10.0.html).
 
-My hope is that this can help spread the word and lower the friction.
+<div align="center" style="margin: 2em;">
+<a href="https://twitter.com/Panel_org/status/1320713884261621760" target="_blank">
+    <img
+        alt="Panel 0.10 Announcement"
+        src="https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/videos/panel-010-announcement.gif?raw=true"
+        style="max-width: 80%;max-height:400px"
+    >
+</a>
+</div>
 
-This application provides
+## Awesome Panel is Upgrading
 
-- A curated list of awesome Panel **resources**.
-- A **gallery** of awesome panel applications.
-- This app as a **best practice multi page app** with a nice layout developed in Panel.
+Awesome Panel will be adapting to all the new powerful features in Panel 0.10.
 
-This page does not render nicely in Internet Explorer and it's not supported.
+You can already **TRYOUT**
 
-## The Power of Panel
+- NEW Menu in Sidebar
+- NEW Templates and Themes via widgets in Header.
+- NEW URL Search Parameters synced to Template and Theme widgets.
+- NEW Cards in the [Param Reference Example](param-reference).
+- NEW ECharts pane in the [Echarts Example](echarts)
 
-The only way to truly understand how powerful Panel is to play around with it. But if you need to be convinced first, then take a look at the first **4 minutes** of this **introduction to Panel**. The video is by **Philipp Rudiger**, the creator of Panel.
+Please note that some of the Apps and Extensions on this site can now be done more easily with Panel 0.10 than illustrated here.
 
-Afterwards you can go to the [Panel Getting Started Guide](http://panel.pyviz.org/getting_started/index.html) or visit the [Panel Gallery](http://panel.pyviz.org/gallery/index.html) and the [Panel Reference Gallery](https://panel.pyviz.org/reference/index.html).
+You can follow the developments via [Awesome Panel Change Log](https://discourse.holoviz.org/t/awesome-panel-org-change-log/66).
 
-[![Introduction to Panel](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/youtube-introduction-to-panel.png?raw=true)](https://www.youtube.com/watch?v=Ohr29FJjBi0 "Introduction to panel")
+<div align="center" style="margin: 2em;">
+<a href="param-reference" target="_blank">
+    <img
+        alt="Param App"
+        src="https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/videos/param-app.gif?raw=true"
+        style="max-width: 80%;max-height:400px"
+    >
+</a>
+</div>
 
-Panel is completely open source, available under a BSD license freely for both commercial and non-commercial use. Panel is part of the [HoloViz](https://holoviz.org/) ecosystem and works well with all the HoloViz tools..
+## Panel is for You
 
-[<img src="https://holoviz.org/assets/panel.png" height="75">](https://panel.pyviz.org)
-[<img src="https://holoviz.org/assets/hvplot.png" height="75">](https://hvplot.pyviz.org)
-[<img src="https://holoviz.org/assets/holoviews.png" height="75">](https://holoviews.org)
-[<img src="https://holoviz.org/assets/geoviews.png" height="75">](http://geoviews.org)
-[<img src="https://holoviz.org/assets/datashader.png" height="75">](http://datashader.org)
-[<img src="https://holoviz.org/assets/param.png" height="75">](https://param.pyviz.org)
-[<img src="https://holoviz.org/assets/colorcet.png" height="75">](https://colorcet.pyviz.org)
+The only way to truly understand if Panel is something for you is to play around with it. To get started you can use the [Panel Getting Started Guide](http://panel.pyviz.org/getting_started/index.html) or visit the [Panel Reference Gallery](https://panel.pyviz.org/reference/index.html).
 
-Panel is developed and maintained by developers from [Anaconda](https://anaconda.com) as well as community contributors.
+If you need more convincing first, then take a look at the first **4 minutes** of this **introduction to Panel**. The video is by **Philipp Rudiger**, the creator of Panel.
 
-[<img src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/anaconda-logo.png?raw=true" width="200">](https://anaconda.com)
+<div align="center" style="margin: 2em">
+    <iframe src="https://www.youtube.com/embed/Ohr29FJjBi0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 80%;height:300px;margin-left: auto;margin-right:auto; border: 1px silver solid"></iframe>
+</div>
+
+You also find inspiration examples in the [Panel Example Gallery](http://panel.pyviz.org/gallery/index.html).
+
+## Panel Works in your Jupyter Notebook and Editor
+
+You can develop your apps in editors like **VS Code, PyCharm and Spyder**. You can also develop your apps in a **Jupyter Notebook or Labs**. You can also use **ipywidgets** in your Panel apps.
+
+Checkout the PerspectiveViewer notebook on binder.
+
+<div align="center" style="margin: 2em;">
+<a class="reference external" href="https://mybinder.org/v2/gh/marcskovmadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fwidgets%2FPerspectiveViewer.ipynb" target="_blank"><img alt="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/docs/packages/awesome-panel-extensions/perspective-viewer-finos.gif" src="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/docs/packages/awesome-panel-extensions/perspective-viewer-finos.gif" style="max-height:400px"></a>
+</div>
+
+<a class="reference external" href="https://mybinder.org/v2/gh/MarcSkovMadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fwidgets%2FPerspectiveViewer.ipynb" target="_blank"><img src="https://mybinder.org/badge_logo.svg" style="height:25px;display:inline;margin:5px"></a> <a class="reference external" href="https://nbviewer.jupyter.org/github/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/reference/widgets/PerspectiveViewer.ipynb" target="_blank"><img src="https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg" style="height:25px;display:inline;margin:5px"></a>
+
+## Panel is Open Source
+
+Panel is completely open source, available under a BSD license freely for both commercial and non-commercial use. Panel is part of the [HoloViz](https://holoviz.org/) ecosystem and works really well with all the HoloViz tools..
+
+[<img src="https://holoviz.org/assets/panel.png" height="60" style="margin-right:1em;margin-left: 1em">](https://panel.pyviz.org)
+[<img src="https://holoviz.org/assets/hvplot.png" height="60" style="margin-right:1em;margin-left: 1em">](https://hvplot.pyviz.org)
+[<img src="https://holoviz.org/assets/holoviews.png" height="60" style="margin-right:1em;margin-left: 1em">](https://holoviews.org)
+[<img src="https://holoviz.org/assets/geoviews.png" height="60" style="margin-right:1em;margin-left: 1em">](http://geoviews.org)
+[<img src="https://holoviz.org/assets/datashader.png" height="60" style="margin-right:1em;margin-left: 1em">](http://datashader.org)
+[<img src="https://holoviz.org/assets/param.png" height="60" style="margin-right:1em;margin-left: 1em">](https://param.pyviz.org)
+[<img src="https://holoviz.org/assets/colorcet.png" height="60" style="margin-right:1em;margin-left: 1em">](https://colorcet.pyviz.org)
+
+Panel is developed by employees from [Anaconda](https://anaconda.com) as well as community members.
 
 <br/><br/><br/>

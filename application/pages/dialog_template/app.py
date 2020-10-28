@@ -17,18 +17,18 @@ def _get_sea_surface_temperature_plot():
 def view():
     """Returns a Panel application show casing a Custom Panel Template With a Dialog"""
     top_panel = pn.Row(
-            pn.pane.PNG(
-                "https://panel.holoviz.org/_static/logo_horizontal.png",
-                height=50,
-                margin=10,
-                link_url="https://panel.holoviz.org",
-                sizing_mode="stretch_width",
-            ),
-            background="black",
+        pn.pane.PNG(
+            "https://panel.holoviz.org/_static/logo_horizontal.png",
+            height=50,
+            margin=10,
+            link_url="https://panel.holoviz.org",
             sizing_mode="stretch_width",
-        )
+        ),
+        background="black",
+        sizing_mode="stretch_width",
+    )
     main_panel = pn.Column(
-        "This is a Panel application with a dialog",
+        "This is a Panel application with a dialog based on a **custom Panel template",
         "Provided by awesome-panel.org",
         sizing_mode="stretch_width",
     )

@@ -25,7 +25,7 @@ HOME = Page(
     ],
     component=pages.home,
     author=authors.MARC_SKOV_MADSEN,
-    url=""
+    url="",
 )
 ABOUT = Page(
     name="About",
@@ -37,7 +37,7 @@ ABOUT = Page(
     ],
     component=pages.about,
     author=authors.MARC_SKOV_MADSEN,
-    url="about"
+    url="about",
 )
 ISSUES = Page(
     name="Issues",
@@ -73,7 +73,7 @@ ASYNC_TASKS = Page(
     ],
     component=pages.async_tasks,
     author=authors.JOCHEM_SMIT,
-    url="async-tasks"
+    url="async-tasks",
 )
 BOOTSTRAP_DASHBOARD = Page(
     name="Bootstrap Dashboard",
@@ -85,7 +85,7 @@ BOOTSTRAP_DASHBOARD = Page(
     ],
     component=pages.bootstrap_dashboard,
     author=authors.MARC_SKOV_MADSEN,
-    url="boostrap-dashboard"
+    url="boostrap-dashboard",
 )
 CUSTOM_BOKEH_MODEL = Page(
     name="Custom Bokeh Model",
@@ -97,7 +97,7 @@ CUSTOM_BOKEH_MODEL = Page(
     ],
     component=pages.custom_bokeh_model,
     author=authors.MARC_SKOV_MADSEN,
-    url="custom-bokeh-model"
+    url="custom-bokeh-model",
 )
 DASHBOARD = Page(
     name="Classic Dashboard",
@@ -110,7 +110,7 @@ DASHBOARD = Page(
     component=pages.dashboard,
     author=authors.MARC_SKOV_MADSEN,
     show_loading_page=True,
-    url="classic-dashboard"
+    url="classic-dashboard",
 )
 DATA_EXPLORER = Page(
     name="DataExplorer - Loading...",
@@ -122,7 +122,7 @@ DATA_EXPLORER = Page(
     ],
     component=pages.DataExplorer,
     author=authors.MARC_SKOV_MADSEN,
-    url="data-explorer-loading"
+    url="data-explorer-loading",
 )
 DETR = Page(
     name="DE:TR: Object Detection",
@@ -135,7 +135,7 @@ DETR = Page(
     component=pages.detr,
     author=authors.MARC_SKOV_MADSEN,
     show_loading_page=True,
-    url="de-tr"
+    url="detr",
 )
 IMAGE_CLASSIFIER = Page(
     name="Image Classifier",
@@ -147,7 +147,7 @@ IMAGE_CLASSIFIER = Page(
     ],
     component=pages.image_classifier,
     author=authors.MARC_SKOV_MADSEN,
-    url="image-classifier"
+    url="image-classifier",
 )
 JS_ACTIONS = Page(
     name="JS Actions",
@@ -159,7 +159,7 @@ JS_ACTIONS = Page(
     ],
     component=pages.js_actions,
     author=authors.MARC_SKOV_MADSEN,
-    url="js-actions"
+    url="js-actions",
 )
 KICKSTARTER_DASHBOARD = Page(
     name="Kickstarter Dashboard",
@@ -172,7 +172,7 @@ KICKSTARTER_DASHBOARD = Page(
     component=pages.kickstarter_dashboard,
     author=authors.MARC_SKOV_MADSEN,
     show_loading_page=True,
-    url="kick-start-dashboard"
+    url="kick-starter-dashboard",
 )
 OWID_CHOROPLETH_MAP = Page(
     name="Owid Choropleth Map",
@@ -185,7 +185,7 @@ OWID_CHOROPLETH_MAP = Page(
     component=pages.owid_choropleth_map,
     author=authors.MARC_SKOV_MADSEN,
     show_loading_page=True,
-    url="owid-choropleth"
+    url="owid-choropleth",
 )
 PANDAS_PROFILING = Page(
     name="Pandas Profiling",
@@ -236,7 +236,7 @@ TEST_BOOTSTRAP_ALERTS = Page(
     ],
     component=pages.test_bootstrap_alerts,
     author=authors.MARC_SKOV_MADSEN,
-    url="ext-alert"
+    url="ext-alert",
 )
 TEST_BOOTSTRAP_CARD = Page(
     name="Test Bootstrap Card",
@@ -251,7 +251,7 @@ TEST_BOOTSTRAP_CARD = Page(
     author=authors.MARC_SKOV_MADSEN,
     show_loading_page=True,
     width=False,
-    url="ext-card"
+    url="ext-card",
 )
 TEST_CODE = Page(
     name="Test Code",
@@ -277,7 +277,7 @@ TEST_DATAFRAME = Page(
     ],
     component=pages.test_dataframe,
     author=authors.MARC_SKOV_MADSEN,
-    url="ext-dataframe"
+    url="ext-dataframe",
 )
 TEST_ECHARTS = Page(
     name="Test ECharts",
@@ -303,7 +303,7 @@ TEST_DIVIDER = Page(
     ],
     component=pages.test_divider,
     author=authors.MARC_SKOV_MADSEN,
-    url="ext-divider"
+    url="ext-divider",
 )
 TEST_FONT_AWESOME = Page(
     name="Test FontAwesome",
@@ -329,7 +329,7 @@ TEST_HEADINGS = Page(
     ],
     component=pages.test_headings,
     author=authors.MARC_SKOV_MADSEN,
-    url="ext-headings"
+    url="ext-headings",
 )
 TEST_MARKDOWN = Page(
     name="Test Markdown",
@@ -366,7 +366,7 @@ TEST_MODEL_VIEWER = Page(
     ],
     component=pages.test_model_viewer,
     author=authors.MARC_SKOV_MADSEN,
-    url="ext-model-viewer"
+    url="ext-model-viewer",
 )
 TEST_PERSPECTIVE = Page(
     name="Test Perspective Viewer",
@@ -379,7 +379,7 @@ TEST_PERSPECTIVE = Page(
     component=pages.test_perspective,
     author=authors.MARC_SKOV_MADSEN,
     restrict_max_width=False,
-    url="ext-perspective"
+    url="ext-perspective",
 )
 TEST_PROGRESS_EXTENSION = Page(
     name="Test Progress Extension",
@@ -392,7 +392,7 @@ TEST_PROGRESS_EXTENSION = Page(
     ],
     component=pages.test_progress_ext,
     author=authors.MARC_SKOV_MADSEN,
-    url="ext-perspective"
+    url="ext-progress",
 )
 TEST_SHARE_LINKS = Page(
     name="Test Social Links",
@@ -480,4 +480,4 @@ NON_GALLERY_PAGES = [
 
 GALLERY_PAGES = [page for page in PAGES if page not in NON_GALLERY_PAGES]
 
-URLS = {page.url: getattr(page.component, "view") for page in NON_GALLERY_PAGES+GALLERY_PAGES}
+URLS = {page.url: getattr(page.component, "view") for page in NON_GALLERY_PAGES + GALLERY_PAGES}

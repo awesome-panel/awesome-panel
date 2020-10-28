@@ -1,5 +1,6 @@
 import panel as pn
-pn.config.js_files["dropzonejs"]="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"
+
+pn.config.js_files["dropzonejs"] = "https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"
 pn.config.css_files.append("https://rawgit.com/enyo/dropzone/master/dist/dropzone.css")
 pn.config.css_files.append("https://www.dropzonejs.com/css/style.css?v=1595510599")
 pn.extension()

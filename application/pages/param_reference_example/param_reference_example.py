@@ -14,13 +14,14 @@ The PowerCurve is a recording of the athletes maximum power output in Watt per k
 durations of time.
 """
 
-from application.template import get_template
 import datetime
 
 import hvplot.pandas  # pylint: disable=unused-import
 import pandas as pd
 import panel as pn
 import param
+
+from application.template import get_template
 
 DATE_BOUNDS = (
     datetime.date(
@@ -48,7 +49,7 @@ def view() -> pn.viewable.Viewable:
     Returns:
         pn.viewable.Viewable: The main Viewable of the app.
     """
-    pn.config.sizing_mode="stretch_width"
+    pn.config.sizing_mode = "stretch_width"
     athlete = Athlete()
 
     athlete_view = pn.Param(
@@ -93,7 +94,8 @@ def view() -> pn.viewable.Viewable:
     main = [
         STYLE,
         pn.layout.Card(
-            pn.pane.Markdown(__doc__), title="Param Reference Example",
+            pn.pane.Markdown(__doc__),
+            title="Param Reference Example",
         ),
         pn.layout.HSpacer(height=25),
         pn.Column(

@@ -8,6 +8,8 @@ import awesome_panel.express as pnx
 import panel as pn
 from awesome_panel.express.testing import TestApp
 
+from application.template import get_template
+
 
 def test_divider():
     """A manual test of the horizontal divider stretching to full width"""
@@ -20,13 +22,13 @@ def view() -> pn.Column:
     Returns:
         pn.Column -- A Column containing all the tests
     """
-    return pn.Column(
+    pn.config.sizing_mode = "stretch_width"
+    main = [
         pn.pane.Markdown(__doc__),
         test_divider(),
-    )
+    ]
+    return get_template(title="Test Divider", main=main)
 
 
 if __name__.startswith("bokeh"):
-    pn.config.sizing_mode = "stretch_width"
-
     view().servable("test_divider")

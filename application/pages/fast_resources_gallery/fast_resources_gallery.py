@@ -3,6 +3,7 @@
 from awesome_panel_extensions.frameworks.fast.templates.fast_gallery_template import (
     FastGalleryTemplate,
 )
+
 from application.pages.fast_resources_gallery.resources import RESOURCES
 
 ASSETS = (
@@ -13,6 +14,7 @@ ASSETS = (
 def get_resources():
     """Returns a list of all Resources"""
     return sorted(RESOURCES)
+
 
 def get_fast_gallery():
     """Return a FastGalleryTemplate"""

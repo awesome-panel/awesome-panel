@@ -15,6 +15,8 @@ from awesome_panel.express.fontawesome.share_link import (
 )
 from awesome_panel.express.testing import TestApp
 
+from application.template import get_template
+
 STYLE = """
 <style>
 .bk a.button-share-link {
@@ -92,7 +94,8 @@ def view() -> pn.Column:
     Returns:
         pn.Column -- A Column containing all the tests
     """
-    return pn.Column(
+    pn.config.sizing_mode = "stretch_width"
+    main = [
         pn.pane.HTML(STYLE),
         __doc__,
         test_facebook(),
@@ -100,7 +103,8 @@ def view() -> pn.Column:
         test_mail(),
         test_twitter(),
         test_reddit(),
-    )
+    ]
+    return get_template(title="Share Links", main=main)
 
 
 if __name__.startswith("bokeh"):

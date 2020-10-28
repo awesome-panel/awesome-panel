@@ -2,15 +2,9 @@
 import pathlib
 
 import panel as pn
-from panel.pane import Markdown, Alert
-from application.template import get_template
+from panel.pane import Markdown
 
-HEADER = """<h1>Awesome Panel
-<img alt="Awesome Badge"
-src="https://cdn.rawgit.com/sindresorhus/awesome/\
-d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg">
-</h1>"""
-NEWS_PATH = pathlib.Path(__file__).parent / "news.md"
+from application.template import get_template
 
 SECTIONS_PATH = pathlib.Path(__file__).parent / "home.md"
 SECTIONS = SECTIONS_PATH.read_text()
@@ -18,21 +12,17 @@ SECTIONS = SECTIONS_PATH.read_text()
 
 def view():
     """The home view of awesome-panel.org"""
-    NEWS = NEWS_PATH.read_text()
-
     pn.config.sizing_mode = "stretch_width"
-    # header = Markdown(HEADER)
-    # news = Alert(NEWS, alert_type="info")
     sections = Markdown(SECTIONS)
 
     main = [
-        # header,
-        # news,
         sections,
     ]
-    template = get_template(title="", main=main)
+    template = get_template(title="", main=main, main_max_width="900px")
     return template
 
 
 if __name__.startswith("bokeh"):
     view().servable()
+if __name__ == "__main__":
+    view().show()

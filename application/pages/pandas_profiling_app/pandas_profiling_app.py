@@ -29,7 +29,6 @@ rtd/pages/examples.html#showcasing-specific-features)
 [Panel](https://panel.holoviz.org/),
 [Pandas](https://pandas.pydata.org/),
 """
-from application.template import get_template
 import html
 from functools import lru_cache
 from itertools import cycle
@@ -38,6 +37,8 @@ import pandas as pd
 import panel as pn
 import param
 from pandas_profiling import ProfileReport
+
+from application.template import get_template
 
 # pylint: disable=line-too-long
 DEFAULT_TITLE = "Pandas Profiling Report"
@@ -143,7 +144,7 @@ class PandasProfilingApp(param.Parameterized):
         self._update_report()
 
     def _get_view(self, config):
-        pn.config.sizing_mode="stretch_width"
+        pn.config.sizing_mode = "stretch_width"
         style = pn.pane.HTML(STYLE, width=0, height=0, margin=0, sizing_mode="fixed")
         description = pn.pane.Markdown(__doc__)
         app_bar = pn.Row(

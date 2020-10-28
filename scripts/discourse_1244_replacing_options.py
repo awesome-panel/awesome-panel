@@ -1,5 +1,4 @@
-from typing import Tuple, Dict
-from time import gmtime, strftime
+from typing import Dict, Tuple
 
 import pandas as pd
 import panel as pn
@@ -91,9 +90,7 @@ class ParameterizedStorm(param.Parameterized):
         self.view = pn.Row(
             pn.WidgetBox(self._widget_pane),
             self._text_pane,
-            )
-
-
+        )
 
     @param.depends("by_storm_summary", watch=True)
     def _handle_by_storm_summary_change(self):
@@ -123,11 +120,7 @@ class ParameterizedStorm(param.Parameterized):
             if not self.single_storm_number in values:
                 self.single_storm_number = default_single_storm_number
 
-    @param.depends(
-        "single_location",
-        "single_storm_number",
-        watch=True
-    )
+    @param.depends("single_location", "single_storm_number", watch=True)
     def view_states(self):
         text = (
             "Single Location {}".format(self.single_location)

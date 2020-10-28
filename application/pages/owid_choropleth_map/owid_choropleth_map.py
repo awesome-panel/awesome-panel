@@ -15,7 +15,6 @@ data on [GitHub](https://github.com/owid/owid-datasets/tree/master/datasets).
 
 """
 
-from application.template import get_template
 import json
 import pathlib
 from functools import lru_cache
@@ -28,6 +27,8 @@ import param
 from bokeh.models import ColorBar, GeoJSONDataSource, LinearColorMapper
 from bokeh.palettes import brewer  # pylint: disable=no-name-in-module
 from bokeh.plotting import figure
+
+from application.template import get_template
 
 FILE_DIR = pathlib.Path(__file__).parent
 SHAPEFILE = FILE_DIR / "data/ne_110m_admin_0_countries.shp"
@@ -312,7 +313,7 @@ class OwidDashboard(param.Parameterized):
 }
         """
         style = f"<style>{css}</style>"
-        pn.config.sizing_mode="stretch_width"
+        pn.config.sizing_mode = "stretch_width"
         content = pn.Column(
             self.param.dataset_name,
             self.map_plot,
@@ -344,7 +345,6 @@ class OwidDashboard(param.Parameterized):
             INFO,
         ]
         return get_template(title="Owid Choropleth Map", main=main)
-
 
 
 def view():

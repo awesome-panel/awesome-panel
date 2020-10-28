@@ -14,6 +14,7 @@ import panel as pn
 from bokeh.core.properties import Instance, String
 from bokeh.layouts import column
 from bokeh.models import HTMLBox, Slider
+
 from application.template import get_template
 
 CUSTOM_TS = pathlib.Path(__file__).parent / "custom_bokeh_model.ts"
@@ -36,9 +37,9 @@ def view():
     custom = Custom(text="Special Slider Display", slider=slider)
     layout = column(slider, custom, sizing_mode="stretch_width")
 
-    pn.config.sizing_mode="stretch_width"
+    pn.config.sizing_mode = "stretch_width"
     main = [pn.pane.Markdown(__doc__), pn.pane.Bokeh(layout)]
-    pn.config.sizing_mode="fixed"
+    pn.config.sizing_mode = "fixed"
     return get_template(title="Custom Model Model", main=main)
 
 

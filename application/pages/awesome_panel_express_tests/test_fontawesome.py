@@ -8,6 +8,8 @@ import awesome_panel.express as pnx
 import panel as pn
 from awesome_panel.express.testing import TestApp
 
+from application.template import get_template
+
 pnx.fontawesome.extend()
 
 
@@ -74,11 +76,13 @@ def view() -> pn.Column:
     Returns:
         pn.Column -- A Column containing all the tests
     """
-    return pn.Column(
+    pn.config.sizing_mode = "stretch_width"
+    main = [
         pn.pane.Markdown(__doc__),
         test_html_with_font_awesome(),
         test_button_with_font_awesome(),
-    )
+    ]
+    return get_template(title="Test Font Awesome", main=main)
 
 
 if __name__.startswith("bokeh"):

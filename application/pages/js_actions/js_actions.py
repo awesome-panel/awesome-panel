@@ -23,8 +23,9 @@ application/pages/js_actions/js_actions.py)
 **Tags:**
 [Panel](https://panel.holoviz.org/)
 """
-from application.template import get_template
 import panel as pn
+
+from application.template import get_template
 
 STYLE = """
 <style>
@@ -36,8 +37,7 @@ STYLE = """
 
 
 def copy_to_clipboard():
-    """Copy
-    """
+    """Copy"""
     source_textarea = pn.widgets.TextAreaInput(
         value="Copy this text to the clipboard by clicking the button"
     )
@@ -55,7 +55,7 @@ def view():
     """Returns a view of the app
 
     Used by the awesome-panel.org gallery"""
-    pn.config.sizing_mode="stretch_width"
+    pn.config.sizing_mode = "stretch_width"
     style = pn.pane.HTML(STYLE, width=0, height=0, sizing_mode="fixed", margin=0)
     panel_logo = pn.pane.PNG(
         object="https://panel.holoviz.org/_static/logo_horizontal.png",

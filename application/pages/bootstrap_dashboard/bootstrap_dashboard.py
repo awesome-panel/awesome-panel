@@ -13,6 +13,7 @@ import awesome_panel.express as pnx
 import hvplot.pandas  # pylint: disable=unused-import
 import pandas as pd
 import panel as pn
+
 from application.template import get_template
 
 IMAGE_PATH = (
@@ -25,6 +26,7 @@ TEXT = """\
 The purpose of this app is to test that a **multi-page Dashboard Layout** similar to the [bootstrap dashboard template](https://getbootstrap.com/docs/4.3/examples/dashboard/) from [getboostrap.com](https://getbootstrap.com/) can be implemented in [Panel](https://panel.pyviz.org/).
 
 """
+
 
 def view() -> pn.Column:
     """# Bootstrap Dashboard Page.
@@ -43,7 +45,7 @@ def view() -> pn.Column:
         _get_table_data(),
         sizing_mode="stretch_width",
     )
-    pn.config.sizing_mode="stretch_width"
+    pn.config.sizing_mode = "stretch_width"
     main = [
         pnx.Header("Bootstrap Dashboard"),
         pn.pane.Markdown(TEXT),
@@ -261,6 +263,7 @@ def _get_table_data() -> pd.DataFrame:
             "Header4",
         ],
     ).set_index("Header0")
+
 
 if __name__.startswith("bokeh"):
     view().servable()

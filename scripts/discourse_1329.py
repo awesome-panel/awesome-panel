@@ -1,5 +1,6 @@
 import param
 
+
 class Test1(param.Parameterized):
     input_dict = param.Dict(default=None, allow_None=False)
 
@@ -8,11 +9,12 @@ class Test1(param.Parameterized):
 
         super().__init__(**kwds)
 
-        self.something_else=something_else
+        self.something_else = something_else
+
 
 Test1()
-Test1(something=['something'])
-Test1(something_else=['something_else'])
-Test1(something=['something'], something_else=['something_else'])
+Test1(something=["something"])
+Test1(something_else=["something_else"])
+Test1(something=["something"], something_else=["something_else"])
 
 print("Done")

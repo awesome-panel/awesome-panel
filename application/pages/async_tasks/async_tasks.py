@@ -38,8 +38,9 @@ import numpy as np
 import panel as pn
 import param
 from panel.io.server import unlocked
-from tornado.ioloop import IOLoop
 from panel.template import VanillaTemplate
+from tornado.ioloop import IOLoop
+
 from application.template import get_template
 
 
@@ -133,7 +134,7 @@ class AsyncApp(param.Parameterized):
                 show_name=False,
             ),
         ]
-        self.view.main_max_width="700px"
+        self.view.main_max_width = "700px"
 
     @param.depends("slider", "select", watch=True)
     def _on_slider_change(self):
@@ -178,4 +179,4 @@ def view() -> pn.Column:
 
 
 if __name__.startswith("bokeh"):
-    view().servable()
+    view().servable() # pylint: disable=no-value-for-parameter

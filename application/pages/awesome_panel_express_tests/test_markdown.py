@@ -13,6 +13,8 @@ import awesome_panel.express as pnx
 import panel as pn
 from awesome_panel.express.testing import TestApp
 
+from application.template import get_template
+
 TEST_MD_FILE = pathlib.Path(__file__).parent / "data" / "test.md"
 
 
@@ -98,13 +100,14 @@ def view() -> pn.Column:
     Returns:
         pn.Column -- A Column containing all the tests
     """
-    return pn.Column(
+    main = [
         pn.pane.Markdown(__doc__),
         test_markdown,
         test_markdown_from_file,
         test_markdown_indendation,
         test_markdown_code_block,
-    )
+    ]
+    return get_template(title="Test Markdown", main=main)
 
 
 if __name__.startswith("bokeh"):

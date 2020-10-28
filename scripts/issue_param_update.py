@@ -26,23 +26,16 @@ class ParameterizedStorm(param.Parameterized):
         default=0,
     )
 
-
     def __init__(self):
         super().__init__()
         # other stuff not related to the date parameter happens
 
-    def get_discrete_storm_opts(
-        self, the_param: str, the_location: str
-    ) -> Tuple[Dict, int]:
+    def get_discrete_storm_opts(self, the_param: str, the_location: str) -> Tuple[Dict, int]:
         pk_data = self.by_storm_summary.loc[
             (self.by_storm_summary["measured_param"] == the_param)
             & (self.by_storm_summary["Location"] == the_location)
         ].reset_index()
-        df2 = (
-            pk_data[["date_text", "storm_number"]]
-            .drop_duplicates()
-            .set_index("date_text")
-        )
+        df2 = pk_data[["date_text", "storm_number"]].drop_duplicates().set_index("date_text")
         date_opts_dict = df2.to_dict()["storm_number"]
         if len(df2.index) > 0:
             init_selected_date = df2.index[0]
@@ -90,8 +83,7 @@ class ParameterizedStorm(param.Parameterized):
         self.single_storm_number = new_selected_storm_no
         if new_selected_storm_no == cur_selected_storm_no:
             print(
-                strftime("%H:%M:%S  ", gmtime())
-                + "Manually triggering a single_storm_number event"
+                strftime("%H:%M:%S  ", gmtime()) + "Manually triggering a single_storm_number event"
             )
             self.param.trigger("single_storm_number")
         print(strftime("%H:%M:%S  ", gmtime()) + "finished _update_dates")

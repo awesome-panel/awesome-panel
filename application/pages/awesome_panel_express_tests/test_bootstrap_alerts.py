@@ -9,10 +9,11 @@ experience.
 - The JavaScript we cannot use as it confuses the Bokeh layout engine
 - The CSS has to be rewritten. So that is what I have to done the few things I need.
 """
-from application.template import get_template
 import awesome_panel.express as pnx
 import panel as pn
 from awesome_panel.express.testing import TestApp
+
+from application.template import get_template
 
 pnx.bootstrap.extend()
 
@@ -66,7 +67,7 @@ def view() -> pn.Column:
     Returns:
         pn.Column -- A Column containing all the tests
     """
-    pn.config.sizing_mode="stretch_width"
+    pn.config.sizing_mode = "stretch_width"
     main = [
         pn.pane.Markdown(__doc__),
         test_info_alert(),

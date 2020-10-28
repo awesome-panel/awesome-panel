@@ -19,10 +19,10 @@ class ProgressSpinnerComponent(pn.pane.HTML):
 
         super().__init__(**params)
 
-        self._update()
+        self._update_spinner()
 
     @param.depends("progress_service.progress", "theme_service.theme", watch=True)
-    def _update(self, _=None):
+    def _update_spinner(self, _=None):
         # pylint: disable=no-member
         if self.theme_service.theme:
             if self.progress_service.progress.active:

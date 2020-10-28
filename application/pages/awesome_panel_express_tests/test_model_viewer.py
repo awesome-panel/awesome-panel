@@ -35,6 +35,8 @@ express/components/model_viewer.py)
 import panel as pn
 from awesome_panel.express.components import ModelViewer
 
+from application.template import get_template
+
 MODELVIEWER_LOGO = '<img src="https://avatars1.githubusercontent.com/u/1342004?v=4&amp;s=40" style="height:50px"></img>'
 PANEL_LOGO = (
     '<img src="https://panel.holoviz.org/_static/logo_stacked.png" style="height:50px"></img>'
@@ -44,6 +46,7 @@ GRAY = "#eeeeee"
 
 
 def create_app(**params):
+    pn.config.sizing_mode = "stretch_width"
     top_app_bar = pn.Column(
         pn.layout.Row(
             pn.pane.HTML(MODELVIEWER_LOGO, width=50, sizing_mode="fixed"),
@@ -69,14 +72,14 @@ def create_app(**params):
         background=GRAY,
     )
 
-    return pn.Column(
+    main = [
         pn.pane.Markdown(__doc__),
         top_app_bar,
         pn.Row(model_viewer, pn.layout.HSpacer(), settings_bar, background=BLUE),
         model_viewer.css_pane,
         model_viewer.js_pane,
-        sizing_mode="stretch_width",
-    )
+    ]
+    return get_template(title="Test Model Viewer", main=main)
 
 
 def view():

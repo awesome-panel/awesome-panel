@@ -18,20 +18,17 @@ class Something(param.Parameterized):
     def _create_view(self):
         panel_left = pn.Param(
             self,
-                parameters=["str1", "str2"],
-                widgets={"str1": {"margin": (100, 100, 100, 100)}, "str2": {"background": "lightgray"}},
-            )
+            parameters=["str1", "str2"],
+            widgets={"str1": {"margin": (100, 100, 100, 100)}, "str2": {"background": "lightgray"}},
+        )
         panel_right = pn.pane.DataFrame(
             object=self.dataframe,
             margin=(100, 0, 0, 0),
             width=200,
             height=300,
-            )
-        return pn.Column(
-            pn.Row(
-                panel_left, panel_right
-            )
         )
+        return pn.Column(pn.Row(panel_left, panel_right))
 
-dataframe=pd.DataFrame({"x": [1,2,3], "y": [2,4,6]})
+
+dataframe = pd.DataFrame({"x": [1, 2, 3], "y": [2, 4, 6]})
 Something(dataframe=dataframe).view.servable()

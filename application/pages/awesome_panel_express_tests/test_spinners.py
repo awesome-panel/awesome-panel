@@ -12,6 +12,8 @@ import awesome_panel.express as pnx
 import panel as pn
 from awesome_panel.express.testing import TestApp
 
+from application.template import get_template
+
 
 def test_default_spinner():
     """Show the default spinner"""
@@ -87,13 +89,14 @@ def view() -> pn.Column:
     Returns:
         pn.Column -- A Column containing all the tests
     """
-    return pn.Column(
+    main = [
         pn.pane.Markdown(__doc__),
         test_default_spinner(),
         test_all_spinners(),
         test_spinner_while_python_executing(),
         test_spinner_can_be_centered(),
-    )
+    ]
+    return get_template(title="Test Spinners", main=main)
 
 
 if __name__.startswith("bokeh"):

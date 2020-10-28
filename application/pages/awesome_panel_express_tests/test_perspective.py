@@ -39,7 +39,9 @@ import pathlib
 
 import pandas as pd
 import panel as pn
-from awesome_panel.express.components import PerspectiveViewer
+from awesome_panel_extensions.widgets.perspective_viewer import PerspectiveViewer
+
+from application.template import get_template
 
 DARK_BACKGROUND = "rgb(42, 44, 47)"
 DARK_COLOR = "white"
@@ -58,8 +60,10 @@ def create_app(**params) -> pn.Column:
     Returns:
         pn.Column: The app
     """
-
-    perspective_viewer = PerspectiveViewer(sizing_mode="stretch_both", data=dataframe)
+    pn.config.sizing_mode = "stretch_width"
+    perspective_viewer = PerspectiveViewer(
+        value=dataframe, theme="material-dark", sizing_mode="stretch_both"
+    )
 
     top_app_bar = pn.Row(
         pn.pane.PNG(PERSPECTIVE_LOGO, height=50, margin=(10, 25, 10, 10)),
@@ -89,7 +93,7 @@ def create_app(**params) -> pn.Column:
         background="#9E9E9E",
     )
 
-    return pn.Column(
+    main = [
         pn.pane.Markdown(__doc__),
         top_app_bar,
         pn.Row(
@@ -101,8 +105,8 @@ def create_app(**params) -> pn.Column:
             background=DARK_BACKGROUND,
         ),
         pn.layout.HSpacer(height=50),
-        **params
-    )
+    ]
+    return get_template(title="Test Perspective", main=main)
 
 
 def view() -> pn.Column:
@@ -111,7 +115,7 @@ def view() -> pn.Column:
     Returns:
         pn.Column: The app
     """
-    return create_app(height=800, sizing_mode="stretch_width")
+    return create_app()
 
 
 if __name__.startswith("bokeh"):

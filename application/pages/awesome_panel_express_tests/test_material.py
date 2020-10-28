@@ -15,6 +15,8 @@ master/package/awesome_panel/express/components/material/__init__.py),
 import panel as pn
 from awesome_panel.express.components import material
 
+from application.template import get_template
+
 
 def section(component, message=None, show_html=False):
     """Helper function. Turns the component into a tuple of components containing
@@ -50,7 +52,7 @@ def section(component, message=None, show_html=False):
     )
 
 
-def view(configure=False) -> pn.Column:
+def view(configure=True) -> pn.Column:
     """Returns a view of the Material Components
 
     Args:
@@ -60,6 +62,7 @@ def view(configure=False) -> pn.Column:
     Returns:
         pn.Column: A Column view of the Material Components
     """
+    pn.config.sizing_mode = "stretch_width"
     button = material.MWCButton(name="Click Me", icon="favorite")
     select = material.MWCSelect(name="Framework", options={"p": "Panel", "v": "Voila"}, value="p")
     slider = material.MWCSlider(name="Slide Me")
@@ -76,7 +79,7 @@ def view(configure=False) -> pn.Column:
         pn.config.js_files["mwc"] = material.MWC_JS
         objects.append(material.fonts_pane)
 
-    return pn.Column(*objects, name="Material Components", sizing_mode="fixed", width=500)
+    return get_template(title="Material Components", main=objects, main_max_width="500px")
 
 
 if __name__.startswith("bokeh"):

@@ -1,5 +1,5 @@
-import panel as pn
 import numpy as np
+import panel as pn
 
 pn.extension()
 

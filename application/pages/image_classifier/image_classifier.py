@@ -7,7 +7,6 @@ and get a predicted classification in return.
 
 This app is inspired by the awesome [imageNet](https://github.com/iamatulsingh/imageNet-streamlit)
 application developed by [Atul Kumar Singh](https://github.com/iamatulsingh)."""
-from application.template import get_template
 import io
 import os
 from base64 import b64encode
@@ -22,6 +21,8 @@ import panel as pn
 import param
 from PIL import Image
 
+from application.template import get_template
+
 pn.extension("vega")
 
 
@@ -30,8 +31,8 @@ class KerasApplication(NamedTuple):
 
     name: str
     keras_application: Callable
-    preprocess_input_func: Callable # = imagenet_utils.preprocess_input
-    decode_predictions_func: Callable # = imagenet_utils.decode_predictions
+    preprocess_input_func: Callable  # = imagenet_utils.preprocess_input
+    decode_predictions_func: Callable  # = imagenet_utils.decode_predictions
     load_img_func: Callable
     img_to_array_func: Callable
     input_shape: Tuple[int, int,] = (
@@ -39,7 +40,6 @@ class KerasApplication(NamedTuple):
         224,
     )
     url: str = "https://keras.io/applications/"
-
 
     def load_image(
         self,
@@ -211,7 +211,7 @@ class KerasApplication(NamedTuple):
 
 # See https://keras.io/applications/
 DEFAULT_KERAS_APPLICATION_INDEX = 2
-KERAS_APPLICATIONS: List[KerasApplication]=[]
+KERAS_APPLICATIONS: List[KerasApplication] = []
 
 # Hack
 # I get a '_thread._local' object has no attribute 'value' error without this
@@ -221,7 +221,7 @@ def config_keras_applications():
     # We need to do these import outside of toplevel because otherwise every time you run python
     # for testing or running some other script it loads Tensorflow and slows things down.
     # pylint: disable=import-outside-toplevel
-    global KERAS_APPLICATIONS # pylint: disable=global-statement
+    global KERAS_APPLICATIONS  # pylint: disable=global-statement
     if KERAS_APPLICATIONS:
         return
 
@@ -240,7 +240,6 @@ def config_keras_applications():
     )
     from keras.preprocessing.image import img_to_array, load_img
 
-
     KERAS_APPLICATIONS = [
         KerasApplication(
             "DenseNet121",
@@ -248,8 +247,8 @@ def config_keras_applications():
             url="https://keras.io/applications/#densenet",
             preprocess_input_func=densenet.preprocess_input,
             decode_predictions_func=densenet.decode_predictions,
-            img_to_array_func = img_to_array,
-            load_img_func = load_img,
+            img_to_array_func=img_to_array,
+            load_img_func=load_img,
         ),
         KerasApplication(
             "InceptionV3",
@@ -261,8 +260,8 @@ def config_keras_applications():
             url="https://keras.io/applications/#inceptionv3",
             preprocess_input_func=inception_v3.preprocess_input,
             decode_predictions_func=inception_v3.decode_predictions,
-            img_to_array_func = img_to_array,
-            load_img_func = load_img,
+            img_to_array_func=img_to_array,
+            load_img_func=load_img,
         ),
         KerasApplication(
             "MobileNetV2",
@@ -270,8 +269,8 @@ def config_keras_applications():
             url="https://keras.io/applications/#mobilenet",
             preprocess_input_func=mobilenet_v2.preprocess_input,
             decode_predictions_func=mobilenet_v2.decode_predictions,
-            img_to_array_func = img_to_array,
-            load_img_func = load_img,
+            img_to_array_func=img_to_array,
+            load_img_func=load_img,
         ),
         KerasApplication(
             "NASNetMobile",
@@ -279,8 +278,8 @@ def config_keras_applications():
             url="https://keras.io/applications/#nasnet",
             preprocess_input_func=nasnet.preprocess_input,
             decode_predictions_func=nasnet.decode_predictions,
-            img_to_array_func = img_to_array,
-            load_img_func = load_img,
+            img_to_array_func=img_to_array,
+            load_img_func=load_img,
         ),
         KerasApplication(
             "NASNetLarge",
@@ -292,8 +291,8 @@ def config_keras_applications():
             url="https://keras.io/applications/#nasnet",
             preprocess_input_func=nasnet.preprocess_input,
             decode_predictions_func=nasnet.decode_predictions,
-            img_to_array_func = img_to_array,
-            load_img_func = load_img,
+            img_to_array_func=img_to_array,
+            load_img_func=load_img,
         ),
         KerasApplication(
             "ResNet50",
@@ -301,8 +300,8 @@ def config_keras_applications():
             url="https://keras.io/applications/#resnet",
             preprocess_input_func=resnet.preprocess_input,
             decode_predictions_func=resnet.decode_predictions,
-            img_to_array_func = img_to_array,
-            load_img_func = load_img,
+            img_to_array_func=img_to_array,
+            load_img_func=load_img,
         ),
         KerasApplication(
             "VGG19",
@@ -310,8 +309,8 @@ def config_keras_applications():
             url="https://keras.io/applications/#vgg19",
             preprocess_input_func=vgg19.preprocess_input,
             decode_predictions_func=vgg19.decode_predictions,
-            img_to_array_func = img_to_array,
-            load_img_func = load_img,
+            img_to_array_func=img_to_array,
+            load_img_func=load_img,
         ),
         KerasApplication(
             "Xception",
@@ -323,8 +322,8 @@ def config_keras_applications():
             url="https://keras.io/applications/#inceptionv3",
             preprocess_input_func=xception.preprocess_input,
             decode_predictions_func=xception.decode_predictions,
-            img_to_array_func = img_to_array,
-            load_img_func = load_img,
+            img_to_array_func=img_to_array,
+            load_img_func=load_img,
         ),
     ]
 
@@ -522,7 +521,7 @@ def view():
 
     image_classifier_app = ImageClassifierApp()
 
-    pn.config.sizing_mode="stretch_width"
+    pn.config.sizing_mode = "stretch_width"
     main = [
         pnx.Header(
             "Image Classification with Keras and Tensorflow.",

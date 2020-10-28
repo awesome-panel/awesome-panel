@@ -11,8 +11,8 @@ import holoviews as hv
 import hvplot.pandas  # pylint: disable=unused-import
 import pandas as pd
 import panel as pn
-from panel.template.vanilla import VanillaTemplate
 import param
+
 from application.template import get_template
 
 EMPTY_DATAFRAME = pd.DataFrame(columns=["x", "y"])
@@ -78,8 +78,8 @@ class DataExplorer(param.Parameterized):
 
     def _get_view(self):
         """Returns the application view"""
-        pn.config.sizing_mode="stretch_width"
-        main=[
+        pn.config.sizing_mode = "stretch_width"
+        main = [
             pn.pane.Markdown(__doc__),
             pn.pane.Markdown("#### Settings"),
             pn.Param(
@@ -97,13 +97,13 @@ class DataExplorer(param.Parameterized):
         return get_template(title="Data Explorer Loading", main=main)
 
 
-
 def view():
     """Serves the app.
 
     Needed for inclusion to awesome-panel.org Gallery
     """
     return DataExplorer().view
+
 
 if __name__.startswith("bokeh"):
     view().servable()

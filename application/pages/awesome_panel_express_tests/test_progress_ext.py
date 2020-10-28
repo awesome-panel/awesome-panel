@@ -35,6 +35,8 @@ import panel as pn
 from awesome_panel.express import ProgressExt
 from awesome_panel.express.testing import TestApp
 
+from application.template import get_template
+
 
 def test_view_value_and_message():
     """We test the view with a value and a message
@@ -226,7 +228,8 @@ def view() -> pn.Column:
     Returns:
         pn.Column -- A Column containing all the tests
     """
-    return pn.Column(
+    pn.config.sizing_mode = "stretch_width"
+    main = [
         __doc__,
         test_view_value_and_message,
         test_view_message_only,
@@ -238,8 +241,8 @@ def view() -> pn.Column:
         test_increment_as_context_manager,
         test_increment_as_decorator,
         pn.layout.HSpacer(height=100),
-        width=800,
-    )
+    ]
+    return get_template(title="Test Progress Extension", main=main, main_max_width="800px")
 
 
 if __name__.startswith("bokeh"):

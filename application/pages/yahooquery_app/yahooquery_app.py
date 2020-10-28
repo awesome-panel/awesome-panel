@@ -10,7 +10,6 @@ This app was first developed in Streamlit by [Doug Guthrie](https://github/dpgut
 This version of the app is developed in [Panel](https://panel.pyviz.org/) by [Marc Skov Madsen]\
     (https://datamodelsanalytics.com)
 """
-from application.template import get_template
 import datetime
 from functools import lru_cache
 from typing import Dict, List, Tuple
@@ -21,6 +20,8 @@ import pandas as pd
 import panel as pn
 import param
 from yahooquery import Ticker
+
+from application.template import get_template
 
 PERIOD_END_DATE = datetime.datetime.now().date()
 PERIOD_START_DATE = PERIOD_END_DATE - datetime.timedelta(days=365)
@@ -876,7 +877,7 @@ class YahooQueryApp(Page):
         Returns:
             pn.viewable.Viewable: Serve this via .servable()
         """
-        pn.config.sizing_mode="stretch_width"
+        pn.config.sizing_mode = "stretch_width"
         pages_list = [
             (
                 key,
