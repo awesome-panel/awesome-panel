@@ -121,13 +121,13 @@ def get_template(  # pylint: disable=too-many-arguments
         template = pn.state.session_args.get("template", TEMPLATE)
         if isinstance(template, list):
             template = template[0].decode("utf-8")
-
+    template = template.strip("'").strip('"')
     if not theme:
         theme = pn.state.session_args.get("theme", THEME)
         if isinstance(theme, list):
             theme = theme[0].decode("utf-8")
+    theme = theme.strip("'").strip('"')
     template_class = TEMPLATES.get(str(template), TEMPLATES[DEFAULT_TEMPLATE])
-    print(template_class)
     # To be fixed with PR https://github.com/holoviz/panel/pull/1694
     if "header" in params:
         params["header"] = _get_params(params["header"], template_class.param.header.class_)

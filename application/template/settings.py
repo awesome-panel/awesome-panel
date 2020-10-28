@@ -30,6 +30,7 @@ class SiteSettings(param.Parameterized):
     def _update_param_from_session_args(self, parameter, params):
         if parameter in pn.state.session_args:
             value = pn.state.session_args[parameter][0].decode("utf-8")
+            value=value.strip("'").strip('"')
             if value in self.param[parameter].objects:
                 params[parameter] = value
 

@@ -8,7 +8,7 @@ Awesome Panel also the [awesome-panel-extensions package](https://awesome-panel.
 
 [Panel](https://panel.holoviz.org) is very powerful framework for creating powerful analytics apps in Python **using the tools you know and love &#128013; &#10084; &#65039;**.
 
-It's a super power for you and your team to master a framework like this if you work with **data, models and analytics**. It's great for **ML and AI** use cases and supports the process from **exploration to production** and back.
+It's a super power for you and your team to master a framework like this if you work with **data, models and analytics**. It's great for **ML and AI** use cases and supports your process **from exploration to production and back**.
 
 <div align="center" style="margin: 2em;">
 <a href="classic-dashboard">
@@ -85,9 +85,9 @@ If you need more convincing first, then take a look at the first **4 minutes** o
     <iframe src="https://www.youtube.com/embed/Ohr29FJjBi0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 80%;height:300px;margin-left: auto;margin-right:auto; border: 1px silver solid"></iframe>
 </div>
 
-You also find inspiration examples in the [Panel Example Gallery](http://panel.pyviz.org/gallery/index.html).
+You also find inspiration in the [Panel Example Gallery](http://panel.pyviz.org/gallery/index.html) or join the community on [Discourse](https://discourse.holoviz.org/).
 
-## Panel Works in your Editor and Jupyter Notebook
+## Panel works in your Editor and Jupyter Notebook
 
 You can develop your apps in editors like **VS Code, PyCharm and Spyder**. You can also develop your apps in a **Jupyter Notebook or Labs**. You can also use **ipywidgets** in your Panel apps.
 
