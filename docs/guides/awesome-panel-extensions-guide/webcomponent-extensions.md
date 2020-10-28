@@ -21,7 +21,7 @@ We will start by importing the dependencies
 ```python
 import panel as pn
 import param
-from awesome_panel_extensions.pane import WebComponent
+from awesome_panel_extensions.web_component import WebComponent
 ```
 
 Then we define the `MWCButton`.
