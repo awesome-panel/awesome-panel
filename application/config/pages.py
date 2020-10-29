@@ -85,7 +85,7 @@ BOOTSTRAP_DASHBOARD = Page(
     ],
     component=pages.bootstrap_dashboard,
     author=authors.MARC_SKOV_MADSEN,
-    url="boostrap-dashboard",
+    url="bootstrap-dashboard",
 )
 CUSTOM_BOKEH_MODEL = Page(
     name="Custom Bokeh Model",

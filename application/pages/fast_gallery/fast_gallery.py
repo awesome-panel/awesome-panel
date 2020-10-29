@@ -45,7 +45,7 @@ def get_applications():
             Application(
                 name="Bootstrap Dashboard",
                 description="",
-                url="boostrap-dashboard",
+                url="bootstrap-dashboard",
                 thumbnail_url="https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/bootstrap_dashboard.png",
                 code_url="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/bootstrap_dashboard/main.py",
                 author=marc_skov_madsen,

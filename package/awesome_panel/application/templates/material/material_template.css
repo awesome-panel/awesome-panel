@@ -74,3 +74,30 @@ div#spinner {
     color: black;
 }
 
+
+.bk-root .bk-btn {
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    cursor: pointer;
+    padding: 6px 12px;
+    font-size: 12px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    outline: 0;
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+  }
+  .bk-root .bk-btn:hover,
+  .bk-root .bk-btn:focus {
+    text-decoration: none;
+  }
+  .bk-root .bk-btn:active,
+  .bk-root .bk-btn.bk-active {
+    background-image: none;
+    box-shadow: none;
+  }

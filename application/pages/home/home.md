@@ -2,7 +2,7 @@
 
 The purpose of the Awesome Panel Project is to share knowledge on how Awesome Panel is and can become. Naturally this site is **MADE WITH PANEL**.
 
-Awesome Panel also the [awesome-panel-extensions package](https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html). Checkout more awesome resources in the sidebar.
+Awesome Panel also provides the [awesome-panel-extensions package](https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html). Checkout more awesome resources in the sidebar.
 
 ## Panel is a Powerful Framework for Analytics Apps in Python
 
@@ -10,7 +10,7 @@ Awesome Panel also the [awesome-panel-extensions package](https://awesome-panel.
 
 It's a super power for you and your team to master a framework like this if you work with **data, models and analytics**. It's great for **ML and AI** use cases and supports your process **from exploration to production and back**.
 
-<div align="center" style="margin: 2em;">
+<div align="center" style="margin: 2em; max-height: 600px" >
 <a href="classic-dashboard">
     <img
         alt="Classic Dashboard"
@@ -21,7 +21,7 @@ It's a super power for you and your team to master a framework like this if you 
     <img
         alt="DE:TR"
         src="https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/videos/detr-app.gif?raw=true"
-        style="max-width:40%;max-height:300px;border-radius:2px;"
+        style="max-width:40%;max-height:600px;border-radius:2px;"
     >
 </a>
 <a href="echarts">
@@ -99,7 +99,7 @@ Checkout the PerspectiveViewer notebook on binder.
 
 <a class="reference external" href="https://mybinder.org/v2/gh/MarcSkovMadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fwidgets%2FPerspectiveViewer.ipynb" target="_blank"><img src="https://mybinder.org/badge_logo.svg" style="height:25px;display:inline;margin:5px"></a> <a class="reference external" href="https://nbviewer.jupyter.org/github/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/reference/widgets/PerspectiveViewer.ipynb" target="_blank"><img src="https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg" style="height:25px;display:inline;margin:5px"></a>
 
-## Panel is Open Source
+## Panel is Open Source and Free
 
 Panel is completely open source, available under a BSD license freely for both commercial and non-commercial use. Panel is part of the [HoloViz](https://holoviz.org/) ecosystem and works really well with all the HoloViz tools..
 
