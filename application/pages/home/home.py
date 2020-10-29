@@ -23,6 +23,7 @@ SECTIONS = SECTIONS_PATH.read_text()
 
 # SECTIONS = _split_sections()
 
+
 def view():
     """The home view of awesome-panel.org"""
     pn.config.sizing_mode = "stretch_width"

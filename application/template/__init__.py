@@ -4,8 +4,8 @@ from typing import Dict, List, Optional
 
 import panel as pn
 
-from application.template.settings import SiteSettings
 from application.shared.logger import get_logger
+from application.template.settings import SiteSettings
 
 logger = get_logger(__name__)
 
@@ -44,6 +44,7 @@ LINKS = LINKS_PATH.read_text()
 TEMPLATE_CSS_ID = "/* CUSTOM TEMPLATE CSS */\n"
 TEMPLATE_JS_ID = "// CUSTOM TEMPLATE JS"
 
+
 def _set_template_css(template, theme):
     # remove other site css
     pn.config.raw_css = [css for css in pn.config.raw_css if not css.startswith(TEMPLATE_CSS_ID)]
@@ -63,8 +64,9 @@ def _set_template_css(template, theme):
             pn.state.cache.pop(file)
         pn.config.raw_css.append(text)
 
+
 def _get_template_js(template):
-    js = []
+    jss = []
     files = [
         f"{template}.js",
     ]
@@ -75,8 +77,9 @@ def _get_template_js(template):
         else:
             text = pn.state.cache[file]
             pn.state.cache.pop(file)
-        js.append(text)
-    return "\n".join(js)
+        jss.append(text)
+    return "\n".join(jss)
+
 
 def _set_template_main(template: pn.template.BaseTemplate, main: List):
     if isinstance(template, pn.template.ReactTemplate):
@@ -111,7 +114,7 @@ def _get_params(value, class_):
     return value
 
 
-def get_template(  # pylint: disable=too-many-arguments
+def get_template(  # pylint: disable=too-many-arguments, too-complex
     title: str,
     template: Optional[str] = None,
     theme: Optional[str] = None,
@@ -136,7 +139,6 @@ def get_template(  # pylint: disable=too-many-arguments
     """
     logger.info("Getting Template")
     logger.info(pn.state.session_args)
-
 
     site_parameters = []
     if not template:
@@ -179,30 +181,8 @@ def get_template(  # pylint: disable=too-many-arguments
 
     if site_parameters:
         site_settings = SiteSettings(parameters=site_parameters)
-        header = pn.Row(
-            pn.layout.HSpacer(),
-            site_settings.view,
-            sizing_mode="stretch_width"
-        )
+        header = pn.Row(pn.layout.HSpacer(), site_settings.view, sizing_mode="stretch_width")
         template_instance.header.append(header)
-
-    # js = _get_template_js(template)
-#     def execute_js():
-#         print("execute")
-#         # template_instance._js_area.object = f"""<script>{js}\n updateTemplateClasses()</script>"""
-#         template_instance._js_area.object="""<script>
-# function resizeWindow(){
-#     var evt = document.createEvent('UIEvents');
-#     evt.initUIEvent('resize', true, false,window,0);
-#     window.dispatchEvent(evt);
-#     window.offsetHeight
-# }
-# resizeWindow()
-# console.log("resizing window")
-# </script>
-# """
-#         print("executed")
-#     pn.state.onload(execute_js)
 
     return template_instance
 
