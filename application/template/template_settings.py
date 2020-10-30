@@ -23,7 +23,7 @@ DARK_ICON = Icon(
     fill_color="black",
 )
 # pylint: enable=line-too-long
-class SiteSettings(param.Parameterized):
+class TemplateSettings(param.Parameterized):
     """Collection of user definable settings"""
 
     toggle_theme = param.Action(label="")
@@ -52,6 +52,9 @@ class SiteSettings(param.Parameterized):
 
         self.toggle_theme = self._toggle_theme
 
+        self._create_panels_and_view(parameters)
+
+    def _create_panels_and_view(self, parameters):
         if self.theme == "dark":
             icon = DARK_ICON
         else:
@@ -104,4 +107,4 @@ class SiteSettings(param.Parameterized):
 
 
 if __name__.startswith("bokeh"):
-    SiteSettings().view.servable()
+    TemplateSettings().view.servable()

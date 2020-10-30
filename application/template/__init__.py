@@ -5,7 +5,7 @@ from typing import Dict, List, Optional
 import panel as pn
 
 from application.shared.logger import get_logger
-from application.template.settings import SiteSettings
+from application.template.template_settings import TemplateSettings
 
 logger = get_logger(__name__)
 
@@ -180,7 +180,7 @@ def get_template(  # pylint: disable=too-many-arguments, too-complex
     template_instance.sidebar.append(_get_menu())
 
     if site_parameters:
-        site_settings = SiteSettings(parameters=site_parameters)
+        site_settings = TemplateSettings(parameters=site_parameters)
         header = pn.Row(pn.layout.HSpacer(), site_settings.view, sizing_mode="stretch_width")
         template_instance.header.append(header)
 
