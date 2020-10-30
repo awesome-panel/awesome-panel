@@ -5,9 +5,9 @@ How to capture the click event on Plotly plot with Panel?
 """
 
 import numpy as np
-from panel.template.react import ReactTemplate
-import plotly.graph_objs as go
 import panel as pn
+import plotly.graph_objs as go
+from panel.template.react import ReactTemplate
 
 pn.extension("plotly")
 pn.config.sizing_mode = "stretch_width"
