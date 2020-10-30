@@ -107,7 +107,10 @@ def _get_params(value, class_):
     if class_ == pn.layout.ListLike:
         return class_(objects=value)
     if class_ == pn.layout.GridSpec:
-        logger.debug("grid %s", value, )
+        logger.debug(
+            "grid %s",
+            value,
+        )
         grid = class_()
         for index, item in enumerate(value):
             print(index, item)
