@@ -94,6 +94,7 @@ def _get_menu():
 
 
 def _get_params(value, class_):
+    logger.debug("_get_params %s %s", value, class_)
     if isinstance(value, class_):
         return value
     if isinstance(value, tuple):
@@ -106,8 +107,10 @@ def _get_params(value, class_):
     if class_ == pn.layout.ListLike:
         return class_(objects=value)
     if class_ == pn.layout.GridSpec:
-        grid = class_(ncols=12)
+        logger.debug("grid %s", value, )
+        grid = class_()
         for index, item in enumerate(value):
+            print(index, item)
             grid[index, :] = item
         return grid
 
