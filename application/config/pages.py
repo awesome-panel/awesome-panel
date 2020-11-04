@@ -63,18 +63,18 @@ RESOURCES = Page(
     author=authors.MARC_SKOV_MADSEN,
     url="resources",
 )
-ASYNC_TASKS = Page(
-    name="Async Tasks",
-    source_code_url=GITHUB_PAGE_URL + "async_tasks/async_tasks.py",
-    thumbnail_png_url=THUMBNAILS_ROOT + "async_tasks.png",
-    tags=[
-        tags.CODE,
-        tags.APP_IN_GALLERY,
-    ],
-    component=pages.async_tasks,
-    author=authors.JOCHEM_SMIT,
-    url="async-tasks",
-)
+# ASYNC_TASKS = Page(
+#     name="Async Tasks",
+#     source_code_url=GITHUB_PAGE_URL + "async_tasks/async_tasks.py",
+#     thumbnail_png_url=THUMBNAILS_ROOT + "async_tasks.png",
+#     tags=[
+#         tags.CODE,
+#         tags.APP_IN_GALLERY,
+#     ],
+#     component=pages.async_tasks,
+#     author=authors.JOCHEM_SMIT,
+#     url="async-tasks",
+# )
 BOOTSTRAP_DASHBOARD = Page(
     name="Bootstrap Dashboard",
     source_code_url=GITHUB_PAGE_URL + "bootstrap_dashboard/main.py",
@@ -439,7 +439,6 @@ PAGES = [
     HOME,
     RESOURCES,
     ABOUT,
-    ASYNC_TASKS,
     BOOTSTRAP_DASHBOARD,
     CUSTOM_BOKEH_MODEL,
     DASHBOARD,

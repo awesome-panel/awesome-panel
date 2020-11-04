@@ -35,7 +35,7 @@ import param
 
 # pylint: enable=line-too-long
 # pylint: disable=duplicate-code
-from application.template import get_template
+from application.config import site
 
 # pylint: enable=duplicate-code
 KICKSTARTER_PATH = pathlib.Path(__file__).parent / "kickstarter-cleaned.csv"
@@ -182,7 +182,7 @@ class KickstarterDashboard(param.Parameterized):
                 pn.Column(self.scatter_plot_view, self.bar_chart_view, sizing_mode="stretch_width"),
             ),
         ]
-        return get_template(title="Kickstarter Dashboard", main=main, sidebar=sidebar)
+        return site.get_template(title="Kickstarter Dashboard", main=main, sidebar=sidebar)
 
     @staticmethod
     def _extract() -> pd.DataFrame:

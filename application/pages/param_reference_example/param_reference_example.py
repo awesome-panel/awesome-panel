@@ -21,7 +21,7 @@ import pandas as pd
 import panel as pn
 import param
 
-from application.template import get_template
+from application.config import site
 
 DATE_BOUNDS = (
     datetime.date(
@@ -109,7 +109,7 @@ def view() -> pn.viewable.Viewable:
             css_classes=["app"],
         ),
     ]
-    return get_template(title="Param Reference Example", main=main)
+    return site.get_template(title="Param Reference Example", main=main)
 
 
 class PowerCurve(param.Parameterized):

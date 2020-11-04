@@ -4,37 +4,46 @@ import pathlib
 import panel as pn
 from panel.pane import Markdown
 
-from application.template import get_template
+from application.config import site
 
 SECTIONS_PATH = pathlib.Path(__file__).parent / "home.md"
 SECTIONS = SECTIONS_PATH.read_text()
 
-# def _split_sections():
-#     sections = []
-#     section = None
-#     for line in SECTIONS_PATH.read_text().splitlines():
-#         if line.startswith("#"):
-#             if section:
-#                 sections.append(section)
-#             section=line
-#         else:
-#             section+="\n"+line
-#     return sections
+# S = """
+# <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+# <style>
+# h1 { font-family: "Open Sans"; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; }
+# h2 { font-family: "Open Sans"; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 21.4px; }
+# h3 { font-family: "Open Sans"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; }
+# p { font-family: "Open Sans"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: "Open Sans"; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }</style>
+# """
 
-# SECTIONS = _split_sections()
-
-
-def view():
+@site.register(
+    url="",
+    name="Awesome Panel",
+    author="Marc Skov Madsen",
+    description="The Home Page provides an introduction to Panel and awesome-panel.org.",
+    thumbnail_url="home.png",
+    documentation_url="",
+    code_url="home/home.py",
+    gif_url="home.gif",
+    mp4_url="home.mp4",
+)
+def view(template=None):
     """The home view of awesome-panel.org"""
     pn.config.sizing_mode = "stretch_width"
     # SECTIONS = _split_sections()
-    sections = [Markdown(SECTIONS)]
-
-    template = get_template(title="", main=sections, main_max_width="900px")
+    # SECTIONS = SECTIONS_PATH.read_text()
+    main = Markdown(SECTIONS)
+    template.main_max_width="900px"
+    try:
+        template.main[:]=[main]
+    except:
+        template.main[0, 0:12]=[main]
     return template
-
+    # return site.get_template(main=main, main_max_width="900px")
 
 if __name__.startswith("bokeh"):
     view().servable()
 if __name__ == "__main__":
-    view().show()
+    view().show(port=5007, open=False)

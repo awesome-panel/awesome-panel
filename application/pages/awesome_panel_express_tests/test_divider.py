@@ -8,7 +8,7 @@ import awesome_panel.express as pnx
 import panel as pn
 from awesome_panel.express.testing import TestApp
 
-from application.template import get_template
+from application.config import site
 
 
 def test_divider():
@@ -27,7 +27,7 @@ def view() -> pn.Column:
         pn.pane.Markdown(__doc__),
         test_divider(),
     ]
-    return get_template(title="Test Divider", main=main)
+    return site.get_template(title="Test Divider", main=main)
 
 
 if __name__.startswith("bokeh"):

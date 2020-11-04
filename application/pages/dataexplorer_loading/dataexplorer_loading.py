@@ -13,7 +13,7 @@ import pandas as pd
 import panel as pn
 import param
 
-from application.template import get_template
+from application.config import site
 
 EMPTY_DATAFRAME = pd.DataFrame(columns=["x", "y"])
 EMPTY_PLOT = hv.Div("Click UPDATE to load!")
@@ -94,7 +94,7 @@ class DataExplorer(param.Parameterized):
             pn.pane.Markdown("#### Plot"),
             self.plot_pane,
         ]
-        return get_template(title="Data Explorer Loading", main=main)
+        return site.get_template(title="Data Explorer Loading", main=main)
 
 
 def view():

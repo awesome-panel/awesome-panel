@@ -15,7 +15,7 @@ templateLoader = jinja2.FileSystemLoader(searchpath=TEMPLATES_FOLDER)
 loader = jinja2.ChoiceLoader([templateLoader])
 templateEnv = jinja2.Environment(loader=loader)
 TEMPLATE_FILE = "index.html"
-template = templateEnv.get_template(TEMPLATE_FILE)
+template = templateEnv.site.get_template(TEMPLATE_FILE)
 # outputText = template.render()  # this is where to put args to the template renderer
 
 tmpl = pn.Template(template)

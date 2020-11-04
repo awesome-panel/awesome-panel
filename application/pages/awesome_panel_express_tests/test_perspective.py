@@ -41,7 +41,7 @@ import pandas as pd
 import panel as pn
 from awesome_panel_extensions.widgets.perspective_viewer import PerspectiveViewer
 
-from application.template import get_template
+from application.config import site
 
 DARK_BACKGROUND = "rgb(42, 44, 47)"
 DARK_COLOR = "white"
@@ -106,7 +106,7 @@ def create_app(**params) -> pn.Column:
         ),
         pn.layout.HSpacer(height=50),
     ]
-    return get_template(title="Test Perspective", main=main)
+    return site.get_template(title="Test Perspective", main=main)
 
 
 def view() -> pn.Column:

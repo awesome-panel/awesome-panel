@@ -35,7 +35,7 @@ import panel as pn
 from awesome_panel.express import ProgressExt
 from awesome_panel.express.testing import TestApp
 
-from application.template import get_template
+from application.config import site
 
 
 def test_view_value_and_message():
@@ -242,7 +242,7 @@ def view() -> pn.Column:
         test_increment_as_decorator,
         pn.layout.HSpacer(height=100),
     ]
-    return get_template(title="Test Progress Extension", main=main, main_max_width="800px")
+    return site.get_template(title="Test Progress Extension", main=main, main_max_width="800px")
 
 
 if __name__.startswith("bokeh"):

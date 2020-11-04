@@ -1,6 +1,6 @@
 """Author Definitions"""
 # pylint: disable=line-too-long
-from awesome_panel_extensions.models.resource.author import Author
+from awesome_panel_extensions.site.author import Author
 
 ANDREW_HUANG = Author(
     name="Andrew Huang",

@@ -1,6 +1,6 @@
 """In this modue we define the FAST Gallery Resources"""
 # pylint: disable=line-too-long
-from awesome_panel_extensions.models.resource import Resource
+from awesome_panel_extensions.site import Resource
 
 from application.pages.fast_resources_gallery import authors
 

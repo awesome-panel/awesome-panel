@@ -18,24 +18,24 @@ import panel as pn
 
 import application.pages.dialog_template as dialog_template
 from application import config
-from application.pages.fast_gallery.fast_gallery import get_fast_gallery  # type: ignore
+# from application.pages.fast_gallery.fast_gallery import get_fast_gallery  # type: ignore
 
 # links = ""
 # for page in config.pages.NON_GALLERY_PAGES+config.pages.GALLERY_PAGES:
 #     links += f"""\n<a href="{page.url}">{page.name}</a>"""
 # print(links)
-# breakpoint()
-
-if __name__ == "__main__":
-    address = os.getenv("BOKEH_ADDRESS", "0.0.0.0")
-    APP_ROUTES = {
-        **config.pages.URLS,
-        "gallery": get_fast_gallery,
-        "dialog-template": dialog_template.view,
-    }
-    if platform.system() == "Windows":
-        pn.serve(APP_ROUTES, port=80, dev=False, title="Awesome Panel", address=address)
-    else:
-        pn.serve(
-            APP_ROUTES, port=80, dev=False, title="Awesome Panel", address=address, num_procs=4
-        )
+# breakpoint()ss
+print(config.site.routes)
+# if __name__ == "__main__":
+#     address = os.getenv("BOKEH_ADDRESS", "0.0.0.0")
+#     APP_ROUTES = {
+#         **config.site.routes,
+#         # "gallery": get_fast_gallery,
+#         "dialog-template": dialog_template.view,
+#     }
+#     if platform.system() == "Windows":
+#         pn.serve(APP_ROUTES, port=80, dev=False, title="Awesome Panel", address=address)
+#     else:
+#         pn.serve(
+#             APP_ROUTES, port=80, dev=False, title="Awesome Panel", address=address, num_procs=4
+#         )

@@ -15,7 +15,7 @@ master/package/awesome_panel/express/components/material/__init__.py),
 import panel as pn
 from awesome_panel.express.components import material
 
-from application.template import get_template
+from application.config import site
 
 
 def section(component, message=None, show_html=False):
@@ -79,7 +79,7 @@ def view(configure=True) -> pn.Column:
         pn.config.js_files["mwc"] = material.MWC_JS
         objects.append(material.fonts_pane)
 
-    return get_template(title="Material Components", main=objects, main_max_width="500px")
+    return site.get_template(title="Material Components", main=objects, main_max_width="500px")
 
 
 if __name__.startswith("bokeh"):

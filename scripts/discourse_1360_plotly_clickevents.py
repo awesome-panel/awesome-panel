@@ -1,13 +1,6 @@
-"""
-Scoodood is asking on [Discourse](https://discourse.holoviz.org/t/how-to-capture-the-click-event-on-plotly-plot-with-panel/1360)
-
-How to capture the click event on Plotly plot with Panel?
-"""
-
 import numpy as np
 import panel as pn
 import plotly.graph_objs as go
-from panel.template.react import ReactTemplate
 
 pn.extension("plotly")
 pn.config.sizing_mode = "stretch_width"
@@ -22,25 +15,20 @@ def create_plot():
     fig.layout.autosize = True
     return fig
 
+plot = create_plot()
+plot_panel = pn.pane.Plotly(plot, config={"responsive": True}, sizing_mode="stretch_both")
 
-def create_layout(plot):
-    description_panel = pn.layout.Card(
-        __doc__, header="# How to capture Plotly Click Events?", sizing_mode="stretch_both"
-    )
-    plot_panel = pn.pane.Plotly(plot, config={"responsive": True}, sizing_mode="stretch_both")
-    settings_panel = plot_panel.controls(jslink=True)
+@pn.depends(plot_panel.param.click_data, watch=True)
+def print_hello_world(click_data):
+    print("hello world", click_data)
 
-    template = ReactTemplate(title="Awesome Panel - Plotly App")
-    template.sidebar.append(settings_panel)
-    template.main[0, :] = description_panel
-    template.main[1:4, :] = plot_panel
-    return template
+@pn.depends(plot_panel.param.click_data)
+def string_hello_world(click_data):
+    return click_data
 
+app= pn.Column(plot_panel, string_hello_world)
 
-def create_app():
-    plot = create_plot()
-    return create_layout(plot)
-
-
-app = create_app()
 app.servable()
+
+
+

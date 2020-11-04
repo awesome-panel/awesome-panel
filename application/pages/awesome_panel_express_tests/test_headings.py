@@ -4,7 +4,7 @@ import awesome_panel.express as pnx
 import panel as pn
 from awesome_panel.express.testing import TestApp
 
-from application.template import get_template
+from application.config import site
 
 
 def test_headings():
@@ -89,7 +89,7 @@ def view() -> pn.Column:
         test_title_centered_white(),
         test_with_url(),
     ]
-    return get_template(title="Test Heading", main=main)
+    return site.get_template(title="Test Heading", main=main)
 
 
 if __name__.startswith("bokeh"):

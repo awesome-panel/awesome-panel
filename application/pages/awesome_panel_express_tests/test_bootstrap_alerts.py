@@ -13,7 +13,7 @@ import awesome_panel.express as pnx
 import panel as pn
 from awesome_panel.express.testing import TestApp
 
-from application.template import get_template
+from application.config import site
 
 pnx.bootstrap.extend()
 
@@ -74,7 +74,7 @@ def view() -> pn.Column:
         test_error_alert(),
         test_warning_alert(),
     ]
-    return get_template(title="Test Bootstrap Alerts", main=main)
+    return site.get_template(title="Test Bootstrap Alerts", main=main)
 
 
 if __name__.startswith("bokeh"):

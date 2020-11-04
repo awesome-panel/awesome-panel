@@ -37,7 +37,7 @@ import panel as pn
 import param
 from holoviews.plotting.util import process_cmap
 
-from application.template import get_template
+from application.config import site
 
 hv.extension("bokeh")
 
@@ -221,7 +221,7 @@ class Dashboard(param.Parameterized):
 def view():
     """Returns a instance of the Dashboard.view"""
     main = [Dashboard().view]
-    return get_template(title="Classic Dashboard", main=main, main_max_width="80%")
+    return site.get_template(title="Classic Dashboard", main=main, main_max_width="80%")
 
 
 if __name__.startswith("bokeh") or __name__ == "__main__":

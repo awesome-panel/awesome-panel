@@ -35,7 +35,7 @@ express/components/model_viewer.py)
 import panel as pn
 from awesome_panel.express.components import ModelViewer
 
-from application.template import get_template
+from application.config import site
 
 MODELVIEWER_LOGO = '<img src="https://avatars1.githubusercontent.com/u/1342004?v=4&amp;s=40" style="height:50px"></img>'
 PANEL_LOGO = (
@@ -79,7 +79,7 @@ def create_app(**params):
         model_viewer.css_pane,
         model_viewer.js_pane,
     ]
-    return get_template(title="Test Model Viewer", main=main)
+    return site.get_template(title="Test Model Viewer", main=main)
 
 
 def view():

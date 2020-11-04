@@ -21,7 +21,7 @@ import panel as pn
 import param
 from PIL import Image
 
-from application.template import get_template
+from application.config import site
 
 pn.extension("vega")
 
@@ -552,7 +552,7 @@ def view():
         image_classifier_app.image_view,
         image_classifier_app.predictions_view,
     ]
-    return get_template(
+    return site.get_template(
         title="Image Classifier",
         main=main,
     )

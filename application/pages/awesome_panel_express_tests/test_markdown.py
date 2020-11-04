@@ -13,7 +13,7 @@ import awesome_panel.express as pnx
 import panel as pn
 from awesome_panel.express.testing import TestApp
 
-from application.template import get_template
+from application.config import site
 
 TEST_MD_FILE = pathlib.Path(__file__).parent / "data" / "test.md"
 
@@ -107,7 +107,7 @@ def view() -> pn.Column:
         test_markdown_indendation,
         test_markdown_code_block,
     ]
-    return get_template(title="Test Markdown", main=main)
+    return site.get_template(title="Test Markdown", main=main)
 
 
 if __name__.startswith("bokeh"):

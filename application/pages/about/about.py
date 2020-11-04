@@ -3,7 +3,7 @@ import pathlib
 
 from panel.pane import Markdown
 
-from application.template import get_template
+from application.config import site
 
 ABOUT_PATH = pathlib.Path(__file__).parent / "about.md"
 ABOUT = ABOUT_PATH.read_text()
@@ -12,7 +12,7 @@ ABOUT = ABOUT_PATH.read_text()
 def view():
     """The about view of awesome-panel.org"""
     main = [Markdown(ABOUT, sizing_mode="stretch_width")]
-    template = get_template(title="About", main=main)
+    template = site.get_template(title="About", main=main)
     return template
 
 

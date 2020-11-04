@@ -21,7 +21,7 @@ import panel as pn
 import param
 from yahooquery import Ticker
 
-from application.template import get_template
+from application.config import site
 
 PERIOD_END_DATE = datetime.datetime.now().date()
 PERIOD_START_DATE = PERIOD_END_DATE - datetime.timedelta(days=365)
@@ -891,7 +891,7 @@ class YahooQueryApp(Page):
             pages_list,
             sizing_mode="stretch_width",
         )
-        return get_template(title="Yahoo Query App", main=main)
+        return site.get_template(title="Yahoo Query App", main=main)
 
 
 def view():

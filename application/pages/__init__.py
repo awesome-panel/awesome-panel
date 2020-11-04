@@ -1,6 +1,5 @@
 """Exports the different page components to show in the application"""
 from application.pages.about import about
-from application.pages.async_tasks import async_tasks
 from application.pages.awesome_panel_express_tests import (
     test_bootstrap_alerts,
     test_bootstrap_card,

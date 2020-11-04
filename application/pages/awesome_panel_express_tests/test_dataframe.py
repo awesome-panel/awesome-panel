@@ -14,7 +14,7 @@ import panel as pn
 from awesome_panel.express.testing import TestApp
 from awesome_panel.express.widgets import dataframe
 
-from application.template import get_template
+from application.config import site
 
 
 def test_get_default_formatters():
@@ -82,7 +82,7 @@ def view() -> pn.Column:
         pn.pane.Markdown(__doc__),
         test_get_default_formatters,
     ]
-    return get_template(title="Test DataFrame", main=main)
+    return site.get_template(title="Test DataFrame", main=main)
 
 
 if __name__.startswith("bokeh"):

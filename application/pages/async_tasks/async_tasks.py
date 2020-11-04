@@ -37,12 +37,10 @@ from contextlib import contextmanager
 import numpy as np
 import panel as pn
 import param
+from application.config import site
 from panel.io.server import unlocked
 from panel.template import VanillaTemplate
 from tornado.ioloop import IOLoop
-
-from application.template import get_template
-
 
 class ProgressExtMod(param.Parameterized):
     """
@@ -111,7 +109,7 @@ class AsyncApp(param.Parameterized):
         super().__init__(**params)
 
         if not template:
-            template = VanillaTemplate
+            template = VanillaTemplate()
         self.view = template
         pn.config.sizing_mode = "stretch_width"
         self.view.main[:] = [
@@ -166,6 +164,21 @@ class AsyncApp(param.Parameterized):
         return 5
 
 
+@site.register(
+    url="async-tasks",
+    name="Async Tasks",
+    author="Jochem Smit",
+    description="We show case how to start a background thread that updates a progressbar while the rest of the application remains responsive.",
+    thumbnail_url="async_tasks.png",
+    documentation_url="",
+    code_url="async_tasks",
+    gif_url="async_tasks.gif",
+    mp4_url="async_tasks.mp4",
+    tags=[
+        "Code",
+        "App In Gallery",
+    ],
+)
 def view() -> pn.Column:
     """A view of the AsyncApp.
 
@@ -174,7 +187,7 @@ def view() -> pn.Column:
     Returns:
         pn.Column: The view of the AsyncApp
     """
-    template = get_template(title="Async Tasks")
+    template = site.get_template()
     return AsyncApp(template=template).view
 
 

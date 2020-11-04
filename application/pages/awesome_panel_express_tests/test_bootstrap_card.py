@@ -18,7 +18,7 @@ import pandas as pd
 import panel as pn
 from awesome_panel.express.testing import TestApp
 
-from application.template import get_template
+from application.config import site
 
 pnx.bootstrap.extend()
 
@@ -252,7 +252,7 @@ def view() -> pn.Column:
         pn.layout.Divider(),
         test_card_with_code(),
     ]
-    return get_template(title="Test Bootstrap Card", main=main)
+    return site.get_template(title="Test Bootstrap Card", main=main)
 
 
 if __name__.startswith("bokeh"):

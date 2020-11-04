@@ -14,7 +14,7 @@ import hvplot.pandas  # pylint: disable=unused-import
 import pandas as pd
 import panel as pn
 
-from application.template import get_template
+from application.config import site
 
 IMAGE_PATH = (
     pathlib.Path(__file__).parent
@@ -57,7 +57,7 @@ def view() -> pn.Column:
         pn.layout.Divider(sizing_mode="stretch_width"),
         table,
     ]
-    return get_template(
+    return site.get_template(
         title="Bootstrap Dashboard", template="bootstrap", main=main, main_max_width="800px"
     )
 

@@ -15,7 +15,7 @@ from awesome_panel.express.fontawesome.share_link import (
 )
 from awesome_panel.express.testing import TestApp
 
-from application.template import get_template
+from application.config import site
 
 STYLE = """
 <style>
@@ -104,7 +104,7 @@ def view() -> pn.Column:
         test_twitter(),
         test_reddit(),
     ]
-    return get_template(title="Share Links", main=main)
+    return site.get_template(title="Share Links", main=main)
 
 
 if __name__.startswith("bokeh"):

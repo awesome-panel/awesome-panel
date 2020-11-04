@@ -34,7 +34,7 @@ import panel as pn
 import param
 from panel.pane import ECharts
 
-from application.template import get_template
+from application.config import site
 
 BOUNDS = (0, 100)
 
@@ -140,7 +140,7 @@ class EchartsApp(param.Parameterized):
                 settings_pane,
             ),
         ]
-        return get_template(title="Test ECharts", main=main)
+        return site.get_template(title="Test ECharts", main=main)
 
 
 def view():

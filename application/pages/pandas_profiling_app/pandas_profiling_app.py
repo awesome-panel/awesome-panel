@@ -38,7 +38,7 @@ import panel as pn
 import param
 from pandas_profiling import ProfileReport
 
-from application.template import get_template
+from application.config import site
 
 # pylint: disable=line-too-long
 DEFAULT_TITLE = "Pandas Profiling Report"
@@ -216,7 +216,7 @@ class PandasProfilingApp(param.Parameterized):  # pylint: disable=too-many-insta
             tabs,
             pn.layout.HSpacer(height=400),  # Gives better scrolling
         ]
-        _view = get_template(title="Pandas Profiling App", main=main)
+        _view = site.get_template(title="Pandas Profiling App", main=main)
 
         return progress, html_report_pane, _view
 

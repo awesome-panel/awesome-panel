@@ -25,7 +25,7 @@ application/pages/js_actions/js_actions.py)
 """
 import panel as pn
 
-from application.template import get_template
+from application.config import site
 
 STYLE = """
 <style>
@@ -79,7 +79,7 @@ def view():
         app_bar,
         example_tabs,
     ]
-    return get_template(title="JS Actions", main=main)
+    return site.get_template(title="JS Actions", main=main)
 
 
 if __name__.startswith("bokeh"):

@@ -55,7 +55,7 @@ from application.pages.detr.model import (
     filter_boxes,
     get_transform_detr_and_device,
 )
-from application.template import get_template
+from application.config import site
 
 # colors for visualization
 COLORS = [
@@ -182,7 +182,7 @@ class DETRApp(param.Parameterized):  # pylint: disable=too-many-instance-attribu
             plot,
             bottom_selections,
         ]
-        template = get_template(
+        template = site.get_template(
             title="Panel DE:TR",
             main=main,
         )
