@@ -27,8 +27,8 @@ def matplotlib_plot():
 2. Define the list of `components`
 3. Add the list to the Designer via `designer=Designer(components=components)`.
     - Optionally you can configure a dictionary of input `parameters` like DataFrames to be used when reloading the component.
-    - Optionally you can configure `css_file` or `js_file` to be reloaded.
-    - Optionally you can configure additional `modules` to reload.
+    - Optionally you can configure `css_path` or `js_path` to be reloaded.
+    - Optionally you can configure additional `modules_to_reload` to reload.
 4. Add `designer.show()` to your code file
 5. Run or debug the file from the IDE or terminal.
 6. Navigate to [http://localhost:5007](http://localhost:5007) in your browser.
@@ -93,7 +93,7 @@ def _designer():
 _designer().show()
 ```
 
-Please note that you only have to wrap your component in the `ComponentReloader` if you want to specify additional depencies like `parameters`, `css_file`, `js_file` or `modules`.
+Please note that you only have to wrap your component in the `ComponentReloader` if you want to specify additional depencies like `parameters`, `css_paht`, `js_path` or `modules_to_reload`.
 
 If you have a simple component like `matplotlib_plot` without dependencies you can run it via `Designer(matplotlib_plot).show()` or if you have two via `Designer(components=[matplotlib_plot1, matplotlib_plot2]).show()`.
 
