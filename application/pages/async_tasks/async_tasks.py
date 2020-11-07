@@ -14,23 +14,6 @@ If you really deep dive into this, then you can study
 [concurrent.futures.ThreadPoolExecutor](https://docs.python.org/3/library/concurrent.futures.html#threadpoolexecutor),
 [Panel.io.server.unlocked](https://panel.holoviz.org/api/panel.io.html#panel.io.server.unlocked)"""
 
-# **Authors:**
-# [Jochem Smit](https://github.com/Jhsmit), [Marc Skov Madsen](https://github.com/MarcSkovMadsen)
-
-# **Code:**
-# [Code](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/\
-# application/pages/async_tasks/async_tasks.py
-# )
-
-# **Resources:**
-# [tornado.ioloop.IOLoop](https://www.tornadoweb.org/en/stable/ioloop.html),
-# [concurrent.futures.ThreadPoolExecutor]\
-# (https://docs.python.org/3/library/concurrent.futures.html#threadpoolexecutor),
-# [Panel.io.server.unlocked](https://panel.holoviz.org/api/panel.io.html#panel.io.server.unlocked)
-
-# **Tags:**
-# [Panel](https://panel.holoviz.org/), Async
-
 import time
 from concurrent.futures import ThreadPoolExecutor
 from contextlib import contextmanager
@@ -40,11 +23,23 @@ import panel as pn
 import param
 from application.config import site
 from panel.io.server import unlocked
-from panel.template import VanillaTemplate
 from tornado.ioloop import IOLoop
 
-TITLE = "Async Tasks"
-
+APPLICATION = site.create_application(
+    url="async-tasks",
+    name="Async Tasks",
+    author="Jochem Smit",
+    description=__doc__,
+    thumbnail_url="async_tasks.png",
+    documentation_url="",
+    code_url="async_tasks",
+    gif_url="async_tasks.gif",
+    mp4_url="async_tasks.mp4",
+    tags=[
+        "Code",
+        "App In Gallery",
+    ],
+)
 
 class ProgressExtMod(param.Parameterized):
     """
@@ -114,7 +109,6 @@ class AsyncApp(param.Parameterized):
 
         pn.config.sizing_mode = "stretch_width"
 
-        intro_section = site.get_intro_section(TITLE)
         start_async_section = pn.Column(
             pn.pane.Markdown("## Starts async background tasks"),
             pn.Param(
@@ -134,9 +128,9 @@ class AsyncApp(param.Parameterized):
                 show_name=False,
             ),
         )
-        main = [intro_section, start_async_section, working_section]
+        main = [APPLICATION.intro_section(), start_async_section, working_section]
 
-        self.view = site.get_template(
+        self.view = site.create_template(
             main=main,
             main_max_width = "700px",
         )
@@ -172,21 +166,7 @@ class AsyncApp(param.Parameterized):
         time.sleep(np.random.randint(1, 2))
         return 5
 
-@site.register(
-    url="async-tasks",
-    name=TITLE,
-    author="Jochem Smit",
-    description=__doc__,
-    thumbnail_url="async_tasks.png",
-    documentation_url="",
-    code_url="async_tasks",
-    gif_url="async_tasks.gif",
-    mp4_url="async_tasks.mp4",
-    tags=[
-        "Code",
-        "App In Gallery",
-    ],
-)
+@site.add(APPLICATION)
 def view() -> pn.Column:
     """A view of the AsyncApp.
 

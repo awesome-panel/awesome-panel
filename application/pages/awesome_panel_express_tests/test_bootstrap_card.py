@@ -3,24 +3,31 @@
 - [Get Bootstrap Card](https://getbootstrap.com/docs/4.3/components/card/) and
 - [Card Collapse Tricks](https://disjfa.github.io/bootstrap-tricks/card-collapse-tricks/)
 
-Please note that
-
-- the css and javascript of Bootstrap and does not play well with Panel/ Bokeh in my
-experience, so I've had to create a custom version for Panel/ Bokeh.
-    - in order to use the bootstrap functionality you need to run
-    `awesome_panel.express.bootstrap.extend()` to import the relevant css.
-- I'm not sure this is the right way to implement a new Layout. **Is there some better way
-to implement this using the api of Panel and Bokeh?**.
+This example was originally created to show case how to create custom Cards.
+The Cards have now been contributed to Panel. Checkout the reference guide
+[here](https://panel.holoviz.org/reference/layouts/Card.html).
 """
-import awesome_panel.express as pnx
 import hvplot.pandas  # pylint: disable=unused-import
 import pandas as pd
 import panel as pn
 from awesome_panel.express.testing import TestApp
+from awesome_panel import express as pnx
 
 from application.config import site
-
-pnx.bootstrap.extend()
+APPLICATION = site.create_application(
+    url="bootstrap-card",
+    name="Bootstrap Card",
+    author="Marc Skov Madsen",
+    description=__doc__,
+    thumbnail_url="test_bootstrap_card.png",
+    documentation_url="",
+    code_url="awesome_panel_express_tests/test_bootstrap_card.py",
+    gif_url="",
+    mp4_url="",
+    tags=[
+        "Bootstrap",
+    ],
+)
 
 TEXT = """\
 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
@@ -41,12 +48,12 @@ def test_card():
     And the card it self is full width responsive by default.
     """
 
-    card = pnx.Card("Card - Header and Body", TEXT, sizing_mode="stretch_width")
+    card = pn.layout.Card(TEXT, header="Card - Header and Body", sizing_mode="stretch_width")
     return TestApp(
         test_card,
         card,
         width=600,
-        background="ghostwhite",
+
     )
 
 
@@ -58,16 +65,16 @@ def test_card_fixed_width():
 
     And the card it self is fixed to 300px
     """
-    card = pnx.Card(
-        "Card - Fixed Width",
+    card = pn.layout.Card(
         TEXT,
+        header="Card - Fixed Width",
         width=300,
         sizing_mode="fixed",
     )
     return TestApp(
         test_card_fixed_width,
         card,
-        background="ghostwhite",
+
     )
 
 
@@ -150,9 +157,9 @@ def test_card_with_plot():
 
     And the card it self is has a fixed width
     """
-    card = pnx.Card(
-        "Card With Plot",
+    card = pn.layout.Card(
         _holoviews_chart(),
+        header="Card With Plot",
         width=600,
     )
     return TestApp(
@@ -173,14 +180,12 @@ def test_card_with_multiple_panels():
     Please note that due to some Bokeh formatting I've not been able to create
     a divider line that stretches to full width.
     """
-    card = pnx.Card(
-        "Card With Plot",
-        [
-            _holoviews_chart(),
-            "Awesome Panel! " * 50,
-            _holoviews_chart(),
-            "Awesome Panel! " * 50,
-        ],
+    card = pn.layout.Card(
+        _holoviews_chart(),
+        "Awesome Panel! " * 50,
+        _holoviews_chart(),
+        "Awesome Panel! " * 50,
+        header="Card With Plot",
         width=600,
     )
     return TestApp(
@@ -206,12 +211,10 @@ def test_card_collapsable():
     remove that but I do not yet know how.
     - I would like to change the collapse button callback from a Python callback to JS callback.
     """
-    card = pnx.Card(
-        "Card with Plot",
-        [
-            _holoviews_chart(),
+    card = pn.layout.Card(
+        _holoviews_chart(),
             "Awesome Panel! " * 50,
-        ],
+        header="Card with Plot",
         collapsable=True,
         width=600,
     )
@@ -224,12 +227,12 @@ def test_card_collapsable():
 def test_card_with_code():
     """We test that we can create a card with code content"""
     code = """\
-        card = pnx.Card("Code", pnx.Code(code),)
+        card = pn.layout.Card("Code", pn.layout.Code(code),)
         return TestApp(test_card_collapsable, card)"""
-    card = pnx.Card("Code", pnx.Code(code))
+    card = pn.layout.Card(pnx.Code(code), header="Code")
     return TestApp(test_card_with_code, card, width=600)
 
-
+@site.add(APPLICATION)
 def view() -> pn.Column:
     """Wraps all tests in a Column that can be included in the Gallery or served independently
 
@@ -238,7 +241,7 @@ def view() -> pn.Column:
     """
     pn.config.sizing_mode = "stretch_width"
     main = [
-        pn.pane.Markdown(__doc__),
+        APPLICATION.intro_section(),
         pn.layout.Divider(),
         test_card(),
         pn.layout.Divider(),
@@ -252,7 +255,7 @@ def view() -> pn.Column:
         pn.layout.Divider(),
         test_card_with_code(),
     ]
-    return site.get_template(title="Test Bootstrap Card", main=main)
+    return site.create_template(title="Test Bootstrap Card", main=main)
 
 
 if __name__.startswith("bokeh"):

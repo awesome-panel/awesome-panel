@@ -2,8 +2,6 @@ import pathlib
 from typing import List, Optional
 
 import panel as pn
-from awesome_panel_extensions.alpha.resource_view import \
-    view as create_application_view
 from awesome_panel_extensions.site import Site
 from awesome_panel_extensions.site.application import Application
 from panel.template.base import BasicTemplate
@@ -39,8 +37,33 @@ MP4_ROOT="https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awe
 class AwesomePanelSite(Site):
     """The Awesome Panel Site"""
 
-    def register_pre_view(self, application: Application):
-        app = application
+    def create_application(
+        self,
+        url: str,
+        name: str,
+        description: str,
+        author: str,
+        thumbnail_url: str,
+        code_url: str = "",
+        documentation_url: str = "",
+        gif_url: str = "",
+        mp4_url: str = "",
+        youtube_url: str = "",
+        tags: Optional[List]=None,
+    ) -> Application:
+        app = super().create_application(
+            url=url,
+            name=name,
+            description=description,
+            author=author,
+            thumbnail_url=thumbnail_url,
+            code_url=code_url,
+            documentation_url=documentation_url,
+            gif_url=gif_url,
+            mp4_url=mp4_url,
+            youtube_url=youtube_url,
+            tags=tags,
+        )
         if not app.author:
             app.author=DEFAULT_AUTHOR
         if app.thumbnail_url and not app.thumbnail_url.startswith("http"):
@@ -56,13 +79,8 @@ class AwesomePanelSite(Site):
         if not "Application" in app.tags:
             app.tags.append("Application")
 
-        application.tags = list(sorted(application.tags))
-
-        # intro_section = create_application_view(application)
-        # try:
-        #     template.main.append(intro_section)
-        # except:
-        #     template.main[0, 0:12]=intro_section
+        app.tags = list(sorted(app.tags))
+        return app
 
     def register_post_view(self, template: BasicTemplate, application: Application):
         super().register_post_view(template, application)
@@ -71,16 +89,12 @@ class AwesomePanelSite(Site):
             menu = pn.pane.HTML(LINKS, sizing_mode="stretch_width")
             template.sidebar.append(menu)
 
-    def get_template(
+    def create_template(
         self, template: Optional[str] = None, theme: Optional[str] = None, **params
     ) -> pn.template.BaseTemplate:
         params["favicon"] = params.get("favicon", FAVICON)
         params["main_max_width"] = params.get("main_max_width", MAIN_MAX_WIDTH)
-        return super().get_template(template=template, theme=theme, **params)
-
-    def get_intro_section(self, name: str) -> pn.pane.HTML:
-        html = self.get_application(name)._repr_html_()
-        return pn.pane.HTML(html)
+        return super().create_template(template=template, theme=theme, **params)
 
 
 site = AwesomePanelSite(

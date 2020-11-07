@@ -7,7 +7,8 @@ from application.config import site
 
 ABOUT_PATH = pathlib.Path(__file__).parent / "about.md"
 ABOUT = ABOUT_PATH.read_text()
-@site.register(
+
+APPLICATION = site.create_application(
     url="about",
     name="About",
     author="Marc Skov Madsen",
@@ -22,10 +23,12 @@ ABOUT = ABOUT_PATH.read_text()
         "App In Gallery",
     ],
 )
+
+@site.add(APPLICATION)
 def view():
     """The about view of awesome-panel.org"""
     main = [Markdown(ABOUT, sizing_mode="stretch_width")]
-    template = site.get_template(title="About", main=main)
+    template = site.create_template(title="About", main=main)
     return template
 
 if __name__.startswith("bokeh"):
