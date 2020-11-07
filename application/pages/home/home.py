@@ -3,6 +3,7 @@ import pathlib
 
 import panel as pn
 from panel.pane import Markdown
+from panel.template.base import Template
 
 from application.config import site
 
@@ -29,17 +30,11 @@ SECTIONS = SECTIONS_PATH.read_text()
     gif_url="home.gif",
     mp4_url="home.mp4",
 )
-def view(template=None):
+def view():
     """The home view of awesome-panel.org"""
     pn.config.sizing_mode = "stretch_width"
-    # SECTIONS = _split_sections()
-    # SECTIONS = SECTIONS_PATH.read_text()
-    main = Markdown(SECTIONS)
-    template.main_max_width="900px"
-    try:
-        template.main[:]=[main]
-    except:
-        template.main[0, 0:12]=[main]
+    main = [Markdown(SECTIONS)]
+    template=site.get_template(main=main, main_max_width="900px")
     return template
     # return site.get_template(main=main, main_max_width="900px")
 

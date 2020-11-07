@@ -1,6 +1,4 @@
-"""# Panel DE:TR:
-
-[DE⫶TR:](https://github.com/facebookresearch/detr) by [Facebook Research](https://research.fb.com/)
+"""[DE⫶TR:](https://github.com/facebookresearch/detr) by [Facebook Research](https://research.fb.com/)
 provides End-to-End Object Detection with Transformers.
 
 <img style="max-width:100%;height:260px;" \
@@ -18,23 +16,6 @@ I have tried to mature the implementation by
 - Implementing some basic tests
 
 Please note this app is running on very low end, cheap hardware which explains the low performance.
-
-**Author:**
-[Marc Skov Madsen](https://datamodelsanalytics.com)
-
-**Code:**
-[App]\
-(https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/detr/detr.py),
-[Tests]\
-(https://github.com/MarcSkovMadsen/awesome-panel/blob/master/tests/application/detr/test_detr.py)
-
-**Resources:**
-[Dash DE:TR: Demo]\
-(https://dash-gallery.plotly.host/dash-detr/)
-
-**Tags:**
-[Panel](https://panel.holoviz.org/),
-[DE:TR:](https://github.com/facebookresearch/detr)
 """
 import base64
 import random
@@ -70,7 +51,7 @@ COLORS = [
     "#87f5fb",
     "#63326e",
 ] * 50
-
+TITLE="DE:TR: Object Detection"
 
 class DETRApp(param.Parameterized):  # pylint: disable=too-many-instance-attributes
     "A Panel App for object detection using DE:TR:"
@@ -111,7 +92,6 @@ class DETRApp(param.Parameterized):  # pylint: disable=too-many-instance-attribu
         pn.config.sizing_mode = "stretch_width"
         style = pn.pane.HTML(config.STYLE, width=0, height=0, margin=0, sizing_mode="fixed")
 
-        description = pn.pane.Markdown(__doc__)
         progress = pn.widgets.Progress(
             bar_color="secondary", width=285, sizing_mode="fixed", margin=(0, 5, 10, 5)
         )
@@ -173,9 +153,10 @@ class DETRApp(param.Parameterized):  # pylint: disable=too-many-instance-attribu
             ),
         )
         plot = pn.pane.Plotly(height=600, config={"responsive": True})
+        intro_section = site.get_intro_section(TITLE)
         main = [
             style,
-            description,
+            intro_section,
             app_bar,
             pn.Row(pn.Spacer(), progress),
             top_selections,
@@ -212,6 +193,20 @@ class DETRApp(param.Parameterized):  # pylint: disable=too-many-instance-attribu
         self.progress.active = False
 
 
+@site.register(
+    url="detr",
+    name=TITLE,
+    author="Marc Skov Madsen",
+    description=__doc__,
+    thumbnail_url="detr.png",
+    documentation_url="",
+    code_url="detr/detr.py",
+    gif_url="",
+    mp4_url="",
+    tags=[
+        "DE:TR",
+    ],
+)
 def view():
     """Used by the awesome-panel.org application to add it to the gallery"""
     return DETRApp().view

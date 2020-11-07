@@ -1,5 +1,4 @@
-"""# Custom Panel Extensions
-
+"""
 One super power of Panel is that its actually extensible. You can write custom Panes, Layouts and
 Widgets using Bokeh Extensions. This is actually how Panel is developed.
 
@@ -19,7 +18,7 @@ from application.config import site
 
 CUSTOM_TS = pathlib.Path(__file__).parent / "custom_bokeh_model.ts"
 CUSTOM_TS_STR = str(CUSTOM_TS.resolve())
-
+TITLE = "Custom Bokeh Model"
 
 class Custom(HTMLBox):
     """Example implementation of a Custom Bokeh Model"""
@@ -30,7 +29,21 @@ class Custom(HTMLBox):
 
     slider = Instance(Slider)
 
-
+@site.register(
+    url="custom-bokeh-model",
+    name=TITLE,
+    author="Marc Skov Madsen",
+    description=__doc__,
+    thumbnail_url="custom_bokeh_model.png",
+    documentation_url="",
+    code_url="custom_bokeh_model/custom_bokeh_model.py",
+    gif_url="",
+    mp4_url="",
+    tags=[
+        "Code",
+        "App In Gallery",
+    ],
+)
 def view():
     """Run this to run the application"""
     slider = Slider(start=0, end=10, step=0.1, value=0, title="value")
@@ -38,7 +51,7 @@ def view():
     layout = column(slider, custom, sizing_mode="stretch_width")
 
     pn.config.sizing_mode = "stretch_width"
-    main = [pn.pane.Markdown(__doc__), pn.pane.Bokeh(layout)]
+    main = [site.get_intro_section(TITLE), pn.pane.Bokeh(layout)]
     pn.config.sizing_mode = "fixed"
     return site.get_template(title="Custom Model Model", main=main)
 

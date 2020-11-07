@@ -22,12 +22,26 @@ IMAGE_PATH = (
     / "images"
     / "bootstrap_dashboard_template_original.png"
 )
-TEXT = """\
+DESCRIPTION = """\
 The purpose of this app is to test that a **multi-page Dashboard Layout** similar to the [bootstrap dashboard template](https://getbootstrap.com/docs/4.3/examples/dashboard/) from [getboostrap.com](https://getbootstrap.com/) can be implemented in [Panel](https://panel.pyviz.org/).
 
 """
+TITLE = "Bootstrap Dashboard"
 
-
+@site.register(
+    url="bootstrap-dashboard",
+    name=TITLE,
+    author="Marc Skov Madsen",
+    description=DESCRIPTION,
+    thumbnail_url="bootstrap_dashboard.png",
+    documentation_url="",
+    code_url="bootstrap_dashboard/main.py",
+    gif_url="",
+    mp4_url="",
+    tags=[
+        "Bootstrap",
+    ],
+)
 def view() -> pn.Column:
     """# Bootstrap Dashboard Page.
 
@@ -48,7 +62,7 @@ def view() -> pn.Column:
     pn.config.sizing_mode = "stretch_width"
     main = [
         pnx.Header("Bootstrap Dashboard"),
-        pn.pane.Markdown(TEXT),
+        pn.pane.Markdown(DESCRIPTION),
         # pn.pane.PNG(str(IMAGE_PATH), max_width=600, sizing_mode="scale_both"),
         pnx.SubHeader("Dashboard"),
         pn.layout.Divider(sizing_mode="stretch_width"),

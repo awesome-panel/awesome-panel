@@ -19,6 +19,8 @@ class SpinnerBase(pn.pane.HTML):
     width = 64
     height = 64
 
+    priority = 0
+
     def __init__(
         self,
         *args,

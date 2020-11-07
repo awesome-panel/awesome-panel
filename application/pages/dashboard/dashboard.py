@@ -1,5 +1,4 @@
-"""# Classic Dashboard
-
+"""
 The Dashboard app shows how to create a **Classic Dashboard** in **Panel** with
 
 - [Linked Brushing](http://holoviews.org/user_guide/Linked_Brushing.html) (Not yet supported)
@@ -10,23 +9,6 @@ The Dashboard app shows how to create a **Classic Dashboard** in **Panel** with
 This app was kick started by [Pemp](https://discourse.holoviz.org/u/pemp) in a
 [discussion on Discourse]\
 (https://discourse.holoviz.org/t/error-not-supported-between-instances-of-select-and-select/929).
-
-**Author:**
-[Marc Skov Madsen](https://datamodelsanalytics.com),
-[Pemp](https://discourse.holoviz.org/u/pemp)
-
-**Code:**
-[App]\
-(https://github.com/MarcSkovMadsen/awesome-panel/blob/master/\
-application/pages/dashboard/dashboard.py),
-[Tests]\
-(https://github.com/MarcSkovMadsen/awesome-panel/blob/master/\
-tests/application/dashboard/test_dashboard.py)
-
-**Tags:**
-[hvPlot](https://hvplot.holoviz.org/),
-[Holoviews](https://hvplot.holoviz.org/),
-[Panel](https://panel.holoviz.org/)
 """
 import pathlib
 
@@ -69,6 +51,7 @@ STYLE = """
 }
 
 """
+TITLE = "Classic Dashboard"
 
 pn.config.raw_css.append(STYLE)
 ROOT = pathlib.Path(__file__).parent
@@ -157,8 +140,6 @@ class Dashboard(param.Parameterized):
         )
 
         self.view[:] = [  # pylint: disable=unsupported-assignment-operation
-            pn.pane.Markdown(__doc__, sizing_mode="stretch_width"),
-            pn.layout.HSpacer(height=25),
             pn.Column(
                 appbar,
                 settings_bar,
@@ -218,14 +199,29 @@ class Dashboard(param.Parameterized):
         return process_cmap(self.color_map, 1)[0]
 
 
+@site.register(
+    url="classic-dashboard",
+    name=TITLE,
+    author="Marc Skov Madsen",
+    description=__doc__,
+    thumbnail_url="dashboard.png",
+    documentation_url="",
+    code_url="dashboard/dashboard.py",
+    gif_url="",
+    mp4_url="",
+    tags=[
+        "hvPlot", "HoloViews"
+    ],
+)
 def view():
     """Returns a instance of the Dashboard.view"""
-    main = [Dashboard().view]
+    pn.config.sizing_mode="stretch_width"
+    intro_section = site.get_intro_section(TITLE)
+    main = [intro_section, pn.layout.HSpacer(height=25), Dashboard().view]
     return site.get_template(title="Classic Dashboard", main=main, main_max_width="80%")
 
 
 if __name__.startswith("bokeh") or __name__ == "__main__":
-    print("standalone")
     pn.config.raw_css.append(
         """
     body {

@@ -25,6 +25,8 @@ from application.config import site
 
 pn.extension("vega")
 
+TITLE = "Image Classifier"
+
 
 class KerasApplication(NamedTuple):
     """We wrap a Keras Application into this class for ease of use"""
@@ -330,8 +332,6 @@ def config_keras_applications():
 
 # pylint: enable=line-too-long
 
-IMAGE_TYPES = [".jpg"]
-
 # pylint: disable=line-too-long
 def get_resources_markdown(
     model: KerasApplication,
@@ -405,16 +405,9 @@ class ImageClassifierApp(param.Parameterized):
         """A view of the image_file"""
         if self.image_file:
             bytes_io = io.BytesIO(self.image_file)
-            return pn.pane.HTML(
-                (
-                    '<img application="data:image/jpg;base64,{0}" '
-                    'style="height:400px;min-width:600px;"/>'
-                ).format(b64encode(bytes_io.getvalue()).decode("utf-8"))
-            )
+            return pn.pane.JPG(object=bytes_io, height=300)
         return pnx.InfoAlert(
             "Upload an image in .jpg format",
-            height=400,
-            min_width=600,
         )
 
     def report_progress(
@@ -514,7 +507,20 @@ class ImageClassifierApp(param.Parameterized):
             )
         return pn.pane.HTML()
 
-
+@site.register(
+    url="image-classifier",
+    name=TITLE,
+    author="Marc Skov Madsen",
+    description=__doc__,
+    thumbnail_url="image_classifier.png",
+    documentation_url="",
+    code_url="image_classifier/image_classifier.py",
+    gif_url="",
+    mp4_url="",
+    tags=[
+        "Keras",
+    ],
+)
 def view():
     """Run this to run the application"""
     set_environ()
@@ -522,13 +528,9 @@ def view():
     image_classifier_app = ImageClassifierApp()
 
     pn.config.sizing_mode = "stretch_width"
+
     main = [
-        pnx.Header(
-            "Image Classification with Keras and Tensorflow.",
-            height=40,
-        ),
-        pn.pane.Markdown(__doc__),
-        image_classifier_app.resources_view,
+        site.get_intro_section(TITLE),
         pnx.SubHeader("Classifier"),
         pn.Param(
             image_classifier_app.param["model"],
@@ -551,6 +553,7 @@ def view():
         ),
         image_classifier_app.image_view,
         image_classifier_app.predictions_view,
+        image_classifier_app.resources_view,
     ]
     return site.get_template(
         title="Image Classifier",

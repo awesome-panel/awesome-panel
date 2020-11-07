@@ -1,5 +1,5 @@
 """This example was created by as response to
-<a href=https://discourse.holoviz.org/t/how-to-show-a-loading-indication-during-computation/508"
+<a href="https://discourse.holoviz.org/t/how-to-show-a-loading-indication-during-computation/508"
 target="_blank"> Discourse 508</a> <strong>How to show a loading indication during
 computation</strong>.
 """
@@ -23,6 +23,7 @@ SPINNER_URL = (
 )
 SPINNER_HTML = f"<img application='{SPINNER_URL}' style='width:100%'"
 
+TITLE = "DataExplorer - Loading..."
 
 class DataExplorer(param.Parameterized):
     """The DataExplorer App illustrates a progress and loading message"""
@@ -79,8 +80,9 @@ class DataExplorer(param.Parameterized):
     def _get_view(self):
         """Returns the application view"""
         pn.config.sizing_mode = "stretch_width"
+        intro_section=site.get_intro_section(TITLE)
         main = [
-            pn.pane.Markdown(__doc__),
+            intro_section,
             pn.pane.Markdown("#### Settings"),
             pn.Param(
                 self,
@@ -96,7 +98,18 @@ class DataExplorer(param.Parameterized):
         ]
         return site.get_template(title="Data Explorer Loading", main=main)
 
-
+@site.register(
+    url="data-explorer-loading",
+    name=TITLE,
+    author="Marc Skov Madsen",
+    description=__doc__,
+    thumbnail_url="dataexplorer_loading.png",
+    documentation_url="",
+    code_url="dataexplorer_loading/dataexplorer_loading.py",
+    gif_url="",
+    mp4_url="",
+    tags=[],
+)
 def view():
     """Serves the app.
 

@@ -1,34 +1,35 @@
-"""
-# Asynchronous Tasks
-
-When creating awesome analytics apps you sometimes wants to run jobs in the background or provide
+"""When creating awesome analytics apps you sometimes wants to run jobs in the background or provide
 streaming analytics to your users.
 
 Panel also supports these use cases as its running on top of the asynchronous web server Tornado.
 
-Below we show case how a user can start a background thread that updates a progressbar while
+Below we show case how to start a background thread that updates a progressbar while
 the rest of the application remains responsive.
 
 This example is based on the discussion [Can I load data asynchronously in Panel?]\
 (https://discourse.holoviz.org/t/can-i-load-data-asynchronously-in-panel/452).
 
-**Authors:**
-[Jochem Smit](https://github.com/Jhsmit), [Marc Skov Madsen](https://github.com/MarcSkovMadsen)
-
-**Code:**
-[Code](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/\
-application/pages/async_tasks/async_tasks.py
-)
-
-**Resources:**
+If you really deep dive into this, then you can study
 [tornado.ioloop.IOLoop](https://www.tornadoweb.org/en/stable/ioloop.html),
-[concurrent.futures.ThreadPoolExecutor]\
-(https://docs.python.org/3/library/concurrent.futures.html#threadpoolexecutor),
-[Panel.io.server.unlocked](https://panel.holoviz.org/api/panel.io.html#panel.io.server.unlocked)
+[concurrent.futures.ThreadPoolExecutor](https://docs.python.org/3/library/concurrent.futures.html#threadpoolexecutor),
+[Panel.io.server.unlocked](https://panel.holoviz.org/api/panel.io.html#panel.io.server.unlocked)"""
 
-**Tags:**
-[Panel](https://panel.holoviz.org/), Async
-"""
+# **Authors:**
+# [Jochem Smit](https://github.com/Jhsmit), [Marc Skov Madsen](https://github.com/MarcSkovMadsen)
+
+# **Code:**
+# [Code](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/\
+# application/pages/async_tasks/async_tasks.py
+# )
+
+# **Resources:**
+# [tornado.ioloop.IOLoop](https://www.tornadoweb.org/en/stable/ioloop.html),
+# [concurrent.futures.ThreadPoolExecutor]\
+# (https://docs.python.org/3/library/concurrent.futures.html#threadpoolexecutor),
+# [Panel.io.server.unlocked](https://panel.holoviz.org/api/panel.io.html#panel.io.server.unlocked)
+
+# **Tags:**
+# [Panel](https://panel.holoviz.org/), Async
 
 import time
 from concurrent.futures import ThreadPoolExecutor
@@ -41,6 +42,9 @@ from application.config import site
 from panel.io.server import unlocked
 from panel.template import VanillaTemplate
 from tornado.ioloop import IOLoop
+
+TITLE = "Async Tasks"
+
 
 class ProgressExtMod(param.Parameterized):
     """
@@ -105,16 +109,13 @@ class AsyncApp(param.Parameterized):
     result = param.Number(0)
     view = param.Parameter()
 
-    def __init__(self, template=None, **params):
+    def __init__(self, **params):
         super().__init__(**params)
 
-        if not template:
-            template = VanillaTemplate()
-        self.view = template
         pn.config.sizing_mode = "stretch_width"
-        self.view.main[:] = [
-            pn.pane.Markdown(__doc__),
-            pn.layout.Divider(),
+
+        intro_section = site.get_intro_section(TITLE)
+        start_async_section = pn.Column(
             pn.pane.Markdown("## Starts async background tasks"),
             pn.Param(
                 self,
@@ -123,7 +124,8 @@ class AsyncApp(param.Parameterized):
                 show_name=False,
             ),
             progress.view,
-            pn.layout.Divider(),
+        )
+        working_section = pn.Column(
             pn.pane.Markdown("## Works while background tasks are running"),
             pn.Param(
                 self,
@@ -131,8 +133,15 @@ class AsyncApp(param.Parameterized):
                 widgets={"text": {"disabled": True}},
                 show_name=False,
             ),
-        ]
-        self.view.main_max_width = "700px"
+        )
+        main = [intro_section, start_async_section, working_section]
+
+        self.view = site.get_template(
+            main=main,
+            main_max_width = "700px",
+        )
+
+
 
     @param.depends("slider", "select", watch=True)
     def _on_slider_change(self):
@@ -163,12 +172,11 @@ class AsyncApp(param.Parameterized):
         time.sleep(np.random.randint(1, 2))
         return 5
 
-
 @site.register(
     url="async-tasks",
-    name="Async Tasks",
+    name=TITLE,
     author="Jochem Smit",
-    description="We show case how to start a background thread that updates a progressbar while the rest of the application remains responsive.",
+    description=__doc__,
     thumbnail_url="async_tasks.png",
     documentation_url="",
     code_url="async_tasks",
@@ -187,8 +195,7 @@ def view() -> pn.Column:
     Returns:
         pn.Column: The view of the AsyncApp
     """
-    template = site.get_template()
-    return AsyncApp(template=template).view
+    return AsyncApp().view
 
 
 if __name__.startswith("bokeh"):
