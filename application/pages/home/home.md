@@ -75,6 +75,26 @@ You can follow the developments via [Awesome Panel Change Log](https://discourse
 </a>
 </div>
 
+## JupyterCon 2020 Presentation Released
+
+Checkout how Bokeh/ Panel and Jupyter/ IpyWidget ecosystems now work together.
+
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/o3g1CqpZOcA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Awesome Panel Extensions
+
+The [awesome-panel-extensions](https://pypi.org/project/awesome-panel-extensions/) package provides extensions you can use with Panel.
+
+Check out the [Awesome Panel Extensions Documentation](https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html).
+
+[![Awesome Panel Extensions Docs](https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/videos/awesome-panel-extensions-docs.gif?raw=true)](https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html)
+
+The package updates often so if you use it for production please pin to the specific version number.
+
+If you or your organisation want to create your own extensions for Panel, then check out the [Awesome Panel Extensions Guide](https://awesome-panel.readthedocs.io/en/latest/guides/awesome-panel-extensions-guide/index.html).
+
+[![Awesome Panel Extensions Guide](https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/videos/awesome-panel-extensions-guide.gif?raw=true)](https://awesome-panel.readthedocs.io/en/latest/guides/awesome-panel-extensions-guide/index.html)
+
 ## Panel is for You
 
 The only way to truly understand if Panel is something for you is to play around with it. To get started you can use the [Panel Getting Started Guide](http://panel.pyviz.org/getting_started/index.html) or visit the [Panel Reference Gallery](https://panel.pyviz.org/reference/index.html).
