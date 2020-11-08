@@ -22,8 +22,7 @@ APPLICATION = site.create_application(
     url="dataframe-formatting",
     name="Dataframe Formatting",
     author="Marc Skov Madsen",
-    introduction="""This app demonstrates the use of the easy to use dataframe
-    formatters from the awesome-panel-extensions package""",
+    introduction="""Demonstrates how to style and format the DataFrame widget easily""",
     description=__doc__,
     thumbnail_url="test_dataframe.png",
     documentation_url="",

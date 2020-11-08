@@ -31,8 +31,7 @@ APPLICATION = site.create_application(
     url="model-viewer",
     name="Model Viewer",
     author="Marc Skov Madsen",
-    introduction="""This app demonstrates the look and feel of the Google ModelViewer from the
-    awesome-panel-extensions package""",
+    introduction="""Demonstrates the look and feel of the Google ModelViewer in your Panel app""",
     description=__doc__,
     thumbnail_url="test_model_viewer.png",
     documentation_url="",

@@ -73,9 +73,7 @@ APPLICATION = site.create_application(
     description=__doc__,
     thumbnail_url="pandas_profiling_app.png",
     code_url="pandas_profiling_app/pandas_profiling_app.py",
-    tags=[
-        "Pandas", "HTML", "embed"
-    ],
+    tags=["Pandas", "HTML", "embed"],
 )
 
 

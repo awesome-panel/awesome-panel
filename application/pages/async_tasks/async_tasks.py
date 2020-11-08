@@ -31,7 +31,7 @@ APPLICATION = site.create_application(
     url="async-tasks",
     name="Async Tasks",
     author="Jochem Smit",
-    introduction="This app demonstrates how to run background process in your Panel App",
+    introduction="An app using asynchronous background processes",
     description=__doc__,
     thumbnail_url="async_tasks.png",
     documentation_url="",
@@ -39,8 +39,7 @@ APPLICATION = site.create_application(
     gif_url="async_tasks.gif",
     mp4_url="async_tasks.mp4",
     tags=[
-        "Code",
-        "App In Gallery",
+        "Async",
     ],
 )
 

@@ -64,7 +64,8 @@ APPLICATION = site.create_application(
     gif_url="",
     mp4_url="",
     tags=[
-        "DE:TR", "Plotly",
+        "DE:TR",
+        "Plotly",
     ],
 )
 
