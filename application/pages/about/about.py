@@ -25,7 +25,7 @@ APPLICATION = site.create_application(
     ],
 )
 
-# @site.add(APPLICATION)
+@site.add(APPLICATION)
 def view():
     """The about view of awesome-panel.org"""
     main = [Markdown(ABOUT, sizing_mode="stretch_width")]

@@ -75,26 +75,6 @@ You can follow the developments via [Awesome Panel Change Log](https://discourse
 </a>
 </div>
 
-## JupyterCon 2020 Presentation Released
-
-Checkout how Bokeh/ Panel and Jupyter/ IpyWidget ecosystems now work together.
-
-<iframe width="100%" height="400" src="https://www.youtube.com/embed/o3g1CqpZOcA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-## Awesome Panel Extensions
-
-The [awesome-panel-extensions](https://pypi.org/project/awesome-panel-extensions/) package provides extensions you can use with Panel.
-
-Check out the [Awesome Panel Extensions Documentation](https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html).
-
-[![Awesome Panel Extensions Docs](https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/videos/awesome-panel-extensions-docs.gif?raw=true)](https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html)
-
-The package updates often so if you use it for production please pin to the specific version number.
-
-If you or your organisation want to create your own extensions for Panel, then check out the [Awesome Panel Extensions Guide](https://awesome-panel.readthedocs.io/en/latest/guides/awesome-panel-extensions-guide/index.html).
-
-[![Awesome Panel Extensions Guide](https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/videos/awesome-panel-extensions-guide.gif?raw=true)](https://awesome-panel.readthedocs.io/en/latest/guides/awesome-panel-extensions-guide/index.html)
-
 ## Panel is for You
 
 The only way to truly understand if Panel is something for you is to play around with it. To get started you can use the [Panel Getting Started Guide](http://panel.pyviz.org/getting_started/index.html) or visit the [Panel Reference Gallery](https://panel.pyviz.org/reference/index.html).
@@ -104,6 +84,10 @@ If you need more convincing first, then take a look at the first **4 minutes** o
 <div align="center" style="margin: 2em">
     <iframe src="https://www.youtube.com/embed/Ohr29FJjBi0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 80%;height:300px;margin-left: auto;margin-right:auto; border: 1px silver solid"></iframe>
 </div>
+
+Or checkout this video from JupyterCon 2020
+
+<iframe width="100%" height="300" src="https://www.youtube.com/embed/o3g1CqpZOcA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 You also find inspiration in the [Panel Example Gallery](http://panel.pyviz.org/gallery/index.html) or join the community on [Discourse](https://discourse.holoviz.org/).
 
@@ -118,6 +102,20 @@ Checkout the PerspectiveViewer notebook on binder.
 </div>
 
 <a class="reference external" href="https://mybinder.org/v2/gh/MarcSkovMadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fwidgets%2FPerspectiveViewer.ipynb" target="_blank"><img src="https://mybinder.org/badge_logo.svg" style="height:25px;display:inline;margin:5px"></a> <a class="reference external" href="https://nbviewer.jupyter.org/github/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/reference/widgets/PerspectiveViewer.ipynb" target="_blank"><img src="https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg" style="height:25px;display:inline;margin:5px"></a>
+
+## Checkout the Awesome Panel Extensions
+
+The [awesome-panel-extensions](https://pypi.org/project/awesome-panel-extensions/) package provides extensions you can use with Panel.
+
+[![Awesome Panel Extensions Docs](https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/videos/awesome-panel-extensions-docs.gif?raw=true)](https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html)
+
+The package updates often so if you use it for production please pin to the specific version number.
+
+## Create your own Awesome Panel Extensions
+
+If you or your organisation want to create your own extensions for Panel, then check out the [Awesome Panel Extensions Guide](https://awesome-panel.readthedocs.io/en/latest/guides/awesome-panel-extensions-guide/index.html).
+
+[![Awesome Panel Extensions Guide](https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/videos/awesome-panel-extensions-guide.gif?raw=true)](https://awesome-panel.readthedocs.io/en/latest/guides/awesome-panel-extensions-guide/index.html)
 
 ## Panel is Open Source and Free
 

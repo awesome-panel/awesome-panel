@@ -84,7 +84,7 @@ def view(configure=True) -> pn.Column:
 
     objects = [
         APPLICATION.intro_section(),
-        pn.pane.Alert("If you don't see the components please reload the page!"),
+        # pn.pane.Alert("If you don't see the components please reload the page!"),
         *section(button),
         *section(intslider),
         *section(floatslider),
