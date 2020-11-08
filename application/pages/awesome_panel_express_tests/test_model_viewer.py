@@ -1,39 +1,23 @@
-"""\
-## Model Viewer
-
-Google has developed the `model-viewer` web component for interactively viewing very large and
+"""Google has developed the `model-viewer` web component for interactively viewing very large and
 detailed 3D models.
 
-In this example we will demonstrate how to use the it in a Panel appliccation.
+In this example we will demonstrate how to use the it in a Panel application. It's available via the
+[`awesome-panel-extensions`](https://pypi.org/project/awesome-panel-extensions/) package.
 
 The ModelViewer component and example could potentially be extended a lot by giving access to all
-the parameters and models of the `model-viewer`.
+the parameters of the `model-viewer`.
 
 If you would like a `model-viewer` example notebook to be an integral part of the Panel gallery go
 to GitHub and upvote [PR 1281](https://github.com/holoviz/panel/pull/1281).
 
-**Author:** [Marc Skov Madsen](datamodelsanalytics.com) ([awesome-panel.org](https://awesomepanel.org))
-
-**Code**
-[Test Model Viewer]\
-(https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/\
-awesome_panel_express_tests/test_model_viewer.py),
-[ModelViewer Component](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/package/awesome_panel/\
-express/components/model_viewer.py)
-
-**Resources:**
+You can find more information at
 [modelviewer.dev](https://modelviewer.dev/),
 [examples](https://modelviewer.dev/examples/tester.html),
 [codelabs](https://codelabs.developers.google.com/codelabs/model-viewer/index.html?index=..%2F..index#0),
-[model-viewer Github](https://github.com/google/model-viewer/tree/master/packages/model-viewer)
-
-**Tags:**
-[model-viewer](https://modelviewer.dev/),
-[Panel](https://panel.holoviz.org/index.html)
-"""
+and [model-viewer Github](https://github.com/google/model-viewer/tree/master/packages/model-viewer)"""
 
 import panel as pn
-from awesome_panel.express.components import ModelViewer
+from awesome_panel_extensions.pane import ModelViewer
 
 from application.config import site
 
@@ -43,6 +27,18 @@ PANEL_LOGO = (
 )
 BLUE = "#5dbcd2"
 GRAY = "#eeeeee"
+APPLICATION = site.create_application(
+    url="model-viewer",
+    name="Model Viewer",
+    author="Marc Skov Madsen",
+    description=__doc__,
+    thumbnail_url="test_model_viewer.png",
+    documentation_url="",
+    code_url="awesome_panel_express_tests/test_model_viewer.py",
+    gif_url="",
+    mp4_url="",
+    tags=["model-viewer"],
+)
 
 
 def create_app(**params):
@@ -73,15 +69,17 @@ def create_app(**params):
     )
 
     main = [
-        pn.pane.Markdown(__doc__),
+        APPLICATION.intro_section(),
+        pn.pane.Alert("Downloading the model the first time might take a while!"),
         top_app_bar,
         pn.Row(model_viewer, pn.layout.HSpacer(), settings_bar, background=BLUE),
         model_viewer.css_pane,
         model_viewer.js_pane,
     ]
-    return site.get_template(title="Test Model Viewer", main=main)
+    return site.create_template(title="Test Model Viewer", main=main)
 
 
+@site.add(APPLICATION)
 def view():
     return create_app()
 

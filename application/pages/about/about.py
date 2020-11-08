@@ -24,12 +24,13 @@ APPLICATION = site.create_application(
     ],
 )
 
-@site.add(APPLICATION)
+# @site.add(APPLICATION)
 def view():
     """The about view of awesome-panel.org"""
     main = [Markdown(ABOUT, sizing_mode="stretch_width")]
     template = site.create_template(title="About", main=main)
     return template
+
 
 if __name__.startswith("bokeh"):
     view().servable()

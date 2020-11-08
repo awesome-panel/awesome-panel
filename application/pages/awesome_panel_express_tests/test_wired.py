@@ -291,7 +291,7 @@ U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+F
     # param_view = test_param_view()
     # tabs = pn.layout.Tabs(wired_view, param_view)
     main = [css_and_js_pane, intro, app_bar, wired_view]
-    return site.get_template(title="Test Wired", main=main)
+    return site.create_template(title="Test Wired", main=main)
 
 
 if __name__.startswith("bokeh"):

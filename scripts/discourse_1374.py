@@ -1,6 +1,8 @@
 import panel as pn
 import param
+
 pn.extension()
+
 
 class Streets(param.Parameterized):
     OP = param.MultiFileSelector()
@@ -16,10 +18,10 @@ class Streets(param.Parameterized):
         panel_left = pn.Param(
             self,
             parameters=["OP"],
-            widgets={
-                'OP': {'widget_type': pn.widgets.FileSelector, 'path':'G:\\'}}
-            )
-        print('OP = ',self.OP)
+            widgets={"OP": {"widget_type": pn.widgets.FileSelector, "path": "G:\\"}},
+        )
+        print("OP = ", self.OP)
         return pn.Column(panel_left)
+
 
 Streets().view.servable()

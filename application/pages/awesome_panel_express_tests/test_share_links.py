@@ -1,93 +1,32 @@
-"""
-I wanted to enable easy sharing of [awesome-panel.org](https://awesome-panel.org) on social media,
-so I've implemented the functionality and made it available via the
-[awesome_panel package](https://pypi.org/project/awesome-panel/) in the
-`awesome_panel.express.bootstrap.share_link` module"""
+"""I wanted to enable easy sharing of [awesome-panel.org](https://awesome-panel.org) on social media,
+so implemented social sharing buttons."""
 
 import panel as pn
-from awesome_panel.express import fontawesome
-from awesome_panel.express.fontawesome.share_link import (
+from awesome_panel_extensions.widgets.link_buttons.share_buttons import (
     ShareOnFacebook,
     ShareOnLinkedIn,
     ShareOnMail,
     ShareOnReddit,
     ShareOnTwitter,
 )
-from awesome_panel.express.testing import TestApp
 
 from application.config import site
 
-STYLE = """
-<style>
-.bk a.button-share-link {
-    font-size: 2rem;
-    color: black;
-}
-</style>
-"""
-fontawesome.extend()
+APPLICATION = site.create_application(
+    url="share-on-social-buttons",
+    name="Share On Social Buttons",
+    author="Marc Skov Madsen",
+    description=__doc__,
+    thumbnail_url="test_share_links.png",
+    documentation_url="",
+    code_url="awesome_panel_express_tests/test_share_links.py",
+    gif_url="",
+    mp4_url="",
+    tags=["Social Media", "Buttons"],
+)
 
 
-def test_facebook():
-    """The ShareOnFacebook link enables sharing a link to an url on Facebook. Here we test that
-
-    - The link can be instantiated with a link to https://awesome-panel.org
-    - It works when clicked
-    """
-    return TestApp(
-        test_facebook,
-        ShareOnFacebook(url="https://awesome-panel.org").view(),
-    )
-
-
-def test_linkedin():
-    """The ShareOnLinkedIn link enables sharing a link to an url on LinkedIn. Here we test that
-
-    - The link can be instantiated with a link to https://awesome-panel.org
-    - It works when clicked
-    """
-    return TestApp(
-        test_linkedin,
-        ShareOnLinkedIn(url="https://awesome-panel.org").view(),
-    )
-
-
-def test_mail():
-    """The ShareOnMail link enables sharing a link to an url via mail. Here we test that
-
-    - The link can be instantiated with a link to https://awesome-panel.org
-    - It works when clicked
-    """
-    return TestApp(
-        test_mail,
-        ShareOnMail(url="https://awesome-panel.org").view(),
-    )
-
-
-def test_twitter():
-    """The ShareOnTwitter link enables sharing a link to an url on Twitter. Here we test that
-
-    - The link can be instantiated with a link to https://awesome-panel.org
-    - It works when clicked
-    """
-    return TestApp(
-        test_twitter,
-        ShareOnTwitter(url="https://awesome-panel.org").view(),
-    )
-
-
-def test_reddit():
-    """The ShareOnReddit link enables sharing a link to an url on Reddit. Here we test that
-
-    - The link can be instantiated with a link to https://awesome-panel.org
-    - It works when clicked
-    """
-    return TestApp(
-        test_reddit,
-        ShareOnReddit(url="https://awesome-panel.org").view(),
-    )
-
-
+@site.add(APPLICATION)
 def view() -> pn.Column:
     """Wraps all tests in a Column that can be included in the Gallery or served independently
 
@@ -96,15 +35,22 @@ def view() -> pn.Column:
     """
     pn.config.sizing_mode = "stretch_width"
     main = [
-        pn.pane.HTML(STYLE),
-        __doc__,
-        test_facebook(),
-        test_linkedin(),
-        test_mail(),
-        test_twitter(),
-        test_reddit(),
+        APPLICATION.intro_section(),
+        pn.pane.Alert(
+            """**You can also use the Social Sharing Buttons** in your site via the
+[`awesome_panel_extensions`](https://pypi.org/project/awesome-panel-extensions/) package.
+
+Please click and share if you like awesome-panel.org or the `awesome-panel-extensions`. Thanks."""
+        ),
+        pn.Row(
+            ShareOnTwitter(url="https://awesome-panel.org", size=6),
+            ShareOnLinkedIn(url="https://awesome-panel.org", size=6),
+            ShareOnReddit(url="https://awesome-panel.org", size=6),
+            ShareOnFacebook(url="https://awesome-panel.org", size=6),
+            ShareOnMail(url="https://awesome-panel.org", size=6),
+        ),
     ]
-    return site.get_template(title="Share Links", main=main)
+    return site.create_template(title="Share Links", main=main)
 
 
 if __name__.startswith("bokeh"):

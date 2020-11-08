@@ -65,6 +65,7 @@ def test_error_alert():
         sizing_mode="stretch_width",
     )
 
+
 @site.add(APPLICATION)
 def view() -> pn.Column:
     """Wraps all tests in a Column that can be included in the Gallery or served independently

@@ -1,8 +1,7 @@
-"""In this module we test the ProgressExt widget
-
-The purpose of the ProgressExt widget is to enable easier progress reporting using the existing
+"""The ProgressExt widget enables easier progress reporting using the existing
 [`pn.widgets.Progress`](https://panel.pyviz.org/reference/widgets/Progress.html#gallery-progress)
-widget.
+widget. It's available via the
+[`awesome-panel-extensions`](https://pypi.org/project/awesome-panel-extensions/) package.
 
 The ProgressExt widget provides
 
@@ -14,6 +13,11 @@ The ProgressExt widget provides
 An example use case is
 
 ```python
+import time
+
+import panel as pn
+from awesome_panel_extensions.widgets.progress_ext import ProgressExt
+
 progress = ProgressExt()
 run_button = pn.widgets.Button(name="Click me")
 
@@ -26,16 +30,29 @@ app = pn.Column(run_button, progress.view)
 app.servable()
 ```
 
-which will show the progress and reset every 2 clicks.
+This will show the progress bar and reset every 2 clicks.
 """
 
 import time
 
 import panel as pn
-from awesome_panel.express import ProgressExt
 from awesome_panel.express.testing import TestApp
+from awesome_panel_extensions.widgets.progress_ext import ProgressExt
 
 from application.config import site
+
+APPLICATION = site.create_application(
+    url="progress-extension",
+    name="Progress Extension",
+    author="Marc Skov Madsen",
+    description=__doc__,
+    thumbnail_url="test_progress_ext.png",
+    documentation_url="",
+    code_url="awesome_panel_express_tests/test_progress_ext.py",
+    gif_url="",
+    mp4_url="",
+    tags=["Progress"],
+)
 
 
 def test_view_value_and_message():
@@ -222,6 +239,7 @@ def test_increment_as_decorator():
     )
 
 
+@site.add(APPLICATION)
 def view() -> pn.Column:
     """Wraps all tests in a Column that can be included in the Gallery or served independently
 
@@ -230,7 +248,7 @@ def view() -> pn.Column:
     """
     pn.config.sizing_mode = "stretch_width"
     main = [
-        __doc__,
+        APPLICATION.intro_section(),
         test_view_value_and_message,
         test_view_message_only,
         test_view_value_only,
@@ -242,7 +260,7 @@ def view() -> pn.Column:
         test_increment_as_decorator,
         pn.layout.HSpacer(height=100),
     ]
-    return site.get_template(title="Test Progress Extension", main=main, main_max_width="800px")
+    return site.create_template(title="Test Progress Extension", main=main, main_max_width="800px")
 
 
 if __name__.startswith("bokeh"):

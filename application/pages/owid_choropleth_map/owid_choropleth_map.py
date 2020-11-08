@@ -344,7 +344,7 @@ class OwidDashboard(param.Parameterized):
             card,
             INFO,
         ]
-        return site.get_template(title="Owid Choropleth Map", main=main)
+        return site.create_template(title="Owid Choropleth Map", main=main)
 
 
 def view():

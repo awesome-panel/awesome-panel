@@ -2,7 +2,6 @@ import time
 
 import panel as pn
 import param
-
 from diskcache import FanoutCache
 
 pn.config.sizing_mode = "stretch_width"
@@ -20,7 +19,10 @@ def _get_data(value):
     time.sleep(1)
     data = value * 2
     return data
-#change
+
+
+# change
+
 
 class MyApp(param.Parameterized):
     value = param.Integer(default=0, bounds=(0, 10))
@@ -50,5 +52,5 @@ class MyApp(param.Parameterized):
 
 if __name__.startswith("bokeh"):
     MyApp().view.servable()
-if __name__=="__main__":
+if __name__ == "__main__":
     pn.serve({"": MyApp().view})

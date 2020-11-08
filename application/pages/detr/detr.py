@@ -1,5 +1,6 @@
-"""[DE⫶TR:](https://github.com/facebookresearch/detr) by [Facebook Research](https://research.fb.com/)
-provides End-to-End Object Detection with Transformers.
+"""[DE⫶TR:](https://github.com/facebookresearch/detr) by
+[Facebook Research](https://research.fb.com/) provides End-to-End Object Detection with
+Transformers.
 
 <img style="max-width:100%;height:260px;" \
 src="https://github.com/facebookresearch/detr/raw/master/.github/DETR.png"/>
@@ -29,6 +30,7 @@ import plotly.graph_objects as go
 import requests
 from PIL import Image
 
+from application.config import site
 from application.pages.detr import config
 from application.pages.detr.model import (
     CLASSES,
@@ -36,7 +38,6 @@ from application.pages.detr.model import (
     filter_boxes,
     get_transform_detr_and_device,
 )
-from application.config import site
 
 # colors for visualization
 COLORS = [
@@ -51,7 +52,21 @@ COLORS = [
     "#87f5fb",
     "#63326e",
 ] * 50
-TITLE="DE:TR: Object Detection"
+APPLICATION = site.create_application(
+    url="detr",
+    name="DE:TR: Object Detection",
+    author="Marc Skov Madsen",
+    description=__doc__,
+    thumbnail_url="detr.png",
+    documentation_url="",
+    code_url="detr/detr.py",
+    gif_url="",
+    mp4_url="",
+    tags=[
+        "DE:TR",
+    ],
+)
+
 
 class DETRApp(param.Parameterized):  # pylint: disable=too-many-instance-attributes
     "A Panel App for object detection using DE:TR:"
@@ -153,7 +168,7 @@ class DETRApp(param.Parameterized):  # pylint: disable=too-many-instance-attribu
             ),
         )
         plot = pn.pane.Plotly(height=600, config={"responsive": True})
-        intro_section = site.get_intro_section(TITLE)
+        intro_section = APPLICATION.intro_section()
         main = [
             style,
             intro_section,
@@ -163,7 +178,7 @@ class DETRApp(param.Parameterized):  # pylint: disable=too-many-instance-attribu
             plot,
             bottom_selections,
         ]
-        template = site.get_template(
+        template = site.create_template(
             title="Panel DE:TR",
             main=main,
         )
@@ -193,20 +208,7 @@ class DETRApp(param.Parameterized):  # pylint: disable=too-many-instance-attribu
         self.progress.active = False
 
 
-@site.register(
-    url="detr",
-    name=TITLE,
-    author="Marc Skov Madsen",
-    description=__doc__,
-    thumbnail_url="detr.png",
-    documentation_url="",
-    code_url="detr/detr.py",
-    gif_url="",
-    mp4_url="",
-    tags=[
-        "DE:TR",
-    ],
-)
+@site.add(APPLICATION)
 def view():
     """Used by the awesome-panel.org application to add it to the gallery"""
     return DETRApp().view

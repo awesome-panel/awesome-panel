@@ -1,9 +1,8 @@
 """Exports and other stuff"""
-from . import (
+from . import (  # pages,
     application,
     authors,
     menu_items,
-    # pages,
     settings,
     social_links,
     source_links,

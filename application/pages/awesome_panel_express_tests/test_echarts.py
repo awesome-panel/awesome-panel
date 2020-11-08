@@ -1,33 +1,17 @@
-"""
-# ECharts
-
-
-[ECharts](https://www.echartsjs.com/en/index.html) is an open-sourced JavaScript
-visualization tool, which can run fluently on PC and mobile devices.
-It is compatible with most modern Web Browsers. Its also an **Apache incubator project**.
-The library is very fast with a modern look and feel.
+"""[ECharts](https://www.echartsjs.com/en/index.html) is an open-sourced JavaScript
+visualization tool, which can run fluently on PC and mobile devices. Its also an
+**Apache incubator project**. The library is very fast with a modern look and feel.
 
 [Pyecharts](https://pyecharts.org/#/en-us/) is a Python api for using ECharts in Python
 including Standalone, Flask, Django and Jupyter Notebooks.
 
+Checkout the [Echarts Gallery](https://echarts.apache.org/examples/en/index.html),
+[Echarts intro Video](https://www.youtube.com/watch?v=MF34Cgk5Rp0) or the
+[Panel Echarts Reference Guide](https://panel.holoviz.org/reference/panes/ECharts.html)
+for more info.
+
 Below we showcase an `ECharts` pane capable of showing Echarts dicts and Pyecharts objects
 **enabling us to develop awesome analytics apps using the power of Echarts, Panel and Python**.
-
-**Author:**
-[Marc Skov Madsen](https://datamodelsanalytics.com) ([awesome-panel.org](https://awesome-panel.org))
-
-**Tags:**
-[Panel](https://panel.holoviz.org/),
-[Echarts](https://www.echartsjs.com/en/index.html),
-[PyeChart](https://pyecharts.org/#/en-us/),
-[Pane](https://panel.holoviz.org/user_guide/Components.html),
-[WebComponent](https://panel.holoviz.org/reference/panes/WebComponent.html),
-[Python](https://www.python.org/)
-
-**Resources:**
-[Code](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/\
-awesome_panel_express_tests/test_echarts.py),
-[Echarts intro Video](https://www.youtube.com/watch?v=MF34Cgk5Rp0)
 """
 
 import panel as pn
@@ -37,6 +21,19 @@ from panel.pane import ECharts
 from application.config import site
 
 BOUNDS = (0, 100)
+
+APPLICATION = site.create_application(
+    url="echarts",
+    name="ECharts",
+    author="Marc Skov Madsen",
+    description=__doc__,
+    thumbnail_url="test_echarts.png",
+    documentation_url="",
+    code_url="awesome_panel_express_tests/test_echarts.py",
+    gif_url="",
+    mp4_url="",
+    tags=["ECharts", "PyECharts"],
+)
 
 
 class EchartsApp(param.Parameterized):
@@ -55,7 +52,7 @@ class EchartsApp(param.Parameterized):
     def __init__(self, **params):
         super().__init__(**params)
 
-        self.plot = ECharts(height=500, min_width=500, sizing_mode="stretch_width")
+        self.plot = ECharts(height=500, min_width=200, sizing_mode="stretch_width")
 
         self._update_plot()
 
@@ -91,6 +88,7 @@ class EchartsApp(param.Parameterized):
                     ],
                 }
             ],
+            "responsive": True,
         }
         self.plot.object = echart
 
@@ -111,14 +109,7 @@ class EchartsApp(param.Parameterized):
                 embed=False,
             ),
             pn.layout.VSpacer(),
-            # pn.pane.PNG(
-            #     "https://panel.holoviz.org/_static/logo_horizontal.png",
-            #     sizing_mode="fixed",
-            #     height=40,
-            #     margin=(15, 0, 5, 25),
-            # ),
             "",
-            # pn.layout.VSpacer(),
             background="rgb(41, 60, 85)",
             height=70,
         )
@@ -127,27 +118,25 @@ class EchartsApp(param.Parameterized):
             self,
             show_name=False,
             width=200,
-            sizing_mode="stretch_height",
+            sizing_mode="fixed",
             background="rgb(245, 247, 250)",
         )
 
         main = [
-            pn.pane.Markdown(__doc__),
-            top_app_bar,
-            pn.layout.HSpacer(height=50),
-            pn.Row(
-                self.plot,
-                settings_pane,
+            APPLICATION.intro_section(),
+            pn.Column(
+                top_app_bar,
+                pn.layout.HSpacer(height=50),
+                pn.Row(self.plot, settings_pane, sizing_mode="stretch_width"),
             ),
         ]
-        return site.get_template(title="Test ECharts", main=main)
+        return site.create_template(title="Test ECharts", main=main)
 
 
+@site.add(APPLICATION)
 def view():
-    app = EchartsApp()
-    return app.view()
+    return EchartsApp().view()
 
 
 if __name__.startswith("bokeh"):
-    app = EchartsApp()
-    view = app.view().servable()
+    view().servable()

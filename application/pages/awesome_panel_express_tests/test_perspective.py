@@ -1,38 +1,8 @@
-"""
-# Perspective Viewer
-
-[Perspective](https://github.com/finos/perspective#readme) is an interactive visualization
-component for large, real-time datasets. It comes with the `perspective-viewer` web component.
-
-It enables analysts and traders at large banks like J.P.Morgan to understand their data. But it is
-also very usefull for analysts, engineers, scientists, data engineers and data scientists in
-general.
-
-[Panel](https://panel.holoviz.org/) is a powerful framework for creating awesome analytics apps
-in Python.
+"""[Perspective](https://github.com/finos/perspective#readme) is an interactive visualization
+component for large, real-time datasets. It enables analysts and traders at large banks like
+J.P.Morgan to understand their data in real time.
 
 In this example we demonstrate how to use the `perspective-viewer` web component with Panel.
-
-If you want Perspective supported in Panel, then go to GitHub and upvote
-
-- [Panel Feature 1107](https://github.com/holoviz/panel/issues/1107): Add Perspective widget.
-- [Perspective Feature 942](https://github.com/finos/perspective/issues/942): Enable Perspective in
-Panel.
-- [Panel PR 1261](https://github.com/holoviz/panel/pull/1261): Perspective-Viewer WebComponent
-Example.
-
-**Author:** [Marc Skov Madsen](https://datamodelanalytics.com)
-([awesome-panel.org](https://awesome-panel.org))
-
-**Tags:**
-[Perspective](https://github.com/finos/perspective#readme),
-[Panel](https://panel.holoviz.org/),
-[Python](https://www.python.org/)
-
-**Resources:**
-[Code](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/\
-awesome_panel_express_tests/test_perspective.py),
-[Data](https://datahub.io/core/s-and-p-500-companies-financials)
 """
 
 import pathlib
@@ -50,8 +20,51 @@ PANEL_LOGO = "https://panel.holoviz.org/_static/logo_horizontal.png"
 ROOT = pathlib.Path(__file__).parent
 # Source: https://datahub.io/core/s-and-p-500-companies-financials
 DATA = ROOT / "PerspectiveViewerData.csv"
+VIDEO = """<iframe width="100%" height="400" src="https://www.youtube.com/embed/IO-HJsGdleE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>"""
+INFO = """
+**You can also use the `perspective-viewer` component in your apps**. It is a part of the
+[`awesome-panel-extensions`](https://pypi.org/project/awesome-panel-extensions/) package.
 
-dataframe = pd.read_csv(DATA)
+Checkout the
+[Reference Notebook](https://mybinder.org/v2/gh/MarcSkovMadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fwidgets%2FPerspectiveViewer.ipynb)
+on Binder.
+
+If you want Perspective supported in Panel, then go to GitHub and upvote
+[Panel Feature 1107](https://github.com/holoviz/panel/issues/1107),
+[Panel PR 1690](https://github.com/holoviz/panel/pull/1690),
+[Perspective Feature 942](https://github.com/finos/perspective/issues/942) and
+[Panel PR 1261](https://github.com/holoviz/panel/pull/1261)
+"""
+
+APPLICATION = site.create_application(
+    url="perspective",
+    name="Perspective Viewer",
+    author="Marc Skov Madsen",
+    description=__doc__,
+    thumbnail_url="test_perspective.png",
+    documentation_url="",
+    code_url="awesome_panel_express_tests/test_perspective.py",
+    gif_url="",
+    mp4_url="",
+    tags=["Perspective", "Streaming"],
+)
+COLUMNS = [
+    "Name",
+    "Symbol",
+    "Sector",
+    "Price",
+    "Price/Earnings",
+    "Dividend Yield",
+    "Earnings/Share",
+    "52 Week Low",
+    "52 Week High",
+    "Market Cap",
+    "EBITDA",
+    "Price/Sales",
+    "Price/Book",
+    "SEC Filings",
+]
+DATAFRAME = pd.read_csv(DATA)[COLUMNS]
 
 
 def create_app(**params) -> pn.Column:
@@ -62,7 +75,7 @@ def create_app(**params) -> pn.Column:
     """
     pn.config.sizing_mode = "stretch_width"
     perspective_viewer = PerspectiveViewer(
-        value=dataframe, theme="material-dark", sizing_mode="stretch_both"
+        value=DATAFRAME, columns=COLUMNS, theme="material-dark", sizing_mode="stretch_both"
     )
 
     top_app_bar = pn.Row(
@@ -94,7 +107,8 @@ def create_app(**params) -> pn.Column:
     )
 
     main = [
-        pn.pane.Markdown(__doc__),
+        APPLICATION.intro_section(),
+        pn.pane.Alert(INFO),
         top_app_bar,
         pn.Row(
             perspective_viewer,
@@ -104,11 +118,16 @@ def create_app(**params) -> pn.Column:
             margin=0,
             background=DARK_BACKGROUND,
         ),
-        pn.layout.HSpacer(height=50),
+        pn.Column(
+            "For more inspiration checkout",
+            pn.pane.HTML(VIDEO),
+            pn.layout.HSpacer(height=50),
+        ),
     ]
-    return site.get_template(title="Test Perspective", main=main)
+    return site.create_template(title="Test Perspective", main=main)
 
 
+@site.add(APPLICATION)
 def view() -> pn.Column:
     """Return a PerspectiveViewer Test App for inclusion in the Gallery at awesome-panel.org
 
@@ -119,5 +138,5 @@ def view() -> pn.Column:
 
 
 if __name__.startswith("bokeh"):
-    PerspectiveViewer.config()
+    pn.extension("perspective")
     view().servable()

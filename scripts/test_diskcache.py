@@ -4,9 +4,8 @@ import numpy as np
 import pandas as pd
 import panel as pn
 import param
+from cachetools import TTLCache, cached
 from diskcache import FanoutCache
-from datetime import timedelta
-from cachetools import cached, TTLCache
 
 pn.config.sizing_mode = "stretch_width"
 
@@ -16,8 +15,9 @@ CACHE_DIRECTORY = "cache"
 cache = FanoutCache(directory=CACHE_DIRECTORY)
 # cache = pn.state.cache
 
-#restart
-from cachetools import cached, TTLCache
+# restart
+from cachetools import TTLCache, cached
+
 
 @cached(cache=TTLCache(maxsize=1024, ttl=600))
 def _get_data(value):

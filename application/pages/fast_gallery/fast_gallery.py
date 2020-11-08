@@ -4,9 +4,26 @@ import panel as pn
 from awesome_panel_extensions.frameworks.fast.templates.fast_gallery_template import (
     FastGalleryTemplate,
 )
-from application.config import site
 
-def get_fast_gallery():
+from application.config import site
+from application.pages.about.about import APPLICATION
+
+APPLICATION = site.create_application(
+    url="gallery",
+    name="Gallery",
+    author="Marc Skov Madsen",
+    description="""The Gallery provides a very visual overview to the applications and associated
+    resources""",
+    thumbnail_url="gallery.png",
+    documentation_url="",
+    code_url="fast_gallery/fast_gallery.py",
+    gif_url="",
+    mp4_url="",
+)
+
+
+@site.add(APPLICATION)
+def view():
     """Return a FastGalleryTemplate"""
     pn.config.raw_css = [
         css for css in pn.config.raw_css if not css.startswith("/* CUSTOM TEMPLATE CSS */")
@@ -24,4 +41,4 @@ def get_fast_gallery():
 
 
 if __name__.startswith("bokeh"):
-    get_fast_gallery().servable()
+    view().servable()

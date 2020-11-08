@@ -292,58 +292,6 @@ TEST_ECHARTS = Page(
     author=authors.MARC_SKOV_MADSEN,
     url="echarts",
 )
-TEST_DIVIDER = Page(
-    name="Test Divider",
-    source_code_url=GITHUB_PAGE_URL + "awesome_panel_express_tests/test_divider.py",
-    thumbnail_png_url=THUMBNAILS_ROOT + "test_divider.png",
-    tags=[
-        tags.CODE,
-        tags.APP_IN_GALLERY,
-        tags.AWESOMEPANEL_EXPRESS,
-    ],
-    component=pages.test_divider,
-    author=authors.MARC_SKOV_MADSEN,
-    url="ext-divider",
-)
-TEST_FONT_AWESOME = Page(
-    name="Test FontAwesome",
-    source_code_url=GITHUB_PAGE_URL + "awesome_panel_express_tests/test_fontawesome.py",
-    thumbnail_png_url=THUMBNAILS_ROOT + "test_fontawesome.png",
-    tags=[
-        tags.CODE,
-        tags.APP_IN_GALLERY,
-        tags.AWESOMEPANEL_EXPRESS,
-    ],
-    component=pages.test_fontawesome,
-    author=authors.MARC_SKOV_MADSEN,
-    url="ext-font-awesome",
-)
-TEST_HEADINGS = Page(
-    name="Test Headings",
-    source_code_url=GITHUB_PAGE_URL + "awesome_panel_express_tests/test_headings.py",
-    thumbnail_png_url=THUMBNAILS_ROOT + "test_headings.png",
-    tags=[
-        tags.CODE,
-        tags.APP_IN_GALLERY,
-        tags.AWESOMEPANEL_EXPRESS,
-    ],
-    component=pages.test_headings,
-    author=authors.MARC_SKOV_MADSEN,
-    url="ext-headings",
-)
-TEST_MARKDOWN = Page(
-    name="Test Markdown",
-    source_code_url=GITHUB_PAGE_URL + "awesome_panel_express_tests/test_markdown.py",
-    thumbnail_png_url=THUMBNAILS_ROOT + "test_markdown.png",
-    tags=[
-        tags.CODE,
-        tags.APP_IN_GALLERY,
-        tags.AWESOMEPANEL_EXPRESS,
-    ],
-    component=pages.test_markdown,
-    author=authors.MARC_SKOV_MADSEN,
-    url="ext-markdown",
-)
 TEST_MATERIAL = Page(
     name="Test Material Components",
     source_code_url=GITHUB_PAGE_URL + "awesome_panel_express_tests/test_material.py",
@@ -407,19 +355,6 @@ TEST_SHARE_LINKS = Page(
     author=authors.MARC_SKOV_MADSEN,
     url="ext-social-links",
 )
-TEST_SPINNERS = Page(
-    name="Test Spinners",
-    source_code_url=GITHUB_PAGE_URL + "awesome_panel_express_tests/test_spinners.py",
-    thumbnail_png_url=THUMBNAILS_ROOT + "test_spinners.png",
-    tags=[
-        tags.CODE,
-        tags.APP_IN_GALLERY,
-        tags.AWESOMEPANEL_EXPRESS,
-    ],
-    component=pages.test_spinners,
-    author=authors.MARC_SKOV_MADSEN,
-    url="ext-spinners",
-)
 TEST_WIRED = Page(
     name="Test Wired",
     source_code_url=GITHUB_PAGE_URL + "awesome_panel_express_tests/test_wired.py",
@@ -455,17 +390,12 @@ PAGES = [
     TEST_BOOTSTRAP_CARD,
     TEST_CODE,
     TEST_DATAFRAME,
-    TEST_DIVIDER,
     TEST_ECHARTS,
-    TEST_FONT_AWESOME,
-    TEST_HEADINGS,
-    TEST_MARKDOWN,
     TEST_MATERIAL,
     TEST_MODEL_VIEWER,
     TEST_PERSPECTIVE,
     TEST_PROGRESS_EXTENSION,
     TEST_SHARE_LINKS,
-    TEST_SPINNERS,
     TEST_WIRED,
     ISSUES,
 ]

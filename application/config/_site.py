@@ -1,3 +1,4 @@
+"""Defines the Awesome Panel site"""
 import pathlib
 from typing import List, Optional
 
@@ -21,7 +22,7 @@ FAVICON = (
     "2781d86d4ed141889d633748879a120d7d8e777a/assets/images/favicon.ico"
 )
 MAIN_MAX_WIDTH = "1148px"
-DEFAULT_AUTHOR="Marc Skov Madsen"
+DEFAULT_AUTHOR = "Marc Skov Madsen"
 
 # def _set_template_main(template: pn.template.BaseTemplate, main: List):
 #     if isinstance(template, pn.template.ReactTemplate):
@@ -29,15 +30,22 @@ DEFAULT_AUTHOR="Marc Skov Madsen"
 #             template.main[index, 0] = item
 #     else:
 #         template.main[:] = main
-THUMBNAILS_ROOT = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/"
-CODE_ROOT="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/"
-GIF_ROOT="https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/"
-MP4_ROOT="https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/"
+THUMBNAILS_ROOT = (
+    "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/"
+)
+CODE_ROOT = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/"
+GIF_ROOT = (
+    "https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/"
+)
+MP4_ROOT = (
+    "https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/"
+)
+
 
 class AwesomePanelSite(Site):
     """The Awesome Panel Site"""
 
-    def create_application(
+    def create_application(  # pylint: disable=too-many-arguments
         self,
         url: str,
         name: str,
@@ -49,7 +57,7 @@ class AwesomePanelSite(Site):
         gif_url: str = "",
         mp4_url: str = "",
         youtube_url: str = "",
-        tags: Optional[List]=None,
+        tags: Optional[List] = None,
     ) -> Application:
         app = super().create_application(
             url=url,
@@ -65,17 +73,17 @@ class AwesomePanelSite(Site):
             tags=tags,
         )
         if not app.author:
-            app.author=DEFAULT_AUTHOR
+            app.author = DEFAULT_AUTHOR
         if app.thumbnail_url and not app.thumbnail_url.startswith("http"):
             app.thumbnail_url = THUMBNAILS_ROOT + app.thumbnail_url
         if app.code_url and not app.code_url.startswith("http"):
-            app.code_url=CODE_ROOT + app.code_url
+            app.code_url = CODE_ROOT + app.code_url
             if not "Code" in app.tags:
                 app.tags.append("Code")
         if app.gif_url and not app.gif_url.startswith("http"):
-            app.gif_url=GIF_ROOT + app.gif_url
+            app.gif_url = GIF_ROOT + app.gif_url
         if app.mp4_url and not app.mp4_url.startswith("http"):
-            app.mp4_url=MP4_ROOT + app.mp4_url
+            app.mp4_url = MP4_ROOT + app.mp4_url
         if not "Application" in app.tags:
             app.tags.append("Application")
 
@@ -99,8 +107,8 @@ class AwesomePanelSite(Site):
 
 site = AwesomePanelSite(
     name=SITE,
-    css_path = CSS_PATH,
-    js_path = JS_PATH,
+    css_path=CSS_PATH,
+    js_path=JS_PATH,
 )
 
 site.authors.extend(

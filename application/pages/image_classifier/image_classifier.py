@@ -1,15 +1,13 @@
 """This is an **image classifier app** that enables a user to
 
 - select a classifier model
-- upload an image
-
-and get a predicted classification in return.
+- upload an image and
+- get a predicted classification in return.
 
 This app is inspired by the awesome [imageNet](https://github.com/iamatulsingh/imageNet-streamlit)
 application developed by [Atul Kumar Singh](https://github.com/iamatulsingh)."""
 import io
 import os
-from base64 import b64encode
 from functools import lru_cache
 from typing import Callable, List, NamedTuple, Tuple
 
@@ -25,7 +23,20 @@ from application.config import site
 
 pn.extension("vega")
 
-TITLE = "Image Classifier"
+APPLICATION = site.create_application(
+    url="image-classifier",
+    name="Image Classifier",
+    author="Marc Skov Madsen",
+    description=__doc__,
+    thumbnail_url="image_classifier.png",
+    documentation_url="",
+    code_url="image_classifier/image_classifier.py",
+    gif_url="",
+    mp4_url="",
+    tags=[
+        "Keras",
+    ],
+)
 
 
 class KerasApplication(NamedTuple):
@@ -407,7 +418,8 @@ class ImageClassifierApp(param.Parameterized):
             bytes_io = io.BytesIO(self.image_file)
             return pn.pane.JPG(object=bytes_io, height=300)
         return pnx.InfoAlert(
-            "Upload an image in .jpg format",
+            """Drop an image in .jpg format onto the FileInput Area or click the **Choose File**
+            button to upload.""",
         )
 
     def report_progress(
@@ -507,20 +519,8 @@ class ImageClassifierApp(param.Parameterized):
             )
         return pn.pane.HTML()
 
-@site.register(
-    url="image-classifier",
-    name=TITLE,
-    author="Marc Skov Madsen",
-    description=__doc__,
-    thumbnail_url="image_classifier.png",
-    documentation_url="",
-    code_url="image_classifier/image_classifier.py",
-    gif_url="",
-    mp4_url="",
-    tags=[
-        "Keras",
-    ],
-)
+
+@site.add(APPLICATION)
 def view():
     """Run this to run the application"""
     set_environ()
@@ -530,7 +530,7 @@ def view():
     pn.config.sizing_mode = "stretch_width"
 
     main = [
-        site.get_intro_section(TITLE),
+        APPLICATION.intro_section(),
         pnx.SubHeader("Classifier"),
         pn.Param(
             image_classifier_app.param["model"],
@@ -548,14 +548,16 @@ def view():
                 "image_file": {
                     "type": pn.widgets.FileInput,
                     "accept": ".jpg",
+                    "css_classes": ["pnx-fileinput-area"],
+                    "height": 100,
                 }
             },
         ),
-        image_classifier_app.image_view,
         image_classifier_app.predictions_view,
+        image_classifier_app.image_view,
         image_classifier_app.resources_view,
     ]
-    return site.get_template(
+    return site.create_template(
         title="Image Classifier",
         main=main,
     )

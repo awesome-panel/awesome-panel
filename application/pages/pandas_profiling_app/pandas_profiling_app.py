@@ -1,6 +1,4 @@
-"""# Pandas Profiling with Panel
-
-[Pandas Profiling](https://github.com/pandas-profiling/pandas-profiling) provides profile reports
+"""[Pandas Profiling](https://github.com/pandas-profiling/pandas-profiling) provides profile reports
 from Pandas DataFrames. I hope this provides you with an impression of how this can be integrated
 in a [Panel](https://panel.holoviz.org/) context.
 
@@ -9,26 +7,9 @@ This app was originally created as a response to this [question on Discourse]\
 
 This app is restricted to profile a **maximum of 200 rows** to minimize the impact on the server.
 
-**Author:**
-[Marc Skov Madsen](https://datamodelsanalytics.com)
-
-**Code:**
-[App]\
-(https://github.com/MarcSkovMadsen/awesome-panel/blob/master/\
-application/pages/pandas_profiling_app/pandas_profiling_app.py),
-[Tests]\
-(https://github.com/MarcSkovMadsen/awesome-panel/blob/master/\
-tests/application/tests/test_pandas_profiling_app.py)
-
-**Resources:**
-[Pandas Profiling Examples]\
+For more information take a look at the [Pandas Profiling Examples]\
 (https://pandas-profiling.github.io/pandas-profiling/docs/master/\
-rtd/pages/examples.html#showcasing-specific-features)
-
-**Tags:**
-[Panel](https://panel.holoviz.org/),
-[Pandas](https://pandas.pydata.org/),
-"""
+rtd/pages/examples.html#showcasing-specific-features)."""
 import html
 from functools import lru_cache
 from itertools import cycle
@@ -83,6 +64,17 @@ iframe {
 }
 </style>
 """
+APPLICATION = site.create_application(
+    url="pandas-profiling",
+    name="Pandas Profiling",
+    author="Marc Skov Madsen",
+    description=__doc__,
+    thumbnail_url="pandas_profiling_app.png",
+    code_url="pandas_profiling_app/pandas_profiling_app.py",
+    tags=[
+        "Pandas",
+    ],
+)
 
 
 class Config(param.Parameterized):
@@ -145,7 +137,7 @@ class PandasProfilingApp(param.Parameterized):  # pylint: disable=too-many-insta
     def _get_view(self, config):
         pn.config.sizing_mode = "stretch_width"
         style = pn.pane.HTML(STYLE, width=0, height=0, margin=0, sizing_mode="fixed")
-        description = pn.pane.Markdown(__doc__)
+        description = APPLICATION.intro_section()
         app_bar = pn.Row(
             pn.pane.PNG(
                 LOGO_URL,
@@ -216,12 +208,14 @@ class PandasProfilingApp(param.Parameterized):  # pylint: disable=too-many-insta
             tabs,
             pn.layout.HSpacer(height=400),  # Gives better scrolling
         ]
-        _view = site.get_template(title="Pandas Profiling App", main=main)
+        _view = site.create_template(
+            title="Pandas Profiling App",
+            main=main,
+        )
 
         return progress, html_report_pane, _view
 
     def _generate_report(self):
-        print(self.csv_url, self.config.title, self.config.minimal)
         self.html_report_pane.object = HTML_LOADING_DATA
         self.dataframe = self._get_dataframe(self.csv_url)
         self.html_report_pane.object = HTML_CREATING_PROFILER
@@ -256,6 +250,7 @@ class PandasProfilingApp(param.Parameterized):  # pylint: disable=too-many-insta
         return self.__str__()
 
 
+@site.add(APPLICATION)
 def view():
     """Function used by the awesome-panel.org application"""
     return PandasProfilingApp().view

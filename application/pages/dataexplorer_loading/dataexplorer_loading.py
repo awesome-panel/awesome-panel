@@ -22,8 +22,19 @@ SPINNER_URL = (
     "application/pages/gallery/dataexplorer_loading/spinner.gif?raw=true"
 )
 SPINNER_HTML = f"<img application='{SPINNER_URL}' style='width:100%'"
+APPLICATION = site.create_application(
+    url="data-explorer-loading",
+    name="Data Explorer Loading",
+    author="Marc Skov Madsen",
+    description=__doc__,
+    thumbnail_url="dataexplorer_loading.png",
+    documentation_url="",
+    code_url="dataexplorer_loading/dataexplorer_loading.py",
+    gif_url="",
+    mp4_url="",
+    tags=[],
+)
 
-TITLE = "DataExplorer - Loading..."
 
 class DataExplorer(param.Parameterized):
     """The DataExplorer App illustrates a progress and loading message"""
@@ -80,7 +91,7 @@ class DataExplorer(param.Parameterized):
     def _get_view(self):
         """Returns the application view"""
         pn.config.sizing_mode = "stretch_width"
-        intro_section=site.get_intro_section(TITLE)
+        intro_section = APPLICATION.intro_section()
         main = [
             intro_section,
             pn.pane.Markdown("#### Settings"),
@@ -96,20 +107,10 @@ class DataExplorer(param.Parameterized):
             pn.pane.Markdown("#### Plot"),
             self.plot_pane,
         ]
-        return site.get_template(title="Data Explorer Loading", main=main)
+        return site.create_template(title="Data Explorer Loading", main=main)
 
-@site.register(
-    url="data-explorer-loading",
-    name=TITLE,
-    author="Marc Skov Madsen",
-    description=__doc__,
-    thumbnail_url="dataexplorer_loading.png",
-    documentation_url="",
-    code_url="dataexplorer_loading/dataexplorer_loading.py",
-    gif_url="",
-    mp4_url="",
-    tags=[],
-)
+
+@site.add(APPLICATION)
 def view():
     """Serves the app.
 

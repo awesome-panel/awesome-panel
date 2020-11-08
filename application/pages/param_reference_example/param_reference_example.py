@@ -23,6 +23,18 @@ import param
 
 from application.config import site
 
+APPLICATION = site.create_application(
+    url="param-reference",
+    name="Param Reference Example",
+    author="Marc Skov Madsen",
+    description=__doc__,
+    thumbnail_url="param_reference_example.png",
+    code_url="param_reference_example/param_reference_example.py",
+    tags=[
+        "Param",
+    ],
+)
+
 DATE_BOUNDS = (
     datetime.date(
         1900,
@@ -43,6 +55,7 @@ STYLE = """
 """
 
 
+@site.add(APPLICATION)
 def view() -> pn.viewable.Viewable:
     """A View of an Athlete and his Power Curve
 
@@ -93,11 +106,7 @@ def view() -> pn.viewable.Viewable:
 
     main = [
         STYLE,
-        pn.layout.Card(
-            pn.pane.Markdown(__doc__),
-            title="Param Reference Example",
-        ),
-        pn.layout.HSpacer(height=25),
+        APPLICATION.intro_section(),
         pn.Column(
             pn.Column(
                 pn.pane.Markdown("### Athlete"),
@@ -109,7 +118,7 @@ def view() -> pn.viewable.Viewable:
             css_classes=["app"],
         ),
     ]
-    return site.get_template(title="Param Reference Example", main=main)
+    return site.create_template(title="Param Reference Example", main=main)
 
 
 class PowerCurve(param.Parameterized):

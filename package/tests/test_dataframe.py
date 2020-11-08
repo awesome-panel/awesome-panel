@@ -1,6 +1,6 @@
 """Tests of the dataframe module"""
 import pandas as pd
-from awesome_panel.express.widgets import dataframe
+from awesome_panel_extensions.widgets import dataframe
 from bokeh.models.widgets.tables import NumberFormatter
 
 

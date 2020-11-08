@@ -1,19 +1,19 @@
-"""Tests of the Cards inspired by Bootstrap Cards.
-
-- [Get Bootstrap Card](https://getbootstrap.com/docs/4.3/components/card/) and
-- [Card Collapse Tricks](https://disjfa.github.io/bootstrap-tricks/card-collapse-tricks/)
+"""Cards inspired by [Get Bootstrap Card](https://getbootstrap.com/docs/4.3/components/card/) and
+[Card Collapse Tricks](https://disjfa.github.io/bootstrap-tricks/card-collapse-tricks/).
 
 This example was originally created to show case how to create custom Cards.
+
 The Cards have now been contributed to Panel. Checkout the reference guide
 [here](https://panel.holoviz.org/reference/layouts/Card.html).
 """
 import hvplot.pandas  # pylint: disable=unused-import
 import pandas as pd
 import panel as pn
-from awesome_panel.express.testing import TestApp
 from awesome_panel import express as pnx
+from awesome_panel.express.testing import TestApp
 
 from application.config import site
+
 APPLICATION = site.create_application(
     url="bootstrap-card",
     name="Bootstrap Card",
@@ -53,7 +53,6 @@ def test_card():
         test_card,
         card,
         width=600,
-
     )
 
 
@@ -74,7 +73,6 @@ def test_card_fixed_width():
     return TestApp(
         test_card_fixed_width,
         card,
-
     )
 
 
@@ -213,7 +211,7 @@ def test_card_collapsable():
     """
     card = pn.layout.Card(
         _holoviews_chart(),
-            "Awesome Panel! " * 50,
+        "Awesome Panel! " * 50,
         header="Card with Plot",
         collapsable=True,
         width=600,
@@ -231,6 +229,7 @@ def test_card_with_code():
         return TestApp(test_card_collapsable, card)"""
     card = pn.layout.Card(pnx.Code(code), header="Code")
     return TestApp(test_card_with_code, card, width=600)
+
 
 @site.add(APPLICATION)
 def view() -> pn.Column:

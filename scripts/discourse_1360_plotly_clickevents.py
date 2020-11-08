@@ -15,20 +15,21 @@ def create_plot():
     fig.layout.autosize = True
     return fig
 
+
 plot = create_plot()
 plot_panel = pn.pane.Plotly(plot, config={"responsive": True}, sizing_mode="stretch_both")
+
 
 @pn.depends(plot_panel.param.click_data, watch=True)
 def print_hello_world(click_data):
     print("hello world", click_data)
 
+
 @pn.depends(plot_panel.param.click_data)
 def string_hello_world(click_data):
     return click_data
 
-app= pn.Column(plot_panel, string_hello_world)
+
+app = pn.Column(plot_panel, string_hello_world)
 
 app.servable()
-
-
-

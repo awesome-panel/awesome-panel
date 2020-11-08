@@ -26,11 +26,9 @@ DESCRIPTION = """\
 The purpose of this app is to test that a **multi-page Dashboard Layout** similar to the [bootstrap dashboard template](https://getbootstrap.com/docs/4.3/examples/dashboard/) from [getboostrap.com](https://getbootstrap.com/) can be implemented in [Panel](https://panel.pyviz.org/).
 
 """
-TITLE = "Bootstrap Dashboard"
-
-@site.register(
+APPLICATION = site.create_application(
     url="bootstrap-dashboard",
-    name=TITLE,
+    name="Bootstrap Dashboard",
     author="Marc Skov Madsen",
     description=DESCRIPTION,
     thumbnail_url="bootstrap_dashboard.png",
@@ -42,6 +40,9 @@ TITLE = "Bootstrap Dashboard"
         "Bootstrap",
     ],
 )
+
+
+@site.add(APPLICATION)
 def view() -> pn.Column:
     """# Bootstrap Dashboard Page.
 
@@ -61,9 +62,7 @@ def view() -> pn.Column:
     )
     pn.config.sizing_mode = "stretch_width"
     main = [
-        pnx.Header("Bootstrap Dashboard"),
-        pn.pane.Markdown(DESCRIPTION),
-        # pn.pane.PNG(str(IMAGE_PATH), max_width=600, sizing_mode="scale_both"),
+        APPLICATION.intro_section(),
         pnx.SubHeader("Dashboard"),
         pn.layout.Divider(sizing_mode="stretch_width"),
         pn.pane.HoloViews(_holoviews_chart()),
@@ -71,7 +70,7 @@ def view() -> pn.Column:
         pn.layout.Divider(sizing_mode="stretch_width"),
         table,
     ]
-    return site.get_template(
+    return site.create_template(
         title="Bootstrap Dashboard", template="bootstrap", main=main, main_max_width="800px"
     )
 

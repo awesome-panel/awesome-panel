@@ -1,6 +1,5 @@
 # pylint: disable=line-too-long
-"""# Kickstarter Dashboard
-
+"""
 The purpose of the Kickstarter Dashboard was to test if the claims regarding Bokeh as of Jan 2018 in the
 [bokeh-dash-best-dashboard-framework](https://www.sicara.ai/blog/2018-01-30-bokeh-dash-best-dashboard-framework-python)
 article holds for Panel and the HoloViews suite of tools as of Dec 2019.
@@ -14,12 +13,6 @@ The claims where
 
 You can evaluate this dashboard and the code to make your personal evaluation of the above
 statements in the Context of Panel.
-
-My evaluation is
-
-- the **first three statements does no longer hold**.
-- The fourth I've also experienced
-see this [discussion](https://discourse.holoviz.org/t/how-to-create-a-parameterized-dashboard-with-seperation-between-data-transforms-and-data-views/53/13).
 
 You can find an alternative version of this Dashboard in Streamlit at
 [awesome-streamlit.org](https://awesome-streamlit.org)
@@ -55,6 +48,15 @@ CMAP = {
     "successful": "green",
     "suspended": "orange",
 }
+APPLICATION = site.create_application(
+    url="kick-starter-dashboard",
+    name="Kickstarter Dashboard",
+    author="Marc Skov Madsen",
+    description=__doc__,
+    thumbnail_url="kickstarter_dashboard.png",
+    code_url="kickstarter_dashboard/kickstarter_dashboard.py",
+    tags=["Bokeh", "Linked Brushing"],
+)
 
 
 class KickstarterDashboard(param.Parameterized):
@@ -176,13 +178,13 @@ class KickstarterDashboard(param.Parameterized):
             ),
         ]
         main = [
-            pn.pane.Markdown(__doc__),
+            APPLICATION.intro_section(),
             pn.layout.HSpacer(height=25),
             pn.Row(
                 pn.Column(self.scatter_plot_view, self.bar_chart_view, sizing_mode="stretch_width"),
             ),
         ]
-        return site.get_template(title="Kickstarter Dashboard", main=main, sidebar=sidebar)
+        return site.create_template(title="Kickstarter Dashboard", main=main, sidebar=sidebar)
 
     @staticmethod
     def _extract() -> pd.DataFrame:
@@ -367,6 +369,7 @@ class KickstarterDashboard(param.Parameterized):
         return bar_chart
 
 
+@site.add(APPLICATION)
 def view() -> KickstarterDashboard:
     """A Reactive View of the KickstarterDashboard"""
     return KickstarterDashboard().view()

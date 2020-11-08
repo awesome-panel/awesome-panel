@@ -1,35 +1,23 @@
-# Markdown Extensions
-
-**Markdown Extensions** are created by inheriting from the `Markdown` pane. You can use Markdown (including HTML, CSS and/ or JS) to create amazing extensions to Panel. These extensions cannot communicate from the browser (Javascript) back to the server (Python).
-
-## Markdown Example
-
-In this example we will develop a `BinderButton` extension. It could have been implemented as a HTML extension just as well.
-
-[![Binder Button](binder-button.gif)](https://github.com/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/guide/binder_button.py)
-
-We start by importing the dependencies
-
-```Python
-import param
 import panel as pn
-```
+import param
 
-Then we implement the Markdown extension.
 
-```python
 class BinderButton(pn.pane.Markdown):
     """The BinderButton displayes the Binder badge and if clicked opens the Notebook on Binder
     in a new tab"""
+
     repository = param.String()
     branch = param.String()
     folder = param.String()
     notebook = param.String()
 
-    width = param.Integer(default=200, bounds=(0, None), doc="""
+    width = param.Integer(
+        default=200,
+        bounds=(0, None),
+        doc="""
         The width of the component (in pixels). This can be either
-        fixed or preferred width, depending on width sizing policy.""")
-
+        fixed or preferred width, depending on width sizing policy.""",
+    )
 
     # In order to not be selected by the `pn.panel` selection process
     # Cf. https://github.com/holoviz/panel/issues/1494#issuecomment-663219654
@@ -37,7 +25,9 @@ class BinderButton(pn.pane.Markdown):
 
     # The _rename dict is used to keep track of Panel parameters to sync to Bokeh properties.
     # As repository etc. is not a property on the Bokeh model we should set it to None
-    _rename = dict(pn.pane.Markdown._rename, repository=None, branch=None, folder=None, notebook=None)
+    _rename = dict(
+        pn.pane.Markdown._rename, repository=None, branch=None, folder=None, notebook=None
+    )
 
     def __init__(self, **params):
         super().__init__(**params)
@@ -70,7 +60,9 @@ class BinderButton(pn.pane.Markdown):
         )
 
     @classmethod
-    def to_markdown(self, repository: str, branch: str, folder: str, notebook: str, style: str = None):
+    def to_markdown(
+        self, repository: str, branch: str, folder: str, notebook: str, style: str = None
+    ):
         folder = folder.replace("/", "%2F").replace("\\", "%2F")
         url = f"https://mybinder.org/v2/gh/{repository}/{branch}?filepath={folder}%2F{notebook}"
         if style:
@@ -79,11 +71,8 @@ class BinderButton(pn.pane.Markdown):
             image = f'<img src="https://mybinder.org/badge_logo.svg">'
         markdown = f"[{image}]({url})"
         return markdown
-```
 
-Finally we try out the extension
 
-```Python
 # Create the app
 button = BinderButton(
     repository="marcskovmadsen/awesome-panel-extensions",
@@ -93,10 +82,20 @@ button = BinderButton(
 )
 settings_pane = pn.WidgetBox(
     pn.Param(
-        button, parameters=["repository", "branch", "folder", "notebook", "height", "width", "sizing_mode", "margin"], sizing_mode="stretch_width"
+        button,
+        parameters=[
+            "repository",
+            "branch",
+            "folder",
+            "notebook",
+            "height",
+            "width",
+            "sizing_mode",
+            "margin",
+        ],
+        sizing_mode="stretch_width",
     )
 )
 app = pn.Column(button, settings_pane, width=500, height=800)
 # Serve the app
 app.servable()
-```

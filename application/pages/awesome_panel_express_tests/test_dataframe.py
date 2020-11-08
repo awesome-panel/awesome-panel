@@ -1,10 +1,12 @@
-"""Panel does not style a `widgets.DataFrame` by default.
+"""Panel does not style a `panel.widgets.DataFrame` by default.
 
 A user can specify some Formatters like `Numberformatter`, `Stringformater` etc
 `from bokeh.models.widgets.tables` manually. But this takes time, so I consider this *friction*.
 
-In the `awesome_panel.express.widgets.dataframe` module we lower the friction by providing
-functionality for sensible defaults. See also [Issue 940]\
+In the [`awesome_panel_extensions.widgets.dataframe`](https://pypi.org/project/awesome-panel-extensions/#:~:text=Panel%20is%20a%20framework%20for,to%20the%20power%20of%20Panel.&text=If%20you%20wan't%20to%20learn%20more%20checkout%20the%20Package%20Documentation.)
+module we lower the friction by providing functionality for sensible defaults.
+
+If you want Panel to support sensible defaults automatically please upvote [Issue 940]\
 (https://github.com/holoviz/panel/issues/940).
 """
 
@@ -16,10 +18,23 @@ from awesome_panel.express.widgets import dataframe
 
 from application.config import site
 
+APPLICATION = site.create_application(
+    url="dataframe-formatting",
+    name="Dataframe Formatting",
+    author="Marc Skov Madsen",
+    description=__doc__,
+    thumbnail_url="test_dataframe.png",
+    documentation_url="",
+    code_url="awesome_panel_express_tests/test_dataframe.py",
+    gif_url="",
+    mp4_url="",
+    tags=["DataFrame"],
+)
+
 
 def test_get_default_formatters():
-    """A manual test of the `pnx.widgets.dataframe.get_default_formatters` function applied to a
-    DataFrame.
+    """We test the `awesome_panel_extensions.widgets.dataframe.get_default_formatters` function
+    applied to a DataFrame.
 
     We expect to see to see a `pn.widgets.DataFrame` with
 
@@ -71,6 +86,7 @@ formatters = dataframe.get_default_formatters(data)"""
     )
 
 
+@site.add(APPLICATION)
 def view() -> pn.Column:
     """Wraps all tests in a Column that can be included in the Gallery or served independently
 
@@ -79,10 +95,10 @@ def view() -> pn.Column:
     """
     pn.config.sizing_mode = "stretch_width"
     main = [
-        pn.pane.Markdown(__doc__),
+        APPLICATION.intro_section(),
         test_get_default_formatters,
     ]
-    return site.get_template(title="Test DataFrame", main=main)
+    return site.create_template(title="Test DataFrame", main=main)
 
 
 if __name__.startswith("bokeh"):

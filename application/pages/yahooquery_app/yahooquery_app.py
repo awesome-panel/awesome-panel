@@ -1,14 +1,14 @@
-"""
-## YahooQuery Demo
-
-This app allows you to demo the [yahooquery](https://github.com/dpguthrie/yahooquery) python package
+"""This app allows you to demo the [yahooquery](https://github.com/dpguthrie/yahooquery) python
+package.
 
 This app was first developed in Streamlit by [Doug Guthrie](https://github/dpguthrie)). See \
-    [yahooquery-streamlit](https://github.com/dpguthrie/yahooquery-streamlit). You can see a live
-    version in the gallery at [awesome-streamlit.org](awesome-streamlit.org)
+[yahooquery-streamlit](https://github.com/dpguthrie/yahooquery-streamlit). You can see a live
+version in the gallery at [awesome-streamlit.org](awesome-streamlit.org)
 
-This version of the app is developed in [Panel](https://panel.pyviz.org/) by [Marc Skov Madsen]\
-    (https://datamodelsanalytics.com)
+This app could be speeded if the use of `panel.layout.Tabs` was replaced by the tabs of the
+[Golden Layout Template](https://panel.holoviz.org/reference/templates/GoldenLayout.html) or a
+[Custom Panel Template](https://panel.holoviz.org/user_guide/Templates.html). Furthermore the
+implementation is something I did *early on* and could be simplified and made easier to understand.
 """
 import datetime
 from functools import lru_cache
@@ -16,9 +16,13 @@ from typing import Dict, List, Tuple
 
 import altair as alt
 import awesome_panel.express as pnx
+
+# import awesome_panel.express as pnx
 import pandas as pd
 import panel as pn
 import param
+from awesome_panel_extensions.pane import Code
+from awesome_panel_extensions.widgets.progress_ext import ProgressExt
 from yahooquery import Ticker
 
 from application.config import site
@@ -40,7 +44,7 @@ DATE_BOUNDS = (
 # - color active tab "info" blue
 # - format table
 
-PROGRESS = pnx.ProgressExt()
+PROGRESS = ProgressExt()
 
 BASE_ENDPOINTS = {
     "Asset Profile": "asset_profile",
@@ -75,6 +79,17 @@ BASE_ENDPOINTS = {
     "Summary Detail": "summary_detail",
     "Summary Profile": "summary_profile",
 }
+APPLICATION = site.create_application(
+    name="Yahoo Query",
+    description=__doc__,
+    url="yahoo-query",
+    thumbnail_url="yahooquery_app.png",
+    code_url="yahooquery_app/yahooquery_app.py",
+    mp4_url="",
+    gif_url="",
+    author="Marc Skov Madsen",
+    tags=["Finance", "api"],
+)
 
 
 class YahooQueryService:
@@ -144,11 +159,11 @@ def pnx_help(
         pn.viewable.Viewable: A Viewable showing the docstring and more
     """
     return pnx.Card(
-        "Documentation",
-        pnx.Code(
+        body=Code(
             str(python_object.__doc__),
             language="bash",
         ),
+        header="Documentation",
     )
 
 
@@ -163,8 +178,8 @@ def pnx_json(python_object: object) -> pn.viewable.Viewable:
         pn.viewable.Viewable: [description]
     """
     return pnx.Card(
-        "Response",
-        pn.pane.JSON(python_object, depth=5, theme="light"),
+        body=pn.pane.JSON(python_object, depth=5, theme="light"),
+        header="Response",
     )
 
 
@@ -180,8 +195,8 @@ def code_card(
         pn.viewable.Viewable: A Card with "Code" as header and code as body.
     """
     return pnx.Card(
-        "Code",
-        pnx.Code(code),
+        body=Code(code),
+        header="Code",
     )
 
 
@@ -322,13 +337,13 @@ class BasePage(Page):
             # Enable formatters when https://github.com/holoviz/panel/issues/941 is solved
             # formatters = get_default_formatters(data)
             return pnx.Card(
-                "Response",
-                pn.widgets.DataFrame(
+                body=pn.widgets.DataFrame(
                     data,
                     fit_columns=True,
                     sizing_mode="stretch_width",
                     margin=25,
                 ),
+                header="Response",
             )
 
         return pnx_json(data)
@@ -347,8 +362,7 @@ class BasePage(Page):
             ]
 
         return pnx.Card(
-            "Selections",
-            pn.Param(
+            body=pn.Param(
                 self,
                 parameters=parameters,
                 show_name=False,
@@ -358,6 +372,7 @@ class BasePage(Page):
                     "frequency": {"width": 100},
                 },
             ),
+            header="Selections",
         )
 
     @param.depends("symbols")
@@ -463,11 +478,11 @@ class BaseMultiplePage(Page):
         self,
     ):
         return pnx.Card(
-            "Selections",
-            [
+            body=[
                 self.param.all_endpoints,
                 self._endpoints_widget,
             ],
+            header="Selections",
             sizing_mode=None,
         )
 
@@ -530,13 +545,13 @@ class OptionsPage(Page):
             # formatters = get_default_formatters(data)
             # We also show the first 5 columns as other wise the app gets too slow.
             return pnx.Card(
-                "Response",
-                pn.widgets.DataFrame(
+                body=pn.widgets.DataFrame(
                     data.head(),
                     fit_columns=True,
                     sizing_mode="stretch_width",
                     margin=25,
                 ),
+                header="Response",
             )
         return pnx_json(data)
 
@@ -730,12 +745,12 @@ class HistoryPage(Page):
         ):
             return pn.Column(
                 pnx.Card(
-                    "Response",
                     body=pn.pane.Vega(
                         self._history_plot(data),
                         sizing_mode="stretch_width",
                         height=325,
                     ),
+                    header="Response",
                 ),
                 sizing_mode="stretch_width",
             )
@@ -777,22 +792,13 @@ class YahooQueryView(pn.Column):
         **kwargs,
     ):
         super().__init__(
-            pn.pane.Markdown(
-                """# Welcome to [YahooQuery](https://github.com/dpguthrie/yahooquery)
-
-This app demonstrates the use of the [YahooQuery](https://github.com/dpguthrie/yahooquery) package.
-
-This app was first developed in Streamlit by [Doug Guthrie](https://github/dpguthrie).
-See the [yahooquery-streamlit repo](https://github.com/dpguthrie/yahooquery-streamlit).
-
-You can see the Streamlit version in the gallery at
-[awesome-streamlit.org](awesome-streamlit.org)
-
-Enter a symbol or comma seperated list of symbols in the box below. Then select different pages
-to view the data available to you.
-"""
+            APPLICATION.intro_section(),
+            pn.pane.Alert(
+                """Enter a symbol or comma seperated list of symbols in the box below. Then select
+                different pages to view the data available to you."""
             ),
             self._symbols_widget(symbols),
+            pn.layout.HSpacer(height=25),
             PROGRESS.view,
             self.pages_view(pages),
             sizing_mode=sizing_mode,
@@ -891,9 +897,10 @@ class YahooQueryApp(Page):
             pages_list,
             sizing_mode="stretch_width",
         )
-        return site.get_template(title="Yahoo Query App", main=main)
+        return site.create_template(title="Yahoo Query App", template="bootstrap", main=main)
 
 
+@site.add(APPLICATION)
 def view():
     """A Reactive View of the YahooQueryApp
 
@@ -908,20 +915,4 @@ if __name__.startswith("bokeh"):
     pnx.bootstrap.extend()
     pn.config.sizing_mode = "stretch_width"
 
-    # import ptvsd
-
-    # ptvsd.enable_attach(address=("localhost", 5678))
-    # print("Ready to attach the VS Code debugger")
-    # ptvsd.wait_for_attach()  # Only include this line if you always wan't to attach the debugger
-
-    # HomePage().view().servable()
-    # BasePage().view().servable()
-    # BaseMultiplePage().view().servable()
-    # OptionsPage().view().servable()
-    # HistoryPage().view().servable()
     view().servable()
-    # code = """\
-    # from yahooquery import Ticker
-
-    # tickers = Ticker("ORSTED.CO"")"""
-    # code_card(code).servable()

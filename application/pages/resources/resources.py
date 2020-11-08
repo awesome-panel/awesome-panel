@@ -7,8 +7,7 @@ from application.config import site
 
 RESOURCES_PATH = pathlib.Path(__file__).parent / "resources.md"
 RESOURCES = RESOURCES_PATH.read_text()
-
-@site.register(
+APPLICATION = site.create_application(
     url="resources",
     name="Resources",
     author="Marc Skov Madsen",
@@ -23,10 +22,13 @@ RESOURCES = RESOURCES_PATH.read_text()
         "App In Gallery",
     ],
 )
+
+
+@site.add(APPLICATION)
 def view():
     """The resources view of awesome-panel.org"""
     main = [Markdown(RESOURCES, sizing_mode="stretch_width")]
-    template = site.get_template(title="Resources", main=main)
+    template = site.create_template(title="Resources", main=main)
     return template
 
 

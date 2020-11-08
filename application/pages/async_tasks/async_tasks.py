@@ -11,7 +11,8 @@ This example is based on the discussion [Can I load data asynchronously in Panel
 
 If you really deep dive into this, then you can study
 [tornado.ioloop.IOLoop](https://www.tornadoweb.org/en/stable/ioloop.html),
-[concurrent.futures.ThreadPoolExecutor](https://docs.python.org/3/library/concurrent.futures.html#threadpoolexecutor),
+[concurrent.futures.ThreadPoolExecutor]\
+(https://docs.python.org/3/library/concurrent.futures.html#threadpoolexecutor),
 [Panel.io.server.unlocked](https://panel.holoviz.org/api/panel.io.html#panel.io.server.unlocked)"""
 
 import time
@@ -21,9 +22,10 @@ from contextlib import contextmanager
 import numpy as np
 import panel as pn
 import param
-from application.config import site
 from panel.io.server import unlocked
 from tornado.ioloop import IOLoop
+
+from application.config import site
 
 APPLICATION = site.create_application(
     url="async-tasks",
@@ -40,6 +42,7 @@ APPLICATION = site.create_application(
         "App In Gallery",
     ],
 )
+
 
 class ProgressExtMod(param.Parameterized):
     """
@@ -132,10 +135,8 @@ class AsyncApp(param.Parameterized):
 
         self.view = site.create_template(
             main=main,
-            main_max_width = "700px",
+            main_max_width="700px",
         )
-
-
 
     @param.depends("slider", "select", watch=True)
     def _on_slider_change(self):
@@ -165,6 +166,7 @@ class AsyncApp(param.Parameterized):
     def _blocking_task():
         time.sleep(np.random.randint(1, 2))
         return 5
+
 
 @site.add(APPLICATION)
 def view() -> pn.Column:

@@ -16,27 +16,18 @@ import platform
 
 import panel as pn
 
-import application.pages.dialog_template as dialog_template
+# We need to import the application module to get the applications added to the site
+from application import pages  # pylint: disable=unused-import
 from application.config import site
-from application.pages.fast_gallery.fast_gallery import get_fast_gallery  # type: ignore
 
-from application import pages
-# links = ""
-# for page in config.pages.NON_GALLERY_PAGES+config.pages.GALLERY_PAGES:
-#     links += f"""\n<a href="{page.url}">{page.name}</a>"""
-# print(links)
-# breakpoint()ss
-print(site.routes)
-# if __name__ == "__main__":
-#     address = os.getenv("BOKEH_ADDRESS", "0.0.0.0")
-#     APP_ROUTES = {
-#         **site.routes,
-#         "gallery": get_fast_gallery,
-#         "dialog-template": dialog_template.view,
-#     }
-#     if platform.system() == "Windows":
-#         pn.serve(APP_ROUTES, port=80, dev=False, title="Awesome Panel", address=address)
-#     else:
-#         pn.serve(
-#             APP_ROUTES, port=80, dev=False, title="Awesome Panel", address=address, num_procs=4
-#         )
+# for app in sorted(site.applications, key=lambda x: x.name):
+#     print(f'<a href="{app.url}">{app.name}</a>')
+if __name__ == "__main__":
+    address = os.getenv("BOKEH_ADDRESS", "0.0.0.0")
+    APP_ROUTES = {app.url: app.view for app in site.applications}
+    if platform.system() == "Windows":
+        pn.serve(APP_ROUTES, port=80, dev=False, title="Awesome Panel", address=address)
+    else:
+        pn.serve(
+            APP_ROUTES, port=80, dev=False, title="Awesome Panel", address=address, num_procs=4
+        )

@@ -51,7 +51,18 @@ STYLE = """
 }
 
 """
-TITLE = "Classic Dashboard"
+APPLICATION = site.create_application(
+    url="classic-dashboard",
+    name="Classic Dashboard",
+    author="Marc Skov Madsen",
+    description=__doc__,
+    thumbnail_url="dashboard.png",
+    documentation_url="",
+    code_url="dashboard/dashboard.py",
+    gif_url="",
+    mp4_url="",
+    tags=["hvPlot", "HoloViews"],
+)
 
 pn.config.raw_css.append(STYLE)
 ROOT = pathlib.Path(__file__).parent
@@ -199,26 +210,13 @@ class Dashboard(param.Parameterized):
         return process_cmap(self.color_map, 1)[0]
 
 
-@site.register(
-    url="classic-dashboard",
-    name=TITLE,
-    author="Marc Skov Madsen",
-    description=__doc__,
-    thumbnail_url="dashboard.png",
-    documentation_url="",
-    code_url="dashboard/dashboard.py",
-    gif_url="",
-    mp4_url="",
-    tags=[
-        "hvPlot", "HoloViews"
-    ],
-)
+@site.add(APPLICATION)
 def view():
     """Returns a instance of the Dashboard.view"""
-    pn.config.sizing_mode="stretch_width"
-    intro_section = site.get_intro_section(TITLE)
+    pn.config.sizing_mode = "stretch_width"
+    intro_section = APPLICATION.intro_section()
     main = [intro_section, pn.layout.HSpacer(height=25), Dashboard().view]
-    return site.get_template(title="Classic Dashboard", main=main, main_max_width="80%")
+    return site.create_template(title="Classic Dashboard", main=main, main_max_width="80%")
 
 
 if __name__.startswith("bokeh") or __name__ == "__main__":
