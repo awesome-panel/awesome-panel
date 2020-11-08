@@ -11,6 +11,14 @@ from application.config.settings import THUMBNAILS_ROOT
 
 RESOURCES = [
     Resource(
+        name="Quick Dashboard with Panel",
+        url="https://www.quansight.com/post/quick-dashboarding-with-panel",
+        thumbnail_png_path=THUMBNAILS_ROOT + "",
+        is_awesome=True,
+        tags=[tags.TUTORIAL],
+        author=authors.QUANSIGHT,
+    ),
+    Resource(
         name="Holo Grid Generator",
         url="https://github.com/pygridgen/holo-gridgen",
         thumbnail_png_path=THUMBNAILS_ROOT + "",
