@@ -81,6 +81,7 @@ BASE_ENDPOINTS = {
 }
 APPLICATION = site.create_application(
     name="Yahoo Query",
+    introduction="Shows how you can use the Yahoo Query package in your Panel apps",
     description=__doc__,
     url="yahoo-query",
     thumbnail_url="yahooquery_app.png",

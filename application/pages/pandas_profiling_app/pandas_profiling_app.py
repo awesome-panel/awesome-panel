@@ -68,11 +68,13 @@ APPLICATION = site.create_application(
     url="pandas-profiling",
     name="Pandas Profiling",
     author="Marc Skov Madsen",
+    introduction="""Demonstrates that you can embed HTML reports like the Panel Profiling report in
+    your apps""",
     description=__doc__,
     thumbnail_url="pandas_profiling_app.png",
     code_url="pandas_profiling_app/pandas_profiling_app.py",
     tags=[
-        "Pandas",
+        "Pandas", "HTML", "embed"
     ],
 )
 

@@ -22,6 +22,7 @@ APPLICATION = site.create_application(
     url="custom-bokeh-model",
     name="Custom Bokeh Model",
     author="Marc Skov Madsen",
+    introduction="""Provides and introduction to custom, powerful Bokeh/ Panel extensions""",
     description=__doc__,
     thumbnail_url="custom_bokeh_model.png",
     documentation_url="",

@@ -12,6 +12,7 @@ APPLICATION = site.create_application(
     url="about",
     name="About",
     author="Marc Skov Madsen",
+    introduction="A short page about the why and who of awesome-panel.org",
     description=__doc__,
     thumbnail_url="about.png",
     documentation_url="",

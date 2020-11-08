@@ -26,6 +26,7 @@ APPLICATION = site.create_application(
     url="data-explorer-loading",
     name="Data Explorer Loading",
     author="Marc Skov Madsen",
+    introduction="Showcases how to provide progress information to a user during computation",
     description=__doc__,
     thumbnail_url="dataexplorer_loading.png",
     documentation_url="",

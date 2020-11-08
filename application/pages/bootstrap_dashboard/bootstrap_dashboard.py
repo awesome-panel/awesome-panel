@@ -30,6 +30,7 @@ APPLICATION = site.create_application(
     url="bootstrap-dashboard",
     name="Bootstrap Dashboard",
     author="Marc Skov Madsen",
+    introduction="This app demonstrates how to make a Bootstrap Styled Dashboard in Panel",
     description=DESCRIPTION,
     thumbnail_url="bootstrap_dashboard.png",
     documentation_url="",

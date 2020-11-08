@@ -12,6 +12,7 @@ APPLICATION = site.create_application(
     url="/",
     name="Awesome Panel",
     author="Marc Skov Madsen",
+    introduction="An overview of awesome-panel.org and introduction to Panel.",
     description="The Home Page provides an introduction to Panel and awesome-panel.org.",
     thumbnail_url="home.png",
     documentation_url="",

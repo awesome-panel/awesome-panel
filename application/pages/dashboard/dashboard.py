@@ -55,6 +55,7 @@ APPLICATION = site.create_application(
     url="classic-dashboard",
     name="Classic Dashboard",
     author="Marc Skov Madsen",
+    introduction="A classic, awesome looking Dashboard in Panel",
     description=__doc__,
     thumbnail_url="dashboard.png",
     documentation_url="",

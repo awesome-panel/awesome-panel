@@ -14,7 +14,7 @@ import awesome_panel.express as pnx
 import pandas as pd
 import panel as pn
 from awesome_panel.express.testing import TestApp
-from awesome_panel.express.widgets import dataframe
+from awesome_panel_extensions.widgets import dataframe
 
 from application.config import site
 
@@ -22,6 +22,8 @@ APPLICATION = site.create_application(
     url="dataframe-formatting",
     name="Dataframe Formatting",
     author="Marc Skov Madsen",
+    introduction="""This app demonstrates the use of the easy to use dataframe
+    formatters from the awesome-panel-extensions package""",
     description=__doc__,
     thumbnail_url="test_dataframe.png",
     documentation_url="",

@@ -45,6 +45,8 @@ APPLICATION = site.create_application(
     url="progress-extension",
     name="Progress Extension",
     author="Marc Skov Madsen",
+    introduction="""The ProgressExt widgets makes it easier to use the Progress widget in your
+    apps.""",
     description=__doc__,
     thumbnail_url="test_progress_ext.png",
     documentation_url="",

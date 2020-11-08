@@ -16,6 +16,8 @@ APPLICATION = site.create_application(
     url="share-on-social-buttons",
     name="Share On Social Buttons",
     author="Marc Skov Madsen",
+    introduction="""The ShareOnSocial widgets makes it easy to add share on social buttons to your
+    apps""",
     description=__doc__,
     thumbnail_url="test_share_links.png",
     documentation_url="",

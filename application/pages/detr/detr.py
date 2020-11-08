@@ -56,6 +56,7 @@ APPLICATION = site.create_application(
     url="detr",
     name="DE:TR: Object Detection",
     author="Marc Skov Madsen",
+    introduction="An image recognition app based on Facebook DE:TR and Plotly",
     description=__doc__,
     thumbnail_url="detr.png",
     documentation_url="",
@@ -63,7 +64,7 @@ APPLICATION = site.create_application(
     gif_url="",
     mp4_url="",
     tags=[
-        "DE:TR",
+        "DE:TR", "Plotly",
     ],
 )
 

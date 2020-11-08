@@ -27,6 +27,7 @@ APPLICATION = site.create_application(
     url="param-reference",
     name="Param Reference Example",
     author="Marc Skov Madsen",
+    introduction="A live version of the Panel Param Reference guide",
     description=__doc__,
     thumbnail_url="param_reference_example.png",
     code_url="param_reference_example/param_reference_example.py",

@@ -32,13 +32,14 @@ APPLICATION = site.create_application(
     url="fileinput-area",
     name="FileInput Area",
     author="Marc Skov Madsen",
+    introduction="""Shows how to style the Panel FileInput to give it a modern look and feel""",
     description=__doc__,
     thumbnail_url="fileinput-area.png",
     documentation_url="",
     code_url="styling/fileinput-area.py",
     gif_url="",
     mp4_url="",
-    tags=["Styling"],
+    tags=["Styling", "FileInput"],
 )
 
 STYLE = """

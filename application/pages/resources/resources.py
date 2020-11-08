@@ -11,6 +11,7 @@ APPLICATION = site.create_application(
     url="resources",
     name="Resources",
     author="Marc Skov Madsen",
+    introduction="""A list of Awesome Panel Resources created by the community""",
     description=__doc__,
     thumbnail_url="resources.png",
     documentation_url="",

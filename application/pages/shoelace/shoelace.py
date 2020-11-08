@@ -23,6 +23,7 @@ from application.pages.shoelace.template import TemplateWithDialog
 # pylint: disable=line-too-long
 APPLICATION = site.create_application(
     name="Shoelace",
+    introduction="A demonstration of the Shoelace Components including a modal pop up containing a plot",
     description=__doc__,
     url="shoelace",
     thumbnail_url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/application/pages/dialog_template/assets/thumbnail.png",

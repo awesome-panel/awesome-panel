@@ -6,12 +6,13 @@ from awesome_panel_extensions.frameworks.fast.templates.fast_gallery_template im
 )
 
 from application.config import site
-from application.pages.about.about import APPLICATION
 
 APPLICATION = site.create_application(
     url="gallery",
     name="Gallery",
     author="Marc Skov Madsen",
+    introduction="""A custom Panel template using the Fast
+    web components""",
     description="""The Gallery provides a very visual overview to the applications and associated
     resources""",
     thumbnail_url="gallery.png",

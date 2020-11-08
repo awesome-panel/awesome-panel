@@ -11,6 +11,7 @@ APPLICATION = site.create_application(
     url="code-pane",
     name="Code Pane",
     author="Marc Skov Madsen",
+    introduction="This app showcases the Code pane from the awesome-panel-extensions package",
     description=__doc__,
     thumbnail_url="test_code.png",
     documentation_url="",

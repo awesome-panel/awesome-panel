@@ -40,6 +40,8 @@ APPLICATION = site.create_application(
     url="perspective",
     name="Perspective Viewer",
     author="Marc Skov Madsen",
+    introduction="""This app demonstrates the look and feel of the awesome PerspectiveViewer from
+    the awesome-panel-extensions package""",
     description=__doc__,
     thumbnail_url="test_perspective.png",
     documentation_url="",

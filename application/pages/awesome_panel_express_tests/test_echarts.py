@@ -26,6 +26,7 @@ APPLICATION = site.create_application(
     url="echarts",
     name="ECharts",
     author="Marc Skov Madsen",
+    introduction="This app demonstrates the look and feel of the Panel Echarts pane.",
     description=__doc__,
     thumbnail_url="test_echarts.png",
     documentation_url="",

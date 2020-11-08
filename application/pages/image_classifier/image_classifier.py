@@ -27,6 +27,7 @@ APPLICATION = site.create_application(
     url="image-classifier",
     name="Image Classifier",
     author="Marc Skov Madsen",
+    introduction="An image classifier app created with Panel",
     description=__doc__,
     thumbnail_url="image_classifier.png",
     documentation_url="",

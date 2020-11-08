@@ -18,6 +18,7 @@ APPLICATION = site.create_application(
     url="bootstrap-card",
     name="Bootstrap Card",
     author="Marc Skov Madsen",
+    introduction="This app demonstrates the look and feel of the Panel Cards",
     description=__doc__,
     thumbnail_url="test_bootstrap_card.png",
     documentation_url="",

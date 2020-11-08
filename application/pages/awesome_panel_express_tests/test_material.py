@@ -17,6 +17,8 @@ APPLICATION = site.create_application(
     url="material-components",
     name="Material Components",
     author="Marc Skov Madsen",
+    introduction="""This app demonstrates the look and feel of the Material Components from the
+    awesome-panel-extensions package""",
     description=__doc__,
     thumbnail_url="test_material_components.png",
     documentation_url="",

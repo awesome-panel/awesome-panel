@@ -49,6 +49,7 @@ class AwesomePanelSite(Site):
         self,
         url: str,
         name: str,
+        introduction: str,
         description: str,
         author: str,
         thumbnail_url: str,
@@ -62,6 +63,7 @@ class AwesomePanelSite(Site):
         app = super().create_application(
             url=url,
             name=name,
+            introduction=introduction,
             description=description,
             author=author,
             thumbnail_url=thumbnail_url,
