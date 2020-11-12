@@ -25,6 +25,7 @@ APPLICATION = site.create_application(
     ],
 )
 
+
 @site.add(APPLICATION)
 def view():
     """The about view of awesome-panel.org"""
