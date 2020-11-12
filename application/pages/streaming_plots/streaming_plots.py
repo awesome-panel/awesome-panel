@@ -44,7 +44,7 @@ APPLICATION = site.create_application(
 )
 
 
-def create_echarts(data):
+def _create_echarts(data):
     data = data.sort_index()
     return {
         "xAxis": {"type": "time"},
@@ -61,7 +61,7 @@ def create_echarts(data):
     }
 
 
-def create_altair(data):
+def _create_altair(data):
     data = data.reset_index()
     return (
         alt.Chart(data, height="container", width="container")
@@ -73,13 +73,13 @@ def create_altair(data):
     )
 
 
-def create_hvplot(data):
+def _create_hvplot(data):
     # Hack:
     hv.renderer("bokeh").theme = pn.template.react.DarkTheme.param.bokeh_theme.default
     return data.hvplot(y="y").opts(default_tools=[])
 
 
-def create_plotly(data):
+def _create_plotly(data):
     plot = px.line(data, y="y", height=310, template="plotly_dark")
     plot.layout.autosize = True
     plot.layout.plot_bgcolor = "#2a2a2a"
@@ -88,7 +88,7 @@ def create_plotly(data):
     return plot
 
 
-# def create_matplotlib(data):
+# def _create_matplotlib(data):
 #     data = pd.concat(data).reset_index()
 #     plt.close('all')
 #     fig = plt.Figure(figsize=(8, 6))
@@ -98,12 +98,9 @@ def create_plotly(data):
 #     return fig
 
 
-def concat(data):
-    return pd.concat(data)
-
-
 @site.add(APPLICATION)
 def view():
+    """Returns an instance of the Streaming Plots app"""
     pn.config.sizing_mode = "stretch_width"
     echart_pane = pn.pane.ECharts(theme="dark", sizing_mode="stretch_both")
     plotly_pane = pn.pane.Plotly(sizing_mode="stretch_both", config={"responsive": True})
@@ -111,19 +108,19 @@ def view():
     altair_pane = pn.pane.Vega(sizing_mode="stretch_both")
 
     df_stream = sDataFrame(example=pd.DataFrame({"y": []}, index=pd.DatetimeIndex([])))
-    df_window_stream = df_stream.cumsum().stream.sliding_window(50).map(concat)
+    df_window_stream = df_stream.cumsum().stream.sliding_window(50).map(pd.concat)
 
     def update_echarts(data):
-        echart_pane.object = create_echarts(data)
+        echart_pane.object = _create_echarts(data)
 
     def update_plotly(data):
-        plotly_pane.object = create_plotly(data)
+        plotly_pane.object = _create_plotly(data)
 
     def update_altair(data):
-        altair_pane.object = create_altair(data)
+        altair_pane.object = _create_altair(data)
 
     def update_hvplot(data):
-        hvplot_pane.object = create_hvplot(data)
+        hvplot_pane.object = _create_hvplot(data)
 
     df_window_stream.sink(update_echarts)
     df_window_stream.sink(update_plotly)
