@@ -54,6 +54,7 @@ pydeck==0.2.0
 torch==1.5.0+cpu
 torchvision==0.6.0+cpu
 pandas-profiling==2.8.0
+streamz
 
 # Documentation
 -r ./requirements_docs.txt
