@@ -3,7 +3,7 @@
 This application demonstrates how to use
 [Streamz](https://streamz.readthedocs.io/en/latest/),
 [Pandas](https://pandas.pydata.org/),
-[Bokeh](https://docs.bokeh.org/en/latest/index.html)
+[Bokeh](https://docs.bokeh.org/en/latest/index.html),
 [Holoviews](https://holoviews.org/),
 [Altair](https://altair-viz.github.io/)
 [Echart](https://echarts.apache.org/en/index.html) and
@@ -15,7 +15,7 @@ from datetime import datetime
 
 import altair as alt
 import holoviews as hv
-import hvplot.pandas  # pylint: disable=line-too-long
+import hvplot.pandas  # pylint: disable=unused-import
 import numpy as np
 import pandas as pd
 import panel as pn
