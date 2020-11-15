@@ -109,3 +109,5 @@ tmp/
 scripts/implement_later.py
 node_modules/
 cache/*
+
+scripts/fast_tutorial/*

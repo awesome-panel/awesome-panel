@@ -5,7 +5,7 @@ This application demonstrates how to use
 [Pandas](https://pandas.pydata.org/),
 [Bokeh](https://docs.bokeh.org/en/latest/index.html),
 [Holoviews](https://holoviews.org/),
-[Altair](https://altair-viz.github.io/)
+[Altair](https://altair-viz.github.io/),
 [Echart](https://echarts.apache.org/en/index.html) and
 [Plotly](https://plotly.com/) for streaming.
 
@@ -136,8 +136,6 @@ def view():
     pn.state.add_periodic_callback(emit, period=250, count=240)  # Will stream for 1 mins
 
     layout = site.create_template(
-        site="Awesome Panel",
-        title="Streaming",
         template="react",
         theme="dark",
         main_max_width="",
