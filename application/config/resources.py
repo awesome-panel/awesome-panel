@@ -8,7 +8,7 @@ from application.config import authors, tags
 from application.config.settings import THUMBNAILS_ROOT
 
 # panel FILE ROOTS
-
+# https://dmnfarrell.github.io/bioinformatics/abm-mesa-network
 RESOURCES = [
     Resource(
         name="Quick Dashboard with Panel",
