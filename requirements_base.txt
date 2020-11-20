@@ -1,7 +1,7 @@
 # Panel. We use github version because of
 # - https://github.com/holoviz/panel/issues/883
 # - https://github.com/holoviz/panel/pull/867
-panel==0.10.1
+panel==0.10.2
 bokeh
 tornado
 holoviews
