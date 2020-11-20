@@ -31,6 +31,7 @@ from awesome_panel_extensions.frameworks.fast import (
     FastTextInput,
 )
 from awesome_panel_extensions.frameworks.fast.templates.fast_grid_template import FastGridTemplate
+from awesome_panel_extensions.site.template.template_generator import _TEMPLATE_CSS_ID
 from holoviews import opts
 
 from application.config import site
@@ -241,6 +242,7 @@ def view():
     """Returns the FastGridTemplate App"""
     pn.config.sizing_mode = "stretch_width"
     _config_fast_size_mode()
+    _hacky_temporary_clean_up()
 
     app = FastGridTemplate(
         title="FastGridTemplate by awesome-panel.org",
@@ -255,6 +257,10 @@ def view():
     app.main[15:29, 9:12] = _create_fast_switch_card()
     app.sidebar.extend(_create_sidebar_items())
     return app
+
+
+def _hacky_temporary_clean_up():
+    pn.config.raw_css = [css for css in pn.config.raw_css if not css.startswith(_TEMPLATE_CSS_ID)]
 
 
 if __name__.startswith("bokeh"):
