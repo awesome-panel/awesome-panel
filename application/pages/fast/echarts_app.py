@@ -1,6 +1,6 @@
 """ECharts App used to show case the Fast Templates"""
-import param
 import panel as pn
+import param
 from panel.pane import ECharts
 
 BOUNDS = (0, 100)
@@ -84,5 +84,5 @@ class EchartsApp(param.Parameterized):
 
         return pn.Column(
             pn.pane.Markdown("## Echarts Plot"),
-            pn.Row(settings_pane, self.plot, sizing_mode="stretch_both")
+            pn.Row(settings_pane, self.plot, sizing_mode="stretch_both"),
         )

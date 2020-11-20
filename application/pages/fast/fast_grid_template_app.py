@@ -98,6 +98,7 @@ NAVIGATION_HTML = f"""
 """
 # pylint: enable=line-too-long
 
+
 def _create_hvplot():
     # Generate some data
     cl1 = np.random.normal(loc=2, scale=0.2, size=(200, 200))
@@ -120,7 +121,6 @@ def _create_hvplot():
         pn.pane.HoloViews(plot, sizing_mode="stretch_both"),
         sizing_mode="stretch_both",
     )
-
 
 
 def _create_navigation_menu():
@@ -189,6 +189,7 @@ def _create_fast_literal_input_card():
     }
     return _create_card(component=component, parameters=parameters, widgets=widgets)
 
+
 def _create_fast_switch_card():
     component = FastSwitch(
         name="Notify by Email",
@@ -196,20 +197,21 @@ def _create_fast_switch_card():
         checked_message="On",
         unchecked_message="Off",
     )
-    parameters=[
-            "value",
-            "name",
-            "checked_message",
-            "unchecked_message",
-            "readonly",
-        ]
+    parameters = [
+        "value",
+        "name",
+        "checked_message",
+        "unchecked_message",
+        "readonly",
+    ]
     widgets = {
         "value": FastCheckbox,
         "checked_message": FastTextInput,
         "unchecked_message": FastTextInput,
-        "readonly": FastCheckbox
+        "readonly": FastCheckbox,
     }
     return _create_card(component=component, parameters=parameters, widgets=widgets)
+
 
 def _create_card(component, parameters, widgets):
     parameters = [*parameters, "disabled", "width", "height", "sizing_mode"]
@@ -217,7 +219,7 @@ def _create_card(component, parameters, widgets):
     widgets["disabled"] = FastCheckbox
     for index, name in enumerate(parameters):
         component.param[name].precedence = index
-    component.width=200
+    component.width = 200
     settings = pn.Param(
         component,
         parameters=parameters,
@@ -232,6 +234,7 @@ def _create_card(component, parameters, widgets):
         settings,
         sizing_mode="stretch_both",
     )
+
 
 @site.add(APPLICATION)
 def view():
