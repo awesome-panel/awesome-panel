@@ -14,7 +14,6 @@ The stream will STOP AFTER 1 MINUTE.
 from datetime import datetime
 
 import altair as alt
-import holoviews as hv
 import hvplot.pandas  # pylint: disable=unused-import
 import numpy as np
 import pandas as pd
@@ -75,7 +74,7 @@ def _create_altair(data):
 
 def _create_hvplot(data):
     # Hack:
-    hv.renderer("bokeh").theme = pn.template.react.DarkTheme.param.bokeh_theme.default
+    # hv.renderer("bokeh").theme = pn.template.react.DarkTheme.param.bokeh_theme.default
     return data.hvplot(y="y").opts(default_tools=[])
 
 

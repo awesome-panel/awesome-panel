@@ -38,8 +38,8 @@ APPLICATION = site.create_application(
     thumbnail_url="loading-spinners.png",
     documentation_url="",
     code_url="loading_spinners/loading_spinners.py",
-    gif_url="",
-    mp4_url="",
+    gif_url="loading-spinners.gif",
+    mp4_url="loadign-spinners.mp4",
     tags=["UX"],
 )
 
@@ -51,7 +51,7 @@ class LoadingStyler(param.Parameterized):
         default=DEFAULT_URL, objects=config.SPINNERS, doc="The loading spinner to use"
     )
     spinner_height = param.Integer(50, bounds=(1, 100))
-    background_rgb = param.Tuple((255,255,255))
+    background_rgb = param.Tuple((255, 255, 255))
     background_alpha = param.Number(0.5, bounds=(0.0, 1.0), step=0.01, doc="The background alpha")
     color = param.Color(config.DEFAULT_COLOR)
     style = param.String("", doc="The CSS Style applied to the loading spinner")
@@ -98,7 +98,9 @@ class LoadingStyler(param.Parameterized):
         ][0]
         color_picker.disabled = not callable(self.spinner)
 
-    @param.depends("spinner", "spinner_height", "color", "background_rgb", "background_alpha", watch=True)
+    @param.depends(
+        "spinner", "spinner_height", "color", "background_rgb", "background_alpha", watch=True
+    )
     def _update_style(self):
         self.style = f"""
 .bk.pn-loading:before {{
@@ -112,7 +114,7 @@ background-color: rgb({self.background_rgb[0]},{self.background_rgb[1]},{self.ba
         self.style_panel.object = f"""<style>{self.style}</style>"""
 
 
-class LoadingApp(param.Parameterized):
+class LoadingApp(param.Parameterized): # pylint: disable=too-many-instance-attributes
     """An app which show cases the loading spinner and enables the user to style it."""
 
     start_loading = param.Action(label="START LOADING", doc="Start the loading spinner")
@@ -171,9 +173,9 @@ class LoadingApp(param.Parameterized):
                         "disabled": True,
                     }
                 },
+                show_name=False,
             ),
             self.styler.settings_panel,
-            show_name=False,
             sizing_mode="stretch_width",
         )
         self.main = pn.Column(*self.panels, self.styler.style_panel, sizing_mode="stretch_both")
@@ -234,7 +236,7 @@ def view():
     )
     # template.theme.background
     if not issubclass(template.theme, pn.template.base.DefaultTheme):
-        app.styler.background_rgb=(0,0,0)
+        app.styler.background_rgb = (0, 0, 0)
     return template
 
 

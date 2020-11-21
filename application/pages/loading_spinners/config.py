@@ -1,14 +1,17 @@
 # pylint: disable=redefined-outer-name,protected-access
 # pylint: disable=missing-function-docstring,missing-module-docstring,missing-class-docstring
-from awesome_panel_extensions.io.loading import DEFAULT_URL, DARK_URL
+from awesome_panel_extensions.io.loading import DARK_URL, DEFAULT_URL
+
 DEFAULT_COLOR = "#757575"
 DARK_COLOR = "#BDBDBD"
+
 
 def _clean(color):
     return color.replace("#", "%23")
 
+
 def bar_chart_url(color):
-    color=_clean(color)
+    color = _clean(color)
 
     return f"""
 data:image/svg+xml,
@@ -22,10 +25,13 @@ data:image/svg+xml,
 </rect><rect x="75" y="15" width="10" height="40" fill="{color}">
 <animate attributeName="height" values="50;70;30;50" keyTimes="0;0.33;0.66;1" dur="1s" repeatCount="indefinite" calcMode="spline" keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1" begin="-1s"></animate>
 </rect></g></svg>
-""".replace("\n", "")
+""".replace(
+        "\n", ""
+    )
+
 
 def bars_url(color):
-    color=_clean(color)
+    color = _clean(color)
 
     return f"""
 data:image/svg+xml,
@@ -38,10 +44,13 @@ data:image/svg+xml,
   <animate attributeName="opacity" dur="1s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.5 0 0.5 1;0.5 0 0.5 1" values="1;0.2;1" begin="-0.2"></animate>
 </rect><rect x="75" y="30" width="10" height="40" fill="{color}">
   <animate attributeName="opacity" dur="1s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.5 0 0.5 1;0.5 0 0.5 1" values="1;0.2;1" begin="-1"></animate>
-</rect></svg>""".replace("\n", "")
+</rect></svg>""".replace(
+        "\n", ""
+    )
+
 
 def spinner_url(color):
-    color=_clean(color)
+    color = _clean(color)
 
     return f"""
 data:image/svg+xml,
@@ -94,21 +103,26 @@ data:image/svg+xml,
   <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="{color}">
     <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animate>
   </rect>
-</g></svg>""".replace("\n", "")
+</g></svg>""".replace(
+        "\n", ""
+    )
+
 
 def dual_ring_url(color):
-    color=_clean(color)
+    color = _clean(color)
     return f"""
 data:image/svg+xml,
 <svg xmlns="http://www.w3.org/2000/svg" style="margin: auto; background: none; display: block; shape-rendering: auto;" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
 <circle cx="50" cy="50" r="32" stroke-width="8" stroke="{color}" stroke-dasharray="50.26548245743669 50.26548245743669" fill="none" stroke-linecap="round">
   <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" keyTimes="0;1" values="0 50 50;360 50 50"></animateTransform>
 </circle></svg>
-""".replace("\n", "")
+""".replace(
+        "\n", ""
+    )
 
 
 def message_url(color):
-    color=_clean(color)
+    color = _clean(color)
     return f"""
 data:image/svg+xml,
 <svg xmlns="http://www.w3.org/2000/svg" style="margin: auto; background: none; display: block; shape-rendering: auto;" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
@@ -129,10 +143,13 @@ data:image/svg+xml,
   <animateTransform attributeName="transform" type="scale" begin="0s" calcMode="spline" keySplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keyTimes="0;0.5;1" dur="1s" repeatCount="indefinite"></animateTransform>
 </circle>
 </g></svg>
-""".replace("\n", "")
+""".replace(
+        "\n", ""
+    )
+
 
 def pulse_url(color):
-    color=_clean(color)
+    color = _clean(color)
     return f"""
 data:image/svg+xml,
 <svg xmlns="http://www.w3.org/2000/svg" style="margin: auto; background: none; display: block; shape-rendering: auto;" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
@@ -148,20 +165,26 @@ data:image/svg+xml,
   <animate attributeName="y" repeatCount="indefinite" dur="1s" calcMode="spline" keyTimes="0;0.5;1" values="20.999999999999996;30;30" keySplines="0 0.5 0.5 1;0 0.5 0.5 1"></animate>
   <animate attributeName="height" repeatCount="indefinite" dur="1s" calcMode="spline" keyTimes="0;0.5;1" values="58.00000000000001;40;40" keySplines="0 0.5 0.5 1;0 0.5 0.5 1"></animate>
 </rect></svg>
-""".replace("\n", "")
+""".replace(
+        "\n", ""
+    )
+
 
 def rolling_url(color):
-    color=_clean(color)
+    color = _clean(color)
     return f"""
 data:image/svg+xml,
 <svg xmlns="http://www.w3.org/2000/svg" style="margin: auto; background: none; display: block; shape-rendering: auto;" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
 <circle cx="50" cy="50" fill="none" stroke="{color}" stroke-width="10" r="35" stroke-dasharray="164.93361431346415 56.97787143782138">
   <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 50 50;360 50 50" keyTimes="0;1"></animateTransform>
 </circle></svg>
-""".replace("\n", "")
+""".replace(
+        "\n", ""
+    )
+
 
 def spin_url(color):
-    color=_clean(color)
+    color = _clean(color)
     return f"""
 data:image/svg+xml,
 <svg xmlns="http://www.w3.org/2000/svg" style="margin: auto; background: none; display: block; shape-rendering: auto;" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
@@ -222,7 +245,10 @@ data:image/svg+xml,
 </circle>
 </g>
 </g></svg>
-""".replace("\n", "")
+""".replace(
+        "\n", ""
+    )
+
 
 SPINNERS = {
     "Default": DEFAULT_URL,
