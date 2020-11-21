@@ -39,7 +39,7 @@ APPLICATION = site.create_application(
     documentation_url="",
     code_url="loading_spinners/loading_spinners.py",
     gif_url="loading-spinners.gif",
-    mp4_url="loadign-spinners.mp4",
+    mp4_url="loading-spinners.mp4",
     tags=["UX"],
 )
 
