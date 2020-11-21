@@ -101,7 +101,7 @@ class AwesomePanelSite(Site):
 
     def create_template(
         self, template: Optional[str] = None, theme: Optional[str] = None, **params
-    ) -> pn.template.BaseTemplate:
+    ) -> pn.template.base.BasicTemplate:
         params["favicon"] = params.get("favicon", FAVICON)
         params["main_max_width"] = params.get("main_max_width", MAIN_MAX_WIDTH)
         return super().create_template(template=template, theme=theme, **params)
