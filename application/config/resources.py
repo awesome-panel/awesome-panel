@@ -9,6 +9,7 @@ from application.config.settings import THUMBNAILS_ROOT
 
 # panel FILE ROOTS
 # https://dmnfarrell.github.io/bioinformatics/abm-mesa-network
+# https://github.com/holoviz-demos/minimal-heroku-demo
 RESOURCES = [
     Resource(
         name="Quick Dashboard with Panel",
