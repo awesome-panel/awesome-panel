@@ -18,8 +18,8 @@ APPLICATION = site.create_application(
     thumbnail_url="dependent-widgets.png",
     documentation_url="",
     code_url="discourse/discourse_1478_dependent_widgets.py",
-    gif_url="",
-    mp4_url="",
+    gif_url="dependent-widgets.gif",
+    mp4_url="dependent-widgets.mp4",
     tags=[
         "Discourse",
         "Multiselect",
@@ -83,7 +83,7 @@ def view():
         APPLICATION.intro_section(),
         pn.Tabs(
             pn.Row(select_continent, select_city, name="By Continent"),
-            pn.Row(select_city_auto, name="Autocomplete", margin=(10, 5, 25, 5)),
+            pn.Row(select_city_auto, name="By City and Autocomplete", margin=(10, 5, 25, 5)),
         ),
         get_plot,
     ]
