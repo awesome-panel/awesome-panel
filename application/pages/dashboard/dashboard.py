@@ -1,10 +1,10 @@
 """
 The Dashboard app shows how to create a **Classic Dashboard** in **Panel** with
 
-- [Linked Brushing](http://holoviews.org/user_guide/Linked_Brushing.html) (Not yet supported)
 - Classic Layout and awesome design
 - Responsiveness
 - User Selections
+- [Linked Brushing](http://holoviews.org/user_guide/Linked_Brushing.html) (Not yet supported)
 
 This app was kick started by [Pemp](https://discourse.holoviz.org/u/pemp) in a
 [discussion on Discourse]\
@@ -82,7 +82,7 @@ class Dashboard(param.Parameterized):
         default="Cut Distance",
         objects=["Cut Distance", "Removed Volume", "Av. uncut chip thickness"],
     )
-    color_map = param.ObjectSelector(default="winter", objects=COLOR_MAPS)
+    color_map = param.ObjectSelector(default="gist_rainbow", objects=COLOR_MAPS)
 
     insert_plot_pane = param.ClassSelector(class_=pn.pane.HoloViews)
     edge_plot_pane = param.ClassSelector(class_=pn.pane.HoloViews)
@@ -216,8 +216,10 @@ def view():
     """Returns a instance of the Dashboard.view"""
     pn.config.sizing_mode = "stretch_width"
     intro_section = APPLICATION.intro_section()
-    main = [intro_section, pn.layout.HSpacer(height=25), Dashboard().view]
-    return site.create_template(title="Classic Dashboard", main=main, main_max_width="80%")
+    main = [intro_section, Dashboard().view]
+    return site.create_template(
+        title="Classic Dashboard", theme="default", main=main, main_max_width="80%"
+    )
 
 
 if __name__.startswith("bokeh") or __name__ == "__main__":

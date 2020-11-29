@@ -25,7 +25,7 @@ APPLICATION = site.create_application(
 def test_code():
     """A manual test of the Code pane.
 
-    We expect to see nicely formatted Python code inside a gray box."""
+    We expect to see nicely formatted Python code"""
 
     code = """\
 def my_add(a,b):

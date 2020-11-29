@@ -14,6 +14,8 @@ from awesome_panel.express.testing import TestApp
 
 from application.config import site
 
+COLOR = "#E1477E"
+
 APPLICATION = site.create_application(
     url="bootstrap-card",
     name="Bootstrap Card",
@@ -115,13 +117,13 @@ def _holoviews_chart():
         y="Orders",
         width=None,
         height=500,
-        line_color="#007BFF",
+        line_color=COLOR,
         line_width=6,
     )
     scatter_plot = data.hvplot.scatter(x="Day", y="Orders", height=300,).opts(
         marker="o",
         size=10,
-        color="#007BFF",
+        color=COLOR,
     )
     fig = line_plot * scatter_plot
     gridstyle = {
@@ -242,17 +244,11 @@ def view() -> pn.Column:
     pn.config.sizing_mode = "stretch_width"
     main = [
         APPLICATION.intro_section(),
-        pn.layout.Divider(),
         test_card(),
-        pn.layout.Divider(),
         test_card_fixed_width(),
-        pn.layout.Divider(),
         test_card_with_plot(),
-        pn.layout.Divider(),
         test_card_with_multiple_panels(),
-        pn.layout.Divider(),
         test_card_collapsable(),
-        pn.layout.Divider(),
         test_card_with_code(),
     ]
     return site.create_template(title="Test Bootstrap Card", main=main)

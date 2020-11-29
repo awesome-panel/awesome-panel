@@ -1,6 +1,7 @@
 """Defines the Awesome Panel site"""
 import pathlib
 from typing import List, Optional
+from awesome_panel_extensions.assets import svg_icons
 
 import panel as pn
 from awesome_panel_extensions.site import Site
@@ -14,7 +15,7 @@ ASSETS_PATH = ROOT_PATH.parent / "assets"
 JS_PATH = ASSETS_PATH / "js"
 CSS_PATH = ASSETS_PATH / "css"
 HTML_PATH = ASSETS_PATH / "html"
-LINKS_PATH = HTML_PATH / "links.html"
+LINKS_PATH = HTML_PATH / "links_fast.html"
 LINKS = LINKS_PATH.read_text()
 SITE = "Awesome Panel"
 FAVICON = (
@@ -23,6 +24,11 @@ FAVICON = (
 )
 MAIN_MAX_WIDTH = "1148px"
 DEFAULT_AUTHOR = "Marc Skov Madsen"
+
+COLLAPSED_ICON = svg_icons.FAST_COLLAPSED_ICON
+EXPANDED_ICON = svg_icons.FAST_EXPANDED_ICON
+
+# pylint: disable=line-too-long
 
 # def _set_template_main(template: pn.template.BaseTemplate, main: List):
 #     if isinstance(template, pn.template.ReactTemplate):
@@ -94,7 +100,7 @@ class AwesomePanelSite(Site):
 
     def register_post_view(self, template: BasicTemplate, application: Application):
         super().register_post_view(template, application)
-
+        LINKS = LINKS_PATH.read_text().replace("{ COLLAPSED_ICON }", COLLAPSED_ICON).replace("{ EXPANDED_ICON }", EXPANDED_ICON)
         if hasattr(template, "sidebar"):
             menu = pn.pane.HTML(LINKS, sizing_mode="stretch_width")
             template.sidebar.append(menu)

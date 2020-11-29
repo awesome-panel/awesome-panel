@@ -103,7 +103,7 @@ class AsyncApp(param.Parameterized):
     slider = param.Number(2, bounds=(0, 10))
     text = param.String()
 
-    do_stuff = param.Action(lambda self: self.do_calc())
+    do_stuff = param.Action(lambda self: self.do_calc(), label="START")
     result = param.Number(0)
     view = param.Parameter()
 
@@ -112,18 +112,16 @@ class AsyncApp(param.Parameterized):
 
         pn.config.sizing_mode = "stretch_width"
 
-        start_async_section = pn.Column(
-            pn.pane.Markdown("## Starts async background tasks"),
+        app = pn.Column(
+            pn.pane.Markdown("## Background Task"),
             pn.Param(
                 self,
                 parameters=["do_stuff", "result"],
-                widgets={"result": {"disabled": True}, "do_stuff": {"button_type": "success"}},
+                widgets={"result": {"disabled": True}, "do_stuff": {"button_type": "primary"}},
                 show_name=False,
             ),
             progress.view,
-        )
-        working_section = pn.Column(
-            pn.pane.Markdown("## Works while background tasks are running"),
+            pn.pane.Markdown("## Other Tasks"),
             pn.Param(
                 self,
                 parameters=["select", "slider", "text"],
@@ -131,7 +129,7 @@ class AsyncApp(param.Parameterized):
                 show_name=False,
             ),
         )
-        main = [APPLICATION.intro_section(), start_async_section, working_section]
+        main = [APPLICATION.intro_section(), app]
 
         self.view = site.create_template(
             main=main,

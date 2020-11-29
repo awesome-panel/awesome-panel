@@ -114,7 +114,7 @@ background-color: rgb({self.background_rgb[0]},{self.background_rgb[1]},{self.ba
         self.style_panel.object = f"""<style>{self.style}</style>"""
 
 
-class LoadingApp(param.Parameterized): # pylint: disable=too-many-instance-attributes
+class LoadingApp(param.Parameterized):  # pylint: disable=too-many-instance-attributes
     """An app which show cases the loading spinner and enables the user to style it."""
 
     start_loading = param.Action(label="START LOADING", doc="Start the loading spinner")

@@ -4,6 +4,7 @@ Javier asked in [discourse 1478]\
 how to provide multiple ways to the user to select a value and then update a plot.
 """
 import holoviews as hv
+import holoviews
 import numpy as np
 import panel as pn
 
@@ -46,10 +47,14 @@ def _transform(_cities):
 
 CONTINENTS_LOOKUP, CITIES_LIST = _transform(CITIES)
 
+
 @site.add(APPLICATION)
 def view():
     """Returns the app in a nice template for use at awesome-panel.org"""
     pn.config.sizing_mode = "stretch_width"
+    template = site.create_template(
+        main_max_width="1024px",
+    )
 
     select_continent = pn.widgets.Select(name="Continent", options=CONTINENTS, value=CONTINENTS[0])
     select_city = pn.widgets.Select(
@@ -74,23 +79,28 @@ def view():
     def _update_auto_complete(city):
         select_city_auto.value = city
 
-    @pn.depends(select_city.param.value)
-    def get_plot(city):
+    plot_panel = pn.pane.HoloViews()
+
+    accent_base_color = template.theme.style.accent_base_color
+    @pn.depends(select_city.param.value, watch=True)
+    def _update_plot(*events):
+        city = select_city.value
         data = np.random.rand(100)
-        return hv.Curve(data).opts(title=city, width=500)
+        plot_panel.object= hv.Curve(data).opts(title=city, width=500, color=accent_base_color)
+    _update_plot()
 
     main = [
         APPLICATION.intro_section(),
-        pn.Tabs(
-            pn.Row(select_continent, select_city, name="By Continent"),
-            pn.Row(select_city_auto, name="By City and Autocomplete", margin=(10, 5, 25, 5)),
+        pn.Column(
+            pn.Tabs(
+                pn.Row(select_continent, select_city, name="By Continent", margin=(25, 5, 10, 5)),
+                pn.Row(select_city_auto, name="By City and Autocomplete", margin=(10, 5, 25, 5)),
+            ),
+            plot_panel
         ),
-        get_plot,
     ]
-    return site.create_template(
-        main=main,
-        main_max_width="700px",
-    )
+    template.main[:]=main
+    return template
 
 
 if __name__.startswith("bokeh"):

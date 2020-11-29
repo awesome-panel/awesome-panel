@@ -1,4 +1,4 @@
-# About the Awesome Panel Project
+# The Awesome Panel Project
 
 ## Contributions
 
@@ -12,11 +12,15 @@ For more details see the [Contribute](https://github.com/marcskovmadsen/awesome-
 
 ## Development
 
-This project is developed by Marc Skov Madsen. You can learn more about me at
-[datamodelsanalytics.com](https://datamodelsanalytics.com).
+This project is developed by Marc Skov Madsen. Feel free to reach out if you wan't to join the project as a developer.
 
-Feel free to reach out if you wan't to join the project as a developer. You can find my contact details at [datamodelsanalytics.com](https://datamodelsanalytics.com).
+You can find my contact details at [datamodelsanalytics.com](https://datamodelsanalytics.com).
 
-[<img src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/datamodelsanalytics.png?raw=true" style="max-width: 100%">](https://datamodelsanalytics.com)
-
-<br/><br/><br/>
+<div align="center" style="margin-right:10%;margin-left:10%">
+<a href="https://datamodelsanalytics.com">
+    <img
+        alt="ECharts"
+        src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/datamodelsanalytics.png?raw=true"
+        style="height:300px;"
+    ></a>
+</div>

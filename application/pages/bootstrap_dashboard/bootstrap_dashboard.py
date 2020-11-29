@@ -16,6 +16,8 @@ import panel as pn
 
 from application.config import site
 
+COLOR = "#E1477E"
+
 IMAGE_PATH = (
     pathlib.Path(__file__).parent
     / "assets"
@@ -64,15 +66,11 @@ def view() -> pn.Column:
     pn.config.sizing_mode = "stretch_width"
     main = [
         APPLICATION.intro_section(),
-        pnx.SubHeader("Dashboard"),
-        pn.layout.Divider(sizing_mode="stretch_width"),
-        pn.pane.HoloViews(_holoviews_chart()),
-        pnx.SubHeader("Section Title"),
-        pn.layout.Divider(sizing_mode="stretch_width"),
-        table,
+        pn.Column(pnx.SubHeader("Dashboard"),pn.pane.HoloViews(_holoviews_chart()),),
+        pn.Column(pnx.SubHeader("Section Title"),table,),
     ]
     return site.create_template(
-        title="Bootstrap Dashboard", template="bootstrap", main=main, main_max_width="800px"
+        title="Bootstrap Dashboard", main=main, main_max_width="800px"
     )
 
 
@@ -84,13 +82,13 @@ def _holoviews_chart():
         y="Orders",
         width=None,
         height=500,
-        line_color="#007BFF",
+        line_color=COLOR,
         line_width=6,
     )
     scatter_plot = data.hvplot.scatter(x="Day", y="Orders", height=300,).opts(
         marker="o",
         size=10,
-        color="#007BFF",
+        color=COLOR,
     )
     fig = line_plot * scatter_plot
     gridstyle = {

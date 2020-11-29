@@ -26,7 +26,7 @@ class TestApp(Column):
             "_",
             " ",
         ).capitalize()
-        text_str = "    # " + text_str
+        text_str = "    ## " + text_str
 
         if test_func.__doc__:
             if test_func.__doc__.startswith("    "):
