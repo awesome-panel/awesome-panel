@@ -1,6 +1,6 @@
 """Bootstrap inspired functionality"""
 import panel as pn
-from awesome_panel.express.assets import BOOTSTRAP_PANEL_EXPRESS_CSS
+# from awesome_panel.express.assets import BOOTSTRAP_PANEL_EXPRESS_CSS
 from panel.pane import Markdown
 
 BOOTSTRAP_CSS_URL = "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -21,7 +21,7 @@ def extend():
     """
     global _EXTENDED  # pylint: disable=global-statement
     if not _EXTENDED:
-        pn.config.raw_css.append(BOOTSTRAP_PANEL_EXPRESS_CSS.read_text())
+        # pn.config.raw_css.append(BOOTSTRAP_PANEL_EXPRESS_CSS.read_text())
         # pn.config.css_files.append(BOOTSTRAP_CSS_URL)
         _EXTENDED = True
 

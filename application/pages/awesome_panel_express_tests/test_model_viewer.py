@@ -44,19 +44,24 @@ APPLICATION = site.create_application(
 
 def create_app(**params):
     pn.config.sizing_mode = "stretch_width"
+    template = site.create_template(title="Test Model Viewer")
+    if "dark" in str(template.theme).lower():
+        background = template.theme.style.neutral_fill_card_rest
+    else:
+        background = GRAY
+
     top_app_bar = pn.Column(
         pn.layout.Row(
             pn.pane.HTML(MODELVIEWER_LOGO, width=50, sizing_mode="fixed"),
             pn.pane.Markdown(
-                "## model-viewer", width=250, sizing_mode="fixed", margin=(0, 5, 10, 5)
+                "## model-viewer", width=250, sizing_mode="fixed", margin=(10, 5, 10, 5)
             ),
-            # pn.pane.HTML(PANEL_LOGO, width=75),
             sizing_mode="stretch_width",
         ),
         pn.layout.HSpacer(height=2),
         height=60,
         sizing_mode="stretch_width",
-        background=GRAY,
+        background=background,
     )
 
     model_viewer = ModelViewer(height=500, width=650)
@@ -66,18 +71,20 @@ def create_app(**params):
         parameters=["src", "height", "width", "exposure", "auto_rotate", "camera_controls"],
         width=200,
         sizing_mode="stretch_height",
-        background=GRAY,
+        background=background,
     )
 
-    main = [
+    template.main[:] = [
         APPLICATION.intro_section(),
-        pn.pane.Alert("Downloading the model the first time might take a while!"),
-        top_app_bar,
-        pn.Row(model_viewer, pn.layout.HSpacer(), settings_bar, background=BLUE),
-        model_viewer.css_pane,
-        model_viewer.js_pane,
+        pn.Column(
+            pn.pane.Alert("Downloading the model the first time might take a while!"),
+            top_app_bar,
+            pn.Row(model_viewer, pn.layout.HSpacer(), settings_bar, background=BLUE),
+            model_viewer.css_pane,
+            model_viewer.js_pane,
+        ),
     ]
-    return site.create_template(title="Test Model Viewer", main=main)
+    return template
 
 
 @site.add(APPLICATION)

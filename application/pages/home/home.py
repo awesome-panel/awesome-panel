@@ -7,14 +7,18 @@ from panel.pane import Markdown
 from application.config import site
 
 SECTIONS_PATH = pathlib.Path(__file__).parent / "home.md"
-def read_sections():
+
+
+def _read_sections():
     sections = SECTIONS_PATH.read_text()
     sections = sections.split("##")
-    sections[0]=Markdown(sections[0])
-    for index in range(1,len(sections)):
-        sections[index]=Markdown("#"+sections[index])
+    sections[0] = Markdown(sections[0])
+    for index in range(1, len(sections)):
+        sections[index] = Markdown("#" + sections[index])
     return sections
-SECTIONS = read_sections()
+
+
+SECTIONS = _read_sections()
 APPLICATION = site.create_application(
     url="/",
     name="Awesome Panel",
@@ -33,7 +37,6 @@ APPLICATION = site.create_application(
 def view():
     """The home view of awesome-panel.org"""
     pn.config.sizing_mode = "stretch_width"
-    SECTIONS = read_sections()
     template = site.create_template(main=SECTIONS, main_max_width="900px")
     return template
 
@@ -41,5 +44,4 @@ def view():
 if __name__.startswith("bokeh"):
     view().servable()
 if __name__ == "__main__":
-    breakpoint()
     view().show(port=5007, open=False)

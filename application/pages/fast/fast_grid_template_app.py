@@ -128,16 +128,6 @@ def _create_navigation_menu():
     return pn.pane.HTML(NAVIGATION_HTML)
 
 
-def _create_sidebar_items():
-    return [
-        pn.pane.Markdown("## Settings"),
-        FastButton(name="Click Me"),
-        FastCheckbox(name="Check Me"),
-        FastSwitch(value=True, checked_message="Checked", unchecked_message="Unchecked"),
-        _create_navigation_menu(),
-    ]
-
-
 def _create_fast_button_card():
     component = FastButton(name="Click me", appearance="accent")
     parameters = [
@@ -248,14 +238,13 @@ def view():
         title="FastGridTemplate by awesome-panel.org",
     )
 
-    app.main[0:8, 0:6] = APPLICATION.intro_section()
-    app.main[0:8, 6:12] = _create_hvplot()
-    app.main[8:15, 0:12] = EchartsApp().view()
-    app.main[15:29, 0:3] = _create_fast_button_card()
-    app.main[15:29, 3:6] = _create_fast_checkbox_card()
-    app.main[15:29, 6:9] = _create_fast_literal_input_card()
-    app.main[15:29, 9:12] = _create_fast_switch_card()
-    app.sidebar.extend(_create_sidebar_items())
+    app.main[0:9, 0:6] = APPLICATION.intro_section()
+    app.main[0:9, 6:12] = _create_hvplot()
+    app.main[9:16, 0:12] = EchartsApp().view()
+    app.main[16:30, 0:3] = _create_fast_button_card()
+    app.main[16:30, 3:6] = _create_fast_checkbox_card()
+    app.main[16:30, 6:9] = _create_fast_literal_input_card()
+    app.main[16:30, 9:12] = _create_fast_switch_card()
     return app
 
 

@@ -21,8 +21,7 @@ ROOT = pathlib.Path(__file__).parent
 # Source: https://datahub.io/core/s-and-p-500-companies-financials
 DATA = ROOT / "PerspectiveViewerData.csv"
 VIDEO = """<iframe width="100%" height="400" src="https://www.youtube.com/embed/IO-HJsGdleE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>"""
-INFO = """
-**You can also use the `perspective-viewer` component in your apps**. It is a part of the
+INFO = """**You can also use the `perspective-viewer` component in your apps**. It is a part of the
 [`awesome-panel-extensions`](https://pypi.org/project/awesome-panel-extensions/) package.
 
 Checkout the
@@ -33,8 +32,7 @@ If you want Perspective supported in Panel, then go to GitHub and upvote
 [Panel Feature 1107](https://github.com/holoviz/panel/issues/1107),
 [Panel PR 1690](https://github.com/holoviz/panel/pull/1690),
 [Perspective Feature 942](https://github.com/finos/perspective/issues/942) and
-[Panel PR 1261](https://github.com/holoviz/panel/pull/1261)
-"""
+[Panel PR 1261](https://github.com/holoviz/panel/pull/1261)"""
 
 APPLICATION = site.create_application(
     url="perspective",
@@ -75,8 +73,15 @@ def create_app(**params) -> pn.Column:
         pn.Column: The app
     """
     pn.config.sizing_mode = "stretch_width"
+    template = site.create_template(title="Test Perspective")
+    if "dark" in str(template.theme).lower():
+        background = DARK_BACKGROUND
+        theme = "material-dark"
+    else:
+        background = "white"
+        theme = "material"
     perspective_viewer = PerspectiveViewer(
-        value=DATAFRAME, columns=COLUMNS, theme="material-dark", sizing_mode="stretch_both"
+        value=DATAFRAME, columns=COLUMNS, theme=theme, sizing_mode="stretch_both"
     )
 
     top_app_bar = pn.Row(
@@ -104,28 +109,27 @@ def create_app(**params) -> pn.Column:
         parameters=settings_parameters,
         width=200,
         sizing_mode="stretch_height",
-        background="#9E9E9E",
     )
-
-    main = [
+    template.main[:] = [
         APPLICATION.intro_section(),
-        pn.pane.Alert(INFO),
-        top_app_bar,
-        pn.Row(
-            perspective_viewer,
-            pn.layout.VSpacer(width=10),
-            settings_pane,
-            sizing_mode="stretch_both",
-            margin=0,
-            background=DARK_BACKGROUND,
+        pn.Column(
+            top_app_bar,
+            pn.Row(
+                perspective_viewer,
+                pn.layout.VSpacer(width=10),
+                settings_pane,
+                sizing_mode="stretch_both",
+                background=background,
+                margin=0,
+            ),
         ),
+        pn.pane.Alert(INFO, margin=0),
         pn.Column(
             "For more inspiration checkout",
             pn.pane.HTML(VIDEO),
-            pn.layout.HSpacer(height=50),
         ),
     ]
-    return site.create_template(title="Test Perspective", main=main)
+    return template
 
 
 @site.add(APPLICATION)

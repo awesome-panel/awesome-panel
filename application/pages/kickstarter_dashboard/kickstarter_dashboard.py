@@ -43,10 +43,10 @@ DATE_COLUMNS = [
 ]
 N_SAMPLES = 10000
 CMAP = {
-    "canceled": "blue",
-    "failed": "red",
-    "successful": "green",
-    "suspended": "orange",
+    "canceled": "#E0BB5E",
+    "failed": "#E1477E",
+    "successful": "#31E040",
+    "suspended": "#3D69E0",
 }
 APPLICATION = site.create_application(
     url="kick-starter-dashboard",
@@ -167,7 +167,8 @@ class KickstarterDashboard(param.Parameterized):
     ):
         """A Reactive View of the KickstarterDashboard"""
         pn.config.sizing_mode = "stretch_width"
-        sidebar = [
+        template = site.create_template(title="Kickstarter Dashboard")
+        template.sidebar[:] = [
             pn.pane.HTML("<h2>Settings</h2>"),
             pn.Param(
                 self.param.categories,
@@ -178,14 +179,13 @@ class KickstarterDashboard(param.Parameterized):
                 },
             ),
         ]
-        main = [
+        template.main[:] = [
             APPLICATION.intro_section(),
-            pn.layout.HSpacer(height=25),
             pn.Row(
                 pn.Column(self.scatter_plot_view, self.bar_chart_view, sizing_mode="stretch_width"),
             ),
         ]
-        return site.create_template(title="Kickstarter Dashboard", main=main, sidebar=sidebar)
+        return template
 
     @staticmethod
     def _extract() -> pd.DataFrame:

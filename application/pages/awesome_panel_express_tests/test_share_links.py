@@ -42,9 +42,11 @@ def view() -> pn.Column:
             """**You can also use the Social Sharing Buttons** in your site via the
 [`awesome_panel_extensions`](https://pypi.org/project/awesome-panel-extensions/) package.
 
-Please click and share if you like awesome-panel.org or the `awesome-panel-extensions`. Thanks."""
+Please click and share if you like awesome-panel.org or the `awesome-panel-extensions`. Thanks.""",
+            margin=0,
         ),
         pn.Row(
+            pn.Spacer(),
             ShareOnTwitter(url="https://awesome-panel.org", size=6),
             ShareOnLinkedIn(url="https://awesome-panel.org", size=6),
             ShareOnReddit(url="https://awesome-panel.org", size=6),

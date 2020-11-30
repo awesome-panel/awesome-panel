@@ -17,6 +17,7 @@ from itertools import cycle
 import pandas as pd
 import panel as pn
 import param
+from awesome_panel_extensions.io.loading import start_loading_spinner, stop_loading_spinner
 from pandas_profiling import ProfileReport
 
 from application.config import site
@@ -96,7 +97,6 @@ class PandasProfilingApp(param.Parameterized):  # pylint: disable=too-many-insta
     update_report = param.Action(label="UPDATE REPORT")
     random_report = param.Action(label="RANDOM REPORT")
 
-    progress = param.Parameter()
     html_report_pane = param.ClassSelector(class_=pn.pane.HTML)
     view = param.Parameter()
 
@@ -110,13 +110,12 @@ class PandasProfilingApp(param.Parameterized):  # pylint: disable=too-many-insta
 
         super().__init__(**params)
 
-        self.progress, self.html_report_pane, self.view = self._get_view(self.config)
+        self.html_report_pane, self.view = self._get_view(self.config)
 
         self._set_random_csv_url()
 
     def _update_report(self, _=None):
-        self.progress.active = True
-
+        self._start_loading()
         self._generate_report()
 
         self.html_report_pane.object = HTML_LOADING_REPORT
@@ -126,11 +125,17 @@ class PandasProfilingApp(param.Parameterized):  # pylint: disable=too-many-insta
             f"""<iframe srcdoc="{html_report}" frameborder="0" allowfullscreen></iframe>"""
         )
 
-        self.progress.active = False
+        self._stop_loading()
         self.csv_url = self.csv_url
 
+    def _stop_loading(self):
+        stop_loading_spinner(self._tabs)
+
+    def _start_loading(self):
+        start_loading_spinner(self._tabs)
+
     def _random_report(self, _=None):
-        self.progress.active = True
+        self._start_loading()
         self._set_random_csv_url()
         self._update_report()
 
@@ -154,21 +159,22 @@ class PandasProfilingApp(param.Parameterized):  # pylint: disable=too-many-insta
                 align="center",
             ),
             sizing_mode="stretch_width",
-            margin=(25, 5, 0, 5),
+            margin=(25, 0, 0, 0),
             css_classes=["app-bar"],
             background=GREEN,
         )
-        progress = pn.widgets.Progress(
-            bar_color="secondary", width=335, sizing_mode="fixed", margin=(0, 5, 10, 5)
-        )
-        progress.active = False
         widgets = {
             "csv_url": {
                 "sizing_mode": "stretch_width",
             },
-            "update_report": {"align": "end", "width": 150, "sizing_mode": "fixed"},
+            "update_report": {
+                "align": "end",
+                "width": 150,
+                "sizing_mode": "fixed",
+                "button_type": "primary",
+            },
             "random_report": {
-                "button_type": "success",
+                "button_type": "default",
                 "align": "end",
                 "width": 150,
                 "sizing_mode": "fixed",
@@ -199,21 +205,25 @@ class PandasProfilingApp(param.Parameterized):  # pylint: disable=too-many-insta
             report_tab,
             config_tab,
         )
-
+        self._tabs = tabs
         main = [
-            style,
-            description,
-            app_bar,
-            pn.Row(pn.layout.HSpacer(), progress, sizing_mode="stretch_width"),
-            tabs,
-            pn.layout.HSpacer(height=400),  # Gives better scrolling
+            pn.Column(
+                style,
+                description,
+            ),
+            pn.Column(
+                app_bar,
+                pn.layout.HSpacer(),
+                tabs,
+                # pn.layout.HSpacer(height=400),  # Gives better scrolling
+            ),
         ]
         _view = site.create_template(
             title="Pandas Profiling App",
             main=main,
         )
 
-        return progress, html_report_pane, _view
+        return html_report_pane, _view
 
     def _generate_report(self):
         self.html_report_pane.object = HTML_LOADING_DATA
@@ -258,4 +268,4 @@ def view():
 
 if __name__.startswith("bokeh"):
     pn.config.sizing_mode = "stretch_width"
-    PandasProfilingApp().view.servable()
+    view().servable()

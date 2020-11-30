@@ -36,6 +36,7 @@ APPLICATION = site.create_application(
     ],
 )
 
+COLOR = "#E1477E"
 DATE_BOUNDS = (
     datetime.date(
         1900,
@@ -44,16 +45,6 @@ DATE_BOUNDS = (
     ),
     datetime.datetime.now().date(),
 )
-
-STYLE = """
-<style>
-.bk.app{
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: 0.25rem;
-    box-shadow: 5px 5px 20px grey;
-}
-</style>
-"""
 
 
 @site.add(APPLICATION)
@@ -64,6 +55,7 @@ def view() -> pn.viewable.Viewable:
         pn.viewable.Viewable: The main Viewable of the app.
     """
     pn.config.sizing_mode = "stretch_width"
+    template = site.create_template(title="Param Reference Example")
     athlete = Athlete()
 
     athlete_view = pn.Param(
@@ -105,8 +97,7 @@ def view() -> pn.viewable.Viewable:
         pn.layout.VSpacer(width=10),
     )
 
-    main = [
-        STYLE,
+    template.main[:] = [
         APPLICATION.intro_section(),
         pn.Column(
             pn.Column(
@@ -119,7 +110,7 @@ def view() -> pn.viewable.Viewable:
             css_classes=["app"],
         ),
     ]
-    return site.create_template(title="Param Reference Example", main=main)
+    return template
 
 
 class PowerCurve(param.Parameterized):
@@ -207,13 +198,13 @@ class PowerCurve(param.Parameterized):
             x="duration",
             y="power",
             width=300,
-            line_color="#007BFF",
+            line_color=COLOR,
             line_width=3,
         )
         scatter_plot = dataframe.hvplot.scatter(x="duration", y="power", width=300,).opts(
             marker="o",
             size=6,
-            color="#007BFF",
+            color=COLOR,
         )
         fig = line_plot * scatter_plot
         gridstyle = {

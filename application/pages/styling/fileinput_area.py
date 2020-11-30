@@ -13,7 +13,7 @@ the `FileInput` widget.
     width: 100%;
     height: 100%;
     border: 3px dashed #9E9E9E;
-    background: #f8f8f8;
+    background: transparent;
     border-radius: 5px;
     text-align: left;
     margin: auto;
@@ -48,7 +48,7 @@ STYLE = """
     width: 100%;
     height: 100%;
     border: 3px dashed #9E9E9E;
-    background: #f8f8f8;
+    background: transparent;
     border-radius: 5px;
     text-align: left;
     margin: auto;

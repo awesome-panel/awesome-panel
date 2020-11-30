@@ -1,9 +1,17 @@
 """Defines the Awesome Panel site"""
 import pathlib
 from typing import List, Optional
-from awesome_panel_extensions.assets import svg_icons
 
 import panel as pn
+from awesome_panel_extensions.assets import svg_icons
+# pylint: disable=line-too-long
+from awesome_panel_extensions.frameworks.fast.templates.fast_grid_template.fast_grid_template import (
+    FastGridTemplate,
+)
+# pylint: enable=line-too-long
+from awesome_panel_extensions.frameworks.fast.templates.fast_template.fast_template import (
+    FastTemplate,
+)
 from awesome_panel_extensions.site import Site
 from awesome_panel_extensions.site.application import Application
 from panel.template.base import BasicTemplate
@@ -15,8 +23,9 @@ ASSETS_PATH = ROOT_PATH.parent / "assets"
 JS_PATH = ASSETS_PATH / "js"
 CSS_PATH = ASSETS_PATH / "css"
 HTML_PATH = ASSETS_PATH / "html"
-LINKS_PATH = HTML_PATH / "links_fast.html"
+LINKS_PATH = HTML_PATH / "links.html"
 LINKS = LINKS_PATH.read_text()
+LINKS_FAST_PATH = HTML_PATH / "links_fast.html"
 SITE = "Awesome Panel"
 FAVICON = (
     "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/"
@@ -27,6 +36,11 @@ DEFAULT_AUTHOR = "Marc Skov Madsen"
 
 COLLAPSED_ICON = svg_icons.FAST_COLLAPSED_ICON
 EXPANDED_ICON = svg_icons.FAST_EXPANDED_ICON
+LINKS_FAST = (
+    LINKS_FAST_PATH.read_text()
+    .replace("{ COLLAPSED_ICON }", COLLAPSED_ICON)
+    .replace("{ EXPANDED_ICON }", EXPANDED_ICON)
+)
 
 # pylint: disable=line-too-long
 
@@ -100,9 +114,12 @@ class AwesomePanelSite(Site):
 
     def register_post_view(self, template: BasicTemplate, application: Application):
         super().register_post_view(template, application)
-        LINKS = LINKS_PATH.read_text().replace("{ COLLAPSED_ICON }", COLLAPSED_ICON).replace("{ EXPANDED_ICON }", EXPANDED_ICON)
+        if isinstance(template, (FastTemplate, FastGridTemplate)):
+            links = LINKS_FAST
+        else:
+            links = LINKS
         if hasattr(template, "sidebar"):
-            menu = pn.pane.HTML(LINKS, sizing_mode="stretch_width")
+            menu = pn.pane.HTML(links, sizing_mode="stretch_width")
             template.sidebar.append(menu)
 
     def create_template(

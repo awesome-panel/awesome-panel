@@ -41,6 +41,7 @@ APPLICATION = site.create_application(
         "Streamz",
     ],
 )
+COLOR = "#E1477E"
 
 
 def _create_echarts(data):
@@ -54,6 +55,7 @@ def _create_echarts(data):
                 "type": "line",
                 "showSymbol": False,
                 "hoverAnimation": False,
+                "itemStyle": {"color": COLOR},
             },
         ],
         "responsive": True,
@@ -75,11 +77,11 @@ def _create_altair(data):
 def _create_hvplot(data):
     # Hack:
     # hv.renderer("bokeh").theme = pn.template.react.DarkTheme.param.bokeh_theme.default
-    return data.hvplot(y="y").opts(default_tools=[])
+    return data.hvplot(y="y", color=COLOR).opts(default_tools=[])
 
 
 def _create_plotly(data):
-    plot = px.line(data, y="y", height=310, template="plotly_dark")
+    plot = px.line(data, y="y", height=371, template="plotly_dark")
     plot.layout.autosize = True
     plot.layout.plot_bgcolor = "#2a2a2a"
     plot.layout.paper_bgcolor = "#2a2a2a"
@@ -102,7 +104,9 @@ def view():
     """Returns an instance of the Streaming Plots app"""
     pn.config.sizing_mode = "stretch_width"
     echart_pane = pn.pane.ECharts(theme="dark", sizing_mode="stretch_both")
-    plotly_pane = pn.pane.Plotly(sizing_mode="stretch_both", config={"responsive": True})
+    plotly_pane = pn.pane.Plotly(
+        sizing_mode="stretch_width", height=371, config={"responsive": True}
+    )
     hvplot_pane = pn.pane.HoloViews(sizing_mode="stretch_both")
     altair_pane = pn.pane.Vega(sizing_mode="stretch_both")
 
@@ -135,24 +139,24 @@ def view():
     pn.state.add_periodic_callback(emit, period=250, count=240)  # Will stream for 1 mins
 
     layout = site.create_template(
-        template="react",
+        template="fastgrid",
         theme="dark",
         main_max_width="",
-        row_height=100,
+        row_height=110,
     )
     site_intro = APPLICATION.intro_section()
-    layout.main[0:3, 0:6] = site_intro
-    layout.main[3:7, 0:6] = pn.layout.Card(
-        hvplot_pane, header="BOKEH via HOLOVIEWS", sizing_mode="stretch_both"
+    layout.main[0:3, 0:12] = site_intro
+    layout.main[3:7, 0:6] = pn.Column(
+        pn.pane.Markdown("## BOKEH via HOLOVIEWS"), hvplot_pane, sizing_mode="stretch_both"
     )
-    layout.main[3:7, 6:12] = pn.layout.Card(
-        altair_pane, header="VEGA via ALTAIR", sizing_mode="stretch_both"
+    layout.main[3:7, 6:12] = pn.Column(
+        pn.pane.Markdown("## VEGA via ALTAIR"), altair_pane, sizing_mode="stretch_both"
     )
-    layout.main[7:11, 0:6] = pn.layout.Card(
-        plotly_pane, header="PLOTLY", sizing_mode="stretch_both"
+    layout.main[7:11, 0:6] = pn.Column(
+        pn.pane.Markdown("## PLOTLY"), plotly_pane, sizing_mode="stretch_both"
     )
-    layout.main[7:11, 6:12] = pn.layout.Card(
-        echart_pane, header="ECHART", sizing_mode="stretch_both"
+    layout.main[7:11, 6:12] = pn.Column(
+        pn.pane.Markdown("## ECHART"), echart_pane, sizing_mode="stretch_both"
     )
     return layout
 

@@ -97,7 +97,11 @@ def view(configure=True) -> pn.Column:
         objects.append(material.Extension())
 
     return site.create_template(
-        title="Material Components", template="material", main=objects, main_max_width="500px"
+        title="Material Components",
+        template="material",
+        theme="default",
+        main=objects,
+        main_max_width="500px",
     )
 
 

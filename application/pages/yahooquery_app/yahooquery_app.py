@@ -159,12 +159,12 @@ def pnx_help(
     Returns:
         pn.viewable.Viewable: A Viewable showing the docstring and more
     """
-    return pnx.Card(
-        body=Code(
+    return pn.Column(
+        pnx.SubHeader(" Documentation"),
+        Code(
             str(python_object.__doc__),
             language="bash",
         ),
-        header="Documentation",
     )
 
 
@@ -178,9 +178,9 @@ def pnx_json(python_object: object) -> pn.viewable.Viewable:
     Returns:
         pn.viewable.Viewable: [description]
     """
-    return pnx.Card(
-        body=pn.pane.JSON(python_object, depth=5, theme="light"),
-        header="Response",
+    return pn.Column(
+        pnx.SubHeader(" Response"),
+        pn.pane.JSON(python_object, depth=5, theme="light"),
     )
 
 
@@ -195,9 +195,9 @@ def code_card(
     Returns:
         pn.viewable.Viewable: A Card with "Code" as header and code as body.
     """
-    return pnx.Card(
-        body=Code(code),
-        header="Code",
+    return pn.Column(
+        pnx.SubHeader(" Code"),
+        Code(code),
     )
 
 
@@ -219,7 +219,7 @@ class HomePage(Page):
         return code_card(
             f"""from yahooquery import Ticker
 
-tickers = Ticker("{self.symbols}"")
+tickers = Ticker("{self.symbols}")
         """
         )
 
@@ -337,14 +337,14 @@ class BasePage(Page):
         ):
             # Enable formatters when https://github.com/holoviz/panel/issues/941 is solved
             # formatters = get_default_formatters(data)
-            return pnx.Card(
-                body=pn.widgets.DataFrame(
+            return pn.Column(
+                pnx.SubHeader(" Response"),
+                pn.widgets.DataFrame(
                     data,
                     fit_columns=True,
                     sizing_mode="stretch_width",
                     margin=25,
                 ),
-                header="Response",
             )
 
         return pnx_json(data)
@@ -362,8 +362,9 @@ class BasePage(Page):
                 "frequency",
             ]
 
-        return pnx.Card(
-            body=pn.Param(
+        return pn.Column(
+            pnx.SubHeader(" Selections"),
+            pn.Param(
                 self,
                 parameters=parameters,
                 show_name=False,
@@ -373,7 +374,6 @@ class BasePage(Page):
                     "frequency": {"width": 100},
                 },
             ),
-            header="Selections",
         )
 
     @param.depends("symbols")
@@ -387,12 +387,9 @@ class BasePage(Page):
         """
         return pn.Column(
             self._selections,
-            pn.layout.HSpacer(height=25),
-            self._code,
-            pn.layout.HSpacer(height=25),
-            self._help,
-            pn.layout.HSpacer(height=25),
             self._data,
+            self._code,
+            self._help,
             sizing_mode="stretch_width",
         )
 
@@ -478,13 +475,11 @@ class BaseMultiplePage(Page):
     def _selections(
         self,
     ):
-        return pnx.Card(
-            body=[
-                self.param.all_endpoints,
-                self._endpoints_widget,
-            ],
-            header="Selections",
-            sizing_mode=None,
+        return pn.Column(
+            pnx.SubHeader(" Selections"),
+            self.param.all_endpoints,
+            self._endpoints_widget,
+            sizing_mode="fixed",
         )
 
     def view(
@@ -496,18 +491,10 @@ class BaseMultiplePage(Page):
             pn.viewable.Viewable: The main view of the BasePage
         """
         return pn.Column(
-            pn.Row(
-                pn.Column(
-                    self._code,
-                    pn.layout.HSpacer(height=25),
-                    self._help,
-                    pn.layout.HSpacer(height=25),
-                    self._data,
-                    sizing_mode="stretch_width",
-                ),
-                pn.layout.VSpacer(width=25),
-                self._selections,
-            ),
+            self._selections,
+            self._data,
+            self._code,
+            self._help,
             sizing_mode="stretch_width",
         )
 
@@ -565,11 +552,9 @@ class OptionsPage(Page):
             pn.viewable.Viewable: The main view of the OptionsPage
         """
         return pn.Column(
-            self._code,
-            pn.layout.HSpacer(height=25),
-            self._help,
-            pn.layout.HSpacer(height=25),
             self._data,
+            self._code,
+            self._help,
             sizing_mode="stretch_width",
         )
 
@@ -745,13 +730,11 @@ class HistoryPage(Page):
             pd.DataFrame,
         ):
             return pn.Column(
-                pnx.Card(
-                    body=pn.pane.Vega(
-                        self._history_plot(data),
-                        sizing_mode="stretch_width",
-                        height=325,
-                    ),
-                    header="Response",
+                pnx.SubHeader(" Response"),
+                pn.pane.Vega(
+                    self._history_plot(data),
+                    sizing_mode="stretch_width",
+                    height=325,
                 ),
                 sizing_mode="stretch_width",
             )
@@ -767,12 +750,9 @@ class HistoryPage(Page):
         """
         return pn.Column(
             self._param_view,
-            pn.layout.HSpacer(height=25),
-            self._code,
-            pn.layout.HSpacer(height=25),
-            self._help,
-            pn.layout.HSpacer(height=25),
             self._data,
+            self._code,
+            self._help,
             sizing_mode="stretch_width",
         )
 
@@ -793,11 +773,6 @@ class YahooQueryView(pn.Column):
         **kwargs,
     ):
         super().__init__(
-            APPLICATION.intro_section(),
-            pn.pane.Alert(
-                """Enter a symbol or comma seperated list of symbols in the box below. Then select
-                different pages to view the data available to you."""
-            ),
             self._symbols_widget(symbols),
             pn.layout.HSpacer(height=25),
             PROGRESS.view,
@@ -893,12 +868,15 @@ class YahooQueryApp(Page):
             for key, value in self.pages.items()
         ]
 
-        main = YahooQueryView(
-            self.param.symbols,
-            pages_list,
-            sizing_mode="stretch_width",
-        )
-        return site.create_template(title="Yahoo Query App", template="bootstrap", main=main)
+        main = [
+            APPLICATION.intro_section(),
+            YahooQueryView(
+                self.param.symbols,
+                pages_list,
+                sizing_mode="stretch_width",
+            ),
+        ]
+        return site.create_template(title="Yahoo Query App", main=main)
 
 
 @site.add(APPLICATION)

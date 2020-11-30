@@ -29,6 +29,8 @@ from application.pages.loading_spinners import config
 if STYLE not in pn.config.raw_css:
     pn.config.raw_css.append(STYLE)
 
+COLOR = "#E1477E"
+
 APPLICATION = site.create_application(
     url="loading-spinners",
     name="Loading Spinners",
@@ -150,7 +152,7 @@ class LoadingApp(param.Parameterized):  # pylint: disable=too-many-instance-attr
         self.panels = [
             pn.Param(
                 self.param.update_plot,
-                widgets={"update_plot": {"button_type": "success"}},
+                widgets={"update_plot": {"button_type": "primary"}},
             ),
             self.hv_plot_panel,
         ]
@@ -194,7 +196,9 @@ class LoadingApp(param.Parameterized):  # pylint: disable=too-many-instance-attr
         for item in xxs:
             data.append((item, random.randint(0, 10)))
         return hv.Bars(data, hv.Dimension("Car occupants"), "Count").opts(
-            height=500, responsive=True
+            height=500,
+            responsive=True,
+            color=COLOR,
         )
 
     def _update_plot(self, *_):
@@ -229,12 +233,10 @@ class LoadingApp(param.Parameterized):  # pylint: disable=too-many-instance-attr
 def view():
     """Returns the app in a Template"""
     pn.config.sizing_mode = "stretch_width"
+    template = site.create_template()
     app = LoadingApp(name="Loading Spinner App")
-    template = site.create_template(
-        sidebar=[app.settings_panel],
-        main=[APPLICATION.intro_section(), app.main],
-    )
-    # template.theme.background
+    template.sidebar[:] = [app.settings_panel]
+    template.main[:] = [APPLICATION.intro_section(), app.main]
     if not issubclass(template.theme, pn.template.base.DefaultTheme):
         app.styler.background_rgb = (0, 0, 0)
     return template

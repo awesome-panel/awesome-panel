@@ -13,7 +13,7 @@ class TemplateWithDialog(pn.template.Template):
     dialog_open = param.Action()
     dialog_close = param.Action()
 
-    TEMPLATE = (pathlib.Path(__file__).parent / "template.html").read_text()
+    # TEMPLATE = (pathlib.Path(__file__).parent / "template.html").read_text()
 
     def __init__(self, header, main, dialog, dialog_label: str):
         super().__init__(

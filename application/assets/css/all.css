@@ -38,7 +38,7 @@ div.codehilite {
     margin-bottom: 1rem;
     border-radius: 0.25rem;
 }
-.pnx-fileinput-area input[type=file] {
+/* .pnx-fileinput-area input[type=file] {
     width: 100%;
     height: 100%;
     border: 3px dashed #9E9E9E;
@@ -46,4 +46,4 @@ div.codehilite {
     border-radius: 5px;
     text-align: left;
     margin: auto;
-}
+} */

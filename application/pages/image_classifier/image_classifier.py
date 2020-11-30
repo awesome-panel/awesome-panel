@@ -418,7 +418,7 @@ class ImageClassifierApp(param.Parameterized):
         if self.image_file:
             bytes_io = io.BytesIO(self.image_file)
             return pn.pane.JPG(object=bytes_io, height=300)
-        return pnx.InfoAlert(
+        return pn.pane.Markdown(
             """Drop an image in .jpg format onto the FileInput Area or click the **Choose File**
             button to upload.""",
         )
@@ -532,30 +532,33 @@ def view():
 
     main = [
         APPLICATION.intro_section(),
-        pnx.SubHeader("Classifier"),
-        pn.Param(
-            image_classifier_app.param["model"],
-            widgets={
-                "model": {
-                    "type": pn.widgets.RadioButtonGroup,
-                    "button_type": "primary",
-                }
-            },
+        pn.Column(
+            pnx.SubHeader("Classifier"),
+            pn.Param(
+                image_classifier_app.param["model"],
+                widgets={
+                    "model": {
+                        "type": pn.widgets.RadioButtonGroup,
+                        "button_type": "primary",
+                    }
+                },
+            ),
+            pnx.SubHeader("Image"),
+            pn.Param(
+                image_classifier_app.param["image_file"],
+                widgets={
+                    "image_file": {
+                        "type": pn.widgets.FileInput,
+                        "accept": ".jpg",
+                        "css_classes": ["pnx-fileinput-area"],
+                        "height": 100,
+                    }
+                },
+            ),
+            image_classifier_app.predictions_view,
+            pnx.SubHeader("Image"),
+            image_classifier_app.image_view,
         ),
-        pnx.SubHeader("Image"),
-        pn.Param(
-            image_classifier_app.param["image_file"],
-            widgets={
-                "image_file": {
-                    "type": pn.widgets.FileInput,
-                    "accept": ".jpg",
-                    "css_classes": ["pnx-fileinput-area"],
-                    "height": 100,
-                }
-            },
-        ),
-        image_classifier_app.predictions_view,
-        image_classifier_app.image_view,
         image_classifier_app.resources_view,
     ]
     return site.create_template(

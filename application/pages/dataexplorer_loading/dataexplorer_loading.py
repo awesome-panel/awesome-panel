@@ -15,6 +15,7 @@ import param
 
 from application.config import site
 
+COLOR = "#E1477E"
 EMPTY_DATAFRAME = pd.DataFrame(columns=["x", "y"])
 EMPTY_PLOT = hv.Div("Click UPDATE to load!")
 SPINNER_URL = (
@@ -84,9 +85,7 @@ class DataExplorer(param.Parameterized):
     @param.depends("data", watch=True)
     def update_plot(self):
         """Updates the plot"""
-        plot = self.data.hvplot.line(x="x", y="y", color="green").opts(
-            responsive=True, line_width=4
-        )
+        plot = self.data.hvplot.line(x="x", y="y", color=COLOR).opts(responsive=True, line_width=4)
         self.plot_pane.object = plot
 
     def _get_view(self):
@@ -95,20 +94,24 @@ class DataExplorer(param.Parameterized):
         intro_section = APPLICATION.intro_section()
         main = [
             intro_section,
-            pn.pane.Markdown("#### Settings"),
-            pn.Param(
-                self,
-                parameters=["load_time", "update_action"],
-                show_name=False,
-                sizing_mode="stretch_width",
-                widgets={"update_action": {"button_type": "success"}},
+            pn.Column(
+                pn.pane.Markdown("#### Settings"),
+                pn.Param(
+                    self,
+                    parameters=["load_time", "update_action"],
+                    show_name=False,
+                    sizing_mode="stretch_width",
+                    widgets={"update_action": {"button_type": "primary"}},
+                ),
+                pn.pane.Markdown("#### Progress"),
+                self.progress_widget,
+                pn.pane.Markdown("#### Plot"),
+                self.plot_pane,
             ),
-            pn.pane.Markdown("#### Progress"),
-            self.progress_widget,
-            pn.pane.Markdown("#### Plot"),
-            self.plot_pane,
         ]
-        return site.create_template(title="Data Explorer Loading", main=main)
+        template = site.create_template(title="Data Explorer Loading", main=main)
+        self.plot_pane.theme = template.theme.bokeh_theme
+        return template
 
 
 @site.add(APPLICATION)

@@ -75,7 +75,11 @@ data = pd.DataFrame(
     {"int": [1, 2, 3000], "float": [3.14, 6.28, 9000.42], "str": ["A", "B", "C"]},
     index=[1, 2, 3],
 )
-formatters = dataframe.get_default_formatters(data)"""
+formatters = dataframe.get_default_formatters(data)
+pn.widgets.DataFrame(
+    data,
+    formatters=formatters,
+)"""
     )
     return TestApp(
         test_get_default_formatters,

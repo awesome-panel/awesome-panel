@@ -66,12 +66,16 @@ def view() -> pn.Column:
     pn.config.sizing_mode = "stretch_width"
     main = [
         APPLICATION.intro_section(),
-        pn.Column(pnx.SubHeader("Dashboard"),pn.pane.HoloViews(_holoviews_chart()),),
-        pn.Column(pnx.SubHeader("Section Title"),table,),
+        pn.Column(
+            pnx.SubHeader("Dashboard"),
+            pn.pane.HoloViews(_holoviews_chart()),
+        ),
+        pn.Column(
+            pnx.SubHeader("Section Title"),
+            table,
+        ),
     ]
-    return site.create_template(
-        title="Bootstrap Dashboard", main=main, main_max_width="800px"
-    )
+    return site.create_template(title="Bootstrap Dashboard", main=main, main_max_width="800px")
 
 
 def _holoviews_chart():

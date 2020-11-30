@@ -260,7 +260,6 @@ def view() -> pn.Column:
         test_report_as_decorator,
         test_increment_as_context_manager,
         test_increment_as_decorator,
-        pn.layout.HSpacer(height=100),
     ]
     return site.create_template(title="Test Progress Extension", main=main, main_max_width="800px")
 

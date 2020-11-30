@@ -21,6 +21,7 @@ from panel.pane import ECharts
 from application.config import site
 
 BOUNDS = (0, 100)
+COLOR = "#E1477E"
 
 APPLICATION = site.create_application(
     url="echarts",
@@ -87,6 +88,7 @@ class EchartsApp(param.Parameterized):
                         self.heels,
                         self.socks,
                     ],
+                    "itemStyle": {"color": "#A01346"},
                 }
             ],
             "responsive": True,
@@ -131,7 +133,7 @@ class EchartsApp(param.Parameterized):
                 pn.Row(self.plot, settings_pane, sizing_mode="stretch_width"),
             ),
         ]
-        return site.create_template(title="Test ECharts", main=main)
+        return site.create_template(title="Test ECharts", theme="default", main=main)
 
 
 @site.add(APPLICATION)

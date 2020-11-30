@@ -11,6 +11,7 @@ import awesome_panel.express as pnx
 import panel as pn
 
 ABOUT_PATH = pathlib.Path(__file__).parent / "about.md"
+ABOUT=ABOUT_PATH.read_text()
 IMAGE_PATH = (
     pathlib.Path(__file__).parent.parent
     / "assets"
@@ -25,7 +26,7 @@ class About(pn.Column):
     def __init__(
         self,
     ):
-        about = pn.pane.Markdown(ABOUT_PATH.read_text())
+        about = pn.pane.Markdown(ABOUT)
         image = pn.pane.PNG(
             str(IMAGE_PATH),
             max_width=600,

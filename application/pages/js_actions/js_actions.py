@@ -39,10 +39,10 @@ def copy_to_clipboard():
         value="Copy this text to the clipboard by clicking the button",
         height=100,
     )
-    copy_source_button = pn.widgets.Button(name="✂ Copy Source Value", button_type="success")
+    copy_source_button = pn.widgets.Button(name="✂ Copy Source Value", button_type="primary")
     copy_source_code = "navigator.clipboard.writeText(source.value);"
     copy_source_button.js_on_click(args={"source": source_textarea}, code=copy_source_code)
-    paste_text_area = pn.widgets.TextAreaInput(value="Paste your value here", height=100)
+    paste_text_area = pn.widgets.TextAreaInput(placeholder="Paste your value here", height=100)
     return pn.Column(
         pn.Row(source_textarea, copy_source_button, paste_text_area),
         name="✂ Copy to Clipboard",
@@ -56,27 +56,14 @@ def view():
     Used by the awesome-panel.org gallery"""
     pn.config.sizing_mode = "stretch_width"
     style = pn.pane.HTML(STYLE, width=0, height=0, sizing_mode="fixed", margin=0)
-    panel_logo = pn.pane.PNG(
-        object="https://panel.holoviz.org/_static/logo_horizontal.png",
-        height=35,
-        sizing_mode="fixed",
-        align="center",
-    )
-    app_bar = pn.Row(
-        pn.layout.VSpacer(width=10),
-        pn.pane.Markdown("### 💪 JS Actions", align="center"),
-        panel_logo,
-        background="black",
-        css_classes=["app-bar"],
-        margin=(0, 0, 25, 0),
-    )
     example_tabs = pn.Tabs(copy_to_clipboard())
     info = APPLICATION.intro_section()
     main = [
         info,
-        style,
-        app_bar,
-        example_tabs,
+        pn.Column(
+            style,
+            example_tabs,
+        ),
     ]
     return site.create_template(title="JS Actions", main=main)
 

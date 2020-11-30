@@ -120,24 +120,27 @@ class DETRApp(param.Parameterized):  # pylint: disable=too-many-instance-attribu
             css_classes=["app-bar"],
         )
 
-        top_selections = pn.Row(
-            pn.Param(
-                self,
-                parameters=["input_image_url"],
-                default_layout=pn.Row,
-                show_name=False,
-            ),
-            pn.Param(
-                self,
-                parameters=["run_detr", "set_random_image"],
-                widgets={"set_random_image": {"button_type": "success"}},
-                default_layout=pn.Row,
-                show_name=False,
-                width=300,
-                margin=(14, 5, 5, 5),
-                sizing_mode="fixed",
-            ),
-        )
+        # top_selections = pn.Row(
+        #     pn.Param(
+        #         self,
+        #         parameters=["input_image_url"],
+        #         default_layout=pn.Row,
+        #         show_name=False,
+        #     ),
+        #     pn.Param(
+        #         self,
+        #         parameters=["run_detr", "set_random_image"],
+        #         widgets={
+        #             "run_detr": {"button_type": "primary"},
+        #             "set_random_image": {"button_type": "default"},
+        #         },
+        #         default_layout=pn.Row,
+        #         show_name=False,
+        #         width=300,
+        #         margin=(14, 5, 5, 5),
+        #         sizing_mode="fixed",
+        #     ),
+        # )
         top_selections = pn.Row(
             pn.Param(
                 self,
@@ -149,7 +152,12 @@ class DETRApp(param.Parameterized):  # pylint: disable=too-many-instance-attribu
                         "width": 125,
                         "sizing_mode": "fixed",
                     },
-                    "run_detr": {"align": "end", "width": 125, "sizing_mode": "fixed"},
+                    "run_detr": {
+                        "align": "end",
+                        "width": 125,
+                        "sizing_mode": "fixed",
+                        "button_type": "primary",
+                    },
                 },
                 default_layout=pn.Row,
                 show_name=False,
@@ -172,16 +180,21 @@ class DETRApp(param.Parameterized):  # pylint: disable=too-many-instance-attribu
         plot = pn.pane.Plotly(height=600, config={"responsive": True})
         intro_section = APPLICATION.intro_section()
         main = [
-            style,
-            intro_section,
-            app_bar,
-            pn.Row(pn.Spacer(), progress),
-            top_selections,
-            plot,
-            bottom_selections,
+            pn.Column(
+                style,
+                intro_section,
+            ),
+            pn.Column(
+                app_bar,
+                pn.Row(pn.Spacer(), progress),
+                top_selections,
+                plot,
+                bottom_selections,
+            ),
         ]
         template = site.create_template(
             title="Panel DE:TR",
+            theme="default",
             main=main,
         )
         return progress, plot, template
