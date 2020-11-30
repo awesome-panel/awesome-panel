@@ -3,7 +3,6 @@ Javier asked in [discourse 1478]\
 (https://discourse.holoviz.org/t/use-two-different-widgets-to-update-same-plot/1478)
 how to provide multiple ways to the user to select a value and then update a plot.
 """
-import holoviews
 import holoviews as hv
 import numpy as np
 import panel as pn
@@ -79,18 +78,19 @@ def view():
     def _update_auto_complete(city):
         select_city_auto.value = city
 
-    plot_panel = pn.pane.HoloViews()
+    plot_panel = pn.pane.HoloViews(sizing_mode="stretch_width")
 
     accent_base_color = template.theme.style.accent_base_color
 
     @pn.depends(select_city.param.value, watch=True)
-    def _update_plot(*events):
+    def _update_plot(*_):
         city = select_city.value
         data = np.random.rand(100)
-        plot_panel.object = hv.Curve(data).opts(title=city, width=500, color=accent_base_color)
+        plot_panel.object = hv.Curve(data).opts(
+            title=city, color=accent_base_color, responsive=True, height=400
+        )
 
     _update_plot()
-
     main = [
         APPLICATION.intro_section(),
         pn.Column(
@@ -98,7 +98,7 @@ def view():
                 pn.Row(select_continent, select_city, name="By Continent", margin=(25, 5, 10, 5)),
                 pn.Row(select_city_auto, name="By City and Autocomplete", margin=(10, 5, 25, 5)),
             ),
-            plot_panel,
+            plot_panel
         ),
     ]
     template.main[:] = main
