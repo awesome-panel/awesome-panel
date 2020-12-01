@@ -98,7 +98,7 @@ def view():
                 pn.Row(select_continent, select_city, name="By Continent", margin=(25, 5, 10, 5)),
                 pn.Row(select_city_auto, name="By City and Autocomplete", margin=(10, 5, 25, 5)),
             ),
-            plot_panel
+            plot_panel,
         ),
     ]
     template.main[:] = main

@@ -1,134 +1,137 @@
-    <h3 style="margin:0px">Main</h3>
+<fast-accordion>
+<fast-accordion-item slot="item" expanded>
+    <h3 slot="heading" style="margin:0px">Main</h3>{ COLLAPSED_ICON }{ EXPANDED_ICON }
     <fast-menu>
         <fast-menu-item onClick='window.open("/")'>Home</fast-menu-item>
         <fast-menu-item onClick='window.open("gallery")'>Gallery</fast-menu-item>
         <fast-menu-item onClick='window.open("resources")'>Awesome List</fast-menu-item>
         <fast-menu-item onClick='window.open("about")'>About</fast-menu-item>
     </fast-menu>
-    <fast-accordion>
-    <fast-accordion-item slot="item">
-        <h3 slot="heading" style="margin:0px">Apps</h3>{ COLLAPSED_ICON }{ EXPANDED_ICON }
+</fast-accordion-item>
+<fast-accordion-item slot="item">
+    <h3 slot="heading" style="margin:0px">Apps</h3>{ COLLAPSED_ICON }{ EXPANDED_ICON }
+    <fast-menu>
+        <fast-menu-item onClick='window.open("async-tasks")'>Async Tasks</fast-menu-item>
+        <fast-menu-item onClick='window.open("bootstrap-alerts")'>Bootstrap Alerts</fast-menu-item>
+        <fast-menu-item onClick='window.open("bootstrap-card")'>Bootstrap Card</fast-menu-item>
+        <fast-menu-item onClick='window.open("bootstrap-dashboard")'>Bootstrap Dashboard</fast-menu-item>
+        <fast-menu-item onClick='window.open("classic-dashboard")'>Classic Dashboard</fast-menu-item>
+        <fast-menu-item onClick='window.open("code-pane")'>Code Pane</fast-menu-item>
+        <fast-menu-item onClick='window.open("custom-bokeh-model")'>Custom Bokeh Model</fast-menu-item>
+        <fast-menu-item onClick='window.open("dependent-widgets")'>Dependent Widgets</fast-menu-item>
+        <fast-menu-item onClick='window.open("detr")'>DE:TR: Object Detection</fast-menu-item>
+        <fast-menu-item onClick='window.open("data-explorer-loading")'>Data Explorer Loading</fast-menu-item>
+        <fast-menu-item onClick='window.open("dataframe-formatting")'>Dataframe Formatting</fast-menu-item>
+        <fast-menu-item onClick='window.open("echarts")'>ECharts</fast-menu-item>
+        <fast-menu-item onClick='window.open("fast-grid-template")'>Fast - Grid Template</fast-menu-item>
+        <fast-menu-item onClick='window.open("fileinput-area")'>FileInput Area</fast-menu-item>
+        <fast-menu-item onClick='window.open("image-classifier")'>Image Classifier</fast-menu-item>
+        <fast-menu-item onClick='window.open("js-actions")'>JS Actions</fast-menu-item>
+        <fast-menu-item onClick='window.open("kick-starter-dashboard")'>Kickstarter Dashboard</fast-menu-item>
+        <fast-menu-item onClick='window.open("loading-spinners")'>Loading Spinners</fast-menu-item>
+        <fast-menu-item onClick='window.open("material-components")'>Material Components</fast-menu-item>
+        <fast-menu-item onClick='window.open("model-viewer")'>Model Viewer</fast-menu-item>
+        <fast-menu-item onClick='window.open("panel-component-explorer")'>Panel Component Explorer</fast-menu-item>
+        <fast-menu-item onClick='window.open("pandas-profiling")'>Pandas Profiling</fast-menu-item>
+        <fast-menu-item onClick='window.open("param-reference")'>Param Reference Example</fast-menu-item>
+        <fast-menu-item onClick='window.open("perspective")'>Perspective Viewer</fast-menu-item>
+        <fast-menu-item onClick='window.open("progress-extension")'>Progress Extension</fast-menu-item>
+        <fast-menu-item onClick='window.open("share-on-social-buttons")'>Share On Social Buttons</fast-menu-item>
+        <fast-menu-item onClick='window.open("shoelace")'>Shoelace</fast-menu-item>
+        <fast-menu-item onClick='window.open("streaming-plots")'>Streaming Plots</fast-menu-item>
+        <fast-menu-item onClick='window.open("yahoo-query")'>Yahoo Query</fast-menu-item>
+</fast-menu>
+</fast-accordion-item>
+<fast-accordion-item slot="item">
+    <h3 slot="heading" style="margin:0px">Resources</h3>{ COLLAPSED_ICON }{ EXPANDED_ICON }
+    <fast-accordion style="width:100%;">
+        <fast-accordion-item slot="item">
+        <h4 slot="heading" style="margin:0px">Awesome Panel</h4>{ COLLAPSED_ICON }{ EXPANDED_ICON }
         <fast-menu>
-            <fast-menu-item onClick='window.open("async-tasks")'>Async Tasks</fast-menu-item>
-            <fast-menu-item onClick='window.open("bootstrap-alerts")'>Bootstrap Alerts</fast-menu-item>
-            <fast-menu-item onClick='window.open("bootstrap-card")'>Bootstrap Card</fast-menu-item>
-            <fast-menu-item onClick='window.open("bootstrap-dashboard")'>Bootstrap Dashboard</fast-menu-item>
-            <fast-menu-item onClick='window.open("classic-dashboard")'>Classic Dashboard</fast-menu-item>
-            <fast-menu-item onClick='window.open("code-pane")'>Code Pane</fast-menu-item>
-            <fast-menu-item onClick='window.open("custom-bokeh-model")'>Custom Bokeh Model</fast-menu-item>
-            <fast-menu-item onClick='window.open("dependent-widgets")'>Dependent Widgets</fast-menu-item>
-            <fast-menu-item onClick='window.open("detr")'>DE:TR: Object Detection</fast-menu-item>
-            <fast-menu-item onClick='window.open("data-explorer-loading")'>Data Explorer Loading</fast-menu-item>
-            <fast-menu-item onClick='window.open("dataframe-formatting")'>Dataframe Formatting</fast-menu-item>
-            <fast-menu-item onClick='window.open("echarts")'>ECharts</fast-menu-item>
-            <fast-menu-item onClick='window.open("fast-grid-template")'>Fast - Grid Template</fast-menu-item>
-            <fast-menu-item onClick='window.open("fileinput-area")'>FileInput Area</fast-menu-item>
-            <fast-menu-item onClick='window.open("image-classifier")'>Image Classifier</fast-menu-item>
-            <fast-menu-item onClick='window.open("js-actions")'>JS Actions</fast-menu-item>
-            <fast-menu-item onClick='window.open("kick-starter-dashboard")'>Kickstarter Dashboard</fast-menu-item>
-            <fast-menu-item onClick='window.open("loading-spinners")'>Loading Spinners</fast-menu-item>
-            <fast-menu-item onClick='window.open("material-components")'>Material Components</fast-menu-item>
-            <fast-menu-item onClick='window.open("model-viewer")'>Model Viewer</fast-menu-item>
-            <fast-menu-item onClick='window.open("pandas-profiling")'>Pandas Profiling</fast-menu-item>
-            <fast-menu-item onClick='window.open("param-reference")'>Param Reference Example</fast-menu-item>
-            <fast-menu-item onClick='window.open("perspective")'>Perspective Viewer</fast-menu-item>
-            <fast-menu-item onClick='window.open("progress-extension")'>Progress Extension</fast-menu-item>
-            <fast-menu-item onClick='window.open("share-on-social-buttons")'>Share On Social Buttons</fast-menu-item>
-            <fast-menu-item onClick='window.open("shoelace")'>Shoelace</fast-menu-item>
-            <fast-menu-item onClick='window.open("streaming-plots")'>Streaming Plots</fast-menu-item>
-            <fast-menu-item onClick='window.open("yahoo-query")'>Yahoo Query</fast-menu-item>
-    </fast-menu>
-    </fast-accordion-item>
-    <fast-accordion-item slot="item">
-        <h3 slot="heading" style="margin:0px">Resources</h3>{ COLLAPSED_ICON }{ EXPANDED_ICON }
-        <fast-accordion style="width:100%;">
-            <fast-accordion-item slot="item">
-            <h4 slot="heading" style="margin:0px">Awesome Panel</h4>{ COLLAPSED_ICON }{ EXPANDED_ICON }
-            <fast-menu>
-                <fast-menu-item onClick='window.open("https://github.com/marcskovmadsen/awesome-panel", target="_blank")'>Github</fast-menu-item>
-                <fast-menu-item onClick='window.open("https://awesome-panel.readthedocs.io/en/latest/", target="_blank")'>Read the Docs</fast-menu-item>
-                <fast-menu-item onClick='window.open("https://hub.docker.com/r/marcskovmadsen/awesome-panel", target="_blank")'>Docker Hub</fast-menu-item>
-                <fast-menu-item onClick='window.open("https://twitter.com/MarcSkovMadsen", target="_blank")'>Twitter</fast-menu-item>
-            </fast-menu>
-            </fast-accordion-item>
-            <fast-accordion-item slot="item">
-                <h4 slot="heading" style="margin:0px">Awesome Panel Extensions</h4>{ COLLAPSED_ICON }{ EXPANDED_ICON }
-                <fast-menu>
-                    <fast-menu-item onClick='window.open("https://mybinder.org/v2/gh/MarcSkovMadsen/awesome-panel-extensions/master?filepath=examples/reference", target="_blank")'>Binder</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://github.com/marcskovmadsen/awesome-panel-extensions", target="_blank")'>Github</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://pypi.org/project/awesome-panel-extensions/", target="_blank")'>PyPi</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html", target="_blank")'>Package Docs</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://awesome-panel.readthedocs.io/en/latest/guides/awesome-panel-extensions-guide/index.html", target="_blank")'>Extensions Guide</fast-menu-item>
-                </fast-menu>
-            </fast-accordion-item>
-            <fast-accordion-item slot="item">
-                <h4 slot="heading" style="margin:0px">Panel</h4>{ COLLAPSED_ICON }{ EXPANDED_ICON }
-                <fast-menu>
-                    <fast-menu-item onClick='window.open("https://panel.holoviz.org", target="_blank")'>Panel</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://discourse.holoviz.org/", target="_blank")'>Discourse</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://panel.holoviz.org/gallery/index.html", target="_blank")'>Examples</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://github.com/holoviz/panel.git", target="_blank")'>Github</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://panel.holoviz.org/reference/index.html", target="_blank")'>Reference</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://twitter.com/Panel_org", target="_blank")'>Twitter</fast-menu-item>
-                </fast-menu>
-            </fast-accordion-item>
-            <fast-accordion-item slot="item">
-                <h4 slot="heading" style="margin:0px">HoloViz</h4>{ COLLAPSED_ICON }{ EXPANDED_ICON }
-                <fast-menu>
-                    <fast-menu-item onClick='window.open("https://holoviz.org/", target="_blank")'>HoloViz</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://colorcet.holoviz.org/", target="_blank")'>Colorcet</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://datashader.org/", target="_blank")'>DataShader</fast-menu-item>
-                    <fast-menu-item onClick='window.open("http://geoviews.org/", target="_blank")'>GeoViews</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://holoviews.org/", target="_blank")'>HoloViews</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://hvplot.holoviz.org/", target="_blank")'>HvPlot</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://panel.holoviz.org", target="_blank")'>Panel</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://param.holoviz.org/", target="_blank")'>Param</fast-menu-item>
-                </fast-menu>
-            </fast-accordion-item>
-            <fast-accordion-item slot="item">
-                <h4 slot="heading" style="margin:0px">Bokeh</h4>{ COLLAPSED_ICON }{ EXPANDED_ICON }
-                <fast-menu>
-                    <fast-menu-item onClick='window.open("https://holoviz.org/", target="_blank")'>HoloViz</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://colorcet.holoviz.org/", target="_blank")'>Colorcet</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://datashader.org/", target="_blank")'>DataShader</fast-menu-item>
-                    <fast-menu-item onClick='window.open("http://geoviews.org/", target="_blank")'>GeoViews</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://holoviews.org/", target="_blank")'>HoloViews</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://hvplot.holoviz.org/", target="_blank")'>HvPlot</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://panel.holoviz.org", target="_blank")'>Panel</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://param.holoviz.org/", target="_blank")'>Param</fast-menu-item>
-                </fast-menu>
-            </fast-accordion-item>
-            <fast-accordion-item slot="item">
-                <h4 slot="heading" style="margin:0px">Viz Libs</h4>{ COLLAPSED_ICON }{ EXPANDED_ICON }
-                <fast-menu>
-                    <fast-menu-item onClick='window.open("https://altair-viz.github.io/", target="_blank")'>Altair</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://docs.bokeh.org/en/latest/index.html", target="_blank")'>Bokeh</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://datashader.org/", target="_blank")'>DataShader</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://deck.gl/", target="_blank")'>DECK.GL</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://echarts.apache.org/en/index.html", target="_blank")'>ECharts</fast-menu-item>
-                    <fast-menu-item onClick='window.open("http://geoviews.org/", target="_blank")'>GeoViews</fast-menu-item>
-                    <fast-menu-item onClick='window.open("http://ggplot.yhathq.com/", target="_blank")'>ggplot</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://holoviews.org/", target="_blank")'>HoloViews</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://hvplot.holoviz.org/", target="_blank")'>HvPlot</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://matplotlib.org/", target="_blank")'>MatplotLib</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://plotly.com/python/", target="_blank")'>Plotly</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://pyecharts.org/#/", target="_blank")'>pyecharts</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://seaborn.pydata.org/", target="_blank")'>Seaborn</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://vega.github.io/vega/", target="_blank")'>Vega</fast-menu-item>
-                    <fast-menu-item onClick='window.open("https://vtk.org/", target="_blank")'>VTK</fast-menu-item>
-                </fast-menu>
-            </fast-accordion-item>
-        </fast-accordion>
-    </fast-accordion-item>
-    <fast-accordion-item slot="item">
-        <h3 slot="heading" style="margin:0px">Share on Social</h3>{ COLLAPSED_ICON }{ EXPANDED_ICON }
-        <fast-menu>
-            <fast-menu-item onClick='window.open("https://github.com/marcskovmadsen/awesome-panel", target="_blank")'>Star on Github</fast-menu-item>
-            <fast-menu-item onClick='window.open("https://twitter.com/intent/tweet?url=https%3A%2F%2Fawesome-panel.org&amp;text=Checkout", target="_blank")'>Share on Twitter</fast-menu-item>
-            <fast-menu-item onClick='window.open("http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fawesome-panel.org&amp;title=Checkout", target="_blank")'>Share on LinkedIn</fast-menu-item>
-            <fast-menu-item onClick='window.open("https://reddit.com/submit?url=https%3A%2F%2Fawesome-panel.org&amp;title=Checkout", target="_blank")'>Share on Reddit</fast-menu-item>
-            <fast-menu-item onClick='window.open("https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fawesome-panel.org", target="_blank")'>Share on Facebook</fast-menu-item>
-            <fast-menu-item onClick='window.open("mailto:?subject=https%3A%2F%2Fawesome-panel.org&amp;body=Checkout&nbsp;https%3A%2F%2Fawesome-panel.org", target="_blank")'>Share by mail</fast-menu-item>
+            <fast-menu-item onClick='window.open("https://github.com/marcskovmadsen/awesome-panel", target="_blank")'>Github</fast-menu-item>
+            <fast-menu-item onClick='window.open("https://awesome-panel.readthedocs.io/en/latest/", target="_blank")'>Read the Docs</fast-menu-item>
+            <fast-menu-item onClick='window.open("https://hub.docker.com/r/marcskovmadsen/awesome-panel", target="_blank")'>Docker Hub</fast-menu-item>
+            <fast-menu-item onClick='window.open("https://twitter.com/MarcSkovMadsen", target="_blank")'>Twitter</fast-menu-item>
         </fast-menu>
-    </fast-accordion-item>
+        </fast-accordion-item>
+        <fast-accordion-item slot="item">
+            <h4 slot="heading" style="margin:0px">Awesome Panel Extensions</h4>{ COLLAPSED_ICON }{ EXPANDED_ICON }
+            <fast-menu>
+                <fast-menu-item onClick='window.open("https://mybinder.org/v2/gh/MarcSkovMadsen/awesome-panel-extensions/master?filepath=examples/reference", target="_blank")'>Binder</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://github.com/marcskovmadsen/awesome-panel-extensions", target="_blank")'>Github</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://pypi.org/project/awesome-panel-extensions/", target="_blank")'>PyPi</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html", target="_blank")'>Package Docs</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://awesome-panel.readthedocs.io/en/latest/guides/awesome-panel-extensions-guide/index.html", target="_blank")'>Extensions Guide</fast-menu-item>
+            </fast-menu>
+        </fast-accordion-item>
+        <fast-accordion-item slot="item">
+            <h4 slot="heading" style="margin:0px">Panel</h4>{ COLLAPSED_ICON }{ EXPANDED_ICON }
+            <fast-menu>
+                <fast-menu-item onClick='window.open("https://panel.holoviz.org", target="_blank")'>Panel</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://discourse.holoviz.org/", target="_blank")'>Discourse</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://panel.holoviz.org/gallery/index.html", target="_blank")'>Examples</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://github.com/holoviz/panel.git", target="_blank")'>Github</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://panel.holoviz.org/reference/index.html", target="_blank")'>Reference</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://twitter.com/Panel_org", target="_blank")'>Twitter</fast-menu-item>
+            </fast-menu>
+        </fast-accordion-item>
+        <fast-accordion-item slot="item">
+            <h4 slot="heading" style="margin:0px">HoloViz</h4>{ COLLAPSED_ICON }{ EXPANDED_ICON }
+            <fast-menu>
+                <fast-menu-item onClick='window.open("https://holoviz.org/", target="_blank")'>HoloViz</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://colorcet.holoviz.org/", target="_blank")'>Colorcet</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://datashader.org/", target="_blank")'>DataShader</fast-menu-item>
+                <fast-menu-item onClick='window.open("http://geoviews.org/", target="_blank")'>GeoViews</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://holoviews.org/", target="_blank")'>HoloViews</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://hvplot.holoviz.org/", target="_blank")'>HvPlot</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://panel.holoviz.org", target="_blank")'>Panel</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://param.holoviz.org/", target="_blank")'>Param</fast-menu-item>
+            </fast-menu>
+        </fast-accordion-item>
+        <fast-accordion-item slot="item">
+            <h4 slot="heading" style="margin:0px">Bokeh</h4>{ COLLAPSED_ICON }{ EXPANDED_ICON }
+            <fast-menu>
+                <fast-menu-item onClick='window.open("https://holoviz.org/", target="_blank")'>HoloViz</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://colorcet.holoviz.org/", target="_blank")'>Colorcet</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://datashader.org/", target="_blank")'>DataShader</fast-menu-item>
+                <fast-menu-item onClick='window.open("http://geoviews.org/", target="_blank")'>GeoViews</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://holoviews.org/", target="_blank")'>HoloViews</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://hvplot.holoviz.org/", target="_blank")'>HvPlot</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://panel.holoviz.org", target="_blank")'>Panel</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://param.holoviz.org/", target="_blank")'>Param</fast-menu-item>
+            </fast-menu>
+        </fast-accordion-item>
+        <fast-accordion-item slot="item">
+            <h4 slot="heading" style="margin:0px">Viz Libs</h4>{ COLLAPSED_ICON }{ EXPANDED_ICON }
+            <fast-menu>
+                <fast-menu-item onClick='window.open("https://altair-viz.github.io/", target="_blank")'>Altair</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://docs.bokeh.org/en/latest/index.html", target="_blank")'>Bokeh</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://datashader.org/", target="_blank")'>DataShader</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://deck.gl/", target="_blank")'>DECK.GL</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://echarts.apache.org/en/index.html", target="_blank")'>ECharts</fast-menu-item>
+                <fast-menu-item onClick='window.open("http://geoviews.org/", target="_blank")'>GeoViews</fast-menu-item>
+                <fast-menu-item onClick='window.open("http://ggplot.yhathq.com/", target="_blank")'>ggplot</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://holoviews.org/", target="_blank")'>HoloViews</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://hvplot.holoviz.org/", target="_blank")'>HvPlot</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://matplotlib.org/", target="_blank")'>MatplotLib</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://plotly.com/python/", target="_blank")'>Plotly</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://pyecharts.org/#/", target="_blank")'>pyecharts</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://seaborn.pydata.org/", target="_blank")'>Seaborn</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://vega.github.io/vega/", target="_blank")'>Vega</fast-menu-item>
+                <fast-menu-item onClick='window.open("https://vtk.org/", target="_blank")'>VTK</fast-menu-item>
+            </fast-menu>
+        </fast-accordion-item>
     </fast-accordion>
+</fast-accordion-item>
+<fast-accordion-item slot="item">
+    <h3 slot="heading" style="margin:0px">Share on Social</h3>{ COLLAPSED_ICON }{ EXPANDED_ICON }
+    <fast-menu>
+        <fast-menu-item onClick='window.open("https://github.com/marcskovmadsen/awesome-panel", target="_blank")'>Star on Github</fast-menu-item>
+        <fast-menu-item onClick='window.open("https://twitter.com/intent/tweet?url=https%3A%2F%2Fawesome-panel.org&amp;text=Checkout", target="_blank")'>Share on Twitter</fast-menu-item>
+        <fast-menu-item onClick='window.open("http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fawesome-panel.org&amp;title=Checkout", target="_blank")'>Share on LinkedIn</fast-menu-item>
+        <fast-menu-item onClick='window.open("https://reddit.com/submit?url=https%3A%2F%2Fawesome-panel.org&amp;title=Checkout", target="_blank")'>Share on Reddit</fast-menu-item>
+        <fast-menu-item onClick='window.open("https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fawesome-panel.org", target="_blank")'>Share on Facebook</fast-menu-item>
+        <fast-menu-item onClick='window.open("mailto:?subject=https%3A%2F%2Fawesome-panel.org&amp;body=Checkout&nbsp;https%3A%2F%2Fawesome-panel.org", target="_blank")'>Share by mail</fast-menu-item>
+    </fast-menu>
+</fast-accordion-item>
+</fast-accordion>

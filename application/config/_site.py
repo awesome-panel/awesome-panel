@@ -4,10 +4,12 @@ from typing import List, Optional
 
 import panel as pn
 from awesome_panel_extensions.assets import svg_icons
+
 # pylint: disable=line-too-long
 from awesome_panel_extensions.frameworks.fast.templates.fast_grid_template.fast_grid_template import (
     FastGridTemplate,
 )
+
 # pylint: enable=line-too-long
 from awesome_panel_extensions.frameworks.fast.templates.fast_template.fast_template import (
     FastTemplate,
