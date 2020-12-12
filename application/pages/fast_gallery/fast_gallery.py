@@ -35,7 +35,6 @@ def view():
         name="Gallery",
         url="",
         description="""The purpose of the Awesome Panel Gallery is to inspire and help you create awesome analytics apps in <fast-anchor href="https://panel.holoviz.org" target="_blank" appearance="hypertext">Panel</fast-anchor> using the tools you know and love.""",
-        background_image_url="https://ih1.redbubble.net/image.875683605.8623/ur,mug_lifestyle,tall_portrait,750x1000.jpg",
         items=list(sorted(site.applications, key=lambda x: x.name)),
         target="_self",
     )
