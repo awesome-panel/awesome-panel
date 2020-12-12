@@ -12,6 +12,7 @@ from application.config.settings import THUMBNAILS_ROOT
 # https://github.com/holoviz-demos/minimal-heroku-demo
 # https://vizartpandey.com/30-best-design-resources-for-your-next-tableau-dashboard/
 # ttps://vizartpandey.com/5-hci-principles-for-an-amazing-data-visualisation/
+# https://towardsdatascience.com/advanced-data-visualization-with-holoviews-e7263ad202e
 RESOURCES = [
     Resource(
         name="Quick Dashboard with Panel",

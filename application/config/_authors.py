@@ -12,3 +12,11 @@ MARC_SKOV_MADSEN = Author(
     url="https://datamodelsanalytics.com",
     avatar_url="https://avatars0.githubusercontent.com/u/42288570",
 )
+ANDREW_HUANG = Author(
+    name="Andrew Huang",
+    url="https://twitter.com/iateandrew1",
+    github_avatar_url=(
+        "https://avatars3.githubusercontent.com/u/"
+        "15331990?s=400&u=6f855e2f82d576fd22110f2ac9b1b7ec4825d916&v=4"
+    ),
+)

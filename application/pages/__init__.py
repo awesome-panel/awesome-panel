@@ -20,7 +20,10 @@ from application.pages.custom_bokeh_model import custom_bokeh_model
 from application.pages.dashboard import dashboard
 from application.pages.dataexplorer_loading import dataexplorer_loading
 from application.pages.detr import detr
-from application.pages.discourse import discourse_1478_dependent_widgets
+from application.pages.discourse import (
+    discourse_1478_dependent_widgets,
+    discourse_1533_template_with_map,
+)
 from application.pages.fast import fast_grid_template_app
 from application.pages.fast_gallery import fast_gallery
 from application.pages.home import home

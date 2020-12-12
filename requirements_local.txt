@@ -7,3 +7,4 @@ jupyter
 wheel
 twine
 snakeviz
+jupyter_bokeh
