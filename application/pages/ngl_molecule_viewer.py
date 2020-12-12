@@ -23,7 +23,7 @@ APPLICATION = site.create_application(
     introduction="Demo of the the NGL Molecule Viewer widget",
     description=__doc__,
     thumbnail_url="ngl-molecule-viewer.png",
-    code_url="ngl-molecule-viewer.py",
+    code_url="ngl_molecule_viewer.py",
     mp4_url="ngl-molecule-viewer.mp4",
     tags=["Panel", "NGL", "Molecule"],
 )
