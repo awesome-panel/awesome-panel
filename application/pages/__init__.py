@@ -32,7 +32,7 @@ from application.pages.issues import issues
 from application.pages.js_actions import js_actions
 from application.pages.kickstarter_dashboard import kickstarter_dashboard
 from application.pages.loading_spinners import loading_spinners
-from application.pages import ngl_protein_viewer
+from application.pages import ngl_molecule_viewer
 from application.pages.owid_choropleth_map import owid_choropleth_map
 from application.pages.pandas_profiling_app import pandas_profiling_app
 from application.pages.param_reference_example import param_reference_example
