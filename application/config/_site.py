@@ -142,6 +142,6 @@ site.authors.extend(
     [
         _authors.JOCHEM_SMIT,
         _authors.MARC_SKOV_MADSEN,
-        _authors.ANDRE
+        _authors.ANDREW_HUANG,
     ]
 )

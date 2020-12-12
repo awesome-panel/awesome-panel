@@ -20,6 +20,7 @@ APPLICATION = site.create_application(
     description=__doc__,
     thumbnail_url="google-map-viewer.png",
     code_url="discourse/discourse_1533_template_with_map.py",
+    mp4_url="google-map-viewer.mp4",
     tags=["Panel", "Param", "Grid", "Google", "Map"],
 )
 
