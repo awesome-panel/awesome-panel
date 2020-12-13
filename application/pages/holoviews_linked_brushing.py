@@ -15,7 +15,6 @@ import panel as pn
 import param
 import plotly.io as pio
 from awesome_panel_extensions.frameworks.fast.templates import FastGridTemplate
-from awesome_panel_extensions.io.loading import start_loading_spinner, stop_loading_spinner
 from holoviews import opts
 from plotly.data import iris
 
@@ -146,7 +145,6 @@ class LinkedBrushingApp(param.Parameterized):
 
     @param.depends("backend", watch=True)
     def _update_plot_panels(self, *_):
-        self._start_loading()
         backend = self.backend.lower()
         hv.extension(backend)
         if backend == "plotly":
@@ -157,13 +155,6 @@ class LinkedBrushingApp(param.Parameterized):
         scatter, hist = _get_linked_plots(backend)
         self.scatter_panel.object = scatter
         self.hist_panel.object = hist
-        self._stop_loading()
-
-    def _start_loading(self):
-        start_loading_spinner(self.scatter_panel, self.hist_panel)
-
-    def _stop_loading(self):
-        stop_loading_spinner(self.scatter_panel, self.hist_panel)
 
 
 @site.add(APPLICATION)
