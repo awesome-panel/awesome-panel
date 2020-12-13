@@ -8,13 +8,14 @@ This example is inspired by the HoloViews [Linked Brushing Reference Guide]\
 
 This example uses the *Iris* dataset.
 """
-from typing import Tuple
+from typing import Any, Dict, Tuple
 
 import holoviews as hv
 import panel as pn
 import param
 import plotly.io as pio
 from awesome_panel_extensions.frameworks.fast.templates import FastGridTemplate
+from awesome_panel_extensions.io.loading import start_loading_spinner, stop_loading_spinner
 from holoviews import opts
 from plotly.data import iris
 
@@ -34,9 +35,6 @@ APPLICATION = site.create_application(
     tags=["Panel", "Bokeh", "Plotly", "HoloViews", "Linked Brushing", "Cross Filter"],
 )
 
-IRIS_DATASET = iris()
-ACCENT_COLOR = "#E1477E"
-
 
 def _plotly_hooks(plot, element):
     """Used by HoloViews to give plots plotly plots special treatment"""
@@ -52,6 +50,24 @@ def _plotly_hooks(plot, element):
         fig["layout"]["selectdirection"] = "h"
 
 
+IRIS_DATASET = iris()
+ACCENT_COLOR = "#E1477E"
+OPTS: Dict[str, Dict[str, Any]] = {
+    "all": {
+        "scatter": {"color": ACCENT_COLOR, "responsive": True, "size": 10},
+        "hist": {"color": ACCENT_COLOR, "responsive": True},
+    },
+    "bokeh": {
+        "scatter": {"tools": ["hover"], "active_tools": ["box_select"]},
+        "hist": {"tools": ["hover"], "active_tools": ["box_select"]},
+    },
+    "plotly": {
+        "scatter": {"hooks": [_plotly_hooks]},
+        "hist": {"hooks": [_plotly_hooks]},
+    },
+}
+
+
 def _get_linked_plots(backend: str = "plotly") -> Tuple:
     """Returns a tuple (scatter, hist) of linked plots
 
@@ -64,24 +80,17 @@ def _get_linked_plots(backend: str = "plotly") -> Tuple:
 
     dataset = hv.Dataset(IRIS_DATASET)
 
-    scatter = hv.Scatter(dataset, kdims=["sepal_length"], vdims=["sepal_width"]).opts(
-        color=ACCENT_COLOR, responsive=True, size=10
-    )
-    hist = hv.operation.histogram(dataset, dimension="petal_width", normed=False).opts(
-        color=ACCENT_COLOR, responsive=True
-    )
-
-    if backend == "plotly":
-        scatter = scatter.opts(opts.Scatter(hooks=[_plotly_hooks]))
-        hist = hist.opts(opts.Histogram(hooks=[_plotly_hooks]))
-    elif backend == "bokeh":
-        scatter = scatter.opts(opts.Scatter(active_tools=["box_select"]))
-        hist = hist.opts(opts.Histogram(active_tools=["box_select"]))
+    scatter = hv.Scatter(dataset, kdims=["sepal_length"], vdims=["sepal_width"])
+    hist = hv.operation.histogram(dataset, dimension="petal_width", normed=False)
 
     # pylint: disable=no-value-for-parameter
     selection_linker = hv.selection.link_selections.instance()
-    scatter = selection_linker(scatter)
-    hist = selection_linker(hist)
+    scatter = selection_linker(scatter).opts(
+        opts.Scatter(**OPTS["all"]["scatter"], **OPTS[backend]["scatter"])
+    )
+    hist = selection_linker(hist).opts(
+        opts.Histogram(**OPTS["all"]["hist"], **OPTS[backend]["hist"])
+    )
 
     return scatter, hist
 
@@ -137,6 +146,7 @@ class LinkedBrushingApp(param.Parameterized):
 
     @param.depends("backend", watch=True)
     def _update_plot_panels(self, *_):
+        self._start_loading()
         backend = self.backend.lower()
         hv.extension(backend)
         if backend == "plotly":
@@ -147,6 +157,13 @@ class LinkedBrushingApp(param.Parameterized):
         scatter, hist = _get_linked_plots(backend)
         self.scatter_panel.object = scatter
         self.hist_panel.object = hist
+        self._stop_loading()
+
+    def _start_loading(self):
+        start_loading_spinner(self.scatter_panel, self.hist_panel)
+
+    def _stop_loading(self):
+        stop_loading_spinner(self.scatter_panel, self.hist_panel)
 
 
 @site.add(APPLICATION)
