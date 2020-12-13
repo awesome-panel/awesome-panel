@@ -31,6 +31,7 @@ from application.pages.image_classifier import image_classifier
 from application.pages.issues import issues
 from application.pages.js_actions import js_actions
 from application.pages.kickstarter_dashboard import kickstarter_dashboard
+from application.pages import holoviews_linked_brushing
 from application.pages.loading_spinners import loading_spinners
 from application.pages import ngl_molecule_viewer
 from application.pages.owid_choropleth_map import owid_choropleth_map
