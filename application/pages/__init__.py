@@ -1,5 +1,9 @@
 """Exports the different page components to show in the application"""
-from application.pages import panel_component_explorer
+from application.pages import (
+    holoviews_linked_brushing,
+    ngl_molecule_viewer,
+    panel_component_explorer,
+)
 from application.pages.about import about
 from application.pages.async_tasks import async_tasks
 from application.pages.awesome_panel_express_tests import (
@@ -31,9 +35,7 @@ from application.pages.image_classifier import image_classifier
 from application.pages.issues import issues
 from application.pages.js_actions import js_actions
 from application.pages.kickstarter_dashboard import kickstarter_dashboard
-from application.pages import holoviews_linked_brushing
 from application.pages.loading_spinners import loading_spinners
-from application.pages import ngl_molecule_viewer
 from application.pages.owid_choropleth_map import owid_choropleth_map
 from application.pages.pandas_profiling_app import pandas_profiling_app
 from application.pages.param_reference_example import param_reference_example
