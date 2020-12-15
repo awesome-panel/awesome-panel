@@ -15,6 +15,14 @@ from application.config.settings import THUMBNAILS_ROOT
 # https://towardsdatascience.com/advanced-data-visualization-with-holoviews-e7263ad202e
 RESOURCES = [
     Resource(
+        name="Panel/Holoviews Learning Aid",
+        url="https://www.quansight.com/post/panel-holoviews-learning-aid",
+        thumbnail_png_path=THUMBNAILS_ROOT + "",
+        is_awesome=True,
+        tags=[tags.TUTORIAL],
+        author=authors.QUANSIGHT,
+    ),
+    Resource(
         name="Quick Dashboard with Panel",
         url="https://www.quansight.com/post/quick-dashboarding-with-panel",
         thumbnail_png_path=THUMBNAILS_ROOT + "",
