@@ -8,8 +8,8 @@ from application.config import site
 RESOURCES_PATH = pathlib.Path(__file__).parent / "resources.md"
 RESOURCES = RESOURCES_PATH.read_text()
 APPLICATION = site.create_application(
-    url="resources",
-    name="Resources",
+    url="awesome-list",
+    name="Awesome List",
     author="Marc Skov Madsen",
     introduction="""A list of Awesome Panel Resources created by the community""",
     description=__doc__,
@@ -29,7 +29,7 @@ APPLICATION = site.create_application(
 def view():
     """The resources view of awesome-panel.org"""
     main = [Markdown(RESOURCES, sizing_mode="stretch_width")]
-    template = site.create_template(title="Resources", main=main)
+    template = site.create_template(main=main)
     return template
 
 

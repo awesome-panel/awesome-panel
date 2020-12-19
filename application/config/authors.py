@@ -153,6 +153,12 @@ STREAMLIT = Author(
     github_url="https://github.com/streamlit",
     github_avatar_url="https://avatars1.githubusercontent.com/u/45109972",
 )
+THOMAS_PEDOT = Author(
+    name="Thomas PEDOT",
+    url="https://github.com/slamer59",
+    github_url="https://github.com/slamer59",
+    github_avatar_url="https://avatars2.githubusercontent.com/u/25283272",
+)
 VDA_LAB = Author(
     name="VDA Lab",
     url="http://vda-lab.github.io/",
@@ -199,6 +205,7 @@ AUTHORS = [
     QUANSIGHT,
     PLOTLY,
     STREAMLIT,
+    THOMAS_PEDOT,
     VDA_LAB,
     VOILA,
     XAVARTLEY,

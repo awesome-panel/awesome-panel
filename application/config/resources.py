@@ -15,6 +15,18 @@ from application.config.settings import THUMBNAILS_ROOT
 # https://towardsdatascience.com/advanced-data-visualization-with-holoviews-e7263ad202e
 RESOURCES = [
     Resource(
+        name="Digital Vulnerabilities Map",
+        url="https://discourse.holoviz.org/t/a-map-to-help-local-policies-to-detect-digital-vulnerabilities/1580",
+        thumbnail_png_path=THUMBNAILS_ROOT + "",
+        is_awesome=True,
+        tags=[
+            tags.APP,
+            tags.CODE,
+            tags.TUTORIAL,
+        ],
+        author=authors.THOMAS_PEDOT,
+    ),
+    Resource(
         name="Panel/Holoviews Learning Aid",
         url="https://www.quansight.com/post/panel-holoviews-learning-aid",
         thumbnail_png_path=THUMBNAILS_ROOT + "",
