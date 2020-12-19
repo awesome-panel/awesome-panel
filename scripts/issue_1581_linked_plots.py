@@ -5,9 +5,9 @@ import hvplot.pandas
 import numpy as np
 import pandas as pd
 import panel as pn
+from holoviews.operation.datashader import rasterize, shade
 from holoviews.selection import link_selections
 from holoviews.util.transform import dim
-from holoviews.operation.datashader import shade, rasterize
 
 hv.extension("bokeh", width=100)
 pn.extension(comms="vscode")
@@ -29,7 +29,11 @@ colors = hv.Cycle("Category10").values
 dims = ["rand1", "rand2", "rand3"]
 items = []
 for c, dim in zip(colors, dims):
-    item = data_df.hvplot(x="x", y=dim, kind="points", datashade=True, color=c).opts(height=200).hist(dim)
+    item = (
+        data_df.hvplot(x="x", y=dim, kind="points", datashade=True, color=c)
+        .opts(height=200)
+        .hist(dim)
+    )
     item[0].opts(datashade=True)
     item[1].opts(color=c)
     items.append(item)
@@ -37,7 +41,9 @@ layout = hv.Layout(items)
 link_selections(layout).cols(1)
 data_df.hvplot(x="x", y=dim, kind="points", datashade=True)
 
-plot1=data_df.hvplot(x="x", y=dim, kind="points", color=c).opts(height=200, width=500)
-plot2=plot1.hist(dim)[1].opts(color=c)
-plot1=data_df.hvplot(x="x", y=dim, kind="points", color=c, datashade=True).opts(height=200, width=500)
+plot1 = data_df.hvplot(x="x", y=dim, kind="points", color=c).opts(height=200, width=500)
+plot2 = plot1.hist(dim)[1].opts(color=c)
+plot1 = data_df.hvplot(x="x", y=dim, kind="points", color=c, datashade=True).opts(
+    height=200, width=500
+)
 plot1 << plot2

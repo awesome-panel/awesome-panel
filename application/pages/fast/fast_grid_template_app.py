@@ -48,9 +48,9 @@ APPLICATION = site.create_application(
     description=__doc__,
     thumbnail_url="fast-grid-template.png",
     documentation_url="",
-    code_url="fast/fast_grid_template.py",
+    code_url="fast/fast_grid_template_app.py",
     gif_url="",
-    mp4_url="",
+    mp4_url="fast_grid_template_app.mp4",
     tags=["Fast", "Template"],
 )
 
