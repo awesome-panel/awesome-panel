@@ -41,6 +41,7 @@ from application.pages.pandas_profiling_app import pandas_profiling_app
 from application.pages.param_reference_example import param_reference_example
 from application.pages.resources import resources
 from application.pages.shoelace import shoelace
+from application.pages.streaming_dashboard import streaming_dashboard
 from application.pages.streaming_plots import streaming_plots
 from application.pages.styling import fileinput_area
 from application.pages.yahooquery_app import yahooquery_app

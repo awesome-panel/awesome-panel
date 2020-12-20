@@ -72,7 +72,8 @@ def view():
     viewer = GoogleMapViewer(name="Google Map Viewer")
     template = FastGridTemplate(title="Google Map Viewer", row_height=100)
     template.sidebar.append(viewer.settings_panel)
-    template.main[0:6, :] = viewer.map_panel
+    template.main[0:3, :] = APPLICATION.intro_section()
+    template.main[3:10, :] = viewer.map_panel
     return template
 
 
