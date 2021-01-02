@@ -123,7 +123,8 @@ Thanks
 
 - An Operating System like Windows, OsX or Linux
 - A working [Python](https://www.python.org/) installation.
-    - We recommend using 64bit Python 3.7.4.
+    - You need Python >= 3.7.
+    - We recommend using 64bit Python 3.7.8.
 - a Shell
     - We recommend [Git Bash](https://git-scm.com/downloads) for Windows 8.1
     - We recommend [wsl](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) for For Windows 10

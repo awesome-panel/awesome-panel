@@ -13,6 +13,7 @@ from application.config.settings import THUMBNAILS_ROOT
 # https://vizartpandey.com/30-best-design-resources-for-your-next-tableau-dashboard/
 # ttps://vizartpandey.com/5-hci-principles-for-an-amazing-data-visualisation/
 # https://towardsdatascience.com/advanced-data-visualization-with-holoviews-e7263ad202e
+# https://protect2.fireeye.com/v1/url?k=7f6b8b93-20f0b2f2-7f6b65dc-86d8a30ca42b-455dc19b6233bbd3&q=1&e=e5b506b5-487c-4db8-8728-0b4d615ccdca&u=https%3A%2F%2Fwww.quansight.com%2Fpost%2Fworking-across-panel-and-ipywidgets-ecosystems
 RESOURCES = [
     Resource(
         name="Digital Vulnerabilities Map",
