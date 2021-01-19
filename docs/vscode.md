@@ -75,7 +75,7 @@ Then you need to insert the following snippet in your `<your-app_name>.py` file.
 ```python
 import ptvsd
 ptvsd.enable_attach(address=('localhost', 5678))
-ptvsd.wait_for_attach() # Only include this line if you always wan't to attach the debugger
+ptvsd.wait_for_attach() # Only include this line if you always want to attach the debugger
 ```
 
 Then you should configure your *Remote Attach: debug PTVSD option*
@@ -105,7 +105,7 @@ and update to the below in your launch.json file. Please make sure that you manu
 ```
 
 Please note that by default you will be debugging your own code only.
-If you wan't to debug into for example the panel code, then you can change the `justMyCode` setting from `true` to `false`.
+If you want to debug into for example the panel code, then you can change the `justMyCode` setting from `true` to `false`.
 
 Then you can start your Panel app
 
@@ -138,7 +138,7 @@ You can create a snippet in your `python.json` snippet configuration to insert t
         "import ptvsd",
         "ptvsd.enable_attach(address=('localhost', 5678))",
         "print('Ready to attach the VS Code debugger')",
-        "ptvsd.wait_for_attach() # Only include this line if you always wan't to attach the debugger",
+        "ptvsd.wait_for_attach() # Only include this line if you always want to attach the debugger",
     ],
     "description": "Inserts snippet to setup debugging via ptvsd"
 },

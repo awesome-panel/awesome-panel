@@ -48,7 +48,7 @@ INFO = """
 in order to compare how they work.
 
 This example uses [geopandas](http://geopandas.org/).
-On Windows the easiest is to `conda install geopandas`. If you wan't to `pip install geopandas` on
+On Windows the easiest is to `conda install geopandas`. If you want to `pip install geopandas` on
 Windows then please follow the
 [using-geopandas-windows](https://geoffboeing.com/2014/09/using-geopandas-windows/) article.
 """

@@ -8,7 +8,7 @@ ptvsd.enable_attach(
         5678,
     )
 )
-ptvsd.wait_for_attach()  # Only include this line if you always wan't to attach the debugger
+ptvsd.wait_for_attach()  # Only include this line if you always want to attach the debugger
 
 
 def action(

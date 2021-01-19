@@ -12,7 +12,7 @@ For more details see the [Contribute](https://github.com/marcskovmadsen/awesome-
 
 ## Development
 
-This project is developed by Marc Skov Madsen. Feel free to reach out if you wan't to join the project as a developer.
+This project is developed by Marc Skov Madsen. Feel free to reach out if you want to join the project as a developer.
 
 You can find my contact details at [datamodelsanalytics.com](https://datamodelsanalytics.com).
 

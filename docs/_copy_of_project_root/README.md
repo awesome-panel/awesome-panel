@@ -287,7 +287,7 @@ invoke docker.run-server
 
 ### Run the Application using the image on Dockerhub
 
-If you don't wan't to clone the repo and build the docker container you can just use `docker run` to run the image from [Dockerhub](https://cloud.docker.com/u/marcskovmadsen/repository/docker/marcskovmadsen/awesome-panel)
+If you don't want to clone the repo and build the docker container you can just use `docker run` to run the image from [Dockerhub](https://cloud.docker.com/u/marcskovmadsen/repository/docker/marcskovmadsen/awesome-panel)
 
 To run the panel interactively on port 80
 
@@ -310,7 +310,7 @@ cd package
 python setup.py sdist bdist_wheel
 ```
 
-If you wan't to publish the package to PyPi you should first
+If you want to publish the package to PyPi you should first
 
 update the version number in the setup.py file. The format is `YYYYmmdd.version`. For example `20191208.1`
 

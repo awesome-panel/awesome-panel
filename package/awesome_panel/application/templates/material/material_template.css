@@ -14,7 +14,7 @@ body {
     font-family: roboto;
 }
 img {
-    /* we wan't no overflow. Will make it easier to include images in markdown */
+    /* we want no overflow. Will make it easier to include images in markdown */
     max-width: 100%;
 }
 table {

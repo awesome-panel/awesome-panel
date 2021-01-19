@@ -47,3 +47,5 @@ x- Communicate on Twitter and LinkedIn
 
 - All error message should go to std.err as well
 - ability to minimize designer
+
+Write small blog post about profiling https://protect2.fireeye.com/v1/url?k=6b82a1de-341998f3-6b824f91-8692dc8284cb-621b79f7bd5315db&q=1&e=435c0121-33a7-4e8a-94b7-14837647c7ab&u=https%3A%2F%2Fdiscourse.bokeh.org%2Ft%2Fbokeh-server-profiling%2F1332%2F3%3Fu%3Dmarcskovmadsen

@@ -1,6 +1,6 @@
 """This is a **custom Panel template** based on [Shoelace](https://shoelace.style/).
 Shoelace provides a set of mature and awesome web components in the style of Bootstrap.
-It's the best set of **Bootstrap like** web components I've been able to find. I wan't web
+It's the best set of **Bootstrap like** web components I've been able to find. I want web
 components because they work well in Jupyter Notebooks and because I believe they are the future of
 the web.
 

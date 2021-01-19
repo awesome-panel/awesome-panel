@@ -29,7 +29,7 @@ With this Gallery I hope to
 This Gallery is running on a low end server on Azure.
 So the performance can be significantly improved if you have access to a higher end server.
 
-If you have an awesome tool or app you wan't to show here you are very welcome. You can read how to
+If you have an awesome tool or app you want to show here you are very welcome. You can read how to
 in the [Contribute](https://github.com/marcskovmadsen/awesome-panel#how-to-contribute-an-app-to-the-gallery)
 section of the README."""
 # pylint: enable=line-too-long
