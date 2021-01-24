@@ -19,8 +19,6 @@ RANDOM_URLS = [
     "http://farm5.staticflickr.com/4041/4604523114_6f06dcba15_z.jpg",
     "http://farm4.staticflickr.com/3140/2574052691_a596cf3d08_z.jpg",
     "http://farm3.staticflickr.com/2426/3904552439_363f28aa68_z.jpg",
-    "https://datamodelsanalytics.com/assets/images/about/marc_skov_madsen.jpg",
-    "https://datamodelsanalytics.com/assets/images/about/family.jpg",
 ]
 DEFAULT_URL = RANDOM_URLS[0]
 

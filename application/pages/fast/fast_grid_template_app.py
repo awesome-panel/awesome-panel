@@ -236,6 +236,7 @@ def view():
 
     app = FastGridTemplate(
         title="FastGridTemplate by awesome-panel.org",
+        row_height=55,
     )
 
     app.main[0:9, 0:6] = APPLICATION.intro_section()

@@ -14,14 +14,10 @@ template = pn.template.ReactTemplate(row_height=200)
 template.main[0:3, 0:3] = pn.Row(
     pn.layout.HSpacer(),
     pn.indicators.Gauge(
-        name="Failure Rate",
-        value=10,
-        bounds=(0, 100),
-        background="whitesmoke",
-        align="center"
+        name="Failure Rate", value=10, bounds=(0, 100), background="whitesmoke", align="center"
     ),
     pn.layout.HSpacer(),
-    sizing_mode="stretch_width"
+    sizing_mode="stretch_width",
 )
 
 for row in range(0, 3):

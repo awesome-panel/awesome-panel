@@ -45,7 +45,7 @@ CARD_COMPONENT = ReloadService(
     component_parameters={
         "header": "Test Card",
         "body": pn.pane.Markdown("Awesome Panel " * 50),
-        "collapsable": True,
+        "collapsible": True,
     },
 )
 COMPONENT_WITH_ERROR = ReloadService(component=ComponentWithError)

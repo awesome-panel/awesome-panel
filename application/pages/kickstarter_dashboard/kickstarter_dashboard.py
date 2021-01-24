@@ -22,6 +22,7 @@ from typing import List, Optional
 
 import holoviews as hv
 import hvplot.pandas  # pylint: disable=unused-import
+import numpy as np
 import pandas as pd
 import panel as pn
 import param
@@ -287,15 +288,15 @@ class KickstarterDashboard(param.Parameterized):
         """
         sub_df = kickstarter_df
         if y_range:
-            y_filter = (kickstarter_df["usd_pledged"] >= y_range[0]) & (
-                kickstarter_df["usd_pledged"] <= y_range[1]
-            )
-            sub_df = sub_df[y_filter]
+            if not np.isnan(y_range[0]):
+                sub_df = sub_df[kickstarter_df["usd_pledged"] >= y_range[0]]
+            if not np.isnan(y_range[1]):
+                sub_df = sub_df[kickstarter_df["usd_pledged"] <= y_range[1]]
         if x_range:
-            x_filter = (kickstarter_df["created_at"] >= x_range[0]) & (
-                kickstarter_df["created_at"] <= x_range[1]
-            )
-            sub_df = sub_df[x_filter]
+            if not np.isnan(x_range[0]):
+                sub_df = sub_df[kickstarter_df["created_at"] >= x_range[0]]
+            if not np.isnan(x_range[1]):
+                sub_df = sub_df[kickstarter_df["created_at"] <= x_range[1]]
         return sub_df
 
     @staticmethod

@@ -11,7 +11,7 @@ The NGL Viewer was developed with help from the community. Checkout [Discourse 5
 
 import panel as pn
 import param
-from awesome_panel_extensions.frameworks.fast.templates import FastTemplate
+from awesome_panel_extensions.frameworks.fast.templates import FastListTemplate
 from awesome_panel_extensions.widgets.ngl_viewer import NGLViewer
 
 from application.config import site
@@ -58,9 +58,9 @@ class ProteinViewer(param.Parameterized):
             self.ngl_html.rcsb_id = self.rcsb_id
 
     def view(self):
-        """Returns a view of the app in the FastTemplate"""
+        """Returns a view of the app in the FastListTemplate"""
         pn.config.sizing_mode = "stretch_width"
-        template = FastTemplate(title="NGL Molecule Viewer")
+        template = FastListTemplate(title="NGL Molecule Viewer")
         settings = pn.Column(
             pn.pane.Markdown("## Settings", margin=0),
             *pn.Param(

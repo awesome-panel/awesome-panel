@@ -195,8 +195,8 @@ def test_card_with_multiple_panels():
     )
 
 
-def test_card_collapsable():
-    """We test that we can create a collapsable card with
+def test_card_collapsible():
+    """We test that we can create a collapsible card with
 
     - A header with lightgray background
     - A Plot Body
@@ -216,11 +216,11 @@ def test_card_collapsable():
         _holoviews_chart(),
         "Awesome Panel! " * 50,
         header="Card with Plot",
-        collapsable=True,
+        collapsible=True,
         width=600,
     )
     return TestApp(
-        test_card_collapsable,
+        test_card_collapsible,
         card,
     )
 
@@ -229,7 +229,7 @@ def test_card_with_code():
     """We test that we can create a card with code content"""
     code = """\
         card = pn.layout.Card("Code", pn.layout.Code(code),)
-        return TestApp(test_card_collapsable, card)"""
+        return TestApp(test_card_collapsible, card)"""
     card = pn.layout.Card(pnx.Code(code), header="Code")
     return TestApp(test_card_with_code, card, width=600)
 
@@ -248,7 +248,7 @@ def view() -> pn.Column:
         test_card_fixed_width(),
         test_card_with_plot(),
         test_card_with_multiple_panels(),
-        test_card_collapsable(),
+        test_card_collapsible(),
         test_card_with_code(),
     ]
     return site.create_template(title="Test Bootstrap Card", main=main)

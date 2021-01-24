@@ -2,12 +2,12 @@ import panel as pn
 
 pn.extension()
 
-import pythreejs
 import ipyvolume as ipv
 import ipywidgets as widgets
-
 import numpy as np
-pn.sizing_mode="stretch_width"
+import pythreejs
+
+pn.sizing_mode = "stretch_width"
 
 FONTAWESOME_LINK = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.css"
 pn.config.css_files.append(FONTAWESOME_LINK)

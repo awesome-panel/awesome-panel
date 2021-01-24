@@ -79,7 +79,7 @@ def view():
 
     for row in range(3, 5):
         for col in range(0, 3):
-            title = "Sensor " + str(3*row + col + 10)
+            title = "Sensor " + str(3 * row + col + 10)
             colors = [(0.7, ok_color), (1, ERROR_COLOR)]
             indicator = pn.indicators.Gauge(
                 name=title, value=65, bounds=(0, 100), colors=colors, align="center"

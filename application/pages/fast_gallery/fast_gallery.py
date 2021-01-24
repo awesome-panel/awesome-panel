@@ -30,12 +30,10 @@ def view():
         css for css in pn.config.raw_css if not css.startswith("/* CUSTOM TEMPLATE CSS */")
     ]
     return FastGalleryTemplate(
-        site_name="Awesome Panel",
-        site_url="/",
+        site="Awesome Panel",
         name="Gallery",
-        url="",
         description="""The purpose of the Awesome Panel Gallery is to inspire and help you create awesome analytics apps in <fast-anchor href="https://panel.holoviz.org" target="_blank" appearance="hypertext">Panel</fast-anchor> using the tools you know and love.""",
-        items=list(sorted(site.applications, key=lambda x: x.name)),
+        resources=site.applications,
         target="_self",
     )
 

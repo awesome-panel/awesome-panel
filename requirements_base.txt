@@ -1,14 +1,14 @@
 # Panel. We use github version because of
 # - https://github.com/holoviz/panel/issues/883
 # - https://github.com/holoviz/panel/pull/867
-panel==0.10.2
+panel==0.10.3
 bokeh==2.2.3
 tornado
-holoviews==1.14.0
+holoviews==1.14.1
 hvplot==0.7.0
 lxml
 
-awesome-panel-extensions
+awesome-panel-extensions==awesome-panel-extensions-20201228.1
 
 # Data Engineering and Science
 pandas==0.25.3

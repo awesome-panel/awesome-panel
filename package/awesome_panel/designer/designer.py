@@ -77,7 +77,7 @@ class Designer(param.Parameterized):  # pylint: disable=too-many-instance-attrib
         component_parameters={
             "header": "Test Card",
             "body": pn.pane.Markdown("Awesome Panel " * 50),
-            "collapsable": True,
+            "collapsible": True,
         },
     )
 

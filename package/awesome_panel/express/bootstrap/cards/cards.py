@@ -19,7 +19,7 @@ class Card(pn.Column):
             pn.viewable.Viewable,
             List[pn.viewable.Viewable],
         ],
-        collapsable: bool = False,
+        collapsible: bool = False,
         **kwargs,
     ):
         if "css_classes" not in kwargs:
@@ -41,7 +41,7 @@ class Card(pn.Column):
         #
         content = self._get_card_content(panels)
 
-        if not collapsable:
+        if not collapsible:
             header_pane = self.get_card_header(header)
             super().__init__(
                 header_pane,

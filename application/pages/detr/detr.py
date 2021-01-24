@@ -28,6 +28,7 @@ import panel as pn
 import param
 import plotly.graph_objects as go
 import requests
+from awesome_panel_extensions.io.loading import start_loading_spinner, stop_loading_spinner
 from PIL import Image
 
 from application.config import site
@@ -97,22 +98,33 @@ class DETRApp(param.Parameterized):  # pylint: disable=too-many-instance-attribu
     def __init__(self, **params):
         super().__init__(**params)
 
-        self.progress, self.plot, self.view = self._get_view()
+        self.plot, self.view = self._get_view()
+        self._start_progress()
         self.set_random_image = self._set_random_image
         self.run_detr = self._update_plot
 
+        self.transform = None
+        self.detr = None
+        self.device = None
+        pn.state.onload(self._init_on_load)
+
+    def _init_on_load(self):
+        self._start_progress()
         self.transform, self.detr, self.device = get_transform_detr_and_device()
 
         self.run_detr()  # pylint: disable=not-callable
+        self._stop_progress()
+
+    def _start_progress(self):
+        start_loading_spinner(self.plot)
+
+    def _stop_progress(self):
+        stop_loading_spinner(self.plot)
 
     def _get_view(self):
         pn.config.sizing_mode = "stretch_width"
         style = pn.pane.HTML(config.STYLE, width=0, height=0, margin=0, sizing_mode="fixed")
 
-        progress = pn.widgets.Progress(
-            bar_color="secondary", width=285, sizing_mode="fixed", margin=(0, 5, 10, 5)
-        )
-        progress.active = False
         app_bar = pn.Row(
             pn.pane.Markdown("# " + self.title, sizing_mode="stretch_width", margin=(0, 0, 0, 25)),
             sizing_mode="stretch_width",
@@ -120,43 +132,21 @@ class DETRApp(param.Parameterized):  # pylint: disable=too-many-instance-attribu
             css_classes=["app-bar"],
         )
 
-        # top_selections = pn.Row(
-        #     pn.Param(
-        #         self,
-        #         parameters=["input_image_url"],
-        #         default_layout=pn.Row,
-        #         show_name=False,
-        #     ),
-        #     pn.Param(
-        #         self,
-        #         parameters=["run_detr", "set_random_image"],
-        #         widgets={
-        #             "run_detr": {"button_type": "primary"},
-        #             "set_random_image": {"button_type": "default"},
-        #         },
-        #         default_layout=pn.Row,
-        #         show_name=False,
-        #         width=300,
-        #         margin=(14, 5, 5, 5),
-        #         sizing_mode="fixed",
-        #     ),
-        # )
         top_selections = pn.Row(
             pn.Param(
                 self,
                 parameters=["input_image_url", "run_detr", "set_random_image"],
                 widgets={
                     "set_random_image": {
-                        "button_type": "success",
                         "align": "end",
                         "width": 125,
                         "sizing_mode": "fixed",
+                        "button_type": "primary",
                     },
                     "run_detr": {
                         "align": "end",
                         "width": 125,
                         "sizing_mode": "fixed",
-                        "button_type": "primary",
                     },
                 },
                 default_layout=pn.Row,
@@ -186,7 +176,6 @@ class DETRApp(param.Parameterized):  # pylint: disable=too-many-instance-attribu
             ),
             pn.Column(
                 app_bar,
-                pn.Row(pn.Spacer(), progress),
                 top_selections,
                 plot,
                 bottom_selections,
@@ -197,9 +186,10 @@ class DETRApp(param.Parameterized):  # pylint: disable=too-many-instance-attribu
             theme="default",
             main=main,
         )
-        return progress, plot, template
+        return plot, template
 
     def _set_random_image(self, _=None):
+        self._start_progress()
         urls = config.RANDOM_URLS
         current_url = self.input_image_url
         new_url = current_url
@@ -210,8 +200,8 @@ class DETRApp(param.Parameterized):  # pylint: disable=too-many-instance-attribu
         self._update_plot()
 
     def _update_plot(self, _=None):
-        self.progress.active = True
-        self.plot.object = get_figure(
+        self._start_progress()
+        figure = get_figure(
             apply_nms=self.suppression_enabled,
             iou=self.suppression,
             confidence=self.confidence,
@@ -220,7 +210,8 @@ class DETRApp(param.Parameterized):  # pylint: disable=too-many-instance-attribu
             detr=self.detr,
             device=self.device,
         )
-        self.progress.active = False
+        self.plot.object = figure
+        self._stop_progress()
 
 
 @site.add(APPLICATION)

@@ -11,9 +11,7 @@ from awesome_panel_extensions.frameworks.fast.templates.fast_grid_template.fast_
 )
 
 # pylint: enable=line-too-long
-from awesome_panel_extensions.frameworks.fast.templates.fast_template.fast_template import (
-    FastTemplate,
-)
+from awesome_panel_extensions.frameworks.fast.templates.fast_list_template import FastListTemplate
 from awesome_panel_extensions.site import Site
 from awesome_panel_extensions.site.application import Application
 from panel.template.base import BasicTemplate
@@ -116,7 +114,7 @@ class AwesomePanelSite(Site):
 
     def register_post_view(self, template: BasicTemplate, application: Application):
         super().register_post_view(template, application)
-        if isinstance(template, (FastTemplate, FastGridTemplate)):
+        if isinstance(template, (FastListTemplate, FastGridTemplate)):
             links = LINKS_FAST
         else:
             links = LINKS

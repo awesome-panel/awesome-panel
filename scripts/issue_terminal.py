@@ -26,4 +26,3 @@ HTML = """
 terminal = pn.pane.HTML(HTML, height=200, width=200)
 
 pn.Column(terminal).servable()
-
