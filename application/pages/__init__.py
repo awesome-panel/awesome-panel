@@ -44,4 +44,5 @@ from application.pages.shoelace import shoelace
 from application.pages.streaming_dashboard import streaming_dashboard
 from application.pages.streaming_plots import streaming_plots
 from application.pages.styling import fileinput_area
+from application.pages.volume_profile_analysis import volume_profile_analysis
 from application.pages.yahooquery_app import yahooquery_app

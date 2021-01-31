@@ -31,7 +31,7 @@ def view():
     ]
     return FastGalleryTemplate(
         site="Awesome Panel",
-        name="Gallery",
+        title="Gallery",
         description="""The purpose of the Awesome Panel Gallery is to inspire and help you create awesome analytics apps in <fast-anchor href="https://panel.holoviz.org" target="_blank" appearance="hypertext">Panel</fast-anchor> using the tools you know and love.""",
         resources=site.applications,
         target="_self",
