@@ -16,7 +16,7 @@ from awesome_panel_extensions.frameworks.fast.templates import FastListTemplate
 from awesome_panel_extensions.io.loading import start_loading_spinner, stop_loading_spinner
 from bokeh.models import HoverTool
 from bokeh.models.formatters import NumeralTickFormatter
-from diskcache import Cache
+from diskcache import FanoutCache
 from scipy import signal, stats
 
 from application.config import site
@@ -24,18 +24,18 @@ from application.config import site
 hv.extension("bokeh")
 
 
-cache = Cache("cache_directory")
+cache = FanoutCache("cache_directory")
 
 APPLICATION = site.create_application(
     url="volume-profile-analysis",
     name="Volume Profile Analysis",
     author="Marc Skov Madsen",
-    introduction="""An example of Volume Profile Analysis using Panel and the HoloViz ecosystem of
-tools.""",
+    introduction="""An example of Volume Profile Analysis of time series from commodity, currency,
+    debt and equity markets.""",
     description=__doc__,
     thumbnail_url="volume-profile-analysis.png",
-    code_url="volume_profiles/volume_profile_analysis.py",
-    # mp4_url="volume-profiles.mp4",
+    code_url="volume_profile_analysis/volume_profile_analysis.py",
+    mp4_url="volume-profile-analysis.mp4",
     tags=["Panel", "HoloViz", "Volume Profiles", "Finance", "Quant", "Signal Processing"],
 )
 
@@ -52,10 +52,12 @@ RED = "#c01754"
 GREEN = "#007400"
 GRAY = "#b0ab99"
 
+CACHE_EXPIRY = 60*60*24 # seconds, i.e. one Day
+
 # region DATA
 
 
-@cache.memoize(name="shared")
+@cache.memoize(name="shared", expire=CACHE_EXPIRY)
 def _extract_raw_data(ticker="ORSTED.CO", period="6mo", interval="1d"):
     extractor = yf.Ticker(ticker)
     return extractor.history(period=period, interval=interval).reset_index()
@@ -206,7 +208,7 @@ def create_candle_stick_with_histograms(data: pd.DataFrame) -> pn.GridSpec:
     Returns:
         pn.GridSpec: A GridSpec containing the plots
     """
-    gridspec = pn.GridSpec(sizing_mode="stretch_both", min_height=800, margin=0)
+    gridspec = pn.GridSpec(sizing_mode="stretch_both", min_height=600, margin=0)
     if not data is None:
         volume_plot = _create_time_and_volume_histogram(data).opts(responsive=True)
         candle_stick_plot = create_candle_stick(data).opts(responsive=True)
@@ -426,10 +428,13 @@ class LoadDataSection(BaseSection):
     """Section describing the loading of data"""
 
     ticker = param.ObjectSelector("ORSTED.CO", objects=["MSFT", "ORSTED.CO"])
+    period = param.Integer(default=6, bounds=(1,12), step=1, label="Period (months)")
+    interval = param.ObjectSelector(default="1d", objects=["1d"], label="Interval", constant=True)
 
     def _init_view(self):
         info_head = """We can use the [`yfinance`](https://pypi.org/project/yfinance/) package to
-load the data."""
+load the data and [DiskCache](http://www.grantjenks.com/docs/diskcache/tutorial.html) to cache the
+data for one day."""
         if self.data is None:
             self._load_data()
 
@@ -440,22 +445,29 @@ load the data."""
         self.view = pn.Column(
             pn.pane.Markdown("## Data Load"),
             pn.pane.Markdown(info_head),
-            self.param.ticker,
+            pn.Param(self, parameters=["ticker", "period"], show_name=False),
             self._dataframe_panel,
             self._total_rows_panel,
         )
 
-    @pn.depends("ticker", watch=True)
+    @pn.depends("ticker", "period", "interval", watch=True)
     def _load_data(self):
         self.loading = True
-        raw_data = _extract_raw_data(self.ticker)
+        if self.period>1:
+            self.param.interval.constant=True
+            self.interval="1d"
+        else:
+            self.param.interval.constant=False
+
+        raw_data = _extract_raw_data(ticker=self.ticker, period=f"{self.period}mo", interval=self.interval)
         data = _transform_data(raw_data)
         self.data = data
         self.loading = False
 
     def _update_view(self, *events):
-        self._dataframe_panel.object = self.data.sort_values("time").head()
-        self._total_rows_panel.object = f"Total rows: {len(self.data)}"
+        if not self.data is None:
+            self._dataframe_panel.object = self.data.sort_values("time").head()
+            self._total_rows_panel.object = f"Total rows: {len(self.data)}"
 
 
 class CandleStickSection(BaseSection):
