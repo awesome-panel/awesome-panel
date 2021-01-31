@@ -24,7 +24,7 @@ from application.config import site
 hv.extension("bokeh")
 
 
-cache = FanoutCache("cache_directory")
+cache = FanoutCache(".cache")
 
 APPLICATION = site.create_application(
     url="volume-profile-analysis",
@@ -52,7 +52,7 @@ RED = "#c01754"
 GREEN = "#007400"
 GRAY = "#b0ab99"
 
-CACHE_EXPIRY = 60*60*24 # seconds, i.e. one Day
+CACHE_EXPIRY = 60 * 60 * 24  # seconds, i.e. one Day
 
 # region DATA
 
@@ -428,7 +428,7 @@ class LoadDataSection(BaseSection):
     """Section describing the loading of data"""
 
     ticker = param.ObjectSelector("ORSTED.CO", objects=["MSFT", "ORSTED.CO"])
-    period = param.Integer(default=6, bounds=(1,12), step=1, label="Period (months)")
+    period = param.Integer(default=6, bounds=(1, 12), step=1, label="Period (months)")
     interval = param.ObjectSelector(default="1d", objects=["1d"], label="Interval", constant=True)
 
     def _init_view(self):
@@ -453,13 +453,15 @@ data for one day."""
     @pn.depends("ticker", "period", "interval", watch=True)
     def _load_data(self):
         self.loading = True
-        if self.period>1:
-            self.param.interval.constant=True
-            self.interval="1d"
+        if self.period > 1:
+            self.param.interval.constant = True
+            self.interval = "1d"
         else:
-            self.param.interval.constant=False
+            self.param.interval.constant = False
 
-        raw_data = _extract_raw_data(ticker=self.ticker, period=f"{self.period}mo", interval=self.interval)
+        raw_data = _extract_raw_data(
+            ticker=self.ticker, period=f"{self.period}mo", interval=self.interval
+        )
         data = _transform_data(raw_data)
         self.data = data
         self.loading = False
