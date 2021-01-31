@@ -20,6 +20,7 @@ from application.pages.awesome_panel_express_tests import (
     test_wired,
 )
 from application.pages.bootstrap_dashboard import bootstrap_dashboard
+from application.pages.caching_example import caching_example
 from application.pages.custom_bokeh_model import custom_bokeh_model
 from application.pages.dashboard import dashboard
 from application.pages.dataexplorer_loading import dataexplorer_loading

@@ -156,7 +156,7 @@ class GlobalPowerPlantDatabaseApp(param.Parameterized):
         self._view_state.longitude = state["longitude"]
         self._view_state.latitude = state["latitude"]
 
-    def _update(self, event):
+    def _update2(self, event):
         print(event.name)
         if event.name == "data":
             self._scatter.data = self.data
