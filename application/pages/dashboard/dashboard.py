@@ -23,7 +23,7 @@ from application.config import site
 
 hv.extension("bokeh")
 
-EMPTY_PLOT = hv.Curve({})
+EMPTY_PLOT = None
 COLOR_MAPS = hv.plotting.util.list_cmaps()
 STYLE = """
 .bk.app-body {

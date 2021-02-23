@@ -11,7 +11,8 @@ lxml
 awesome-panel-extensions==20210124.1 # 20201228.1
 
 # Data Engineering and Science
-pandas==0.25.3
+pandas==1.2.2
+numpy==1.20.1
 geopandas # To `pip install geopandas` on windows please follow https://geoffboeing.com/2014/09/using-geopandas-windows/
 xlrd==1.2.0 # For importing xls files
 
@@ -27,7 +28,7 @@ tensorflow==2.0.3
 # Utils
 # ------------------------------------------------------------------------------
 invoke==1.3.0 # Invoke is a Python task execution tool & library. See http://www.pyinvoke.org/
-fitparse==1.1.0 # For reading and parsing .fit files. See https://github.com/dtcooper/python-fitparse
+fitparse==1.2.0 # For reading and parsing .fit files. See https://github.com/dtcooper/python-fitparse
 
 # Testing
 # ------------------------------------------------------------------------------
@@ -53,10 +54,11 @@ yahooquery==1.0.11
 pydeck==0.2.0
 torch==1.5.0+cpu
 torchvision==0.6.0+cpu
-pandas-profiling==2.8.0
+pandas-profiling==2.11.0
 streamz
 yfinance
 diskcache
+scipy==1.6.1
 
 # Documentation
 -r ./requirements_docs.txt

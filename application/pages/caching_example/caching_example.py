@@ -30,7 +30,7 @@ import time
 import uuid
 
 import holoviews as hv
-import hvplot.pandas # pylint: disable=unused-import
+import hvplot.pandas  # pylint: disable=unused-import
 import numpy as np
 import pandas as pd
 import panel as pn
@@ -83,7 +83,7 @@ def _plot_data(frac=0.1):
 
 
 @site.add(APPLICATION)
-def view() -> FastListTemplate: # pylint: disable=too-many-locals
+def view() -> FastListTemplate:  # pylint: disable=too-many-locals
     """Returns the Caching Example app
 
     Returns:
