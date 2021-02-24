@@ -1,0 +1,10 @@
+site_name = "Awesome Analytics Apps Template"
+site_prefix = ""
+
+gallery_description = "Search and find your app or other resource"
+
+color_primary = "#A01346"
+color_cycle = ["#A01346"]
+
+[static_dirs]
+assets = "src/assets"

@@ -1,0 +1,9 @@
+# This file defines the list of Persons to use as Author and Owner of Applications
+# The header (for example [marc_skov_madsen]) should be a unique id without spaces
+[marc_skov_madsen]
+name="Marc Skov Madsen"
+url="https://github.com/marcskovmadsen"
+avatar_url="https://avatars0.githubusercontent.com/u/42288570"
+twitter_url = ""
+linkedin_url = ""
+github_url = ""
