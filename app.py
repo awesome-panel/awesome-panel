@@ -25,9 +25,12 @@ from application.config import site
 if __name__ == "__main__":
     address = os.getenv("BOKEH_ADDRESS", "0.0.0.0")
     APP_ROUTES = {app.url: app.view for app in site.applications}
-    if platform.system() == "Windows":
-        pn.serve(APP_ROUTES, port=80, dev=False, title="Awesome Panel", address=address)
-    else:
-        pn.serve(
-            APP_ROUTES, port=80, dev=False, title="Awesome Panel", address=address, num_procs=4
-        )
+    output = "".join([app.to_toml() for app in sorted(site.applications, key=lambda x: x.name)])
+    import pathlib
+    (pathlib.Path.cwd() / "output.toml").write_text(output, encoding="utf8")
+    # if platform.system() == "Windows":
+    #     pn.serve(APP_ROUTES, port=80, dev=False, title="Awesome Panel", address=address)
+    # else:
+    #     pn.serve(
+    #         APP_ROUTES, port=80, dev=False, title="Awesome Panel", address=address, num_procs=4
+    #     )

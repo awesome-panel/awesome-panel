@@ -1,18 +1,524 @@
 # This file defines the list of Applications to serve
 # Use the unique id from the persons.toml file when defining the author and owner.
 [home]
-name = "Home"
-introduction = "The landing page of the site"
-description = "The landing page introduces the site and provides navigation"
+name = "Awesome Panel"
+introduction = "An introduction to awesome-panel.org and Panel"
+description = "An introduction to awesome-panel.org and Panel"
 author = "marc_skov_madsen"
 owner = "marc_skov_madsen"
 url = "/"
 servable = "src/apps/home/app.py"
-thumbnail_url = "assets/images/thumbnails/home.png"
+thumbnail_url = "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/home.png"
 tags = []
 category = "Main"
 documentation_url = ""
 code_url = ""
+mp4_url = ""
+youtube_url = ""
+gif_url = ""
+binder_url = ""
+
+[about]
+name = "About"
+introduction = """A short page about the why and who of awesome-panel.org"""
+description = """## The About Page of awesome-panel.org"""
+author = "marc_skov_madsen"
+owner = "marc_skov_madsen"
+url = "about"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/about.png"
+tags = ['App In Gallery', 'Application', 'Code']
+category = "Main"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/about/about.py"
+mp4_url = ""
+youtube_url = ""
+gif_url = ""
+binder_url = ""
+
+[async_tasks]
+name = "Async Tasks"
+introduction = """Demonstrates the use of asynchronous, background processes with Panel"""
+description = """When creating awesome analytics apps you sometimes wants to run jobs in the background or provide
+streaming analytics to your users.
+
+Panel also supports these use cases as its running on top of the asynchronous web server Tornado.
+
+Below we show case how to start a background thread that updates a progressbar while
+the rest of the application remains responsive.
+
+This example is based on the discussion [Can I load data asynchronously in Panel?](https://discourse.holoviz.org/t/can-i-load-data-asynchronously-in-panel/452).
+
+If you really deep dive into this, then you can study
+[tornado.ioloop.IOLoop](https://www.tornadoweb.org/en/stable/ioloop.html),
+[concurrent.futures.ThreadPoolExecutor](https://docs.python.org/3/library/concurrent.futures.html#threadpoolexecutor),
+[Panel.io.server.unlocked](https://panel.holoviz.org/api/panel.io.html#panel.io.server.unlocked)"""
+author = "jochem_smit"
+owner = "marc_skov_madsen"
+url = "async-tasks"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/async_tasks.png"
+tags = ['Application', 'Async', 'Code']
+category = "Apps"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/async_tasks"
+mp4_url = "https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/async_tasks.mp4"
+youtube_url = ""
+gif_url = "https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/async_tasks.gif"
+binder_url = ""
+
+[awesome_list]
+name = "Awesome List"
+introduction = """A list of Awesome Panel Resources created by the community"""
+description = """The awesome panel resources list provides a list of awesome resources for Panel"""
+author = "marc_skov_madsen"
+owner = "marc_skov_madsen"
+url = "awesome-list"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/resources.png"
+tags = ['App In Gallery', 'Application', 'Code']
+category = "Apps"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/resources/resources.py"
+mp4_url = ""
+youtube_url = ""
+gif_url = ""
+binder_url = ""
+
+[awesome_panel]
+name = "Awesome Panel"
+introduction = """An introduction to awesome-panel.org and Panel"""
+description = """An introduction to awesome-panel.org and Panel"""
+author = "marc_skov_madsen"
+owner = "marc_skov_madsen"
+url = "/"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/home.png"
+tags = ['Application', 'Code']
+category = "Apps"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/home/home.py"
+mp4_url = "https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/home.mp4"
+youtube_url = ""
+gif_url = "https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/home.gif"
+binder_url = ""
+
+[bootstrap_alerts]
+name = "Bootstrap Alerts"
+introduction = """Demonstrates the look and feel of the Panel Alerts"""
+description = """Alert panes inspired by Bootstrap Alerts.
+
+This example was originally created to show how to create custom Bootstrap Alerts.
+The Alerts have now been contributed to Panel. You can find the reference example
+[here](https://panel.holoviz.org/reference/panes/Alert.html).
+"""
+author = "marc_skov_madsen"
+owner = "marc_skov_madsen"
+url = "bootstrap-alerts"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_bootstrap_alerts.png"
+tags = ['Application', 'Bootstrap', 'Code']
+category = "Apps"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/awesome_panel_express_tests/test_bootstrap_alerts.py"
+mp4_url = ""
+youtube_url = ""
+gif_url = ""
+binder_url = ""
+
+[bootstrap_card]
+name = "Bootstrap Card"
+introduction = """Demonstrates the look and feel of the Panel Cards"""
+description = """Cards inspired by [Get Bootstrap Card](https://getbootstrap.com/docs/4.3/components/card/) and
+[Card Collapse Tricks](https://disjfa.github.io/bootstrap-tricks/card-collapse-tricks/).
+
+This example was originally created to show case how to create custom Cards.
+
+The Cards have now been contributed to Panel. Checkout the reference guide
+[here](https://panel.holoviz.org/reference/layouts/Card.html).
+"""
+author = "marc_skov_madsen"
+owner = "marc_skov_madsen"
+url = "bootstrap-card"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_bootstrap_card.png"
+tags = ['Application', 'Bootstrap', 'Code']
+category = "Apps"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/awesome_panel_express_tests/test_bootstrap_card.py"
+mp4_url = ""
+youtube_url = ""
+gif_url = ""
+binder_url = ""
+
+[bootstrap_dashboard]
+name = "Bootstrap Dashboard"
+introduction = """Demonstrates a Bootstrap styled dashboard with Panel"""
+description = """The purpose of this app is to test that a **multi-page Dashboard Layout** similar to the [bootstrap dashboard template](https://getbootstrap.com/docs/4.3/examples/dashboard/) from [getboostrap.com](https://getbootstrap.com/) can be implemented in [Panel](https://panel.pyviz.org/).
+
+"""
+author = "marc_skov_madsen"
+owner = "marc_skov_madsen"
+url = "bootstrap-dashboard"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/bootstrap_dashboard.png"
+tags = ['Application', 'Bootstrap', 'Code']
+category = "Apps"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/bootstrap_dashboard/main.py"
+mp4_url = ""
+youtube_url = ""
+gif_url = ""
+binder_url = ""
+
+[caching_example]
+name = "Caching Example"
+introduction = """An app demonstrating how to speed up your app using caching."""
+description = """
+In computing, a *cache* is a high-speed data storage layer which stores a subset of data,
+typically transient in nature, so that future requests for that data are served up faster than
+is possible by accessing the data’s primary storage location.
+
+**Caching allows you to efficiently reuse previously retrieved or computed data** to
+**speed up your exploration, jobs or apps**.
+
+Good caching solutions for Panel are summarized in the table below
+
+|Technology           |  Performance | Persistant | Horizontal Scaling | Vertical Scaling | Expiration | Preloading | Comments                           |
+|---------------------|--------------|------------|--------------------| -----------------|---------------------|------------------------------------|-|
+|`panel.state.cache` | Very Fast | No | No | Yes | No | No | Simple Dict Cache |
+|[DiskCache](https://pypi.org/project/diskcache/) | Very Fast | Yes | No | Yes | Yes | Yes |  Simple Persistent Cache |
+|[Redis](https://redis.io/) | Very Fast | Yes | Yes | Yes | Yes | Yes | Server solution. Works well with the distributed task queue [Celery](https://docs.celeryproject.org/en/stable/index.html)  |
+
+Note that
+
+- *Expiration* enables caching data for a period of time for example seconds, minutes, hours or
+days.
+- *Preloading* of a cache can be triggered by a cronjob or event.
+- If the cache is *persisted*, i.e. stored to disk or runs on a server like Redis it can enable
+caching data across jobs, applications, servers and restarts.
+
+To learn more about caching check out the [AWS Caching Overview](https://aws.amazon.com/caching/)
+"""
+author = "marc_skov_madsen"
+owner = "marc_skov_madsen"
+url = "caching-example"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/caching-example.png"
+tags = ['Application', 'Caching', 'Code', 'Panel']
+category = "Apps"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/caching_example/caching_example.py"
+mp4_url = "https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/caching-example.mp4"
+youtube_url = ""
+gif_url = ""
+binder_url = ""
+
+[classic_dashboard]
+name = "Classic Dashboard"
+introduction = """A classic looking Dashboard in Panel"""
+description = """
+The Dashboard app shows how to create a **Classic Dashboard** in **Panel** with
+
+- Classic Layout and awesome design
+- Responsiveness
+- User Selections
+- [Linked Brushing](http://holoviews.org/user_guide/Linked_Brushing.html) (Not yet supported)
+
+This app was kick started by [Pemp](https://discourse.holoviz.org/u/pemp) in a
+[discussion on Discourse](https://discourse.holoviz.org/t/error-not-supported-between-instances-of-select-and-select/929).
+"""
+author = "marc_skov_madsen"
+owner = "marc_skov_madsen"
+url = "classic-dashboard"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/dashboard.png"
+tags = ['Application', 'Code', 'HoloViews', 'hvPlot']
+category = "Apps"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/dashboard/dashboard.py"
+mp4_url = ""
+youtube_url = ""
+gif_url = ""
+binder_url = ""
+
+[code_pane]
+name = "Code Pane"
+introduction = """Demonstrates the Code pane from the awesome-panel-extensions package"""
+description = """Panel does not have a pane for code. I've created a `Code` pane in the
+[`awesome_panel_extensions`](https://pypi.org/project/awesome-panel-extensions/) package"""
+author = "marc_skov_madsen"
+owner = "marc_skov_madsen"
+url = "code-pane"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_code.png"
+tags = ['Application', 'Code', 'Pane', 'awesome-panel-extensions']
+category = "Apps"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/awesome_panel_express_tests/test_code.py"
+mp4_url = ""
+youtube_url = ""
+gif_url = ""
+binder_url = ""
+
+[component_explorer]
+name = "Component Explorer"
+introduction = """An app for discovering and learning about the Panel components"""
+description = """The Panel Component Explorer App helps you discover and learn about the Panel Components
+
+I hope this can speed up the process of learning the power of Panel.
+
+The Component Explorer currently supports the components that I have styled in the
+[Fast.design](https://fast.design) style. I am in the process of adding the rest.
+"""
+author = "marc_skov_madsen"
+owner = "marc_skov_madsen"
+url = "panel-component-explorer"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/panel-component-explorer.png"
+tags = ['Application', 'Code', 'Components', 'Panel']
+category = "Apps"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/panel_component_explorer.py"
+mp4_url = ""
+youtube_url = ""
+gif_url = ""
+binder_url = ""
+
+[custom_bokeh_model]
+name = "Custom Bokeh Model"
+introduction = """An introduction to Bokeh/ Panel extensions"""
+description = """
+One super power of Panel is that its actually extensible. You can write custom Panes, Layouts and
+Widgets using Bokeh Extensions. This is actually how Panel is developed.
+
+If you want to learn how to create custom Bokeh/ Panel extensions you can
+**[checkout the Awesome Panel Extensions Guide](https://awesome-panel.readthedocs.io/en/latest/guides/awesome-panel-extensions-guide/index.html)**
+"""
+author = "marc_skov_madsen"
+owner = "marc_skov_madsen"
+url = "custom-bokeh-model"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/custom_bokeh_model.png"
+tags = ['App In Gallery', 'Application', 'Code']
+category = "Apps"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/custom_bokeh_model/custom_bokeh_model.py"
+mp4_url = ""
+youtube_url = ""
+gif_url = ""
+binder_url = ""
+
+[de_tr_object_detection]
+name = "DE:TR: Object Detection"
+introduction = """An image recognition app based on Facebook DE:TR and Plotly"""
+description = """[DE⫶TR:](https://github.com/facebookresearch/detr) by
+[Facebook Research](https://research.fb.com/) provides End-to-End Object Detection with
+Transformers.
+
+<img style="max-width:100%;height:260px;" src="https://github.com/facebookresearch/detr/raw/master/.github/DETR.png"/>
+
+This app is heavily inspired by the [dash-detr](https://github.com/plotly/dash-detr) app.
+
+I hope this provides you with an impression of how this can be implemented in a
+[Panel](https://panel.holoviz.org/) context.
+
+I have tried to mature the implementation by
+
+- Adding documentation via Docstrings
+- Cleaning up the code so that its satisfies simple code quality checks like Pylint and MyPy
+- Implementing some basic tests
+
+Please note this app is running on very low end, cheap hardware which explains the low performance.
+"""
+author = "marc_skov_madsen"
+owner = "marc_skov_madsen"
+url = "detr"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/detr.png"
+tags = ['Application', 'Code', 'DE:TR', 'Plotly']
+category = "Apps"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/detr/detr.py"
+mp4_url = ""
+youtube_url = ""
+gif_url = ""
+binder_url = ""
+
+[data_explorer_loading]
+name = "Data Explorer Loading"
+introduction = """Shows how to provide progress information to a user during computation"""
+description = """This example was created by as response to
+<a href="https://discourse.holoviz.org/t/how-to-show-a-loading-indication-during-computation/508"
+target="_blank"> Discourse 508</a> <strong>How to show a loading indication during
+computation</strong>.
+"""
+author = "marc_skov_madsen"
+owner = "marc_skov_madsen"
+url = "data-explorer-loading"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/dataexplorer_loading.png"
+tags = ['Application', 'Code']
+category = "Apps"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/dataexplorer_loading/dataexplorer_loading.py"
+mp4_url = ""
+youtube_url = ""
+gif_url = ""
+binder_url = ""
+
+[dataframe_formatting]
+name = "Dataframe Formatting"
+introduction = """Demonstrates how to style and format the DataFrame widget easily"""
+description = """Panel does not style a `panel.widgets.DataFrame` by default.
+
+A user can specify some Formatters like `Numberformatter`, `Stringformater` etc
+`from bokeh.models.widgets.tables` manually. But this takes time, so I consider this *friction*.
+
+In the [`awesome_panel_extensions.widgets.dataframe`](https://pypi.org/project/awesome-panel-extensions/#:~:text=Panel%20is%20a%20framework%20for,to%20the%20power%20of%20Panel.&text=If%20you%20wan't%20to%20learn%20more%20checkout%20the%20Package%20Documentation.)
+module we lower the friction by providing functionality for sensible defaults.
+
+If you want Panel to support sensible defaults automatically please upvote [Issue 940](https://github.com/holoviz/panel/issues/940).
+"""
+author = "marc_skov_madsen"
+owner = "marc_skov_madsen"
+url = "dataframe-formatting"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_dataframe.png"
+tags = ['Application', 'Code', 'DataFrame']
+category = "Apps"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/awesome_panel_express_tests/test_dataframe.py"
+mp4_url = ""
+youtube_url = ""
+gif_url = ""
+binder_url = ""
+
+[dependent_widgets]
+name = "Dependent Widgets"
+introduction = """An example of providing multiple widgets to select the same value"""
+description = """
+Javier asked in [discourse 1478](https://discourse.holoviz.org/t/use-two-different-widgets-to-update-same-plot/1478)
+how to provide multiple ways to the user to select a value and then update a plot.
+"""
+author = "marc_skov_madsen"
+owner = "marc_skov_madsen"
+url = "dependent-widgets"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/dependent-widgets.png"
+tags = ['Application', 'Code', 'Discourse', 'Multiselect']
+category = "Apps"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/discourse/discourse_1478_dependent_widgets.py"
+mp4_url = "https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/dependent-widgets.mp4"
+youtube_url = ""
+gif_url = "https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/dependent-widgets.gif"
+binder_url = ""
+
+[echarts]
+name = "ECharts"
+introduction = """Demonstrates the look and feel of the Panel Echarts pane."""
+description = """[ECharts](https://www.echartsjs.com/en/index.html) is an open-sourced JavaScript
+visualization tool, which can run fluently on PC and mobile devices. Its also an
+**Apache incubator project**. The library is very fast with a modern look and feel.
+
+[Pyecharts](https://pyecharts.org/#/en-us/) is a Python api for using ECharts in Python
+including Standalone, Flask, Django and Jupyter Notebooks.
+
+Checkout the [Echarts Gallery](https://echarts.apache.org/examples/en/index.html),
+[Echarts intro Video](https://www.youtube.com/watch?v=MF34Cgk5Rp0) or the
+[Panel Echarts Reference Guide](https://panel.holoviz.org/reference/panes/ECharts.html)
+for more info.
+
+Below we showcase an `ECharts` pane capable of showing Echarts dicts and Pyecharts objects
+**enabling us to develop awesome analytics apps using the power of Echarts, Panel and Python**.
+"""
+author = "marc_skov_madsen"
+owner = "marc_skov_madsen"
+url = "echarts"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_echarts.png"
+tags = ['Application', 'Code', 'ECharts', 'PyECharts']
+category = "Apps"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/awesome_panel_express_tests/test_echarts.py"
+mp4_url = ""
+youtube_url = ""
+gif_url = ""
+binder_url = ""
+
+[fast_grid_template]
+name = "Fast Grid Template"
+introduction = """Demonstrates the FastGridTemplate and Fast Components"""
+description = """This app is based on the *`FastGridTemplate`* and the *Fast Components* provided by the
+<fast-anchor href="https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html#fast"
+appearance="hypertext" target="_blank">awesome-panel-extensions</fast-anchor>
+package.
+
+You can install the package via `pip install awesome-panel-extensions` and use the fast template
+and components via `from awesome_panel_extensions.frameworks import fast`.
+
+We are also using some Panel Components with Fast like CSS styling.
+
+## <a href="https://fast.design" target="_blank"><img src="https://explore.fast.design/e1e15bd85334e4346744078af2f52308.svg" style="vertical-align: middle; height: 32px;"></a>
+
+Fast is the adaptive interface system for modern web experiences.
+
+Interfaces built with FAST adapt to your design system and can be used with any modern UI Framework by leveraging industry standard Web Components.
+
+Checkout the <fast-anchor href="https://explore.fast.design/components/fast-accordion" appearance="hypertext" target="_blank">Component Gallery</fast-anchor>.
+"""
+author = "marc_skov_madsen"
+owner = "marc_skov_madsen"
+url = "fast-grid-template"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/fast-grid-template.png"
+tags = ['Application', 'Code', 'Fast', 'Template']
+category = "Apps"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/fast/fast_grid_template_app.py"
+mp4_url = "https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/fast_grid_template_app.mp4"
+youtube_url = ""
+gif_url = ""
+binder_url = ""
+
+[fileinput_area]
+name = "FileInput Area"
+introduction = """Shows how to style the Panel FileInput to give it a modern look and feel"""
+description = """The Panel [FileInput](https://panel.holoviz.org/reference/widgets/FileInput.html#widgets-gallery-FileInput)
+is just an *ugly* button designed in the 1990s.
+
+Here we style the FileInput to make it look like a more modern file upload area that
+**SUPPORTS DRAG AND DROP**.
+
+This is done by adding the below css and settings `css_classes=["pnx-file-upload-area"]` on
+the `FileInput` widget.
+
+```css
+.pnx-file-upload-area input[type=file] {
+    width: 100%;
+    height: 100%;
+    border: 3px dashed #9E9E9E;
+    background: transparent;
+    border-radius: 5px;
+    text-align: left;
+    margin: auto;
+}
+```
+
+If you want a nicer looking `FileInput` in Panel please upvote
+[Github Issue 917](https://github.com/holoviz/panel/issues/917) and join the discussion in
+[Discourse 1128](https://discourse.holoviz.org/t/what-should-a-better-fileinput-look-like/1128/3).
+"""
+author = "marc_skov_madsen"
+owner = "marc_skov_madsen"
+url = "fileinput-area"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/fileinput-area.png"
+tags = ['Application', 'Code', 'FileInput', 'Styling']
+category = "Apps"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/styling/fileinput-area.py"
 mp4_url = ""
 youtube_url = ""
 gif_url = ""
@@ -20,215 +526,559 @@ binder_url = ""
 
 [gallery]
 name = "Gallery"
-introduction = "An overview of all apps"
-description = "The purpose of the Gallery is to enable you to get inspiration and locate the app you need"
+introduction = """A custom Panel template using the Fast
+    web components"""
+description = """The Gallery provides a very visual overview to the applications and associated
+    resources"""
 author = "marc_skov_madsen"
 owner = "marc_skov_madsen"
 url = "gallery"
-servable = "src/apps/gallery/app.py"
-thumbnail_url = "assets/images/thumbnails/gallery.png"
-tags = []
-category = "Main"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/gallery.png"
+tags = ['Application', 'Code']
+category = "Apps"
 documentation_url = ""
-code_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/fast_gallery/fast_gallery.py"
 mp4_url = ""
 youtube_url = ""
 gif_url = ""
 binder_url = ""
 
-[hello_panel_world_from_notebook_file]
-name = "Hello Panel .ipynb World"
-introduction = "A very simple Panel Hello World app developed in a .ipynb NOTEBOOK"
-description = "A very simple Panel Hello World app developed in a .ipynb NOTEBOOK"
+[google_map_viewer]
+name = "Google Map Viewer"
+introduction = """An app showcasing the use of Google Maps and the FastGridTemplate"""
+description = """In [Discourse 1533](https://discourse.holoviz.org/t/example-of-using-template-with-param-classes/1533) Andrew
+showcased this example of using the ReactTemplate with Google Maps. Here it is
+reproduced using the `FastGridTemplate`.
+
+The Google Maps example was initially described in the [Param User Guide](https://panel.holoviz.org/user_guide/Param.html).
+"""
+author = "andrew_huang"
+owner = "marc_skov_madsen"
+url = "google-map-viewer"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/google-map-viewer.png"
+tags = ['Application', 'Code', 'Google', 'Grid', 'Map', 'Panel', 'Param']
+category = "Apps"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/discourse/discourse_1533_template_with_map.py"
+mp4_url = "https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/google-map-viewer.mp4"
+youtube_url = ""
+gif_url = ""
+binder_url = ""
+
+[holoviews_linked_brushing]
+name = "HoloViews Linked Brushing"
+introduction = """A demonstration of HoloViews linked brushing for Bokeh and Plotly backends"""
+description = """*Linked Brushing* is a very powerful technique. It's also often called *Linked Selections* or
+*Crossfiltering*.
+
+This example is inspired by the HoloViews [Linked Brushing Reference Guide](http://holoviews.org/user_guide/Linked_Brushing.html) and the Plotly blog post
+[Introducing Dash HoloViews](https://medium.com/plotly/introducing-dash-holoviews-6a05c088ebe5).
+
+This example uses the *Iris* dataset.
+"""
 author = "marc_skov_madsen"
 owner = "marc_skov_madsen"
-url = "hello-panel-world-from-notebook"
-servable = "src/apps/hello_panel_world/app.ipynb"
-thumbnail_url = "assets/images/thumbnails/hello-panel-world.png"
-tags = []
-category = "Panel Apps"
+url = "holoviews-linked-brushing"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/holoviews-linked-brushing.png"
+tags = ['Application', 'Bokeh', 'Code', 'Cross Filter', 'HoloViews', 'Linked Brushing', 'Panel', 'Plotly']
+category = "Apps"
 documentation_url = ""
-code_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/holoviews_linked_brushing.py"
+mp4_url = "https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/holoviews-linked-brushing.mp4"
+youtube_url = ""
+gif_url = ""
+binder_url = ""
+
+[image_classifier]
+name = "Image Classifier"
+introduction = """An image classifier app created with Panel"""
+description = """This is an **image classifier app** that enables a user to
+
+- select a classifier model
+- upload an image and
+- get a predicted classification in return.
+
+This app is inspired by the awesome [imageNet](https://github.com/iamatulsingh/imageNet-streamlit)
+application developed by [Atul Kumar Singh](https://github.com/iamatulsingh)."""
+author = "marc_skov_madsen"
+owner = "marc_skov_madsen"
+url = "image-classifier"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/image_classifier.png"
+tags = ['Application', 'Code', 'Keras']
+category = "Apps"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/image_classifier/image_classifier.py"
 mp4_url = ""
 youtube_url = ""
 gif_url = ""
 binder_url = ""
 
-[hello_panel_world_from_python_file]
-name = "Hello Panel .py World"
-introduction = "A very simple Panel Hello World app developed in a .py FILE"
-description = "A very simple Panel Hello World app developed in a .py FILE"
+[js_actions]
+name = "JS Actions"
+introduction = """Shows how to use a little bit of javascript with Panel"""
+description = """Once in a while you might want sprinkle in some Javascript actions in your Panel Application. The
+basics are described in the [Links Section](https://panel.holoviz.org/user_guide/Links.html) of the
+Panel user Guide.
+
+This example was developed as a response to
+[Discourse Post 949](https://discourse.holoviz.org/t/using-panel-with-javascript-to-make-a-copy-text-to-clipboard-button/949)
+by [ShanzyHolm](https://discourse.holoviz.org/u/ShanzyHolm/summary).
+"""
 author = "marc_skov_madsen"
 owner = "marc_skov_madsen"
-url = "hello-panel-world-from-file"
-servable = "src/apps/hello_panel_world/app.py"
-thumbnail_url = "assets/images/thumbnails/hello-panel-world.png"
-tags = []
-category = "Panel Apps"
+url = "js-actions"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/js_actions.png"
+tags = ['Application', 'Code', 'JavaScript']
+category = "Apps"
 documentation_url = ""
-code_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/js_actions/js_actions.py"
 mp4_url = ""
 youtube_url = ""
 gif_url = ""
 binder_url = ""
 
-[hello_ipywidgets_world_from_notebook_file]
-name = "Hello Ipywidgets .ipynb World"
-introduction = "A very simple Ipywidgets Hello World app developed in a .ipynb NOTEBOOK"
-description = "A very simple Ipywidgets Hello World app developed in a .ipynb NOTEBOOK"
+[kickstarter_dashboard]
+name = "Kickstarter Dashboard"
+introduction = """A dashboard with fast and responsive linked brushing of the plots"""
+description = """
+The purpose of the Kickstarter Dashboard was to test if the claims regarding Bokeh as of Jan 2018 in the
+[bokeh-dash-best-dashboard-framework](https://www.sicara.ai/blog/2018-01-30-bokeh-dash-best-dashboard-framework-python)
+article holds for Panel and the HoloViews suite of tools as of Dec 2019.
+
+The claims where
+
+- Data in Bokeh becomes inconsistent
+- Bokeh is slow for big datasets
+- Cannot link charts to dataframe
+- Interactions take a long time to develop
+
+You can evaluate this dashboard and the code to make your personal evaluation of the above
+statements in the Context of Panel.
+
+You can find an alternative version of this Dashboard in Streamlit at
+[awesome-streamlit.org](https://awesome-streamlit.org)
+"""
 author = "marc_skov_madsen"
 owner = "marc_skov_madsen"
-url = "hello-ipywidgets-world-from-notebook"
-servable = "src/apps/hello_ipywidgets_world/app.ipynb"
-thumbnail_url = "assets/images/thumbnails/hello-ipywidgets-world.png"
-tags = []
-category = "Ipywidgets Apps"
+url = "kick-starter-dashboard"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+tags = ['Application', 'Bokeh', 'Code', 'Linked Brushing']
+category = "Apps"
 documentation_url = ""
-code_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/kickstarter_dashboard/kickstarter_dashboard.py"
 mp4_url = ""
 youtube_url = ""
 gif_url = ""
 binder_url = ""
 
-[hello_ipywidgets_world_from_python_file]
-name = "Hello Ipywidgets .py World"
-introduction = "A very simple Ipywidgets Hello World app developed in a .py FILE"
-description = "A very simple Ipywidgets Hello World app developed in a .py FILE"
+[loading_spinners]
+name = "Loading Spinners"
+introduction = """Demonstrates the look and feel of the Loading Spinners"""
+description = """The Loading Spinners helps provide a nice user experience by indicating activity.
+
+This app showcases the look and feel of the loading spinners.
+
+- You can select the look and color of the loading spinner in the sidebar.
+- If you end up with a design you would like to add in your app, then you can just copy the
+`style` css and `append` it to `pn.config.raw_css` in your app.
+
+The functionality is currently available via the `awesome-panel-extensions` package. If you want
+it included in Panel please upvote [PR 1730 - Panel loading indicator](https://github.com/holoviz/panel/pull/1730).
+"""
 author = "marc_skov_madsen"
 owner = "marc_skov_madsen"
-url = "hello-ipywidgets-world-from-file"
-servable = "src/apps/hello_ipywidgets_world/app.py"
-thumbnail_url = "assets/images/thumbnails/hello-ipywidgets-world.png"
-tags = []
-category = "Ipywidgets Apps"
+url = "loading-spinners"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/loading-spinners.png"
+tags = ['Application', 'Code', 'UX']
+category = "Apps"
 documentation_url = ""
-code_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/loading_spinners/loading_spinners.py"
+mp4_url = "https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/loading-spinners.mp4"
+youtube_url = ""
+gif_url = "https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/loading-spinners.gif"
+binder_url = ""
+
+[material_components]
+name = "Material Components"
+introduction = """Demonstrates that use of Material components in your Panel apps"""
+description = """The Material components can give your app **more modern look and feel** than using the default
+Panel components. The Material components are a part of the [`awesome-panel-extensions`](https://pypi.org/project/awesome-panel-extensions/) package.
+
+You can find the REFERENCE GUIDES [here](https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html#material)
+
+Right now it is just a PROOF OF CONCEPT. But I would like (some one) to implement the full set of
+Material Widgets. They can be implemented using for example the
+[MWC Web Components](https://github.com/material-components/material-components-web-components)
+"""
+author = "marc_skov_madsen"
+owner = "marc_skov_madsen"
+url = "material-components"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_material_components.png"
+tags = ['Application', 'Code']
+category = "Apps"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/awesome_panel_express_tests/test_material.py"
 mp4_url = ""
 youtube_url = ""
 gif_url = ""
 binder_url = ""
 
-[hello_bokeh_world_from_notebook_file]
-name = "Hello Bokeh .ipynb World"
-introduction = "A very simple Hello World app developed in a .ipynb NOTEBOOK"
-description = "A very simple Hello World app developed in a .ipynb NOTEBOOK"
+[model_viewer]
+name = "Model Viewer"
+introduction = """Demonstrates the look and feel of the Google ModelViewer in your Panel app"""
+description = """Google has developed the `model-viewer` web component for interactively viewing very large and
+detailed 3D models.
+
+In this example we will demonstrate how to use the it in a Panel application. It's available via the
+[`awesome-panel-extensions`](https://pypi.org/project/awesome-panel-extensions/) package.
+
+The ModelViewer component and example could potentially be extended a lot by giving access to all
+the parameters of the `model-viewer`.
+
+If you would like a `model-viewer` example notebook to be an integral part of the Panel gallery go
+to GitHub and upvote [PR 1281](https://github.com/holoviz/panel/pull/1281).
+
+You can find more information at
+[modelviewer.dev](https://modelviewer.dev/),
+[examples](https://modelviewer.dev/examples/tester.html),
+[codelabs](https://codelabs.developers.google.com/codelabs/model-viewer/index.html?index=..%2F..index#0),
+and [model-viewer Github](https://github.com/google/model-viewer/tree/master/packages/model-viewer)"""
 author = "marc_skov_madsen"
 owner = "marc_skov_madsen"
-url = "hello-bokeh-world-from-notebook"
-servable = "src/apps/hello_bokeh_world/app.ipynb"
-thumbnail_url = "assets/images/thumbnails/hello-bokeh-world.png"
-tags = []
-category = "Bokeh Apps"
+url = "model-viewer"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_model_viewer.png"
+tags = ['Application', 'Code', 'model-viewer']
+category = "Apps"
 documentation_url = ""
-code_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/awesome_panel_express_tests/test_model_viewer.py"
 mp4_url = ""
 youtube_url = ""
 gif_url = ""
 binder_url = ""
 
-[hello_bokeh_world_from_python_file]
-name = "Hello Bokeh .py World"
-introduction = "A very simple Bokeh Hello World app developed in a .py FILE"
-description = "A very simple Bokeh Hello World app developed in a .py FILE"
+[ngl_molecule_viewer]
+name = "NGL Molecule Viewer"
+introduction = """Demo of the the NGL Molecule Viewer widget"""
+description = """
+This is an example of a Protein viewer app, using the [NGL Viewer](https://github.com/nglviewer/ngl).
+
+You can import it from the `awesome-panel-extensions` package via
+`from awesome_panel_extensions.widgets.ngl_viewer import NGLViewer`.
+
+The NGL Viewer was developed with help from the community. Checkout [Discourse 583](https://discourse.holoviz.org/t/how-to-use-ngl-webgl-protein-viewer-in-panel/583).
+"""
+author = "jochem_smit"
+owner = "marc_skov_madsen"
+url = "ngl-molecule-viewer"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/ngl-molecule-viewer.png"
+tags = ['Application', 'Code', 'Molecule', 'NGL', 'Panel']
+category = "Apps"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/ngl_molecule_viewer.py"
+mp4_url = "https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/ngl-molecule-viewer.mp4"
+youtube_url = ""
+gif_url = ""
+binder_url = ""
+
+[pandas_profiling]
+name = "Pandas Profiling"
+introduction = """Demonstrates that you can embed HTML reports like the Panel Profiling report in
+    your apps"""
+description = """[Pandas Profiling](https://github.com/pandas-profiling/pandas-profiling) provides profile reports
+from Pandas DataFrames. I hope this provides you with an impression of how this can be integrated
+in a [Panel](https://panel.holoviz.org/) context.
+
+This app was originally created as a response to this [question on Discourse](https://discourse.holoviz.org/t/cant-display-pandas-profiling-report/760/2).
+
+This app is restricted to profile a **maximum of 200 rows** to minimize the impact on the server.
+
+For more information take a look at the [Pandas Profiling Examples](https://pandas-profiling.github.io/pandas-profiling/docs/master/rtd/pages/examples.html#showcasing-specific-features)."""
 author = "marc_skov_madsen"
 owner = "marc_skov_madsen"
-url = "hello-bokeh-world-from-file"
-servable = "src/apps/hello_bokeh_world/app.py"
-thumbnail_url = "assets/images/thumbnails/hello-bokeh-world.png"
-tags = []
-category = "Bokeh Apps"
+url = "pandas-profiling"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/pandas_profiling_app.png"
+tags = ['Application', 'Code', 'HTML', 'Pandas', 'embed']
+category = "Apps"
 documentation_url = ""
-code_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/pandas_profiling_app/pandas_profiling_app.py"
 mp4_url = ""
 youtube_url = ""
 gif_url = ""
 binder_url = ""
 
-[holoviews_linked_selections]
-name = "HoloViews Linked Selections"
-introduction = "A demonstration of HoloViews linked selections for Bokeh and Plotly backends"
-description = "Returns an example app using the OrstedGalleryTemplate"
+[param_reference_example]
+name = "Param Reference Example"
+introduction = """A live version of the Panel Param Reference guide"""
+description = """
+This app illustrates the usage of the **`pn.Param`** function. The `pn.Param` function is used to
+layout, style and configure the widgets of a `param.Parameterized` class when using it in Panel.
+
+It took me some time to get my head around how to use it. So I've created this app
+that I hope can help you.
+
+I have also contributed a **guided walk through** of this example to the Panel Reference Gallery.
+You can find it [here](https://panel.holoviz.org/reference/panes/Param.html#panes-gallery-param).
+
+In this app we build **a model a cycling Athlete and his PowerCurve**.
+
+The PowerCurve is a recording of the athletes maximum power output in Watt per kg for fixed
+durations of time.
+"""
 author = "marc_skov_madsen"
 owner = "marc_skov_madsen"
-url = "holoviews-linked-selections"
-servable = "src/apps/holoviews_linked_selections/app.py"
-thumbnail_url = "assets/images/thumbnails/holoviews-linked-selections.png"
-tags = []
-category = "Panel Apps"
+url = "param-reference"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/param_reference_example.png"
+tags = ['Application', 'Code', 'Param']
+category = "Apps"
 documentation_url = ""
-code_url = "https://github.com/MarcSkovMadsen/awesome-analytics-apps-template/blob/main/src/apps/holoviews_linked_brushing.py"
-mp4_url = "assets/videos/mp4s/holoviews-linked-selections.mp4"
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/param_reference_example/param_reference_example.py"
+mp4_url = ""
 youtube_url = ""
 gif_url = ""
+binder_url = ""
+
+[perspective_viewer]
+name = "Perspective Viewer"
+introduction = """Demonstrates that you can use the awesome PerspectiveViewer with Panel"""
+description = """[Perspective](https://github.com/finos/perspective#readme) is an interactive visualization
+component for large, real-time datasets. It enables analysts and traders at large banks like
+J.P.Morgan to understand their data in real time.
+
+In this example we demonstrate how to use the `perspective-viewer` web component with Panel.
+"""
+author = "marc_skov_madsen"
+owner = "marc_skov_madsen"
+url = "perspective"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_perspective.png"
+tags = ['Application', 'Code', 'Perspective', 'Streaming']
+category = "Apps"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/awesome_panel_express_tests/test_perspective.py"
+mp4_url = ""
+youtube_url = ""
+gif_url = ""
+binder_url = ""
+
+[progress_extension]
+name = "Progress Extension"
+introduction = """Demonstrates how to easily add progress reporting using the ProgressExt
+    widget"""
+description = """The ProgressExt widget enables easier progress reporting using the existing
+[`pn.widgets.Progress`](https://panel.pyviz.org/reference/widgets/Progress.html#gallery-progress)
+widget. It's available via the
+[`awesome-panel-extensions`](https://pypi.org/project/awesome-panel-extensions/) package.
+
+The ProgressExt widget provides
+
+- A combination of a progress value and a progress message
+- Easy to use functionality for
+    - Function Annotation
+    - Context Management
+
+An example use case is
+
+```python
+import time
+
+import panel as pn
+from awesome_panel_extensions.widgets.progress_ext import ProgressExt
+
+progress = ProgressExt()
+run_button = pn.widgets.Button(name="Click me")
+
+@progress.increment(50, "incrementing ...")
+def run(event):
+    time.sleep(0.5)
+run_button.on_click(run)
+
+app = pn.Column(run_button, progress.view)
+app.servable()
+```
+
+This will show the progress bar and reset every 2 clicks.
+"""
+author = "marc_skov_madsen"
+owner = "marc_skov_madsen"
+url = "progress-extension"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_progress_ext.png"
+tags = ['Application', 'Code', 'Progress']
+category = "Apps"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/awesome_panel_express_tests/test_progress_ext.py"
+mp4_url = ""
+youtube_url = ""
+gif_url = ""
+binder_url = ""
+
+[share_on_social_buttons]
+name = "Share On Social Buttons"
+introduction = """These widgets makes it easy to add "share on social" buttons to your
+    apps"""
+description = """I wanted to enable easy sharing of [awesome-panel.org](https://awesome-panel.org) on social media,
+so implemented social sharing buttons."""
+author = "marc_skov_madsen"
+owner = "marc_skov_madsen"
+url = "share-on-social-buttons"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_share_links.png"
+tags = ['Application', 'Buttons', 'Code', 'Social Media']
+category = "Apps"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/awesome_panel_express_tests/test_share_links.py"
+mp4_url = ""
+youtube_url = ""
+gif_url = ""
+binder_url = ""
+
+[shoelace]
+name = "Shoelace"
+introduction = """A demonstration of the Shoelace Components including a modal pop up containing a plot"""
+description = """This is a **custom Panel template** based on [Shoelace](https://shoelace.style/).
+Shoelace provides a set of mature and awesome web components in the style of Bootstrap.
+It's the best set of **Bootstrap like** web components I've been able to find. I want web
+components because they work well in Jupyter Notebooks and because I believe they are the future of
+the web.
+
+The vision is to extend this to a Template similar to the
+[Bootstrap Template](https://panel.holoviz.org/user_guide/Templates.html) and develop a set of
+of Shoelace widgets for Panel.
+
+This template includes a modal popup which was originally requested on
+[Discourse 1207](https://discourse.holoviz.org/t/can-i-use-create-a-modal-dialog-in-panel/1207)
+
+Developed by [awesome-panel.org](/).
+"""
+author = "marc_skov_madsen"
+owner = "marc_skov_madsen"
+url = "shoelace"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/shoelace.png"
+tags = ['Application', 'Code', 'Modal', 'Shoelace']
+category = "Apps"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/shoelace/shoelace.py"
+mp4_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/dialog_template/assets/dialog_template.mp4"
+youtube_url = ""
+gif_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/dialog_template/assets/dialog_template.gif"
 binder_url = ""
 
 [streaming_dashboard]
 name = "Streaming Dashboard"
-introduction = "A demonstration of a Streaming Dashboard"
-description = "A demonstration of a Streaming Dashboard"
+introduction = """A demonstration of a Streaming Dashboard"""
+description = """This example shows a streaming dashboard with Panel.
+
+Panel runs on top of the Tornado server. Tornado is a fast, asynchronous web server built to
+support streaming use cases.
+
+In panel it's very easy to support periodic updates. Here it's done via
+`pn.state.add_periodic_callback(_create_callback(indicator), period=1000, count=200)`
+
+This Dashboard is work in progress. I would like to add some different types of stats cards
+including some with splines/ plots. I would also like to add some icons to make it look nice.
+"""
 author = "marc_skov_madsen"
 owner = "marc_skov_madsen"
 url = "streaming-dashboard"
-servable = "src/apps/streaming_dashboard/app.py"
-thumbnail_url = "assets/images/thumbnails/streaming-dashboard.png"
-tags=["Streaming", "Dashboard", "StatsCard"]
-category = "Panel Apps"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/streaming-dashboard.png"
+tags = ['Application', 'Code', 'Dashboard', 'StatsCard', 'Streaming']
+category = "Apps"
 documentation_url = ""
-code_url = "https://github.com/MarcSkovMadsen/awesome-analytics-apps-template/blob/main/src/apps/streaming_dashboard/app.py"
-mp4_url = "assets/videos/mp4s/streaming-dashboard.mp4.mp4"
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/streaming_dashboard/streaming_dashboard.py"
+mp4_url = "https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/streaming-dashboard.mp4"
 youtube_url = ""
 gif_url = ""
 binder_url = ""
 
 [streaming_plots]
-name = "Streaming plots"
-introduction = "A demonstration of a Streaming plots"
-description = "A demonstration of a Streaming plots"
+name = "Streaming Plots"
+introduction = """Demonstrates Streaming with Panel"""
+description = """Streaming is something that Panel supports really well
+
+This application demonstrates how to use
+[Streamz](https://streamz.readthedocs.io/en/latest/),
+[Pandas](https://pandas.pydata.org/),
+[Bokeh](https://docs.bokeh.org/en/latest/index.html),
+[Holoviews](https://holoviews.org/),
+[Altair](https://altair-viz.github.io/),
+[Echart](https://echarts.apache.org/en/index.html) and
+[Plotly](https://plotly.com/) for streaming.
+
+The stream will STOP AFTER 1 MINUTE.
+"""
 author = "marc_skov_madsen"
 owner = "marc_skov_madsen"
 url = "streaming-plots"
-servable = "src/apps/streaming_plots/app.py"
-thumbnail_url = "assets/images/thumbnails/streaming-plots.png"
-tags=["Streaming", "Streamz", "Plots"]
-category = "Panel Apps"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/streaming-plots.png"
+tags = ['Application', 'Code', 'Streaming', 'Streamz']
+category = "Apps"
 documentation_url = ""
-code_url = "https://github.com/MarcSkovMadsen/awesome-analytics-apps-template/blob/main/src/apps/streaming_plots/app.py"
-mp4_url = "assets/videos/mp4s/streaming-plots.mp4.mp4"
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/streaming_plots/streaming_plots.py"
+mp4_url = "https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/streaming-plots.mp4"
+youtube_url = ""
+gif_url = "https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/streaming-plots.gif"
+binder_url = ""
+
+[volume_profile_analysis]
+name = "Volume Profile Analysis"
+introduction = """An example of Volume Profile Analysis of time series from commodity, currency,
+    debt and equity markets."""
+description = """This example app demonstrates how to use Panel and the HoloViews ecosystem to
+analyze Volume Profiles as described in the [How to Analyze Volume Profiles With Python Blog Post](https://medium.com/swlh/how-to-analyze-volume-profiles-with-python-3166bb10ff24)
+by [Minh Ngyen](https://www.linkedin.com/in/minhnguyen001/)
+"""
+author = "marc_skov_madsen"
+owner = "marc_skov_madsen"
+url = "volume-profile-analysis"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/volume-profile-analysis.png"
+tags = ['Application', 'Code', 'Finance', 'HoloViz', 'Panel', 'Quant', 'Signal Processing', 'Volume Profiles']
+category = "Apps"
+documentation_url = ""
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/volume_profile_analysis/volume_profile_analysis.py"
+mp4_url = "https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/volume-profile-analysis.mp4"
 youtube_url = ""
 gif_url = ""
 binder_url = ""
 
-[ipyvolume_simple]
-name = "IpyVolume"
-introduction = "Simple IpyVolume example to show we can use it in the template"
-description = "Simple IpyVolume example to show we can use it in the template"
-author = "marc_skov_madsen"
-owner = "marc_skov_madsen"
-url = "ipyvolume-simple"
-servable = "src/apps/ipyvolume_simple/app.py"
-thumbnail_url = "assets/images/thumbnails/ipyvolume-simple.png"
-tags=["Ipywidgets", "IpyVolume"]
-category = "Ipywidgets Apps"
-documentation_url = ""
-code_url = "https://github.com/MarcSkovMadsen/awesome-analytics-apps-template/blob/main/src/apps/ipyvolume_simple/app.py"
-mp4_url = ""
-youtube_url = ""
-gif_url = ""
-binder_url = ""
+[yahoo_query]
+name = "Yahoo Query"
+introduction = """Shows how you can use the Yahoo Query package in your Panel apps"""
+description = """This app allows you to demo the [yahooquery](https://github.com/dpguthrie/yahooquery) python
+package.
 
-[bokeh_movie_explorer]
-name = "Bokeh Movie Explorer"
-introduction = "The Bokeh Movie Explorer is a tool for exploring OMDB movie data"
-description = "The Bokeh Movie Explorer is a tool for exploring OMDB movie data"
+This app was first developed in Streamlit by [Doug Guthrie](https://github/dpguthrie)). See [yahooquery-streamlit](https://github.com/dpguthrie/yahooquery-streamlit). You can see a live
+version in the gallery at [awesome-streamlit.org](awesome-streamlit.org)
+
+This app could be speeded if the use of `panel.layout.Tabs` was replaced by the tabs of the
+[Golden Layout Template](https://panel.holoviz.org/reference/templates/GoldenLayout.html) or a
+[Custom Panel Template](https://panel.holoviz.org/user_guide/Templates.html). Furthermore the
+implementation is something I did *early on* and could be simplified and made easier to understand.
+"""
 author = "marc_skov_madsen"
 owner = "marc_skov_madsen"
-url = "bokeh-movie-explorer"
-servable = "src/apps/bokeh_movie_explorer/app.py"
-thumbnail_url = "assets/images/thumbnails/bokeh-movie-explorer.png"
-tags=["Bokeh"]
-category = "Bokeh Apps"
+url = "yahoo-query"
+servable = "None"
+thumbnail_url = "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/yahooquery_app.png"
+tags = ['Application', 'Code', 'Finance', 'api']
+category = "Apps"
 documentation_url = ""
-code_url = "https://github.com/MarcSkovMadsen/awesome-analytics-apps-template/blob/main/src/apps/bokeh_movie_explorer/app.py"
+code_url = "https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/yahooquery_app/yahooquery_app.py"
 mp4_url = ""
 youtube_url = ""
 gif_url = ""

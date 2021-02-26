@@ -6,4 +6,20 @@ url="https://github.com/marcskovmadsen"
 avatar_url="https://avatars0.githubusercontent.com/u/42288570"
 twitter_url = ""
 linkedin_url = ""
+github_url = "https://github.com/marcskovmadsen"
+
+[jochem_smit]
+name="Jochem Smit"
+url="https://github.com/Jhsmit"
+avatar_url="https://avatars1.githubusercontent.com/u/7881506?s=400&u=bdf7b6635bf57e7022763ce3b002649fe80ef6a8&v=40"
+twitter_url = ""
+linkedin_url = ""
+github_url = "https://github.com/Jhsmit"
+
+[andrew_huang]
+name="Andrew Huang"
+url="https://twitter.com/iateandrew1"
+avatar_url="https://avatars3.githubusercontent.com/u/15331990?s=400&u=6f855e2f82d576fd22110f2ac9b1b7ec4825d916&v=4"
+twitter_url = ""
+linkedin_url = ""
 github_url = ""
