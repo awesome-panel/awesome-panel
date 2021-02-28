@@ -23,7 +23,7 @@ from application.config import site
 
 hv.extension("bokeh")
 
-EMPTY_PLOT = hv.Curve({})
+EMPTY_PLOT = None
 COLOR_MAPS = hv.plotting.util.list_cmaps()
 STYLE = """
 .bk.app-body {
@@ -124,6 +124,7 @@ class Dashboard(param.Parameterized):
                 align="center",
                 sizing_mode="fixed",
                 margin=(10, 50, 10, 5),
+                embed=False,
             ),
             sizing_mode="stretch_width",
             css_classes=["app-bar"],

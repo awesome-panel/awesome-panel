@@ -11,8 +11,8 @@ The NGL Viewer was developed with help from the community. Checkout [Discourse 5
 
 import panel as pn
 import param
-from awesome_panel_extensions.frameworks.fast.templates import FastListTemplate
 from awesome_panel_extensions.widgets.ngl_viewer import NGLViewer
+from panel.template import FastListTemplate
 
 from application.config import site
 

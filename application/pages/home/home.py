@@ -14,7 +14,7 @@ def _read_sections():
     sections = sections.split("##")
     sections[0] = Markdown(sections[0])
     for index in range(1, len(sections)):
-        sections[index] = Markdown("#" + sections[index])
+        sections[index] = Markdown("#" + sections[index], sizing_mode="stretch_width")
     return sections
 
 
@@ -38,6 +38,7 @@ def view():
     """The home view of awesome-panel.org"""
     pn.config.sizing_mode = "stretch_width"
     template = site.create_template(main=SECTIONS, main_max_width="900px")
+    print(template.theme_toggle)
     return template
 
 

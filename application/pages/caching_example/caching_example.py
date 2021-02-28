@@ -30,12 +30,12 @@ import time
 import uuid
 
 import holoviews as hv
-import hvplot.pandas # pylint: disable=unused-import
+import hvplot.pandas  # pylint: disable=unused-import
 import numpy as np
 import pandas as pd
 import panel as pn
-from awesome_panel_extensions.frameworks.fast.templates import FastListTemplate
 from diskcache import FanoutCache
+from panel.template import FastListTemplate
 
 from application.config import site
 
@@ -83,7 +83,7 @@ def _plot_data(frac=0.1):
 
 
 @site.add(APPLICATION)
-def view() -> FastListTemplate: # pylint: disable=too-many-locals
+def view() -> FastListTemplate:  # pylint: disable=too-many-locals
     """Returns the Caching Example app
 
     Returns:

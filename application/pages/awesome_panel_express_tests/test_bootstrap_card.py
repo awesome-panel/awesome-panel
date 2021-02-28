@@ -11,9 +11,9 @@ import pandas as pd
 import panel as pn
 from awesome_panel import express as pnx
 from awesome_panel.express.testing import TestApp
+pn.widgets.Button.param.sizing_mode.default = "stretch_width"
 
 from application.config import site
-
 COLOR = "#E1477E"
 
 APPLICATION = site.create_application(
@@ -115,7 +115,6 @@ def _holoviews_chart():
     line_plot = data.hvplot.line(
         x="Day",
         y="Orders",
-        width=None,
         height=500,
         line_color=COLOR,
         line_width=6,
@@ -244,15 +243,16 @@ def view() -> pn.Column:
     pn.config.sizing_mode = "stretch_width"
     main = [
         APPLICATION.intro_section(),
-        test_card(),
-        test_card_fixed_width(),
+        # test_card(),
+        # test_card_fixed_width(),
         test_card_with_plot(),
-        test_card_with_multiple_panels(),
-        test_card_collapsible(),
-        test_card_with_code(),
+        # test_card_with_multiple_panels(),
+        # test_card_collapsible(),
+        # test_card_with_code(),
     ]
     return site.create_template(title="Test Bootstrap Card", main=main)
 
 
 if __name__.startswith("bokeh"):
+    pn.config.sizing_mode="stretch_width"
     view().servable()

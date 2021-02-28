@@ -5,15 +5,12 @@ from typing import List, Optional
 import panel as pn
 from awesome_panel_extensions.assets import svg_icons
 
-# pylint: disable=line-too-long
-from awesome_panel_extensions.frameworks.fast.templates.fast_grid_template.fast_grid_template import (
-    FastGridTemplate,
-)
-
 # pylint: enable=line-too-long
-from awesome_panel_extensions.frameworks.fast.templates.fast_list_template import FastListTemplate
 from awesome_panel_extensions.site import Site
 from awesome_panel_extensions.site.application import Application
+
+# pylint: disable=line-too-long
+from panel.template import FastGridTemplate, FastListTemplate
 from panel.template.base import BasicTemplate
 
 from . import _authors
@@ -61,6 +58,8 @@ MP4_ROOT = (
     "https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/"
 )
 
+pn.template.FastListTemplate.param.theme.default = pn.template.fast.list.FastDarkTheme
+pn.template.FastGridTemplate.param.theme.default = pn.template.fast.grid.FastDarkTheme
 
 class AwesomePanelSite(Site):
     """The Awesome Panel Site"""

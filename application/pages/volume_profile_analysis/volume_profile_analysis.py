@@ -12,11 +12,11 @@ import pandas as pd
 import panel as pn
 import param
 import yfinance as yf
-from awesome_panel_extensions.frameworks.fast.templates import FastListTemplate
 from awesome_panel_extensions.io.loading import start_loading_spinner, stop_loading_spinner
 from bokeh.models import HoverTool
 from bokeh.models.formatters import NumeralTickFormatter
 from diskcache import FanoutCache
+from panel.template import FastListTemplate
 from scipy import signal, stats
 
 from application.config import site

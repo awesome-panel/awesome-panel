@@ -11,7 +11,7 @@ including some with splines/ plots. I would also like to add some icons to make 
 """
 import numpy as np
 import panel as pn
-from awesome_panel_extensions.frameworks.fast.templates import FastGridTemplate
+from panel.template import FastGridTemplate
 
 from application.config import site
 
@@ -61,10 +61,10 @@ def view():
     template = FastGridTemplate(title="Streaming Dashboard", row_height=140)
     template.main[0:3, :] = APPLICATION.intro_section()
 
-    ok_color = template.theme.style.neutral_foreground_rest
+    OK_COLOR = "#A01346"
     for row in range(0, 3):
         for col in range(0, 6):
-            colors = [(66, ok_color), (100, ERROR_COLOR)]
+            colors = [(66, OK_COLOR), (100, ERROR_COLOR)]
             title = "Sensor " + str(row * 6 + col + 1)
             indicator = pn.indicators.Number(
                 name=title,
@@ -80,7 +80,7 @@ def view():
     for row in range(3, 5):
         for col in range(0, 3):
             title = "Sensor " + str(3 * row + col + 10)
-            colors = [(0.7, ok_color), (1, ERROR_COLOR)]
+            colors = [(0.7, OK_COLOR), (1, ERROR_COLOR)]
             indicator = pn.indicators.Gauge(
                 name=title, value=65, bounds=(0, 100), colors=colors, align="center"
             )

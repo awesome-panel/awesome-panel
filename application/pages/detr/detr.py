@@ -28,7 +28,7 @@ import panel as pn
 import param
 import plotly.graph_objects as go
 import requests
-from awesome_panel_extensions.io.loading import start_loading_spinner, stop_loading_spinner
+from panel.io.loading import start_loading_spinner, stop_loading_spinner
 from PIL import Image
 
 from application.config import site
@@ -183,8 +183,9 @@ class DETRApp(param.Parameterized):  # pylint: disable=too-many-instance-attribu
         ]
         template = site.create_template(
             title="Panel DE:TR",
-            theme="default",
             main=main,
+            theme="default",
+            theme_toggle=False,
         )
         return plot, template
 

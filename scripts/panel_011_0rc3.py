@@ -7,32 +7,13 @@ import holoviews as hv
 import numpy as np
 import panel as pn
 
-from application.config import site
-
-APPLICATION = site.create_application(
-    url="dependent-widgets",
-    name="Dependent Widgets",
-    author="Marc Skov Madsen",
-    introduction="An example of providing multiple widgets to select the same value",
-    description=__doc__,
-    thumbnail_url="dependent-widgets.png",
-    documentation_url="",
-    code_url="discourse/discourse_1478_dependent_widgets.py",
-    gif_url="dependent-widgets.gif",
-    mp4_url="dependent-widgets.mp4",
-    tags=[
-        "Discourse",
-        "Multiselect",
-    ],
-)
-
 CONTINENTS = ["Asia", "Europe", "America"]
 CITIES = {
     "Asia": ["Singapore", "Seoul", "Shanghai"],
     "America": ["Boston", "Toronto", "Quito", "Santiago"],
     "Europe": ["Madrid", "London", "Paris", "Lisbon"],
 }
-ACCENT_COLOR = "#A01346"
+
 
 def _transform(_cities):
     continents_lookup = {}
@@ -47,12 +28,12 @@ def _transform(_cities):
 CONTINENTS_LOOKUP, CITIES_LIST = _transform(CITIES)
 
 
-@site.add(APPLICATION)
 def view():
     """Returns the app in a nice template for use at awesome-panel.org"""
     pn.config.sizing_mode = "stretch_width"
+    from application.config import site
     template = pn.template.FastListTemplate(
-        main_max_width="1024px", theme="dark"
+        main_max_width="1024px",
     )
 
     select_continent = pn.widgets.Select(name="Continent", options=CONTINENTS, value=CONTINENTS[0])
@@ -80,7 +61,7 @@ def view():
 
     plot_panel = pn.pane.HoloViews(sizing_mode="stretch_width")
 
-    accent_base_color = ACCENT_COLOR
+    accent_base_color = template.theme.style.accent_base_color
 
     @pn.depends(select_city.param.value, watch=True)
     def _update_plot(*_):
@@ -92,7 +73,6 @@ def view():
 
     _update_plot()
     main = [
-        APPLICATION.intro_section(),
         pn.Column(
             pn.Tabs(
                 pn.Row(select_continent, select_city, name="By Continent", margin=(25, 5, 10, 5)),

@@ -2,7 +2,7 @@ import { div, label } from "@bokehjs/core/dom"
 import * as p from "@bokehjs/core/properties"
 import { HTMLBox, HTMLBoxView } from "@bokehjs/models/layouts/html_box"
 import {ColumnDataSource} from "@bokehjs/models/sources/column_data_source"
-import { bk_input_group } from "@bokehjs/styles/widgets/inputs"
+import * as inputs from "@bokehjs/styles/widgets/inputs.css"
 
 function htmlDecode(input: string): string | null {
   var doc = new DOMParser().parseFromString(input, "text/html");
@@ -53,7 +53,7 @@ export class WebComponentView extends HTMLBoxView {
     // For now I've set min_height as a part of .py __init__ for some of the Wired components?
     const title = this.model.name
     if (this.model.componentType === "inputgroup" && title) {
-      this.group_el = div({ class: bk_input_group }, this.label_el)
+      this.group_el = div({ class: inputs.input_group }, this.label_el)
       this.group_el.innerHTML = (htmlDecode(this.model.innerHTML) as string)
       this.webComponentElement = this.group_el.firstElementChild
       this.label_el = label({ style: { display: title.length == 0 ? "none" : "" } }, title)
@@ -118,18 +118,19 @@ export class WebComponentView extends HTMLBoxView {
   transform_cds_to_records(cds: ColumnDataSource): any {
     const data: any = []
     const columns = cds.columns()
-
-    if (columns.length === 0) {
+    const cdsLength = cds.get_length()
+    if (columns.length === 0||cdsLength === null) {
       return [];
     }
-    for (let i = 0; i < cds.data[columns[0]].length; i++) {
+    for (let i = 0; i < cdsLength; i++) {
       const item: any = {}
       for (const column of columns) {
-        const shape = (cds._shapes[column] as any)
-        if ((shape !== undefined) && (shape.length > 1) && (typeof shape[0] == "number"))
-          item[column] = cds.get_array(column).slice(i * shape[1], i * shape[1] + shape[1])
+        let array: any = cds.get_array(column);
+        const shape = array[0].shape == null ? null : array[0].shape;
+        if ((shape != null) && (shape.length > 1) && (typeof shape[0] == "number"))
+          item[column] = array.slice(i*shape[1], i*shape[1]+shape[1])
         else
-          item[column] = cds.data[column][i]
+          item[column] = array[i]
       }
       data.push(item)
     }
