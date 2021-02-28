@@ -8,7 +8,7 @@ The Google Maps example was initially described in the [Param User Guide]\
 """
 import panel as pn
 import param
-from awesome_panel_extensions.frameworks.fast.templates import FastGridTemplate
+from panel.template import FastGridTemplate
 
 from application.config import site
 

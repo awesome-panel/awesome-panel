@@ -1,6 +1,7 @@
 """## The About Page of awesome-panel.org"""
 import pathlib
 
+import panel as pn
 from panel.pane import Markdown
 
 from application.config import site
@@ -30,7 +31,9 @@ APPLICATION = site.create_application(
 def view():
     """The about view of awesome-panel.org"""
     main = [Markdown(ABOUT, sizing_mode="stretch_width")]
-    template = site.create_template(title="About", main=main)
+    print(pn.template.FastListTemplate.param.theme.default)
+    template = pn.template.FastListTemplate(title="About", main=main)
+    print(template.theme)
     return template
 
 

@@ -30,7 +30,7 @@ from awesome_panel_extensions.frameworks.fast import (
     FastTextAreaInput,
     FastTextInput,
 )
-from awesome_panel_extensions.frameworks.fast.templates.fast_grid_template import FastGridTemplate
+from panel.template import FastGridTemplate
 from awesome_panel_extensions.site.template.template_generator import _TEMPLATE_CSS_ID
 from holoviews import opts
 
@@ -56,12 +56,13 @@ APPLICATION = site.create_application(
 
 
 def _config_fast_size_mode():
-    FastButton.param.sizing_mode.default = pn.config.sizing_mode
-    FastCheckbox.param.sizing_mode.default = pn.config.sizing_mode
-    FastSwitch.param.sizing_mode.default = pn.config.sizing_mode
-    FastTextAreaInput.param.sizing_mode.default = pn.config.sizing_mode
-    FastLiteralInput.param.sizing_mode.default = pn.config.sizing_mode
-    FastTextInput.param.sizing_mode.default = pn.config.sizing_mode
+    pass
+    # pn.widgets.Button.param.sizing_mode.default = "stretch_width"
+    # FastCheckbox.param.sizing_mode.default = pn.config.sizing_mode
+    # FastSwitch.param.sizing_mode.default = pn.config.sizing_mode
+    # FastTextAreaInput.param.sizing_mode.default = pn.config.sizing_mode
+    # FastLiteralInput.param.sizing_mode.default = pn.config.sizing_mode
+    # FastTextInput.param.sizing_mode.default = pn.config.sizing_mode
 
 
 COLLAPSED_ICON = svg_icons.FAST_COLLAPSED_ICON

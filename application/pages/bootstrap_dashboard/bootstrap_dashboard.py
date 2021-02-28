@@ -84,7 +84,6 @@ def _holoviews_chart():
     line_plot = data.hvplot.line(
         x="Day",
         y="Orders",
-        width=None,
         height=500,
         line_color=COLOR,
         line_width=6,

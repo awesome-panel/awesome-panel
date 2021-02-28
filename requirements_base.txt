@@ -1,18 +1,18 @@
 # Panel. We use github version because of
 # - https://github.com/holoviz/panel/issues/883
 # - https://github.com/holoviz/panel/pull/867
-panel==0.10.3
-bokeh==2.2.3
+panel==0.11.0RC3
+bokeh==2.3.0
 tornado
 holoviews==1.14.1
 hvplot==0.7.0
 lxml
 
-awesome-panel-extensions==20210124.1 # 20201228.1
+# awesome-panel-extensions==20210124.1 # 20201228.1
 
 # Data Engineering and Science
-pandas==0.25.3
-geopandas # To `pip install geopandas` on windows please follow https://geoffboeing.com/2014/09/using-geopandas-windows/
+pandas==1.2.2
+# geopandas # To `pip install geopandas` on windows please follow https://geoffboeing.com/2014/09/using-geopandas-windows/
 xlrd==1.2.0 # For importing xls files
 
 # Data Visualization
@@ -51,6 +51,7 @@ bandit # Bandit is a tool designed to find common security issues in Python code
 
 yahooquery==1.0.11
 pydeck==0.2.0
+# Windows: pip install torch==1.7.1 torchvision==0.8.2 -f https://download.pytorch.org/whl/torch_stable.html
 torch==1.5.0+cpu
 torchvision==0.6.0+cpu
 pandas-profiling==2.8.0
