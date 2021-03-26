@@ -214,6 +214,9 @@ class DETRApp(param.Parameterized):  # pylint: disable=too-many-instance-attribu
         self.plot.object = figure
         self._stop_progress()
 
+    def __repr__(self):
+        return "DETRApp()"
+
 
 @site.add(APPLICATION)
 def view():

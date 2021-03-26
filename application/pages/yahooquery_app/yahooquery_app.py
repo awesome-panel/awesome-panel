@@ -393,6 +393,9 @@ class BasePage(Page):
             sizing_mode="stretch_width",
         )
 
+    def __repr__(self):
+        return "BasePage"
+
 
 class BaseMultiplePage(Page):
     """A view for multiple Ticker requests
