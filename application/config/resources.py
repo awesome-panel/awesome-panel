@@ -15,6 +15,8 @@ from application.config.settings import THUMBNAILS_ROOT
 # https://towardsdatascience.com/advanced-data-visualization-with-holoviews-e7263ad202e
 # https://protect2.fireeye.com/v1/url?k=7f6b8b93-20f0b2f2-7f6b65dc-86d8a30ca42b-455dc19b6233bbd3&q=1&e=e5b506b5-487c-4db8-8728-0b4d615ccdca&u=https%3A%2F%2Fwww.quansight.com%2Fpost%2Fworking-across-panel-and-ipywidgets-ecosystems
 # http://www.hyamani.eu/2021/01/02/dashboards-for-iot-sensors/#A_full_fledge_Dashboard
+# http://bonegen.nti.tul.cz/BoneGen_server_version
+# https://github.com/dhruvbalwada/glider-panel-demo https://twitter.com/BalwadaDhruv/status/1375303891751870474?s=20
 RESOURCES = [
     Resource(
         name="Digital Vulnerabilities Map",

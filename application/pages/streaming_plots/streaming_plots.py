@@ -42,6 +42,10 @@ APPLICATION = site.create_application(
     ],
 )
 COLOR = "#E1477E"
+THEME = {
+    pn.template.theme.DarkTheme: {pn.pane.ECharts: "dark", pn.pane.Plotly: "plotly_dark"},
+    pn.template.theme.DefaultTheme: {pn.pane.ECharts: "default", pn.pane.Plotly: "plotly_white"},
+}
 
 
 def _create_echarts(data):
@@ -80,11 +84,11 @@ def _create_hvplot(data):
     return data.hvplot(y="y", color=COLOR).opts(default_tools=[])
 
 
-def _create_plotly(data):
-    plot = px.line(data, y="y", height=371, template="plotly_dark")
+def _create_plotly(data, template="plotly_white"):
+    plot = px.line(data, y="y", height=371, template=template)
     plot.layout.autosize = True
-    plot.layout.plot_bgcolor = "#2a2a2a"
-    plot.layout.paper_bgcolor = "#2a2a2a"
+    # plot.layout.plot_bgcolor = "#2a2a2a"
+    # plot.layout.paper_bgcolor = "#2a2a2a"
     plot.layout.xaxis.tickformat = "%H:%M:%S"
     return plot
 
@@ -103,7 +107,14 @@ def _create_plotly(data):
 def view():
     """Returns an instance of the Streaming Plots app"""
     pn.config.sizing_mode = "stretch_width"
-    echart_pane = pn.pane.ECharts(theme="dark", sizing_mode="stretch_both")
+    template = pn.template.FastGridTemplate(
+        theme="dark",
+        main_max_width="",
+        row_height=110,
+    )
+    echart_pane = pn.pane.ECharts(
+        theme=THEME[template.theme][pn.pane.ECharts], sizing_mode="stretch_both"
+    )
     plotly_pane = pn.pane.Plotly(
         sizing_mode="stretch_width", height=371, config={"responsive": True}
     )
@@ -117,7 +128,7 @@ def view():
         echart_pane.object = _create_echarts(data)
 
     def update_plotly(data):
-        plotly_pane.object = _create_plotly(data)
+        plotly_pane.object = _create_plotly(data, template=THEME[template.theme][pn.pane.Plotly])
 
     def update_altair(data):
         altair_pane.object = _create_altair(data)
@@ -138,27 +149,21 @@ def view():
     emit()
     pn.state.add_periodic_callback(emit, period=250, count=240)  # Will stream for 1 mins
 
-    layout = site.create_template(
-        template="fastgrid",
-        theme="dark",
-        main_max_width="",
-        row_height=110,
-    )
     site_intro = APPLICATION.intro_section()
-    layout.main[0:3, 0:12] = site_intro
-    layout.main[3:7, 0:6] = pn.Column(
+    template.main[0:3, 0:12] = site_intro
+    template.main[3:7, 0:6] = pn.Column(
         pn.pane.Markdown("## BOKEH via HOLOVIEWS"), hvplot_pane, sizing_mode="stretch_both"
     )
-    layout.main[3:7, 6:12] = pn.Column(
+    template.main[3:7, 6:12] = pn.Column(
         pn.pane.Markdown("## VEGA via ALTAIR"), altair_pane, sizing_mode="stretch_both"
     )
-    layout.main[7:11, 0:6] = pn.Column(
+    template.main[7:11, 0:6] = pn.Column(
         pn.pane.Markdown("## PLOTLY"), plotly_pane, sizing_mode="stretch_both"
     )
-    layout.main[7:11, 6:12] = pn.Column(
+    template.main[7:11, 6:12] = pn.Column(
         pn.pane.Markdown("## ECHART"), echart_pane, sizing_mode="stretch_both"
     )
-    return layout
+    return template
 
 
 if __name__.startswith("bokeh"):

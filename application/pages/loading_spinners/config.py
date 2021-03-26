@@ -1,6 +1,9 @@
 # pylint: disable=redefined-outer-name,protected-access
 # pylint: disable=missing-function-docstring,missing-module-docstring,missing-class-docstring
-from awesome_panel_extensions.io.loading import DARK_URL, DEFAULT_URL
+# pylint: disable=line-too-long
+DEFAULT_URL = "https://raw.githubusercontent.com/holoviz/panel/5ea166fdda6e1f958d2d9929ae2ed2b8e962156c/panel/assets/spinner_default.svg"
+DARK_URL = "https://raw.githubusercontent.com/holoviz/panel/5ea166fdda6e1f958d2d9929ae2ed2b8e962156c/panel/assets/spinner_dark.svg"
+# pylint: disable=enable-too-long
 
 DEFAULT_COLOR = "#757575"
 DARK_COLOR = "#BDBDBD"

@@ -10,6 +10,7 @@ disable=bad-continuation,duplicate-code,no-member
 [DESIGN]
 max-parents=13
 max-complexity=10
+max-attributes=15
 
 [TYPECHECK]
 generated-members=REQUEST,acl_users,aq_parent,"[a-zA-Z]+_set{1,2}",save,delete

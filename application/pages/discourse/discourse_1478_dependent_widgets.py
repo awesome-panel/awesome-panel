@@ -34,6 +34,7 @@ CITIES = {
 }
 ACCENT_COLOR = "#A01346"
 
+
 def _transform(_cities):
     continents_lookup = {}
     cities_list = []
@@ -51,9 +52,7 @@ CONTINENTS_LOOKUP, CITIES_LIST = _transform(CITIES)
 def view():
     """Returns the app in a nice template for use at awesome-panel.org"""
     pn.config.sizing_mode = "stretch_width"
-    template = pn.template.FastListTemplate(
-        main_max_width="1024px", theme="dark"
-    )
+    template = pn.template.FastListTemplate(main_max_width="1024px", theme="dark")
 
     select_continent = pn.widgets.Select(name="Continent", options=CONTINENTS, value=CONTINENTS[0])
     select_city = pn.widgets.Select(

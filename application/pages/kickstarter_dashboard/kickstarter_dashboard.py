@@ -168,7 +168,7 @@ class KickstarterDashboard(param.Parameterized):
     ):
         """A Reactive View of the KickstarterDashboard"""
         pn.config.sizing_mode = "stretch_width"
-        template = site.create_template(title="Kickstarter Dashboard")
+        template = pn.template.FastListTemplate(title="Kickstarter Dashboard", theme_toggle=False)
         template.sidebar[:] = [
             pn.pane.HTML("<h2>Settings</h2>"),
             pn.Param(

@@ -20,8 +20,6 @@ import panel as pn
 from application import pages  # pylint: disable=unused-import
 from application.config import site
 
-# for app in sorted(site.applications, key=lambda x: x.name):
-#     print(f'<a href="{app.url}">{app.name}</a>')
 if __name__ == "__main__":
     address = os.getenv("BOKEH_ADDRESS", "0.0.0.0")
     APP_ROUTES = {app.url: app.view for app in site.applications}

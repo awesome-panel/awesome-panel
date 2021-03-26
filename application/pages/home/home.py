@@ -38,7 +38,6 @@ def view():
     """The home view of awesome-panel.org"""
     pn.config.sizing_mode = "stretch_width"
     template = site.create_template(main=SECTIONS, main_max_width="900px")
-    print(template.theme_toggle)
     return template
 
 

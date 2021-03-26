@@ -355,20 +355,6 @@ TEST_SHARE_LINKS = Page(
     author=authors.MARC_SKOV_MADSEN,
     url="ext-social-links",
 )
-TEST_WIRED = Page(
-    name="Test Wired",
-    source_code_url=GITHUB_PAGE_URL + "awesome_panel_express_tests/test_wired.py",
-    thumbnail_png_url=THUMBNAILS_ROOT + "test_wired.png",
-    tags=[
-        tags.CODE,
-        tags.APP_IN_GALLERY,
-        tags.AWESOMEPANEL_EXPRESS,
-    ],
-    component=pages.test_wired,
-    author=authors.MARC_SKOV_MADSEN,
-    show_loading_page=True,
-    url="ext-wired",
-)
 
 PAGES = [
     HOME,
@@ -396,7 +382,6 @@ PAGES = [
     TEST_PERSPECTIVE,
     TEST_PROGRESS_EXTENSION,
     TEST_SHARE_LINKS,
-    TEST_WIRED,
     ISSUES,
 ]
 

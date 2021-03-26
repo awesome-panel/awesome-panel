@@ -17,7 +17,6 @@ from application.pages.awesome_panel_express_tests import (
     test_perspective,
     test_progress_ext,
     test_share_links,
-    test_wired,
 )
 from application.pages.bootstrap_dashboard import bootstrap_dashboard
 from application.pages.caching_example import caching_example
@@ -45,5 +44,6 @@ from application.pages.shoelace import shoelace
 from application.pages.streaming_dashboard import streaming_dashboard
 from application.pages.streaming_plots import streaming_plots
 from application.pages.styling import fileinput_area
+from application.pages.tabulator_app import tabulator_app
 from application.pages.volume_profile_analysis import volume_profile_analysis
 from application.pages.yahooquery_app import yahooquery_app

@@ -55,7 +55,7 @@ def view() -> pn.viewable.Viewable:
         pn.viewable.Viewable: The main Viewable of the app.
     """
     pn.config.sizing_mode = "stretch_width"
-    template = site.create_template(title="Param Reference Example")
+    template = pn.template.FastListTemplate(title="Param Reference Example")
     athlete = Athlete()
 
     athlete_view = pn.Param(

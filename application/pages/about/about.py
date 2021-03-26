@@ -31,9 +31,7 @@ APPLICATION = site.create_application(
 def view():
     """The about view of awesome-panel.org"""
     main = [Markdown(ABOUT, sizing_mode="stretch_width")]
-    print(pn.template.FastListTemplate.param.theme.default)
     template = pn.template.FastListTemplate(title="About", main=main)
-    print(template.theme)
     return template
 
 

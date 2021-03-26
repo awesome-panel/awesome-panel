@@ -184,7 +184,6 @@ class OwidDashboard(param.Parameterized):
         url,
     ) -> pd.DataFrame:
         """The DataFrame of data from Owid"""
-        print(url)
         return pd.read_csv(url)
 
     @classmethod

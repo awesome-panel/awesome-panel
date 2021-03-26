@@ -1,14 +1,11 @@
 """The Loading Spinners helps provide a nice user experience by indicating activity.
 
-This app showcases the look and feel of the loading spinners.
+This app showcases the look and feel of the loading spinners and provides you functionality to
+customize the look and feel of your loading spinner.
 
 - You can select the look and color of the loading spinner in the sidebar.
 - If you end up with a design you would like to add in your app, then you can just copy the
 `style` css and `append` it to `pn.config.raw_css` in your app.
-
-The functionality is currently available via the `awesome-panel-extensions` package. If you want
-it included in Panel please upvote [PR 1730 - Panel loading indicator]\
-(https://github.com/holoviz/panel/pull/1730).
 """
 import random
 import time
@@ -16,21 +13,15 @@ import time
 import holoviews as hv
 import panel as pn
 import param
-from awesome_panel_extensions.io.loading import (
-    DEFAULT_URL,
-    STYLE,
-    start_loading_spinner,
-    stop_loading_spinner,
-)
+from panel.io.loading import start_loading_spinner, stop_loading_spinner
 
 from application.config import site
 from application.pages.loading_spinners import config
 
-if STYLE not in pn.config.raw_css:
-    pn.config.raw_css.append(STYLE)
-
 COLOR = "#E1477E"
-
+# pylint: disable=line-too-long
+DEFAULT_URL = "https://raw.githubusercontent.com/holoviz/panel/5ea166fdda6e1f958d2d9929ae2ed2b8e962156c/panel/assets/spinner_default.svg"
+# pylint: enable=line-too-long
 APPLICATION = site.create_application(
     url="loading-spinners",
     name="Loading Spinners",
@@ -105,7 +96,7 @@ class LoadingStyler(param.Parameterized):
     )
     def _update_style(self):
         self.style = f"""
-.bk.pn-loading:before {{
+.bk.pn-loading.arcs:before {{
 background-image: url('{self._spinner_url}');
 background-size: auto {self.spinner_height}%;
 background-color: rgb({self.background_rgb[0]},{self.background_rgb[1]},{self.background_rgb[2]},{self.background_alpha});
@@ -233,7 +224,7 @@ class LoadingApp(param.Parameterized):  # pylint: disable=too-many-instance-attr
 def view():
     """Returns the app in a Template"""
     pn.config.sizing_mode = "stretch_width"
-    template = site.create_template()
+    template = pn.template.FastListTemplate(title="Loading Spinners")
     app = LoadingApp(name="Loading Spinner App")
     template.sidebar[:] = [app.settings_panel]
     template.main[:] = [APPLICATION.intro_section(), app.main]

@@ -11,9 +11,11 @@ import pandas as pd
 import panel as pn
 from awesome_panel import express as pnx
 from awesome_panel.express.testing import TestApp
+
 pn.widgets.Button.param.sizing_mode.default = "stretch_width"
 
 from application.config import site
+
 COLOR = "#E1477E"
 
 APPLICATION = site.create_application(
@@ -254,5 +256,5 @@ def view() -> pn.Column:
 
 
 if __name__.startswith("bokeh"):
-    pn.config.sizing_mode="stretch_width"
+    pn.config.sizing_mode = "stretch_width"
     view().servable()

@@ -219,7 +219,11 @@ def view():
     intro_section = APPLICATION.intro_section()
     main = [intro_section, Dashboard().view]
     return site.create_template(
-        title="Classic Dashboard", theme="default", main=main, main_max_width="80%"
+        title="Classic Dashboard",
+        theme="default",
+        main=main,
+        main_max_width="80%",
+        theme_toggle=False,
     )
 
 

@@ -17,8 +17,8 @@ from itertools import cycle
 import pandas as pd
 import panel as pn
 import param
-from awesome_panel_extensions.io.loading import start_loading_spinner, stop_loading_spinner
 from pandas_profiling import ProfileReport
+from panel.io.loading import start_loading_spinner, stop_loading_spinner
 
 from application.config import site
 
@@ -218,9 +218,11 @@ class PandasProfilingApp(param.Parameterized):  # pylint: disable=too-many-insta
                 # pn.layout.HSpacer(height=400),  # Gives better scrolling
             ),
         ]
-        _view = site.create_template(
+        _view = pn.template.FastListTemplate(
             title="Pandas Profiling App",
+            theme="default",
             main=main,
+            theme_toggle=False,
         )
 
         return html_report_pane, _view
@@ -242,12 +244,10 @@ class PandasProfilingApp(param.Parameterized):  # pylint: disable=too-many-insta
 
     @lru_cache(maxsize=128)
     def _get_profile_report(self, url, title, minimal):
-        print(url, title, minimal)
         return ProfileReport(self.dataframe, minimal=minimal, title=title)
 
     @lru_cache(maxsize=128)
     def _get_html_report(self, url, title, minimal):
-        print(url, title, minimal)
         return self.report.to_html()
 
     def _set_random_csv_url(self):

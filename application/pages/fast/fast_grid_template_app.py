@@ -27,12 +27,11 @@ from awesome_panel_extensions.frameworks.fast import (
     FastCheckbox,
     FastLiteralInput,
     FastSwitch,
-    FastTextAreaInput,
     FastTextInput,
 )
-from panel.template import FastGridTemplate
 from awesome_panel_extensions.site.template.template_generator import _TEMPLATE_CSS_ID
 from holoviews import opts
+from panel.template import FastGridTemplate
 
 from application.config import site
 from application.pages.fast.echarts_app import EchartsApp

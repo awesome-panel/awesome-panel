@@ -147,17 +147,14 @@ class GlobalPowerPlantDatabaseApp(param.Parameterized):
         self._view_state.longitude = self.view_state.longitude
         self._view_state.zoom = self.view_state.zoom
         self.pane.param.trigger("object")
-        print(self._view_state)
 
     @pn.depends("pane.view_State", watch=True)
     def _update(self):
-        print("update")
         state = self.pane.view_state
         self._view_state.longitude = state["longitude"]
         self._view_state.latitude = state["latitude"]
 
     def _update2(self, event):
-        print(event.name)
         if event.name == "data":
             self._scatter.data = self.data
         if event.name == "opacity":

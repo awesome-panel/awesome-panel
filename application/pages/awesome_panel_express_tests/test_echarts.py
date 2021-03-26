@@ -102,7 +102,7 @@ class EchartsApp(param.Parameterized):
             pn.Column: The view of the app
         """
         pn.config.sizing_mode = "stretch_width"
-        pn.extension("echart")
+        pn.extension("echarts")
         top_app_bar = pn.Row(
             pn.pane.PNG(
                 "https://echarts.apache.org/en/images/logo.png",
@@ -113,7 +113,7 @@ class EchartsApp(param.Parameterized):
             ),
             pn.layout.VSpacer(),
             "",
-            background="rgb(41, 60, 85)",
+            background="lightgray",
             height=70,
         )
 
@@ -133,7 +133,9 @@ class EchartsApp(param.Parameterized):
                 pn.Row(self.plot, settings_pane, sizing_mode="stretch_width"),
             ),
         ]
-        return site.create_template(title="Test ECharts", theme="default", main=main)
+        return pn.template.FastListTemplate(
+            title="Test ECharts", theme="default", main=main, theme_toggle=False
+        )
 
 
 @site.add(APPLICATION)

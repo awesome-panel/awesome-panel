@@ -4,8 +4,8 @@ import pathlib
 import panel as pn
 import param
 from awesome_panel.application.templates.application_template import ApplicationTemplate
-from awesome_panel.express.components import material
 from awesome_panel.utils import holoviews_ext
+from awesome_panel_extensions.frameworks import material
 
 ROOT_PATH = pathlib.Path(__file__).parent
 HTML_PATH = ROOT_PATH / "material_template.html"
@@ -42,7 +42,7 @@ class MaterialTemplate(ApplicationTemplate):
         self.app_title_link_pane = pn.Param(
             self,
             parameters=["select_title_page"],
-            widgets={"select_title_page": material.MWCButton},
+            widgets={"select_title_page": material.Button},
             width=175,
             sizing_mode="fixed",
             show_name=False,

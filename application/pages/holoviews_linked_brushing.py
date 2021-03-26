@@ -14,8 +14,8 @@ import holoviews as hv
 import panel as pn
 import param
 import plotly.io as pio
-from panel.template import FastGridTemplate
 from holoviews import opts
+from panel.template import FastGridTemplate
 from plotly.data import iris
 
 from application.config import site

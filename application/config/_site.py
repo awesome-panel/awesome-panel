@@ -61,6 +61,7 @@ MP4_ROOT = (
 pn.template.FastListTemplate.param.theme.default = pn.template.fast.list.FastDarkTheme
 pn.template.FastGridTemplate.param.theme.default = pn.template.fast.grid.FastDarkTheme
 
+
 class AwesomePanelSite(Site):
     """The Awesome Panel Site"""
 

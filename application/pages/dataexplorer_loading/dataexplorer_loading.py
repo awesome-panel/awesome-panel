@@ -49,11 +49,7 @@ class DataExplorer(param.Parameterized):
     def __init__(self, **params):
         super().__init__(**params)
 
-        self.plot_pane = pn.pane.HoloViews(EMPTY_PLOT, sizing_mode="stretch_both", min_height=300)
         self.update_action = self.load_data
-        self.progress_widget = pn.widgets.Progress(
-            name="Progress", sizing_mode="stretch_width", value=0
-        )
         self.view = self._get_view()
 
     def set_hv_loading_message(self, message: str):
@@ -91,8 +87,13 @@ class DataExplorer(param.Parameterized):
     def _get_view(self):
         """Returns the application view"""
         pn.config.sizing_mode = "stretch_width"
+        template = pn.template.FastListTemplate(title="Data Explorer Loading")
+        self.plot_pane = pn.pane.HoloViews(EMPTY_PLOT, sizing_mode="stretch_both", min_height=300)
+        self.progress_widget = pn.widgets.Progress(
+            name="Progress", sizing_mode="stretch_width", value=1, max=100000
+        )
         intro_section = APPLICATION.intro_section()
-        main = [
+        template.main[:] = [
             intro_section,
             pn.Column(
                 pn.pane.Markdown("#### Settings"),
@@ -109,8 +110,6 @@ class DataExplorer(param.Parameterized):
                 self.plot_pane,
             ),
         ]
-        template = site.create_template(title="Data Explorer Loading", main=main)
-        self.plot_pane.theme = template.theme.bokeh_theme
         return template
 
 

@@ -32,6 +32,7 @@ def view():
     """Returns the app in a nice template for use at awesome-panel.org"""
     pn.config.sizing_mode = "stretch_width"
     from application.config import site
+
     template = pn.template.FastListTemplate(
         main_max_width="1024px",
     )

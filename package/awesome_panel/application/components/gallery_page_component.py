@@ -26,4 +26,3 @@ class GalleryPageComponent(param.Parameterized):
     @param.depends("view.clicks", watch=True)
     def _load_page(self, _=None):
         self.page_service.page = self.page
-        print(self.page.name)
