@@ -42,10 +42,10 @@ Panel 0.11 comes with a **lots of new features** like
 Checkout the announcement on [Twitter](https://twitter.com/Panel_org/status/1366821179957383170) and the [Panel 0.11 Release Blog](http://blog.holoviz.org/panel_0.11.0.html).
 
 <div align="center" style="margin-right:10%;margin-left:10%;">
-<a href="https://twitter.com/Panel_org/status/1320713884261621760" target="_blank">
+<a href="https://twitter.com/Panel_org/status/1366821179957383170" target="_blank">
     <img
-        alt="Panel 0.10 Announcement"
-        src="https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/videos/panel-010-announcement.gif?raw=true"
+        alt="Panel 0.11 Announcement"
+        src="https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/images/panel-011-twitter.png?raw=true"
         style="height:300px;max-width:80%"
     >
 </a>
@@ -79,13 +79,13 @@ Or **check out** the first **4 minutes** of this **introduction to Panel**. The 
 
 You can develop your apps in editors like **VS Code, PyCharm and Spyder**. You can also develop your apps in a **Jupyter Notebook or Labs**. You can also use **ipywidgets** in your Panel apps.
 
-Checkout the PerspectiveViewer notebook on binder.
+Checkout an interactive notebook on binder.
 
 <div align="center" style="margin-right:10%;margin-left:10%;">
-    <a class="reference external" href="https://mybinder.org/v2/gh/marcskovmadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fwidgets%2FPerspectiveViewer.ipynb" target="_blank"><img alt="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/docs/packages/awesome-panel-extensions/perspective-viewer-finos.gif" src="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/docs/packages/awesome-panel-extensions/perspective-viewer-finos.gif" style="height:300px"></a>
+    <a class="reference external" href="https://mybinder.org/v2/gh/MarcSkovMadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fmodels%2FIcon.ipynb" target="_blank"><img alt="Icon Image" src="https://awesome-panel.readthedocs.io/en/latest/_images/icon.png" style="height:100px"></a>
 </div>
 
-<a class="reference external" href="https://mybinder.org/v2/gh/MarcSkovMadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fwidgets%2FPerspectiveViewer.ipynb" target="_blank"><img src="https://mybinder.org/badge_logo.svg" style="height:25px;display:inline;margin:5px"></a> <a class="reference external" href="https://nbviewer.jupyter.org/github/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/reference/widgets/PerspectiveViewer.ipynb" target="_blank"><img src="https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg" style="height:25px;display:inline;margin:5px"></a>
+<a class="reference external" href="https://mybinder.org/v2/gh/MarcSkovMadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fmodels%2FIcon.ipynb" target="_blank"><img src="https://mybinder.org/badge_logo.svg" style="height:25px;display:inline;margin:5px"></a> <a class="reference external" href="https://nbviewer.jupyter.org/github/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/reference/models/Icon.ipynb" target="_blank"><img src="https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg" style="height:25px;display:inline;margin:5px"></a>
 
 ## Checkout the Awesome Panel Extensions
 
