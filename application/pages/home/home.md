@@ -31,11 +31,15 @@ It's a super power for you and your team to master a framework like this if you 
     style="max-width:40%;height:300px"></a>
 </div>
 
-## Panel 0.10 is Released
+## Panel 0.11 is Released
 
-Panel 0.10 comes with a **lots of new features** like easy to use Templates, ipywidgets integration, ECharts and much more.
+Panel 0.11 comes with a **lots of new features** like
 
-Checkout the announcement on [Twitter](https://twitter.com/Panel_org/status/1320713884261621760) and the [Panel 0.10 Release Blog](http://blog.holoviz.org/panel_0.10.0.html).
+- easy to use Fast Templates
+- powerful widgets like Tabulator, Perspective, TextToSpeech, SpeechToText
+- Loading spinner parameter on all components
+
+Checkout the announcement on [Twitter](https://twitter.com/Panel_org/status/1366821179957383170) and the [Panel 0.11 Release Blog](http://blog.holoviz.org/panel_0.11.0.html).
 
 <div align="center" style="margin-right:10%;margin-left:10%;">
 <a href="https://twitter.com/Panel_org/status/1320713884261621760" target="_blank">
@@ -47,18 +51,7 @@ Checkout the announcement on [Twitter](https://twitter.com/Panel_org/status/1320
 </a>
 </div>
 
-## Awesome Panel is Upgrading
-
-Awesome Panel will be adapting to all the new powerful features in Panel 0.10.
-
-You can already **TRYOUT**
-
-- NEW Menu in Sidebar
-- NEW URL Search Parameters synced to Template and Theme widgets.
-- NEW Cards in the [Param Reference Example](param-reference).
-- NEW ECharts pane in the [Echarts Example](echarts)
-
-Please note that some of the Apps and Extensions on this site can now be done more easily with Panel 0.10 than illustrated here.
+## Awesome Panel is always Improving
 
 You can follow the developments via [Awesome Panel Change Log](https://discourse.holoviz.org/t/awesome-panel-org-change-log/66).
 

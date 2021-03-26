@@ -5,7 +5,6 @@ ADD . ./
 
 RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt -f https://download.pytorch.org/whl/torch_stable.html
 RUN pip uninstall -y awesome-panel-extensions && pip install awesome-panel-extensions -U
-RUN panel build package/awesome_panel
 
 # Default port for Azure Web App for containers is 80
 EXPOSE 80

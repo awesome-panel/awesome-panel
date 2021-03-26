@@ -231,11 +231,9 @@ class PandasProfilingApp(param.Parameterized):  # pylint: disable=too-many-insta
         self.html_report_pane.object = HTML_LOADING_DATA
         self.dataframe = self._get_dataframe(self.csv_url)
         self.html_report_pane.object = HTML_CREATING_PROFILER
-        self.report = self._get_profile_report(self.csv_url, self.config.title, self.config.minimal)
+        self.report = self._get_profile_report(self.config.title, self.config.minimal)
         self.html_report_pane.object = HTML_GENERATING_REPORT
-        self.html_report = self._get_html_report(
-            self.csv_url, self.config.title, self.config.minimal
-        )
+        self.html_report = self._get_html_report()
 
     @staticmethod
     @lru_cache(maxsize=128)
@@ -243,11 +241,11 @@ class PandasProfilingApp(param.Parameterized):  # pylint: disable=too-many-insta
         return pd.read_csv(url, nrows=MAX_ROWS)
 
     @lru_cache(maxsize=128)
-    def _get_profile_report(self, url, title, minimal):
+    def _get_profile_report(self, title, minimal):
         return ProfileReport(self.dataframe, minimal=minimal, title=title)
 
     @lru_cache(maxsize=128)
-    def _get_html_report(self, url, title, minimal):
+    def _get_html_report(self):
         return self.report.to_html()
 
     def _set_random_csv_url(self):
