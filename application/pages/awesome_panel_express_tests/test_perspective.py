@@ -65,7 +65,7 @@ def create_app(**params) -> pn.Column:
         pn.Column: The app
     """
     pn.config.sizing_mode = "stretch_width"
-    template = site.create_template(title="Test Perspective")
+    template = site.create_template(title="Perspective")
     if "dark" in str(template.theme).lower():
         background = DARK_BACKGROUND
         theme = "material-dark"

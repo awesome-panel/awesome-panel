@@ -62,8 +62,8 @@ APPLICATION = site.create_application(
     thumbnail_url="detr.png",
     documentation_url="",
     code_url="detr/detr.py",
-    gif_url="",
-    mp4_url="",
+    gif_url="detr.gif",
+    mp4_url="detr.mp4",
     tags=[
         "DE:TR",
         "Plotly",

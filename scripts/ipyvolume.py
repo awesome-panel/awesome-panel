@@ -2,8 +2,9 @@
 import ipyvolume as ipv
 import ipywidgets as ipw
 import numpy as np
-from panel.template import FastListTemplate
 import panel as pn
+from panel.template import FastListTemplate
+
 
 def _get_ipyvolume_app():
     # pylint: disable=invalid-name, no-member

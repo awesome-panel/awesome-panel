@@ -1,11 +1,11 @@
 # pylint: disable=line-too-long
-"""This app is based on the *`FastGridTemplate`* and the *Fast Components* provided by the
-<fast-anchor href="https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html#fast"
-appearance="hypertext" target="_blank">awesome-panel-extensions</fast-anchor>
+"""This app is based on the [`FastGridTemplate`]\
+(https://panel.holoviz.org/reference/templates/FastGridTemplate.html#templates-gallery-fastgridtemplate) and the *Fast Components* provided by the
+<fast-anchor href="https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html#fast" appearance="hypertext" target="_blank">awesome-panel-extensions</fast-anchor>
 package.
 
-You can install the package via `pip install awesome-panel-extensions` and use the fast template
-and components via `from awesome_panel_extensions.frameworks import fast`.
+You can install the package via `pip install awesome-panel-extensions` and use the fast components
+via `from awesome_panel_extensions.frameworks import fast`.
 
 We are also using some Panel Components with Fast like CSS styling.
 

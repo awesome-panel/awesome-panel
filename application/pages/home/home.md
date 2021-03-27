@@ -2,14 +2,14 @@
 
 The purpose of the Awesome Panel Project is to share knowledge on how Awesome Panel is and can become. Naturally this site is **MADE WITH PANEL**.
 
-Awesome Panel also provides the [awesome-panel-extensions package](https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html). Checkout more awesome resources in the sidebar.
+Checkout the [Gallery](gallery) and other resources in the sidebar.
 
 <div align="center" style="margin-right:10%;margin-left:10%">
-<a href="echarts">
+<a href="fast-grid-template?theme=dark">
     <img
-        alt="ECharts"
-        src="https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/videos/echarts-app.gif?raw=true"
-        style="height:300px;"
+        alt="FastGridTemplate"
+        src="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/fast-grid-template-app.gif"
+        style="height:500px;"
     ></a>
 </div>
 
@@ -22,12 +22,12 @@ It's a super power for you and your team to master a framework like this if you 
 <div align="center" style="margin-right:10%;margin-left:10%; max-height: 600px" >
     <a href="classic-dashboard"><img
     alt="Classic Dashboard"
-    src="https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/videos/classic-dashboard-app.gif?raw=true"
+    src="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/classic-dashboard.gif"
     style="max-width:40%;height:300px"
     ></a>
     <a href="detr"><img
     alt="DE:TR"
-    src="https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/videos/detr-app.gif?raw=true"
+    src="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/detr.gif"
     style="max-width:40%;height:300px"></a>
 </div>
 
@@ -37,7 +37,7 @@ Panel 0.11 comes with a **lots of new features** like
 
 - easy to use Fast Templates
 - powerful widgets like Tabulator, Perspective, TextToSpeech, SpeechToText
-- Loading spinner parameter on all components
+- Loading spinners on all components
 
 Checkout the announcement on [Twitter](https://twitter.com/Panel_org/status/1366821179957383170) and the [Panel 0.11 Release Blog](http://blog.holoviz.org/panel_0.11.0.html).
 
@@ -51,19 +51,21 @@ Checkout the announcement on [Twitter](https://twitter.com/Panel_org/status/1366
 </a>
 </div>
 
-## Awesome Panel is always Improving
+## Awesome Panel equals Continoues Improvements
 
 You can follow the developments via [Awesome Panel Change Log](https://discourse.holoviz.org/t/awesome-panel-org-change-log/66).
 
 <div align="center" style="margin-right:10%;margin-left:10%;">
-<a href="param-reference" target="_blank">
+<a href="tabulator?theme=default">
     <img
         alt="Param App"
-        src="https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/videos/param-app.gif?raw=true"
+        src="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/tabulator-app.gif"
         style="max-width: 80%;height:300px"
     >
 </a>
 </div>
+
+Awesome Panel also provides the [awesome-panel-extensions package](https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html).
 
 ## Panel is for You
 

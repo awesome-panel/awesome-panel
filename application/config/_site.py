@@ -8,12 +8,18 @@ from awesome_panel_extensions.assets import svg_icons
 # pylint: enable=line-too-long
 from awesome_panel_extensions.site import Site
 from awesome_panel_extensions.site.application import Application
+from panel import template
 
 # pylint: disable=line-too-long
 from panel.template import FastGridTemplate, FastListTemplate
 from panel.template.base import BasicTemplate
 
 from . import _authors
+
+# Hack to solve:
+template.FastGridTemplate._resources = {
+    k: v for k, v in template.FastGridTemplate._resources.items() if k != "css"
+}
 
 ROOT_PATH = pathlib.Path(__file__).parent
 ASSETS_PATH = ROOT_PATH.parent / "assets"
