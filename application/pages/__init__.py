@@ -45,5 +45,6 @@ from application.pages.streaming_dashboard import streaming_dashboard
 from application.pages.streaming_plots import streaming_plots
 from application.pages.styling import fileinput_area
 from application.pages.tabulator_app import tabulator_app
+from application.pages.text_to_speech import text_to_speech
 from application.pages.volume_profile_analysis import volume_profile_analysis
 from application.pages.yahooquery_app import yahooquery_app
