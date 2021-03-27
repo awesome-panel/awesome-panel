@@ -51,7 +51,7 @@ Checkout the announcement on [Twitter](https://twitter.com/Panel_org/status/1366
 </a>
 </div>
 
-## Awesome Panel equals Continoues Improvements
+## Awesome Panel equals Continuous Improvements
 
 You can follow the developments via [Awesome Panel Change Log](https://discourse.holoviz.org/t/awesome-panel-org-change-log/66).
 
@@ -64,8 +64,6 @@ You can follow the developments via [Awesome Panel Change Log](https://discourse
     >
 </a>
 </div>
-
-Awesome Panel also provides the [awesome-panel-extensions package](https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html).
 
 ## Panel is for You
 
@@ -100,6 +98,8 @@ The [awesome-panel-extensions](https://pypi.org/project/awesome-panel-extensions
 </div>
 
 The package updates often so if you use it for production please pin to the specific version number.
+
+You can follow the developments via [Awesome Panel Externsions Change Log](https://discourse.holoviz.org/t/awesome-panel-org-change-log/66).
 
 ## Create your own Awesome Panel Extensions
 
