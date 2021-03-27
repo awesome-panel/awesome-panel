@@ -99,7 +99,7 @@ The [awesome-panel-extensions](https://pypi.org/project/awesome-panel-extensions
 
 The package updates often so if you use it for production please pin to the specific version number.
 
-You can follow the developments via [Awesome Panel Externsions Change Log](https://discourse.holoviz.org/t/awesome-panel-org-change-log/66).
+You can follow the developments via [Awesome Panel Externsions Change Log](https://discourse.holoviz.org/t/awesome-panel-extensions-package-change-log/1009).
 
 ## Create your own Awesome Panel Extensions
 
