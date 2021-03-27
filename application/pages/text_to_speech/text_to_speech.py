@@ -7,8 +7,6 @@ The `TextToSpeech` widget was developed and contributed to Panel by `awesome-pan
 Please note that the available voices and languages depend on your browser and os. For the best
 experience **use Chrome**.
 """
-from typing import Any, Dict, List
-
 import panel as pn
 from panel.widgets import TextToSpeech
 
