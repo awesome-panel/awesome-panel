@@ -59,6 +59,7 @@ pandas-profiling==2.8.0
 streamz
 yfinance
 diskcache
+statsmodels
 
 # Documentation
 -r ./requirements_docs.txt

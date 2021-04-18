@@ -99,6 +99,12 @@ MATTEO_NICCOLI = Author(
     github_url="https://github.com/mycarta",
     github_avatar_url="https://avatars3.githubusercontent.com/u/7424763",
 )
+MATTEO_Mancini = Author(
+    name="Matteo Mancini",
+    url="https://neurosnippets.com/",
+    github_url="https://github.com/matteomancini",
+    github_avatar_url="https://avatars.githubusercontent.com/u/29856041",
+)
 NIC_FOX = Author(
     name="Nic Fox",
     url="https://dev.to/nicfoxds",

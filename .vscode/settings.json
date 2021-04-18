@@ -13,5 +13,6 @@
     "terminal.integrated.env.windows": {
         "PYTHONPATH": "/c/repos/private/awesome-panel",
         "PATH": "C:\\repos\\private\\awesome-panel\\.venv/Scripts:/mingw64/bin:/usr/bin:/c/Users/masma/bin:/c/Program Files (x86)/Microsoft SDKs/Azure/CLI2/wbin:/c/oracle/product/11.2.0.4/client_x64/bin:/c/WINDOWS/CCM:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/c/WINDOWS/system32/config/systemprofile/AppData/Local/Microsoft/WindowsApps:/c/Program Files(x86)/Adaptiva/AdaptivaClient/bin/x32:/c/Program Files (x86)/Adaptiva/AdaptivaClient/bin/x64:/cmd:/c/Program Files/Docker/Docker/resources/bin:/c/ProgramData/DockerDesktop/version-bin:/c/Users/masma/AppData/Local/Microsoft/WindowsApps;C:\\repos\\private\\awesome-panel\\.venv\\Lib\\site-packages\\osgeo;C:\\Users\\masma\\AppData\\Local\\Continuum\\anaconda3"
-    }
+    },
+    "jupyter.jupyterServerType": "local"
 }

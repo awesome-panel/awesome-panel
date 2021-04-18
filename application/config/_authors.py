@@ -20,3 +20,11 @@ ANDREW_HUANG = Author(
         "15331990?s=400&u=6f855e2f82d576fd22110f2ac9b1b7ec4825d916&v=4"
     ),
 )
+STEPHEN_KILCOMMINS = Author(
+    name="Stephen Kilcommins",
+    url="https://www.linkedin.com/in/stephen-kilcommins/",
+    avatar_url=(
+        "https://miro.medium.com/fit/c/96/96/1*DOAQGAKm-Lzek_1TztoR9Q.jpeg"
+    ),
+)
+

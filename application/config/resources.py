@@ -8,6 +8,16 @@ from application.config import authors, tags
 from application.config.settings import THUMBNAILS_ROOT
 
 # panel FILE ROOTS
+
+
+# https://mybinder.org/v2/gh/julioasotodv/panel-dashboard-demo/master?urlpath=/proxy/5006/dashboard
+# https://github.com/holoviz/panel/issues/972#issue-552507960
+# https://github.com/julioasotodv/panel-dashboard-demo
+
+# https://github.com/julioasotodv/gradient-descent-demo
+
+# https://medium.datadriveninvestor.com/streamlit-vs-dash-vs-voil%C3%A0-vs-panel-battle-of-the-python-dashboarding-giants-177c40b9ea57
+# https://medium.datadriveninvestor.com/panel-everything-you-need-to-know-9bca61532e12
 # https://dmnfarrell.github.io/bioinformatics/abm-mesa-network
 # https://github.com/holoviz-demos/minimal-heroku-demo
 # https://vizartpandey.com/30-best-design-resources-for-your-next-tableau-dashboard/
@@ -18,6 +28,30 @@ from application.config.settings import THUMBNAILS_ROOT
 # http://bonegen.nti.tul.cz/BoneGen_server_version
 # https://github.com/dhruvbalwada/glider-panel-demo https://twitter.com/BalwadaDhruv/status/1375303891751870474?s=20
 RESOURCES = [
+    Resource(
+        name="Game of Dashboards",
+        url="https://neurosnippets.com/posts/game-of-dashboards-2/#post",
+        thumbnail_png_path=THUMBNAILS_ROOT + "",
+        is_awesome=True,
+        tags=[
+            tags.APP,
+            tags.CODE,
+            tags.REVIEW,
+        ],
+        author=authors.MATTEO_Mancini,
+    ),
+    Resource(
+        name="Battle of The Python Dashboarding Giants",
+        url="https://medium.datadriveninvestor.com/streamlit-vs-dash-vs-voil%C3%A0-vs-panel-battle-of-the-python-dashboarding-giants-177c40b9ea57",
+        thumbnail_png_path=THUMBNAILS_ROOT + "",
+        is_awesome=True,
+        tags=[
+            tags.APP,
+            tags.CODE,
+            tags.REVIEW,
+        ],
+        author=authors.MATTEO_Mancini,
+    ),
     Resource(
         name="Digital Vulnerabilities Map",
         url="https://discourse.holoviz.org/t/a-map-to-help-local-policies-to-detect-digital-vulnerabilities/1580",

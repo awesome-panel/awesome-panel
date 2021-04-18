@@ -16,6 +16,7 @@ MACHINE_LEARNING = Tag(name="Machine Learning")
 NLP = Tag(name="NLP")
 SOCIAL = Tag(name="Social")
 PANEL = Tag(name="Panel")
+REVIEW = Tag(name="Review")
 SISTER_SITES = Tag(name="Sister Sites")
 TECHNICAL = Tag(name="Technical")
 TUTORIAL = Tag(name="Tutorial")
@@ -40,6 +41,7 @@ TAGS = [
     NLP,
     SOCIAL,
     PANEL,
+    REVIEW,
     TECHNICAL,
     TUTORIAL,
     VIDEO,
