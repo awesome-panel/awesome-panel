@@ -23,8 +23,5 @@ ANDREW_HUANG = Author(
 STEPHEN_KILCOMMINS = Author(
     name="Stephen Kilcommins",
     url="https://www.linkedin.com/in/stephen-kilcommins/",
-    avatar_url=(
-        "https://miro.medium.com/fit/c/96/96/1*DOAQGAKm-Lzek_1TztoR9Q.jpeg"
-    ),
+    avatar_url=("https://miro.medium.com/fit/c/96/96/1*DOAQGAKm-Lzek_1TztoR9Q.jpeg"),
 )
-

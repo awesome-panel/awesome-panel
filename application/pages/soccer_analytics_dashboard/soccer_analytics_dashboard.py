@@ -18,6 +18,7 @@ import requests
 from PIL import Image, ImageOps
 
 from application.config import site
+
 pn.extension("plotly")
 
 ROOT = pathlib.Path(__file__).parent

@@ -73,6 +73,7 @@ yourself to be taken in just like that!”
 Aesop
 """
 
+
 @site.add(APPLICATION)
 def view():
     """Return the TextToSpeech App.
@@ -81,9 +82,7 @@ def view():
         FastListTemplate: A template with the app
     """
     pn.config.sizing_mode = "stretch_width"
-    template = pn.template.FastListTemplate(
-        title="Text to Speech", main_max_width="768px"
-    )
+    template = pn.template.FastListTemplate(title="Text to Speech", main_max_width="768px")
     text_to_speech = TextToSpeech(name="Speaker", value=TEXT, auto_speak=False)
     speaker_settings = pn.Param(
         text_to_speech,

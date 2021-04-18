@@ -148,6 +148,6 @@ site.authors.extend(
         _authors.ANDREW_HUANG,
         _authors.JOCHEM_SMIT,
         _authors.MARC_SKOV_MADSEN,
-        _authors.STEPHEN_KILCOMMINS
+        _authors.STEPHEN_KILCOMMINS,
     ]
 )
