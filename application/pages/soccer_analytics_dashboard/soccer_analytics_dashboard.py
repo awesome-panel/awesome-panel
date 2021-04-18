@@ -18,6 +18,7 @@ import requests
 from PIL import Image, ImageOps
 
 from application.config import site
+pn.extension("plotly")
 
 ROOT = pathlib.Path(__file__).parent
 
@@ -32,7 +33,9 @@ body {
     font-size: 15px;
 }
 """
-pn.extension("plotly", raw_css=[CSS])
+CSS_PANE = pn.pane.HTML(
+    "<style>" + CSS + "</style", height=0, width=0, sizing_mode="fixed", margin=0
+)
 
 if not "soccer_analytics_dashboard" in pn.state.cache:
     pn.state.cache["soccer_analytics_dashboard"] = {}
@@ -74,7 +77,6 @@ def cached(func):
 
         if result is None:
             # Run the function and cache the result for next time.
-            print("create", key_parts)
             result = func(*args, **kwargs)
             CACHE[key] = result
 
@@ -270,8 +272,6 @@ def _create_app():
         style={"color": "white", "width": "90%", "text-align": "center"},
     )
 
-    plot_horizontal_bar_pane = pn.pane.Plotly()
-
     # bind the 'player_select_widget' to our functions above
     bound_player_png_image_pane = pn.bind(
         _get_and_display_player_image, player=player_select_widget
@@ -296,7 +296,7 @@ def _create_app():
     gspec[2:7, 4:14] = plot_horizontal_bar_pane
     gspec[7:10, 0:7] = bound_plotly_line_plot_pane
     gspec[7:10, 7:14] = bound_plotly_scatter_plot_pane
-    gspec[11, 0:14] = pn.Spacer()
+    gspec[11, 0:14] = pn.Row(pn.Spacer(), CSS_PANE)
 
     return gspec
 
