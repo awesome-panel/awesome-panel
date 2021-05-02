@@ -129,6 +129,14 @@ class AwesomePanelSite(Site):
             menu = pn.pane.HTML(links, sizing_mode="stretch_width")
             template.sidebar.append(menu)
 
+        if isinstance(application.description, str):
+            template.meta_description = application.description.replace("# ", "").lstrip()
+        template.meta_keywords = (
+            "HoloViz, Panel, Python, Date, Models, Analytics, Visualization, Data Science, Science,"
+            " Machine Learning, Apps, Dash, Streamlit, Voila, Bokeh, HoloViews, Matplotlib, Plotly"
+        )
+        template.meta_author = "Marc Skov Madsen"
+
     def create_template(
         self, template: Optional[str] = None, theme: Optional[str] = None, **params
     ) -> pn.template.base.BasicTemplate:
