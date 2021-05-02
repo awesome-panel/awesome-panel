@@ -879,7 +879,7 @@ class YahooQueryApp(Page):
                 sizing_mode="stretch_width",
             ),
         ]
-        return site.create_template(title="Yahoo Query App", main=main)
+        return pn.template.FastListTemplate(title="Yahoo Query App", main=main)
 
 
 @site.add(APPLICATION)

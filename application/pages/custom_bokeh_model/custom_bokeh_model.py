@@ -56,7 +56,7 @@ def view():
     pn.config.sizing_mode = "stretch_width"
     main = [APPLICATION.intro_section(), pn.pane.Bokeh(layout)]
     pn.config.sizing_mode = "fixed"
-    return site.create_template(title="Custom Model Model", main=main)
+    return pn.template.FastListTemplate(title="Custom Model Model", main=main)
 
 
 if __name__.startswith("bokeh"):

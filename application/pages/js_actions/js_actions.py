@@ -65,7 +65,7 @@ def view():
             example_tabs,
         ),
     ]
-    return site.create_template(title="JS Actions", main=main)
+    return pn.template.FastListTemplate(title="JS Actions", main=main)
 
 
 if __name__.startswith("bokeh"):

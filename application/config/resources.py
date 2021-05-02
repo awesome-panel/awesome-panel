@@ -15,7 +15,7 @@ from application.config.settings import THUMBNAILS_ROOT
 # https://github.com/julioasotodv/panel-dashboard-demo
 
 # https://github.com/julioasotodv/gradient-descent-demo
-
+# https://mybinder.org/v2/gh/holoviz/panel/binder?urlpath=
 # https://medium.datadriveninvestor.com/streamlit-vs-dash-vs-voil%C3%A0-vs-panel-battle-of-the-python-dashboarding-giants-177c40b9ea57
 # https://medium.datadriveninvestor.com/panel-everything-you-need-to-know-9bca61532e12
 # https://dmnfarrell.github.io/bioinformatics/abm-mesa-network

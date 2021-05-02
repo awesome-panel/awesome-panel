@@ -131,7 +131,7 @@ class AsyncApp(param.Parameterized):
         )
         main = [APPLICATION.intro_section(), app]
 
-        self.view = site.create_template(
+        self.view = pn.template.FastListTemplate(
             main=main,
             main_max_width="700px",
         )

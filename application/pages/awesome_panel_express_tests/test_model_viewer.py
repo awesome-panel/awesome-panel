@@ -44,7 +44,7 @@ APPLICATION = site.create_application(
 
 def create_app(**params):
     pn.config.sizing_mode = "stretch_width"
-    template = site.create_template(title="Test Model Viewer")
+    template = pn.template.FastListTemplate(title="Test Model Viewer")
     if "dark" in str(template.theme).lower():
         background = template.theme.style.neutral_fill_card_rest
     else:

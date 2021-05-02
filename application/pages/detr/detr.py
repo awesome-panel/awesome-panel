@@ -181,7 +181,7 @@ class DETRApp(param.Parameterized):  # pylint: disable=too-many-instance-attribu
                 bottom_selections,
             ),
         ]
-        template = site.create_template(
+        template = pn.template.FastListTemplate(
             title="Panel DE:TR",
             main=main,
             theme="default",

@@ -252,7 +252,7 @@ def view() -> pn.Column:
         # test_card_collapsible(),
         # test_card_with_code(),
     ]
-    return site.create_template(title="Test Bootstrap Card", main=main)
+    return pn.template.FastListTemplate(title="Test Bootstrap Card", main=main)
 
 
 if __name__.startswith("bokeh"):

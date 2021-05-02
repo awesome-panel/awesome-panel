@@ -1,4 +1,4 @@
-# run: locust -f 'tests\performance\locust_e2e.py'
+# run: locust -f performance/locust_e2e.py
 from locust import HttpUser, between, task
 
 

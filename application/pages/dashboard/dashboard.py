@@ -218,7 +218,7 @@ def view():
     pn.config.sizing_mode = "stretch_width"
     intro_section = APPLICATION.intro_section()
     main = [intro_section, Dashboard().view]
-    return site.create_template(
+    return pn.template.FastListTemplate(
         title="Classic Dashboard",
         theme="default",
         main=main,

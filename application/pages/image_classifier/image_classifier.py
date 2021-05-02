@@ -561,7 +561,7 @@ def view():
         ),
         image_classifier_app.resources_view,
     ]
-    return site.create_template(
+    return pn.template.FastListTemplate(
         title="Image Classifier",
         main=main,
     )

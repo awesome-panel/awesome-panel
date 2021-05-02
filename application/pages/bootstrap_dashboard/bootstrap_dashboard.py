@@ -75,7 +75,9 @@ def view() -> pn.Column:
             table,
         ),
     ]
-    return site.create_template(title="Bootstrap Dashboard", main=main, main_max_width="800px")
+    return pn.template.FastListTemplate(
+        title="Bootstrap Dashboard", main=main, main_max_width="800px"
+    )
 
 
 def _holoviews_chart():

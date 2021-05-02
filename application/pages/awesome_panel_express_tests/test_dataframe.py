@@ -103,7 +103,7 @@ def view() -> pn.Column:
         APPLICATION.intro_section(),
         test_get_default_formatters,
     ]
-    return site.create_template(title="Test DataFrame", main=main)
+    return pn.template.FastListTemplate(title="Test DataFrame", main=main)
 
 
 if __name__.startswith("bokeh"):

@@ -68,7 +68,7 @@ def view():
         APPLICATION.intro_section(),
         fileinput_section,
     ]
-    return site.create_template(main=main)
+    return pn.template.FastListTemplate(main=main)
 
 
 if __name__.startswith("bokeh"):

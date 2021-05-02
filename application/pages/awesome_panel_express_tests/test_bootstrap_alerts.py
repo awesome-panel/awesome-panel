@@ -81,7 +81,7 @@ def view() -> pn.Column:
         test_error_alert(),
         test_warning_alert(),
     ]
-    return site.create_template(title="Test Bootstrap Alerts", main=main)
+    return pn.template.FastListTemplate(title="Test Bootstrap Alerts", main=main)
 
 
 if __name__.startswith("bokeh"):

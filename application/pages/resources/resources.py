@@ -1,6 +1,7 @@
 """The awesome panel resources list provides a list of awesome resources for Panel"""
 import pathlib
 
+import panel as pn
 from panel.pane import Markdown
 
 from application.config import site
@@ -29,7 +30,7 @@ APPLICATION = site.create_application(
 def view():
     """The resources view of awesome-panel.org"""
     main = [Markdown(RESOURCES, sizing_mode="stretch_width")]
-    template = site.create_template(main=main)
+    template = pn.template.FastListTemplate(main=main)
     return template
 
 

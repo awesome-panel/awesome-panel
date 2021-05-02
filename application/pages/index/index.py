@@ -15,7 +15,7 @@
 # loader = jinja2.ChoiceLoader([templateLoader])
 # templateEnv = jinja2.Environment(loader=loader)
 # TEMPLATE_FILE = "index.html"
-# template = templateEnv.site.create_template(TEMPLATE_FILE)
+# template = templateEnv.pn.template.FastListTemplate(TEMPLATE_FILE)
 # # outputText = template.render()  # this is where to put args to the template renderer
 
 # tmpl = pn.Template(template)

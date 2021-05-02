@@ -37,7 +37,7 @@ APPLICATION = site.create_application(
 def view():
     """The home view of awesome-panel.org"""
     pn.config.sizing_mode = "stretch_width"
-    template = site.create_template(main=SECTIONS, main_max_width="900px")
+    template = pn.template.FastListTemplate(main=SECTIONS, main_max_width="900px")
     return template
 
 

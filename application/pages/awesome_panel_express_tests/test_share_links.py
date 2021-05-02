@@ -54,7 +54,7 @@ Please click and share if you like awesome-panel.org or the `awesome-panel-exten
             ShareOnMail(url="https://awesome-panel.org", size=6),
         ),
     ]
-    return site.create_template(title="Share Links", main=main)
+    return pn.template.FastListTemplate(title="Share Links", main=main)
 
 
 if __name__.startswith("bokeh"):

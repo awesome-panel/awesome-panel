@@ -54,7 +54,7 @@ def view() -> pn.Column:
         APPLICATION.intro_section(),
         test_code(),
     ]
-    return site.create_template(title="Test Code", main=main)
+    return pn.template.FastListTemplate(title="Test Code", main=main)
 
 
 if __name__.startswith("bokeh"):

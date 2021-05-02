@@ -96,9 +96,8 @@ def view(configure=True) -> pn.Column:
     if configure:
         objects.append(material.Extension())
 
-    return site.create_template(
+    return pn.template.FastListTemplate(
         title="Material Components",
-        template="material",
         theme="default",
         main=objects,
         main_max_width="500px",

@@ -261,7 +261,9 @@ def view() -> pn.Column:
         test_increment_as_context_manager,
         test_increment_as_decorator,
     ]
-    return site.create_template(title="Test Progress Extension", main=main, main_max_width="800px")
+    return pn.template.FastListTemplate(
+        title="Test Progress Extension", main=main, main_max_width="800px"
+    )
 
 
 if __name__.startswith("bokeh"):
