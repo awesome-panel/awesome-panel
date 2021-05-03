@@ -255,4 +255,3 @@ def _hacky_temporary_clean_up():
 
 if __name__.startswith("bokeh"):
     view().servable()
-view()

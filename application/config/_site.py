@@ -144,7 +144,6 @@ class AwesomePanelSite(Site):
         params["main_max_width"] = params.get("main_max_width", MAIN_MAX_WIDTH)
         return super().create_template(template=template, theme=theme, **params)
 
-
 site = AwesomePanelSite(
     name=SITE,
     css_path=CSS_PATH,
