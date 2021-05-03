@@ -8,7 +8,7 @@ holoviews==1.14.2
 hvplot==0.7.1
 lxml
 
-# awesome-panel-extensions==20210124.1 # 20201228.1
+# awesome-panel-extensions==20210502.2 # 20201228.1
 
 # Data Engineering and Science
 pandas==1.2.2

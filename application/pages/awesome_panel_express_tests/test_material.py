@@ -85,12 +85,12 @@ def view(configure=True) -> pn.Column:
     objects = [
         APPLICATION.intro_section(),
         # pn.pane.Alert("If you don't see the components please reload the page!"),
-        *section(button),
-        *section(intslider),
-        *section(floatslider),
+        pn.Column(*section(button)),
+        pn.Column(*section(intslider)),
+        pn.Column(*section(floatslider)),
         # *section(select),
-        *section(linear_progress),
-        *section(circular_progress),
+        pn.Column(*section(linear_progress)),
+        pn.Column(*section(circular_progress)),
     ]
 
     if configure:

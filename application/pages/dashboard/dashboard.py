@@ -92,13 +92,13 @@ class Dashboard(param.Parameterized):
 
     def __init__(self, **params):
         params["insert_plot_pane"] = pn.pane.HoloViews(
-            EMPTY_PLOT, sizing_mode="stretch_both", margin=10
+            EMPTY_PLOT, sizing_mode="stretch_width", margin=10, height=300
         )
         params["edge_plot_pane"] = pn.pane.HoloViews(
-            EMPTY_PLOT, sizing_mode="stretch_both", margin=10
+            EMPTY_PLOT, sizing_mode="stretch_width", margin=10, height=300
         )
         params["history_plot_pane"] = pn.pane.HoloViews(
-            EMPTY_PLOT, sizing_mode="stretch_both", margin=10
+            EMPTY_PLOT, sizing_mode="stretch_width", margin=10, height=300
         )
         params["view"] = pn.Column(sizing_mode="stretch_both")
 

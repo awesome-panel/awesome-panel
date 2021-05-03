@@ -197,11 +197,10 @@ class PowerCurve(param.Parameterized):
         line_plot = dataframe.hvplot.line(
             x="duration",
             y="power",
-            width=300,
             line_color=COLOR,
             line_width=3,
         )
-        scatter_plot = dataframe.hvplot.scatter(x="duration", y="power", width=300,).opts(
+        scatter_plot = dataframe.hvplot.scatter(x="duration", y="power").opts(
             marker="o",
             size=6,
             color=COLOR,
