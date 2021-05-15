@@ -1,8 +1,8 @@
 # Panel. We use github version because of
 # - https://github.com/holoviz/panel/issues/883
 # - https://github.com/holoviz/panel/pull/867
-panel==0.11
-bokeh==2.3
+panel>=0.11
+bokeh>=2.3
 tornado
 holoviews==1.14.2
 hvplot==0.7.1
@@ -23,6 +23,7 @@ altair==4.0.0
 Keras==2.3.1
 Pillow==7.1.0
 tensorflow==2.0.3
+h5py<3.0.0 # See https://github.com/keras-team/keras/issues/14265
 
 # Utils
 # ------------------------------------------------------------------------------

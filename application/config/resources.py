@@ -9,7 +9,7 @@ from application.config.settings import THUMBNAILS_ROOT
 
 # panel FILE ROOTS
 
-
+# https://github.com/plotly/dash-sample-apps/tree/master/apps/dash-dino
 # https://mybinder.org/v2/gh/julioasotodv/panel-dashboard-demo/master?urlpath=/proxy/5006/dashboard
 # https://github.com/holoviz/panel/issues/972#issue-552507960
 # https://github.com/julioasotodv/panel-dashboard-demo

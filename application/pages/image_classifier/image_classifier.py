@@ -419,7 +419,7 @@ class ImageClassifierApp(param.Parameterized):
             bytes_io = io.BytesIO(self.image_file)
             return pn.pane.JPG(object=bytes_io, height=300)
         return pn.pane.Markdown(
-            """Drop an image in .jpg format onto the FileInput Area or click the **Choose File**
+            """Drop an image in **.jpg** format onto the FileInput Area or click the **Choose File**
             button to upload.""",
         )
 
