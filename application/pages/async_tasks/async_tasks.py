@@ -92,7 +92,7 @@ package/awesome_panel/express/widgets/progress_ext.py
             self.reset()
 
 
-executor = ThreadPoolExecutor(max_workers=2)
+executor = ThreadPoolExecutor(max_workers=2) # pylint: disable=consider-using-with
 progress = ProgressExtMod()
 
 
