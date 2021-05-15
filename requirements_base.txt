@@ -1,14 +1,14 @@
 # Panel. We use github version because of
 # - https://github.com/holoviz/panel/issues/883
 # - https://github.com/holoviz/panel/pull/867
-panel>=0.11
-bokeh>=2.3
+panel>=0.11.0,<0.12.0
+bokeh>=2.3.0,<2.4.0
 tornado
 holoviews==1.14.2
 hvplot==0.7.1
 lxml
 
-# awesome-panel-extensions==20210502.2 # 20201228.1
+awesome-panel-extensions==20210515.1
 
 # Data Engineering and Science
 pandas==1.2.2
@@ -20,9 +20,9 @@ plotly==4.14.1
 altair==4.0.0
 # seaborn==0.9.0
 # matplotlib==3.1.1
-Keras==2.3.1
-Pillow==7.1.0
-tensorflow==2.0.3
+Keras==2.4.3
+Pillow==8.1.2
+tensorflow==2.4.0
 h5py<3.0.0 # See https://github.com/keras-team/keras/issues/14265
 
 # Utils
