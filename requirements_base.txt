@@ -22,7 +22,7 @@ altair==4.0.0
 # matplotlib==3.1.1
 Keras==2.3.1
 Pillow==7.1.0
-tensorflow==2.0.3
+tensorflow==2.4.0
 h5py<3.0.0 # See https://github.com/keras-team/keras/issues/14265
 
 # Utils
