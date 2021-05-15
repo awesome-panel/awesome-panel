@@ -35,6 +35,14 @@ def view():
         description="""The purpose of the Awesome Panel Gallery is to inspire and help you create awesome analytics apps in <fast-anchor href="https://panel.holoviz.org" target="_blank" appearance="hypertext">Panel</fast-anchor> using the tools you know and love.""",
         resources=site.applications,
         target="_self",
+        theme="dark",
+        meta_name="Awesome Panel Gallery",
+        meta_description="Gallery of applications at awesome-panel.org",
+        meta_keywords=(
+            "Awesome, HoloViz, Panel, Gallery, Apps, Science, Data Engineering, Data Science, "
+            "Machine Learning, Python"
+        ),
+        meta_author = "Marc Skov Madsen",
     )
 
 

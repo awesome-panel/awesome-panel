@@ -177,12 +177,7 @@ class KerasApplication(NamedTuple):
             "_",
             " ",
         ).capitalize()
-        prediction_query = prediction.replace(
-            "_",
-            "+",
-        )
-        prediction_url = f"http://www.image-net.org/search?q={prediction_query}"
-        return f"It's a **[{prediction_text}]({prediction_url})**"
+        return f"It's a **{prediction_text}**"
 
     @staticmethod
     def to_predictions_chart(
@@ -239,11 +234,7 @@ def config_keras_applications():
     if KERAS_APPLICATIONS:
         return
 
-    import keras.backend.tensorflow_backend as tb
-
-    tb._SYMBOLIC_SCOPE.value = True  # pylint: disable=protected-access
-
-    from keras.applications import (
+    from tensorflow.keras.applications import (
         densenet,
         inception_v3,
         mobilenet_v2,
@@ -252,7 +243,7 @@ def config_keras_applications():
         vgg19,
         xception,
     )
-    from keras.preprocessing.image import img_to_array, load_img
+    from tensorflow.keras.preprocessing.image import img_to_array, load_img
 
     KERAS_APPLICATIONS = [
         KerasApplication(
