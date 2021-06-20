@@ -42,7 +42,7 @@ def view():
             "Awesome, HoloViz, Panel, Gallery, Apps, Science, Data Engineering, Data Science, "
             "Machine Learning, Python"
         ),
-        meta_author = "Marc Skov Madsen",
+        meta_author="Marc Skov Madsen",
     )
 
 
