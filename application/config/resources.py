@@ -29,6 +29,17 @@ from application.config.settings import THUMBNAILS_ROOT
 # https://github.com/dhruvbalwada/glider-panel-demo https://twitter.com/BalwadaDhruv/status/1375303891751870474?s=20
 RESOURCES = [
     Resource(
+        name="statseuro2020",
+        url="https://www.statseuro2020.com/",
+        thumbnail_png_path=THUMBNAILS_ROOT + "",
+        is_awesome=True,
+        tags=[
+            tags.APP,
+            tags.CODE,
+        ],
+        author=authors.PIERRE_OLIVIER_SIMONARD,
+    ),
+    Resource(
         name="Game of Dashboards",
         url="https://neurosnippets.com/posts/game-of-dashboards-2/#post",
         thumbnail_png_path=THUMBNAILS_ROOT + "",

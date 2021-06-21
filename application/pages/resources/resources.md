@@ -9,13 +9,16 @@
 
 ### App
 
+- [Battle of The Python Dashboarding Giants](https://medium.datadriveninvestor.com/streamlit-vs-dash-vs-voil%C3%A0-vs-panel-battle-of-the-python-dashboarding-giants-177c40b9ea57) by [Matteo Mancini](https://neurosnippets.com/) (#App, #Code, #Review)
 - [Building Dashboards. Introduction to Data Analysis in Biological Sciences.](https://xavartley.github.io/#panel/vtk_examples/Gallery_VTK.html) by [Justin Bois](http://bois.caltech.edu/) (#App, #Inspiration)
 - [Color Dropper App](http://colordropper.herokuapp.com/colordropper) by [Andrew Huang](https://twitter.com/iateandrew1) (#App)
 - [Digital Vulnerabilities Map](https://discourse.holoviz.org/t/a-map-to-help-local-policies-to-detect-digital-vulnerabilities/1580) by [Thomas PEDOT](https://github.com/slamer59) (#App, #Code, #Tutorial)
+- [Game of Dashboards](https://neurosnippets.com/posts/game-of-dashboards-2/#post) by [Matteo Mancini](https://neurosnippets.com/) (#App, #Code, #Review)
 - [Holo Grid Generator](https://github.com/pygridgen/holo-gridgen) by [PyGridGen](https://github.com/pygridgen) (#App, #Code)
 - [Panel Dashboards by Nic Fox](https://foxnic.github.io/projects.html) by [Nic Fox](https://dev.to/nicfoxds) (#App, #Code)
 - [World Glaciers Explorer](https://edu.oggm.org/en/latest/explorer.html) by [OGGM EDU](https://edu.oggm.org/en/latest/index.html) (#App, #Video)
 - [XrViz](https://github.com/intake/xrviz) by [Intake](https://github.com/intake) (#App, #Code, #Inspiration)
+- [statseuro2020](https://www.statseuro2020.com/) by [Pierre-Olivier Simonard](https://www.linkedin.com/in/pierreoliviersimonard/?originalSubdomain=fr) (#App, #Code)
 
 ### Article
 

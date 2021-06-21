@@ -129,6 +129,12 @@ PANEL = Author(
     github_url="https://github.com/holoviz/",
     github_avatar_url="https://avatars2.githubusercontent.com/u/51678735",
 )
+PIERRE_OLIVIER_SIMONARD = Author(
+    name="Pierre-Olivier Simonard",
+    url="https://www.linkedin.com/in/pierreoliviersimonard/?originalSubdomain=fr",
+    github_url="https://github.com/pierrotsmnrd",
+    github_avatar_url="https://avatars.githubusercontent.com/u/756464?v=4",
+)
 PHILIPP_RUDIGER = Author(
     name="Philipp Rudiger",
     url="http://philippjfr.com/",
@@ -206,6 +212,7 @@ AUTHORS = [
     OGGM_EDU,
     OURWORLDINDATA,
     PANEL,
+    PIERRE_OLIVIER_SIMONARD,
     PHILIPP_RUDIGER,
     PYGRIDGEN,
     QUANSIGHT,
