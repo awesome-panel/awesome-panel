@@ -17,7 +17,7 @@ def convert_authors():
 {author_name} = Author(
     name = "{author.name}",
     url = "{author.url}",
-    avatar_url = "{author.github_avatar_url}",
+    avatar = "{author.github_avatar}",
     github_url = "{author.github_url}",
 )"""
         print(text)

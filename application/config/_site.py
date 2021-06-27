@@ -7,7 +7,7 @@ from awesome_panel_extensions.assets import svg_icons
 
 # pylint: enable=line-too-long
 from awesome_panel_extensions.site import Site
-from awesome_panel_extensions.site.application import Application
+from awesome_panel_extensions.site.models import Application
 from panel import template as _template
 
 # pylint: disable=line-too-long
@@ -151,7 +151,7 @@ site = AwesomePanelSite(
     js_path=JS_PATH,
 )
 
-site.authors.extend(
+site.users.extend(
     [
         _authors.ANDREW_HUANG,
         _authors.JOCHEM_SMIT,

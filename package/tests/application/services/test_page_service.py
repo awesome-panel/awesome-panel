@@ -40,9 +40,9 @@ def test_can_delete_page(page_service, page):
 def test_can_bulk_create_and_is_sorted():
     # Given
     page_service = PageService()
-    page_a = Page(name="a", url="", github_url="", github_avatar_url="")
-    page_b = Page(name="b", url="", github_url="", github_avatar_url="")
-    page_c = Page(name="c", url="", github_url="", github_avatar_url="")
+    page_a = Page(name="a", url="", github_url="", github_avatar="")
+    page_b = Page(name="b", url="", github_url="", github_avatar="")
+    page_c = Page(name="c", url="", github_url="", github_avatar="")
     page_service.create(page_b)
     pages = [page_a, page_c]
     # When

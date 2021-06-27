@@ -14,7 +14,7 @@ ApplicationMetaData(
     source_url="{page.source_code_url}",
     author_name="{page.author.name}",
     author_url="{page.author.url}",
-    author_avatar_url="{page.author.github_avatar_url}",
+    author_avatar="{page.author.github_avatar}",
     tags=[{tags}],
 ),"""
     print(text)

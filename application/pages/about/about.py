@@ -4,34 +4,36 @@ import pathlib
 import panel as pn
 from panel.pane import Markdown
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 ABOUT_PATH = pathlib.Path(__file__).parent / "about.md"
 ABOUT = ABOUT_PATH.read_text()
 
+# pylint: disable=line-too-long
 APPLICATION = site.create_application(
     url="about",
     name="About",
     author="Marc Skov Madsen",
-    introduction="A short page about the why and who of awesome-panel.org",
-    description=__doc__,
-    thumbnail_url="about.png",
-    documentation_url="",
-    code_url="about/about.py",
-    gif_url="",
-    mp4_url="",
+    thumbnail="about.png",
+    description="A short page about the why and who of awesome-panel.org",
+    description_long=__doc__,
+    resources={
+        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/about/about.py",
+    },
     tags=[
         "Code",
         "App In Gallery",
     ],
 )
-
+# pylint: enable=line-too-long
 
 @site.add(APPLICATION)
 def view():
     """The about view of awesome-panel.org"""
     main = [Markdown(ABOUT, sizing_mode="stretch_width")]
-    template = pn.template.FastListTemplate(title="About", main=main)
+    template = pn.template.FastListTemplate(
+        site="Awesome Panel", title="About", main=main, main_max_width="900px"
+    )
     return template
 
 

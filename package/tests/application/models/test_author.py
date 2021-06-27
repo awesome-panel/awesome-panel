@@ -5,7 +5,7 @@ def test_can_construct_author(author):
     assert isinstance(author.name, str)
     assert isinstance(author.url, str)
     assert isinstance(author.github_url, str)
-    assert isinstance(author.github_avatar_url, str)
+    assert isinstance(author.github_avatar, str)
     assert str(author) == author.name
     assert repr(author) == author.name
     assert author._repr_html_(width="21x", height="22px") == (

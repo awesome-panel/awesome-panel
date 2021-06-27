@@ -47,9 +47,9 @@ def test_can_delete_author(author_service, author):
 
 def test_can_bulk_create_and_is_sorted(author_service):
     # Given
-    author_a = Author(name="a", url="", github_url="", github_avatar_url="")
-    author_b = Author(name="b", url="", github_url="", github_avatar_url="")
-    author_c = Author(name="c", url="", github_url="", github_avatar_url="")
+    author_a = Author(name="a", url="", github_url="", github_avatar="")
+    author_b = Author(name="b", url="", github_url="", github_avatar="")
+    author_c = Author(name="c", url="", github_url="", github_avatar="")
     author_service.create(author_b)
     authors = [author_a, author_c]
     # When

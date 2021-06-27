@@ -10,7 +10,7 @@ class Author(OrderByNameMixin, param.Parameterized):
     name = param.String()
     url = param.String()
     github_url = param.String()
-    github_avatar_url = param.String()
+    github_avatar = param.String()
 
     def __str__(
         self,
@@ -34,7 +34,7 @@ class Author(OrderByNameMixin, param.Parameterized):
         """
         return (
             f'<a href="{self.github_url}" title="Author: {self.name}" target="_blank">'
-            f'<img application="{self.github_avatar_url}" alt="{self.name}" '
+            f'<img application="{self.github_avatar}" alt="{self.name}" '
             f'style="border-radius: 50%;width: {width};height: {height};'
             'vertical-align: text-bottom;">'
             "</img></a>"

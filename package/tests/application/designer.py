@@ -17,7 +17,7 @@ def test_show():
         name="panel",
         url="https://panel.pyviz.org/",
         github_url="https://github.com/holoviz/",
-        github_avatar_url="https://avatars2.githubusercontent.com/u/51678735",
+        github_avatar="https://avatars2.githubusercontent.com/u/51678735",
     )
     home_page_main = pn.pane.Markdown(name="Home")
     tags = [Tag(name="awesome")]

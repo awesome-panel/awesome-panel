@@ -87,7 +87,7 @@ class AuthorService(param.Parameterized):
             name="Marc Skov Madsen",
             url="https://datamodelsanalytics.com",
             github_url="https://github.com/marcskovmadsen",
-            github_avatar_url="https://avatars0.githubusercontent.com/u/42288570",
+            github_avatar="https://avatars0.githubusercontent.com/u/42288570",
         )
         self.set_default_author(author)
 
