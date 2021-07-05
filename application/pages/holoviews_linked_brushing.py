@@ -18,8 +18,8 @@ from holoviews import opts
 from panel.template import FastGridTemplate
 from plotly.data import iris
 
-from application.config import site
-
+from awesome_panel_extensions.site import site
+pn.extension("plotly")
 hv.extension("bokeh", "plotly")
 
 APPLICATION = site.create_application(
@@ -28,9 +28,11 @@ APPLICATION = site.create_application(
     author="Marc Skov Madsen",
     description="A demonstration of HoloViews linked brushing for Bokeh and Plotly backends",
     description_long=__doc__,
-    thumbnail_url="holoviews-linked-brushing.png",
-    code_url="holoviews_linked_brushing.py",
-    mp4_url="holoviews-linked-brushing.mp4",
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/holoviews-linked-brushing.png",
+    resources = {
+        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/holoviews_linked_brushing.py",
+        "mp4": "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/holoviews-linked-brushing.mp4",
+    },
     tags=["Panel", "Bokeh", "Plotly", "HoloViews", "Linked Brushing", "Cross Filter"],
 )
 

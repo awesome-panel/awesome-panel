@@ -18,7 +18,7 @@ import panel as pn
 import param
 from panel.pane import ECharts
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 BOUNDS = (0, 100)
 COLOR = "#E1477E"
@@ -27,13 +27,12 @@ APPLICATION = site.create_application(
     url="echarts",
     name="ECharts",
     author="Marc Skov Madsen",
-    introduction="Demonstrates the look and feel of the Panel Echarts pane.",
-    description=__doc__,
-    thumbnail_url="test_echarts.png",
-    documentation_url="",
-    code_url="awesome_panel_express_tests/test_echarts.py",
-    gif_url="",
-    mp4_url="",
+    description="Demonstrates the look and feel of the Panel Echarts pane.",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/test_echarts.png",
+    resources = {
+        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/awesome_panel_express_tests/test_echarts.py",
+    },
     tags=["ECharts", "PyECharts"],
 )
 
@@ -134,7 +133,7 @@ class EchartsApp(param.Parameterized):
             ),
         ]
         return pn.template.FastListTemplate(
-            title="Test ECharts", theme="default", main=main, theme_toggle=False
+            title="ECharts", theme="default", main=main, theme_toggle=False
         )
 
 

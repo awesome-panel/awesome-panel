@@ -1,23 +1,29 @@
 """Panel does not have a pane for code. I've created a `Code` pane in the
-[`awesome_panel_extensions`](https://pypi.org/project/awesome-panel-extensions/) package"""
+[`awesome_panel_extensions`](https://pypi.org/project/awesome-panel-extensions/) package.
+
+Use via
+
+```python
+from awesome_panel_extensions.pane import Code
+```
+"""
 
 import panel as pn
 from awesome_panel.express.testing import TestApp
 from awesome_panel_extensions.pane import Code
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 APPLICATION = site.create_application(
     url="code-pane",
     name="Code Pane",
     author="Marc Skov Madsen",
-    introduction="Demonstrates the Code pane from the awesome-panel-extensions package",
-    description=__doc__,
-    thumbnail_url="test_code.png",
-    documentation_url="",
-    code_url="awesome_panel_express_tests/test_code.py",
-    gif_url="",
-    mp4_url="",
+    description="Demonstrates the Code pane from the awesome-panel-extensions package",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/test_code.png",
+    resources = {
+        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/awesome_panel_express_tests/test_code.py",
+    },
     tags=["awesome-panel-extensions", "Pane"],
 )
 

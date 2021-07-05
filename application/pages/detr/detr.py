@@ -31,7 +31,7 @@ import requests
 from panel.io.loading import start_loading_spinner, stop_loading_spinner
 from PIL import Image
 
-from application.config import site
+from awesome_panel_extensions.site import site
 from application.pages.detr import config
 from application.pages.detr.model import (
     CLASSES,
@@ -57,18 +57,22 @@ APPLICATION = site.create_application(
     url="detr",
     name="DE:TR: Object Detection",
     author="Marc Skov Madsen",
-    introduction="An image recognition app based on Facebook DE:TR and Plotly",
-    description=__doc__,
-    thumbnail_url="detr.png",
-    documentation_url="",
-    code_url="detr/detr.py",
-    gif_url="detr.gif",
-    mp4_url="detr.mp4",
+    description="An image recognition app based on Facebook DE:TR and Plotly",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/detr.png",
+    resources = {
+        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/detr/detr.py",
+        "gif": "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/detr.gif",
+        "mp4": "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/detr.mp4",
+    },
+
     tags=[
         "DE:TR",
         "Plotly",
     ],
 )
+if not "detr" in pn.state.cache:
+    pn.state.cache["detr"]={}
 
 
 class DETRApp(param.Parameterized):  # pylint: disable=too-many-instance-attributes
@@ -116,10 +120,10 @@ class DETRApp(param.Parameterized):  # pylint: disable=too-many-instance-attribu
         self._stop_progress()
 
     def _start_progress(self):
-        start_loading_spinner(self.plot)
+        self.app_section.loading=True
 
     def _stop_progress(self):
-        stop_loading_spinner(self.plot)
+        self.app_section.loading=False
 
     def _get_view(self):
         pn.config.sizing_mode = "stretch_width"
@@ -169,17 +173,18 @@ class DETRApp(param.Parameterized):  # pylint: disable=too-many-instance-attribu
         )
         plot = pn.pane.Plotly(height=600, config={"responsive": True})
         intro_section = APPLICATION.intro_section()
+        self.app_section=pn.Column(
+            app_bar,
+            top_selections,
+            plot,
+            bottom_selections,
+        )
         main = [
             pn.Column(
                 style,
                 intro_section,
             ),
-            pn.Column(
-                app_bar,
-                top_selections,
-                plot,
-                bottom_selections,
-            ),
+            self.app_section,
         ]
         template = pn.template.FastListTemplate(
             title="Panel DE:TR",
@@ -202,15 +207,17 @@ class DETRApp(param.Parameterized):  # pylint: disable=too-many-instance-attribu
 
     def _update_plot(self, _=None):
         self._start_progress()
-        figure = get_figure(
-            apply_nms=self.suppression_enabled,
-            iou=self.suppression,
-            confidence=self.confidence,
-            url=self.input_image_url,
-            transform=self.transform,
-            detr=self.detr,
-            device=self.device,
-        )
+        if not self.input_image_url in pn.state.cache["detr"]:
+            pn.state.cache["detr"][self.input_image_url]=get_figure(
+                apply_nms=self.suppression_enabled,
+                iou=self.suppression,
+                confidence=self.confidence,
+                url=self.input_image_url,
+                transform=self.transform,
+                detr=self.detr,
+                device=self.device,
+            )
+        figure=pn.state.cache["detr"][self.input_image_url]
         self.plot.object = figure
         self._stop_progress()
 

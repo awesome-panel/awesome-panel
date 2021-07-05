@@ -14,7 +14,7 @@ import hvplot.pandas  # pylint: disable=unused-import
 import pandas as pd
 import panel as pn
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 COLOR = "#E1477E"
 
@@ -32,13 +32,12 @@ APPLICATION = site.create_application(
     url="bootstrap-dashboard",
     name="Bootstrap Dashboard",
     author="Marc Skov Madsen",
-    introduction="Demonstrates a Bootstrap styled dashboard with Panel",
-    description=DESCRIPTION,
-    thumbnail_url="bootstrap_dashboard.png",
-    documentation_url="",
-    code_url="bootstrap_dashboard/main.py",
-    gif_url="",
-    mp4_url="",
+    description="Demonstrates a Bootstrap styled dashboard with Panel",
+    description_long=DESCRIPTION,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/bootstrap_dashboard.png",
+    resources = {
+        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/bootstrap_dashboard/bootstrap_dashboard.py",
+    },
     tags=[
         "Bootstrap",
     ],

@@ -33,7 +33,7 @@ from awesome_panel_extensions.site.template.template_generator import _TEMPLATE_
 from holoviews import opts
 from panel.template import FastGridTemplate
 
-from application.config import site
+from awesome_panel_extensions.site import site
 from application.pages.fast.echarts_app import EchartsApp
 
 hv.extension("bokeh")
@@ -43,13 +43,13 @@ APPLICATION = site.create_application(
     url="fast-grid-template",
     name="Fast Grid Template",
     author="Marc Skov Madsen",
-    introduction="Demonstrates the FastGridTemplate and Fast Components",
-    description=__doc__,
-    thumbnail_url="fast-grid-template.png",
-    documentation_url="",
-    code_url="fast/fast_grid_template_app.py",
-    gif_url="",
-    mp4_url="fast_grid_template_app.mp4",
+    description="Demonstrates the FastGridTemplate and Fast Components",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/fast-grid-template.png",
+    resources = {
+        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/fast/fast_grid_template_app.py",
+        "mp4": "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/fast_grid_template_app.mp4",
+    },
     tags=["Fast", "Template"],
 )
 

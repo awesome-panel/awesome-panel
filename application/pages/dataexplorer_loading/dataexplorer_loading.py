@@ -1,6 +1,6 @@
 """This example was created by as response to
 <a href="https://discourse.holoviz.org/t/how-to-show-a-loading-indication-during-computation/508"
-target="_blank"> Discourse 508</a> <strong>How to show a loading indication during
+target="_blank"> Discourse 508</a> <strong>How to show a loading indicator during
 computation</strong>.
 """
 
@@ -13,7 +13,7 @@ import pandas as pd
 import panel as pn
 import param
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 COLOR = "#E1477E"
 EMPTY_DATAFRAME = pd.DataFrame(columns=["x", "y"])
@@ -27,13 +27,12 @@ APPLICATION = site.create_application(
     url="data-explorer-loading",
     name="Data Explorer Loading",
     author="Marc Skov Madsen",
-    introduction="Shows how to provide progress information to a user during computation",
-    description=__doc__,
-    thumbnail_url="dataexplorer_loading.png",
-    documentation_url="",
-    code_url="dataexplorer_loading/dataexplorer_loading.py",
-    gif_url="",
-    mp4_url="",
+    description="Shows how to provide progress information to a user during computation",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/dataexplorer_loading.png",
+    resources = {
+        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/dataexplorer_loading/dataexplorer_loading.py",
+    },
     tags=[],
 )
 

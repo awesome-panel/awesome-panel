@@ -14,7 +14,7 @@ from bokeh.core.properties import Instance, String
 from bokeh.layouts import column
 from bokeh.models import HTMLBox, Slider
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 CUSTOM_TS = pathlib.Path(__file__).parent / "custom_bokeh_model.ts"
 CUSTOM_TS_STR = str(CUSTOM_TS.resolve())
@@ -22,13 +22,12 @@ APPLICATION = site.create_application(
     url="custom-bokeh-model",
     name="Custom Bokeh Model",
     author="Marc Skov Madsen",
-    introduction="""An introduction to Bokeh/ Panel extensions""",
-    description=__doc__,
-    thumbnail_url="custom_bokeh_model.png",
-    documentation_url="",
-    code_url="custom_bokeh_model/custom_bokeh_model.py",
-    gif_url="",
-    mp4_url="",
+    description="""An introduction to Bokeh/ Panel extensions""",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/custom_bokeh_model.png",
+    resources = {
+        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/custom_bokeh_model/custom_bokeh_model.py",
+    },
     tags=[
         "Code",
         "App In Gallery",

@@ -19,7 +19,7 @@ import panel as pn
 import param
 from holoviews.plotting.util import process_cmap
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 hv.extension("bokeh")
 
@@ -55,13 +55,12 @@ APPLICATION = site.create_application(
     url="classic-dashboard",
     name="Classic Dashboard",
     author="Marc Skov Madsen",
-    introduction="A classic looking Dashboard in Panel",
-    description=__doc__,
-    thumbnail_url="dashboard.png",
-    documentation_url="",
-    code_url="dashboard/dashboard.py",
-    gif_url="",
-    mp4_url="",
+    description="A classic looking Dashboard in Panel",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/dashboard.png",
+    resources={
+        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/dashboard/dashboard.py",
+    },
     tags=["hvPlot", "HoloViews"],
 )
 

@@ -10,17 +10,19 @@ import panel as pn
 import param
 from panel.template import FastGridTemplate
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 APPLICATION = site.create_application(
     url="google-map-viewer",
     name="Google Map Viewer",
     author="Andrew Huang",
-    introduction="An app showcasing the use of Google Maps and the FastGridTemplate",
-    description=__doc__,
-    thumbnail_url="google-map-viewer.png",
-    code_url="discourse/discourse_1533_template_with_map.py",
-    mp4_url="google-map-viewer.mp4",
+    description="An app showcasing the use of Google Maps and the FastGridTemplate",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/google-map-viewer.png",
+    resources={
+        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/discourse/discourse_1533_template_with_map.py",
+        "mp4": "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/google-map-viewer.mp4",
+    },
     tags=["Panel", "Param", "Grid", "Google", "Map"],
 )
 
@@ -45,7 +47,7 @@ class GoogleMapViewer(param.Parameterized):
     def __init__(self, **params):
         super().__init__(**params)
         self.settings_panel = pn.Param(self, parameters=["continent", "country"])
-        self.map_panel = pn.pane.HTML(sizing_mode="stretch_width", height=616, margin=0)
+        self.map_panel = pn.pane.HTML(sizing_mode="stretch_both", height=616, margin=0)
         self._update_map()
 
     @param.depends("continent", watch=True)

@@ -16,19 +16,18 @@ import panel as pn
 from awesome_panel.express.testing import TestApp
 from awesome_panel_extensions.widgets import dataframe
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 APPLICATION = site.create_application(
     url="dataframe-formatting",
     name="Dataframe Formatting",
     author="Marc Skov Madsen",
-    introduction="""Demonstrates how to style and format the DataFrame widget easily""",
-    description=__doc__,
-    thumbnail_url="test_dataframe.png",
-    documentation_url="",
-    code_url="awesome_panel_express_tests/test_dataframe.py",
-    gif_url="",
-    mp4_url="",
+    description="""Demonstrates how to style and format the DataFrame widget easily""",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/test_dataframe.png",
+    resources = {
+        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/awesome_panel_express_tests/test_dataframe.py",
+    },
     tags=["DataFrame"],
 )
 

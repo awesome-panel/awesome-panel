@@ -11,19 +11,18 @@ Material Widgets. They can be implemented using for example the
 import panel as pn
 from awesome_panel_extensions.frameworks import material
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 APPLICATION = site.create_application(
     url="material-components",
     name="Material Components",
     author="Marc Skov Madsen",
-    introduction="""Demonstrates that use of Material components in your Panel apps""",
-    description=__doc__,
-    thumbnail_url="test_material_components.png",
-    documentation_url="",
-    code_url="awesome_panel_express_tests/test_material.py",
-    gif_url="",
-    mp4_url="",
+    description="""Demonstrates that use of Material components in your Panel apps""",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/test_material_components.png",
+    resources = {
+        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/awesome_panel_express_tests/test_material.py",
+    },
     tags=[],
 )
 
@@ -59,7 +58,6 @@ def section(component, message=None, show_html=False):
         pn.pane.Markdown(title),
         component,
         pn.Param(component, parameters=parameters, show_name=False),
-        pn.layout.Divider(),
     )
 
 
@@ -82,8 +80,15 @@ def view(configure=True) -> pn.Column:
     linear_progress = material.LinearProgress(name="Progress", value=10, max=100)
     circular_progress = material.CircularProgress(name="Progress", value=75, max=100, density=25)
 
+    if configure:
+        introsection = pn.Column(
+            APPLICATION.intro_section(), material.Extension()
+        )
+    else:
+        introsection = APPLICATION.intro_section()
+
     objects = [
-        APPLICATION.intro_section(),
+        introsection,
         # pn.pane.Alert("If you don't see the components please reload the page!"),
         pn.Column(*section(button)),
         pn.Column(*section(intslider)),
@@ -92,9 +97,6 @@ def view(configure=True) -> pn.Column:
         pn.Column(*section(linear_progress)),
         pn.Column(*section(circular_progress)),
     ]
-
-    if configure:
-        objects.append(material.Extension())
 
     return pn.template.FastListTemplate(
         title="Material Components",

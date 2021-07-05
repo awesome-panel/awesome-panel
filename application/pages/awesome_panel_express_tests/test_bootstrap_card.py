@@ -9,12 +9,12 @@ The Cards have now been contributed to Panel. Checkout the reference guide
 import hvplot.pandas  # pylint: disable=unused-import
 import pandas as pd
 import panel as pn
-from awesome_panel import express as pnx
+from awesome_panel_extensions.pane import Code
 from awesome_panel.express.testing import TestApp
 
 pn.widgets.Button.param.sizing_mode.default = "stretch_width"
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 COLOR = "#E1477E"
 
@@ -22,13 +22,12 @@ APPLICATION = site.create_application(
     url="bootstrap-card",
     name="Bootstrap Card",
     author="Marc Skov Madsen",
-    introduction="Demonstrates the look and feel of the Panel Cards",
-    description=__doc__,
-    thumbnail_url="test_bootstrap_card.png",
-    documentation_url="",
-    code_url="awesome_panel_express_tests/test_bootstrap_card.py",
-    gif_url="",
-    mp4_url="",
+    description="Demonstrates the look and feel of the Panel Cards",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/test_bootstrap_card.png",
+    resources={
+        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/awesome_panel_express_tests/test_bootstrap_card.py",
+    },
     tags=[
         "Bootstrap",
     ],
@@ -47,10 +46,9 @@ Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliq
 def test_card():
     """We test that we can create a card with
 
-    - A header with lightgray background
-    - A Body
+    - A header and body
 
-    And the card it self is full width responsive by default.
+    And the card it self is full width responsive.
     """
 
     card = pn.layout.Card(TEXT, header="Card - Header and Body", sizing_mode="stretch_width")
@@ -64,10 +62,9 @@ def test_card():
 def test_card_fixed_width():
     """We test that we can create a card with
 
-    - A header with lightgray background
-    - A Body
+    - A header and body
 
-    And the card it self is fixed to 300px
+    And the card it self is fixed to 300px width
     """
     card = pn.layout.Card(
         TEXT,
@@ -154,15 +151,15 @@ def _holoviews_chart():
 def test_card_with_plot():
     """We test that we can create a card with
 
-    - A header with lightgray background
-    - A Plot Body
+    - A header and a body with a plot
 
     And the card it self is has a fixed width
     """
     card = pn.layout.Card(
         _holoviews_chart(),
         header="Card With Plot",
-        width=600,
+        sizing_mode="fixed",
+        width=800,
     )
     return TestApp(
         test_card_with_plot,
@@ -173,14 +170,12 @@ def test_card_with_plot():
 def test_card_with_multiple_panels():
     """We test that we can create a card with
 
-    - A header with lightgray background
+    - A header
     - A Plot Body
     - A Text Body
     - A Plot Body
     - A Text Body
 
-    Please note that due to some Bokeh formatting I've not been able to create
-    a divider line that stretches to full width.
     """
     card = pn.layout.Card(
         _holoviews_chart(),
@@ -199,19 +194,10 @@ def test_card_with_multiple_panels():
 def test_card_collapsible():
     """We test that we can create a collapsible card with
 
-    - A header with lightgray background
+    - A header
     - A Plot Body
     - A Text Body
 
-    Please **note** that
-
-    - the header text and collapse button text are not vertically aligned. I have yet to figure
-    that out.
-    - I have not been able to use the *chevron down* with a *rotation* transition like at
-    [Card Collapse Tricks](https://disjfa.github.io/bootstrap-tricks/card-collapse-tricks/)
-    - When you click the collabse button, the button is shown for a short while. I would like to
-    remove that but I do not yet know how.
-    - I would like to change the collapse button callback from a Python callback to JS callback.
     """
     card = pn.layout.Card(
         _holoviews_chart(),
@@ -231,7 +217,7 @@ def test_card_with_code():
     code = """\
         card = pn.layout.Card("Code", pn.layout.Code(code),)
         return TestApp(test_card_collapsible, card)"""
-    card = pn.layout.Card(pnx.Code(code), header="Code")
+    card = pn.layout.Card(Code(code), header="Code")
     return TestApp(test_card_with_code, card, width=600)
 
 
@@ -245,16 +231,15 @@ def view() -> pn.Column:
     pn.config.sizing_mode = "stretch_width"
     main = [
         APPLICATION.intro_section(),
-        # test_card(),
-        # test_card_fixed_width(),
+        test_card(),
+        test_card_fixed_width(),
         test_card_with_plot(),
-        # test_card_with_multiple_panels(),
-        # test_card_collapsible(),
-        # test_card_with_code(),
+        test_card_with_multiple_panels(),
+        test_card_collapsible(),
+        test_card_with_code(),
     ]
     return pn.template.FastListTemplate(title="Test Bootstrap Card", main=main)
 
 
 if __name__.startswith("bokeh"):
-    pn.config.sizing_mode = "stretch_width"
     view().servable()

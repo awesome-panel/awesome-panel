@@ -25,19 +25,20 @@ import param
 from panel.io.server import unlocked
 from tornado.ioloop import IOLoop
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 APPLICATION = site.create_application(
     url="async-tasks",
     name="Async Tasks",
     author="Jochem Smit",
-    introduction="Demonstrates the use of asynchronous, background processes with Panel",
-    description=__doc__,
-    thumbnail_url="async_tasks.png",
-    documentation_url="",
-    code_url="async_tasks",
-    gif_url="async_tasks.gif",
-    mp4_url="async_tasks.mp4",
+    description="Demonstrates the use of asynchronous, background processes with Panel",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/async_tasks.png",
+    resources={
+        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/async_tasks/async_tasks.py",
+        "gif": "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/async_tasks.gif",
+        "mp4": "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/async_tasks.mp4",
+    },
     tags=[
         "Async",
     ],

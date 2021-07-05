@@ -37,7 +37,7 @@ import panel as pn
 from diskcache import FanoutCache
 from panel.template import FastListTemplate
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 hv.extension("bokeh")
 
@@ -48,11 +48,13 @@ APPLICATION = site.create_application(
     url="caching-example",
     name="Caching Example",
     author="Marc Skov Madsen",
-    introduction="""An app demonstrating how to speed up your app using caching.""",
-    description=__doc__,
-    thumbnail_url="caching-example.png",
-    code_url="caching_example/caching_example.py",
-    mp4_url="caching-example.mp4",
+    description="""An app demonstrating how to speed up your app using caching.""",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/caching-example.png",
+    resources = {
+        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/caching_example/caching_example.py",
+        "mp4": "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/caching-example.mp4",
+    },
     tags=["Panel", "Caching"],
 )
 

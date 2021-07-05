@@ -14,17 +14,19 @@ import param
 from awesome_panel_extensions.widgets.ngl_viewer import NGLViewer
 from panel.template import FastListTemplate
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 APPLICATION = site.create_application(
     url="ngl-molecule-viewer",
     name="NGL Molecule Viewer",
     author="Jochem Smit",
-    introduction="Demo of the the NGL Molecule Viewer widget",
-    description=__doc__,
-    thumbnail_url="ngl-molecule-viewer.png",
-    code_url="ngl_molecule_viewer.py",
-    mp4_url="ngl-molecule-viewer.mp4",
+    description="Demo of the the NGL Molecule Viewer widget",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/ngl-molecule-viewer.png",
+    resources = {
+        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/ngl_molecule_viewer.py",
+        "mp4": "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/ngl-molecule-viewer.mp4",
+    },
     tags=["Panel", "NGL", "Molecule"],
 )
 

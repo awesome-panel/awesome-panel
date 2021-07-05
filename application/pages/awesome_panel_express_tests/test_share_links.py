@@ -10,20 +10,18 @@ from awesome_panel_extensions.widgets.link_buttons.share_buttons import (
     ShareOnTwitter,
 )
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 APPLICATION = site.create_application(
     url="share-on-social-buttons",
     name="Share On Social Buttons",
     author="Marc Skov Madsen",
-    introduction="""These widgets makes it easy to add "share on social" buttons to your
-    apps""",
-    description=__doc__,
-    thumbnail_url="test_share_links.png",
-    documentation_url="",
-    code_url="awesome_panel_express_tests/test_share_links.py",
-    gif_url="",
-    mp4_url="",
+    description="These widgets makes it easy to add *share on social* buttons to your apps",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/test_share_links.png",
+    resources = {
+        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/awesome_panel_express_tests/test_share_links.py",
+    },
     tags=["Social Media", "Buttons"],
 )
 

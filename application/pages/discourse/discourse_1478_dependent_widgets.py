@@ -7,19 +7,22 @@ import holoviews as hv
 import numpy as np
 import panel as pn
 
-from application.config import site
+from awesome_panel_extensions.site import site
+hv.extension("bokeh")
 
 APPLICATION = site.create_application(
     url="dependent-widgets",
     name="Dependent Widgets",
     author="Marc Skov Madsen",
-    introduction="An example of providing multiple widgets to select the same value",
-    description=__doc__,
-    thumbnail_url="dependent-widgets.png",
-    documentation_url="",
-    code_url="discourse/discourse_1478_dependent_widgets.py",
-    gif_url="dependent-widgets.gif",
-    mp4_url="dependent-widgets.mp4",
+    description="An example of providing multiple widgets to select the same value",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/dependent-widgets.png",
+    resources = {
+        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/discourse/discourse_1478_dependent_widgets.py",
+        "gif": "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/dependent-widgets.gif",
+        "mp4": "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/dependent-widgets.mp4",
+
+    },
     tags=[
         "Discourse",
         "Multiselect",

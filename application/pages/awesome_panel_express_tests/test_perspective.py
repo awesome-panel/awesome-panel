@@ -12,7 +12,7 @@ import pandas as pd
 import panel as pn
 from panel.pane import Perspective
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 DARK_BACKGROUND = "rgb(42, 44, 47)"
 DARK_COLOR = "white"
@@ -30,13 +30,12 @@ APPLICATION = site.create_application(
     url="perspective",
     name="Perspective Viewer",
     author="Marc Skov Madsen",
-    introduction="""Demonstrates that you can use the awesome Perspective pane""",
-    description=__doc__,
-    thumbnail_url="test_perspective.png",
-    documentation_url="",
-    code_url="awesome_panel_express_tests/test_perspective.py",
-    gif_url="",
-    mp4_url="",
+    description="""Demonstrates that you can use the awesome Perspective pane""",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/test_perspective.png",
+    resources = {
+        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/awesome_panel_express_tests/test_perspective.py",
+    },
     tags=["Perspective", "Streaming"],
 )
 COLUMNS = [

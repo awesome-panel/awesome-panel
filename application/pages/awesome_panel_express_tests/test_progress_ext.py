@@ -39,20 +39,18 @@ import panel as pn
 from awesome_panel.express.testing import TestApp
 from awesome_panel_extensions.widgets.progress_ext import ProgressExt
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 APPLICATION = site.create_application(
     url="progress-extension",
     name="Progress Extension",
     author="Marc Skov Madsen",
-    introduction="""Demonstrates how to easily add progress reporting using the ProgressExt
-    widget""",
-    description=__doc__,
-    thumbnail_url="test_progress_ext.png",
-    documentation_url="",
-    code_url="awesome_panel_express_tests/test_progress_ext.py",
-    gif_url="",
-    mp4_url="",
+    description="Demonstrates how to easily add progress reporting using the ProgressExt widget",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/test_progress_ext.png",
+    resources = {
+        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/awesome_panel_express_tests/test_progress_ext.py",
+    },
     tags=["Progress"],
 )
 

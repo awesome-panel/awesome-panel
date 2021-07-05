@@ -7,19 +7,18 @@ The Alerts have now been contributed to Panel. You can find the reference exampl
 import panel as pn
 from awesome_panel.express.testing import TestApp
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 APPLICATION = site.create_application(
     url="bootstrap-alerts",
     name="Bootstrap Alerts",
     author="Marc Skov Madsen",
-    introduction="Demonstrates the look and feel of the Panel Alerts",
-    description=__doc__,
-    thumbnail_url="test_bootstrap_alerts.png",
-    documentation_url="",
-    code_url="awesome_panel_express_tests/test_bootstrap_alerts.py",
-    gif_url="",
-    mp4_url="",
+    description="Demonstrates the look and feel of the Panel Alerts",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/test_bootstrap_alerts.png",
+    resources = {
+        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/awesome_panel_express_tests/test_bootstrap_alerts.py",
+    },
     tags=["Bootstrap"],
 )
 
