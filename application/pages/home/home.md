@@ -6,13 +6,11 @@ Naturally this site is **MADE WITH PANEL**.
 
 Checkout the [App Gallery](gallery), [Awesome List](awesome-list) and other resources in the sidebar.
 
-<div align="center" style="margin-right:10%;margin-left:10%">
+<div align="center" style="margin-right:10% margin-left:10%;">
 <a href="fast-grid-template?theme=dark">
-    <img
-        alt="FastGridTemplate"
-        src="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/fast-grid-template-app.gif"
-        style="min-height:500px;"
-    ></a>
+    <video autoplay controls loop muted style="height:400px;width:100%">
+    <source src="https://cdn.jsdelivr.net/gh/MarcSkovMadsen/awesome-panel-assets@2805bc7/awesome-panel/applications/fast_grid_template_app.mp4" type="video/mp4">
+</video></a>
 </div>
 
 ## &#128013; Create Powerful Analytics Tools and Apps in Python
@@ -23,16 +21,10 @@ It's a super power for you and your team to master a framework like this if you 
 
 Panel is great for **Data Science, Engineering, Finance and Science** use cases and supports your process **from exploration to production and back**.
 
-<div align="center" style="margin-right:10%;margin-left:10%; max-height: 600px" >
-    <a href="classic-dashboard"><img
-    alt="Classic Dashboard"
-    src="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/classic-dashboard.gif"
-    style="max-width:40%;min-height:300px"
-    ></a>
-    <a href="detr"><img
-    alt="DE:TR"
-    src="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/detr.gif"
-    style="max-width:40%;min-height:300px"></a>
+<div align="center" style="margin-right:10%;margin-left:10%; height: 400px" >
+    <a href="classic-dashboard"><video autoplay controls loop muted style="height:420px;width:100%">
+    <source src="https://cdn.jsdelivr.net/gh/MarcSkovMadsen/awesome-panel-assets@2805bc7/awesome-panel/applications/classic-dashboard.mp4" type="video/mp4">
+</video></a>
 </div>
 
 ## &#128187; Panel works in your Notebook, Editor, IDE and Server
@@ -74,7 +66,7 @@ The only way to truly understand if Panel is something for you is to play around
 Or **check out** the first **4 minutes** of this **introduction to Panel**. The video is by **Philipp Rudiger**, the creator of Panel.
 
 <div align="center" style="margin-right:10%;margin-left:10%;">
-    <iframe src="https://www.youtube.com/embed/Ohr29FJjBi0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;min-height:300px;margin-left: auto;margin-right:auto; border: 1px silver solid"></iframe>
+    <iframe src="https://www.youtube.com/embed/Ohr29FJjBi0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;height:400px;margin-left: auto;margin-right:auto"></iframe>
 </div>
 
 ## &#128170; Panel 0.11 is Released
@@ -109,11 +101,9 @@ Panel 0.12 will come with **lots of new features**. Probably
 
 <div align="center" style="margin-right:10%;margin-left:10%;">
 <a href="https://github.com/holoviz/panel/pull/2368" target="_blank">
-    <img
-        alt="Panel 0.12 is Coming"
-        src="https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/videos/FastGridTemplateDesigner.gif?raw=true"
-        style="min-height:300px;max-width:80%;padding-bottom:50px"
-    >
+    <video autoplay controls loop muted style="height:400px;width:100%">
+    <source src="https://cdn.jsdelivr.net/gh/MarcSkovMadsen/awesome-panel-assets@7a4288b/videos/FastGridTemplateDesigner.mp4" type="video/mp4">
+</video>
 </a>
 </div>
 
@@ -123,11 +113,9 @@ This site is constantly improving.
 
 <div align="center" style="margin-right:10%;margin-left:10%;">
 <a href="tabulator?theme=default">
-    <img
-        alt="Param App"
-        src="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/tabulator-app.gif"
-        style="max-width: 80%;min-height:300px;padding-bottom:50px"
-    >
+   <video autoplay controls loop muted style="height:420px;width:100%">
+    <source src="https://cdn.jsdelivr.net/gh/MarcSkovMadsen/awesome-panel-assets@2805bc7/awesome-panel/applications/tabulator-app.mp4" type="video/mp4">
+</video>
 </a>
 </div>
 
@@ -137,10 +125,9 @@ You can follow the developments via [Awesome Panel Change Log](https://discourse
 
 The [awesome-panel-extensions](https://pypi.org/project/awesome-panel-extensions/) package provides general extensions you can use with Panel.
 
-<div align="center" style="margin-right:10%;margin-left:10%;"><a href="https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html" target="_blank"><img
-        alt="Awesome Panel Extensions Docs"
-        src="https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/videos/awesome-panel-extensions-docs.gif?raw=true"
-        style="max-width:80%;min-height:300px;padding-bottom:50px"></a>
+<div align="center" style="margin-right:10%;margin-left:10%;"><a href="https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html" target="_blank"><video autoplay controls loop muted style="height:420px;width:100%">
+    <source src="https://cdn.jsdelivr.net/gh/MarcSkovMadsen/awesome-panel-assets@2805bc7/videos/awesome-panel-extensions-docs.mp4" type="video/mp4">
+</video></a>
 </div>
 
 The package updates often so if you use it for production please pin to the specific version number.
@@ -151,10 +138,10 @@ You can follow the developments via [Awesome Panel Extensions Change Log](https:
 
 The awesome [panel-highcharts](https://github.com/marcskovmadsen/panel-highcharts) package gives you access to one of the worlds leading js viz libraries in your notebook or app.
 
-<div align="center" style="margin-right:10%;margin-left:10%;"><a href="https://github.com/marcskovmadsen/panel-highcharts" target="_blank"><img
-        alt="Panel HighCharts Repository"
-        src="https://raw.githubusercontent.com/MarcSkovMadsen/panel-highcharts/main/assets/images/panel-highcharts-binder.gif"
-        style="min-height:300px;max-width:80%"></a>
+<div align="center" style="margin-right:10%;margin-left:10%;"><a href="https://github.com/marcskovmadsen/panel-highcharts" target="_blank"><video autoplay controls loop muted style="height:420px;width:100%">
+    <source src="https://cdn.jsdelivr.net/gh/MarcSkovMadsen/panel-highcharts@0add004
+/assets/images/panel-highcharts-binder.mp4" type="video/mp4">
+</video></a>
 </div>
 
 The python package is free and open source. But you will need a license for [HighCharts](https://www.highcharts.com/) for commercial use.
@@ -163,10 +150,9 @@ The python package is free and open source. But you will need a license for [Hig
 
 The awesome [panel-chemistry](https://github.com/marcskovmadsen/panel-chemistry) package provides extensions you can use for **#cheminformatics**.
 
-<div align="center" style="margin-right:10%;margin-left:10%;"><a href="https://github.com/marcskovmadsen/panel-chemistry" target="_blank"><img
-        alt="Panel Chemistry Repository"
-        src="https://raw.githubusercontent.com/MarcSkovMadsen/panel-chemistry/main/assets/panel-chemistry-teaser.gif"
-        style="min-height:300px;max-width:80%"></a>
+<div align="center" style="margin-right:10%;margin-left:10%;"><video autoplay controls loop muted style="height:420px;width:100%">
+    <source src="https://cdn.jsdelivr.net/gh/MarcSkovMadsen/panel-chemistry@0fd7d43/assets/panel-chemistry-teaser.mp4" type="video/mp4">
+</video></a>
 </div>
 
 Join us in the [panel-chemistry gitter](https://gitter.im/panel-chemistry/community#) channel.
@@ -175,8 +161,7 @@ Join us in the [panel-chemistry gitter](https://gitter.im/panel-chemistry/commun
 
 If you or your organisation want to create your own extensions for Panel, then check out the [Awesome Panel Extensions Guide](https://awesome-panel.readthedocs.io/en/latest/guides/awesome-panel-extensions-guide/index.html).
 
-<div align="center" style="margin-right:10%;margin-left:10%;"><a href="https://awesome-panel.readthedocs.io/en/latest/guides/awesome-panel-extensions-guide/index.html" target="_blank"><img
-        alt="Awesome Panel Extensions Guide"
-        src="https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/videos/awesome-panel-extensions-guide.gif?raw=true"
-        style="min-height:300px;max-width:80%;padding-bottom:125px"></a>
+<div align="center" style="margin-right:10%;margin-left:10%;"><a href="https://awesome-panel.readthedocs.io/en/latest/guides/awesome-panel-extensions-guide/index.html" target="_blank"><video autoplay controls loop muted style="height:400px;width:100%">
+    <source src="https://cdn.jsdelivr.net/gh/MarcSkovMadsen/awesome-panel-assets@7a4288b/videos/awesome-panel-extensions-guide.mp4" type="video/mp4">
+</video></a>
 </div>
