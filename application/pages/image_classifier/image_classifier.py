@@ -19,7 +19,7 @@ import panel as pn
 import param
 from PIL import Image
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 pn.extension("vega")
 
@@ -27,13 +27,13 @@ APPLICATION = site.create_application(
     url="image-classifier",
     name="Image Classifier",
     author="Marc Skov Madsen",
-    introduction="An image classifier app created with Panel",
-    description=__doc__,
-    thumbnail_url="image_classifier.png",
-    documentation_url="",
-    code_url="image_classifier/image_classifier.py",
-    gif_url="",
-    mp4_url="",
+    description="An image classifier app created with Panel",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/image_classifier.png",
+
+    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/image_classifier/image_classifier.py",
+
+    mp4="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/",
     tags=[
         "Keras",
     ],

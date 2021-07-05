@@ -17,7 +17,7 @@ import plotly.graph_objects as go
 import requests
 from PIL import Image, ImageOps
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 pn.extension("plotly")
 
@@ -306,13 +306,13 @@ APPLICATION = site.create_application(
     url="soccer-analytics-dashboard",
     name="Soccer Analytics Dashboard",
     author="Stephen Kilcommins",
-    introduction="A nice sports app with a nice background",
-    description=__doc__,
-    thumbnail_url="soccer-analytics-dashboard.png",
+    description="A nice sports app with a nice background",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/soccer-analytics-dashboard.png",
     documentation_url=(
         "https://medium.datadriveninvestor.com/panel-everything-you-need-to-know-9bca61532e12"
     ),
-    code_url="soccer_analytics_dashboard",
+    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/soccer_analytics_dashboard",
     tags=["Panel", "Review", "Blog", "Soccer", "Plotly"],
 )
 

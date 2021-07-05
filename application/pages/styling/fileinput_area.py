@@ -26,19 +26,19 @@ If you want a nicer looking `FileInput` in Panel please upvote
 """
 import panel as pn
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 APPLICATION = site.create_application(
     url="fileinput-area",
     name="FileInput Area",
     author="Marc Skov Madsen",
-    introduction="""Shows how to style the Panel FileInput to give it a modern look and feel""",
-    description=__doc__,
-    thumbnail_url="fileinput-area.png",
-    documentation_url="",
-    code_url="styling/fileinput-area.py",
-    gif_url="",
-    mp4_url="",
+    description="""Shows how to style the Panel FileInput to give it a modern look and feel""",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/fileinput-area.png",
+
+    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/styling/fileinput-area.py",
+
+    mp4="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/",
     tags=["Styling", "FileInput"],
 )
 

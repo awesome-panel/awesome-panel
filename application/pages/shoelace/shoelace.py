@@ -17,19 +17,19 @@ import hvplot.pandas  # pylint: disable=unused-import
 import panel as pn
 from bokeh.sampledata import sea_surface_temperature as sst
 
-from application.config import site
+from awesome_panel_extensions.site import site
 from application.pages.shoelace.template import TemplateWithDialog
 
 # pylint: disable=line-too-long
 APPLICATION = site.create_application(
     name="Shoelace",
-    introduction="A demonstration of the Shoelace Components including a modal pop up containing a plot",
-    description=__doc__,
+    description="A demonstration of the Shoelace Components including a modal pop up containing a plot",
+    description_long=__doc__,
     url="shoelace",
-    thumbnail_url="shoelace.png",
-    code_url="shoelace/shoelace.py",
-    mp4_url="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/dialog_template/assets/dialog_template.mp4",
-    gif_url="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/dialog_template/assets/dialog_template.gif",
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/shoelace.png",
+    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/shoelace/shoelace.py",
+    mp4="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/dialog_template/assets/dialog_template.mp4",
+    gif="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/dialog_template/assets/dialog_template.gif",
     author="Marc Skov Madsen",
     tags=[
         "Shoelace",

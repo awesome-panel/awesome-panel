@@ -13,7 +13,7 @@ def {name}(self):
 
 def print_tasks():
     from application import pages
-    from application.config import site
+    from awesome_panel_extensions.site import site
 
     for app in site.applications:
         print(to_str(app))

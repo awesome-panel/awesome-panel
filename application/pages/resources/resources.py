@@ -4,7 +4,7 @@ import pathlib
 import panel as pn
 from panel.pane import Markdown
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 RESOURCES_PATH = pathlib.Path(__file__).parent / "resources.md"
 RESOURCES = RESOURCES_PATH.read_text()
@@ -12,13 +12,13 @@ APPLICATION = site.create_application(
     url="awesome-list",
     name="Awesome List",
     author="Marc Skov Madsen",
-    introduction="""A list of Awesome Panel Resources created by the community""",
-    description=__doc__,
-    thumbnail_url="resources.png",
-    documentation_url="",
-    code_url="resources/resources.py",
-    gif_url="",
-    mp4_url="",
+    description="""A list of Awesome Panel Resources created by the community""",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/resources.png",
+
+    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/resources/resources.py",
+
+    mp4="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/",
     tags=[
         "Code",
         "App In Gallery",

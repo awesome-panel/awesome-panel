@@ -10,19 +10,19 @@ experience **use Chrome**.
 import panel as pn
 from panel.widgets import TextToSpeech
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 APPLICATION = site.create_application(
     url="text-to-speech",
     name="Text To Speech",
     author="Marc Skov Madsen",
-    introduction="Demonstrates the powerful TextToSpeech widget",
-    description=__doc__,
-    thumbnail_url="text-to-speech.png",
-    documentation_url="",
-    code_url="text_to_speech/text_to_speech.py",
-    gif_url="text-to-speech.gif",
-    mp4_url="text-to-speech.mp4",
+    description="Demonstrates the powerful TextToSpeech widget",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/text-to-speech.png",
+
+    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/text_to_speech/text_to_speech.py",
+    gif="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/text-to-speech.gif",
+    mp4="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/text-to-speech.mp4",
     tags=[
         "TextToSpeech",
     ],

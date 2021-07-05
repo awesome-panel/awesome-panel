@@ -21,16 +21,16 @@ import pandas as pd
 import panel as pn
 import param
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 APPLICATION = site.create_application(
     url="param-reference",
     name="Param Reference Example",
     author="Marc Skov Madsen",
-    introduction="A live version of the Panel Param Reference guide",
-    description=__doc__,
-    thumbnail_url="param_reference_example.png",
-    code_url="param_reference_example/param_reference_example.py",
+    description="A live version of the Panel Param Reference guide",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/param_reference_example.png",
+    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/param_reference_example/param_reference_example.py",
     tags=[
         "Param",
     ],

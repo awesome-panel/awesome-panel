@@ -15,7 +15,7 @@ import panel as pn
 import param
 from panel.io.loading import start_loading_spinner, stop_loading_spinner
 
-from application.config import site
+from awesome_panel_extensions.site import site
 from application.pages.loading_spinners import config
 
 COLOR = "#E1477E"
@@ -26,13 +26,13 @@ APPLICATION = site.create_application(
     url="loading-spinners",
     name="Loading Spinners",
     author="Marc Skov Madsen",
-    introduction="Demonstrates the look and feel of the Loading Spinners",
-    description=__doc__,
-    thumbnail_url="loading-spinners.png",
-    documentation_url="",
-    code_url="loading_spinners/loading_spinners.py",
-    gif_url="loading-spinners.gif",
-    mp4_url="loading-spinners.mp4",
+    description="Demonstrates the look and feel of the Loading Spinners",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/loading-spinners.png",
+
+    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/loading_spinners/loading_spinners.py",
+    gif="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/loading-spinners.gif",
+    mp4="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/loading-spinners.mp4",
     tags=["UX"],
 )
 

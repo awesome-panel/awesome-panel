@@ -5,21 +5,21 @@ from awesome_panel_extensions.frameworks.fast.templates.fast_gallery_template im
     FastGalleryTemplate,
 )
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 APPLICATION = site.create_application(
     url="gallery",
     name="Gallery",
     author="Marc Skov Madsen",
-    introduction="""A custom Panel template using the Fast
+    description="""A custom Panel template using the Fast
     web components""",
     description="""The Gallery provides a very visual overview to the applications and associated
     resources""",
-    thumbnail_url="gallery.png",
-    documentation_url="",
-    code_url="fast_gallery/fast_gallery.py",
-    gif_url="",
-    mp4_url="",
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/gallery.png",
+
+    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/fast_gallery/fast_gallery.py",
+
+    mp4="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/",
 )
 
 

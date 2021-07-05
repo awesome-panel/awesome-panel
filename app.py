@@ -18,7 +18,7 @@ import panel as pn
 
 # We need to import the application module to get the applications added to the site
 from application import pages  # pylint: disable=unused-import
-from application.config import site
+from awesome_panel_extensions.site import site
 
 if __name__ == "__main__":
     address = os.getenv("BOKEH_ADDRESS", "0.0.0.0")

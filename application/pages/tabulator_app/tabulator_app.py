@@ -11,19 +11,19 @@ import panel as pn
 import param
 from panel.widgets import Tabulator
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 APPLICATION = site.create_application(
     url="tabulator",
     name="Tabulator",
     author="Marc Skov Madsen",
-    introduction="Demonstrates the powerful Tabulator Table",
-    description=__doc__,
-    thumbnail_url="tabulator-app.png",
-    documentation_url="",
-    code_url="tabulator_app/tabulator_app.py",
-    gif_url="tabulator-app.gif",
-    mp4_url="tabulator-app.mp4",
+    description="Demonstrates the powerful Tabulator Table",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/tabulator-app.png",
+
+    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/tabulator_app/tabulator_app.py",
+    gif="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/tabulator-app.gif",
+    mp4="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/tabulator-app.mp4",
     tags=[
         "Streaming",
         "Tabulator",

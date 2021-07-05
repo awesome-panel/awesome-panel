@@ -10,16 +10,16 @@ by [ShanzyHolm](https://discourse.holoviz.org/u/ShanzyHolm/summary).
 """
 import panel as pn
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 APPLICATION = site.create_application(
     url="js-actions",
     name="JS Actions",
     author="Marc Skov Madsen",
-    introduction="Shows how to use a little bit of javascript with Panel",
-    description=__doc__,
-    thumbnail_url="js_actions.png",
-    code_url="js_actions/js_actions.py",
+    description="Shows how to use a little bit of javascript with Panel",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/js_actions.png",
+    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/js_actions/js_actions.py",
     tags=[
         "JavaScript",
     ],

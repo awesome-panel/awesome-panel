@@ -19,7 +19,7 @@ from panel.io.loading import start_loading_spinner, stop_loading_spinner
 from panel.template import FastListTemplate
 from scipy import signal, stats
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 hv.extension("bokeh")
 
@@ -30,12 +30,12 @@ APPLICATION = site.create_application(
     url="volume-profile-analysis",
     name="Volume Profile Analysis",
     author="Marc Skov Madsen",
-    introduction="""An example of Volume Profile Analysis of time series from commodity, currency,
+    description="""An example of Volume Profile Analysis of time series from commodity, currency,
     debt and equity markets.""",
-    description=__doc__,
-    thumbnail_url="volume-profile-analysis.png",
-    code_url="volume_profile_analysis/volume_profile_analysis.py",
-    mp4_url="volume-profile-analysis.mp4",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/volume-profile-analysis.png",
+    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/volume_profile_analysis/volume_profile_analysis.py",
+    mp4="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/volume-profile-analysis.mp4",
     tags=["Panel", "HoloViz", "Volume Profiles", "Finance", "Quant", "Signal Processing"],
 )
 

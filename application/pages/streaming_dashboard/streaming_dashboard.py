@@ -13,7 +13,7 @@ import numpy as np
 import panel as pn
 from panel.template import FastGridTemplate
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 STYLE = """
 .pn-stats-card div {
@@ -45,11 +45,11 @@ APPLICATION = site.create_application(
     url="streaming-dashboard",
     name="Streaming Dashboard",
     author="Marc Skov Madsen",
-    introduction="A demonstration of a Streaming Dashboard",
-    description=__doc__,
-    thumbnail_url="streaming-dashboard.png",
-    code_url="streaming_dashboard/streaming_dashboard.py",
-    mp4_url="streaming-dashboard.mp4",
+    description="A demonstration of a Streaming Dashboard",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/streaming-dashboard.png",
+    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/streaming_dashboard/streaming_dashboard.py",
+    mp4="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/streaming-dashboard.mp4",
     tags=["Streaming", "Dashboard", "StatsCard"],
 )
 

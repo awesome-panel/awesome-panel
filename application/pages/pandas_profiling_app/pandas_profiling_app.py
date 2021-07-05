@@ -20,7 +20,7 @@ import param
 from pandas_profiling import ProfileReport
 from panel.io.loading import start_loading_spinner, stop_loading_spinner
 
-from application.config import site
+from awesome_panel_extensions.site import site
 
 # pylint: disable=line-too-long
 DEFAULT_TITLE = "Pandas Profiling Report"
@@ -69,11 +69,11 @@ APPLICATION = site.create_application(
     url="pandas-profiling",
     name="Pandas Profiling",
     author="Marc Skov Madsen",
-    introduction="""Demonstrates that you can embed HTML reports like the Panel Profiling report in
+    description="""Demonstrates that you can embed HTML reports like the Panel Profiling report in
     your apps""",
-    description=__doc__,
-    thumbnail_url="pandas_profiling_app.png",
-    code_url="pandas_profiling_app/pandas_profiling_app.py",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/pandas_profiling_app.png",
+    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/pandas_profiling_app/pandas_profiling_app.py",
     tags=["Pandas", "HTML", "embed"],
 )
 

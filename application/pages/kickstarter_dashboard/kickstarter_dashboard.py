@@ -29,7 +29,7 @@ import param
 
 # pylint: enable=line-too-long
 # pylint: disable=duplicate-code
-from application.config import site
+from awesome_panel_extensions.site import site
 
 # pylint: enable=duplicate-code
 KICKSTARTER_PATH = pathlib.Path(__file__).parent / "kickstarter-cleaned.csv"
@@ -53,10 +53,10 @@ APPLICATION = site.create_application(
     url="kick-starter-dashboard",
     name="Kickstarter Dashboard",
     author="Marc Skov Madsen",
-    introduction="A dashboard with fast and responsive linked brushing of the plots",
-    description=__doc__,
-    thumbnail_url="kickstarter_dashboard.png",
-    code_url="kickstarter_dashboard/kickstarter_dashboard.py",
+    description="A dashboard with fast and responsive linked brushing of the plots",
+    description_long=__doc__,
+    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/kickstarter_dashboard.png",
+    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/kickstarter_dashboard/kickstarter_dashboard.py",
     tags=["Bokeh", "Linked Brushing"],
 )
 
