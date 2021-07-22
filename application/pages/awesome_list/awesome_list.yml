@@ -1,5 +1,11 @@
 ---
 users:
+  - uid: Ali Shahid
+    name: Ali Shahid
+    url: https://ali.insciteanalytics.com/
+    avatar: https://miro.medium.com/fit/c/262/262/2*21zuYNVkWgy2zU0NnM7ZtQ.jpeg
+    resources:
+      medium: https://medium.com/@amshahid
   - uid: Andrew Huang
     name: Andrew Huang
     url: https://twitter.com/iateandrew1
@@ -42,6 +48,10 @@ users:
     avatar: https://dhruvbalwada.github.io/assets/images/bio-photo_balwada.jpg
     resources:
       github: https://github.com/dhruvbalwada
+  - uid: gluonnet
+    name: gluoNNet
+    url: http://gluonnet.com/
+    avatar: http://gluonnet.com/wp-content/uploads/2020/02/gluoNNet_logo_400x100_lightbg_1497b22235d95eec9b5299426438ce27.png
   - uid: Hayley Song
     name: Hayley Song
     url: http://holoviz.org/
@@ -67,6 +77,10 @@ users:
     avatar: https://avatars1.githubusercontent.com/u/1469464
     resources:
       github: https://github.com/intake
+  - uid: jhsmit
+    name: Jochem Smit
+    url: https://github.com/Jhsmit
+    avatar: https://avatars1.githubusercontent.com/u/7881506
   - uid: julioasotodv
     name: Julio Antonio Soto
     url: https://twitter.com/julio_a_soto
@@ -85,6 +99,12 @@ users:
     avatar: https://avatars0.githubusercontent.com/u/1695496
     resources:
       github: https://github.com/jbednar
+  - uid: Kostas Kavvadias
+    name: Kostas Kavvadias
+    url: https://kavvadias.eu/
+    avatar: https://kavvadias.eu/authors/admin/avatar_hudced8bcfe22292ced2a3e4887c9f0f23_222078_270x270_fill_q75_lanczos_center.jpg
+    resources:
+      github: https://github.com/kavvkon
   - uid: Leon van Kouwen
     name: Leon van Kouwen
     url: https://github.com/LeonvanKouwen
@@ -191,6 +211,13 @@ users:
     avatar: https://avatars2.githubusercontent.com/u/25283272
     resources:
       github: https://github.com/slamer59
+  - uid: Scott Condron
+    name: Scott Condron
+    url: https://www.scottcondron.com/
+    avatar: https://avatars.githubusercontent.com/u/8557070
+    resources:
+      github: https://github.com/scottire
+      twitter: https://twitter.com/_scottcondron
   - uid: VDA Lab
     name: VDA Lab
     url: http://vda-lab.github.io/
@@ -693,7 +720,7 @@ applications:
     name: Panel HighCharts
     url: https://github.com/MarcSkovMadsen/panel-highcharts
     author: Marc Skov Madsen
-    thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/panel-highcharts/main/assets/images/panel-highcharts-basic-example.png
+    thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/resources/thumbnails/panel-highcharts.png
     description: "Panel HighCharts is python package providing access to HighCharts"
     tags:
       - Package
@@ -713,4 +740,100 @@ applications:
     resources:
       binder: https://mybinder.org/v2/gh/marcskovmadsen/awesome-panel-extensions/HEAD
       documentation: https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html
-# https://towardsdatascience.com/deploying-panel-holoviz-dashboards-using-heroku-container-registry-5221eb0538ba
+  - uid: deploying-using-heroku
+    name: Deployment using Heroku
+    url: https://towardsdatascience.com/deploying-panel-holoviz-dashboards-using-heroku-container-registry-5221eb0538ba
+    author: Ali Shahid
+    thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/resources/thumbnails/deploying-using-heroku.png
+    description: A guide on creating and deploying Panel Dashboards on Heroku
+    tags:
+      - Guide
+      - Deployment
+  - uid: everything-you-need-to-know
+    name: Everything You Need to Know
+    url: https://medium.datadriveninvestor.com/panel-everything-you-need-to-know-9bca61532e12
+    author: Stephen Kilcommins
+    thumbnail: https://miro.medium.com/max/1400/1*Uc7mVq2gKMsqVgu71IjaDQ.jpeg
+    description: An in depth introduction and review of Panel. Includes code for awesome football app.
+    tags:
+      - Guide
+      - Review
+      - App
+      - Code
+  - uid: panel-sketch
+    name: Panel Sketch
+    url: https://github.com/MarcSkovMadsen/panel-sketch
+    author: Marc Skov Madsen
+    thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/panel-sketch/main/assets/images/panel-sketch-logo.png
+    description: Panel Sketch attempts to make it easy to run Python directly in the Browser using Transcrypt and/ or Pyodide. Inspired by Processing and pyp5js.
+    tags:
+      - Package
+      - Extension
+      - Javascript
+    resources:
+      binder: https://mybinder.org/v2/gh/marcskovmadsen/panel-sketch/HEAD?urlpath=lab/tree/examples
+      gif: https://github.com/MarcSkovMadsen/panel-sketch/raw/main/assets/images/panel-sketch-binder.gif?raw=true
+      github: https://github.com/MarcSkovMadsen/panel-sketch
+  - uid: pyhdx
+    name: PyHDX
+    url: https://github.com/Jhsmit/PyHDX
+    author: jhsmit
+    thumbnail: https://github.com/Jhsmit/PyHDX/raw/master/images/PyHDX_rgb.png
+    description: PyHDX is python project which can be used to derive Gibbs free energy from HDX-MS data
+    tags:
+      - Application
+      - Code
+    resources:
+      discourse: https://discourse.holoviz.org/t/pyhdx-derive-g-for-single-residues-from-hdx-ms-data/1261
+      mp4: https://discourse.holoviz.org/uploads/default/original/2X/7/70353a87f21933a417b9923dbac2002a9c1aac15.mp4
+      documentation: https://www.biorxiv.org/content/10.1101/2020.09.30.320887v1
+  - uid: interactive-pytorch-layers
+    name: Interactive PyTorch Layers
+    url: https://www.scottcondron.com/jupyter/visualisation/ai/deep%20learning/2020/09/25/interact-with-pytorch-layers-with-jupyter-widgets.html
+    author: Scott Condron
+    thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/resources/thumbnails/interactive-pytorch-layers.png
+    description: A blog post showing you how how to build an interactive widget to explore PyTorch's ConvTranspose1d
+    tags:
+      - Guide
+      - Application
+      - Code
+    resources:
+      twitter: https://twitter.com/_ScottCondron/status/1308096826877325312
+  - uid: streaming-data-with-crossbar.io
+    name: Streaming Data w. Crossbar.io
+    url: https://gitlab.com/ea42gh/awesomepanelplayground/-/tree/master/WebSocket/CROSSBAR/sensors
+    author: Scott Condron
+    thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/resources/thumbnails/streaming-data-with-crossbario.png
+    description: An example showcasing streaming data with Panel and Crossbar.io
+    tags:
+      - Guide
+      - Application
+      - Code
+    resources:
+      discourse: https://discourse.holoviz.org/t/panel-dashboard-with-streaming-data-over-the-net/1677
+      github: https://gitlab.com/ea42gh/awesomepanelplayground/-/tree/master/WebSocket/CROSSBAR/sensors
+      youtube: https://youtu.be/Y7g_lMwGiY0
+  - uid: merit-order-app
+    name: Merit Order App
+    url: https://github.com/kavvkon/power-merit-Eur
+    author: Kostas Kavvadias
+    thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/resources/thumbnails/merit-order.png
+    description: An app for determining the merit order of power production in Europe.
+    tags:
+      - Application
+      - Code
+    resources:
+      github: https://github.com/kavvkon/power-merit-Eur
+      discourse: https://discourse.holoviz.org/t/tabbed-dashboard-with-altair-folium-and-custom-template/1999/2
+  - uid: Aviation Tracking
+    name: Aviation Tracking
+    url: http://gluonnet.com/portfolio/aviation-graphs/
+    author: gluonnet
+    thumbnail: http://gluonnet.com/wp-content/uploads/2020/02/item-5_78a640a10d45f3b16fd1be7266f61879.jpg
+    description: Project Sunflower - A first-of-its-kind digital regulation system for the aviation industry
+    tags:
+      - Article
+      - Application
+    resources:
+      documentation: http://gluonnet.com/portfolio/aviation-graphs/
+      youtube: https://youtu.be/tUaAj3u_vvA
