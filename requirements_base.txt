@@ -44,7 +44,7 @@ locust
 # ------------------------------------------------------------------------------
 # flake8==3.7.5  # https://github.com/PyCQA/flake8
 isort # Sort import statements. We need 4.3.15 to correctly sort dataclasses
-pylint # Linter.
+pylint==2.8.3 # Linter.
 pylint2junit # Used to generate junit xml reports in azure pipelines https://pypi.org/project/pylint2junit/
 black # Auto formatter.
 autoflake # Automatically removes unused imports and unused variables. See https://github.com/myint/autoflake
