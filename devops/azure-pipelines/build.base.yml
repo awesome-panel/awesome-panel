@@ -11,7 +11,7 @@ trigger:
     - requirements.txt
 
 pool:
-  vmImage: 'Ubuntu-16.04'
+  vmImage: 'ubuntu-latest'
 variables:
   dockerFile: 'devops/docker/Dockerfile.base'
   dockerRegistry: 'dockerhub-awesome-panel'
