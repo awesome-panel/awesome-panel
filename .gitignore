@@ -113,3 +113,4 @@ cache/*
 
 scripts/fast_tutorial/*
 cache_directory/*
+test_results/*
