@@ -1,7 +1,9 @@
 FROM marcskovmadsen/awesome-panel_base:latest
 
 WORKDIR /app
+RUN ls package/tests
 ADD . ./
+RUN ls package/tests
 
 RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt -f https://download.pytorch.org/whl/torch_stable.html
 RUN pip uninstall -y awesome-panel-extensions && pip install awesome-panel-extensions -U

@@ -1,9 +1,10 @@
 FROM marcskovmadsen/awesome-panel:latest
 
 WORKDIR /app
+RUN ls package/tests
 
 RUN pip install pylint2junit
-
+RUN ls test_results
 RUN mkdir -p test_results; exit 0
 
 RUN pylint --rcfile=.pylintrc --output-format=pylint2junit.JunitReporter app.py docs package tasks application tests 2>&1 > test_results/pylint-results.xml;exit 0
