@@ -51,7 +51,7 @@ users:
   - uid: gluonnet
     name: gluoNNet
     url: http://gluonnet.com/
-    avatar: http://gluonnet.com/wp-content/uploads/2020/02/gluoNNet_logo_400x100_lightbg_1497b22235d95eec9b5299426438ce27.png
+    avatar: https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/resources/avatars/gluonnet.png
   - uid: Hayley Song
     name: Hayley Song
     url: http://holoviz.org/
@@ -829,7 +829,7 @@ applications:
     name: Aviation Tracking
     url: http://gluonnet.com/portfolio/aviation-graphs/
     author: gluonnet
-    thumbnail: http://gluonnet.com/wp-content/uploads/2020/02/item-5_78a640a10d45f3b16fd1be7266f61879.jpg
+    thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/resources/thumbnails/aviation-tracking.jpg
     description: Project Sunflower - A first-of-its-kind digital regulation system for the aviation industry
     tags:
       - Article
