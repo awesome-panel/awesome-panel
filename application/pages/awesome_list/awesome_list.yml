@@ -713,3 +713,4 @@ applications:
     resources:
       binder: https://mybinder.org/v2/gh/marcskovmadsen/awesome-panel-extensions/HEAD
       documentation: https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html
+# https://towardsdatascience.com/deploying-panel-holoviz-dashboards-using-heroku-container-registry-5221eb0538ba
