@@ -1,10 +1,9 @@
 """The Panel Awesome List as a Gallery"""
 import pathlib
 
+from awesome_panel_extensions.site import site
 from awesome_panel_extensions.site.gallery import GalleryTemplate
 from awesome_panel_extensions.site.models import Application
-
-from awesome_panel_extensions.site import site
 
 APPLICATION = site.create_application(
     url="awesome-list",
@@ -24,6 +23,7 @@ APPLICATION = site.create_application(
 AWESOME_FILE = pathlib.Path(__file__).parent / "awesome_list.yml"
 RESOURCES = Application.read(AWESOME_FILE)
 
+
 @site.add(APPLICATION)
 def view():
     "Returns the Gallery Template"
@@ -33,6 +33,7 @@ def view():
         description="Awesome and Inspirational Resources",
         applications=RESOURCES,
     ).servable()
+
 
 if __name__.startswith("bokeh"):
     view().servable()

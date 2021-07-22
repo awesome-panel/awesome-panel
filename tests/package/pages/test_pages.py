@@ -3,7 +3,7 @@ import awesome_panel.express as pnx
 import pytest
 from awesome_panel.express.testing import TestApp
 
-from application.pages import home, resources
+from application.pages import home
 
 pnx.bootstrap.extend()
 
@@ -17,15 +17,5 @@ def test_home():
     )
 
 
-@pytest.mark.panel
-def test_resources():
-    """Test that we can see the resources page"""
-    return TestApp(
-        test_resources,
-        resources.view(),
-    )
-
-
 if __name__.startswith("bokeh"):
     test_home().servable()
-    test_resources().servable()

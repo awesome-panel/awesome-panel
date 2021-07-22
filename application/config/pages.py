@@ -51,18 +51,6 @@ ISSUES = Page(
     author=authors.MARC_SKOV_MADSEN,
     url="issues",
 )
-RESOURCES = Page(
-    name="Resources",
-    source_code_url=GITHUB_PAGE_URL + "resources/resources.py",
-    thumbnail_png_url=THUMBNAILS_ROOT + "resources.png",
-    tags=[
-        tags.CODE,
-        tags.APP_IN_GALLERY,
-    ],
-    component=pages.resources,
-    author=authors.MARC_SKOV_MADSEN,
-    url="resources",
-)
 # ASYNC_TASKS = Page(
 #     name="Async Tasks",
 #     source_code_url=GITHUB_PAGE_URL + "async_tasks/async_tasks.py",
@@ -358,7 +346,6 @@ TEST_SHARE_LINKS = Page(
 
 PAGES = [
     HOME,
-    RESOURCES,
     ABOUT,
     BOOTSTRAP_DASHBOARD,
     CUSTOM_BOKEH_MODEL,
@@ -389,7 +376,6 @@ NON_GALLERY_PAGES = [
     HOME,
     ABOUT,
     ISSUES,
-    RESOURCES,
 ]
 
 GALLERY_PAGES = [page for page in PAGES if page not in NON_GALLERY_PAGES]
