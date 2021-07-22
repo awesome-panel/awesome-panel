@@ -61,16 +61,14 @@ steps:
     failTaskOnFailedTests: true
     testRunTitle: 'Pytest'
   condition: succeededOrFailed()
-
-# - task: PublishTestResults@2
-#   displayName: 'Publish Pylint Results'
-#   inputs:
-#     testResultsFiles: |
-#       test_results/pylint-results.xml
-#     failTaskOnFailedTests: true
-#     testRunTitle: 'Pylint'
-#   condition: succeededOrFailed()
-
+- task: PublishTestResults@2
+  displayName: 'Publish Pylint Results'
+  inputs:
+    testResultsFiles: |
+      test_results/pylint-results.xml
+    failTaskOnFailedTests: true
+    testRunTitle: 'Pylint'
+  condition: succeededOrFailed()
 - task: PublishTestResults@2
   displayName: 'Publish MyPy Results'
   inputs:

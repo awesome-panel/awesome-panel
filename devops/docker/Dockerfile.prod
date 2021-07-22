@@ -1,7 +1,7 @@
 FROM marcskovmadsen/awesome-panel_base:latest
 
 WORKDIR /app
-RUN ls package/tests
+RUN ls package/tests;exit 0;
 ADD . ./
 RUN ls package/tests
 
