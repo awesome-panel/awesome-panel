@@ -43,6 +43,9 @@ steps:
     imageName: '$(imageName):latest'
     defaultContext: False
     context: $(buildContext)
+- script: |
+    sed -i 's/:latest/:$(Build.BuildId)/g' devops/docker/Dockerfile.test
+  displayName: Use Build
 - task: Docker@0
   displayName: 'Run tests'
   inputs:
@@ -57,7 +60,6 @@ steps:
     ls test_results
   displayName: Export test results
   condition: succeededOrFailed()
-
 - task: PublishTestResults@2
   displayName: 'Publish Pytest Results'
   inputs:
