@@ -11,7 +11,6 @@ from awesome_panel_extensions.pane import Code
 import panel as pn
 from awesome_panel.express.testing import TestApp
 from awesome_panel_extensions.pane import Code
-
 from awesome_panel_extensions.site import site
 
 APPLICATION = site.create_application(
@@ -20,9 +19,9 @@ APPLICATION = site.create_application(
     author="Marc Skov Madsen",
     description="Demonstrates the Code pane from the awesome-panel-extensions package",
     description_long=__doc__,
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/test_code.png",
-    resources = {
-        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/awesome_panel_express_tests/test_code.py",
+    thumbnail="test_code.png",
+    resources={
+        "code": "awesome_panel_express_tests/test_code.py",
     },
     tags=["awesome-panel-extensions", "Pane"],
 )

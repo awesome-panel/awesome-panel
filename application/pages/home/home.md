@@ -8,7 +8,7 @@ Checkout the [App Gallery](gallery), [Awesome List](awesome-list) and other reso
 
 <div align="center" style="margin-right:10% margin-left:10%;">
 <a href="fast-grid-template?theme=dark">
-    <video autoplay controls loop muted style="height:400px;width:100%">
+    <video autoplay loop muted style="height:400px;width:100%">
     <source src="https://cdn.jsdelivr.net/gh/MarcSkovMadsen/awesome-panel-assets@2805bc7/awesome-panel/applications/fast_grid_template_app.mp4" type="video/mp4">
 </video></a>
 </div>
@@ -22,7 +22,7 @@ It's a super power for you and your team to master a framework like this if you 
 Panel is great for **Data Science, Engineering, Finance and Science** use cases and supports your process **from exploration to production and back**.
 
 <div align="center" style="margin-right:10%;margin-left:10%; height: 400px" >
-    <a href="classic-dashboard"><video autoplay controls loop muted style="height:420px;width:100%">
+    <a href="classic-dashboard"><video autoplay loop muted style="height:420px;width:100%">
     <source src="https://cdn.jsdelivr.net/gh/MarcSkovMadsen/awesome-panel-assets@2805bc7/awesome-panel/applications/classic-dashboard.mp4" type="video/mp4">
 </video></a>
 </div>
@@ -69,6 +69,24 @@ Or **check out** the first **4 minutes** of this **introduction to Panel**. The 
     <iframe src="https://www.youtube.com/embed/Ohr29FJjBi0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;height:400px;margin-left: auto;margin-right:auto"></iframe>
 </div>
 
+## &#128170; Panel 0.12 is Released
+
+Panel 0.12 comes with a **lots of new and improved features** like
+
+- the [ReactiveHTML](https://panel.holoviz.org/user_guide/Custom_Components.html) component
+- the [Terminal](https://panel.holoviz.org/reference/widgets/Terminal.html?highlight=terminal) widget
+- the [TQDM](https://panel.holoviz.org/reference/indicators/Tqdm.html) widget
+
+Check out the [Panel 0.12 Release Blog](https://blog.holoviz.org/panel_0.12.0.html).
+
+<div align="center" style="margin-right:10%;margin-left:10%;">
+<a href="https://blog.holoviz.org/panel_0.12.0.html" target="_blank">
+    <video autoplay loop muted style="height:400px;width:100%">
+    <source src="https://cdn.jsdelivr.net/gh/MarcSkovMadsen/awesome-panel-assets@master/videos/panel-blog-012-x2.mp4" type="video/mp4">
+</video>
+</a>
+</div>
+
 ## &#128170; Panel 0.11 is Released
 
 Panel 0.11 comes with a **lots of new features** like
@@ -77,7 +95,7 @@ Panel 0.11 comes with a **lots of new features** like
 - powerful widgets like Tabulator, Perspective, TextToSpeech, SpeechToText
 - Loading spinners on all components
 
-Checkout the announcement on [Twitter](https://twitter.com/Panel_org/status/1366821179957383170) and the [Panel 0.11 Release Blog](http://blog.holoviz.org/panel_0.11.0.html).
+Checkout the [Panel 0.11 Release Blog](http://blog.holoviz.org/panel_0.11.0.html).
 
 <div align="center" style="margin-right:10%;margin-left:10%;">
 <a href="https://twitter.com/Panel_org/status/1366821179957383170" target="_blank">
@@ -89,31 +107,13 @@ Checkout the announcement on [Twitter](https://twitter.com/Panel_org/status/1366
 </a>
 </div>
 
-## &#128170; Panel 0.12 is Coming
-
-Panel 0.12 will come with **lots of new features**. Probably
-
-- the [ReactiveHTML](https://github.com/holoviz/panel/pulls?q=is%3Apr+reactivehtml+) component
-- the [Terminal](https://github.com/holoviz/panel/pull/2090) widget
-- the [TQDM](https://github.com/holoviz/panel/pull/2079) widget
-- the [Fast Template Settings and Designer](https://github.com/holoviz/panel/pull/2368)
-- and lots more.
-
-<div align="center" style="margin-right:10%;margin-left:10%;">
-<a href="https://github.com/holoviz/panel/pull/2368" target="_blank">
-    <video autoplay controls loop muted style="height:400px;width:100%">
-    <source src="https://cdn.jsdelivr.net/gh/MarcSkovMadsen/awesome-panel-assets@7a4288b/videos/FastGridTemplateDesigner.mp4" type="video/mp4">
-</video>
-</a>
-</div>
-
 ## &#127744; awesome-panel.org is Constantly Improving
 
 This site is constantly improving.
 
 <div align="center" style="margin-right:10%;margin-left:10%;">
 <a href="tabulator?theme=default">
-   <video autoplay controls loop muted style="height:420px;width:100%">
+   <video autoplay loop muted style="height:420px;width:100%">
     <source src="https://cdn.jsdelivr.net/gh/MarcSkovMadsen/awesome-panel-assets@2805bc7/awesome-panel/applications/tabulator-app.mp4" type="video/mp4">
 </video>
 </a>
@@ -125,7 +125,7 @@ You can follow the developments via [Awesome Panel Change Log](https://discourse
 
 The [awesome-panel-extensions](https://pypi.org/project/awesome-panel-extensions/) package provides general extensions you can use with Panel.
 
-<div align="center" style="margin-right:10%;margin-left:10%;"><a href="https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html" target="_blank"><video autoplay controls loop muted style="height:420px;width:100%">
+<div align="center" style="margin-right:10%;margin-left:10%;"><a href="https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html" target="_blank"><video autoplay loop muted style="height:420px;width:100%">
     <source src="https://cdn.jsdelivr.net/gh/MarcSkovMadsen/awesome-panel-assets@2805bc7/videos/awesome-panel-extensions-docs.mp4" type="video/mp4">
 </video></a>
 </div>
@@ -138,7 +138,7 @@ You can follow the developments via [Awesome Panel Extensions Change Log](https:
 
 The awesome [panel-highcharts](https://github.com/marcskovmadsen/panel-highcharts) package gives you access to one of the worlds leading js viz libraries in your notebook or app.
 
-<div align="center" style="margin-right:10%;margin-left:10%;"><a href="https://github.com/marcskovmadsen/panel-highcharts" target="_blank"><video autoplay controls loop muted style="height:420px;width:100%">
+<div align="center" style="margin-right:10%;margin-left:10%;"><a href="https://github.com/marcskovmadsen/panel-highcharts" target="_blank"><video autoplay loop muted style="height:420px;width:100%">
     <source src="https://cdn.jsdelivr.net/gh/MarcSkovMadsen/panel-highcharts@0add004
 /assets/images/panel-highcharts-binder.mp4" type="video/mp4">
 </video></a>
@@ -150,7 +150,7 @@ The python package is free and open source. But you will need a license for [Hig
 
 The awesome [panel-chemistry](https://github.com/marcskovmadsen/panel-chemistry) package provides extensions you can use for **#cheminformatics**.
 
-<div align="center" style="margin-right:10%;margin-left:10%;"><video autoplay controls loop muted style="height:420px;width:100%">
+<div align="center" style="margin-right:10%;margin-left:10%;"><video autoplay loop muted style="height:420px;width:100%">
     <source src="https://cdn.jsdelivr.net/gh/MarcSkovMadsen/panel-chemistry@0fd7d43/assets/panel-chemistry-teaser.mp4" type="video/mp4">
 </video></a>
 </div>
@@ -161,7 +161,7 @@ Join us in the [panel-chemistry gitter](https://gitter.im/panel-chemistry/commun
 
 If you or your organisation want to create your own extensions for Panel, then check out the [Awesome Panel Extensions Guide](https://awesome-panel.readthedocs.io/en/latest/guides/awesome-panel-extensions-guide/index.html).
 
-<div align="center" style="margin-right:10%;margin-left:10%;"><a href="https://awesome-panel.readthedocs.io/en/latest/guides/awesome-panel-extensions-guide/index.html" target="_blank"><video autoplay controls loop muted style="height:400px;width:100%">
+<div align="center" style="margin-right:10%;margin-left:10%;"><a href="https://awesome-panel.readthedocs.io/en/latest/guides/awesome-panel-extensions-guide/index.html" target="_blank"><video autoplay loop muted style="height:400px;width:100%">
     <source src="https://cdn.jsdelivr.net/gh/MarcSkovMadsen/awesome-panel-assets@7a4288b/videos/awesome-panel-extensions-guide.mp4" type="video/mp4">
 </video></a>
 </div>

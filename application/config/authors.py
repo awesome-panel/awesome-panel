@@ -223,3 +223,12 @@ AUTHORS = [
     VOILA,
     XAVARTLEY,
 ]
+
+# for auth in AUTHORS:
+#     print(f"""\
+# - uid: {auth.name}
+#     name: {auth.name}
+#     url: {auth.url}
+#     avatar: {auth.github_avatar}
+#     resources:
+#       github: {auth.github_url}""")

@@ -17,9 +17,8 @@ import hvplot.pandas  # pylint: disable=unused-import
 import pandas as pd
 import panel as pn
 import param
-from holoviews.plotting.util import process_cmap
-
 from awesome_panel_extensions.site import site
+from holoviews.plotting.util import process_cmap
 
 hv.extension("bokeh")
 
@@ -57,9 +56,9 @@ APPLICATION = site.create_application(
     author="Marc Skov Madsen",
     description="A classic looking Dashboard in Panel",
     description_long=__doc__,
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/dashboard.png",
+    thumbnail="dashboard.png",
     resources={
-        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/dashboard/dashboard.py",
+        "code": "dashboard/dashboard.py",
     },
     tags=["hvPlot", "HoloViews"],
 )

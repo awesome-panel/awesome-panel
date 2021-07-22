@@ -22,10 +22,9 @@ from contextlib import contextmanager
 import numpy as np
 import panel as pn
 import param
+from awesome_panel_extensions.site import site
 from panel.io.server import unlocked
 from tornado.ioloop import IOLoop
-
-from awesome_panel_extensions.site import site
 
 APPLICATION = site.create_application(
     url="async-tasks",
@@ -33,11 +32,11 @@ APPLICATION = site.create_application(
     author="Jochem Smit",
     description="Demonstrates the use of asynchronous, background processes with Panel",
     description_long=__doc__,
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/async_tasks.png",
+    thumbnail="async_tasks.png",
     resources={
-        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/async_tasks/async_tasks.py",
-        "gif": "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/async_tasks.gif",
-        "mp4": "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/async_tasks.mp4",
+        "code": "async_tasks/async_tasks.py",
+        "gif": "async_tasks.gif",
+        "mp4": "async_tasks.mp4",
     },
     tags=[
         "Async",

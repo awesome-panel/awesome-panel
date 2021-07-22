@@ -2,9 +2,8 @@
 import pathlib
 
 import panel as pn
-from panel.pane import Markdown
-
 from awesome_panel_extensions.site import site
+from panel.pane import Markdown
 
 SECTIONS_PATH = pathlib.Path(__file__).parent / "home.md"
 
@@ -25,12 +24,11 @@ APPLICATION = site.create_application(
     author="Marc Skov Madsen",
     description="An introduction to awesome-panel.org and Panel",
     description_long="An introduction to awesome-panel.org and Panel",
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/home.png",
+    thumbnail="home.png",
     resources={
-        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/home/home.py",
-        "gif": "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/home.gif",
-        "mp4": "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/home.mp4",
-
+        "code": "home/home.py",
+        "gif": "home.gif",
+        "mp4": "home.mp4",
     },
 )
 

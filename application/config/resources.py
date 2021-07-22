@@ -9,23 +9,6 @@ from application.config.settings import THUMBNAILS_ROOT
 
 # panel FILE ROOTS
 
-# https://github.com/plotly/dash-sample-apps/tree/master/apps/dash-dino
-# https://mybinder.org/v2/gh/julioasotodv/panel-dashboard-demo/master?urlpath=/proxy/5006/dashboard
-# https://github.com/holoviz/panel/issues/972#issue-552507960
-# https://github.com/julioasotodv/panel-dashboard-demo
-
-# https://github.com/julioasotodv/gradient-descent-demo
-# https://mybinder.org/v2/gh/holoviz/panel/binder?urlpath=
-# https://medium.datadriveninvestor.com/streamlit-vs-dash-vs-voil%C3%A0-vs-panel-battle-of-the-python-dashboarding-giants-177c40b9ea57
-# https://medium.datadriveninvestor.com/panel-everything-you-need-to-know-9bca61532e12
-# https://dmnfarrell.github.io/bioinformatics/abm-mesa-network
-# https://github.com/holoviz-demos/minimal-heroku-demo
-# https://vizartpandey.com/30-best-design-resources-for-your-next-tableau-dashboard/
-# ttps://vizartpandey.com/5-hci-principles-for-an-amazing-data-visualisation/
-# https://towardsdatascience.com/advanced-data-visualization-with-holoviews-e7263ad202e
-# https://protect2.fireeye.com/v1/url?k=7f6b8b93-20f0b2f2-7f6b65dc-86d8a30ca42b-455dc19b6233bbd3&q=1&e=e5b506b5-487c-4db8-8728-0b4d615ccdca&u=https%3A%2F%2Fwww.quansight.com%2Fpost%2Fworking-across-panel-and-ipywidgets-ecosystems
-# http://www.hyamani.eu/2021/01/02/dashboards-for-iot-sensors/#A_full_fledge_Dashboard
-# http://bonegen.nti.tul.cz/BoneGen_server_version
 # https://github.com/dhruvbalwada/glider-panel-demo https://twitter.com/BalwadaDhruv/status/1375303891751870474?s=20
 RESOURCES = [
     Resource(
@@ -437,5 +420,3 @@ RESOURCES = [
         author=authors.STREAMLIT,
     ),
 ]
-
-TAGS = sorted(list({tag for resource in RESOURCES for tag in resource.tags}))

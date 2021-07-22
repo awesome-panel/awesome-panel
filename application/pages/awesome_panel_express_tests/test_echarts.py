@@ -16,9 +16,8 @@ Below we showcase an `ECharts` pane capable of showing Echarts dicts and Pyechar
 
 import panel as pn
 import param
-from panel.pane import ECharts
-
 from awesome_panel_extensions.site import site
+from panel.pane import ECharts
 
 BOUNDS = (0, 100)
 COLOR = "#E1477E"
@@ -29,9 +28,9 @@ APPLICATION = site.create_application(
     author="Marc Skov Madsen",
     description="Demonstrates the look and feel of the Panel Echarts pane.",
     description_long=__doc__,
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/test_echarts.png",
-    resources = {
-        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/awesome_panel_express_tests/test_echarts.py",
+    thumbnail="test_echarts.png",
+    resources={
+        "code": "awesome_panel_express_tests/test_echarts.py",
     },
     tags=["ECharts", "PyECharts"],
 )

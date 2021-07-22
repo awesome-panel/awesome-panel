@@ -3,16 +3,19 @@ from awesome_panel_extensions.site.models import User
 
 # pylint: disable=line-too-long
 JOCHEM_SMIT = User(
+    uid="Jochem Smit",
     name="Jochem Smit",
     url="https://github.com/Jhsmit",
     avatar="https://avatars1.githubusercontent.com/u/7881506?s=400&u=bdf7b6635bf57e7022763ce3b002649fe80ef6a8&v=40",
 )
 MARC_SKOV_MADSEN = User(
+    uid="Marc Skov Madsen",
     name="Marc Skov Madsen",
     url="https://datamodelsanalytics.com",
     avatar="https://avatars0.githubusercontent.com/u/42288570",
 )
 ANDREW_HUANG = User(
+    uid="Andrew Huang",
     name="Andrew Huang",
     url="https://twitter.com/iateandrew1",
     avatar=(
@@ -21,6 +24,7 @@ ANDREW_HUANG = User(
     ),
 )
 STEPHEN_KILCOMMINS = User(
+    uid="Stephen Kilcommins",
     name="Stephen Kilcommins",
     url="https://www.linkedin.com/in/stephen-kilcommins/",
     avatar=("https://miro.medium.com/fit/c/96/96/1*DOAQGAKm-Lzek_1TztoR9Q.jpeg"),

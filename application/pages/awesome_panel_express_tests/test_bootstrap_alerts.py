@@ -6,7 +6,6 @@ The Alerts have now been contributed to Panel. You can find the reference exampl
 """
 import panel as pn
 from awesome_panel.express.testing import TestApp
-
 from awesome_panel_extensions.site import site
 
 APPLICATION = site.create_application(
@@ -15,9 +14,9 @@ APPLICATION = site.create_application(
     author="Marc Skov Madsen",
     description="Demonstrates the look and feel of the Panel Alerts",
     description_long=__doc__,
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/test_bootstrap_alerts.png",
-    resources = {
-        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/awesome_panel_express_tests/test_bootstrap_alerts.py",
+    thumbnail="test_bootstrap_alerts.png",
+    resources={
+        "code": "awesome_panel_express_tests/test_bootstrap_alerts.py",
     },
     tags=["Bootstrap"],
 )

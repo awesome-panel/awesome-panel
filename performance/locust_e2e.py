@@ -12,8 +12,9 @@ def {name}(self):
 
 
 def print_tasks():
-    from application import pages
     from awesome_panel_extensions.site import site
+
+    from application import pages
 
     for app in site.applications:
         print(to_str(app))
@@ -174,9 +175,9 @@ class QuickstartUser(HttpUser):
     def volume_profile_analysis(self):
         self.client.get("/volume-profile-analysis")
 
-    @task(1)
-    def yahoo_query(self):
-        self.client.get("/yahoo-query")
+    # @task(1)
+    # def yahoo_query(self):
+    #     self.client.get("/yahoo-query")
 
     def on_start(self):
         pass

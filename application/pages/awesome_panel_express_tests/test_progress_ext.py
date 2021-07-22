@@ -37,9 +37,8 @@ import time
 
 import panel as pn
 from awesome_panel.express.testing import TestApp
-from awesome_panel_extensions.widgets.progress_ext import ProgressExt
-
 from awesome_panel_extensions.site import site
+from awesome_panel_extensions.widgets.progress_ext import ProgressExt
 
 APPLICATION = site.create_application(
     url="progress-extension",
@@ -47,9 +46,9 @@ APPLICATION = site.create_application(
     author="Marc Skov Madsen",
     description="Demonstrates how to easily add progress reporting using the ProgressExt widget",
     description_long=__doc__,
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/test_progress_ext.png",
-    resources = {
-        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/awesome_panel_express_tests/test_progress_ext.py",
+    thumbnail="test_progress_ext.png",
+    resources={
+        "code": "awesome_panel_express_tests/test_progress_ext.py",
     },
     tags=["Progress"],
 )

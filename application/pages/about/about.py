@@ -2,9 +2,8 @@
 import pathlib
 
 import panel as pn
-from panel.pane import Markdown
-
 from awesome_panel_extensions.site import site
+from panel.pane import Markdown
 
 ABOUT_PATH = pathlib.Path(__file__).parent / "about.md"
 ABOUT = ABOUT_PATH.read_text()
@@ -18,7 +17,7 @@ APPLICATION = site.create_application(
     description="A short page about the why and who of awesome-panel.org",
     description_long=__doc__,
     resources={
-        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/about/about.py",
+        "code": "about/about.py",
     },
     tags=[
         "Code",
@@ -26,6 +25,7 @@ APPLICATION = site.create_application(
     ],
 )
 # pylint: enable=line-too-long
+
 
 @site.add(APPLICATION)
 def view():

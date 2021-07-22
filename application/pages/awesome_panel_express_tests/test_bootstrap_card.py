@@ -9,8 +9,8 @@ The Cards have now been contributed to Panel. Checkout the reference guide
 import hvplot.pandas  # pylint: disable=unused-import
 import pandas as pd
 import panel as pn
-from awesome_panel_extensions.pane import Code
 from awesome_panel.express.testing import TestApp
+from awesome_panel_extensions.pane import Code
 
 pn.widgets.Button.param.sizing_mode.default = "stretch_width"
 
@@ -24,9 +24,9 @@ APPLICATION = site.create_application(
     author="Marc Skov Madsen",
     description="Demonstrates the look and feel of the Panel Cards",
     description_long=__doc__,
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/test_bootstrap_card.png",
+    thumbnail="test_bootstrap_card.png",
     resources={
-        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/awesome_panel_express_tests/test_bootstrap_card.py",
+        "code": "awesome_panel_express_tests/test_bootstrap_card.py",
     },
     tags=[
         "Bootstrap",

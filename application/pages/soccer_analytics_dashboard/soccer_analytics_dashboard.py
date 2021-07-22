@@ -15,9 +15,8 @@ import panel as pn
 import plotly.express as px
 import plotly.graph_objects as go
 import requests
-from PIL import Image, ImageOps
-
 from awesome_panel_extensions.site import site
+from PIL import Image, ImageOps
 
 pn.extension("plotly")
 
@@ -308,11 +307,13 @@ APPLICATION = site.create_application(
     author="Stephen Kilcommins",
     description="A nice sports app with a nice background",
     description_long=__doc__,
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/soccer-analytics-dashboard.png",
-    documentation_url=(
-        "https://medium.datadriveninvestor.com/panel-everything-you-need-to-know-9bca61532e12"
-    ),
-    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/soccer_analytics_dashboard",
+    thumbnail="soccer-analytics-dashboard.png",
+    resources={
+        "code": "soccer_analytics_dashboard",
+        "documentation": (
+            "https://medium.datadriveninvestor.com/panel-everything-you-need-to-know-9bca61532e12"
+        ),
+    },
     tags=["Panel", "Review", "Blog", "Soccer", "Plotly"],
 )
 

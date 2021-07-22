@@ -17,10 +17,9 @@ from itertools import cycle
 import pandas as pd
 import panel as pn
 import param
+from awesome_panel_extensions.site import site
 from pandas_profiling import ProfileReport
 from panel.io.loading import start_loading_spinner, stop_loading_spinner
-
-from awesome_panel_extensions.site import site
 
 # pylint: disable=line-too-long
 DEFAULT_TITLE = "Pandas Profiling Report"
@@ -69,11 +68,12 @@ APPLICATION = site.create_application(
     url="pandas-profiling",
     name="Pandas Profiling",
     author="Marc Skov Madsen",
-    description="""Demonstrates that you can embed HTML reports like the Panel Profiling report in
-    your apps""",
+    description="""Embeds the Pandas Profiling report in a Panel app.""",
     description_long=__doc__,
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/pandas_profiling_app.png",
-    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/pandas_profiling_app/pandas_profiling_app.py",
+    thumbnail="pandas_profiling_app.png",
+    resources={
+        "code": "pandas_profiling_app/pandas_profiling_app.py",
+    },
     tags=["Pandas", "HTML", "embed"],
 )
 

@@ -11,9 +11,8 @@ including some with splines/ plots. I would also like to add some icons to make 
 """
 import numpy as np
 import panel as pn
-from panel.template import FastGridTemplate
-
 from awesome_panel_extensions.site import site
+from panel.template import FastGridTemplate
 
 STYLE = """
 .pn-stats-card div {
@@ -47,9 +46,11 @@ APPLICATION = site.create_application(
     author="Marc Skov Madsen",
     description="A demonstration of a Streaming Dashboard",
     description_long=__doc__,
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/streaming-dashboard.png",
-    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/streaming_dashboard/streaming_dashboard.py",
-    mp4="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/streaming-dashboard.mp4",
+    thumbnail="streaming-dashboard.png",
+    resources={
+        "code": "streaming_dashboard/streaming_dashboard.py",
+        "mp4": "streaming-dashboard.mp4",
+    },
     tags=["Streaming", "Dashboard", "StatsCard"],
 )
 

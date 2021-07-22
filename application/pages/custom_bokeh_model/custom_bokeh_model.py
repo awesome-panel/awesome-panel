@@ -10,11 +10,10 @@ If you want to learn how to create custom Bokeh/ Panel extensions you can
 import pathlib
 
 import panel as pn
+from awesome_panel_extensions.site import site
 from bokeh.core.properties import Instance, String
 from bokeh.layouts import column
 from bokeh.models import HTMLBox, Slider
-
-from awesome_panel_extensions.site import site
 
 CUSTOM_TS = pathlib.Path(__file__).parent / "custom_bokeh_model.ts"
 CUSTOM_TS_STR = str(CUSTOM_TS.resolve())
@@ -24,9 +23,9 @@ APPLICATION = site.create_application(
     author="Marc Skov Madsen",
     description="""An introduction to Bokeh/ Panel extensions""",
     description_long=__doc__,
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/custom_bokeh_model.png",
-    resources = {
-        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/custom_bokeh_model/custom_bokeh_model.py",
+    thumbnail="custom_bokeh_model.png",
+    resources={
+        "code": "custom_bokeh_model/custom_bokeh_model.py",
     },
     tags=[
         "Code",

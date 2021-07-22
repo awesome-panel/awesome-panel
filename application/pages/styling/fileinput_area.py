@@ -25,7 +25,6 @@ If you want a nicer looking `FileInput` in Panel please upvote
 [Discourse 1128](https://discourse.holoviz.org/t/what-should-a-better-fileinput-look-like/1128/3).
 """
 import panel as pn
-
 from awesome_panel_extensions.site import site
 
 APPLICATION = site.create_application(
@@ -34,11 +33,11 @@ APPLICATION = site.create_application(
     author="Marc Skov Madsen",
     description="""Shows how to style the Panel FileInput to give it a modern look and feel""",
     description_long=__doc__,
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/fileinput-area.png",
-
-    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/styling/fileinput-area.py",
-
-    mp4="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/",
+    thumbnail="fileinput-area.png",
+    resources={
+        "mp4": "",
+        "code": "styling/fileinput-area.py",
+    },
     tags=["Styling", "FileInput"],
 )
 

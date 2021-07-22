@@ -31,7 +31,7 @@ CONTINENTS_LOOKUP, CITIES_LIST = _transform(CITIES)
 def view():
     """Returns the app in a nice template for use at awesome-panel.org"""
     pn.config.sizing_mode = "stretch_width"
-    from application.config import site
+    from awesome_panel_extensions.site import site
 
     template = pn.template.FastListTemplate(
         main_max_width="1024px",

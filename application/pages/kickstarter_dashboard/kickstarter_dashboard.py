@@ -55,8 +55,10 @@ APPLICATION = site.create_application(
     author="Marc Skov Madsen",
     description="A dashboard with fast and responsive linked brushing of the plots",
     description_long=__doc__,
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/kickstarter_dashboard.png",
-    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/kickstarter_dashboard/kickstarter_dashboard.py",
+    thumbnail="kickstarter_dashboard.png",
+    resources={
+        "code": "kickstarter_dashboard/kickstarter_dashboard.py",
+    },
     tags=["Bokeh", "Linked Brushing"],
 )
 

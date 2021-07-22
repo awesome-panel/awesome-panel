@@ -49,8 +49,8 @@ Application(
     url="{resource.url}",
     tags=['{"', '".join([tag.name for tag in resource.tags])}'],
     author=authors.{author_name},
-    code_url="",
-    thumbnail_url="",
+    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/",
+    thumbnail="",
 ),"""
         print(text)
 

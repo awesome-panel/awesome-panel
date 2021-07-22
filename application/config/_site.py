@@ -1,12 +1,11 @@
 """Defines the Awesome Panel site"""
 import pathlib
-from typing import List, Optional
 
 import panel as pn
-from awesome_panel_extensions.assets import svg_icons
 
 # pylint: enable=line-too-long
-from awesome_panel_extensions.site import Site
+from awesome_panel_extensions import site as _site
+from awesome_panel_extensions.assets import svg_icons
 from awesome_panel_extensions.site.models import Application
 from panel import template as _template
 
@@ -69,55 +68,32 @@ pn.template.FastListTemplate.param.theme.default = pn.template.fast.list.FastDar
 pn.template.FastGridTemplate.param.theme.default = pn.template.fast.grid.FastDarkTheme
 
 
-class AwesomePanelSite(Site):
+class AwesomePanelSite(_site.Site):
     """The Awesome Panel Site"""
 
     def create_application(  # pylint: disable=too-many-arguments
         self,
-        url: str,
-        name: str,
-        introduction: str,
-        description: str,
-        author: str,
-        thumbnail_url: str,
-        code_url: str = "",
-        documentation_url: str = "",
-        gif_url: str = "",
-        mp4_url: str = "",
-        youtube_url: str = "",
-        tags: Optional[List] = None,
+        **params,
     ) -> Application:
-        app = super().create_application(
-            url=url,
-            name=name,
-            introduction=introduction,
-            description=description,
-            author=author,
-            thumbnail_url=thumbnail_url,
-            code_url=code_url,
-            documentation_url=documentation_url,
-            gif_url=gif_url,
-            mp4_url=mp4_url,
-            youtube_url=youtube_url,
-            tags=tags,
-        )
-        if not app.author:
-            app.author = DEFAULT_AUTHOR
-        if app.thumbnail_url and not app.thumbnail_url.startswith("http"):
-            app.thumbnail_url = THUMBNAILS_ROOT + app.thumbnail_url
-        if app.code_url and not app.code_url.startswith("http"):
-            app.code_url = CODE_ROOT + app.code_url
-            if not "Code" in app.tags:
-                app.tags.append("Code")
-        if app.gif_url and not app.gif_url.startswith("http"):
-            app.gif_url = GIF_ROOT + app.gif_url
-        if app.mp4_url and not app.mp4_url.startswith("http"):
-            app.mp4_url = MP4_ROOT + app.mp4_url
-        if not "Application" in app.tags:
-            app.tags.append("Application")
+        """Returns an Application from specified params.
 
-        app.tags = list(sorted(app.tags))
-        return app
+        If you specify the author and owner uid as a string it will automatically be converted into
+        a User.
+
+        Returns:
+            Application: An application
+        """
+        if "thumbnail" in params:
+            params["thumbnail"] = THUMBNAILS_ROOT + params["thumbnail"]
+        if "resources" in params:
+            resources = params["resources"]
+            if "code" in resources:
+                resources["code"] = CODE_ROOT + resources["code"]
+            if "mp4" in resources:
+                resources["mp4"] = MP4_ROOT + resources["mp4"]
+            if "gif" in resources:
+                resources["gif"] = GIF_ROOT + resources["gif"]
+        return super().create_application(**params)
 
     def register_post_view(self, template: BasicTemplate, application: Application):
         super().register_post_view(template, application)
@@ -128,30 +104,20 @@ class AwesomePanelSite(Site):
         if hasattr(template, "sidebar"):
             menu = pn.pane.HTML(links, sizing_mode="stretch_width")
             template.sidebar.append(menu)
-
-        if isinstance(application.introduction, str):
-            template.meta_description = application.introduction.replace("# ", "").lstrip()
+        if "documentation" in application.resources:
+            template.meta_description = (
+                application.resources["documentation"].replace("# ", "").lstrip()
+            )
         template.meta_keywords = (
             "HoloViz, Panel, Python, Date, Models, Analytics, Visualization, Data Science, Science,"
             " Machine Learning, Apps, Dash, Streamlit, Voila, Bokeh, HoloViews, Matplotlib, Plotly"
         )
         template.meta_author = "Marc Skov Madsen"
-
-    def create_template(
-        self, template: Optional[str] = None, theme: Optional[str] = None, **params
-    ) -> pn.template.base.BasicTemplate:
-        params["favicon"] = params.get("favicon", FAVICON)
-        params["main_max_width"] = params.get("main_max_width", MAIN_MAX_WIDTH)
-        return super().create_template(template=template, theme=theme, **params)
+        template.site = "Awesome Panel"
 
 
-site = AwesomePanelSite(
-    name=SITE,
-    css_path=CSS_PATH,
-    js_path=JS_PATH,
-)
-
-site.users.extend(
+_site.site = AwesomePanelSite()
+_site.site.users.extend(
     [
         _authors.ANDREW_HUANG,
         _authors.JOCHEM_SMIT,
@@ -159,3 +125,4 @@ site.users.extend(
         _authors.STEPHEN_KILCOMMINS,
     ]
 )
+site = _site.site

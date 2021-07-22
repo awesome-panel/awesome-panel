@@ -12,7 +12,6 @@ import hvplot.pandas  # pylint: disable=unused-import
 import pandas as pd
 import panel as pn
 import param
-
 from awesome_panel_extensions.site import site
 
 COLOR = "#E1477E"
@@ -29,9 +28,9 @@ APPLICATION = site.create_application(
     author="Marc Skov Madsen",
     description="Shows how to provide progress information to a user during computation",
     description_long=__doc__,
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/dataexplorer_loading.png",
-    resources = {
-        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/dataexplorer_loading/dataexplorer_loading.py",
+    thumbnail="dataexplorer_loading.png",
+    resources={
+        "code": "dataexplorer_loading/dataexplorer_loading.py",
     },
     tags=[],
 )

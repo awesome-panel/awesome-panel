@@ -10,7 +10,6 @@ Material Widgets. They can be implemented using for example the
 """
 import panel as pn
 from awesome_panel_extensions.frameworks import material
-
 from awesome_panel_extensions.site import site
 
 APPLICATION = site.create_application(
@@ -19,9 +18,9 @@ APPLICATION = site.create_application(
     author="Marc Skov Madsen",
     description="""Demonstrates that use of Material components in your Panel apps""",
     description_long=__doc__,
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/test_material_components.png",
-    resources = {
-        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/awesome_panel_express_tests/test_material.py",
+    thumbnail="test_material_components.png",
+    resources={
+        "code": "awesome_panel_express_tests/test_material.py",
     },
     tags=[],
 )
@@ -81,9 +80,7 @@ def view(configure=True) -> pn.Column:
     circular_progress = material.CircularProgress(name="Progress", value=75, max=100, density=25)
 
     if configure:
-        introsection = pn.Column(
-            APPLICATION.intro_section(), material.Extension()
-        )
+        introsection = pn.Column(APPLICATION.intro_section(), material.Extension())
     else:
         introsection = APPLICATION.intro_section()
 

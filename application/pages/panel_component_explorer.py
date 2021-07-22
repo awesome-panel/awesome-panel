@@ -7,7 +7,6 @@ The Component Explorer currently supports the components that I have styled in t
 """
 import panel as pn
 from awesome_panel_extensions.developer_tools.test_apps import PanelComponentExplorer
-
 from awesome_panel_extensions.site import site
 
 APPLICATION = site.create_application(
@@ -16,9 +15,9 @@ APPLICATION = site.create_application(
     author="Marc Skov Madsen",
     description="An app for discovering and learning about the Panel components",
     description_long=__doc__,
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/panel-component-explorer.png",
-    resources = {
-        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/panel_component_explorer.py",
+    thumbnail="panel-component-explorer.png",
+    resources={
+        "code": "panel_component_explorer.py",
     },
     tags=["Panel", "Components"],
 )

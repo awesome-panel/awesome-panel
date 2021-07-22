@@ -18,7 +18,6 @@ and [model-viewer Github](https://github.com/google/model-viewer/tree/master/pac
 
 import panel as pn
 from awesome_panel_extensions.pane import ModelViewer
-
 from awesome_panel_extensions.site import site
 
 MODELVIEWER_LOGO = '<img src="https://avatars1.githubusercontent.com/u/1342004?v=4&amp;s=40" style="height:50px"></img>'
@@ -33,9 +32,9 @@ APPLICATION = site.create_application(
     author="Marc Skov Madsen",
     description="""Demonstrates the look and feel of the Google ModelViewer in your Panel app""",
     description_long=__doc__,
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/test_model_viewer.png",
-    resources = {
-        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/awesome_panel_express_tests/test_model_viewer.py",
+    thumbnail="test_model_viewer.png",
+    resources={
+        "code": "awesome_panel_express_tests/test_model_viewer.py",
     },
     tags=["model-viewer"],
 )

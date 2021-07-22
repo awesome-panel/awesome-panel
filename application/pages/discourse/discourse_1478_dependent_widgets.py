@@ -6,8 +6,8 @@ how to provide multiple ways to the user to select a value and then update a plo
 import holoviews as hv
 import numpy as np
 import panel as pn
-
 from awesome_panel_extensions.site import site
+
 hv.extension("bokeh")
 
 APPLICATION = site.create_application(
@@ -16,12 +16,11 @@ APPLICATION = site.create_application(
     author="Marc Skov Madsen",
     description="An example of providing multiple widgets to select the same value",
     description_long=__doc__,
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/dependent-widgets.png",
-    resources = {
-        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/discourse/discourse_1478_dependent_widgets.py",
-        "gif": "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/dependent-widgets.gif",
-        "mp4": "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/dependent-widgets.mp4",
-
+    thumbnail="dependent-widgets.png",
+    resources={
+        "code": "discourse/discourse_1478_dependent_widgets.py",
+        "gif": "dependent-widgets.gif",
+        "mp4": "dependent-widgets.mp4",
     },
     tags=[
         "Discourse",

@@ -9,7 +9,6 @@ using-panel-with-javascript-to-make-a-copy-text-to-clipboard-button/949)
 by [ShanzyHolm](https://discourse.holoviz.org/u/ShanzyHolm/summary).
 """
 import panel as pn
-
 from awesome_panel_extensions.site import site
 
 APPLICATION = site.create_application(
@@ -18,8 +17,10 @@ APPLICATION = site.create_application(
     author="Marc Skov Madsen",
     description="Shows how to use a little bit of javascript with Panel",
     description_long=__doc__,
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/js_actions.png",
-    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/js_actions/js_actions.py",
+    thumbnail="js_actions.png",
+    resources={
+        "code": "js_actions/js_actions.py",
+    },
     tags=[
         "JavaScript",
     ],

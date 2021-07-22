@@ -10,7 +10,7 @@ ApplicationMetaData(
     name="{page.name}",
     description="{page.description}",
     url="https://awesome-panel.org",
-    thumbnail_url="{page.thumbnail_png_url}",
+    thumbnail="{page.thumbnail_png_url}",
     source_url="{page.source_code_url}",
     author_name="{page.author.name}",
     author_url="{page.author.url}",

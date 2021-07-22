@@ -8,9 +8,8 @@ Please note that the available voices and languages depend on your browser and o
 experience **use Chrome**.
 """
 import panel as pn
-from panel.widgets import TextToSpeech
-
 from awesome_panel_extensions.site import site
+from panel.widgets import TextToSpeech
 
 APPLICATION = site.create_application(
     url="text-to-speech",
@@ -18,11 +17,12 @@ APPLICATION = site.create_application(
     author="Marc Skov Madsen",
     description="Demonstrates the powerful TextToSpeech widget",
     description_long=__doc__,
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/text-to-speech.png",
-
-    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/text_to_speech/text_to_speech.py",
-    gif="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/text-to-speech.gif",
-    mp4="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/text-to-speech.mp4",
+    thumbnail="text-to-speech.png",
+    resources={
+        "code": "text_to_speech/text_to_speech.py",
+        "gif": "text-to-speech.gif",
+        "mp4": "text-to-speech.mp4",
+    },
     tags=[
         "TextToSpeech",
     ],

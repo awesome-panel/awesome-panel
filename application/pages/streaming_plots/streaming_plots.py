@@ -19,9 +19,8 @@ import numpy as np
 import pandas as pd
 import panel as pn
 import plotly.express as px
-from streamz.dataframe import DataFrame as sDataFrame
-
 from awesome_panel_extensions.site import site
+from streamz.dataframe import DataFrame as sDataFrame
 
 alt.themes.enable("dark")
 
@@ -31,11 +30,12 @@ APPLICATION = site.create_application(
     author="Marc Skov Madsen",
     description="Demonstrates Streaming with Panel",
     description_long=__doc__,
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/streaming-plots.png",
-
-    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/streaming_plots/streaming_plots.py",
-    gif="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/streaming-plots.gif",
-    mp4="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/streaming-plots.mp4",
+    thumbnail="streaming-plots.png",
+    resources={
+        "code": "streaming_plots/streaming_plots.py",
+        "gif": "streaming-plots.gif",
+        "mp4": "streaming-plots.mp4",
+    },
     tags=[
         "Streaming",
         "Streamz",

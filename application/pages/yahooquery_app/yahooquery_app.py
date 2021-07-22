@@ -22,10 +22,9 @@ import pandas as pd
 import panel as pn
 import param
 from awesome_panel_extensions.pane import Code
+from awesome_panel_extensions.site import site
 from awesome_panel_extensions.widgets.progress_ext import ProgressExt
 from yahooquery import Ticker
-
-from awesome_panel_extensions.site import site
 
 PERIOD_END_DATE = datetime.datetime.now().date()
 PERIOD_START_DATE = PERIOD_END_DATE - datetime.timedelta(days=365)
@@ -84,10 +83,11 @@ APPLICATION = site.create_application(
     description="Shows how you can use the Yahoo Query package in your Panel apps",
     description_long=__doc__,
     url="yahoo-query",
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/yahooquery_app.png",
-    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/yahooquery_app/yahooquery_app.py",
-    mp4="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/",
-
+    thumbnail="yahooquery_app.png",
+    resources={
+        "code": "yahooquery_app/yahooquery_app.py",
+        "mp4": "",
+    },
     author="Marc Skov Madsen",
     tags=["Finance", "api"],
 )

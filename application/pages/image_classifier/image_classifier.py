@@ -17,9 +17,8 @@ import numpy as np
 import pandas as pd
 import panel as pn
 import param
-from PIL import Image
-
 from awesome_panel_extensions.site import site
+from PIL import Image
 
 pn.extension("vega")
 
@@ -29,11 +28,11 @@ APPLICATION = site.create_application(
     author="Marc Skov Madsen",
     description="An image classifier app created with Panel",
     description_long=__doc__,
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/image_classifier.png",
-
-    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/image_classifier/image_classifier.py",
-
-    mp4="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/",
+    thumbnail="image_classifier.png",
+    resources={
+        "code": "image_classifier/image_classifier.py",
+        "mp4": "",
+    },
     tags=[
         "Keras",
     ],

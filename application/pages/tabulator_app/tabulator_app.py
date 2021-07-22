@@ -9,9 +9,8 @@ import pathlib
 import pandas as pd
 import panel as pn
 import param
-from panel.widgets import Tabulator
-
 from awesome_panel_extensions.site import site
+from panel.widgets import Tabulator
 
 APPLICATION = site.create_application(
     url="tabulator",
@@ -19,17 +18,17 @@ APPLICATION = site.create_application(
     author="Marc Skov Madsen",
     description="Demonstrates the powerful Tabulator Table",
     description_long=__doc__,
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/tabulator-app.png",
-
-    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/tabulator_app/tabulator_app.py",
-    gif="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/tabulator-app.gif",
-    mp4="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/tabulator-app.mp4",
+    thumbnail="tabulator-app.png",
+    resources={
+        "code": "tabulator_app/tabulator_app.py",
+        "gif": "tabulator-app.gif",
+        "mp4": "tabulator-app.mp4",
+    },
     tags=[
         "Streaming",
         "Tabulator",
     ],
 )
-
 TABULATOR_DATA_PATH = pathlib.Path(__file__).parent / "tabulator_data.csv"
 TABULATOR_THEME = {pn.template.theme.DefaultTheme: "site", pn.template.theme.DarkTheme: "midnight"}
 TABULATOR_FORMATTERS = {

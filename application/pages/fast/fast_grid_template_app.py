@@ -29,11 +29,11 @@ from awesome_panel_extensions.frameworks.fast import (
     FastSwitch,
     FastTextInput,
 )
+from awesome_panel_extensions.site import site
 from awesome_panel_extensions.site.template.template_generator import _TEMPLATE_CSS_ID
 from holoviews import opts
 from panel.template import FastGridTemplate
 
-from awesome_panel_extensions.site import site
 from application.pages.fast.echarts_app import EchartsApp
 
 hv.extension("bokeh")
@@ -45,10 +45,10 @@ APPLICATION = site.create_application(
     author="Marc Skov Madsen",
     description="Demonstrates the FastGridTemplate and Fast Components",
     description_long=__doc__,
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/fast-grid-template.png",
-    resources = {
-        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/fast/fast_grid_template_app.py",
-        "mp4": "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/fast_grid_template_app.mp4",
+    thumbnail="fast-grid-template.png",
+    resources={
+        "code": "fast/fast_grid_template_app.py",
+        "mp4": "fast_grid_template_app.mp4",
     },
     tags=["Fast", "Template"],
 )

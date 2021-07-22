@@ -13,9 +13,9 @@ import time
 import holoviews as hv
 import panel as pn
 import param
+from awesome_panel_extensions.site import site
 from panel.io.loading import start_loading_spinner, stop_loading_spinner
 
-from awesome_panel_extensions.site import site
 from application.pages.loading_spinners import config
 
 COLOR = "#E1477E"
@@ -28,11 +28,12 @@ APPLICATION = site.create_application(
     author="Marc Skov Madsen",
     description="Demonstrates the look and feel of the Loading Spinners",
     description_long=__doc__,
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/loading-spinners.png",
-
-    code="https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/loading_spinners/loading_spinners.py",
-    gif="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/loading-spinners.gif",
-    mp4="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/applications/loading-spinners.mp4",
+    thumbnail="loading-spinners.png",
+    resources={
+        "code": "loading_spinners/loading_spinners.py",
+        "gif": "loading-spinners.gif",
+        "mp4": "loading-spinners.mp4",
+    },
     tags=["UX"],
 )
 

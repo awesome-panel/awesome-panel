@@ -10,9 +10,8 @@ import pathlib
 
 import pandas as pd
 import panel as pn
-from panel.pane import Perspective
-
 from awesome_panel_extensions.site import site
+from panel.pane import Perspective
 
 DARK_BACKGROUND = "rgb(42, 44, 47)"
 DARK_COLOR = "white"
@@ -32,9 +31,9 @@ APPLICATION = site.create_application(
     author="Marc Skov Madsen",
     description="""Demonstrates that you can use the awesome Perspective pane""",
     description_long=__doc__,
-    thumbnail="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/images/thumbnails/test_perspective.png",
-    resources = {
-        "code": "https://github.com/MarcSkovMadsen/awesome-panel/tree/master/application/pages/awesome_panel_express_tests/test_perspective.py",
+    thumbnail="test_perspective.png",
+    resources={
+        "code": "awesome_panel_express_tests/test_perspective.py",
     },
     tags=["Perspective", "Streaming"],
 )
