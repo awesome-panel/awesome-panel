@@ -21,6 +21,9 @@ variables:
   dockerRegistry: 'dockerhub-awesome-panel'
 
 steps:
+- script: |
+    ls package/tests
+  displayName: ls
 - task: Docker@2
   displayName: Login to Docker Hub
   inputs:
@@ -59,14 +62,14 @@ steps:
     testRunTitle: 'Pytest'
   condition: succeededOrFailed()
 
-- task: PublishTestResults@2
-  displayName: 'Publish Pylint Results'
-  inputs:
-    testResultsFiles: |
-      test_results/pylint-results.xml
-    failTaskOnFailedTests: true
-    testRunTitle: 'Pylint'
-  condition: succeededOrFailed()
+# - task: PublishTestResults@2
+#   displayName: 'Publish Pylint Results'
+#   inputs:
+#     testResultsFiles: |
+#       test_results/pylint-results.xml
+#     failTaskOnFailedTests: true
+#     testRunTitle: 'Pylint'
+#   condition: succeededOrFailed()
 
 - task: PublishTestResults@2
   displayName: 'Publish MyPy Results'
