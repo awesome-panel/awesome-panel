@@ -31,6 +31,7 @@ from application.pages.discourse import (
 )
 from application.pages.fast import fast_grid_template_app
 from application.pages.gallery import gallery
+from application.pages.highcharts_network import highcharts_network
 from application.pages.home import home
 from application.pages.image_classifier import image_classifier
 from application.pages.issues import issues

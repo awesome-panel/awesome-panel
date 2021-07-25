@@ -175,6 +175,10 @@ class QuickstartUser(HttpUser):
     def volume_profile_analysis(self):
         self.client.get("/volume-profile-analysis")
 
+    @task(1)
+    def highcharts_network(self):
+        self.client.get("/highcharts-network")
+
     # @task(1)
     # def yahoo_query(self):
     #     self.client.get("/yahoo-query")
