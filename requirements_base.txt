@@ -10,6 +10,7 @@ hvplot==0.7.1
 lxml
 
 awesome-panel-extensions==20210722.3
+panel-highcharts==20210724.2
 
 # Data Engineering and Science
 pandas==1.2.2
