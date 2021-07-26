@@ -21,7 +21,6 @@ Checkout the <fast-anchor href="https://explore.fast.design/components/fast-acco
 import holoviews as hv
 import numpy as np
 import panel as pn
-from awesome_panel_extensions.assets import svg_icons
 from awesome_panel_extensions.frameworks.fast import (
     FastButton,
     FastCheckbox,
@@ -30,7 +29,6 @@ from awesome_panel_extensions.frameworks.fast import (
     FastTextInput,
 )
 from awesome_panel_extensions.site import site
-from awesome_panel_extensions.site.template.template_generator import _TEMPLATE_CSS_ID
 from holoviews import opts
 from panel.template import FastGridTemplate
 
@@ -52,52 +50,6 @@ APPLICATION = site.create_application(
     },
     tags=["Fast", "Template"],
 )
-
-
-def _config_fast_size_mode():
-    pass
-    # pn.widgets.Button.param.sizing_mode.default = "stretch_width"
-    # FastCheckbox.param.sizing_mode.default = pn.config.sizing_mode
-    # FastSwitch.param.sizing_mode.default = pn.config.sizing_mode
-    # FastTextAreaInput.param.sizing_mode.default = pn.config.sizing_mode
-    # FastLiteralInput.param.sizing_mode.default = pn.config.sizing_mode
-    # FastTextInput.param.sizing_mode.default = pn.config.sizing_mode
-
-
-COLLAPSED_ICON = svg_icons.FAST_COLLAPSED_ICON
-EXPANDED_ICON = svg_icons.FAST_EXPANDED_ICON
-
-# pylint: disable=line-too-long
-NAVIGATION_HTML = f"""
-<fast-accordion>
-<fast-accordion-item slot="item" expanded>
-    <fast-menu>
-        <fast-menu-item onClick='window.open("https://awesome-panel.org", "_blank")'>Home</fast-menu-item>
-        <fast-menu-item onClick='window.open("https://awesome-panel.org/gallery", "_blank")'>Gallery</fast-menu-item>
-        <fast-menu-item onClick='window.open("https://awesome-panel.org/resources", "_blank")'>Awesome List</fast-menu-item>
-        <fast-menu-item onClick='window.open("https://awesome-panel.org/about", "_blank")'>About</fast-menu-item>
-    </fast-menu>
-    <div slot="heading">
-        <h4>Main</h4>
-    </div>{ COLLAPSED_ICON }{ EXPANDED_ICON }
-</fast-accordion-item>
-<fast-accordion-item slot="item" expanded>
-    <div slot="heading">
-        <h3>Share on Social</h3>
-    </div>
-    <fast-menu>
-        <fast-menu-item onClick='window.open("https://github.com/marcskovmadsen/awesome-panel", target="_blank")'>Star on Github</fast-menu-item>
-        <fast-menu-item onClick='window.open("https://twitter.com/intent/tweet?url=https%3A%2F%2Fawesome-panel.org&amp;text=Checkout", target="_blank")'>Share on Twitter</fast-menu-item>
-        <fast-menu-item onClick='window.open("http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fawesome-panel.org&amp;title=Checkout", target="_blank")'>Share on LinkedIn</fast-menu-item>
-        <fast-menu-item onClick='window.open("https://reddit.com/submit?url=https%3A%2F%2Fawesome-panel.org&amp;title=Checkout", target="_blank")'>Share on Reddit</fast-menu-item>
-        <fast-menu-item onClick='window.open("https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fawesome-panel.org", target="_blank")'>Share on Facebook</fast-menu-item>
-        <fast-menu-item onClick='window.open("mailto:?subject=https%3A%2F%2Fawesome-panel.org&amp;body=Checkout&nbsp;https%3A%2F%2Fawesome-panel.org", target="_blank")'>Share by mail</fast-menu-item>
-    </fast-menu>
-    { COLLAPSED_ICON }{ EXPANDED_ICON }
-</fast-accordion-item>
-</fast-accordion>
-"""
-# pylint: enable=line-too-long
 
 
 def _create_hvplot():
@@ -122,10 +74,6 @@ def _create_hvplot():
         pn.pane.HoloViews(plot, sizing_mode="stretch_both"),
         sizing_mode="stretch_both",
     )
-
-
-def _create_navigation_menu():
-    return pn.pane.HTML(NAVIGATION_HTML)
 
 
 def _create_fast_button_card():
@@ -205,6 +153,7 @@ def _create_fast_switch_card():
 
 
 def _create_card(component, parameters, widgets):
+    component.sizing_mode="stretch_width"
     parameters = [*parameters, "disabled", "width", "height", "sizing_mode"]
     widgets["name"] = FastTextInput
     widgets["disabled"] = FastCheckbox
@@ -231,8 +180,6 @@ def _create_card(component, parameters, widgets):
 def view():
     """Returns the FastGridTemplate App"""
     pn.config.sizing_mode = "stretch_width"
-    _config_fast_size_mode()
-    _hacky_temporary_clean_up()
 
     app = FastGridTemplate(
         title="FastGridTemplate by awesome-panel.org",
@@ -249,10 +196,6 @@ def view():
     app.main[16:30, 6:9] = _create_fast_literal_input_card()
     app.main[16:30, 9:12] = _create_fast_switch_card()
     return app
-
-
-def _hacky_temporary_clean_up():
-    pn.config.raw_css = [css for css in pn.config.raw_css if not css.startswith(_TEMPLATE_CSS_ID)]
 
 
 if __name__.startswith("bokeh"):
