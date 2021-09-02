@@ -153,7 +153,7 @@ def _create_fast_switch_card():
 
 
 def _create_card(component, parameters, widgets):
-    component.sizing_mode="stretch_width"
+    component.sizing_mode = "stretch_width"
     parameters = [*parameters, "disabled", "width", "height", "sizing_mode"]
     widgets["name"] = FastTextInput
     widgets["disabled"] = FastCheckbox

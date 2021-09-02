@@ -30,6 +30,12 @@ users:
     avatar: https://avatars3.githubusercontent.com/u/8440965
     resources:
       github: https://github.com/bokeh
+  - uid: cerege-cl
+    name: CEREGE
+    url: https://cerege-cl.github.io/
+    avatar: https://avatars.githubusercontent.com/u/72598684
+    resources:
+      github: https://github.com/CEREGE-CL
   - uid: Dash
     name: Dash
     url: https://plot.ly/dash/
@@ -135,6 +141,12 @@ users:
     avatar: https://avatars3.githubusercontent.com/u/39113566
     resources:
       github: https://github.com/foxnic
+  - uid: pygridgen
+    name: pygridgen
+    url: https://github.com/pygridgen
+    avatar: https://avatars.githubusercontent.com/u/36489971
+    resources:
+      github: https://github.com/pygridgen
   - uid: rapids
     name: RAPIDS
     url: https://rapids.ai/
@@ -236,6 +248,12 @@ users:
     avatar: https://avatars1.githubusercontent.com/u/18531147
     resources:
       github: https://github.com/xavArtley
+  - uid: yogesh-dhande
+    name: Yogesh Dhande
+    url: https://yogesh.replnotes.com
+    avatar: https://avatars.githubusercontent.com/u/32183636
+    resources:
+      github: https://github.com/yogesh-dhande
 applications:
   - uid: statseuro2020
     name: Stats Euro 2020
@@ -837,3 +855,40 @@ applications:
     resources:
       documentation: http://gluonnet.com/portfolio/aviation-graphs/
       youtube: https://youtu.be/tUaAj3u_vvA
+  - uid: deployment-on-google-cloud-run
+    name: Deployment on Google Cloud Run
+    url: https://yogesh.replnotes.com/posts/deploy-bokeh-cloud-run
+    author: yogesh-dhande
+    thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/resources/thumbnails/deploy-bokeh-on-google-cloud-run.png
+    description: Google Cloud Run is an interesting, serverless deployment option. Replace bokeh serve with panel serve.
+    tags:
+      - Article
+      - Deployment
+    resources:
+      discourse: https://discourse.bokeh.org/t/deploy-bokeh-apps-on-cloud-run/8269
+      github: https://github.com/yogesh-dhande/bokeh-gcp-deploy-cloud-run-demo
+  - uid: net-cd-editor-app
+    name: NetCDF Editor app
+    url: https://cerege-cl.github.io/netcdf_editor_app/
+    author: cerege-cl
+    thumbnail: https://cerege-cl.github.io/netcdf_editor_app/img/ui.png
+    description: A panel web app that can be used to quickly modify values of a NETCdf file. The app is maintained by PaleoClimate France
+    tags:
+      - Docs
+      - Code
+      - App
+    resources:
+      github: https://github.com/CEREGE-CL/netcdf_editor_app
+      docs: https://cerege-cl.github.io/netcdf_editor_app/
+      app: https://cerege-cl.github.io/netcdf_editor_app/single
+  - uid: hologridgen
+    name: HoloGridGen
+    url: https://github.com/pygridgen/hologridgen
+    author: pygridgen
+    thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/resources/thumbnails/hologridgen.png
+    description: Interactive tool for the generation of orthonormal grids using pygridgen and the HoloViz tool suite.
+    tags:
+      - Code
+      - App
+    resources:
+      github: https://github.com/pygridgen/hologridgen
