@@ -6,6 +6,12 @@ users:
     avatar: https://miro.medium.com/fit/c/262/262/2*21zuYNVkWgy2zU0NnM7ZtQ.jpeg
     resources:
       medium: https://medium.com/@amshahid
+  - uid: grantstevens
+    name: Grant Stevens
+    url: https://grantstevens.dev/
+    avatar: https://grantstevens.dev/images/linkedin_crop.jpg
+    resources:
+      github: https://github.com/grant-m-s
   - uid: Andrew Huang
     name: Andrew Huang
     url: https://twitter.com/iateandrew1
@@ -892,3 +898,14 @@ applications:
       - App
     resources:
       github: https://github.com/pygridgen/hologridgen
+  - uid: astronomical
+    name: AstronomicAL
+    url: https://github.com/grant-m-s/AstronomicAL
+    author: grantstevens
+    thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/resources/thumbnails/astronomical.png
+    description: AstronomicAL a labelling and training dashboard that enables users to create reliable datasets and robust classifiers using active learning.
+    tags:
+      - Code
+    resources:
+      github: https://github.com/grant-m-s/AstronomicAL
+      docs: https://astronomical.readthedocs.io/en/latest/
