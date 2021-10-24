@@ -36,6 +36,10 @@ users:
     avatar: https://avatars3.githubusercontent.com/u/8440965
     resources:
       github: https://github.com/bokeh
+  - uid: cea
+    name: CEA Tech
+    url: https://www.cea-tech.fr/cea-tech
+    avatar: https://www.cea.fr/PublishingImages/cea.jpg
   - uid: cerege-cl
     name: CEREGE
     url: https://cerege-cl.github.io/
@@ -909,3 +913,11 @@ applications:
     resources:
       github: https://github.com/grant-m-s/AstronomicAL
       docs: https://astronomical.readthedocs.io/en/latest/
+  - uid: cea-additive-manufacturing
+    name: CEA additive manufacturing
+    url: https://youtu.be/rVpYf_E4Yp8?t=97
+    author: cea
+    thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/1c65c37898d933cf08c970a3da0dcd397a589cda/awesome-panel/resources/thumbnails/cea-monitoring-data-viewer.png
+    description: Nice video showcasing use of Panel, HoloViews and VTK in Robotics
+    tags:
+      - Video
