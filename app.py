@@ -24,8 +24,10 @@ from application import pages  # pylint: disable=unused-import
 
 if __name__ == "__main__":
     address = os.getenv("BOKEH_ADDRESS", "0.0.0.0")
+    port = int(os.getenv("BOKEH_PORT", 80))
     APP_ROUTES = {app.url: app.view for app in site.applications}
     if platform.system() == "Windows":
-        pn.serve(APP_ROUTES, port=80, dev=False, address=address)
+        pn.serve(APP_ROUTES, port=port, dev=False, address=address)
     else:
-        pn.serve(APP_ROUTES, port=80, dev=False, address=address, num_procs=4)
+        print(address)
+        pn.serve(APP_ROUTES, port=port, dev=False, address=address, num_procs=4)
