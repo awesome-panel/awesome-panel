@@ -208,8 +208,23 @@ conda install --file requirements_local.txt
 
 ### Build and run the Application Locally
 
+#### Set the environment variables if needed
+
+on bash:
 ```bash
-panel serve app.py
+export BOKEH_ADDRESS=localhost
+export BOKEH_PORT=5006 
+```
+
+on powershell:
+```powershell
+$env:BOKEH_ADDRESS = 'localhost'
+$env:BOKEH_PORT = 5006
+```
+
+Running the Application Locally
+```bash
+python app.py
 ```
 
 or in a jupyter notebook
