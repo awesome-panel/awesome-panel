@@ -2,30 +2,22 @@
 
 [<img src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/panel-logo.png?raw=true" align="right" height="75">](https://panel.pyviz.org/)
 
-> A powerful, high-level app and dashboarding solution for **Python**!
+[Panel](https://panel.holoviz.org/) **makes it easy to make your data, models and analytics interactive using the tools you know and love**.
 
-A repository for sharing knowledge on the use of [Panel](https://panel.pyviz.org/) for developing **awesome analytics apps** in Python.
+
+
+This project aims help inspire potential and existing users, to showcase the power, and to push Panel forward.
 
 This project provides
 
-- A curated [list](https://github.com/MarcSkovMadsen/awesome-panel#awesome-resources) of Awesome Panel **resources**. See below.
-- An [**awesome Panel application**](https://awesome-panel.org) with a **gallery** of Awesome Panel Apps.
-    - Feel free to add your awesome app to the gallery via a [Pull request](https://github.com/MarcSkovMadsen/awesome-panel/pulls). It's easy (see below).
-- A **best practices** example and **starter template** of an awesome, multipage app with an automated CI/ CD pipeline, deployed to the cloud and running in a Docker container.
+- An [**Awesome List**](https://awesome-panel.org/awesome-list).
+- A [**Gallery**](https://awesome-panel.org/gallery) of live Panel Apps with code.
 
-Visit the app at [awesome-panel.org](https://awesome-panel.org)!
+**Check out** [awesome-panel.org](https://awesome-panel.org).
 
 [![Awesome Panel Org Animation](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/awesome-panel-full-branded.gif?raw=true)](https://awesome-panel.org)
 
-## The Power of Panel
-
-The only way to truly understand how powerful Panel is to play around with it. But if you need to be convinced first, then here is the **30 minute introduction** to Panel!
-
-Afterwards you can go to the [Panel Getting Started Guide](http://panel.pyviz.org/getting_started/index.html) or visit the [Panel Gallery](http://panel.pyviz.org/gallery/index.html).
-
-[![Introduction to Panel](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/youtube-introduction-to-panel.png?raw=true)](https://www.youtube.com/watch?v=Ohr29FJjBi0 "Introduction to panel")
-
-Panel is completely open source, available under a BSD license freely for both commercial and non-commercial use. Panel is part of the [HoloViz](https://holoviz.org/) ecosystem and works well with all the HoloViz tools..
+Panel is **completely open source and free** for both commercial and non-commercial use. Panel is part of the [HoloViz](https://holoviz.org/) ecosystem and works well with all the HoloViz tools..
 
 [<img src="https://holoviz.org/assets/panel.png" height="75">](https://panel.pyviz.org)
 [<img src="https://holoviz.org/assets/hvplot.png" height="75">](https://hvplot.pyviz.org)
@@ -35,55 +27,32 @@ Panel is completely open source, available under a BSD license freely for both c
 [<img src="https://holoviz.org/assets/param.png" height="75">](https://param.pyviz.org)
 [<img src="https://holoviz.org/assets/colorcet.png" height="75">](https://colorcet.pyviz.org)
 
-Panel is developed and maintained by [Anaconda](https://www.anaconda.com/) developers and community contributors
-
-![Anaconda](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/anaconda-logo.png?raw=true)
-
-# Awesome Panel Resources ![Awesome Badge](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)
-
-A curated list of awesome panel resources. Inspired by [awesome-python](https://github.com/vinta/awesome-python) and [awesome-pandas](https://github.com/tommyod/awesome-pandas).
-
-Check out [awesome-panel.org/awesome-list](https://awesome-panel.org/awesome-list)
-
 ## Contribute
 
 GitHub [Issues](https://github.com/MarcSkovMadsen/awesome-panel/issues) and [Pull requests](https://github.com/MarcSkovMadsen/awesome-panel/pulls) are very welcome!
 
 If you believe Awesome Panel is awesome and would like to join as a Core Developer feel free to reach out via [datamodelsanalytics.com](https://datamodelsanalytics.com)
 
-### How to contribute to the Panel Community
+### How to Contribute an Item to the Awesome List
 
-Please join the community in the [PyViz/PyvViz](https://gitter.im/pyviz/pyviz?source=orgpage) channel on Gitter. There as a [feature request](https://github.com/holoviz/panel/issues/831) for a Discuss site to replace Gitter.
+Open a [Feature Request](https://github.com/MarcSkovMadsen/awesome-panel/issues) on Github describing the item.
 
-### How to contribute to the Panel Package and Web Site
-
-You can contribute to the Panel package on [GitHub/pyviz/panel](https://github.com/holoviz/panel) or sponsor it by contacting [sales@anaconda.com](mailto:sales%40anaconda.com). For more information see the [Official About Panel](https://panel.pyviz.org/about.html) page.
-
-### How to Contribute an URL to the Resources List
-
-- Fork this repo
-- add the URL to the files
-    - `package\awesome_panel\database\resources.py`
-        - This includes adding you as an Author in the `package/awesome_panel/database/authors.py` file.
-        - This might include creating one or more Tags in the `package/awesome_panel/database/tags.py` file.
-    - `README.md`
-- Create a [pull request](https://github.com/marcskovmadsen/awesome-panel/pulls).
-
-The above is the perfect scenario. If this is not possible do the best you can and then reach out. I would really like to include your Awesome Panel URL to the resources list.
+If possible make a PR to the [awesome_list.yml](application/pages/awesome_list/awesome_list.yml) file.
 
 ### How to Contribute an App to the Gallery
 
+Do as much of the below as possible.
+
+- Open a [Feature Request](https://github.com/MarcSkovMadsen/awesome-panel/issues) on Github describing the request. Attach your notebook or code file if you already have it.
 - Fork this repo and follow the [Getting Started Instructions](#getting-started-with-the-awesome-panel-repository) below.
-- Create a new folder and file `src/pages/gallery/<my_awesome_app>/<my_awesome_app.py` for your app.
-    - Your `<my_awesome_app.py>` file should contain a function `def view() -> panel.Column:` that returns your app as a column.
-    - Add additional files to the folder if you need it.
-- Add your app to the `APPS_IN_GALLERY` list in the `package/awesome_panel/database/apps_in_gallery.py` file.
-    - This includes adding you as an Author in the `package/awesome_panel/database/authors.py` file.
-    - This might include creating one or more Tags in the `package/awesome_panel/database/tags.py` file.
-    - This includes creating a Thumbnail of your app and saving it to `assets/images/thumbnails/` folder.
-- Run `panel serve app.py` and manully test your app
-- Run `invoke test.all` and fix all errors. Also fix any warnings if possible.
+- Add your application as a new subfolder to [application/pages](application/pages)
 - Create a [pull request](https://github.com/marcskovmadsen/awesome-panel/pulls).
+- Add any tests you might have to [tests/application](tests/application)
+- Add your app to [links](application\assets\html\links.html) and [links_fast](application\assets\html\links_fast.html) menu files.
+- Run `panel serve app.py` and manully test your app
+- Run `invoke test.all` and fix all errors.
+- Add your app to the [Locust end-2-end Test](performance\locust_e2e.py) and run `locust -f performance/locust_e2e.py` to monitor the performance of your app.
+- Mark your [pull request](https://github.com/marcskovmadsen/awesome-panel/pulls) as "Ready".
 
 The above is the perfect scenario. If this is not possible do the best you can and then reach out. I would really like to include your Awesome Panel App in the Gallery.
 
@@ -97,22 +66,6 @@ You can also appreciate the work that has already been done if you
 
 Thanks
 
-## Governance
-
-This repo is maintained by me :-)
-
-I'm Marc, Skov, Madsen, PhD, CFA®, Lead Data Scientist Developer at [Ørsted](https://orsted.com)
-
-You can learn more about me at [datamodelsanalytics.com](https://datamodelsanalytics.com)
-
-[<img src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/datamodelsanalytics.png?raw=true" style="max-width: 968px">](https://datamodelsanalytics.com)
-
-I try my best to govern and maintain this project in the spirit of the [Zen of Python](https://www.python.org/dev/peps/pep-0020/).
-
-But **i'm not an experienced open source maintainer** so helpfull suggestions are appreciated.
-
-Thanks
-
 ### LICENSE
 
 [Apache 2.0 License](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/LICENSE)
@@ -121,16 +74,8 @@ Thanks
 
 ### Prerequisites
 
-- An Operating System like Windows, OsX or Linux
 - A working [Python](https://www.python.org/) installation.
-    - You need Python >= 3.7.
-    - We recommend using 64bit Python 3.7.8.
-- a Shell
-    - We recommend [Git Bash](https://git-scm.com/downloads) for Windows 8.1
-    - We recommend [wsl](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) for For Windows 10
-- an Editor
-    - We recommend [VS Code](https://code.visualstudio.com/) (Preferred) or [PyCharm](https://www.jetbrains.com/pycharm/).
-- The [Git cli](https://git-scm.com/downloads)
+    - You need Python >= 3.9.
 
 ### Installation
 
@@ -156,21 +101,17 @@ Then you should create a virtual environment named .venv
 python -m venv .venv
 ```
 
-and activate the environment.
-
-On Linux, OsX or in a Windows Git Bash terminal it's
+and activate the environment using one of the below commands.
 
 ```bash
 source .venv/Scripts/activate
 ```
 
-or alternatively
-
 ```bash
 source .venv/bin/activate
 ```
 
-In a Windows terminal it's
+or for windows
 
 ```bash
 .venv/Scripts/activate.bat
@@ -189,7 +130,7 @@ pip install -r requirements_local.txt -f https://download.pytorch.org/whl/torch_
 Create virtual environment named awesome-panel
 
 ```bash
-conda create -n awesome-panel python=3.7.4
+conda create -n awesome-panel python=3.9.9
 ```
 
 and activate environment.
@@ -211,18 +152,21 @@ conda install --file requirements_local.txt
 #### Set the environment variables if needed
 
 on bash:
+
 ```bash
 export BOKEH_ADDRESS=localhost
-export BOKEH_PORT=5006 
+export BOKEH_PORT=5006
 ```
 
 on powershell:
+
 ```powershell
 $env:BOKEH_ADDRESS = 'localhost'
 $env:BOKEH_PORT = 5006
 ```
 
 Running the Application Locally
+
 ```bash
 python app.py
 ```
@@ -347,82 +291,4 @@ The application is
 
 ![Azure Pipelines](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/azure-pricing-tier.png?raw=true)
 
-### Project Layout
-
-The basic layout of a application is as simple as
-
-```bash
-.
-└── app.py
-```
-
-As our application grows we would refactor our app.py file into multiple folders and files.
-
-- *assets* here we keep our css and images assets.
-- *models* - Defines the layout of our data in the form of
-    - Classes: Name, attribute names, types
-    - DataFrame Schemas: column and index names, dtypes
-    - SQLAlchemy Tables: columns names, types
-- *pages* - Defines the different pages of the Panel app
-- *services* - Organizes and shares business logic, models, data and functions with different pages of the Panel App.
-    - Database interactions: Select, Insert, Update, Delete
-    - REST API interactions, get, post, put, delete
-    - Pandas transformations
-
-and end up with a project structure like
-
-```bash
-.
-├── app.py
-└── src
-    └── assets
-    |    └── css
-    |    |   ├── app.css
-    |    |   ├── component1.css
-    |    |   ├── component2.css
-    |    |   ├── page1.css
-    |    |   └── page2.css
-    |    └── images
-    |    |   ├── image1.png
-    |    |   └── image2.png
-    ├── core
-    |   └── services
-    |       ├── service1.py
-    |       └── service2.py
-    └── pages
-    |   ├── page1.py
-    |   └── page2.py
-    └── shared
-        └── models
-        |   ├── model1.py
-        |   └── model2.py
-        └── components
-            ├── component1.py
-            └── component2.py
-```
-
-Further refactoring is guided by by [this](https://itnext.io/choosing-a-highly-scalable-folder-structure-in-angular-d987de65ec7) blog post and the [Angular Style Guide](https://angular.io/guide/styleguide).
-
-We place our tests in a `test` folder in the root folder organized with folders similar to the `app` folder and file names with a `test_` prefix.
-
-```bash
-.
-└── test
-    ├── test_app.py
-    ├── core
-    |   └── services
-    |       ├── test_service1.py
-    |       └── test_service2.py
-    └── pages
-    |   └── pages
-    |       ├── page1
-    |       |   └── test_page1.py
-    |       └── page2
-    └── shared
-        └── models
-        |   ├── test_model1.py
-        |   └── test_model2.py
-        └── components
-            ├── test_component1.py
-            └── test_component2.py
-```
+- We also deploy the [awesome-panel docs](http://awesome-panel.readthedocs.org/) on Read the Docs.
