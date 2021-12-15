@@ -9,7 +9,7 @@
 [Awesome Panel](https://awesome-panel.org) aims to
 
 - inspire and help users of Panel and
-- to push the framework forward.
+- push the framework forward.
 
 This project provides
 
@@ -47,7 +47,7 @@ Do as much of the below as possible.
 Do as much of the below as possible.
 
 - Open a [Feature Request](https://github.com/MarcSkovMadsen/awesome-panel/issues) on Github describing the request. Attach your notebook or code file if you already have it.
-- Fork this repo and follow the [Getting Started Instructions](#getting-started-with-the-awesome-panel-repository) below.
+- [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) this repo and follow the [Getting Started Instructions](#getting-started-with-the-awesome-panel-repository) below.
 - Add your application as a new subfolder to [application/pages](application/pages)
 - Create a [pull request](https://github.com/marcskovmadsen/awesome-panel/pulls).
 - Add any tests you might have to [tests/application](tests/application)
@@ -57,11 +57,11 @@ Do as much of the below as possible.
 - Add your app to the [Locust end-2-end Test](performance\locust_e2e.py) and run `locust -f performance/locust_e2e.py` to monitor the performance of your app.
 - Mark your [pull request](https://github.com/marcskovmadsen/awesome-panel/pulls) as "Ready".
 
-## Share on Social Media
+## 🕊️ Share on Social Media
 
 You can follow me on [Twitter](https://twitter.com/MarcSkovMadsen) and [Linked In](https://www.linkedin.com/in/marcskovmadsen/) and like or repost my posts.
 
-### ☕ How to Sponsor the Awesome Panel Project
+## ☕ Sponsor the Awesome Panel Project
 
 If you would like to **sponsor my time or the infrastructure** the platform is running on, feel free to [reach out](https://datamodelsanalytics.com). I would love to run [https://awesome-panel.org](https://awesome-panel.org) on some decent hardware instead of a low end dev server in Azure.
 
@@ -189,7 +189,7 @@ invoke docker.build --rebuild
 invoke docker.run-server
 ```
 
-### 🐋 Run the Application using the image on Dockerhub
+### 🐋 Run the Application via Docker
 
 If you don't want to clone the repo and build the docker container you can just use `docker run` to run the image from [Dockerhub](https://cloud.docker.com/u/marcskovmadsen/repository/docker/marcskovmadsen/awesome-panel)
 
@@ -203,27 +203,6 @@ To run bash interactively
 
 ```bash
 docker run -it -p 80:80 --entrypoint "/bin/bash" marcskovmadsen/awesome-panel:latest
-```
-
-## Build and Deploy the Awesome Panel Package
-
-PLEASE NOTE THE AWESOME PANEL PACKAGE IS OBSOLETE AND REPLACED BY [awesome-panel-extensions](https://github.com/marcskovmadsen/awesome-panel-extensions).
-
-You can build the package using
-
-```bash
-cd package
-python setup.py sdist bdist_wheel
-```
-
-If you want to publish the package to PyPi you should first
-
-update the version number in the setup.py file. The format is `YYYYmmdd.version`. For example `20191208.1`
-
-Then you run
-
-```bash
-twine upload dist/awesome-panel-YYYYmmdd.version.tar.gz -u <the-pypi-username> -p <the-pypi-password>
 ```
 
 ### Code quality and Tests
@@ -299,3 +278,24 @@ The application is
 ![Azure Pipelines](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/azure-pricing-tier.png?raw=true)
 
 - We also deploy the [awesome-panel docs](http://awesome-panel.readthedocs.org/) on Read the Docs.
+
+## Build and Deploy the Awesome Panel Package
+
+PLEASE NOTE THE AWESOME PANEL PACKAGE IS OBSOLETE AND REPLACED BY [awesome-panel-extensions](https://github.com/marcskovmadsen/awesome-panel-extensions).
+
+You can build the package using
+
+```bash
+cd package
+python setup.py sdist bdist_wheel
+```
+
+If you want to publish the package to PyPi you should first
+
+update the version number in the setup.py file. The format is `YYYYmmdd.version`. For example `20191208.1`
+
+Then you run
+
+```bash
+twine upload dist/awesome-panel-YYYYmmdd.version.tar.gz -u <the-pypi-username> -p <the-pypi-password>
+```

@@ -233,7 +233,8 @@ def config_keras_applications():
     if KERAS_APPLICATIONS:
         return
 
-    from tensorflow.keras.applications import ( # pylint: disable=no-name-in-module
+    # pylint: disable=no-name-in-module
+    from tensorflow.keras.applications import (
         densenet,
         inception_v3,
         mobilenet_v2,
@@ -243,6 +244,7 @@ def config_keras_applications():
         xception,
     )
     from tensorflow.keras.preprocessing.image import img_to_array, load_img
+    # pylint: enable=no-name-in-module
 
     KERAS_APPLICATIONS = [
         KerasApplication(
