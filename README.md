@@ -13,10 +13,9 @@
 
 This project provides
 
-- An [**Awesome List**](https://awesome-panel.org/awesome-list).
-- A [**Gallery**](https://awesome-panel.org/gallery) of live Panel Apps with code.
+- A Panel [**Web Site**](https://awesome-panel.org) with an [**Awesome List**](https://awesome-panel.org/awesome-list) and a [**Gallery**](https://awesome-panel.org/gallery) of live Panel Apps with code.
 - A [**Youtube Channel**](https://www.youtube.com/playlist?list=PLrrcIlm1vLr69f4CsTlrO0wSNBw6VbsJA).
-- Some [Docs](http://awesome-panel.readthedocs.org/) with tips and tricks.
+- Some [**Docs**](http://awesome-panel.readthedocs.org/) with tips and tricks.
 
 **Check out** [awesome-panel.org](https://awesome-panel.org).
 
