@@ -2,7 +2,7 @@
 
 [<img src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/panel-logo.png?raw=true" align="right" height="75">](https://panel.pyviz.org/)
 
-[![Follow on Twitter](https://img.shields.io/twitter/follow/MarcSkovMadsen.svg?style=social)](https://twitter.com/MarcSkovMadsen)
+[![GitHub Repo stars](https://img.shields.io/github/stars/marcskovmadsen/awesome-panel?style=social)](https://github.com/marcskovmadsen/awesome-panel) [![Follow on Twitter](https://img.shields.io/twitter/follow/MarcSkovMadsen.svg?style=social)](https://twitter.com/MarcSkovMadsen) [![YouTube Channel Views](https://img.shields.io/youtube/channel/views/UCWaK0P72WvNUn4uB_oTh_0w?style=social)](https://www.youtube.com/playlist?list=PLrrcIlm1vLr69f4CsTlrO0wSNBw6VbsJA) [![Linked In](https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin&labelColor=blue)](https://www.linkedin.com/in/marcskovmadsen/)
 
 [Panel](https://panel.holoviz.org/) **makes it easy to make your data, models and analytics interactive using the tools you know and love**.
 
