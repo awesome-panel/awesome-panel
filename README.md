@@ -30,6 +30,12 @@ Panel is **completely open source and free** for both commercial and non-commerc
 [<img src="https://holoviz.org/assets/param.png" height="75">](https://param.pyviz.org)
 [<img src="https://holoviz.org/assets/colorcet.png" height="75">](https://colorcet.pyviz.org)
 
+## Youtube Channel
+
+Awesome Panel also runs the [awesome-panel.org youtube channel](https://www.youtube.com/playlist?list=PLrrcIlm1vLr69f4CsTlrO0wSNBw6VbsJA). Check it out
+
+[![Awesome Panel Youtube](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/awesome-panel-youtube.png)](https://www.youtube.com/playlist?list=PLrrcIlm1vLr69f4CsTlrO0wSNBw6VbsJA)
+
 ## 🎁 Contribute
 
 GitHub [Issues](https://github.com/MarcSkovMadsen/awesome-panel/issues) and [Pull requests](https://github.com/MarcSkovMadsen/awesome-panel/pulls) are very welcome!
