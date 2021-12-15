@@ -233,7 +233,7 @@ def config_keras_applications():
     if KERAS_APPLICATIONS:
         return
 
-    from tensorflow.keras.applications import (
+    from tensorflow.keras.applications import ( # pylint: disable=no-name-in-module
         densenet,
         inception_v3,
         mobilenet_v2,

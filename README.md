@@ -6,7 +6,7 @@
 
 [Panel](https://panel.holoviz.org/) **makes it easy to make your data, models and analytics interactive using the tools you know and love**.
 
-Awesome Panel aims to
+[Awesome Panel](https://awesome-panel.org) aims to
 
 - inspire and help users of Panel and
 - to push the framework forward.
@@ -57,9 +57,13 @@ Do as much of the below as possible.
 - Add your app to the [Locust end-2-end Test](performance\locust_e2e.py) and run `locust -f performance/locust_e2e.py` to monitor the performance of your app.
 - Mark your [pull request](https://github.com/marcskovmadsen/awesome-panel/pulls) as "Ready".
 
+## Share on Social Media
+
+You can follow me on [Twitter](https://twitter.com/MarcSkovMadsen) and [Linked In](https://www.linkedin.com/in/marcskovmadsen/) and like or repost my posts.
+
 ### ☕ How to Sponsor the Awesome Panel Project
 
-If you would like to **sponsor my time or the infrastructure** the platform is running on, feel free to reach out. You can find my contact details at [datamodelsanalytics.com](https://datamodelsanalytics.com).
+If you would like to **sponsor my time or the infrastructure** the platform is running on, feel free to [reach out](https://datamodelsanalytics.com). I would love to run [https://awesome-panel.org](https://awesome-panel.org) on some decent hardware instead of a low end dev server in Azure.
 
 You can also appreciate the work that has already been done if you
 
