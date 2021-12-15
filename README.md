@@ -1,12 +1,15 @@
-# Awesome Panel [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/MarcSkovMadsen/awesome-panel)
+# 📈 Awesome Panel [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/MarcSkovMadsen/awesome-panel)
 
 [<img src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/panel-logo.png?raw=true" align="right" height="75">](https://panel.pyviz.org/)
 
+[![Follow on Twitter](https://img.shields.io/twitter/follow/MarcSkovMadsen.svg?style=social)](https://twitter.com/MarcSkovMadsen)
+
 [Panel](https://panel.holoviz.org/) **makes it easy to make your data, models and analytics interactive using the tools you know and love**.
 
+Awesome Panel aims to
 
-
-This project aims help inspire potential and existing users, to showcase the power, and to push Panel forward.
+- inspire and help users of Panel and
+- to push the framework forward.
 
 This project provides
 
@@ -17,7 +20,7 @@ This project provides
 
 [![Awesome Panel Org Animation](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/awesome-panel-full-branded.gif?raw=true)](https://awesome-panel.org)
 
-Panel is **completely open source and free** for both commercial and non-commercial use. Panel is part of the [HoloViz](https://holoviz.org/) ecosystem and works well with all the HoloViz tools..
+Panel is **completely open source and free** for both commercial and non-commercial use. Panel is part of the [HoloViz](https://holoviz.org/) ecosystem.
 
 [<img src="https://holoviz.org/assets/panel.png" height="75">](https://panel.pyviz.org)
 [<img src="https://holoviz.org/assets/hvplot.png" height="75">](https://hvplot.pyviz.org)
@@ -27,19 +30,19 @@ Panel is **completely open source and free** for both commercial and non-commerc
 [<img src="https://holoviz.org/assets/param.png" height="75">](https://param.pyviz.org)
 [<img src="https://holoviz.org/assets/colorcet.png" height="75">](https://colorcet.pyviz.org)
 
-## Contribute
+## 🎁 Contribute
 
 GitHub [Issues](https://github.com/MarcSkovMadsen/awesome-panel/issues) and [Pull requests](https://github.com/MarcSkovMadsen/awesome-panel/pulls) are very welcome!
 
-If you believe Awesome Panel is awesome and would like to join as a Core Developer feel free to reach out via [datamodelsanalytics.com](https://datamodelsanalytics.com)
+### 🔗 Contribute an Item to the Awesome List
 
-### How to Contribute an Item to the Awesome List
+Do as much of the below as possible.
 
-Open a [Feature Request](https://github.com/MarcSkovMadsen/awesome-panel/issues) on Github describing the item.
+- Open a [Feature Request](https://github.com/MarcSkovMadsen/awesome-panel/issues) on Github describing the item.
 
-If possible make a PR to the [awesome_list.yml](application/pages/awesome_list/awesome_list.yml) file.
+- Make a PR to the [awesome_list.yml](application/pages/awesome_list/awesome_list.yml) file.
 
-### How to Contribute an App to the Gallery
+### 🖥️ Contribute an App to the Gallery
 
 Do as much of the below as possible.
 
@@ -54,9 +57,7 @@ Do as much of the below as possible.
 - Add your app to the [Locust end-2-end Test](performance\locust_e2e.py) and run `locust -f performance/locust_e2e.py` to monitor the performance of your app.
 - Mark your [pull request](https://github.com/marcskovmadsen/awesome-panel/pulls) as "Ready".
 
-The above is the perfect scenario. If this is not possible do the best you can and then reach out. I would really like to include your Awesome Panel App in the Gallery.
-
-### How to Sponsor the Awesome Panel Project
+### ☕ How to Sponsor the Awesome Panel Project
 
 If you would like to **sponsor my time or the infrastructure** the platform is running on, feel free to reach out. You can find my contact details at [datamodelsanalytics.com](https://datamodelsanalytics.com).
 
@@ -66,18 +67,18 @@ You can also appreciate the work that has already been done if you
 
 Thanks
 
-### LICENSE
+### ⚖️ LICENSE
 
 [Apache 2.0 License](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/LICENSE)
 
-## Getting Started with the Awesome Panel Repository
+## 🏃 Getting Started with the Awesome Panel Repository
 
-### Prerequisites
+### 🧰 Prerequisites
 
 - A working [Python](https://www.python.org/) installation.
-    - You need Python >= 3.9.
+    - Currently we are using v3.9.9.
 
-### Installation
+### 🏎️ Installation
 
 Clone the repo
 
@@ -147,7 +148,7 @@ Then you should install the local requirements
 conda install --file requirements_local.txt
 ```
 
-### Build and run the Application Locally
+### 🧱 Build and run the Application Locally
 
 #### Set the environment variables if needed
 
@@ -184,7 +185,7 @@ invoke docker.build --rebuild
 invoke docker.run-server
 ```
 
-### Run the Application using the image on Dockerhub
+### 🐋 Run the Application using the image on Dockerhub
 
 If you don't want to clone the repo and build the docker container you can just use `docker run` to run the image from [Dockerhub](https://cloud.docker.com/u/marcskovmadsen/repository/docker/marcskovmadsen/awesome-panel)
 
@@ -201,6 +202,8 @@ docker run -it -p 80:80 --entrypoint "/bin/bash" marcskovmadsen/awesome-panel:la
 ```
 
 ## Build and Deploy the Awesome Panel Package
+
+PLEASE NOTE THE AWESOME PANEL PACKAGE IS OBSOLETE AND REPLACED BY [awesome-panel-extensions](https://github.com/marcskovmadsen/awesome-panel-extensions).
 
 You can build the package using
 
@@ -238,7 +241,7 @@ You can run all tests using
 invoke test.all
 ```
 
-### Workflow
+### 👷 Workflow
 
 We use the power of [Invoke](http://www.pyinvoke.org/) to semi-automate the local workflow. You can see the list of available commands using
 
@@ -269,7 +272,7 @@ Available tasks:
   test.pytest                             Runs pytest to identify failing tests
 ```
 
-### CI/ CD and Hosting
+### 💻 CI/ CD and Hosting
 
 The application is
 
