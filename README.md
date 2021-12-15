@@ -15,10 +15,16 @@ This project provides
 
 - An [**Awesome List**](https://awesome-panel.org/awesome-list).
 - A [**Gallery**](https://awesome-panel.org/gallery) of live Panel Apps with code.
+- A [**Youtube Channel**](ttps://www.youtube.com/playlist?list=PLrrcIlm1vLr69f4CsTlrO0wSNBw6VbsJA).
+- Some [Docs](http://awesome-panel.readthedocs.org/) with tips and tricks.
 
 **Check out** [awesome-panel.org](https://awesome-panel.org).
 
 [![Awesome Panel Org Animation](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/awesome-panel-full-branded.gif?raw=true)](https://awesome-panel.org)
+
+**Check out** the [awesome-panel.org youtube channel](https://www.youtube.com/playlist?list=PLrrcIlm1vLr69f4CsTlrO0wSNBw6VbsJA).
+
+[![Awesome Panel Youtube](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/awesome-panel-youtube.png)](https://www.youtube.com/playlist?list=PLrrcIlm1vLr69f4CsTlrO0wSNBw6VbsJA)
 
 Panel is **completely open source and free** for both commercial and non-commercial use. Panel is part of the [HoloViz](https://holoviz.org/) ecosystem.
 
@@ -29,12 +35,6 @@ Panel is **completely open source and free** for both commercial and non-commerc
 [<img src="https://holoviz.org/assets/datashader.png" height="75">](http://datashader.org)
 [<img src="https://holoviz.org/assets/param.png" height="75">](https://param.pyviz.org)
 [<img src="https://holoviz.org/assets/colorcet.png" height="75">](https://colorcet.pyviz.org)
-
-## Youtube Channel
-
-Awesome Panel also runs the [awesome-panel.org youtube channel](https://www.youtube.com/playlist?list=PLrrcIlm1vLr69f4CsTlrO0wSNBw6VbsJA). Check it out
-
-[![Awesome Panel Youtube](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/awesome-panel-youtube.png)](https://www.youtube.com/playlist?list=PLrrcIlm1vLr69f4CsTlrO0wSNBw6VbsJA)
 
 ## 🎁 Contribute
 
