@@ -1,4 +1,6 @@
 """Exports the different page components to show in the application"""
+from application.config import site
+
 from application.pages import (
     holoviews_linked_brushing,
     ngl_molecule_viewer,
@@ -51,3 +53,5 @@ from application.pages.text_to_speech import text_to_speech
 from application.pages.volume_profile_analysis import volume_profile_analysis
 
 # from application.pages.yahooquery_app import yahooquery_app
+
+APP_ROUTES = {app.url: app.view for app in site.applications}

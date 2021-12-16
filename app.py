@@ -16,16 +16,13 @@ import platform
 
 import panel as pn
 
-# We need to configure the site before we import the pages
-from application.config import site  # isort: split
-
 # We need to import the application module to get the applications added to the site
-from application import pages  # pylint: disable=unused-import
+from application.pages import APP_ROUTES  # pylint: disable=unused-import
 
 if __name__ == "__main__":
     address = os.getenv("BOKEH_ADDRESS", "0.0.0.0")
     port = int(os.getenv("BOKEH_PORT", "80"))
-    APP_ROUTES = {app.url: app.view for app in site.applications}
+    # APP_ROUTES = {app.url: app.view for app in site.applications}
     if platform.system() == "Windows":
         pn.serve(APP_ROUTES, port=port, dev=False, address=address)
     else:
