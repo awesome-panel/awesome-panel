@@ -9,7 +9,7 @@ import pathlib
 from setuptools import find_packages, setup
 
 README_FILE_PATH = pathlib.Path(__file__).parent / "README.md"
-with open(README_FILE_PATH) as f:
+with open(README_FILE_PATH, encoding="utf8") as f:
     README = f.read()
 
 s = setup(  # pylint: disable=invalid-name

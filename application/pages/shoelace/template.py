@@ -4,7 +4,7 @@ import pathlib
 import panel as pn
 import param
 
-TEMPLATE = (pathlib.Path(__file__).parent / "template.html").read_text()
+TEMPLATE = (pathlib.Path(__file__).parent / "template.html").read_text(encoding="utf8")
 
 
 class TemplateWithDialog(pn.template.Template):

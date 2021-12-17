@@ -220,14 +220,25 @@ We use
 - [pylint](https://www.pylint.org/) for static analysis
 - [mypy](https://github.com/python/mypy) for static type checking
 - [pytest](https://github.com/pytest-dev/pytest) for unit to functional tests
+- [locust](https://locust.io/) for end-2-end tests.
 
 to ensure a high quality of our code and application.
 
-You can run all tests using
+You can run most tests using
 
 ```bash
 invoke test.all
 ```
+
+You can run the Locust end-2-end tests via
+
+```bash
+invoke test.e2e
+```
+
+![Locust Gif](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/locust_e2e.gif?raw=true)
+
+Please note you will need to have the Panel server running and point Locust to the correct host and port.
 
 ### 👷 Workflow
 
@@ -248,12 +259,14 @@ Available tasks:
   package.build                           Builds the awesome-panel package)
   sphinx.build                            Build local version of site and open in a browser
   sphinx.copy-from-project-root           We need to copy files like README.md into docs/_copy_of_project_root
+  sphinx.linkcheck                        Build local version of site and open in a browser
   sphinx.livereload                       Start autobild documentation server and open in browser.
   sphinx.test                             Checks for broken internal and external links and
   test.all (test.pre-commit, test.test)   Runs isort, autoflake, black, pylint, mypy and pytest
   test.autoflake                          Runs autoflake to remove unused imports on all .py files recursively
   test.bandit                             Runs Bandit the security linter from PyCQA.
   test.black                              Runs black (autoformatter) on all .py files recursively
+  test.e2e                                Runs the Locust end to end tests
   test.isort                              Runs isort (import sorter) on all .py files recursively
   test.mypy                               Runs mypy (static type checker) on all .py files recursively
   test.pylint                             Runs pylint (linter) on all .py files recursively to identify coding errors

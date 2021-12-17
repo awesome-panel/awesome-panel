@@ -1,14 +1,15 @@
+# pylint: disable=line-too-long, wrong-import-position
 """
-This is an example of a Protein viewer app, using the [NGL Viewer]\
-(https://github.com/nglviewer/ngl).
+This is an example of a Protein viewer app, using the [NGL Viewer](https://github.com/nglviewer/ngl).
 
 You can import it from the `awesome-panel-extensions` package via
 `from awesome_panel_extensions.widgets.ngl_viewer import NGLViewer`.
 
-The NGL Viewer was developed with help from the community. Checkout [Discourse 583]\
-(https://discourse.holoviz.org/t/how-to-use-ngl-webgl-protein-viewer-in-panel/583).
-"""
+The NGL Viewer was developed with help from the community.
 
+Checkout [Discourse 583](https://discourse.holoviz.org/t/how-to-use-ngl-webgl-protein-viewer-in-panel/583).
+"""
+# pylint: enable=line-too-long
 import panel as pn
 import param
 from awesome_panel_extensions.site import site

@@ -9,7 +9,7 @@ SECTIONS_PATH = pathlib.Path(__file__).parent / "home.md"
 
 
 def _read_sections():
-    sections = SECTIONS_PATH.read_text()
+    sections = SECTIONS_PATH.read_text(encoding="utf8")
     sections = sections.split("##")
     sections[0] = Markdown(sections[0])
     for index in range(1, len(sections)):

@@ -6,7 +6,7 @@ from awesome_panel_extensions.site import site
 from panel.pane import Markdown
 
 ABOUT_PATH = pathlib.Path(__file__).parent / "about.md"
-ABOUT = ABOUT_PATH.read_text()
+ABOUT = ABOUT_PATH.read_text(encoding="utf8")
 
 # pylint: disable=line-too-long
 APPLICATION = site.create_application(

@@ -108,7 +108,7 @@ const deck = createDeck({{
         """## Extends Panel with CSS and JS functionality to use PyDeck and Deck.Gl."""
         global _EXTENDED  # pylint: disable=global-statement
         if not _EXTENDED:
-            pn.config.raw_css.append(DECK_GL_PANEL_EXPRESS_CSS.read_text())
+            pn.config.raw_css.append(DECK_GL_PANEL_EXPRESS_CSS.read_text(encoding="utf8"))
             pn.config.js_files["deck"] = DECK_GL_PANEL_EXPRESS_JS
             pn.config.js_files["mapbox"] = MAPBOX_GL_JS
             _EXTENDED = True

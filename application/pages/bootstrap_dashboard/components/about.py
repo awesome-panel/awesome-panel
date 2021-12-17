@@ -11,7 +11,7 @@ import awesome_panel.express as pnx
 import panel as pn
 
 ABOUT_PATH = pathlib.Path(__file__).parent / "about.md"
-ABOUT = ABOUT_PATH.read_text()
+ABOUT = ABOUT_PATH.read_text(encoding="utf8")
 IMAGE_PATH = (
     pathlib.Path(__file__).parent.parent
     / "assets"

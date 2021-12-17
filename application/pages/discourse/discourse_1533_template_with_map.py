@@ -57,12 +57,10 @@ class GoogleMapViewer(param.Parameterized):
 
     @param.depends("country", watch=True)
     def _update_map(self):
-        iframe = """
-        <iframe width="100%" height="100%" src="https://maps.google.com/maps?q={country}&z=6&output=embed"
+        iframe = f"""
+        <iframe width="100%" height="100%" src="https://maps.google.com/maps?q={self.country}&z=6&output=embed"
         frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-        """.format(
-            country=self.country
-        )
+        """
         self.map_panel.object = iframe
 
 

@@ -27,7 +27,7 @@ JS_PATH = ASSETS_PATH / "js"
 CSS_PATH = ASSETS_PATH / "css"
 HTML_PATH = ASSETS_PATH / "html"
 LINKS_PATH = HTML_PATH / "links.html"
-LINKS = LINKS_PATH.read_text()
+LINKS = LINKS_PATH.read_text(encoding="utf8")
 LINKS_FAST_PATH = HTML_PATH / "links_fast.html"
 SITE = "Awesome Panel"
 FAVICON = (
@@ -40,7 +40,7 @@ DEFAULT_AUTHOR = "Marc Skov Madsen"
 COLLAPSED_ICON = svg_icons.FAST_COLLAPSED_ICON
 EXPANDED_ICON = svg_icons.FAST_EXPANDED_ICON
 LINKS_FAST = (
-    LINKS_FAST_PATH.read_text()
+    LINKS_FAST_PATH.read_text(encoding="utf")
     .replace("{ COLLAPSED_ICON }", COLLAPSED_ICON)
     .replace("{ EXPANDED_ICON }", EXPANDED_ICON)
 )

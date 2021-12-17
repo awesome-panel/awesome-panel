@@ -80,6 +80,22 @@ Running isort the Python code import sorter
         echo=True,
     )
 
+@task
+def e2e(
+    command, host="http://localhost:5006", users=3, spawn_rate=1
+):
+    """Runs the Locust end to end tests"""
+    print(
+        """
+Running Locust end to end tests
+===============================
+"""
+    )
+    command.run(
+        f"locust -f performance/locust_e2e.py --host {host} --users {users} --spawn-rate {spawn_rate}",
+        echo=True,
+    )
+
 
 @task
 def pytest(
