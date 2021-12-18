@@ -51,15 +51,17 @@ Do as much of the below as possible.
 
 Do as much of the below as possible.
 
-- Open a [Feature Request](https://github.com/MarcSkovMadsen/awesome-panel/issues) on Github describing the request. Attach your notebook or code file if you already have it.
+- Open a [Feature Request](https://github.com/MarcSkovMadsen/awesome-panel/issues) on Github describing the request.
+  If you already have an application attach the url, notebook, code file, .zip file etc. if possible.
 - [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) this repo and follow the [Getting Started Instructions](#getting-started-with-the-awesome-panel-repository) below.
-- Add your application as a new subfolder to [application/pages](application/pages)
-- Create a [pull request](https://github.com/marcskovmadsen/awesome-panel/pulls).
+- Add your application as a new file or subfolder to [application/pages](application/pages).
+- Add your application as a new route to [`APP_ROUTES`]([application\pages\__init__.py]).
+- Add your application to the menus [links.html](application\assets\html\links.html) and [links_fast.html](application\assets\html\links_fast.html)
 - Add any tests you might have to [tests/application](tests/application)
-- Add your app to [links](application\assets\html\links.html) and [links_fast](application\assets\html\links_fast.html) menu files.
 - Run `panel serve app.py` and manully test your app
 - Run `invoke test.all` and fix all errors.
 - Add your app to the [Locust end-2-end Test](performance\locust_e2e.py) and run `locust -f performance/locust_e2e.py` to monitor the performance of your app.
+- Create a [pull request](https://github.com/marcskovmadsen/awesome-panel/pulls).
 - Mark your [pull request](https://github.com/marcskovmadsen/awesome-panel/pulls) as "Ready".
 
 ## 🕊️ Share on Social Media
