@@ -49,12 +49,13 @@ Do as much of the below as possible.
 
 ### 🖥️ Contribute an App to the Gallery
 
-Do as much of the below as possible.
+Do as much of the below as possible and reach out for help if needed.
 
 - Open a [Feature Request](https://github.com/MarcSkovMadsen/awesome-panel/issues) on Github describing the request.
   If you already have an application attach the url, notebook, code file, .zip file etc. if possible.
 - [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) this repo and follow the [Getting Started Instructions](#getting-started-with-the-awesome-panel-repository) below.
-- Add your application as a new file or subfolder to [application/pages](application/pages).
+- Register your self as a new author in [_authors.py](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/config/_authors.py) and [_site.py](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/config/_site.py).
+- Add your application as a new subfolder to [application/pages](application/pages).
 - Add your application as a new route to [`APP_ROUTES`]([application\pages\__init__.py]).
 - Add your application to the menus [links.html](application\assets\html\links.html) and [links_fast.html](application\assets\html\links_fast.html)
 - Add any tests you might have to [tests/application](tests/application)
