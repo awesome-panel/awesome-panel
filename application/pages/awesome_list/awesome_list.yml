@@ -938,7 +938,7 @@ applications:
     tags:
       - Video
   - uid: deploy-panel-to-google-cloud-run
-    name: Deploy a Panel App to Google Cloud Run
+    name: Deploy to Google Cloud Run
     url: https://sophiamyang.medium.com/deploy-a-python-visualization-panel-app-to-google-cloud-ii-416e487b44eb
     author: sophiamyang
     thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/resources/thumbnails/deploy-panel-to-google-cloud-run.png
@@ -950,7 +950,7 @@ applications:
       github: https://github.com/sophiamyang/panel_cloud_run
       towardsdatascience: https://sophiamyang.medium.com/deploy-a-python-visualization-panel-app-to-google-cloud-ii-416e487b44eb
   - uid: deploy-panel-to-google-app-engine
-    name: Deploy a Panel App to Google Cloud App Engine
+    name: Deploy to Google Cloud App Engine
     url: https://towardsdatascience.com/deploy-a-python-visualization-panel-app-to-google-cloud-cafe558fe787
     author: sophiamyang
     thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/resources/thumbnails/deploy-panel-to-google-app-engine.png
@@ -978,7 +978,7 @@ applications:
     url: https://github.com/MarcSkovMadsen/paithon
     author: Marc Skov Madsen
     thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/resources/thumbnails/paithon.png
-    description: Make your AI models interactive in no time. A python package build on top of Panel.
+    description: Make your AI models interactive in no time. A python package built on top of Panel.
     tags:
       - Framework
       - Code
