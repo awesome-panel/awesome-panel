@@ -92,7 +92,8 @@ Running Locust end to end tests
 """
     )
     command.run(
-        f"locust -f performance/locust_e2e.py --host {host} --users {users} --spawn-rate {spawn_rate}",
+        f"locust -f performance/locust_e2e.py --host {host} --users {users} "
+        f"--spawn-rate {spawn_rate}",
         echo=True,
     )
 
