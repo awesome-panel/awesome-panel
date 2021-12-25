@@ -58,6 +58,12 @@ users:
     avatar: https://avatars0.githubusercontent.com/u/7859189
     resources:
       github: https://github.com/dmnfarrell
+  - uid: davide-sd
+    name: Davide Sandonà
+    url: https://dsandona.space/
+    avatar: https://avatars.githubusercontent.com/u/9921777
+    resources:
+      github: https://github.com/Davide-sd
   - uid: dhruvbalwada
     name: Dhruv Balwada
     url: https://dhruvbalwada.github.io/
@@ -240,6 +246,16 @@ users:
     resources:
       github: https://github.com/scottire
       twitter: https://twitter.com/_scottcondron
+  - uid: sophiamyang
+    name: Sophia Yang
+    url: https://github.com/sophiamyang
+    avatar: https://pbs.twimg.com/profile_images/1367170079352381448/r6ciujuP_400x400.jpg
+    resources:
+      github: https://github.com/sophiamyang
+      twitter: https://twitter.com/sophiamyang
+      linkedin: https://www.linkedin.com/in/sophiamyang/
+      medium: https://sophiamyang.medium.com/
+      discourse: https://discourse.holoviz.org/u/sophiamyang/summary
   - uid: VDA Lab
     name: VDA Lab
     url: http://vda-lab.github.io/
@@ -921,3 +937,70 @@ applications:
     description: Nice video showcasing use of Panel, HoloViews and VTK in Robotics
     tags:
       - Video
+  - uid: deploy-panel-to-google-cloud-run
+    name: Deploy a Panel App to Google Cloud Run
+    url: https://sophiamyang.medium.com/deploy-a-python-visualization-panel-app-to-google-cloud-ii-416e487b44eb
+    author: sophiamyang
+    thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/resources/thumbnails/deploy-panel-to-google-cloud-run.png
+    description: Article describing how to deploy a Panel App to Google Cloud Run
+    tags:
+      - Article
+      - Code
+    resources:
+      github: https://github.com/sophiamyang/panel_cloud_run
+      towardsdatascience: https://sophiamyang.medium.com/deploy-a-python-visualization-panel-app-to-google-cloud-ii-416e487b44eb
+  - uid: deploy-panel-to-google-app-engine
+    name: Deploy a Panel App to Google Cloud App Engine
+    url: https://towardsdatascience.com/deploy-a-python-visualization-panel-app-to-google-cloud-cafe558fe787
+    author: sophiamyang
+    thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/resources/thumbnails/deploy-panel-to-google-app-engine.png
+    description: Article describing how to deploy a Panel App to Google Cloud App Engine
+    tags:
+      - Article
+      - Code
+    resources:
+      github: https://github.com/sophiamyang/panel_gcp
+      towardsdatascience: https://towardsdatascience.com/deploy-a-python-visualization-panel-app-to-google-cloud-cafe558fe787
+  - uid: lumen
+    name: Lumen
+    url: https://github.com/holoviz/lumen
+    author: HoloViz
+    thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/resources/thumbnails/lumen.png
+    description: A framework for visual analytics built on top of Panel. Build data-driven dashboards from a simple yaml specification.
+    tags:
+      - Framework
+      - Code
+    resources:
+      github: https://github.com/holoviz/lumen
+      docs: https://lumen.holoviz.org/index.html
+  - uid: Paithon
+    name: Paithon
+    url: https://github.com/MarcSkovMadsen/paithon
+    author: Marc Skov Madsen
+    thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/resources/thumbnails/paithon.png
+    description: Make your AI models interactive in no time. A python package build on top of Panel.
+    tags:
+      - Framework
+      - Code
+      - Package
+    resources:
+      github: https://github.com/MarcSkovMadsen/paithon
+      pypi: https://pypi.org/project/paithon/
+      binder: https://mybinder.org/v2/gh/marcskovmadsen/paithon/HEAD?urlpath=lab/tree/examples
+  - uid: sympy-plotting-backends
+    name: Sympy Plotting Backends
+    url: https://github.com/Davide-sd/sympy-plot-backends
+    author: davide-sd
+    thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/resources/thumbnails/sympy-plotting-backends.png
+    description: Alternative Plotting Backends for Sympy
+    tags:
+      - Framework
+      - Code
+      - Package
+    resources:
+      github: https://github.com/Davide-sd/sympy-plot-backends
+      pypi: https://pypi.org/project/sympy-plot-backends/
+      binder: https://mybinder.org/v2/gh/Davide-sd/sympy-plot-backends/HEAD
+      docs: https://sympy-plot-backends.readthedocs.io/en/latest/s
+
+
