@@ -70,6 +70,10 @@ users:
     avatar: https://dhruvbalwada.github.io/assets/images/bio-photo_balwada.jpg
     resources:
       github: https://github.com/dhruvbalwada
+  - uid: ec-jrc
+    name: European Commission, Joint Research Centre
+    url: https://github.com/ec-jrc
+    avatar: https://avatars.githubusercontent.com/u/39263635
   - uid: gluonnet
     name: gluoNNet
     url: http://gluonnet.com/
@@ -133,6 +137,14 @@ users:
     avatar: https://avatars3.githubusercontent.com/u/6023630
     resources:
       github: https://github.com/LeonvanKouwen
+  - uid: Lukas Mosser
+    name: lukas-mosser
+    url: https://github.com/LukasMosser
+    avatar: https://avatars.githubusercontent.com/u/4195648
+    resources:
+      github: https://github.com/LukasMosser
+      linkedin: https://www.linkedin.com/in/lukas-mosser
+      twitter: https://twitter.com/porestar
   - uid: Marc Skov Madsen
     name: Marc Skov Madsen
     url: https://datamodelsanalytics.com
@@ -1040,3 +1052,27 @@ applications:
       - Video
     resources:
       github: https://github.com/philippjfr/pydata-2021
+  - uid: thalassa
+    name: Thalassa
+    url: https://github.com/ec-jrc/Thalassa
+    author: ec-jrc
+    description: Thalassa is a library/application for visualizing large scale results of hydrodynamic simulations.
+    thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/resources/thumbnails/thalassa.png
+    tags:
+      - App
+      - Code
+    resources:
+      github: https://github.com/ec-jrc/Thalassa
+  - uid: neural-rock-typing
+    name: Neural Rock Typing
+    url: https://github.com/LukasMosser/neural_rock_typing
+    author: lukas-mosser
+    description: This project aims to investigate the ability of neural networks to classify carbonate rocks
+    thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/resources/thumbnails/neural-rock-viewer.png
+    tags:
+      - App
+      - Code
+    resources:
+      github: https://github.com/LukasMosser/neural_rock_typing
+
+      
