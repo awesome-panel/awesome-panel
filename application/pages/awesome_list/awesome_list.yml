@@ -1002,5 +1002,41 @@ applications:
       pypi: https://pypi.org/project/sympy-plot-backends/
       binder: https://mybinder.org/v2/gh/Davide-sd/sympy-plot-backends/HEAD
       docs: https://sympy-plot-backends.readthedocs.io/en/latest/s
-
-
+  - uid: intake
+    name: Intake
+    url: https://github.com/intake/intake
+    author: Intake
+    description: A general interface for loading data with a GUI built on top of Panel
+    thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/resources/thumbnails/intake.png
+    tags:
+      - App
+      - Code
+      - Inspiration
+    resources:
+      docs: https://intake.readthedocs.io/en/latest/
+  - uid: pydata-2021-shootout
+    name: Dashboarding Shootout
+    url: https://zoom.us/rec/share/ailBm48NBppFXaNHvU2EsnSGf3XhR8Q9mzmhUnwqkwDXS_bRlYMRgnQvudc7UeY_.pAZHOxu7L2Yl6Fr0?startTime=1635430012000
+    author: Marc Skov Madsen
+    description: PyData Global 2021 shootout with Dash, Panel, Streamlit and Voila. Panel intro starting 24:02.
+    thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/resources/thumbnails/pydata2021-shootout.jpeg
+    tags:
+      - App
+      - Code
+      - Inspiration
+      - Video
+    resources:
+      github: https://github.com/marcskovmadsen/awesome-panel-introduction
+  - uid: pydata-2021-interactive
+    name: HvPlot .interactive
+    url: https://zoom.us/rec/share/AAqL5-5tQ43ZSgKkTvXsLLHxP3kjDGj866rkMHGzqKqDSWe4Uhe5C40JGOgP3Dae._5oPguwt16VEtq6f?startTime=1635508803000
+    author: Philipp Rudiger
+    description: PyData Global 2021. Panel and hvPlot .interactive allows you to leverage the DataFrame APIs you already know to build polished web applications.
+    thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/resources/thumbnails/pydata2021-interactive.png
+    tags:
+      - App
+      - Code
+      - Inspiration
+      - Video
+    resources:
+      github: https://github.com/philippjfr/pydata-2021
