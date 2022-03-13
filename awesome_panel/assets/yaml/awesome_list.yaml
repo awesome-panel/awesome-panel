@@ -40,12 +40,6 @@ users:
     name: CEA Tech
     url: https://www.cea-tech.fr/cea-tech
     avatar: https://www.cea.fr/PublishingImages/cea.jpg
-  - uid: cerege-cl
-    name: CEREGE
-    url: https://cerege-cl.github.io/
-    avatar: https://avatars.githubusercontent.com/u/72598684
-    resources:
-      github: https://github.com/CEREGE-CL
   - uid: Dash
     name: Dash
     url: https://plot.ly/dash/
@@ -207,7 +201,7 @@ users:
       github: https://github.com/pierrotsmnrd
   - uid: Philipp Rudiger
     name: Philipp Rudiger
-    url: http://philippjfr.com/
+    url: https://github.com/philippjfr
     avatar: https://avatars0.githubusercontent.com/u/1550771
     resources:
       github: https://github.com/philippjfr
@@ -414,7 +408,7 @@ applications:
       - Code
   - uid: Interactive Dashboards Tutorial
     name: Interactive Dashboards Tutorial
-    url: https://dev.to/nicfoxds/how-to-create-an-interacdtive-dashboard-in-python-using-holoviz-panel-5bhp
+    url: https://dev.to/nicfoxds/how-to-create-an-interactive-dashboard-in-python-using-holoviz-panel-5bhp
     thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/resources/thumbnails/nic-fox-tutorial.png
     description: This is a short tutorial-by-example that walks you through a very basic dashboard, created in a Jupyter Notebook
     author: Nic Fox
@@ -479,8 +473,6 @@ applications:
       - Static
     resources:
       github: https://github.com/justinbois/bootcamp
-      gif: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/resources/videos/distribution-explorer.gif?raw=true
-      mp4: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/resources/videos/distribution-explorer.mp4?raw=true
   - uid: VTK Examples by xavArtley
     name: VTK Examples by xavArtley
     url: https://xavartley.github.io/#panel/vtk_examples/vtkVolumeViewer.html
@@ -905,20 +897,6 @@ applications:
     resources:
       discourse: https://discourse.bokeh.org/t/deploy-bokeh-apps-on-cloud-run/8269
       github: https://github.com/yogesh-dhande/bokeh-gcp-deploy-cloud-run-demo
-  - uid: net-cd-editor-app
-    name: NetCDF Editor app
-    url: https://cerege-cl.github.io/netcdf_editor_app/
-    author: cerege-cl
-    thumbnail: https://cerege-cl.github.io/netcdf_editor_app/img/ui.png
-    description: A panel web app that can be used to quickly modify values of a NETCdf file. The app is maintained by PaleoClimate France
-    tags:
-      - Docs
-      - Code
-      - App
-    resources:
-      github: https://github.com/CEREGE-CL/netcdf_editor_app
-      docs: https://cerege-cl.github.io/netcdf_editor_app/
-      app: https://cerege-cl.github.io/netcdf_editor_app/single
   - uid: hologridgen
     name: HoloGridGen
     url: https://github.com/pygridgen/hologridgen
@@ -1013,7 +991,7 @@ applications:
       github: https://github.com/Davide-sd/sympy-plot-backends
       pypi: https://pypi.org/project/sympy-plot-backends/
       binder: https://mybinder.org/v2/gh/Davide-sd/sympy-plot-backends/HEAD
-      docs: https://sympy-plot-backends.readthedocs.io/en/latest/s
+      docs: https://sympy-plot-backends.readthedocs.io/en/latest/index.html
   - uid: intake
     name: Intake
     url: https://github.com/intake/intake

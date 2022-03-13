@@ -1,3 +1,4 @@
+"""A Module of paths to YAML files"""
 import pathlib
 
 PATH = pathlib.Path(__file__).parent

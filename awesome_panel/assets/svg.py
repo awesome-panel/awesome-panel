@@ -66,7 +66,8 @@
 # 	</g>
 # </switch>
 # </svg>"""
-def fast_collapsed_icon(stroke="#E62F63"):
+def fast_collapsed_icon(stroke="#E62F63")->str:
+    """Returns a fast collapsed svg icon with the specific stroke."""
     return f"""
     <svg style="stroke: {stroke}" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" slot="collapsed-icon">
                 <path d="M15.2222 1H2.77778C1.79594 1 1 1.79594 1 2.77778V15.2222C1 16.2041 1.79594 17 2.77778 17H15.2222C16.2041 17 17 16.2041 17 15.2222V2.77778C17 1.79594 16.2041 1 15.2222 1Z" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -76,7 +77,8 @@ def fast_collapsed_icon(stroke="#E62F63"):
     """
 
 
-def fast_expanded_icon(stroke="#E62F63"):
+def fast_expanded_icon(stroke="#E62F63")->str:
+    """Returns a fast expanded svg icon with the specific stroke."""
     return f"""
     <svg style="stroke: {stroke}" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" slot="expanded-icon">
         <path d="M15.2222 1H2.77778C1.79594 1 1 1.79594 1 2.77778V15.2222C1 16.2041 1.79594 17 2.77778 17H15.2222C16.2041 17 17 16.2041 17 15.2222V2.77778C17 1.79594 16.2041 1 15.2222 1Z" stroke-linecap="round" stroke-linejoin="round"></path>

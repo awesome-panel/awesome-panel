@@ -1,3 +1,4 @@
+"""Module of paths to and text from Markdown files"""
 import pathlib
 
 ABOUT_PATH = pathlib.Path(__file__).parent / "about.md"

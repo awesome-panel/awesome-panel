@@ -13,9 +13,9 @@ Checkout the [App Gallery](gallery), [Awesome List](awesome-list) and other reso
 </video></a>
 </div>
 
-## &#128013; Create Powerful Analytics Tools and Apps in Python
+## &#128013; Create Powerful Data Apps in Python
 
-With [Panel](https://panel.holoviz.org) you can create powerful analytics tools and apps in Python **using the tools you know and love &#10084;&#65039;**.
+With [Panel](https://panel.holoviz.org) you can create powerful data apps in Python **using the tools you know and love &#10084;&#65039;**.
 
 It's a super power for you and your team to master a framework like this if you work with **data, models and analytics**.
 
@@ -27,7 +27,7 @@ Panel is great for **Data Science, Engineering, Finance and Science** use cases 
 </video></a>
 </div>
 
-## &#128187; Panel works in your Notebook, Editor, IDE and Server
+## &#128187; Panel Works in Your Notebook, Editor, IDE and Server
 
 You can develop and use your apps in a **Jupyter Notebook, Jupyter Labs or Google Colab**. Panel integrates well with **ipywidgets**.
 

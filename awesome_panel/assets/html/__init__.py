@@ -1,3 +1,4 @@
+"""Module containing paths to and text of html files"""
 import pathlib
 from functools import lru_cache
 
@@ -12,6 +13,7 @@ _MENU_FAST_OTHER_HTML = MENU_FAST_OTHER_PATH.read_text(encoding="utf-8")
 
 @lru_cache()
 def menu_fast_html(app_html: str, accent: str = "#1f77b4") -> str:
+    """Combines the specific app_html to other html into a fast html menu"""
     return (
         ('<fast-accordion id="menu">' + app_html + _MENU_FAST_OTHER_HTML + "</fast-accordion>")
         .replace("{ COLLAPSED_ICON }", fast_collapsed_icon(stroke=accent))
