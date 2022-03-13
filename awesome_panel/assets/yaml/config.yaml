@@ -197,7 +197,7 @@ applications:
       [discussion on Discourse](https://discourse.holoviz.org/t/error-not-supported-between-instances-of-select-and-select/929).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/dashboard.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/classic_dashboard.py
     servable: 
     tags:       
       - hvPlot
@@ -236,7 +236,7 @@ applications:
       computation</strong>.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/dataexplorer_loading.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/data_explorer_loading.py
     servable: 
     tags: 
     thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/dataexplorer_loading.png"
@@ -513,8 +513,6 @@ applications:
     project: 
     resources:       
       code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/home.py
-      gif: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/home.gif
-      mp4: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/home.mp4
     servable: 
     tags: 
     thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/home.png"
@@ -570,8 +568,7 @@ applications:
     description: A dashboard with fast and responsive linked brushing of the plots
     description_long: |-
       The purpose of the Kickstarter Dashboard was to test if the claims regarding Bokeh as of Jan 2018 in the
-      [bokeh-dash-best-dashboard-framework](https://www.sicara.ai/blog/2018-01-30-bokeh-dash-best-dashboard-framework-python)
-      article holds for Panel and the HoloViews suite of tools as of Dec 2019.
+      *bokeh-dash-best-dashboard-framework* article holds for Panel and the HoloViews suite of tools as of Dec 2019.
       
       The claims where
       
@@ -646,7 +643,6 @@ applications:
       You can find more information at
       [modelviewer.dev](https://modelviewer.dev/),
       [examples](https://modelviewer.dev/examples/tester.html),
-      [codelabs](https://codelabs.developers.google.com/codelabs/model-viewer/index.html?index=..%2F..index#0),
       and [model-viewer Github](https://github.com/google/model-viewer/tree/master/packages/model-viewer)
     project: 
     resources:       
@@ -778,7 +774,7 @@ applications:
     description: Demonstrates how to easily add progress reporting using the ProgressExt widget
     description_long: |-
       The ProgressExt widget enables easier progress reporting then the built in
-      [`pn.widgets.Progress`](https://panel.pyviz.org/reference/widgets/Progress.html#gallery-progress)
+      [`pn.widgets.Progress`](https://panel.holoviz.org/reference/indicators/Progress.html#indicators-gallery-progress)
       widget. It's available via the
       [`awesome-panel-extensions`](https://pypi.org/project/awesome-panel-extensions/) package.
       
@@ -863,8 +859,6 @@ applications:
     project: 
     resources:       
       code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/shoelace.py
-      gif: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/dialog_template/assets/dialog_template.gif
-      mp4: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/dialog_template/assets/dialog_template.mp4
     servable: 
     tags:       
       - Shoelace
