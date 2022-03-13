@@ -80,5 +80,5 @@ def _get_table_data() -> pd.DataFrame:
 
 app = config.extension(url="bootstrap_dashboard", main_max_width="1200px")
 
-pn.Column("## Dashboard", _holoviews_chart()).servable()
-pn.Column("## Section Title", _get_table_data()).servable()
+pn.Column(pn.pane.Markdown("## Dashboard"), _holoviews_chart()).servable()
+pn.Column(pn.pane.Markdown("## Section Title"), _get_table_data()).servable()

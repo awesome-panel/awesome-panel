@@ -1,30 +1,50 @@
-# &#128161; Find Your Inspiration at awesome-panel.org
+# &#128013; Create Powerful Data Apps in Python with Panel
 
-The purpose of the Awesome Panel Project is to share knowledge on how Awesome [Panel](https://panel.holoviz.org) is and can become.
+It's a **super power** for you and your team to master a data app framework!
+
+With [Panel](https://panel.holoviz.org) you can easily create powerful data apps in Python **using the tools you know and love &#10084;&#65039;**.
+
+Panel is great for **Data Science, Business Intelligence, Analytics, Engineering, Finance and Science** use cases.
+
+Panel supports your process **from exploration to production**.
+
+<div align="center" style="margin-right:10%;margin-left:10%; height: 400px" >
+    <a href="classic_dashboard"><video autoplay loop muted style="height:420px;width:100%">
+    <source src="https://cdn.jsdelivr.net/gh/MarcSkovMadsen/awesome-panel-assets@2805bc7/awesome-panel/applications/classic-dashboard.mp4" type="video/mp4">
+</video></a>
+</div>
+
+## &#128161; Find Your Inspiration at awesome-panel.org
+
+The purpose of the Awesome Panel Project is to share knowledge on [Panel](https://panel.holoviz.org).
 
 Naturally this site is **MADE WITH PANEL**.
 
-Checkout the [App Gallery](gallery), [Awesome List](awesome-list) and other resources in the sidebar.
+Checkout the [App Gallery](gallery), [Awesome List](awesome-list) and live data apps in the sidebar.
 
 <div align="center" style="margin-right:10% margin-left:10%;">
-<a href="fast-grid-template?theme=dark">
+<a href="fast_grid_template?theme=dark">
     <video autoplay loop muted style="height:400px;width:100%">
     <source src="https://cdn.jsdelivr.net/gh/MarcSkovMadsen/awesome-panel-assets@2805bc7/awesome-panel/applications/fast_grid_template_app.mp4" type="video/mp4">
 </video></a>
 </div>
 
-## &#128013; Create Powerful Data Apps in Python
+## &#128106; Panel is for You
 
-With [Panel](https://panel.holoviz.org) you can create powerful data apps in Python **using the tools you know and love &#10084;&#65039;**.
+The only way to truly understand if Panel is something for you is to play around with it. To get started you can use the [Panel Getting Started Guide](http://panel.pyviz.org/getting_started/index.html) or visit the [Panel Reference Gallery](https://panel.pyviz.org/reference/index.html). You also find inspiration in the [Panel Example Gallery](http://panel.pyviz.org/gallery/index.html) or join the community on [Discourse](https://discourse.holoviz.org/).
 
-It's a super power for you and your team to master a framework like this if you work with **data, models and analytics**.
+You can also **check out** my video
 
-Panel is great for **Data Science, Engineering, Finance and Science** use cases and supports your process **from exploration to production and back**.
+<div align="center" style="margin-right:10%;margin-left:10%;">
+    <iframe src="https://www.youtube.com/embed/0DBEXiMdSKc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;height:400px;margin-left: auto;margin-right:auto"></iframe>
+</div>
 
-<div align="center" style="margin-right:10%;margin-left:10%; height: 400px" >
-    <a href="classic-dashboard"><video autoplay loop muted style="height:420px;width:100%">
-    <source src="https://cdn.jsdelivr.net/gh/MarcSkovMadsen/awesome-panel-assets@2805bc7/awesome-panel/applications/classic-dashboard.mp4" type="video/mp4">
-</video></a>
+## &#128394;&#65039; Panel is for me
+
+Check out why I prefer to use Panel for my data apps in my [blog post](https://medium.com/@marcskovmadsen/i-prefer-to-use-panel-for-my-data-apps-here-is-why-1ff5d2b98e8f).
+
+<div align="center" style="margin-right:10%;margin-left:10%;">
+    <a class="reference external" href="https://medium.com/@marcskovmadsen/i-prefer-to-use-panel-for-my-data-apps-here-is-why-1ff5d2b98e8f" target="_blank"><img alt="Blog Pos" src="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/2a2206da65e1e88effda599c30230d2a5b130bca/images/i-prefer-panel.png" style="height:250px"></a>
 </div>
 
 ## &#128187; Panel Works in Your Notebook, Editor, IDE and Server
@@ -49,40 +69,22 @@ Panel is completely open source, available under a BSD license freely for both c
 
 Panel is part of the [HoloViz](https://holoviz.org/) ecosystem and works really well with all the HoloViz tools..
 
-[<img src="https://holoviz.org/assets/panel.png" height="60" style="margin-right:1em;margin-left: 1em">](https://panel.pyviz.org)
-[<img src="https://holoviz.org/assets/hvplot.png" height="60" style="margin-right:1em;margin-left: 1em">](https://hvplot.pyviz.org)
+[<img src="https://holoviz.org/assets/panel.png" height="60" style="margin-right:1em;margin-left: 1em">](https://panel.holoviz.org)
+[<img src="https://holoviz.org/assets/hvplot.png" height="60" style="margin-right:1em;margin-left: 1em">](https://hvplot.holoviz.org)
 [<img src="https://holoviz.org/assets/holoviews.png" height="60" style="margin-right:1em;margin-left: 1em">](https://holoviews.org)
 [<img src="https://holoviz.org/assets/geoviews.png" height="60" style="margin-right:1em;margin-left: 1em">](http://geoviews.org)
 [<img src="https://holoviz.org/assets/datashader.png" height="60" style="margin-right:1em;margin-left: 1em">](http://datashader.org)
-[<img src="https://holoviz.org/assets/param.png" height="60" style="margin-right:1em;margin-left: 1em">](https://param.pyviz.org)
-[<img src="https://holoviz.org/assets/colorcet.png" height="60" style="margin-right:1em;margin-left: 1em">](https://colorcet.pyviz.org)
+[<img src="https://holoviz.org/assets/param.png" height="60" style="margin-right:1em;margin-left: 1em">](https://param.holoviz.org)
+[<img src="https://holoviz.org/assets/colorcet.png" height="60" style="margin-right:1em;margin-left: 1em">](https://colorcet.holoviz.org)
 
 Panel is developed by employees from [Anaconda](https://anaconda.com) as well as community members.
-
-## &#128106; Panel is for You
-
-The only way to truly understand if Panel is something for you is to play around with it. To get started you can use the [Panel Getting Started Guide](http://panel.pyviz.org/getting_started/index.html) or visit the [Panel Reference Gallery](https://panel.pyviz.org/reference/index.html). You also find inspiration in the [Panel Example Gallery](http://panel.pyviz.org/gallery/index.html) or join the community on [Discourse](https://discourse.holoviz.org/).
-
-You can also **check out** my video
-
-<div align="center" style="margin-right:10%;margin-left:10%;">
-    <iframe src="https://www.youtube.com/embed/0DBEXiMdSKc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;height:400px;margin-left: auto;margin-right:auto"></iframe>
-</div>
-
-## &#128394;&#65039; Panel is for me
-
-Read why in my [blog post](https://medium.com/@marcskovmadsen/i-prefer-to-use-panel-for-my-data-apps-here-is-why-1ff5d2b98e8f).
-
-<div align="center" style="margin-right:10%;margin-left:10%;">
-    <a class="reference external" href="https://medium.com/@marcskovmadsen/i-prefer-to-use-panel-for-my-data-apps-here-is-why-1ff5d2b98e8f" target="_blank"><img alt="Blog Pos" src="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/2a2206da65e1e88effda599c30230d2a5b130bca/images/i-prefer-panel.png" style="height:250px"></a>
-</div>
 
 ## &#128170; Panel 0.12 is Released
 
 Panel 0.12 comes with a **lots of new and improved features** like
 
 - the [ReactiveHTML](https://panel.holoviz.org/user_guide/Custom_Components.html) component
-- the [Terminal](https://panel.holoviz.org/reference/widgets/Terminal.html?highlight=terminal) widget
+- the [Terminal](https://panel.holoviz.org/reference/widgets/Terminal.html) widget
 - the [TQDM](https://panel.holoviz.org/reference/indicators/Tqdm.html) widget
 
 Check out the [Panel 0.12 Release Blog](https://blog.holoviz.org/panel_0.12.0.html).
@@ -105,8 +107,6 @@ The [awesome-panel-extensions](https://pypi.org/project/awesome-panel-extensions
 </div>
 
 The package updates often so if you use it for production please pin to the specific version number.
-
-You can follow the developments via [Awesome Panel Extensions Change Log](https://discourse.holoviz.org/t/awesome-panel-extensions-package-change-log/1009).
 
 ## &#128200; Check Out the Awesome `panel-highcharts` Package
 
