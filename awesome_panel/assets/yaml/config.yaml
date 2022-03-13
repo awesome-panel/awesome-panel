@@ -43,7 +43,7 @@ applications:
       ## The About Page of awesome-panel.org
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/about/about.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/about.py
     servable: 
     tags:       
       - Code
@@ -68,7 +68,7 @@ applications:
       [Panel.io.server.unlocked](https://panel.holoviz.org/api/panel.io.html#panel.io.server.unlocked)
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/async_tasks/async_tasks.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/async_tasks.py
       gif: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/async_tasks.gif
       mp4: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/async_tasks.mp4
     servable: 
@@ -85,7 +85,7 @@ applications:
       The Panel Awesome List as a Gallery
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/awesome_list/awesome_list.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/awesome_list.py
     servable: 
     tags:       
       - Gallery
@@ -103,7 +103,7 @@ applications:
       [here](https://panel.holoviz.org/reference/panes/Alert.html).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/awesome_panel_express_tests/test_bootstrap_alerts.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/bootstrap_alerts.py
     servable: 
     tags:       
       - Bootstrap
@@ -122,7 +122,7 @@ applications:
       [here](https://panel.holoviz.org/reference/layouts/Card.html).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/awesome_panel_express_tests/test_bootstrap_card.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/bootstrap_card.py
     servable: 
     tags:       
       - Bootstrap
@@ -137,7 +137,7 @@ applications:
       The purpose of this app is to test that a **multi-page Dashboard Layout** similar to the [bootstrap dashboard template](https://getbootstrap.com/docs/4.3/examples/dashboard/) from [getboostrap.com](https://getbootstrap.com/) can be implemented in [Panel](https://panel.pyviz.org/).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/bootstrap_dashboard/bootstrap_dashboard.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/bootstrap_dashboard.py
     servable: 
     tags:       
       - Bootstrap
@@ -173,7 +173,7 @@ applications:
       To learn more about caching check out the [AWS Caching Overview](https://aws.amazon.com/caching/)
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/caching_example/caching_example.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/caching_example.py
       mp4: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/caching-example.mp4
     servable: 
     tags:       
@@ -197,7 +197,7 @@ applications:
       [discussion on Discourse](https://discourse.holoviz.org/t/error-not-supported-between-instances-of-select-and-select/929).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/dashboard/dashboard.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/dashboard.py
     servable: 
     tags:       
       - hvPlot
@@ -217,7 +217,7 @@ applications:
       **[checkout the Awesome Panel Extensions Guide](https://awesome-panel.readthedocs.io/en/latest/guides/awesome-panel-extensions-guide/index.html)**
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/custom_bokeh_model/custom_bokeh_model.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/custom_bokeh_model.py
     servable: 
     tags:       
       - Code
@@ -236,7 +236,7 @@ applications:
       computation</strong>.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/dataexplorer_loading/dataexplorer_loading.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/dataexplorer_loading.py
     servable: 
     tags: 
     thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/dataexplorer_loading.png"
@@ -257,7 +257,7 @@ applications:
       If you want Panel to support sensible defaults automatically please upvote [Issue 940](https://github.com/holoviz/panel/issues/940).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/awesome_panel_express_tests/test_dataframe.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/dataframe_formatting.py
     servable: 
     tags:       
       - DataFrame
@@ -273,7 +273,7 @@ applications:
       how to provide multiple ways to the user to select a value and then update a plot.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/discourse/discourse_1478_dependent_widgets.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/dependent_widgets.py
       gif: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/dependent-widgets.gif
       mp4: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/dependent-widgets.mp4
     servable: 
@@ -308,7 +308,7 @@ applications:
       Please note this app is running on very low end, cheap hardware which explains the low performance.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/detr/detr.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/detr.py
       gif: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/detr.gif
       mp4: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/detr.mp4
     servable: 
@@ -323,7 +323,7 @@ applications:
     category: Contributions
     description: Demonstrates the look and feel of the Panel Echarts pane.
     description_long: |-
-      [ECharts](https://www.echartsjs.com/en/index.html) is an open-sourced JavaScript
+      [ECharts](https://echarts.apache.org/en/index.html) is an open-sourced JavaScript
       visualization tool, which can run fluently on PC and mobile devices. Its also an
       **Apache incubator project**. The library is very fast with a modern look and feel.
       [Pyecharts](https://pyecharts.org/#/en-us/) is a Python api for using ECharts in Python
@@ -338,7 +338,7 @@ applications:
       **enabling us to develop awesome analytics apps using the power of Echarts, Panel and Python**.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/awesome_panel_express_tests/test_echarts.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/echarts.py
     servable: 
     tags:       
       - ECharts
@@ -363,7 +363,7 @@ applications:
       Checkout the <fast-anchor href="https://explore.fast.design/components/fast-accordion" appearance="hypertext" target="_blank">Component Gallery</fast-anchor>.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/fast/fast_grid_template_app.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/fast_grid_template.py
       mp4: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/fast_grid_template_app.mp4
     servable: 
     tags:       
@@ -402,7 +402,7 @@ applications:
       [Discourse 1128](https://discourse.holoviz.org/t/what-should-a-better-fileinput-look-like/1128/3).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/styling/fileinput-area.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/fileinput_area.py
       mp4: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/
     servable: 
     tags:       
@@ -420,7 +420,7 @@ applications:
       resources
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/gallery/gallery.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/gallery.py
     servable: 
     tags: 
     thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/gallery.png"
@@ -437,7 +437,7 @@ applications:
       The Google Maps example was initially described in the [Param User Guide](https://panel.holoviz.org/user_guide/Param.html).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/discourse/discourse_1533_template_with_map.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/google_map_viewer.py
       mp4: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/google-map-viewer.mp4
     servable: 
     tags:       
@@ -466,7 +466,7 @@ applications:
     project: 
     resources:       
       binder: https://mybinder.org/v2/gh/marcskovmadsen/panel-highcharts/HEAD?urlpath=lab/tree/examples/Network.ipynb
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/highcharts_network/highcharts_network.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/highcharts_network.py
       github: https://github.com/marcskovmadsen/panel-highcharts
       pypi: https://pypi.org/project/panel-highcharts/
     servable: 
@@ -490,7 +490,7 @@ applications:
       This example uses the *Iris* dataset.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/holoviews_linked_brushing.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/holoviews_linked_brushing.py
       mp4: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/holoviews-linked-brushing.mp4
       youtube: https://youtu.be/l-dvQwF6sHw
     servable: 
@@ -512,7 +512,7 @@ applications:
       An introduction to awesome-panel.org and Panel
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/home/home.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/home.py
       gif: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/home.gif
       mp4: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/home.mp4
     servable: 
@@ -535,7 +535,7 @@ applications:
       application developed by [Atul Kumar Singh](https://github.com/iamatulsingh).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/image_classifier/image_classifier.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/image_classifier.py
       mp4: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/
     servable: 
     tags:       
@@ -557,7 +557,7 @@ applications:
       by [ShanzyHolm](https://discourse.holoviz.org/u/ShanzyHolm/summary).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/js_actions/js_actions.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/js_actions.py
     servable: 
     tags:       
       - JavaScript
@@ -587,7 +587,7 @@ applications:
       [awesome-streamlit.org](https://awesome-streamlit.org)
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/kickstarter_dashboard/kickstarter_dashboard.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/kickstarter_dashboard.py
     servable: 
     tags:       
       - Bokeh
@@ -613,7 +613,7 @@ applications:
       [#3205](https://github.com/holoviz/panel/pull/3205).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/loading_spinners/loading_spinners.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/loading_spinners.py
       gif: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/loading-spinners.gif
       mp4: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/loading-spinners.mp4
     servable: 
@@ -650,7 +650,7 @@ applications:
       and [model-viewer Github](https://github.com/google/model-viewer/tree/master/packages/model-viewer)
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/awesome_panel_express_tests/test_model_viewer.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/model_viewer.py
     servable: 
     tags:       
       - model-viewer
@@ -674,7 +674,7 @@ applications:
       Checkout [Discourse 583](https://discourse.holoviz.org/t/how-to-use-ngl-webgl-protein-viewer-in-panel/583).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/ngl_molecule_viewer.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/ngl_viewer.py
       mp4: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/ngl-molecule-viewer.mp4
     servable: 
     tags:       
@@ -694,10 +694,10 @@ applications:
       in a [Panel](https://panel.holoviz.org/) context.
       This app was originally created as a response to this [question on Discourse](https://discourse.holoviz.org/t/cant-display-pandas-profiling-report/760/2).
       This app is restricted to profile a **maximum of 200 rows** to minimize the impact on the server.
-      For more information take a look at the [Pandas Profiling Examples](https://pandas-profiling.github.io/pandas-profiling/docs/master/rtd/pages/examples.html#showcasing-specific-features).
+      For more information take a look at the [Pandas Profiling Examples](https://pandas-profiling.ydata.ai/docs/master/index.html).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/pandas_profiling_app/pandas_profiling_app.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/pandas_profiling_app.py
     servable: 
     tags:       
       - Pandas
@@ -718,7 +718,7 @@ applications:
       [Fast.design](https://fast.design) style.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/panel_component_explorer.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/component_explorer.py
     servable: 
     tags:       
       - Panel
@@ -744,7 +744,7 @@ applications:
       You can find it [here](https://panel.holoviz.org/reference/panes/Param.html#panes-gallery-param).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/param_reference_example/param_reference_example.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/param_reference.py
     servable: 
     tags:       
       - Param
@@ -764,7 +764,7 @@ applications:
       which was first contributed by awesome-panel.org and then further improved by Philipp.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/awesome_panel_express_tests/test_perspective.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/perspective.py
     servable: 
     tags:       
       - Perspective
@@ -810,7 +810,7 @@ applications:
       This will show the progress bar and reset every 2 clicks.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/awesome_panel_express_tests/test_progress_ext.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/progress_extension.py
     servable: 
     tags:       
       - Progress
@@ -833,7 +833,7 @@ applications:
 
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/awesome_panel_express_tests/test_share_links.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/share_on_social_buttons.py
     servable: 
     tags:       
       - Social Media
@@ -862,7 +862,7 @@ applications:
       Developed by [awesome-panel.org](/).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/shoelace/shoelace.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/shoelace.py
       gif: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/dialog_template/assets/dialog_template.gif
       mp4: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/dialog_template/assets/dialog_template.mp4
     servable: 
@@ -883,7 +883,7 @@ applications:
       You can find the original notebook [here](soccer_analytics_dashboard_original.ipynb)
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/soccer_analytics_dashboard
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/soccer_analytics_dashboard.py
       documentation: https://medium.datadriveninvestor.com/panel-everything-you-need-to-know-9bca61532e12
     servable: 
     tags:       
@@ -909,7 +909,7 @@ applications:
       `pn.state.add_periodic_callback`
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/streaming_dashboard/streaming_dashboard.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/streaming_indicators.py
       mp4: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/streaming-dashboard.mp4
     servable: 
     tags:       
@@ -936,7 +936,7 @@ applications:
       The stream will STOP AFTER 1 MINUTE.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/streaming_plots/streaming_plots.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/streaming_plots.py
       gif: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/streaming-plots.gif
       mp4: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/streaming-plots.mp4
     servable: 
@@ -961,7 +961,7 @@ applications:
       if you also would like it fixed.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/tabulator_app/tabulator_app.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/tabulator.py
       gif: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/tabulator-app.gif
       mp4: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/tabulator-app.mp4
     servable: 
@@ -985,7 +985,7 @@ applications:
       experience **use Chrome**.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/text_to_speech/text_to_speech.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/text_to_speech.py
       gif: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/text-to-speech.gif
       mp4: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/text-to-speech.mp4
     servable: 
@@ -1004,7 +1004,7 @@ applications:
       by [Minh Ngyen](https://www.linkedin.com/in/minhnguyen001/)
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/blob/master/application/pages/volume_profile_analysis/volume_profile_analysis.py
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/volume_profile_analysis.py
       mp4: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/volume-profile-analysis.mp4
     servable: 
     tags:       
