@@ -8,15 +8,22 @@ from awesome_panel.assets.yaml import APPLICATIONS_CONFIG_PATH
 
 # pylint: disable=redefined-outer-name
 
-URLS_TO_SKIP = ["https://www.linkedin.com/in/stephen-kilcommins/"]
+URLS_TO_SKIP = [
+    "https://www.linkedin.com/in/stephen-kilcommins/",
+    "https://miro.medium.com/fit/c/96/96/1",
+    "dhttps://www.linkedin.com/in/minhnguyen001/",
+]
 
 
 def _extract_url_from_file(path):
     with open(path) as file:
         text = file.read()
-    
-    urls = re.findall('(http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])', text)
-    links = [item[0]+"://"+item[1]+item[2] for item in urls]
+
+    urls = re.findall(
+        "(http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])",
+        text,
+    )
+    links = [item[0] + "://" + item[1] + item[2] for item in urls]
     return list(set(links))
 
 
@@ -33,7 +40,7 @@ def test_urls(urls):
     for url in urls:
         if url in URLS_TO_SKIP:
             continue
-        
+
         try:
             response = requests.get(url, verify=False)
 
@@ -41,7 +48,6 @@ def test_urls(urls):
                 invalid_urls.append(url)
         except requests.exceptions.ConnectionError:
             invalid_urls.append(url)
-       
+
     # Then
     assert not invalid_urls
-    breakpoint()
