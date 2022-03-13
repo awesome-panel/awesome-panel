@@ -1,6 +1,6 @@
 # pylint: disable=redefined-outer-name,protected-access
 # pylint: disable=missing-function-docstring,missing-module-docstring,missing-class-docstring
-from application.pages.detr.detr import DETRApp
+from awesome_panel.apps.detr import DETRApp
 
 
 def test_constructor(detr_app):

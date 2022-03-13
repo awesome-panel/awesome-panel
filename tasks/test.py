@@ -12,18 +12,14 @@ from invoke import task
 TEST_FILES = " ".join(
     [
         "tests",
-        "package/tests",
-        "application/pages/awesome_panel_express_tests",
     ]
 )
 TEST_RESULTS = "test_results"
 FILES = " ".join(
     [
-        "app.py",
         "docs",
-        "package",
         "tasks",
-        "application",
+        "awesome_panel",
         "tests",
     ]
 )
@@ -80,10 +76,9 @@ Running isort the Python code import sorter
         echo=True,
     )
 
+
 @task
-def e2e(
-    command, host="http://localhost:5006", users=3, spawn_rate=1
-):
+def e2e(command, host="http://localhost:5006", users=3, spawn_rate=1):
     """Runs the Locust end to end tests"""
     print(
         """

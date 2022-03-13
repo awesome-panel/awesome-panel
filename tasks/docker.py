@@ -236,44 +236,6 @@ Running the '{image}:{tag}' Docker image
 
 
 @task
-def run_server_with_ping(
-    c,
-):  # pylint: disable=unused-argument
-    """Run the docker image with Panel server and
-    a ping to awesome-panel.org every 5 minutes
-    to keep it alive
-
-    Arguments:
-        c {[type]} -- Invoke command object
-
-    Keyword Arguments:
-        image {[type]} -- awesome-panel (default: {"prod"})
-        tag {str} -- Name of tag (default: {"latest"})
-    """
-
-    # Invoke cannot run interactive
-    image = "awesome-panel"
-    tag = "latest"
-    print(
-        f"""
-Running the '{image}:{tag}' Docker image
-========================================
-"""
-    )
-    command = (
-        'docker run -it -p 80:80 --entrypoint "/bin/bash" '
-        f"{DOCKER_REGISTRY}/{image}:{tag} "
-        "./scripts/run_awesome_panel_with_ping.sh"
-    )
-
-    print(command)
-    subprocess.run(
-        command,
-        check=True,
-    )
-
-
-@task
 def system_prune(
     c,
 ):

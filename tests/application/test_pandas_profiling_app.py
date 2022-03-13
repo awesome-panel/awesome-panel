@@ -4,7 +4,7 @@
 import pandas as pd
 import pytest
 
-from application.pages.pandas_profiling_app.pandas_profiling_app import Config, PandasProfilingApp
+from awesome_panel.apps.pandas_profiling_app import Config, PandasProfilingApp
 
 
 @pytest.fixture

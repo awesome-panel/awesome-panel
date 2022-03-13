@@ -2,7 +2,7 @@
 # pylint: disable=missing-function-docstring,missing-module-docstring,missing-class-docstring
 import pytest
 
-from application.pages.detr.detr import DETRApp
+from awesome_panel.apps.detr import DETRApp
 
 
 @pytest.fixture

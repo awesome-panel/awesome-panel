@@ -1,1 +1,0 @@
-Panel 0.10 is out. Read the BlogPost here.

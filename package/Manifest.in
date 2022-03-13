@@ -1,7 +1,0 @@
-include awesome_panel/py.typed
-recursive-include awesome_panel *.css
-recursive-include awesome_panel *.gif
-recursive-include awesome_panel *.png
-recursive-include awesome_panel *.jpg
-recursive-include awesome_panel *.html
-recursive-include awesome_panel *.js

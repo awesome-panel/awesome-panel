@@ -28,7 +28,7 @@ ARG bokeh_allow_ws_origin=192.168.99.100,localhost,awesome-panel.azurewebsites.n
 ENV BOKEH_ALLOW_WS_ORIGIN=$bokeh_allow_ws_origin
 
 # Downloads models
-ADD application/pages/detr/model.py application/pages/detr/model.py
-RUN python application/pages/detr/model.py
+ADD awesome_panel/apps/detr_utils/model.py awesome_panel/apps/detr_utils/model.py
+RUN python awesome_panel/apps/detr_utils/model.py
 
 ENTRYPOINT [ "/bin/bash" ]
