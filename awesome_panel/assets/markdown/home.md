@@ -63,10 +63,18 @@ Panel is developed by employees from [Anaconda](https://anaconda.com) as well as
 
 The only way to truly understand if Panel is something for you is to play around with it. To get started you can use the [Panel Getting Started Guide](http://panel.pyviz.org/getting_started/index.html) or visit the [Panel Reference Gallery](https://panel.pyviz.org/reference/index.html). You also find inspiration in the [Panel Example Gallery](http://panel.pyviz.org/gallery/index.html) or join the community on [Discourse](https://discourse.holoviz.org/).
 
-Or **check out** the first **4 minutes** of this **introduction to Panel**. The video is by **Philipp Rudiger**, the creator of Panel.
+You can also **check out** my video
 
 <div align="center" style="margin-right:10%;margin-left:10%;">
-    <iframe src="https://www.youtube.com/embed/Ohr29FJjBi0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;height:400px;margin-left: auto;margin-right:auto"></iframe>
+    <iframe src="https://www.youtube.com/embed/0DBEXiMdSKc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;height:400px;margin-left: auto;margin-right:auto"></iframe>
+</div>
+
+## &#128394;&#65039; Panel is for me
+
+Read why in my [blog post](https://medium.com/@marcskovmadsen/i-prefer-to-use-panel-for-my-data-apps-here-is-why-1ff5d2b98e8f).
+
+<div align="center" style="margin-right:10%;margin-left:10%;">
+    <a class="reference external" href="https://medium.com/@marcskovmadsen/i-prefer-to-use-panel-for-my-data-apps-here-is-why-1ff5d2b98e8f" target="_blank"><img alt="Blog Pos" src="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/2a2206da65e1e88effda599c30230d2a5b130bca/images/i-prefer-panel.png" style="height:250px"></a>
 </div>
 
 ## &#128170; Panel 0.12 is Released

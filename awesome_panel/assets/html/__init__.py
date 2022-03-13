@@ -1,7 +1,7 @@
 import pathlib
 from functools import lru_cache
 
-from ..svg import fast_collapsed_icon, fast_expanded_icon # type: ignore
+from ..svg import fast_collapsed_icon, fast_expanded_icon  # type: ignore
 
 PATH = pathlib.Path(__file__).parent
 
