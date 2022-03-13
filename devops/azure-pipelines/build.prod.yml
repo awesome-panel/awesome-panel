@@ -21,9 +21,6 @@ variables:
   dockerRegistry: 'dockerhub-awesome-panel'
 
 steps:
-- script: |
-    ls package/tests
-  displayName: ls
 - task: Docker@2
   displayName: Login to Docker Hub
   inputs:
