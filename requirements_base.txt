@@ -5,12 +5,12 @@ panel==0.12.6
 bokeh==2.4.2
 param==1.12.0
 tornado
-holoviews==1.14.6
+holoviews==1.14.8
 hvplot==0.7.3
 lxml
 ipykernel
 
-awesome-panel-extensions==20211210.1
+awesome-panel-extensions==20220313.2
 panel-highcharts==20211210.1
 
 # Data Engineering and Science
@@ -44,7 +44,7 @@ locust
 # ------------------------------------------------------------------------------
 # flake8==3.7.5  # https://github.com/PyCQA/flake8
 isort # Sort import statements. We need 4.3.15 to correctly sort dataclasses
-pylint==2.8.3 # Linter.
+pylint # Linter.
 pylint2junit # Used to generate junit xml reports in azure pipelines https://pypi.org/project/pylint2junit/
 black # Auto formatter.
 autoflake # Automatically removes unused imports and unused variables. See https://github.com/myint/autoflake
@@ -56,7 +56,7 @@ yahooquery==1.0.11
 pydeck==0.2.0
 torch==1.10.0+cpu
 torchvision==0.11.1+cpu
-pandas-profiling==2.8.0
+pandas-profiling==3.1.0
 streamz
 yfinance>=0.1.63
 diskcache

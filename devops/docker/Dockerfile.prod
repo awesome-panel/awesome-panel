@@ -1,9 +1,7 @@
 FROM marcskovmadsen/awesome-panel_base:latest
 
 WORKDIR /app
-RUN ls package/tests;exit 0;
 ADD . ./
-RUN ls package/tests
 
 RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt -f https://download.pytorch.org/whl/torch_stable.html
 RUN pip uninstall -y awesome-panel-extensions && pip install awesome-panel-extensions -U
@@ -14,4 +12,4 @@ EXPOSE 80
 # RUN invoke sphinx.copy-from-project-root
 WORKDIR /app
 
-ENTRYPOINT [ "python", "app.py"]
+ENTRYPOINT [ "panel", "serve", "awesome_panel/apps/*.py", "--glob", "--address", "0.0.0.0", "--port", "80", "--num-procs", "4", "--index", "home.py"]

@@ -12,9 +12,8 @@ def {name}(self):
 
 
 def print_tasks():
+    from application_old import pages
     from awesome_panel_extensions.site import site
-
-    from application import pages
 
     for app in site.applications:
         print(to_str(app))

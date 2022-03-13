@@ -181,13 +181,7 @@ $env:BOKEH_PORT = 5006
 Running the Application Locally
 
 ```bash
-python app.py
-```
-
-or in a jupyter notebook
-
-```bash
-jupyter notebook app.ipynb
+panel serve awesome_panel/apps/*.py --index home.py
 ```
 
 or as a Docker container via
@@ -281,7 +275,7 @@ Available tasks:
 The application is
 
 - built as a Docker image and tested via Azure Pipelines.
-    - You can find the Dockerfiles [here](https://github.com/MarcSkovMadsen/awesome-panel/tree/master/devops/docker) and the Azure pipelines yml files [here](https://github.com/MarcSkovMadsen/awesome-panel/tree/master/devops/azure-pipelines).
+  - You can find the Dockerfiles [here](https://github.com/MarcSkovMadsen/awesome-panel/tree/master/devops/docker) and the Azure pipelines yml files [here](https://github.com/MarcSkovMadsen/awesome-panel/tree/master/devops/azure-pipelines).
 
 ![Azure Pipelines](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/azure-pipeline.png?raw=true)
 ![Azure Pipelines Build and Test](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/azure-pipeline-build-test.png?raw=true)
