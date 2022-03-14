@@ -16,5 +16,6 @@ SIDEBAR_FOOTER = config.menu_fast_html(app_html=config.app_menu_fast_html, accen
 explorer = PanelComponentExplorer()
 explorer.view.main.insert(0, app.intro_section())
 explorer.view.sidebar_footer = SIDEBAR_FOOTER
+explorer.view.header.append(config.get_header())
 
 explorer.view.servable()

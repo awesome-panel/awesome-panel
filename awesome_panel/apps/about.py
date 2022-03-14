@@ -4,6 +4,6 @@ import panel as pn
 from awesome_panel import config
 from awesome_panel.assets.markdown import ABOUT_TEXT
 
-config.extension(url="about", main_max_width="900px")
+config.extension(url="about", main_max_width="900px", intro_section=False)
 
 pn.pane.Markdown(ABOUT_TEXT).servable()

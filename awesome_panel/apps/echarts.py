@@ -95,6 +95,7 @@ class EchartsApp(pn.viewable.Viewer):
         return pn.Column(
             pn.pane.Markdown("## Echarts Plot"),
             pn.Row(settings_pane, self.plot, sizing_mode="stretch_both"),
+            sizing_mode="stretch_both",
         )
 
 

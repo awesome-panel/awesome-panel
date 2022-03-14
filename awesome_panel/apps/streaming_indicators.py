@@ -26,6 +26,7 @@ ACCENT = config.ACCENT
 OK_COLOR = config.PALETTE[2]
 ERROR_COLOR = config.PALETTE[3]
 
+HEADER = [config.get_header()]
 SIDEBAR_FOOTER = config.menu_fast_html(app_html=config.app_menu_fast_html, accent=ACCENT)
 
 if not STYLE in pn.config.raw_css:
@@ -57,6 +58,7 @@ def create_app(intro_section, sidebar_footer) -> pn.template.FastGridTemplate:
         prevent_collision=True,
         save_layout=True,
         sidebar_footer=sidebar_footer,
+        header=HEADER,
     )
     template.main[0:3, :] = intro_section
 

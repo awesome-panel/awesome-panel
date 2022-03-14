@@ -66,7 +66,7 @@
 # 	</g>
 # </switch>
 # </svg>"""
-def fast_collapsed_icon(stroke="#E62F63")->str:
+def fast_collapsed_icon(stroke="#E62F63") -> str:
     """Returns a fast collapsed svg icon with the specific stroke."""
     return f"""
     <svg style="stroke: {stroke}" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" slot="collapsed-icon">
@@ -77,7 +77,7 @@ def fast_collapsed_icon(stroke="#E62F63")->str:
     """
 
 
-def fast_expanded_icon(stroke="#E62F63")->str:
+def fast_expanded_icon(stroke="#E62F63") -> str:
     """Returns a fast expanded svg icon with the specific stroke."""
     return f"""
     <svg style="stroke: {stroke}" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" slot="expanded-icon">

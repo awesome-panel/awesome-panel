@@ -20,7 +20,7 @@ You can find my contact details at [datamodelsanalytics.com](https://datamodelsa
 <a href="https://datamodelsanalytics.com">
     <img
         alt="ECharts"
-        src="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/5a86c80316da7a86ee0e4bfee0142e607a27e1c4/images/datamodelsanalytics.png"
+        src="https://cdn.jsdelivr.net/gh/MarcSkovMadsen/awesome-panel-assets@5a86c80316da7a86ee0e4bfee0142e607a27e1c4/images/datamodelsanalytics.png"
         style="height:300px;"
     ></a>
 </div>

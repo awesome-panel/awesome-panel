@@ -38,6 +38,8 @@ app = config.extension(url="fast_grid_template", template=None, intro_section=Fa
 
 ACCENT = config.ACCENT
 SIDEBAR_FOOTER = config.menu_fast_html(app_html=config.app_menu_fast_html, accent=ACCENT)
+HEADER = [config.get_header()]
+INTRO_SECTION = app.intro_section()
 
 ellipse_opts = opts.Ellipse(line_width=3, color=ACCENT)
 
@@ -59,6 +61,7 @@ def _create_hvplot():
         * hv.Ellipse(2, 2, 2).opts(ellipse_opts)
         * hv.Ellipse(-2, -2, (4, 2)).opts(ellipse_opts)
     )
+    plot.opts(responsive=True)
     return pn.Column(
         pn.pane.Markdown("## HoloViews Plot"),
         pn.pane.HoloViews(plot, sizing_mode="stretch_both"),
@@ -167,16 +170,17 @@ def _create_card(component, parameters, widgets):
 
 
 template = FastGridTemplate(
-    title="FastGridTemplate by awesome-panel.org",
+    title="FastGridTemplate",
     row_height=55,
     prevent_collision=True,
     save_layout=True,
     accent_base_color=ACCENT,
     header_background=ACCENT,
     sidebar_footer=SIDEBAR_FOOTER,
+    header=HEADER,
 )
 
-template.main[0:9, 0:6] = app.intro_section()
+template.main[0:9, 0:6] = INTRO_SECTION
 template.main[0:9, 6:12] = _create_hvplot()
 template.main[9:16, 0:12] = EchartsApp(accent=ACCENT)
 template.main[16:30, 0:3] = _create_fast_button_card()

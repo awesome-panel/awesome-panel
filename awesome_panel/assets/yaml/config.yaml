@@ -345,7 +345,7 @@ applications:
       - PyECharts
     thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_echarts.png"
   - url: fast_grid_template
-    name: Fast Grid Template
+    name: FastGridTemplate
     author: marc_skov_madsen
     owner: 
     category: Contributions
@@ -999,7 +999,8 @@ applications:
     project: 
     resources:       
       code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/volume_profile_analysis.py
-      mp4: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/volume-profile-analysis.mp4
+      mp4: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/volume_profile_analysis.mp4
+      gif: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/volume_profile_analysis.gif
     servable: 
     tags:       
       - Panel

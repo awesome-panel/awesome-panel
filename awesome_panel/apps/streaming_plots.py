@@ -25,11 +25,13 @@ from awesome_panel import config
 
 alt.themes.enable("dark")
 
-ACCENT = "#E1477E"
+ACCENT = config.ACCENT
 THEME = {
     pn.template.theme.DarkTheme: {pn.pane.ECharts: "dark", pn.pane.Plotly: "plotly_dark"},
     pn.template.theme.DefaultTheme: {pn.pane.ECharts: "default", pn.pane.Plotly: "plotly_white"},
 }
+
+HEADER = [config.get_header()]
 SIDEBAR_FOOTER = config.menu_fast_html(app_html=config.app_menu_fast_html, accent=ACCENT)
 
 
@@ -90,6 +92,7 @@ def view(intro_section):
         prevent_collision=True,
         save_layout=True,
         sidebar_footer=SIDEBAR_FOOTER,
+        header=HEADER,
     )
     echart_pane = pn.pane.ECharts(
         theme=THEME[template.theme][pn.pane.ECharts], sizing_mode="stretch_both"
@@ -144,8 +147,14 @@ def view(intro_section):
     return template
 
 
-if __name__.startswith("bokeh"):
+def serve():
+    """Serves the app"""
     app = config.extension(
         "plotly", "vega", "echarts", url="streaming_plots", template=None, intro_section=None
     )
-    view(app.intro_section()).servable()
+    intro_section = app.intro_section()
+
+    view(intro_section=intro_section).servable()
+
+if __name__.startswith("bokeh"):
+    serve()

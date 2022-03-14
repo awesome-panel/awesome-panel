@@ -36,7 +36,11 @@ def _plotly_hooks(plot, element):
 
 
 IRIS_DATASET = iris()
+
 ACCENT_COLOR = config.ACCENT
+SIDEBAR_FOOTER = config.menu_fast_html(app_html=config.app_menu_fast_html, accent=ACCENT_COLOR)
+HEADER = [config.get_header()]
+
 OPTS: Dict[str, Dict[str, Any]] = {
     "all": {
         "scatter": {"color": ACCENT_COLOR, "responsive": True, "size": 10},
@@ -51,7 +55,6 @@ OPTS: Dict[str, Dict[str, Any]] = {
         "hist": {"hooks": [_plotly_hooks]},
     },
 }
-SIDEBAR_FOOTER = config.menu_fast_html(app_html=config.app_menu_fast_html, accent=config.ACCENT)
 
 
 def _get_linked_plots(backend: str = "plotly") -> Tuple:
@@ -129,6 +132,7 @@ class LinkedBrushingApp(param.Parameterized):
             prevent_collision=True,
             save_layout=True,
             sidebar_footer=self.sidebar_footer,
+            header=HEADER,
         )
         template.sidebar[:] = [pn.pane.Markdown("## Settings"), self.settings_panel]
         template.main[0:4, :] = self.intro_section
@@ -162,6 +166,7 @@ if __name__.startswith("bokeh"):
     )
 
     hv.extension("bokeh", "plotly")
+
     LinkedBrushingApp(
         intro_section=app.intro_section(), sidebar_footer=SIDEBAR_FOOTER
     ).view.servable()

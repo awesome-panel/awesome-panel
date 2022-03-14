@@ -8,9 +8,9 @@ Panel is great for **Data Science, Business Intelligence, Analytics, Engineering
 
 Panel supports your process **from exploration to production**.
 
-<div align="center" style="margin-right:10%;margin-left:10%; height: 400px" >
-    <a href="classic_dashboard"><video autoplay loop muted style="height:420px;width:100%">
-    <source src="https://cdn.jsdelivr.net/gh/MarcSkovMadsen/awesome-panel-assets@2805bc7/awesome-panel/applications/classic-dashboard.mp4" type="video/mp4">
+<div align="center" style="margin-right:10%;margin-left:10%; height: 450px" >
+    <a href="volume_profile_analysis"><video autoplay loop muted style="height:450px;width:100%">
+    <source src="https://cdn.jsdelivr.net/gh/MarcSkovMadsen/awesome-panel-assets@b5d85471f3e0ae5cac37635f621f68180cbb04fc/awesome-panel/applications/volume_profile_analysis.mp4" type="video/mp4">
 </video></a>
 </div>
 
@@ -25,7 +25,7 @@ Checkout the [App Gallery](gallery), [Awesome List](awesome-list) and live data 
 <div align="center" style="margin-right:10% margin-left:10%;">
 <a href="fast_grid_template?theme=dark">
     <video autoplay loop muted style="height:400px;width:100%">
-    <source src="https://cdn.jsdelivr.net/gh/MarcSkovMadsen/awesome-panel-assets@2805bc7/awesome-panel/applications/fast_grid_template_app.mp4" type="video/mp4">
+    <source src="https://cdn.jsdelivr.net/gh/MarcSkovMadsen/awesome-panel-assets@b5d85471f3e0ae5cac37635f621f68180cbb04fc/awesome-panel/applications/fast_grid_template.mp4" type="video/mp4">
 </video></a>
 </div>
 
@@ -44,7 +44,7 @@ You can also **check out** my video
 Check out why I prefer to use Panel for my data apps in my [blog post](https://medium.com/@marcskovmadsen/i-prefer-to-use-panel-for-my-data-apps-here-is-why-1ff5d2b98e8f).
 
 <div align="center" style="margin-right:10%;margin-left:10%;">
-    <a class="reference external" href="https://medium.com/@marcskovmadsen/i-prefer-to-use-panel-for-my-data-apps-here-is-why-1ff5d2b98e8f" target="_blank"><img alt="Blog Pos" src="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/2a2206da65e1e88effda599c30230d2a5b130bca/images/i-prefer-panel.png" style="height:250px"></a>
+    <a class="reference external" href="https://medium.com/@marcskovmadsen/i-prefer-to-use-panel-for-my-data-apps-here-is-why-1ff5d2b98e8f" target="_blank"><img alt="Blog Pos" src="https://cdn.jsdelivr.net/gh/MarcSkovMadsen/awesome-panel-assets@2a2206da65e1e88effda599c30230d2a5b130bca/images/i-prefer-panel.png" style="height:250px"></a>
 </div>
 
 ## &#128187; Panel Works in Your Notebook, Editor, IDE and Server
@@ -61,7 +61,7 @@ You can deploy your applications on Tornado (default), Flask or Django Server.
 
 Checkout an interactive notebook on binder.
 
-<a class="reference external" href="https://mybinder.org/v2/gh/MarcSkovMadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fmodels%2FIcon.ipynb" target="_blank"><img src="https://mybinder.org/badge_logo.svg" style="height:25px;display:inline;margin:5px"></a> <a class="reference external" href="https://nbviewer.jupyter.org/github/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/reference/models/Icon.ipynb" target="_blank"><img src="https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg" style="height:25px;display:inline;margin:5px"></a>
+<a class="reference external" href="https://mybinder.org/v2/gh/MarcSkovMadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fmodels%2FIcon.ipynb" target="_blank"><img src="https://mybinder.org/badge_logo.svg" style="height:25px;display:inline;margin:5px"></a> <a class="reference external" href="https://nbviewer.jupyter.org/github/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/reference/models/Icon.ipynb" target="_blank"><img src="https://cdn.jsdelivr.net/gh/jupyter/design@master/logos/Badges/nbviewer_badge.svg" style="height:25px;display:inline;margin:5px"></a>
 
 ## &#127873; Panel is Open Source and Free
 
@@ -77,7 +77,7 @@ Panel is part of the [HoloViz](https://holoviz.org/) ecosystem and works really 
 [<img src="https://holoviz.org/assets/param.png" height="60" style="margin-right:1em;margin-left: 1em">](https://param.holoviz.org)
 [<img src="https://holoviz.org/assets/colorcet.png" height="60" style="margin-right:1em;margin-left: 1em">](https://colorcet.holoviz.org)
 
-Panel is developed by employees from [Anaconda](https://anaconda.com) as well as community members.
+Panel is developed by employees from [Anaconda](https://anaconda.com) as well as community members like you and me.
 
 ## &#128170; Panel 0.12 is Released
 
