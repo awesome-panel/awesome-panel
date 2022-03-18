@@ -9,9 +9,11 @@ from pyecharts.charts import Bar
 
 from awesome_panel import config
 
-config.extension("echarts", url="lib_pyecharts", title="PyECharts")
+config.extension("echarts", url="lib_pyecharts")
 
-def get_plot(accent_base_color="blue"):
+ACCENT = config.ACCENT
+
+def get_plot(accent_base_color=ACCENT):
     """Returns a PyECharts plot"""
     bar_plot = (
         Bar()
@@ -26,5 +28,5 @@ def get_plot(accent_base_color="blue"):
 
 
 theme = config.get_theme()
-plot = get_plot(accent_base_color=config.ACCENT_BASE_COLOR)
+plot = get_plot()
 pn.pane.ECharts(plot, min_height=500, sizing_mode="stretch_both", theme=theme).servable()

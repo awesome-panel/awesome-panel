@@ -9,6 +9,6 @@ if __name__.startswith("bokeh"):
     GalleryTemplate(
         site="Awesome Panel",
         title="Community Gallery",
-        ddescription="Awesome Panel resources by the community",
+        description="Awesome Panel resources by the community",
         applications=config.AWESOME_APPLICATIONS,
     ).servable()
