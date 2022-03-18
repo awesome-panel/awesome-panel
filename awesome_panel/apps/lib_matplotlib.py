@@ -19,7 +19,7 @@ def get_plot(theme="default") -> Figure:
     plt.style.use("default")
     if theme == "dark":
         plt.style.use("dark_background")
-    Y, X = np.mgrid[-3:3:100j, -3:3:100j]
+    Y, X = np.mgrid[-3:3:100j, -3:3:100j] # type: ignore
     U = -1 - X**2 + Y
     V = 1 + X - Y**2
 

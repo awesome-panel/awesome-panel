@@ -581,7 +581,7 @@ applications:
     tags:       
       - Altair
       - DataViz
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_altair.png"
   - url: lib_bokeh
     name: Bokeh
     author: marc_skov_madsen
@@ -604,7 +604,7 @@ applications:
     tags:       
       - Bokeh
       - DataViz
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_bokeh.png"
   - url: lib_datashader
     name: Datashader
     author: marc_skov_madsen
@@ -636,7 +636,7 @@ applications:
       - Datashader
       - Big Data
       - DataViz
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_datashader.png"
   - url: lib_deckgl
     name: Deck.gl
     author: marc_skov_madsen
@@ -657,14 +657,14 @@ applications:
       code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_deckgl.py
       docs: https://panel.holoviz.org/reference/panes/DeckGL.html#panes-gallery-deckgl
       youtube: https://www.youtube.com/results?search_query=deckgl
-    servable: 
+    servable: false
     tags:       
       - Deck.gl
       - Big Data
       - Spatial
       - GeoViz
       - DataViz
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_deckgl.png"
   - url: lib_echarts
     name: ECharts
     author: marc_skov_madsen
@@ -688,7 +688,7 @@ applications:
       - ECharts
       - Apache
       - DataViz
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_echarts.png"
   - url: lib_folium
     name: Folium
     author: marc_skov_madsen
@@ -713,7 +713,7 @@ applications:
       - Spatial
       - GeoViz
       - DataViz
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_folium.png"
   - url: lib_holoviews
     name: HoloViews
     author: marc_skov_madsen
@@ -741,7 +741,7 @@ applications:
     tags:       
       - HoloViews
       - DataViz
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_holoviews.png"
   - url: lib_hvplot
     name: hvplot
     author: marc_skov_madsen
@@ -780,7 +780,7 @@ applications:
       - DataFrame
       - Pandas
       - DataViz
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_hvplot.png"
   - url: lib_ipysheet
     name: IpySheet
     author: marc_skov_madsen
@@ -803,7 +803,7 @@ applications:
     tags:       
       - ipysheet
       - ipywidgets
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_ipysheet.png"
   - url: lib_matplotlib
     name: MatplotLib
     author: marc_skov_madsen
@@ -819,14 +819,14 @@ applications:
       including Matplotlib. It supports both light and dark theme.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_ipysheet.py
-      docs: https://panel.holoviz.org/reference/panes/IPyWidget.html
-      youtube: https://www.youtube.com/results?search_query=ipysheet
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_matplotlib.py
+      docs: https://panel.holoviz.org/reference/panes/Matplotlib.html
+      youtube: https://www.youtube.com/results?search_query=matplotlib
     servable: 
     tags:       
       - ipysheet
       - ipywidgets
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_matplotlib.png"
   - url: lib_plotly
     name: Plotly
     author: marc_skov_madsen
@@ -851,7 +851,7 @@ applications:
     tags:       
       - dataviz
       - plotly
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_plotly.png"
   - url: lib_plotnine
     name: Plotnine
     author: marc_skov_madsen
@@ -876,7 +876,7 @@ applications:
     tags:       
       - dataviz
       - plotly
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_plotnine.png"
   - url: lib_pydeck
     name: PyDeck
     author: marc_skov_madsen
@@ -903,7 +903,7 @@ applications:
       - dataviz
       - deckgl
       - pydeck
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_pydeck.png"
   - url: lib_pyecharts
     name: PyEcharts
     author: marc_skov_madsen
@@ -929,33 +929,33 @@ applications:
       - dataviz
       - echarts
       - pyecharts
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
-  - url: lib_pyvista
-    name: PyVista
-    author: marc_skov_madsen
-    owner: 
-    category: DataViz
-    description: PyVista data app with light and dark theme.
-    description_long: |-
-      [PyVista](https://docs.pyvista.org/) provides 3D plotting and mesh analysis through a
-      streamlined interface for the Visualization Toolkit (VTK).
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_pyecharts.png"
+  # - url: lib_pyvista
+  #   name: PyVista
+  #   author: marc_skov_madsen
+  #   owner: 
+  #   category: DataViz
+  #   description: PyVista data app with light and dark theme.
+  #   description_long: |-
+  #     [PyVista](https://docs.pyvista.org/) provides 3D plotting and mesh analysis through a
+  #     streamlined interface for the Visualization Toolkit (VTK).
       
-      PyVista is a helper module for the Visualization Toolkit (VTK) 
-      that takes a different approach on interfacing with VTK through NumPy and direct array access.
+  #     PyVista is a helper module for the Visualization Toolkit (VTK) 
+  #     that takes a different approach on interfacing with VTK through NumPy and direct array access.
 
-      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
-      including PyVista. It supports both light and dark theme.
-    project: 
-    resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_pyvista.py
-      docs: https://panel.holoviz.org/reference/panes/VTK.html
-      youtube: https://www.youtube.com/results?search_query=pyvista
-    servable: 
-    tags:       
-      - dataviz
-      - vtk
-      - pyvista
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+  #     The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+  #     including PyVista. It supports both light and dark theme.
+  #   project: 
+  #   resources:       
+  #     code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_pyvista.py
+  #     docs: https://panel.holoviz.org/reference/panes/VTK.html
+  #     youtube: https://www.youtube.com/results?search_query=pyvista
+  #   servable: 
+  #   tags:       
+  #     - dataviz
+  #     - vtk
+  #     - pyvista
+  #   thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
   - url: lib_seaborn
     name: Seaborn
     author: marc_skov_madsen
@@ -982,7 +982,7 @@ applications:
       - dataviz
       - matplotlib
       - seaborn
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_seaborn.png"
   - url: lib_vega
     name: Vega
     author: marc_skov_madsen
@@ -1009,32 +1009,32 @@ applications:
       - dataviz
       - vega-lite
       - vega
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
-  - url: lib_vtk
-    name: VTK
-    author: marc_skov_madsen
-    owner: 
-    category: DataViz
-    description: VTK data app with light and dark theme.
-    description_long: |-
-      [VTK](https://vtk.org/) is open source software for manipulating and 
-      displaying scientific data. It comes with state-of-the-art tools for 3D 
-      rendering, a suite of widgets for 3D interaction, and extensive 2D 
-      plotting capability.
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_vega.png"
+  # - url: lib_vtk
+  #   name: VTK
+  #   author: marc_skov_madsen
+  #   owner: 
+  #   category: DataViz
+  #   description: VTK data app with light and dark theme.
+  #   description_long: |-
+  #     [VTK](https://vtk.org/) is open source software for manipulating and 
+  #     displaying scientific data. It comes with state-of-the-art tools for 3D 
+  #     rendering, a suite of widgets for 3D interaction, and extensive 2D 
+  #     plotting capability.
 
-      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
-      including VTK. It supports both light and dark theme.
-    project: 
-    resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_vtk.py
-      docs: https://panel.holoviz.org/reference/panes/VTK.html
-      youtube: https://www.youtube.com/results?search_query=visualization+toolkit
-    servable: 
-    tags:       
-      - dataviz
-      - vega-lite
-      - vega
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+  #     The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+  #     including VTK. It supports both light and dark theme.
+  #   project: 
+  #   resources:       
+  #     code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_vtk.py
+  #     docs: https://panel.holoviz.org/reference/panes/VTK.html
+  #     youtube: https://www.youtube.com/results?search_query=visualization+toolkit
+  #   servable:
+  #   tags:       
+  #     - dataviz
+  #     - vega-lite
+  #     - vega
+  #   thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
   - url: kickstarter_dashboard
     name: Kickstarter Dashboard
     author: marc_skov_madsen
@@ -1307,7 +1307,7 @@ applications:
       - Spatial
       - GeoViz
       - Leaflet
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/reactive_leaflet.png"
   - url: share_on_social_buttons
     name: Share on Social Buttons
     author: marc_skov_madsen
