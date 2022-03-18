@@ -20,7 +20,7 @@ def get_plot():
     beta = 8.0 / 3
     theta = 3 * np.pi / 4
 
-    def lorenz(xyz, t):
+    def lorenz(xyz, t): # pylint: disable=unused-argument
         x, y, z = xyz
         x_dot = sigma * (y - x)
         y_dot = x * rho - x * z - y

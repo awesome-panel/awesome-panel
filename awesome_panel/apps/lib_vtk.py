@@ -4,11 +4,14 @@ The purpose of this app is to demonstrate that Panel works with the tools you kn
 """
 import panel as pn
 import vtk
+
 # pylint: disable=invalid-name, import-error, no-name-in-module
 from vtk.util.colors import tomato
-# pylint: enable=invalid-name, import-error, no-name-in-module
 
 from awesome_panel import config
+
+# pylint: enable=invalid-name, import-error, no-name-in-module
+
 
 config.extension("vtk", url="lib_vtk")
 

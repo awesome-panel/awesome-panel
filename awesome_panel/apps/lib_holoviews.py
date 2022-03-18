@@ -9,12 +9,12 @@ from holoviews import opts, streams
 from holoviews.plotting.links import DataLink
 
 from awesome_panel import config
-from awesome_panel.apps.lib_deckgl import THEME
 
 config.extension(url="lib_holoviews")
 
-THEME=config.get_theme()
-ACCENT=config.ACCENT
+THEME = config.get_theme()
+ACCENT = config.ACCENT
+
 
 def get_plot(theme="default", accent_base_color=ACCENT):
     """Returns a HoloViews plot"""

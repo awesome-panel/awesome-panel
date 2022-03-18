@@ -13,6 +13,7 @@ config.extension("echarts", url="lib_pyecharts")
 
 ACCENT = config.ACCENT
 
+
 def get_plot(accent_base_color=ACCENT):
     """Returns a PyECharts plot"""
     bar_plot = (

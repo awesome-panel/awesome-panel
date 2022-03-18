@@ -26,7 +26,7 @@ def get_plot(theme=THEME, accent_base_color=ACCENT):
         get_fill_color=[0, 0, 0, 20],
     )
 
-    data_url = "https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/geojson/vancouver-blocks.json" # pylint: disable=line-too-long
+    data_url = "https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/geojson/vancouver-blocks.json"  # pylint: disable=line-too-long
     geojson = pydeck.Layer(
         "GeoJsonLayer",
         data_url,

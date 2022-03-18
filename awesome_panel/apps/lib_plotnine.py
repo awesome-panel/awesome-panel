@@ -13,6 +13,7 @@ config.extension(url="lib_plotnine")
 
 THEME = config.get_theme()
 
+
 def get_plot(theme="default"):
     """Returns a Plotnine Figure"""
     plt.style.use("default")
