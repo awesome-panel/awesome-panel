@@ -1,14 +1,25 @@
 # Panel. We use github version because of
 # - https://github.com/holoviz/panel/issues/883
 # - https://github.com/holoviz/panel/pull/867
-panel==0.12.6
 bokeh==2.4.2
-param==1.12.0
-tornado
+datashader==0.13.0
+folium==0.12.1.post1
 holoviews==1.14.8
 hvplot==0.7.3
-lxml
 ipykernel
+lxml
+panel==0.12.6
+param==1.12.0
+pooch ## needed for xarray to load data
+xarray==0.20.2
+ipysheet==0.4.4
+jupyter-bokeh==3.0.4
+ipywidgets==7.6.5
+ipywidgets-bokeh==1.2.1
+plotnine==0.8.0
+pyecharts==1.9.1
+pyvista==0.33.3
+vtk==9.1.0
 
 awesome-panel-extensions==20220313.2
 panel-highcharts==20211210.1
@@ -21,7 +32,8 @@ xlrd==1.2.0 # For importing xls files
 # Data Visualization
 plotly==4.14.1
 altair==4.0.0
-# seaborn==0.9.0
+vega-datasets==0.9.0
+seaborn==0.11.2
 # matplotlib==3.1.1
 Pillow==8.3.2
 tensorflow==2.7.0

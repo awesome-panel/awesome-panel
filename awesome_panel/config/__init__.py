@@ -1,6 +1,5 @@
 """Shared configuration and functionality for awesome_panel apps"""
 from functools import wraps
-from re import A
 from typing import Optional, Union
 
 import panel as pn
@@ -69,7 +68,7 @@ def _app_sort_key(app: Application):
             return "  " + app.name
         return " " + app.name
 
-    return app.category + app.name
+    return (app.category + app.name).lower()
 
 
 def _get_app_menu_fast_html():
@@ -109,12 +108,20 @@ def get_theme() -> str:
     return theme
 
 
+def get_json_theme() -> str:
+    """Returns the name of the active theme"""
+    if get_theme() == "dark":
+        return "dark"
+    return "light"
+
+
 _TEMPLATES = [FastGridTemplate, FastListTemplate, GalleryTemplate]
 
 # pylint: disable=line-too-long
 FOLLOW_ON_TWITTER = """[![Follow on Twitter](https://img.shields.io/twitter/follow/MarcSkovMadsen.svg?style=social)](https://twitter.com/MarcSkovMadsen)"""
 GITHUB_STARS = "[![GitHub stars](https://img.shields.io/github/stars/MarcSkovMadsen/awesome-panel.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/MarcSkovMadsen/awesome-panel/stargazers/)"
 # pylint: enable=line-too-long
+
 
 def get_header():
     """Returns a component to be added to the template header"""

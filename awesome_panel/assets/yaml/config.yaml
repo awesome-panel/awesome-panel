@@ -76,13 +76,13 @@ applications:
       - Async
     thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/async_tasks.png"
   - url: awesome_list
-    name: Awesome List
+    name: Community Gallery
     author: marc_skov_madsen
     owner: 
     category: Main
-    description: The Awesome Panel list
+    description: An awesome list for Panel as a gallery
     description_long: |-
-      The Panel Awesome List as a Gallery
+      The Community Gallery is the *awesome list* of Panel. It provides links to a range of awesome community resources.
     project: 
     resources:       
       code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/awesome_list.py
@@ -207,7 +207,7 @@ applications:
     name: Custom Bokeh Model
     author: marc_skov_madsen
     owner: 
-    category: Custom Extensions
+    category: Custom Components
     description: An introduction to Bokeh/ Panel extensions
     description_long: |-
       One super power of Panel is that its actually extensible. You can write custom Panes, Layouts and
@@ -352,7 +352,7 @@ applications:
     description: Demonstrates the FastGridTemplate and Fast Components
     description_long: |-
       This app is based on the [`FastGridTemplate`](https://panel.holoviz.org/reference/templates/FastGridTemplate.html#templates-gallery-fastgridtemplate).
-      Probably the most powerful data app template in the world. For an deep dive see [FastGridTemplate on YouTube](https://youtu.be/_mv9xwwzWAA)
+      Probably the most powerful data app template in the world. For a deep dive see [FastGridTemplate on YouTube](https://youtu.be/_mv9xwwzWAA)
       
       We are also using some *Fast Components* provided by the
       <fast-anchor href="https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html#fast" appearance="hypertext" target="_blank">awesome-panel-extensions</fast-anchor>
@@ -560,6 +560,481 @@ applications:
     tags:       
       - JavaScript
     thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/js_actions.png"
+  - url: lib_altair
+    name: Altair
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: Altair data app with light and dark theme.
+    description_long: |-
+      [Altair](https://altair-viz.github.io/) is a [declarative](https://en.wikipedia.org/wiki/Declarative_programming)
+      statistical visualization library for Python, based on Vega and Vega-Lite.
+      
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including Altair. It supports both light and dark theme.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_altair.py
+      docs: https://panel.holoviz.org/reference/panes/Vega.html#altair
+      youtube: https://www.youtube.com/results?search_query=python+altair
+    servable: 
+    tags:       
+      - Altair
+      - DataViz
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+  - url: lib_bokeh
+    name: Bokeh
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: Bokeh data app with light and dark theme.
+    description_long: |-
+      [Bokeh](https://docs.bokeh.org/en/latest/) is a Python library for creating interactive visualizations for modern web browsers.
+
+      I think Bokeh appeals to users with specialized, scientific or streaming use cases. Bokeh has a lot of "specialized" tools for specialized use cases.
+      
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including Bokeh. It supports both light and dark theme.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_bokeh.py
+      docs: https://panel.holoviz.org/reference/panes/Bokeh.html
+      youtube: https://www.youtube.com/results?search_query=python+bokeh
+    servable: 
+    tags:       
+      - Bokeh
+      - DataViz
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+  - url: lib_datashader
+    name: Datashader
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: Datashader data app with light and dark theme.
+    description_long: |-
+      [Datashader](https://datashader.org/) accurately renders event the largest data. It enables you 
+      to interactively explore big data of Terabyte or even Peta byte scale. For 
+      example for use cases at Cern and intelligence institutions.
+
+      You would be using it in combination with [hvplot](lib_hvplot), 
+      [Holoviews](lib_holoviews) or [Plotly](lib_plotly).
+
+      Rapids by NVidia bases their [CuxFilter](https://github.com/rapidsai/cuxfilter) 
+      framework on Datashader, HoloViews and Panel.
+      
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including Datashader. It supports both light and dark theme.
+
+      Issue: [Datashader+Panel flashes](https://github.com/holoviz/panel/issues/3242)
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_datashader.py
+      youtube: https://www.youtube.com/results?search_query=datashader
+    servable: 
+    tags:       
+      - hvplot
+      - Datashader
+      - Big Data
+      - DataViz
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+  - url: lib_deckgl
+    name: Deck.gl
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: Deck.gl data app with light and dark theme.
+    description_long: |-
+      [DeckGL](https://deck.gl/) is a declarative, WebGL-powered framework for visual exploratory data analysis of large datasets.
+
+      For a more Pythonic interface see [PyDeck](lib_pydeck).
+      
+      Deck.gl works very well with Panel. Even hover, click etc events are supported.
+      
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including Deck.gl. It supports both light and dark theme.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_deckgl.py
+      docs: https://panel.holoviz.org/reference/panes/DeckGL.html#panes-gallery-deckgl
+      youtube: https://www.youtube.com/results?search_query=deckgl
+    servable: 
+    tags:       
+      - Deck.gl
+      - Big Data
+      - Spatial
+      - GeoViz
+      - DataViz
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+  - url: lib_echarts
+    name: ECharts
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: ECharts data app with light and dark theme.
+    description_long: |-
+      [ECharts](https://echarts.apache.org/en/index.html) is modern .js visualization in the browser.
+
+      For a more Pythonic interface see [PyEcharts](lib_pyecharts). For another example see the [ECharts contribution](echarts).
+      
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including Echarts. It supports both light and dark theme.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_echarts.py
+      docs: https://panel.holoviz.org/reference/panes/ECharts.html#panes-gallery-echarts
+      youtube: https://www.youtube.com/results?search_query=echarts
+    servable: 
+    tags:       
+      - ECharts
+      - Apache
+      - DataViz
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+  - url: lib_folium
+    name: Folium
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: Folium data app with light and dark theme.
+    description_long: |-
+      [Folium](https://python-visualization.github.io/folium/) provides GeoViz using Python data wrangling and Leaflet.js
+
+      Please note that Folium **does not support two-way events** like click etc. in your data apps.
+      
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including Folium.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_folium.py
+      docs: https://panel.holoviz.org/reference/panes/Folium.html
+      youtube: https://www.youtube.com/results?search_query=folium
+    servable: 
+    tags:       
+      - Folium
+      - Spatial
+      - GeoViz
+      - DataViz
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+  - url: lib_holoviews
+    name: HoloViews
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: HoloViews data app with light and dark theme.
+    description_long: |-
+      [HoloViews](http://holoviews.org/index.html) is an open-source Python library designed to make data analysis and visualization seamless and simple. With HoloViews, you can usually express what you want to do in very few lines of code, letting you focus on what you are trying to explore and convey, not on the process of plotting.
+
+      You can use any of the backends [Bokeh](lib_bokeh), [Matplotlib](lib_matplotlib) and
+      [Plotly](lib_plotly). Please note that Bokeh has the most comprehensive and robust support.
+
+      HoloViews is harder to learn than and less robust than Plotly.
+      But it provides a lot of features for specialized use cases and a mental
+      model for data visualiation.
+      
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including HoloViews.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_holoviews.py
+      docs: https://panel.holoviz.org/reference/panes/HoloViews.html
+      youtube: https://www.youtube.com/results?search_query=holoviews
+    servable: 
+    tags:       
+      - HoloViews
+      - DataViz
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+  - url: lib_hvplot
+    name: hvplot
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: hvplot data app with light and dark theme.
+    description_long: |-
+      [hvplot](https://hvplot.holoviz.org/) is a high-level plotting api for the PyData ecosystem built on top of [HoloViews](https://holoviews.org/).
+
+      hvplot extends the [Pandas](https://pandas.pydata.org/) `.plot` api to other data(frame) frameworks like
+      [Dask](https://docs.rapids.ai/api/cudf/stable/),
+      [GeoPandas](https://geopandas.org/),
+      [Ibis](https://ibis-project.org/),
+      [Intake](https://github.com/ContinuumIO/intake),
+      [NetworkX](https://networkx.github.io/documentation/stable/).
+      [Rapids cuDF](https://docs.rapids.ai/api/cudf/stable/),
+      [Streamz](https://streamz.readthedocs.io/) and
+      [XArray](https://xarray.pydata.org/),
+
+      Currently the backend is [Bokeh](lib_bokeh). But that will soon be extended to
+      [Matplotlib](lib_matplotlib) and [Plotly](lib_plotly).
+
+      Personally I use `.hvplot` for simple data exploration and data apps. I like the simple api and the
+      ability to combine plots with simple `*`, `+` and `/` operations.
+      
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including hvplot.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_hvplot.py
+      docs: https://panel.holoviz.org/reference/panes/HoloViews.html
+      youtube: https://www.youtube.com/results?search_query=hvplot
+    servable: 
+    tags:       
+      - hvplot
+      - DataFrame
+      - Pandas
+      - DataViz
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+  - url: lib_ipysheet
+    name: IpySheet
+    author: marc_skov_madsen
+    owner: 
+    category: Ipywidgets
+    description: IpySheet data app with light and dark theme.
+    description_long: |-
+      [Ipysheet](https://github.com/QuantStack/ipysheet) is a spreadsheet look a like based on [ipywidgets](https://ipywidgets.readthedocs.io/en/latest/).
+      
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including IpySheet.
+
+      Please note that you will need to use `ipysheet<0.5` with Panel. See [ipysheet #208](https://github.com/QuantStack/ipysheet/issues/208).
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_ipysheet.py
+      docs: https://panel.holoviz.org/reference/panes/IPyWidget.html
+      youtube: https://www.youtube.com/results?search_query=ipysheet
+    servable: 
+    tags:       
+      - ipysheet
+      - ipywidgets
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+  - url: lib_matplotlib
+    name: MatplotLib
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: Matplotlib data app with light and dark theme.
+    description_long: |-
+      [Matplotlib](https://matplotlib.org/) is a comprehensive library for creating static, animated, and interactive visualizations in Python. Matplotlib makes easy things easy and hard things possible. Matplotlib is the most used plotting library in Python.
+
+      Matplotlib only supports interactivity to a limited extent compared to Altair, Bokeh, HoloViews and Plotly. So personally I normally don't use it.
+
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including Matplotlib. It supports both light and dark theme.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_ipysheet.py
+      docs: https://panel.holoviz.org/reference/panes/IPyWidget.html
+      youtube: https://www.youtube.com/results?search_query=ipysheet
+    servable: 
+    tags:       
+      - ipysheet
+      - ipywidgets
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+  - url: lib_plotly
+    name: Plotly
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: Plotly data app with light and dark theme.
+    description_long: |-
+      [Plotly](https://plotly.com/python/)'s Python graphing library makes interactive, publication-quality graphs.
+
+      Plotly is one of the most popular plotting libraries in Python. It has high quality documentation and produces very appealing plots.
+
+      Plotly works very well with Panel. Even hover, click etc events are supported.
+
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including Plotly. It supports both light and dark theme.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_plotly.py
+      docs: https://panel.holoviz.org/reference/panes/Plotly.html
+      youtube: https://www.youtube.com/results?search_query=plotly
+    servable: 
+    tags:       
+      - dataviz
+      - plotly
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+  - url: lib_plotnine
+    name: Plotnine
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: Plotnine data app with light and dark theme.
+    description_long: |-
+      [Plotnine](https://plotnine.readthedocs.io/en/stable/) is an implementation of a grammar of
+      graphics in Python, it is based on [ggplot2](https://ggplot2.tidyverse.org/).
+      
+      The grammar allows users to compose plots by explicitly mapping data to the visual objects
+      that make up the plot. Its based on Matplotlib.
+
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including Plotnine. It supports both light and dark theme.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_plotnine.py
+      docs: https://panel.holoviz.org/reference/panes/Matplotlib.html
+      youtube: https://www.youtube.com/results?search_query=plotnine
+    servable: 
+    tags:       
+      - dataviz
+      - plotly
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+  - url: lib_pydeck
+    name: PyDeck
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: PyDeck data app with light and dark theme.
+    description_long: |-
+      [PyDeck](https://deckgl.readthedocs.io/en/latest/) provides high-scale spatial rendering in 
+      Python. It is a Python wrapper for [deck.gl](lib_deckgl).
+
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including PyDeck. It supports both light and dark theme.
+
+      PyDeck works very well with Panel. Even hover, click etc events are supported.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_pydeck.py
+      docs: https://panel.holoviz.org/reference/panes/DeckGL.html
+      youtube: https://www.youtube.com/results?search_query=pydeck
+    servable: 
+    tags:       
+      - spatial
+      - geoviz
+      - dataviz
+      - deckgl
+      - pydeck
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+  - url: lib_pyecharts
+    name: PyEcharts
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: PyECharts data app with light and dark theme.
+    description_long: |-
+      [PyEcharts](https://pyecharts.org/#/) is a Python wrapper for [ECharts](lib_echarts).
+
+      Please note **currently I cannot recommend PyEcharts** as the documentation often seems out of date
+      and the examples not working. But Echarts and thus PyEcharts is an Apache project and produces
+      business plots of a higher quality than Plotly. So it worth monitoring.
+
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including PyDeck. It supports both light and dark theme.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_pyecharts.py
+      docs: https://panel.holoviz.org/reference/panes/ECharts.html
+      youtube: https://www.youtube.com/results?search_query=pyecharts
+    servable: 
+    tags:       
+      - dataviz
+      - echarts
+      - pyecharts
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+  - url: lib_pyvista
+    name: PyVista
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: PyVista data app with light and dark theme.
+    description_long: |-
+      [PyVista](https://docs.pyvista.org/) provides 3D plotting and mesh analysis through a
+      streamlined interface for the Visualization Toolkit (VTK).
+      
+      PyVista is a helper module for the Visualization Toolkit (VTK) 
+      that takes a different approach on interfacing with VTK through NumPy and direct array access.
+
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including PyVista. It supports both light and dark theme.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_pyvista.py
+      docs: https://panel.holoviz.org/reference/panes/VTK.html
+      youtube: https://www.youtube.com/results?search_query=pyvista
+    servable: 
+    tags:       
+      - dataviz
+      - vtk
+      - pyvista
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+  - url: lib_seaborn
+    name: Seaborn
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: Seaborn data app with light and dark theme.
+    description_long: |-
+      [Seaborn](https://seaborn.pydata.org/) Seaborn is a Python data visualization
+      library based on [Matplotlib](lib_matplotlib). It provides a high-level 
+      interface for drawing attractive and informative statistical graphics.
+
+      Please note the lead developer is tweeting about upcoming, major changes to
+      the api.
+
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including Seaborn. It supports both light and dark theme.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_seaborn.py
+      docs: https://panel.holoviz.org/reference/panes/Matplotlib.html
+      youtube: https://www.youtube.com/results?search_query=seaborn
+    servable: 
+    tags:       
+      - dataviz
+      - matplotlib
+      - seaborn
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+  - url: lib_vega
+    name: Vega
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: Vega-lite data app with light and dark theme.
+    description_long: |-
+      [Vega](https://vega.github.io/) is a declarative format for creating, saving, and sharing 
+      visualization designs. With Vega, visualizations are described in JSON, and 
+      generate interactive views using either HTML5 Canvas or SVG.
+
+      Please note that **you should be using the higher level Vega-Lite format**.
+      This app is using Vega-lite.
+
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including Vega and Vega-lite. It supports both light and dark theme.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_vega.py
+      docs: https://panel.holoviz.org/reference/panes/Vega.html
+      youtube: https://www.youtube.com/results?search_query=vega-lite
+    servable: 
+    tags:       
+      - dataviz
+      - vega-lite
+      - vega
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+  - url: lib_vtk
+    name: VTK
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: VTK data app with light and dark theme.
+    description_long: |-
+      [VTK](https://vtk.org/) is open source software for manipulating and 
+      displaying scientific data. It comes with state-of-the-art tools for 3D 
+      rendering, a suite of widgets for 3D interaction, and extensive 2D 
+      plotting capability.
+
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including VTK. It supports both light and dark theme.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_vtk.py
+      docs: https://panel.holoviz.org/reference/panes/VTK.html
+      youtube: https://www.youtube.com/results?search_query=visualization+toolkit
+    servable: 
+    tags:       
+      - dataviz
+      - vega-lite
+      - vega
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
   - url: kickstarter_dashboard
     name: Kickstarter Dashboard
     author: marc_skov_madsen
@@ -811,6 +1286,28 @@ applications:
     tags:       
       - Progress
     thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_progress_ext.png"
+  - url: reactive_leaflet
+    name: Leaflet component using ReactiveHTML
+    author: marc_skov_madsen
+    owner: 
+    category: Custom Components
+    description: Custom Leaflet component using ReactiveHTML
+    description_long: |-
+      [Leaflet](https://leafletjs.com/) is the leading open-source JavaScript library for mobile-friendly interactive maps. It has all the mapping features most developers ever need.
+
+      Here we demonstrate how create a custom Leaflet component using [ReactiveHTML](https://panel.holoviz.org/user_guide/Custom_Components.html#reactivehtml-components).
+
+      You can also [use ipyleaflet with Panel](https://discourse.holoviz.org/t/works-with-ipyleaflet/2755).
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/reactive_leaflet.py
+      docs: https://leafletjs.com/
+    servable: 
+    tags:       
+      - Spatial
+      - GeoViz
+      - Leaflet
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
   - url: share_on_social_buttons
     name: Share on Social Buttons
     author: marc_skov_madsen
