@@ -91,6 +91,13 @@ users:
     resources:
       github: https://github.com/hyamanieu
       linkedin: https://fr.linkedin.com/in/hyamanieu
+  - uid: inbal-meir
+    name: Inbal Meir
+    url: https://www.linkedin.com/in/inbal-meir/
+    avatar: https://miro.medium.com/max/3150/1*Fp7Kv1HYwDt0IRdRGQrkNw.jpeg
+    resources:
+      github: https://github.com/inbalme
+      linkedin: https://www.linkedin.com/in/inbal-meir/
   - uid: Intake
     name: Intake
     url: https://github.com/intake
@@ -262,6 +269,13 @@ users:
       linkedin: https://www.linkedin.com/in/sophiamyang/
       medium: https://sophiamyang.medium.com/
       discourse: https://discourse.holoviz.org/u/sophiamyang/summary
+  - uid: thu-vu
+    name: Thu Vu
+    url: https://www.youtube.com/channel/UCJQJAI7IjbLcpsjWdSzYz0Q
+    avatar: https://yt3.ggpht.com/s3HLl-uzqEaqww2tkWKgjLFfgoe2NUsu4tRLm7g5TOScMK3aqOl1wGhar3yZRa1VH4BK3rzHyg=s176-c-k-c0x00ffffff-no-rj
+    resources:
+      linkedin: https://www.linkedin.com/in/thu-hien-vu-3766b174/
+      youtube: https://www.youtube.com/channel/UCJQJAI7IjbLcpsjWdSzYz0Q
   - uid: VDA Lab
     name: VDA Lab
     url: http://vda-lab.github.io/
@@ -1041,6 +1055,7 @@ applications:
       - Code
     resources:
       github: https://github.com/ec-jrc/Thalassa
+      mp4: https://user-images.githubusercontent.com/411196/146007390-88e8cc59-9ae9-4a15-83fd-f7f1f2d724c2.mp4
   - uid: neural-rock-typing
     name: Neural Rock Typing
     url: https://github.com/LukasMosser/neural_rock_typing
@@ -1052,5 +1067,27 @@ applications:
       - Code
     resources:
       github: https://github.com/LukasMosser/neural_rock_typing
-# https://towardsdatascience.com/interactive-model-evaluation-using-the-panel-python-package-a669692c0e9e
-# https://www.youtube.com/watch?v=uhxiXOTKzfs
+  - uid: thu-vu-beautiful-python-visualization-dashboard
+    name: Beautiful Dashboard With Panel/Hvplot
+    url: https://youtu.be/uhxiXOTKzfs
+    author: thu-vu
+    description: In this video I will show you how to create a beautiful data visualization dashboard in Python from your Jupyter notebooks.
+    thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/resources/thumbnails/thu_vu_beautiful_python_visualization_dashboard_with_panel.png
+    tags:
+      - App
+      - Video
+    resources:
+      github: https://github.com/thu-vu92/python-dashboard-panel
+  - uid: interactive-model-evaluation-using-panel
+    name: Interactive Model Evaluation
+    url: https://towardsdatascience.com/interactive-model-evaluation-using-the-panel-python-package-a669692c0e9e
+    author: inbal-meir
+    description: How to turn your analysis into an interactive visualization tool that lives inside your jupyter notebook
+    thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel-assets/master/awesome-panel/resources/thumbnails/error-analysis-dashboard.png
+    tags:
+      - App
+      - Code
+      - Article
+    resources:
+      github: https://github.com/inbalme/Blogpost_Interactive_Model_Evaluation_Using_the_Panel_Python_Package
+      gif: https://media.giphy.com/media/shEQfh431FA4Lov6uT/giphy.gif
