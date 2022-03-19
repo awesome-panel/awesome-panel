@@ -57,10 +57,6 @@ class QuickstartUser(HttpUser):
         self.client.get("/classic_dashboard")
 
     @task(1)
-    def custom_bokeh_model(self):
-        self.client.get("/custom_bokeh_model")
-
-    @task(1)
     def data_explorer_loading(self):
         self.client.get("/data_explorer_loading")
 
