@@ -12,4 +12,4 @@ EXPOSE 80
 # RUN invoke sphinx.copy-from-project-root
 WORKDIR /app
 
-ENTRYPOINT [ "panel", "serve", "awesome_panel/apps/*.py", "--glob", "--address", "0.0.0.0", "--port", "80", "--num-procs", "4", "--index", "home.py"]
+ENTRYPOINT [ "panel", "serve", "awesome_panel/apps/*.py", "awesome_panel/apps/*.ipynb", "--glob", "--address", "0.0.0.0", "--port", "80", "--num-procs", "4", "--index", "home.py"]
