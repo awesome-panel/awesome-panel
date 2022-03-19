@@ -65,7 +65,9 @@ def cached(func):
 def _app_sort_key(app: Application):
     if app.category == "Main":
         if app.name == "Home":
-            return "  " + app.name
+            return "   " + app.name
+        return "  " + app.name
+    if app.category == "Getting Started":
         return " " + app.name
 
     return (app.category + app.name).lower()

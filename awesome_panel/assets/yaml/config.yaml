@@ -438,6 +438,20 @@ applications:
     servable: 
     tags: 
     thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/getting-started-panel.png"
+  - url: getting_started_hvplot_interactive
+    name: Getting Started with hvplot .interactive
+    author: marc_skov_madsen
+    owner: 
+    category: Getting Started
+    description: A basic data app with hvplot .interactive
+    description_long: |-
+      This data app serves as an introduction to hvplot .interactive and Panel
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/getting_started_hvplot_interactive.ipynb
+    servable: 
+    tags: 
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/getting-started-hvplot-interactive.png"
   - url: google_map_viewer
     name: Google Map Viewer
     author: andrew_huang
