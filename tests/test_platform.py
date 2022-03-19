@@ -19,5 +19,5 @@ def test_python_version():
     ) = sys.version_info
     assert (major, minor,) == (
         3,
-        7,
+        9,
     )
