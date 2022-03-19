@@ -203,26 +203,26 @@ applications:
       - hvPlot
       - HoloViews
     thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/dashboard.png"
-  - url: custom_bokeh_model
-    name: Custom Bokeh Model
-    author: marc_skov_madsen
-    owner: 
-    category: Custom Components
-    description: An introduction to Bokeh/ Panel extensions
-    description_long: |-
-      One super power of Panel is that its actually extensible. You can write custom Panes, Layouts and
-      Widgets using Bokeh Extensions. This is actually how Panel is developed.
+  # - url: custom_bokeh_model
+  #   name: Custom Bokeh Model
+  #   author: marc_skov_madsen
+  #   owner: 
+  #   category: Custom Components
+  #   description: An introduction to Bokeh/ Panel extensions
+  #   description_long: |-
+  #     One super power of Panel is that its actually extensible. You can write custom Panes, Layouts and
+  #     Widgets using Bokeh Extensions. This is actually how Panel is developed.
       
-      If you want to learn how to create custom Bokeh/ Panel extensions you can
-      **[checkout the Awesome Panel Extensions Guide](https://awesome-panel.readthedocs.io/en/latest/guides/awesome-panel-extensions-guide/index.html)**
-    project: 
-    resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/custom_bokeh_model.py
-    servable: 
-    tags:       
-      - Code
-      - App In Gallery
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/custom_bokeh_model.png"
+  #     If you want to learn how to create custom Bokeh/ Panel extensions you can
+  #     **[checkout the Awesome Panel Extensions Guide](https://awesome-panel.readthedocs.io/en/latest/guides/awesome-panel-extensions-guide/index.html)**
+  #   project: 
+  #   resources:       
+  #     code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/custom_bokeh_model.py
+  #   servable: 
+  #   tags:       
+  #     - Code
+  #     - App In Gallery
+  #   thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/custom_bokeh_model.png"
   - url: data_explorer_loading
     name: Data Explorer Loading
     author: marc_skov_madsen

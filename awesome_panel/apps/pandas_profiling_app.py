@@ -25,17 +25,11 @@ from awesome_panel import config
 # pylint: disable=line-too-long
 DEFAULT_TITLE = "Pandas Profiling Report"
 EMPTY_HTML_REPORT = "<p>Click a button to generate a report</p>"
-HTML_LOADING_DATA = "<p>Loading data (1 of 4) ...</p>"
-HTML_CREATING_PROFILER = "<p>Creating Profiler (2 of 4) ...</p>"
-HTML_GENERATING_REPORT = "<p>Generating Report (3 of 4) ...</p>"
-HTML_LOADING_REPORT = "<p>Loading Report (4 of 4) ...</p>"
+HTML_CREATING_REPORT = "<p>Creating Report ...</p>"
 CSV_URLS = [
-    "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/csv/perspective_viewer_data.csv",
-    "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/csv/global_power_plant_database.csv",
-    "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/assets/csv/kickstarter_dashboard.csv",
-    "https://raw.githubusercontent.com/owid/owid-datasets/master/datasets/Annual%20CO2%20emissions%20-%20(Global%20Carbon%20Project%20%26%20CDIAC%2C%202019)/Annual%20CO2%20emissions%20-%20(Global%20Carbon%20Project%20%26%20CDIAC%2C%202019).csv",
-    "https://raw.githubusercontent.com/owid/owid-datasets/master/datasets/Land%20surface%20temperature%20anomaly-%20Berkley%20Earth/Land%20surface%20temperature%20anomaly-%20Berkley%20Earth.csv",
-    "https://raw.githubusercontent.com/owid/owid-datasets/master/datasets/Number%20of%20polio%20cases%20per%20one%20million%20population%20-%20WHO%20(2017)/Number%20of%20polio%20cases%20per%20one%20million%20population%20-%20WHO%20(2017).csv",
+    "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/awesome_panel/assets/csv/perspective_viewer_data.csv",
+    "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/awesome_panel/assets/csv/global_power_plant_database.csv",
+    "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/awesome_panel/assets/csv/kickstarter_dashboard.csv",
 ]
 GREEN = "#174c4f"
 ORANGE = "#cc5c29"
@@ -109,7 +103,7 @@ class PandasProfilingApp(param.Parameterized):  # pylint: disable=too-many-insta
         self._start_loading()
         self._generate_report()
 
-        self.html_report_pane.object = HTML_LOADING_REPORT
+        self.html_report_pane.object = HTML_CREATING_REPORT
 
         html_report = html.escape(self.html_report)
         self.html_report_pane.object = (
@@ -213,25 +207,17 @@ class PandasProfilingApp(param.Parameterized):  # pylint: disable=too-many-insta
         return html_report_pane, main
 
     def _generate_report(self):
-        self.html_report_pane.object = HTML_LOADING_DATA
-        self.dataframe = self._get_dataframe(self.csv_url)
-        self.html_report_pane.object = HTML_CREATING_PROFILER
-        self.report = self._get_profile_report(self.config.title, self.config.minimal)
-        self.html_report_pane.object = HTML_GENERATING_REPORT
-        self.html_report = self._get_html_report()
+        self.html_report_pane.object = HTML_CREATING_REPORT
+        self.dataframe, self.report, self.html_report = self._get_html_report(
+            self.csv_url, self.config.minimal, self.config.title
+        )
 
     @staticmethod
     @lru_cache(maxsize=128)
-    def _get_dataframe(url):
-        return pd.read_csv(url, nrows=MAX_ROWS)
-
-    @lru_cache(maxsize=128)
-    def _get_profile_report(self, title, minimal):
-        return ProfileReport(self.dataframe, minimal=minimal, title=title)
-
-    @lru_cache(maxsize=128)
-    def _get_html_report(self):
-        return self.report.to_html()
+    def _get_html_report(url: str, minimal, title):
+        dataframe = pd.read_csv(url, nrows=MAX_ROWS)
+        report = ProfileReport(dataframe, minimal=minimal, title=title)
+        return dataframe, report, report.to_html()
 
     def _set_random_csv_url(self):
         self.csv_url = next(self._csv_urls_cycle)
