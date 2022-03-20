@@ -8,11 +8,15 @@ from awesome_panel import config
 
 config.extension("ngl_viewer", url="ngl_viewer")
 
+THEME = config.get_theme()
+DARK_BACKGROUND = "#181818"
 
-def _create_app():
+def _create_app(theme=THEME):
     viewer = NGLViewer(
         object="1CRN", background="#F7F7F7", min_height=700, sizing_mode="stretch_both"
     ).servable()
+    if theme=="dark":
+        viewer.background = DARK_BACKGROUND
 
     file_input = pn.widgets.FileInput(accept=",".join("." + s for s in EXTENSIONS[1:]))
 

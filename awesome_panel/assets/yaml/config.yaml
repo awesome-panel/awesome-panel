@@ -1182,9 +1182,7 @@ applications:
     description_long: |-
       The [`NGLViewer`](https://github.com/nglviewer/ngl) NGL Viewer is a component for molecular visualization.
       WebGL is employed to display molecules like proteins and DNA/RNA with a variety of
-      representations.
-
-      Please note the `NGLViewer` **does not work in Firefox**.
+      representations. Please note the `NGLViewer` **does not work in Firefox**.
 
       The Panel `NGLViewer` widget was developed with help from the community. Checkout
       [Discourse 583](https://discourse.holoviz.org/t/how-to-use-ngl-webgl-protein-viewer-in-panel/583).
