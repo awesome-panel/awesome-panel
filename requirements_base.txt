@@ -23,6 +23,7 @@ vtk==9.1.0
 
 awesome-panel-extensions==20220313.2
 panel-highcharts==20211210.1
+panel-chemistry==0.0.11
 
 # Data Engineering and Science
 pandas==1.2.2

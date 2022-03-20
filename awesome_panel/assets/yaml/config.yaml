@@ -588,6 +588,24 @@ applications:
     tags:       
       - JavaScript
     thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/js_actions.png"
+  - url: jsme_editor
+    name: JSME Editor
+    author: marc_skov_madsen
+    owner: 
+    category: panel-chemistry
+    description: Demonstrates the basics of the JSME Editor from panel-chemistry
+    description_long: |-
+      The [JSME Editor](https://jsme-editor.github.io/) supports drawing and editing of molecules
+
+      It is included in the [panel-chemistry](https://github.com/MarcSkovMadsen/panel-chemistry)
+      package.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/jsme_editor.py
+    servable: 
+    tags:       
+      - Chemistry
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/jsme_editor.png"
   - url: lib_altair
     name: Altair
     author: marc_skov_madsen
