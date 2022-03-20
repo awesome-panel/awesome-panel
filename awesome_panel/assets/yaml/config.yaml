@@ -597,7 +597,7 @@ applications:
     description_long: |-
       The [JSME Editor](https://jsme-editor.github.io/) supports drawing and editing of molecules
 
-      It is included in the [panel-chemistry](https://github.com/MarcSkovMadsen/panel-chemistry)
+      The `JSMEEditor` component is included in the [panel-chemistry](https://github.com/MarcSkovMadsen/panel-chemistry)
       package.
     project: 
     resources:       
@@ -1184,12 +1184,19 @@ applications:
       WebGL is employed to display molecules like proteins and DNA/RNA with a variety of
       representations. Please note the `NGLViewer` **does not work in Firefox**.
 
+      When using NGL please cite
+
+      - AS Rose, AR Bradley, Y Valasatava, JM Duarte, A Prlić and PW Rose. *Web-based molecular graphics for large complexes*. ACM Proceedings of the 21st International Conference on Web3D Technology (Web3D '16): 185-186, 2016. [doi:10.1145/2945292.2945324](http://dx.doi.org/10.1145/2945292.2945324).
+      - AS Rose and PW Hildebrand. *NGL Viewer: a web application for molecular visualization*. Nucl Acids Res (1 July 2015) 43 (W1): W576-W579 first published online April 29, 2015. [doi:10.1093/nar/gkv402](https://doi.org/10.1093/nar/gkv402).
+
       The Panel `NGLViewer` widget was developed with help from the community. Checkout
       [Discourse 583](https://discourse.holoviz.org/t/how-to-use-ngl-webgl-protein-viewer-in-panel/583).
     project: 
     resources:       
       code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/ngl_viewer.py
       mp4: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/ngl-molecule-viewer.mp4
+      docs: https://nbviewer.org/github/MarcSkovMadsen/panel-chemistry/blob/main/examples/reference/NGLViewer.ipynb
+      gif: https://nbviewer.org/github/MarcSkovMadsen/panel-chemistry/blob/main/examples/assets/NGLViewer.gif
     servable: 
     tags:       
       - Panel
@@ -1329,6 +1336,31 @@ applications:
     tags:       
       - Progress
     thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_progress_ext.png"
+  - url: py3dmol
+    name: Py3DMol
+    author: marc_skov_madsen
+    owner: 
+    category: panel-chemistry
+    description: Demonstrates the basics of the Py3DMol editor from panel-chemistry
+    description_long: |-
+      The [3Dmol.js component](http://3dmol.csb.pitt.edu/) supports supports visualizing molecular data.
+
+      The [panel-chemistry](https://github.com/MarcSkovMadsen/panel-chemistry) `Py3DMol` component wraps the 
+      [`py3Dmol`](https://colab.research.google.com/drive/1T2zR59TXyWRcNxRgOAiqVPJWhep83NV_?usp=sharing)
+      jupyter widget.
+
+      When using `py3DMol` please cite
+
+      - Nicholas Rego and David Koes, 3Dmol.js: molecular visualization with WebGL, Bioinformatics (2015) 31 (8): 1322-1324 [doi:10.1093/bioinformatics/btu829](https://academic.oup.com/bioinformatics/article/31/8/1322/213186).
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/py3dmol.py
+      docs: https://nbviewer.org/github/MarcSkovMadsen/panel-chemistry/blob/main/examples/reference/Py3DMol.ipynb
+      gif: https://nbviewer.org/github/MarcSkovMadsen/panel-chemistry/blob/main/examples/assets/Py3DMol.gif
+    servable: 
+    tags:       
+      - Chemistry
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/py3dmol.png"
   - url: reactive_leaflet
     name: Leaflet component using ReactiveHTML
     author: marc_skov_madsen
