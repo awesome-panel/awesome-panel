@@ -244,7 +244,7 @@ applications:
     name: Dataframe Formatting
     author: marc_skov_madsen
     owner: 
-    category: Awesome Panel Extensions
+    category: awesome-panel-extensions
     description: Demonstrates how to style and format the DataFrame widget easily
     description_long: |-
       Panel does not style a `panel.widgets.DataFrame` by default.
@@ -479,7 +479,7 @@ applications:
     name: HighCharts Network
     author: marc_skov_madsen
     owner: 
-    category: Panel Highcharts
+    category: panel-highcharts
     description: Interactive Network Graph. Showcase of the panel-highcharts package.
     description_long: |-
       This example demonstrates the use of the
@@ -1143,7 +1143,7 @@ applications:
     name: Model Viewer
     author: marc_skov_madsen
     owner: 
-    category: Awesome Panel Extensions
+    category: awesome-panel-extensions
     description: Demonstrates the look and feel of the Google ModelViewer in your Panel app
     description_long: |-
       Google has developed the `model-viewer` web component for interactively viewing very large and
@@ -1288,7 +1288,7 @@ applications:
     name: Progress Extension
     author: marc_skov_madsen
     owner: 
-    category: Awesome Panel Extensions
+    category: awesome-panel-extensions
     description: Demonstrates how to easily add progress reporting using the ProgressExt widget
     description_long: |-
       The ProgressExt widget enables easier progress reporting then the built in
@@ -1355,7 +1355,7 @@ applications:
     name: Share on Social Buttons
     author: marc_skov_madsen
     owner: 
-    category: Awesome Panel Extensions
+    category: awesome-panel-extensions
     description: These widgets makes it easy to add *share on social* buttons to your apps
     description_long: |-
       I wanted to enable easy sharing of [awesome-panel.org](https://awesome-panel.org) on social media,
