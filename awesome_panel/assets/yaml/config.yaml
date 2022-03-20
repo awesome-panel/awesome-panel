@@ -602,6 +602,7 @@ applications:
     project: 
     resources:       
       code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/jsme_editor.py
+      docs: https://nbviewer.org/github/MarcSkovMadsen/panel-chemistry/blob/main/examples/reference/JSMEEditor.ipynb
     servable: 
     tags:       
       - Chemistry
@@ -1176,19 +1177,17 @@ applications:
     name: NGL Viewer
     author: jochem_smit
     owner: 
-    category: Awesome Panel Extensions
-    description: Demo of the the NGL Molecule Viewer widget
+    category: panel-chemistry
+    description: Demonstrates the basics of the NGLViewer from panel-chemistry
     description_long: |-
-      This is an example of a Protein viewer app, using the [NGL Viewer](https://github.com/nglviewer/ngl).
+      The [`NGLViewer`](https://github.com/nglviewer/ngl) NGL Viewer is a component for molecular visualization.
+      WebGL is employed to display molecules like proteins and DNA/RNA with a variety of
+      representations.
 
-      Please note this has been super seeded by the NGL Viewer in the `panel-chemistry` package
-      
-      You can import it from the `awesome-panel-extensions` package via
-      `from awesome_panel_extensions.widgets.ngl_viewer import NGLViewer`.
-      
-      The NGL Viewer was developed with help from the community.
-      
-      Checkout [Discourse 583](https://discourse.holoviz.org/t/how-to-use-ngl-webgl-protein-viewer-in-panel/583).
+      Please note the `NGLViewer` **does not work in Firefox**.
+
+      The Panel `NGLViewer` widget was developed with help from the community. Checkout
+      [Discourse 583](https://discourse.holoviz.org/t/how-to-use-ngl-webgl-protein-viewer-in-panel/583).
     project: 
     resources:       
       code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/ngl_viewer.py

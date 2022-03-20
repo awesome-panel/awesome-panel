@@ -1,84 +1,49 @@
-# pylint: disable=line-too-long, wrong-import-position
-"""
-This is an example of a Protein viewer app, using the [NGL Viewer](https://github.com/nglviewer/ngl).
-
-You can import it from the `awesome-panel-extensions` package via
-`from awesome_panel_extensions.widgets.ngl_viewer import NGLViewer`.
-
-The NGL Viewer was developed with help from the community.
-
-Checkout [Discourse 583](https://discourse.holoviz.org/t/how-to-use-ngl-webgl-protein-viewer-in-panel/583).
-"""
-# pylint: enable=line-too-long
+"""Demonstrates the basics of the NGLViewer from panel-chemistry"""
 import panel as pn
-import param
-from awesome_panel_extensions.widgets.ngl_viewer import NGLViewer
-
+from panel_chemistry.pane import (
+    NGLViewer,
+)  # panel_chemistry needs to be imported before you run pn.extension()
+from panel_chemistry.pane.ngl_viewer import EXTENSIONS
 from awesome_panel import config
 
-DEFAULT_RCSB_ID = "1NKT"
+config.extension("ngl_viewer", url="ngl_viewer")
 
 
-class ProteinViewer(param.Parameterized):
-    """This is an example of a Protein viewer app, using the [NGL Viewer]\
-(https://github.com/nglviewer/ngl)."""
+def _create_app():
+    viewer = NGLViewer(
+        object="1CRN", background="#F7F7F7", min_height=700, sizing_mode="stretch_both"
+    ).servable()
 
-    input_option = param.Selector(default="RCSB PDB", objects=["RCSB PDB", "Upload File"])
-    rcsb_id = param.String(default=DEFAULT_RCSB_ID)
-    load_structure = param.Action(label="LOAD STRUCTURE")
+    file_input = pn.widgets.FileInput(accept=",".join("." + s for s in EXTENSIONS[1:]))
 
-    def __init__(self, **params):
-        super().__init__(**params)
-        self.load_structure = self._load_structure
-        self.file_widget = pn.widgets.FileInput(accept=".pdb")
-        self.ngl_html = NGLViewer(sizing_mode="stretch_both")
-        self.ngl_html_container = pn.Column(self.ngl_html, height=600, sizing_mode="stretch_width")
+    def filename_callback(target, event):
+        target.extension = event.new.split(".")[1]
 
-        pn.state.onload(self._load_structure)
+    def value_callback(target, event):
+        target.object = event.new.decode("utf-8")
 
-    def _load_structure(self, *_):
-        if self.input_option == "Upload File":
-            if self.file_widget.value:
-                string = self.file_widget.value.decode()
-                self.ngl_html.pdb_string = string
-            else:
-                pass
-        elif self.input_option == "RCSB PDB":
-            self.ngl_html.rcsb_id = self.rcsb_id
+    file_input.link(viewer, callbacks={"value": value_callback, "filename": filename_callback})
 
-    def view(self):
-        """Returns a view of the app in the FastListTemplate"""
-        settings = pn.Column(
-            pn.pane.Markdown("## Settings", margin=0),
-            *pn.Param(
-                self.param, widgets={"load_structure": {"button_type": "primary"}}, show_name=False
-            ),
-            self.file_widget,
-            self.ngl_html.param.representation,
-            self.ngl_html.param.color_scheme,
-            self.ngl_html.param.spin,
-            max_width=300,
-        )
-        alert = pn.pane.Alert(
-            """You can find **Rcsb ids** at <a href="https://www.rcsb.org/"
-target="_blank">rcsb.org</a>. A few examples are: `2GQ5`, `3UOG` and `5TXH`.""",
-            margin=0,
-        )
-        main_ = pn.Column(alert, self.ngl_html_container)
+    header = pn.widgets.StaticText(value="<b>&#128190; File Input</b>")
+    pn.layout.Column(header, file_input).servable(area="sidebar")
 
-        return pn.Row(settings, main_)
+    pn.Param(
+        viewer,
+        parameters=[
+            "object",
+            "extension",
+            "representation",
+            "color_scheme",
+            "custom_color_scheme",
+            "effect",
+        ],
+        name="&#9881;&#65039; Settings",
+    ).servable(area="sidebar")
 
-
-def serve():
-    """Serves the app"""
-    config.extension(url="ngl_viewer")
-    viewer = ProteinViewer()
-
-    settings, main = viewer.view()
-
-    settings.servable(area="sidebar")
-    main.servable()
+    pn.Param(
+        viewer, parameters=["sizing_mode", "width", "height", "background"], name="&#128208; Layout"
+    ).servable(area="sidebar")
 
 
 if __name__.startswith("bokeh"):
-    serve()
+    _create_app()
