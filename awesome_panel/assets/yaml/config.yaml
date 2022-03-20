@@ -602,7 +602,7 @@ applications:
     project: 
     resources:       
       code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/jsme_editor.py
-      docs: https://nbviewer.org/github/MarcSkovMadsen/panel-chemistry/blob/main/examples/reference/JSMEEditor.ipynb
+      doc: https://nbviewer.org/github/MarcSkovMadsen/panel-chemistry/blob/main/examples/reference/JSMEEditor.ipynb
     servable: 
     tags:       
       - Chemistry
@@ -622,7 +622,7 @@ applications:
     project: 
     resources:       
       code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_altair.py
-      docs: https://panel.holoviz.org/reference/panes/Vega.html#altair
+      doc: https://panel.holoviz.org/reference/panes/Vega.html#altair
       youtube: https://www.youtube.com/results?search_query=python+altair
     servable: 
     tags:       
@@ -645,7 +645,7 @@ applications:
     project: 
     resources:       
       code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_bokeh.py
-      docs: https://panel.holoviz.org/reference/panes/Bokeh.html
+      doc: https://panel.holoviz.org/reference/panes/Bokeh.html
       youtube: https://www.youtube.com/results?search_query=python+bokeh
     servable: 
     tags:       
@@ -702,7 +702,7 @@ applications:
     project: 
     resources:       
       code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_deckgl.py
-      docs: https://panel.holoviz.org/reference/panes/DeckGL.html#panes-gallery-deckgl
+      doc: https://panel.holoviz.org/reference/panes/DeckGL.html#panes-gallery-deckgl
       youtube: https://www.youtube.com/results?search_query=deckgl
     servable: false
     tags:       
@@ -728,7 +728,7 @@ applications:
     project: 
     resources:       
       code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_echarts.py
-      docs: https://panel.holoviz.org/reference/panes/ECharts.html#panes-gallery-echarts
+      doc: https://panel.holoviz.org/reference/panes/ECharts.html#panes-gallery-echarts
       youtube: https://www.youtube.com/results?search_query=echarts
     servable: 
     tags:       
@@ -752,7 +752,7 @@ applications:
     project: 
     resources:       
       code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_folium.py
-      docs: https://panel.holoviz.org/reference/panes/Folium.html
+      doc: https://panel.holoviz.org/reference/panes/Folium.html
       youtube: https://www.youtube.com/results?search_query=folium
     servable: 
     tags:       
@@ -782,7 +782,7 @@ applications:
     project: 
     resources:       
       code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_holoviews.py
-      docs: https://panel.holoviz.org/reference/panes/HoloViews.html
+      doc: https://panel.holoviz.org/reference/panes/HoloViews.html
       youtube: https://www.youtube.com/results?search_query=holoviews
     servable: 
     tags:       
@@ -819,7 +819,7 @@ applications:
     project: 
     resources:       
       code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_hvplot.py
-      docs: https://panel.holoviz.org/reference/panes/HoloViews.html
+      doc: https://panel.holoviz.org/reference/panes/HoloViews.html
       youtube: https://www.youtube.com/results?search_query=hvplot
     servable: 
     tags:       
@@ -844,7 +844,7 @@ applications:
     project: 
     resources:       
       code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_ipysheet.py
-      docs: https://panel.holoviz.org/reference/panes/IPyWidget.html
+      doc: https://panel.holoviz.org/reference/panes/IPyWidget.html
       youtube: https://www.youtube.com/results?search_query=ipysheet
     servable: 
     tags:       
@@ -867,7 +867,7 @@ applications:
     project: 
     resources:       
       code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_matplotlib.py
-      docs: https://panel.holoviz.org/reference/panes/Matplotlib.html
+      doc: https://panel.holoviz.org/reference/panes/Matplotlib.html
       youtube: https://www.youtube.com/results?search_query=matplotlib
     servable: 
     tags:       
@@ -892,7 +892,7 @@ applications:
     project: 
     resources:       
       code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_plotly.py
-      docs: https://panel.holoviz.org/reference/panes/Plotly.html
+      doc: https://panel.holoviz.org/reference/panes/Plotly.html
       youtube: https://www.youtube.com/results?search_query=plotly
     servable: 
     tags:       
@@ -917,7 +917,7 @@ applications:
     project: 
     resources:       
       code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_plotnine.py
-      docs: https://panel.holoviz.org/reference/panes/Matplotlib.html
+      doc: https://panel.holoviz.org/reference/panes/Matplotlib.html
       youtube: https://www.youtube.com/results?search_query=plotnine
     servable: 
     tags:       
@@ -941,7 +941,7 @@ applications:
     project: 
     resources:       
       code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_pydeck.py
-      docs: https://panel.holoviz.org/reference/panes/DeckGL.html
+      doc: https://panel.holoviz.org/reference/panes/DeckGL.html
       youtube: https://www.youtube.com/results?search_query=pydeck
     servable: 
     tags:       
@@ -969,7 +969,7 @@ applications:
     project: 
     resources:       
       code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_pyecharts.py
-      docs: https://panel.holoviz.org/reference/panes/ECharts.html
+      doc: https://panel.holoviz.org/reference/panes/ECharts.html
       youtube: https://www.youtube.com/results?search_query=pyecharts
     servable: 
     tags:       
@@ -995,7 +995,7 @@ applications:
   #   project: 
   #   resources:       
   #     code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_pyvista.py
-  #     docs: https://panel.holoviz.org/reference/panes/VTK.html
+  #     doc: https://panel.holoviz.org/reference/panes/VTK.html
   #     youtube: https://www.youtube.com/results?search_query=pyvista
   #   servable: 
   #   tags:       
@@ -1022,7 +1022,7 @@ applications:
     project: 
     resources:       
       code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_seaborn.py
-      docs: https://panel.holoviz.org/reference/panes/Matplotlib.html
+      doc: https://panel.holoviz.org/reference/panes/Matplotlib.html
       youtube: https://www.youtube.com/results?search_query=seaborn
     servable: 
     tags:       
@@ -1049,7 +1049,7 @@ applications:
     project: 
     resources:       
       code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_vega.py
-      docs: https://panel.holoviz.org/reference/panes/Vega.html
+      doc: https://panel.holoviz.org/reference/panes/Vega.html
       youtube: https://www.youtube.com/results?search_query=vega-lite
     servable: 
     tags:       
@@ -1074,7 +1074,7 @@ applications:
   #   project: 
   #   resources:       
   #     code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_vtk.py
-  #     docs: https://panel.holoviz.org/reference/panes/VTK.html
+  #     doc: https://panel.holoviz.org/reference/panes/VTK.html
   #     youtube: https://www.youtube.com/results?search_query=visualization+toolkit
   #   servable:
   #   tags:       
@@ -1195,7 +1195,7 @@ applications:
     resources:       
       code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/ngl_viewer.py
       mp4: https://github.com/MarcSkovMadsen/awesome-panel-assets/blob/master/awesome-panel/applications/ngl-molecule-viewer.mp4
-      docs: https://nbviewer.org/github/MarcSkovMadsen/panel-chemistry/blob/main/examples/reference/NGLViewer.ipynb
+      doc: https://nbviewer.org/github/MarcSkovMadsen/panel-chemistry/blob/main/examples/reference/NGLViewer.ipynb
       gif: https://nbviewer.org/github/MarcSkovMadsen/panel-chemistry/blob/main/examples/assets/NGLViewer.gif
     servable: 
     tags:       
@@ -1349,13 +1349,13 @@ applications:
       [`py3Dmol`](https://colab.research.google.com/drive/1T2zR59TXyWRcNxRgOAiqVPJWhep83NV_?usp=sharing)
       jupyter widget.
 
-      When using `py3DMol` please cite
-
+      When using `py3DMol` please cite:
+      
       - Nicholas Rego and David Koes, 3Dmol.js: molecular visualization with WebGL, Bioinformatics (2015) 31 (8): 1322-1324 [doi:10.1093/bioinformatics/btu829](https://academic.oup.com/bioinformatics/article/31/8/1322/213186).
     project: 
     resources:       
       code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/py3dmol.py
-      docs: https://nbviewer.org/github/MarcSkovMadsen/panel-chemistry/blob/main/examples/reference/Py3DMol.ipynb
+      doc: https://nbviewer.org/github/MarcSkovMadsen/panel-chemistry/blob/main/examples/reference/Py3DMol.ipynb
       gif: https://nbviewer.org/github/MarcSkovMadsen/panel-chemistry/blob/main/examples/assets/Py3DMol.gif
     servable: 
     tags:       
@@ -1376,7 +1376,7 @@ applications:
     project: 
     resources:       
       code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/reactive_leaflet.py
-      docs: https://leafletjs.com/
+      doc: https://leafletjs.com/
     servable: 
     tags:       
       - Spatial

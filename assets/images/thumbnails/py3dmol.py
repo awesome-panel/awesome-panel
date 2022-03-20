@@ -1,3 +1,4 @@
+"""Demonstrates the basics of the Py3DMol editor from panel-chemistry"""
 import py3Dmol
 import panel as pn
 
@@ -16,8 +17,8 @@ def _create_app(theme=THEME):
     
     # Basic Example
     basic_view = py3Dmol.view(query="mmtf:1ycr")
-    basic_view.setStyle({"cartoon": {"color": "spectrum"}})
     basic_view.setBackgroundColor(background_color)
+    basic_view.setStyle({"cartoon": {"color": "spectrum"}})
     basic_viewer = Py3DMol(basic_view, height=400, sizing_mode="stretch_width", name="Basic")
     pn.Column(
         "## Basic Example", basic_viewer
@@ -51,9 +52,9 @@ def _create_app(theme=THEME):
     '''
 
     interactive_view = py3Dmol.view()
+    interactive_view.setBackgroundColor(background_color)
     interactive_view.addModel(xyz,'xyz',{'vibrate': {'frames':10,'amplitude':1}})
     interactive_view.setStyle({'stick':{}})
-    interactive_view.setBackgroundColor(background_color)
     interactive_view.animate({'loop': 'backAndForth'})
     interactive_view.zoomTo()
     interactive_viewer = Py3DMol(interactive_view, height=400, sizing_mode="stretch_width", name="Interactive")
