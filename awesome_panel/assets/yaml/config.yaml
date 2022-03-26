@@ -1245,6 +1245,26 @@ applications:
       - HTML
       - embed
     thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/pandas_profiling_app.png"
+  - url: pdbe_molstar
+    name: PDBeMolStar
+    author: marc_skov_madsen
+    owner: 
+    category: panel-chemistry
+    description: Demo of the PDBeMolstar component from panel-chemistry
+    description_long: |-
+      The Panel Chemistry `PDBeMolStar` allows you to use the powerful [PDBe Molstar](https://github.com/PDBeurope/pdbe-molstar) viewer in Python, Jupyter and Panel.
+
+      PDBe Molstar is a streamlined structure viewer which enables a PDB structure to be explored within a browser rather than requiring pre-installed molecular graphics software
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/pdbe_molstar.py
+      binder: https://mybinder.org/v2/gh/marcskovmadsen/panel-chemistry/HEAD?urlpath=lab/tree/examples/reference/PDBe_MolStar.ipynb
+    servable: 
+    tags:       
+      - chemistry
+      - cheminformatics
+      - panel-chemistry
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/pdbe_molstar.png"
   - url: component_explorer
     name: Component Explorer
     author: marc_skov_madsen
