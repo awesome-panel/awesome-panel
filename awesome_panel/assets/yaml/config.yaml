@@ -90,6 +90,26 @@ applications:
     tags:       
       - Gallery
     thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/awesome-list.png"
+  - url: awesome_button
+    name: AwesomeButton
+    author: marc_skov_madsen
+    owner: 
+    category: awesome-panel-extensions
+    description: Demo of the AwesomeButton from the awesome-panel-extensions package
+    description_long: |-
+      The `AwesomeButton` improves the Panel `Button` with support for icons. Its a part of the 
+      [awesome-panel-extensions](https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html)
+      package.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/awesome_button.py
+      binder: https://mybinder.org/v2/gh/MarcSkovMadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fmodels%2FIcon.ipynb
+      docs: https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html#icon
+    servable: 
+    tags:       
+      - awesome-panel-extensions
+      - icon
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/awesome_button.png"
   - url: bootstrap_alerts
     name: Bootstrap Alerts
     author: marc_skov_madsen
