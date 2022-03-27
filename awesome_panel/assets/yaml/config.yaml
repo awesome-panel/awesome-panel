@@ -572,7 +572,7 @@ applications:
       - graph
     thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/highcharts_add_series_dynamically.png"
   - url: highcharts_renewable_power_plants_dk
-    name: HighCharts - Renewable Power Plants Dashboards
+    name: HighCharts - Renewable Power Dashboard
     author: marc_skov_madsen
     owner: 
     category: panel-highcharts
