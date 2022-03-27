@@ -10,6 +10,7 @@ from panel.template import FastGridTemplate, FastListTemplate
 from ..assets.html import menu_fast_html
 from ..assets.yaml import APPLICATIONS_CONFIG_PATH, AWESOME_CONFIG_PATH
 
+
 SITE = "Awesome Panel"
 
 ACCENT = "#1f77b4"  # "#E1477E"

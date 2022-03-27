@@ -542,6 +542,64 @@ applications:
       - HighCharts
       - graph
     thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/highcharts-network.png"
+  - url: highcharts_add_series_dynamically
+    name: HighCharts - Add Series Dynamically
+    author: marc_skov_madsen
+    owner: 
+    category: panel-highcharts
+    description: Shows how to add an extra series to an existing HighCharts chart
+    description_long: |-
+      This example illustrates how to add an extra series to an existing HighCharts chart. This 
+      was motivated by
+      [Feature Request #3](https://github.com/MarcSkovMadsen/panel-highcharts/issues/3) and inspired by the 
+      [chart-addseries example](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/members/chart-addseries/).
+      
+      The `panel-highcharts` [python package](https://pypi.org/project/panel-highcharts/) and
+      [repository](https://github.com/marcskovmadsen/panel-highcharts) is open source and free to use
+      (MIT License), however Highcharts itself requires a license for commercial use.
+      
+      For more info see the Highcharts license [FAQs](https://shop.highsoft.com/faq).
+      For a gallery of HighCharts check out the [HighCharts Demo](https://www.highcharts.com/demo).
+    project: 
+    resources:       
+      binder: https://mybinder.org/v2/gh/marcskovmadsen/panel-highcharts/HEAD?urlpath=lab/tree/examples/AddSeriesDynamically.ipynb
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/highcharts_add_series_dynamically.py
+      github: https://github.com/marcskovmadsen/panel-highcharts
+      pypi: https://pypi.org/project/panel-highcharts/
+    servable: 
+    tags:       
+      - HighCharts
+      - graph
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/highcharts_add_series_dynamically.png"
+  - url: highcharts_renewable_power_plants_dk
+    name: HighCharts - Renewable Power Plants Dashboards
+    author: marc_skov_madsen
+    owner: 
+    category: panel-highcharts
+    description: Demo of complex data app using panel-highcharts with linked charts
+    description_long: |-
+      This application demonstrates how to create parent-child relations using Panel-HighCharts by reacting to events.
+
+      For performance reasons the map shows a sample of 1000 points only. In total there are 84353 power plants.
+      
+      The `panel-highcharts` [python package](https://pypi.org/project/panel-highcharts/) and
+      [repository](https://github.com/marcskovmadsen/panel-highcharts) is open source and free to use
+      (MIT License), however Highcharts itself requires a license for commercial use.
+      
+      For more info see the Highcharts license [FAQs](https://shop.highsoft.com/faq).
+      For a gallery of HighCharts check out the [HighCharts Demo](https://www.highcharts.com/demo).
+    project: 
+    resources:       
+      binder: https://mybinder.org/v2/gh/marcskovmadsen/panel-highcharts/HEAD?urlpath=lab/tree/examples/LinkedCharts.ipynb
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/highcharts_renewable_power_plants_dk.py
+      github: https://github.com/marcskovmadsen/panel-highcharts
+      pypi: https://pypi.org/project/panel-highcharts/
+    servable: 
+    tags:
+      - Dashboard
+      - HighCharts
+      - Renewable
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/highcharts_renewable_power_plants_dk.png"
   - url: holoviews_linked_brushing
     name: HoloViews Linked Brushing
     author: marc_skov_madsen

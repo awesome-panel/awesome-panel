@@ -1,8 +1,8 @@
 """Demonstrates the basics of the JSME Editor from panel-chemistry"""
 import panel as pn
-from panel_chemistry.widgets import (
-    JSMEEditor,
-)  # panel_chemistry needs to be imported before you run pn.extension()
+
+# panel_chemistry needs to be imported before you run pn.extension()
+from panel_chemistry.widgets import JSMEEditor
 
 from awesome_panel import config
 

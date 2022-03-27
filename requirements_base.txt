@@ -23,7 +23,7 @@ vtk==9.1.0
 jinja2==3.0.3
 
 awesome-panel-extensions==20220313.2
-panel-highcharts==20211210.1
+panel-highcharts==20220327.2
 panel-chemistry==0.0.12
 py3Dmol==1.8.0
 

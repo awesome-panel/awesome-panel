@@ -14,7 +14,8 @@ from awesome_panel import config
 # can be replaced by pn.extension
 config.extension(url="dash_iris_classifier")
 
-def get_model(Classifier=KNeighborsClassifier): # pylint: disable=invalid-name
+
+def get_model(Classifier=KNeighborsClassifier):  # pylint: disable=invalid-name
     """Returns model trained on iris dataset"""
     iris = datasets.load_iris()
     data = iris.data
@@ -24,9 +25,11 @@ def get_model(Classifier=KNeighborsClassifier): # pylint: disable=invalid-name
     clf.fit(data, target)
     return clf
 
+
 if not "dash_iris_classifier" in pn.state.cache:
     # We only train the model once and then reuse across users
-    pn.state.cache["dash_iris_classifier"]=get_model()
+    pn.state.cache["dash_iris_classifier"] = get_model()
+
 
 def predict(sepal_length, sepal_width, petal_length, petal_width, model):
     """Returns prediction"""
@@ -41,6 +44,7 @@ def predict(sepal_length, sepal_width, petal_length, petal_width, model):
     else:
         output = "Iris-Virginica"
     return f"The predicted Iris species is **{output}**."
+
 
 def get_iris_explorer():
     """Returns a component for exploring iris predictions"""
@@ -63,6 +67,7 @@ def get_iris_explorer():
     )
 
     return pn.Row(settings, ipredict, align="end")
+
 
 if __name__.startswith("bokeh"):
     get_iris_explorer().servable()

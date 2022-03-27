@@ -106,6 +106,6 @@ def app():
 
 if __name__.startswith("bokeh"):
     ph.config.js_files(highcharts_networkgraph=True)
-
+    ph.config.theme("auto")
     config.extension("highchart", url="highcharts_network")
     app().servable()
