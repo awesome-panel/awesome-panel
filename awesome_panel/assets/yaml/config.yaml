@@ -572,7 +572,7 @@ applications:
       - graph
     thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/highcharts_add_series_dynamically.png"
   - url: highcharts_renewable_power_plants_dk
-    name: HighCharts - Renewable Power Dashboard
+    name: HighCharts Renewable Power
     author: marc_skov_madsen
     owner: 
     category: panel-highcharts
@@ -1242,7 +1242,7 @@ applications:
     author: marc_skov_madsen
     owner: 
     category: Mercury
-    description: Compares a Panel app to a Mercury app
+    description: Compares a Panel app to a Mercury app. Uses Bloxs.
     description_long: |-
       [Mercury](https://mljar.com/mercury/) enables you to share your Python Notebooks with others as interactive web applications.
       
