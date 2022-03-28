@@ -67,7 +67,7 @@ days_per_month_for_maintenance = pn.widgets.IntSlider(
 
 
 def B(
-    *args, width="100%", height="150px", margin="0px", padding_top="40px", background="transparent"
+    *args, width="100%", height="150px", margin="0px", padding_top="40px", background="transparent", text_color="var(--neutral-foreground-rest)"
 ):
     """Returns a modified version of B that works better with Bokeh/ Panel"""
     return (
@@ -76,6 +76,8 @@ def B(
         .replace("width: 34%", f"width: {width}; height: {height}")
         .replace("margin: 10px; padding-top: 40px", f"margin: {margin}; padding-top: {padding_top}")
         .replace("background: white", f"background: {background}")
+        .replace("color: #5a5a5a", f"color: {text_color}")
+        .replace("color: gray", f"color: {text_color}")
     )
 
 
