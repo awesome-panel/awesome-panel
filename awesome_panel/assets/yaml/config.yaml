@@ -1237,6 +1237,28 @@ applications:
     tags:       
       - UX
     thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/loading-spinners.png"
+  - url: mercury_buy_vs_build
+    name: Mercury - Buy vs Build
+    author: marc_skov_madsen
+    owner: 
+    category: Mercury
+    description: Compares a Panel app to a Mercury app
+    description_long: |-
+      [Mercury](https://mljar.com/mercury/) enables you to share your Python Notebooks with others as interactive web applications.
+      
+      So does Panel so I figured I would do a comparison. So here we compare to the Mercury [Buy &#128184; vs build &#128736;](https://mercury.mljar.com/app/5) app.
+
+      My take is that the main pro of Mercury is simplicity and the main con is slow execution model.
+
+      Note that this app also demonstrates the use of [Bloxs](https://github.com/mljar/bloxs).
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/mercury_buy_vs_build.py
+    servable: 
+    tags:       
+      - Mercury
+      - Bloxs
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/mercury_buy_vs_build.png"
   - url: model_viewer
     name: Model Viewer
     author: marc_skov_madsen
