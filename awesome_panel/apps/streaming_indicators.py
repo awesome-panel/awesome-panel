@@ -4,9 +4,9 @@ Panel runs on top of the Tornado server. Tornado is a fast, asynchronous web ser
 support streaming use cases.
 
 In panel it's very easy to support periodic updates. Here it's done via
-`pn.state.add_periodic_callback(_create_callback(indicator), period=1000, count=200)`
+`pn.state.add_periodic_callback(_create_callback(indicators), period=1000, count=200)`
 
-This Dashboard is work in progress. I would like to add some different types of stats cards
+This Dashboard is work-in-progress. I would like to add some different types of stats cards
 including some with splines/ plots. I would also like to add some icons to make it look nice.
 """
 from typing import List, Tuple
