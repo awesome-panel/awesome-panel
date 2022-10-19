@@ -2,53 +2,41 @@
 
 We want to
 
-- show how awesome [Panel](https://awesome-panel.org) is and help push the [Panel](https://awesome-panel.org) framework and community forward.
+- show how awesome [Panel](https://awesome-panel.org) is and push the framework forward.
 
 We provide
 
-- The [awesome-panel.org](https://awesome-panel.org) web site with *awesome lists*, example apps and more.
-- A [**Youtube Playlist**](https://www.youtube.com/playlist?list=PLrrcIlm1vLr69f4CsTlrO0wSNBw6VbsJA).
-- A large gallery of awesome Panel examples.
-- A large collection of awesome [Panel extensions](https://github.com/orgs/awesome-panel/repositories).
-
-You can install and use the package as simple as.
-
-```bash
-pip install awesome-panel
-```
-
-```python
-import awesome_panel
-INSERT A SHORT EXAMPLE
-```
+- The [awesome-panel.org](https://awesome-panel.org) web site includes galleries of
+  - [Awesome Panel Applications](https://awesome-panel.org/gallery) and
+  - [Awesome Community Resources](https://awesome-panel.org/awesome_list)
+- [Youtube Videos](https://www.youtube.com/playlist?list=PLrrcIlm1vLr69f4CsTlrO0wSNBw6VbsJA).
+- [Blog Posts](https://medium.com/@marcskovmadsen)
+- Communication on social media: [Twitter](https://twitter.com/home) | [LinkedIn](https://www.linkedin.com/in/marcskovmadsen/)
+- [Panel Extensions and Example Repositories](https://github.com/orgs/awesome-panel/repositories)
 
 ![Project Intro](assets/videos/project-intro.gif)
-
-REPLACE THE INTRO VIDEO
 
 ## 🚀 Get started in under a minute
 
 Install `awesome-panel` including the *`examples` dependencies*.
 
 ```bash
-pip install  awesome-panel[examples]
+pip install awesome-panel[examples]
 ```
 
-Explore the sample apps
+Explore the sample apps by running
 
 ```bash
 pn hello awesome-panel
 ```
 
-![Project Intro](https://raw.githubusercontent.com/awesome-panel/awesome-panel/main/assets/videos/pn-hello-awesome-panel.gif)
+and opening [http://localhost:5006/gallery](http://localhost:5006/gallery) in your browser.
 
-You can now find the *reference* and *gallery* notebooks in the `examples/awesome-panel/awesome-panel` folder. Check them out by running `jupyter lab`.
+You can find the sample apps in the `examples/awesome-panel/awesome-panel` folder.
 
 ## Install geopandas on windows
 
-This is only required to be able to explore a small submit of example applications that depend on geopandas.
-
-On Windows you unfortunately have to install the geopandas requirements manually as described in [using-geopandas-windows](https://geoffboeing.com/2014/09/using-geopandas-windows/).
+On Windows you unfortunately have to install the geopandas requirements manually as described in [using-geopandas-windows](https://geoffboeing.com/2014/09/using-geopandas-windows/). This is only required to be able to explore a small subset of the applications.
 
 ## 📒 Explore the examples online
 
