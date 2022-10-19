@@ -180,6 +180,7 @@ def extension(
         template.site = site
         template.favicon = favicon
         template.title = app.name
+        template.site_url = "./"
 
         template.header_background = accent_color
 

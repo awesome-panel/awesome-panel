@@ -8,6 +8,7 @@ if __name__.startswith("bokeh"):
 
     GalleryTemplate(
         site="Awesome Panel",
+        site_url="./",
         title="Community Gallery",
         description="Awesome Panel resources by the community",
         applications=config.AWESOME_APPLICATIONS,

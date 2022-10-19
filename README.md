@@ -36,7 +36,7 @@ Explore the sample apps by running
 pn hello awesome-panel
 ```
 
-and opening [http://localhost:5006/gallery](http://localhost:5006/gallery) in your browser.
+and opening [http://localhost:5007/gallery](http://localhost:5007/gallery) in your browser.
 
 You can find the sample apps in the `examples/awesome-panel/awesome-panel` folder.
 

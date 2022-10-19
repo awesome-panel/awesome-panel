@@ -8,6 +8,7 @@ if __name__.startswith("bokeh"):
 
     GalleryTemplate(
         site="Awesome Panel",
+        site_url="./",
         title="Gallery",
         description="""The purpose of the Awesome Panel Gallery is to inspire
 and help you create awesome analytics apps in
