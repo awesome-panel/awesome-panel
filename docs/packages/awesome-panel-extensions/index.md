@@ -53,7 +53,6 @@ For an introduction to *web components* see [Web Components: the secret ingredie
 
 <a href="https://www.youtube.com/watch?v=YBwgkr_Sbx0" target="blank_"><img src="https://i.ytimg.com/vi/YBwgkr_Sbx0/hqdefault.jpg"></img></a>
 
-
 ### Widgets
 
 #### LinkButtons
@@ -64,7 +63,6 @@ Use them via `from awesome_panel_extensions.widgets import link_buttons`.
 
 [![LinkButtons](link_buttons.png)](https://nbviewer.jupyter.org/github/marcskovmadsen/awesome-panel-extensions/blob/master/examples/reference/widgets/LinkButtons.ipynb)
 
-
 #### PivotTable
 
 The `PivotTable` is a nice, interactive widget for getting insights from data.
@@ -74,7 +72,7 @@ Use it via `from awesome_panel_extensions.widgets.pivot_table import PivotTable`
 [<img src="https://mybinder.org/badge_logo.svg" style="height:25px;display:inline;margin:5px">](https://mybinder.org/v2/gh/MarcSkovMadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fwidgets%2FPivotTable.ipynb) [<img src="https://cdn.jsdelivr.net/gh/jupyter/design@master/logos/Badges/nbviewer_badge.svg" style="height:25px;display:inline;margin:5px">](https://nbviewer.jupyter.org/github/MarcSkovMadsen/awesome-panel-extensions/blob/master/examples/reference/widgets/PivotTable.ipynb)
 
 <video style="max-width:100%;max-height:500px;" autoplay controls>
-  <source src="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/docs/packages/awesome-panel-extensions/pivot-table.mp4" type="video/mp4" controls>
+  <source src="https://raw.githubusercontent.com/awesome-panel/awesome-panel/master/docs/packages/awesome-panel-extensions/pivot-table.mp4" type="video/mp4" controls>
     You browser does not support video
 </video>
 
@@ -231,5 +229,5 @@ For more info click the link below.
 * [Awesome Panel Designer Docs](designer.md)
 
 <video width="640" height="360" poster="__POSTER__.jpg" controls autoplay>
-    <source src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/docs/packages/awesome-panel-extensions/awesome-panel-designer-guide.mp4?raw=true" type="video/mp4" />
+    <source src="https://github.com/awesome-panel/awesome-panel/blob/master/docs/packages/awesome-panel-extensions/awesome-panel-designer-guide.mp4?raw=true" type="video/mp4" />
 </video>
