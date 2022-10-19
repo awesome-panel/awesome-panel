@@ -27,9 +27,9 @@ DEFAULT_TITLE = "Pandas Profiling Report"
 EMPTY_HTML_REPORT = "<p>Click a button to generate a report</p>"
 HTML_CREATING_REPORT = "<p>Creating Report ...</p>"
 CSV_URLS = [
-    "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/awesome_panel/assets/csv/perspective_viewer_data.csv",
-    "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/awesome_panel/assets/csv/global_power_plant_database.csv",
-    "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-panel/master/awesome_panel/assets/csv/kickstarter_dashboard.csv",
+    "https://raw.githubusercontent.com/awesome-panel/awesome-panel/master/src/awesome_panel/assets/csv/perspective_viewer_data.csv",
+    "https://raw.githubusercontent.com/awesome-panel/awesome-panel/master/src/awesome_panel/assets/csv/global_power_plant_database.csv",
+    "https://raw.githubusercontent.com/awesome-panel/awesome-panel/master/src/awesome_panel/assets/csv/kickstarter_dashboard.csv",
 ]
 GREEN = "#174c4f"
 ORANGE = "#cc5c29"

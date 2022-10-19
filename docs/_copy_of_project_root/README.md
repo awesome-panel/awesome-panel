@@ -1,6 +1,6 @@
 # Awesome Panel [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/MarcSkovMadsen/awesome-panel)
 
-[<img src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/panel-logo.png?raw=true" align="right" height="75">](https://panel.pyviz.org/)
+[<img src="https://github.com/awesome-panel/awesome-panel/blob/master/assets/images/panel-logo.png?raw=true" align="right" height="75">](https://panel.pyviz.org/)
 
 > A powerful, high-level app and dashboarding solution for **Python**!
 
@@ -10,12 +10,12 @@ This project provides
 
 - A curated [list](https://github.com/MarcSkovMadsen/awesome-panel#awesome-resources) of Awesome Panel **resources**. See below.
 - An [**awesome Panel application**](https://awesome-panel.org) with a **gallery** of Awesome Panel Apps.
-    - Feel free to add your awesome app to the gallery via a [Pull request](https://github.com/MarcSkovMadsen/awesome-panel/pulls). It's easy (see below).
+    - Feel free to add your awesome app to the gallery via a [Pull request](https://github.com/awesome-panel/awesome-panel/pulls). It's easy (see below).
 - A **best practices** example and **starter template** of an awesome, multipage app with an automated CI/ CD pipeline, deployed to the cloud and running in a Docker container.
 
 Visit the app at [awesome-panel.org](https://awesome-panel.org)!
 
-[![Awesome Panel Org Animation](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/awesome-panel-full-branded.gif?raw=true)](https://awesome-panel.org)
+[![Awesome Panel Org Animation](https://github.com/awesome-panel/awesome-panel/blob/master/assets/images/awesome-panel-full-branded.gif?raw=true)](https://awesome-panel.org)
 
 ## The Power of Panel
 
@@ -23,7 +23,7 @@ The only way to truly understand how powerful Panel is to play around with it. B
 
 Afterwards you can go to the [Panel Getting Started Guide](http://panel.pyviz.org/getting_started/index.html) or visit the [Panel Gallery](http://panel.pyviz.org/gallery/index.html).
 
-[![Introduction to Panel](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/youtube-introduction-to-panel.png?raw=true)](https://www.youtube.com/watch?v=Ohr29FJjBi0 "Introduction to panel")
+[![Introduction to Panel](https://github.com/awesome-panel/awesome-panel/blob/master/assets/images/youtube-introduction-to-panel.png?raw=true)](https://www.youtube.com/watch?v=Ohr29FJjBi0 "Introduction to panel")
 
 Panel is completely open source, available under a BSD license freely for both commercial and non-commercial use. Panel is part of the [HoloViz](https://holoviz.org/) ecosystem and works well with all the HoloViz tools..
 
@@ -37,7 +37,7 @@ Panel is completely open source, available under a BSD license freely for both c
 
 Panel is developed and maintained by [Anaconda](https://www.anaconda.com/) developers and community contributors
 
-![Anaconda](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/anaconda-logo.png?raw=true)
+![Anaconda](https://github.com/awesome-panel/awesome-panel/blob/master/assets/images/anaconda-logo.png?raw=true)
 
 ## Awesome Resources
 
@@ -108,7 +108,7 @@ A curated list of awesome panel resources. Inspired by [awesome-python](https://
 
 ## Contribute
 
-GitHub [Issues](https://github.com/MarcSkovMadsen/awesome-panel/issues) and [Pull requests](https://github.com/MarcSkovMadsen/awesome-panel/pulls) are very welcome!
+GitHub [Issues](https://github.com/awesome-panel/awesome-panel/issues) and [Pull requests](https://github.com/awesome-panel/awesome-panel/pulls) are very welcome!
 
 If you believe Awesome Panel is awesome and would like to join as a Core Developer feel free to reach out via [datamodelsanalytics.com](https://datamodelsanalytics.com)
 
@@ -128,7 +128,7 @@ You can contribute to the Panel package on [GitHub/pyviz/panel](https://github.c
         - This includes adding you as an Author in the `package/awesome_panel/database/authors.py` file.
         - This might include creating one or more Tags in the `package/awesome_panel/database/tags.py` file.
     - `README.md`
-- Create a [pull request](https://github.com/marcskovmadsen/awesome-panel/pulls).
+- Create a [pull request](https://github.com/awesome-panel/awesome-panel/pulls).
 
 The above is the perfect scenario. If this is not possible do the best you can and then reach out. I would really like to include your Awesome Panel URL to the resources list.
 
@@ -144,7 +144,7 @@ The above is the perfect scenario. If this is not possible do the best you can a
     - This includes creating a Thumbnail of your app and saving it to `assets/images/thumbnails/` folder.
 - Run `panel serve app.py` and manully test your app
 - Run `invoke test.all` and fix all errors. Also fix any warnings if possible.
-- Create a [pull request](https://github.com/marcskovmadsen/awesome-panel/pulls).
+- Create a [pull request](https://github.com/awesome-panel/awesome-panel/pulls).
 
 The above is the perfect scenario. If this is not possible do the best you can and then reach out. I would really like to include your Awesome Panel App in the Gallery.
 
@@ -154,7 +154,7 @@ If you would like to **sponsor my time or the infrastructure** the platform is r
 
 You can also appreciate the work that has already been done if you
 
-[![Buy me a coffee](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/buymeacoffee.png?raw=true)](https://www.buymeacoffee.com/4jlTzBJyQ)
+[![Buy me a coffee](https://github.com/awesome-panel/awesome-panel/blob/master/assets/images/buymeacoffee.png?raw=true)](https://www.buymeacoffee.com/4jlTzBJyQ)
 
 Thanks
 
@@ -166,7 +166,7 @@ I'm Marc, Skov, Madsen, PhD, CFA®, Lead Data Scientist Developer at [Ørsted](h
 
 You can learn more about me at [datamodelsanalytics.com](https://datamodelsanalytics.com)
 
-[<img src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/datamodelsanalytics.png?raw=true" style="max-width: 968px">](https://datamodelsanalytics.com)
+[<img src="https://github.com/awesome-panel/awesome-panel/blob/master/assets/images/datamodelsanalytics.png?raw=true" style="max-width: 968px">](https://datamodelsanalytics.com)
 
 I try my best to govern and maintain this project in the spirit of the [Zen of Python](https://www.python.org/dev/peps/pep-0020/).
 
@@ -176,7 +176,7 @@ Thanks
 
 ### LICENSE
 
-[Apache 2.0 License](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/LICENSE)
+[Apache 2.0 License](https://github.com/awesome-panel/awesome-panel/blob/master/LICENSE)
 
 ## Getting Started with the Awesome Panel Repository
 
@@ -375,22 +375,22 @@ Available tasks:
 The application is
 
 - built as a Docker image and tested via Azure Pipelines.
-    - You can find the Dockerfiles [here](https://github.com/MarcSkovMadsen/awesome-panel/tree/master/devops/docker) and the Azure pipelines yml files [here](https://github.com/MarcSkovMadsen/awesome-panel/tree/master/devops/azure-pipelines).
+    - You can find the Dockerfiles [here](https://github.com/awesome-panel/awesome-panel/tree/master/devops/docker) and the Azure pipelines yml files [here](https://github.com/awesome-panel/awesome-panel/tree/master/devops/azure-pipelines).
 
-![Azure Pipelines](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/azure-pipeline.png?raw=true)
-![Azure Pipelines Build and Test](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/azure-pipeline-build-test.png?raw=true)
+![Azure Pipelines](https://github.com/awesome-panel/awesome-panel/blob/master/assets/images/azure-pipeline.png?raw=true)
+![Azure Pipelines Build and Test](https://github.com/awesome-panel/awesome-panel/blob/master/assets/images/azure-pipeline-build-test.png?raw=true)
 
 - pushed to the Dockerhub repository [marcskovmadsen/awesome-panel](https://cloud.docker.com/u/marcskovmadsen/repository/docker/marcskovmadsen/awesome-panel).
 
-![Dockerhub](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/dockerhub.png?raw=true)
+![Dockerhub](https://github.com/awesome-panel/awesome-panel/blob/master/assets/images/dockerhub.png?raw=true)
 
 - released via Azure Pipelines
 
-![Azure Pipelines](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/azure-pipeline-release.png?raw=true)
+![Azure Pipelines](https://github.com/awesome-panel/awesome-panel/blob/master/assets/images/azure-pipeline-release.png?raw=true)
 
 - to a web app for containers service on Azure on the cheapest non-free pricing tier
 
-![Azure Pipelines](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/azure-pricing-tier.png?raw=true)
+![Azure Pipelines](https://github.com/awesome-panel/awesome-panel/blob/master/assets/images/azure-pricing-tier.png?raw=true)
 
 ### Project Layout
 

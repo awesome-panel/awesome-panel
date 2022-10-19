@@ -168,7 +168,7 @@ app.main().servable()
 
 then you run `panel serve app_debug_vscode.py` instead of `panel serve app.py` and attach the debugger.
 
-For a use case see my [app.py](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/app.py) and [app_dev_vscode.py](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/app_dev_vscode.py) files.
+For a use case see my [app.py](https://github.com/awesome-panel/awesome-panel/blob/master/app.py) and [app_dev_vscode.py](https://github.com/awesome-panel/awesome-panel/blob/master/app_dev_vscode.py) files.
 
 #### Using the integrated Debugging Console
 

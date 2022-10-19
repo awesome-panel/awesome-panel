@@ -121,7 +121,7 @@ _TEMPLATES = [FastGridTemplate, FastListTemplate, GalleryTemplate]
 
 # pylint: disable=line-too-long
 FOLLOW_ON_TWITTER = """[![Follow on Twitter](https://img.shields.io/twitter/follow/MarcSkovMadsen.svg?style=social)](https://twitter.com/MarcSkovMadsen)"""
-GITHUB_STARS = "[![GitHub stars](https://img.shields.io/github/stars/MarcSkovMadsen/awesome-panel.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/MarcSkovMadsen/awesome-panel/stargazers/)"
+GITHUB_STARS = "[![GitHub stars](https://img.shields.io/github/stars/MarcSkovMadsen/awesome-panel.svg?style=social&label=Star&maxAge=2592000)](https://github.com/awesome-panel/awesome-panel/stargazers/)"
 # pylint: enable=line-too-long
 
 

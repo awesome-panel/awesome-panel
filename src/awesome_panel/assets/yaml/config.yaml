@@ -52,13 +52,13 @@ applications:
       [Panel.io.server.unlocked](https://panel.holoviz.org/api/panel.io.html#panel.io.server.unlocked)
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/async_tasks.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/async_tasks.py
       gif: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/async_tasks.gif
       mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/async_tasks.mp4
     servable: 
     tags:       
       - Async
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/async_tasks.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/async_tasks.png"
   - url: awesome_list
     name: Community Gallery
     author: marc_skov_madsen
@@ -69,11 +69,11 @@ applications:
       The Community Gallery is the *awesome list* of Panel. It provides links to a range of awesome community resources.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/awesome_list.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/awesome_list.py
     servable: 
     tags:       
       - Gallery
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/awesome-list.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/awesome-list.png"
   - url: awesome_button
     name: AwesomeButton
     author: marc_skov_madsen
@@ -86,14 +86,14 @@ applications:
       package.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/awesome_button.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/awesome_button.py
       binder: https://mybinder.org/v2/gh/MarcSkovMadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fmodels%2FIcon.ipynb
       docs: https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html#icon
     servable: 
     tags:       
       - awesome-panel-extensions
       - icon
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/awesome_button.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/awesome_button.png"
   - url: bootstrap_alerts
     name: Bootstrap Alerts
     author: marc_skov_madsen
@@ -107,11 +107,11 @@ applications:
       [here](https://panel.holoviz.org/reference/panes/Alert.html).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/bootstrap_alerts.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/bootstrap_alerts.py
     servable: 
     tags:       
       - Bootstrap
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_bootstrap_alerts.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/test_bootstrap_alerts.png"
   - url: bootstrap_card
     name: Bootstrap Card
     author: marc_skov_madsen
@@ -126,11 +126,11 @@ applications:
       [here](https://panel.holoviz.org/reference/layouts/Card.html).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/bootstrap_card.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/bootstrap_card.py
     servable: 
     tags:       
       - Bootstrap
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_bootstrap_card.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/test_bootstrap_card.png"
   - url: bootstrap_dashboard
     name: Bootstrap Dashboard
     author: marc_skov_madsen
@@ -141,11 +141,11 @@ applications:
       The purpose of this app is to test that a **multi-page Dashboard Layout** similar to the [bootstrap dashboard template](https://getbootstrap.com/docs/4.3/examples/dashboard/) from [getboostrap.com](https://getbootstrap.com/) can be implemented in [Panel](https://panel.pyviz.org/).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/bootstrap_dashboard.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/bootstrap_dashboard.py
     servable: 
     tags:       
       - Bootstrap
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/bootstrap_dashboard.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/bootstrap_dashboard.png"
   - url: caching_example
     name: Caching Example
     author: marc_skov_madsen
@@ -177,13 +177,13 @@ applications:
       To learn more about caching check out the [AWS Caching Overview](https://aws.amazon.com/caching/)
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/caching_example.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/caching_example.py
       mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/caching-example.mp4
     servable: 
     tags:       
       - Panel
       - Caching
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/caching-example.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/caching-example.png"
   - url: classic_dashboard
     name: Classic Dashboard
     author: marc_skov_madsen
@@ -201,12 +201,12 @@ applications:
       [discussion on Discourse](https://discourse.holoviz.org/t/error-not-supported-between-instances-of-select-and-select/929).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/classic_dashboard.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/classic_dashboard.py
     servable: 
     tags:       
       - hvPlot
       - HoloViews
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/dashboard.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/dashboard.png"
   - url: dash_iris_classifier
     name: Iris Classifier
     author: marc_skov_madsen
@@ -221,12 +221,12 @@ applications:
       [discussion on Twitter](https://twitter.com/kidpixo/status/1505552334725824515?s=20&t=uULt1fBYRrYFtECHzQoD9w).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/dash_iris_classifier.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/dash_iris_classifier.py
     servable: 
     tags:       
       - Dash
       - MachineLearning
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/dashboard.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/dashboard.png"
   # - url: custom_bokeh_model
   #   name: Custom Bokeh Model
   #   author: marc_skov_madsen
@@ -241,12 +241,12 @@ applications:
   #     **[checkout the Awesome Panel Extensions Guide](https://awesome-panel.readthedocs.io/en/latest/guides/awesome-panel-extensions-guide/index.html)**
   #   project: 
   #   resources:       
-  #     code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/custom_bokeh_model.py
+  #     code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/custom_bokeh_model.py
   #   servable: 
   #   tags:       
   #     - Code
   #     - App In Gallery
-  #   thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/custom_bokeh_model.png"
+  #   thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/custom_bokeh_model.png"
   - url: data_explorer_loading
     name: Data Explorer Loading
     author: marc_skov_madsen
@@ -260,10 +260,10 @@ applications:
       computation</strong>.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/data_explorer_loading.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/data_explorer_loading.py
     servable: 
     tags: 
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/dataexplorer_loading.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/dataexplorer_loading.png"
   - url: dataframe_formatting
     name: Dataframe Formatting
     author: marc_skov_madsen
@@ -281,11 +281,11 @@ applications:
       If you want Panel to support sensible defaults automatically please upvote [Issue 940](https://github.com/holoviz/panel/issues/940).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/dataframe_formatting.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/dataframe_formatting.py
     servable: 
     tags:       
       - DataFrame
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_dataframe.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/test_dataframe.png"
   - url: dependent_widgets
     name: Dependent Widgets
     author: marc_skov_madsen
@@ -297,14 +297,14 @@ applications:
       how to provide multiple ways to the user to select a value and then update a plot.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/dependent_widgets.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/dependent_widgets.py
       gif: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/dependent-widgets.gif
       mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/dependent-widgets.mp4
     servable: 
     tags:       
       - Discourse
       - Multiselect
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/dependent-widgets.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/dependent-widgets.png"
   - url: detr
     name: "DE:TR: Object Detection"
     author: marc_skov_madsen
@@ -332,14 +332,14 @@ applications:
       Please note this app is running on very low end, cheap hardware which explains the low performance.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/detr.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/detr.py
       gif: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/detr.gif
       mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/detr.mp4
     servable: 
     tags:       
       - DE:TR
       - Plotly
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/detr.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/detr.png"
   - url: echarts
     name: ECharts
     author: marc_skov_madsen
@@ -362,12 +362,12 @@ applications:
       **enabling us to develop awesome analytics apps using the power of Echarts, Panel and Python**.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/echarts.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/echarts.py
     servable: 
     tags:       
       - ECharts
       - PyECharts
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_echarts.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/test_echarts.png"
   - url: fast_grid_template
     name: FastGridTemplate
     author: marc_skov_madsen
@@ -387,13 +387,13 @@ applications:
       Checkout the <fast-anchor href="https://explore.fast.design/components/fast-accordion" appearance="hypertext" target="_blank">Component Gallery</fast-anchor>.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/fast_grid_template.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/fast_grid_template.py
       mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/fast_grid_template_app.mp4
     servable: 
     tags:       
       - Fast
       - Template
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/fast-grid-template.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/fast-grid-template.png"
   - url: fileinput_area
     name: FileInput Area
     author: marc_skov_madsen
@@ -426,13 +426,13 @@ applications:
       [Discourse 1128](https://discourse.holoviz.org/t/what-should-a-better-fileinput-look-like/1128/3).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/fileinput_area.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/fileinput_area.py
       mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/
     servable: 
     tags:       
       - Styling
       - FileInput
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/fileinput-area.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/fileinput-area.png"
   - url: gallery
     name: App Gallery
     author: marc_skov_madsen
@@ -444,10 +444,10 @@ applications:
       resources
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/gallery.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/gallery.py
     servable: 
     tags: 
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/gallery.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/gallery.png"
   - url: getting_started_panel
     name: Getting Started with Panel
     author: marc_skov_madsen
@@ -458,10 +458,10 @@ applications:
       This data app serves as an introduction to Panel showcases widgets, panes, reactive functions and templates.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/getting_started_panel.ipynb
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/getting_started_panel.ipynb
     servable: 
     tags: 
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/getting-started-panel.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/getting-started-panel.png"
   - url: getting_started_hvplot_interactive
     name: Getting Started with hvplot .interactive
     author: marc_skov_madsen
@@ -472,10 +472,10 @@ applications:
       This data app serves as an introduction to hvplot .interactive and Panel
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/getting_started_hvplot_interactive.ipynb
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/getting_started_hvplot_interactive.ipynb
     servable: 
     tags: 
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/getting-started-hvplot-interactive.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/getting-started-hvplot-interactive.png"
   - url: google_map_viewer
     name: Google Map Viewer
     author: andrew_huang
@@ -489,7 +489,7 @@ applications:
       The Google Maps example was initially described in the [Param User Guide](https://panel.holoviz.org/user_guide/Param.html).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/google_map_viewer.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/google_map_viewer.py
       mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/google-map-viewer.mp4
     servable: 
     tags:       
@@ -498,7 +498,7 @@ applications:
       - Grid
       - Google
       - Map
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/google-map-viewer.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/google-map-viewer.png"
   - url: highcharts_network
     name: HighCharts Network
     author: marc_skov_madsen
@@ -518,14 +518,14 @@ applications:
     project: 
     resources:       
       binder: https://mybinder.org/v2/gh/marcskovmadsen/panel-highcharts/HEAD?urlpath=lab/tree/examples/Network.ipynb
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/highcharts_network.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/highcharts_network.py
       github: https://github.com/marcskovmadsen/panel-highcharts
       pypi: https://pypi.org/project/panel-highcharts/
     servable: 
     tags:       
       - HighCharts
       - graph
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/highcharts-network.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/highcharts-network.png"
   - url: highcharts_add_series_dynamically
     name: HighCharts - Add Series Dynamically
     author: marc_skov_madsen
@@ -547,14 +547,14 @@ applications:
     project: 
     resources:       
       binder: https://mybinder.org/v2/gh/marcskovmadsen/panel-highcharts/HEAD?urlpath=lab/tree/examples/AddSeriesDynamically.ipynb
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/highcharts_add_series_dynamically.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/highcharts_add_series_dynamically.py
       github: https://github.com/marcskovmadsen/panel-highcharts
       pypi: https://pypi.org/project/panel-highcharts/
     servable: 
     tags:       
       - HighCharts
       - graph
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/highcharts_add_series_dynamically.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/highcharts_add_series_dynamically.png"
   - url: highcharts_renewable_power_plants_dk
     name: HighCharts Renewable Power
     author: marc_skov_madsen
@@ -575,7 +575,7 @@ applications:
     project: 
     resources:       
       binder: https://mybinder.org/v2/gh/marcskovmadsen/panel-highcharts/HEAD?urlpath=lab/tree/examples/LinkedCharts.ipynb
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/highcharts_renewable_power_plants_dk.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/highcharts_renewable_power_plants_dk.py
       github: https://github.com/marcskovmadsen/panel-highcharts
       pypi: https://pypi.org/project/panel-highcharts/
     servable: 
@@ -583,7 +583,7 @@ applications:
       - Dashboard
       - HighCharts
       - Renewable
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/highcharts_renewable_power_plants_dk.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/highcharts_renewable_power_plants_dk.png"
   - url: holoviews_linked_brushing
     name: HoloViews Linked Brushing
     author: marc_skov_madsen
@@ -600,7 +600,7 @@ applications:
       This example uses the *Iris* dataset.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/holoviews_linked_brushing.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/holoviews_linked_brushing.py
       mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/holoviews-linked-brushing.mp4
       youtube: https://youtu.be/l-dvQwF6sHw
     servable: 
@@ -611,7 +611,7 @@ applications:
       - HoloViews
       - Linked Brushing
       - Cross Filter
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/holoviews-linked-brushing.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/holoviews-linked-brushing.png"
   - url: "home"
     name: Home
     author: marc_skov_madsen
@@ -622,10 +622,10 @@ applications:
       An introduction to awesome-panel.org and Panel
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/home.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/home.py
     servable: 
     tags: 
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/home.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/home.png"
   - url: image_classifier
     name: Image Classifier
     author: marc_skov_madsen
@@ -643,12 +643,12 @@ applications:
       application developed by [Atul Kumar Singh](https://github.com/iamatulsingh).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/image_classifier.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/image_classifier.py
       mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/
     servable: 
     tags:       
       - Keras
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/image_classifier.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/image_classifier.png"
   - url: js_actions
     name: JS Actions
     author: marc_skov_madsen
@@ -665,11 +665,11 @@ applications:
       by [ShanzyHolm](https://discourse.holoviz.org/u/ShanzyHolm/summary).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/js_actions.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/js_actions.py
     servable: 
     tags:       
       - JavaScript
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/js_actions.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/js_actions.png"
   - url: jsme_editor
     name: JSME Editor
     author: marc_skov_madsen
@@ -683,12 +683,12 @@ applications:
       package.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/jsme_editor.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/jsme_editor.py
       doc: https://nbviewer.org/github/MarcSkovMadsen/panel-chemistry/blob/main/examples/reference/JSMEEditor.ipynb
     servable: 
     tags:       
       - Chemistry
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/jsme_editor.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/jsme_editor.png"
   - url: lib_altair
     name: Altair
     author: marc_skov_madsen
@@ -703,14 +703,14 @@ applications:
       including Altair. It supports both light and dark theme.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_altair.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/lib_altair.py
       doc: https://panel.holoviz.org/reference/panes/Vega.html#altair
       youtube: https://www.youtube.com/results?search_query=python+altair
     servable: 
     tags:       
       - Altair
       - DataViz
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_altair.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/lib_altair.png"
   - url: lib_bokeh
     name: Bokeh
     author: marc_skov_madsen
@@ -726,14 +726,14 @@ applications:
       including Bokeh. It supports both light and dark theme.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_bokeh.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/lib_bokeh.py
       doc: https://panel.holoviz.org/reference/panes/Bokeh.html
       youtube: https://www.youtube.com/results?search_query=python+bokeh
     servable: 
     tags:       
       - Bokeh
       - DataViz
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_bokeh.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/lib_bokeh.png"
   - url: lib_datashader
     name: Datashader
     author: marc_skov_madsen
@@ -757,7 +757,7 @@ applications:
       Issue: [Datashader+Panel flashes](https://github.com/holoviz/panel/issues/3242)
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_datashader.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/lib_datashader.py
       youtube: https://www.youtube.com/results?search_query=datashader
     servable: 
     tags:       
@@ -765,7 +765,7 @@ applications:
       - Datashader
       - Big Data
       - DataViz
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_datashader.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/lib_datashader.png"
   - url: lib_deckgl
     name: Deck.gl
     author: marc_skov_madsen
@@ -783,7 +783,7 @@ applications:
       including Deck.gl. It supports both light and dark theme.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_deckgl.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/lib_deckgl.py
       doc: https://panel.holoviz.org/reference/panes/DeckGL.html#panes-gallery-deckgl
       youtube: https://www.youtube.com/results?search_query=deckgl
     servable: false
@@ -793,7 +793,7 @@ applications:
       - Spatial
       - GeoViz
       - DataViz
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_deckgl.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/lib_deckgl.png"
   - url: lib_echarts
     name: ECharts
     author: marc_skov_madsen
@@ -809,7 +809,7 @@ applications:
       including Echarts. It supports both light and dark theme.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_echarts.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/lib_echarts.py
       doc: https://panel.holoviz.org/reference/panes/ECharts.html#panes-gallery-echarts
       youtube: https://www.youtube.com/results?search_query=echarts
     servable: 
@@ -817,7 +817,7 @@ applications:
       - ECharts
       - Apache
       - DataViz
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_echarts.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/lib_echarts.png"
   - url: lib_folium
     name: Folium
     author: marc_skov_madsen
@@ -833,7 +833,7 @@ applications:
       including Folium.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_folium.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/lib_folium.py
       doc: https://panel.holoviz.org/reference/panes/Folium.html
       youtube: https://www.youtube.com/results?search_query=folium
     servable: 
@@ -842,7 +842,7 @@ applications:
       - Spatial
       - GeoViz
       - DataViz
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_folium.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/lib_folium.png"
   - url: lib_holoviews
     name: HoloViews
     author: marc_skov_madsen
@@ -863,14 +863,14 @@ applications:
       including HoloViews.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_holoviews.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/lib_holoviews.py
       doc: https://panel.holoviz.org/reference/panes/HoloViews.html
       youtube: https://www.youtube.com/results?search_query=holoviews
     servable: 
     tags:       
       - HoloViews
       - DataViz
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_holoviews.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/lib_holoviews.png"
   - url: lib_hvplot
     name: hvplot
     author: marc_skov_madsen
@@ -900,7 +900,7 @@ applications:
       including hvplot.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_hvplot.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/lib_hvplot.py
       doc: https://panel.holoviz.org/reference/panes/HoloViews.html
       youtube: https://www.youtube.com/results?search_query=hvplot
     servable: 
@@ -909,7 +909,7 @@ applications:
       - DataFrame
       - Pandas
       - DataViz
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_hvplot.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/lib_hvplot.png"
   - url: lib_ipysheet
     name: IpySheet
     author: marc_skov_madsen
@@ -923,14 +923,14 @@ applications:
       including IpySheet.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_ipysheet.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/lib_ipysheet.py
       doc: https://panel.holoviz.org/reference/panes/IPyWidget.html
       youtube: https://www.youtube.com/results?search_query=ipysheet
     servable: 
     tags:       
       - ipysheet
       - ipywidgets
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_ipysheet.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/lib_ipysheet.png"
   - url: lib_matplotlib
     name: MatplotLib
     author: marc_skov_madsen
@@ -946,14 +946,14 @@ applications:
       including Matplotlib. It supports both light and dark theme.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_matplotlib.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/lib_matplotlib.py
       doc: https://panel.holoviz.org/reference/panes/Matplotlib.html
       youtube: https://www.youtube.com/results?search_query=matplotlib
     servable: 
     tags:       
       - ipysheet
       - ipywidgets
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_matplotlib.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/lib_matplotlib.png"
   - url: lib_plotly
     name: Plotly
     author: marc_skov_madsen
@@ -971,14 +971,14 @@ applications:
       including Plotly. It supports both light and dark theme.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_plotly.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/lib_plotly.py
       doc: https://panel.holoviz.org/reference/panes/Plotly.html
       youtube: https://www.youtube.com/results?search_query=plotly
     servable: 
     tags:       
       - dataviz
       - plotly
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_plotly.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/lib_plotly.png"
   - url: lib_plotnine
     name: Plotnine
     author: marc_skov_madsen
@@ -996,14 +996,14 @@ applications:
       including Plotnine. It supports both light and dark theme.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_plotnine.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/lib_plotnine.py
       doc: https://panel.holoviz.org/reference/panes/Matplotlib.html
       youtube: https://www.youtube.com/results?search_query=plotnine
     servable: 
     tags:       
       - dataviz
       - plotly
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_plotnine.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/lib_plotnine.png"
   - url: lib_pydeck
     name: PyDeck
     author: marc_skov_madsen
@@ -1020,7 +1020,7 @@ applications:
       PyDeck works very well with Panel. Even hover, click etc events are supported.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_pydeck.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/lib_pydeck.py
       doc: https://panel.holoviz.org/reference/panes/DeckGL.html
       youtube: https://www.youtube.com/results?search_query=pydeck
     servable: 
@@ -1030,7 +1030,7 @@ applications:
       - dataviz
       - deckgl
       - pydeck
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_pydeck.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/lib_pydeck.png"
   - url: lib_pyecharts
     name: PyEcharts
     author: marc_skov_madsen
@@ -1048,7 +1048,7 @@ applications:
       including PyDeck. It supports both light and dark theme.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_pyecharts.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/lib_pyecharts.py
       doc: https://panel.holoviz.org/reference/panes/ECharts.html
       youtube: https://www.youtube.com/results?search_query=pyecharts
     servable: 
@@ -1056,7 +1056,7 @@ applications:
       - dataviz
       - echarts
       - pyecharts
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_pyecharts.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/lib_pyecharts.png"
   # - url: lib_pyvista
   #   name: PyVista
   #   author: marc_skov_madsen
@@ -1074,7 +1074,7 @@ applications:
   #     including PyVista. It supports both light and dark theme.
   #   project: 
   #   resources:       
-  #     code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_pyvista.py
+  #     code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/lib_pyvista.py
   #     doc: https://panel.holoviz.org/reference/panes/VTK.html
   #     youtube: https://www.youtube.com/results?search_query=pyvista
   #   servable: 
@@ -1082,7 +1082,7 @@ applications:
   #     - dataviz
   #     - vtk
   #     - pyvista
-  #   thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+  #   thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
   - url: lib_seaborn
     name: Seaborn
     author: marc_skov_madsen
@@ -1101,7 +1101,7 @@ applications:
       including Seaborn. It supports both light and dark theme.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_seaborn.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/lib_seaborn.py
       doc: https://panel.holoviz.org/reference/panes/Matplotlib.html
       youtube: https://www.youtube.com/results?search_query=seaborn
     servable: 
@@ -1109,7 +1109,7 @@ applications:
       - dataviz
       - matplotlib
       - seaborn
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_seaborn.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/lib_seaborn.png"
   - url: lib_vega
     name: Vega
     author: marc_skov_madsen
@@ -1128,7 +1128,7 @@ applications:
       including Vega and Vega-lite. It supports both light and dark theme.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_vega.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/lib_vega.py
       doc: https://panel.holoviz.org/reference/panes/Vega.html
       youtube: https://www.youtube.com/results?search_query=vega-lite
     servable: 
@@ -1136,7 +1136,7 @@ applications:
       - dataviz
       - vega-lite
       - vega
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_vega.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/lib_vega.png"
   # - url: lib_vtk
   #   name: VTK
   #   author: marc_skov_madsen
@@ -1153,7 +1153,7 @@ applications:
   #     including VTK. It supports both light and dark theme.
   #   project: 
   #   resources:       
-  #     code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_vtk.py
+  #     code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/lib_vtk.py
   #     doc: https://panel.holoviz.org/reference/panes/VTK.html
   #     youtube: https://www.youtube.com/results?search_query=visualization+toolkit
   #   servable:
@@ -1161,7 +1161,7 @@ applications:
   #     - dataviz
   #     - vega-lite
   #     - vega
-  #   thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+  #   thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
   - url: kickstarter_dashboard
     name: Kickstarter Dashboard
     author: marc_skov_madsen
@@ -1186,12 +1186,12 @@ applications:
       [awesome-streamlit.org](https://awesome-streamlit.org)
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/kickstarter_dashboard.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/kickstarter_dashboard.py
     servable: 
     tags:       
       - Bokeh
       - Linked Brushing
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
   - url: loading_spinners
     name: Loading Spinners
     author: marc_skov_madsen
@@ -1212,13 +1212,13 @@ applications:
       [#3205](https://github.com/holoviz/panel/pull/3205).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/loading_spinners.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/loading_spinners.py
       gif: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/loading-spinners.gif
       mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/loading-spinners.mp4
     servable: 
     tags:       
       - UX
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/loading-spinners.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/loading-spinners.png"
   - url: mercury_buy_vs_build
     name: Mercury - Buy vs Build
     author: marc_skov_madsen
@@ -1235,12 +1235,12 @@ applications:
       Note that this app also demonstrates the use of [Bloxs](https://github.com/mljar/bloxs).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/mercury_buy_vs_build.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/mercury_buy_vs_build.py
     servable: 
     tags:       
       - Mercury
       - Bloxs
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/mercury_buy_vs_build.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/mercury_buy_vs_build.png"
   - url: model_viewer
     name: Model Viewer
     author: marc_skov_madsen
@@ -1270,11 +1270,11 @@ applications:
       and [model-viewer Github](https://github.com/google/model-viewer/tree/master/packages/model-viewer)
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/model_viewer.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/model_viewer.py
     servable: 
     tags:       
       - model-viewer
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_model_viewer.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/test_model_viewer.png"
   - url: ngl_viewer
     name: NGL Viewer
     author: jochem_smit
@@ -1295,7 +1295,7 @@ applications:
       [Discourse 583](https://discourse.holoviz.org/t/how-to-use-ngl-webgl-protein-viewer-in-panel/583).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/ngl_viewer.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/ngl_viewer.py
       mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/ngl-molecule-viewer.mp4
       doc: https://nbviewer.org/github/MarcSkovMadsen/panel-chemistry/blob/main/examples/reference/NGLViewer.ipynb
       gif: https://nbviewer.org/github/MarcSkovMadsen/panel-chemistry/blob/main/examples/assets/NGLViewer.gif
@@ -1304,7 +1304,7 @@ applications:
       - Panel
       - NGL
       - Molecule
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/ngl-molecule-viewer.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/ngl-molecule-viewer.png"
   - url: pandas_profiling_app
     name: Pandas Profiling
     author: marc_skov_madsen
@@ -1320,13 +1320,13 @@ applications:
       For more information take a look at the [Pandas Profiling Examples](https://pandas-profiling.ydata.ai/docs/master/index.html).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/pandas_profiling_app.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/pandas_profiling_app.py
     servable: 
     tags:       
       - Pandas
       - HTML
       - embed
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/pandas_profiling_app.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/pandas_profiling_app.png"
   - url: pdbe_molstar
     name: PDBeMolStar
     author: marc_skov_madsen
@@ -1339,14 +1339,14 @@ applications:
       PDBe Molstar is a streamlined structure viewer which enables a PDB structure to be explored within a browser rather than requiring pre-installed molecular graphics software
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/pdbe_molstar.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/pdbe_molstar.py
       binder: https://mybinder.org/v2/gh/marcskovmadsen/panel-chemistry/HEAD?urlpath=lab/tree/examples/reference/PDBe_MolStar.ipynb
     servable: 
     tags:       
       - chemistry
       - cheminformatics
       - panel-chemistry
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/pdbe_molstar.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/pdbe_molstar.png"
   - url: component_explorer
     name: Component Explorer
     author: marc_skov_madsen
@@ -1361,12 +1361,12 @@ applications:
       [Fast.design](https://fast.design) style.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/component_explorer.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/component_explorer.py
     servable: 
     tags:       
       - Panel
       - Components
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/panel-component-explorer.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/panel-component-explorer.png"
   - url: param_reference
     name: Param Reference
     author: marc_skov_madsen
@@ -1387,11 +1387,11 @@ applications:
       You can find it [here](https://panel.holoviz.org/reference/panes/Param.html#panes-gallery-param).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/param_reference.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/param_reference.py
     servable: 
     tags:       
       - Param
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/param_reference_example.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/param_reference_example.png"
   - url: perspective
     name: Perspective Viewer
     author: marc_skov_madsen
@@ -1407,12 +1407,12 @@ applications:
       which was first contributed by awesome-panel.org and then further improved by Philipp.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/perspective.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/perspective.py
     servable: 
     tags:       
       - Perspective
       - Streaming
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_perspective.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/test_perspective.png"
   - url: progress_extension
     name: Progress Extension
     author: marc_skov_madsen
@@ -1453,11 +1453,11 @@ applications:
       This will show the progress bar and reset every 2 clicks.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/progress_extension.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/progress_extension.py
     servable: 
     tags:       
       - Progress
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_progress_ext.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/test_progress_ext.png"
   - url: py3dmol
     name: Py3DMol
     author: marc_skov_madsen
@@ -1476,13 +1476,13 @@ applications:
       - Nicholas Rego and David Koes, 3Dmol.js: molecular visualization with WebGL, Bioinformatics (2015) 31 (8): 1322-1324 [doi:10.1093/bioinformatics/btu829](https://academic.oup.com/bioinformatics/article/31/8/1322/213186).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/py3dmol.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/py3dmol.py
       doc: https://nbviewer.org/github/MarcSkovMadsen/panel-chemistry/blob/main/examples/reference/Py3DMol.ipynb
       gif: https://nbviewer.org/github/MarcSkovMadsen/panel-chemistry/blob/main/examples/assets/Py3DMol.gif
     servable: 
     tags:       
       - Chemistry
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/py3dmol.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/py3dmol.png"
   - url: reactive_leaflet
     name: Leaflet component using ReactiveHTML
     author: marc_skov_madsen
@@ -1497,14 +1497,14 @@ applications:
       You can also [use ipyleaflet with Panel](https://discourse.holoviz.org/t/works-with-ipyleaflet/2755).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/reactive_leaflet.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/reactive_leaflet.py
       doc: https://leafletjs.com/
     servable: 
     tags:       
       - Spatial
       - GeoViz
       - Leaflet
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/reactive_leaflet.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/reactive_leaflet.png"
   - url: share_on_social_buttons
     name: Share on Social Buttons
     author: marc_skov_madsen
@@ -1523,12 +1523,12 @@ applications:
 
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/share_on_social_buttons.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/share_on_social_buttons.py
     servable: 
     tags:       
       - Social Media
       - Buttons
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_share_links.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/test_share_links.png"
   - url: shoelace
     name: Shoelace
     author: marc_skov_madsen
@@ -1552,12 +1552,12 @@ applications:
       Developed by [awesome-panel.org](/).
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/shoelace.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/shoelace.py
     servable: 
     tags:       
       - Shoelace
       - Modal
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/shoelace.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/shoelace.png"
   - url: soccer_analytics_dashboard
     name: Soccer Analytics Dashboard
     author: stephen_kilcommins
@@ -1571,7 +1571,7 @@ applications:
       You can find the original notebook [here](soccer_analytics_dashboard_original.ipynb)
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/soccer_analytics_dashboard.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/soccer_analytics_dashboard.py
       documentation: https://medium.datadriveninvestor.com/panel-everything-you-need-to-know-9bca61532e12
     servable: 
     tags:       
@@ -1580,7 +1580,7 @@ applications:
       - Blog
       - Soccer
       - Plotly
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/soccer-analytics-dashboard.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/soccer-analytics-dashboard.png"
   - url: streaming_indicators
     name: Streaming Indicators
     author: marc_skov_madsen
@@ -1597,14 +1597,14 @@ applications:
       `pn.state.add_periodic_callback`
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/streaming_indicators.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/streaming_indicators.py
       mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/streaming-dashboard.mp4
     servable: 
     tags:       
       - Streaming
       - Dashboard
       - StatsCard
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/streaming-dashboard.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/streaming-dashboard.png"
   - url: streaming_plots
     name: Streaming Plots
     author: marc_skov_madsen
@@ -1624,14 +1624,14 @@ applications:
       The stream will STOP AFTER 1 MINUTE.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/streaming_plots.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/streaming_plots.py
       gif: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/streaming-plots.gif
       mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/streaming-plots.mp4
     servable: 
     tags:       
       - Streaming
       - Streamz
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/streaming-plots.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/streaming-plots.png"
   - url: tabulator
     name: Tabulator
     author: marc_skov_madsen
@@ -1646,14 +1646,14 @@ applications:
       improvements. It is now one of the most powerful widgets in Panel.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/tabulator.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/tabulator.py
       gif: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/tabulator-app.gif
       mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/tabulator-app.mp4
     servable: 
     tags:       
       - Streaming
       - Tabulator
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/tabulator-app.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/tabulator-app.png"
   - url: text_to_speech
     name: Text To Speech
     author: marc_skov_madsen
@@ -1670,13 +1670,13 @@ applications:
       experience **use Chrome**.
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/text_to_speech.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/text_to_speech.py
       gif: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/text-to-speech.gif
       mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/text-to-speech.mp4
     servable: 
     tags:       
       - TextToSpeech
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/text-to-speech.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/text-to-speech.png"
   - url: volume_profile_analysis
     name: Volume Profile Analysis
     author: marc_skov_madsen
@@ -1689,7 +1689,7 @@ applications:
       by [Minh Ngyen](https://www.linkedin.com/in/minhnguyen001/)
     project: 
     resources:       
-      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/volume_profile_analysis.py
+      code: https://github.com/awesome-panel/awesome-panel/tree/master/examples/volume_profile_analysis.py
       mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/volume_profile_analysis.mp4
       gif: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/volume_profile_analysis.gif
     servable: 
@@ -1700,4 +1700,4 @@ applications:
       - Finance
       - Quant
       - Signal Processing
-    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/volume-profile-analysis.png"
+    thumbnail: "https://github.com/awesome-panel/awesome-panel/raw/master/assets/images/thumbnails/volume-profile-analysis.png"

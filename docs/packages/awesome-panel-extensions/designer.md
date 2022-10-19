@@ -10,7 +10,7 @@ This is for **developing any Python object that Panel can display**:
 - Panel layouts, widgets, extensions and apps
 
 <video width="100%" height="600" poster="__POSTER__.jpg" controls autoplay>
-    <source src="https://github.com/MarcSkovMadsen/awesome-panel/blob/master/docs/packages/awesome-panel-extensions/awesome-panel-designer-guide.mp4?raw=true" type="video/mp4" />
+    <source src="https://github.com/awesome-panel/awesome-panel/blob/master/docs/packages/awesome-panel-extensions/awesome-panel-designer-guide.mp4?raw=true" type="video/mp4" />
 </video><br>
 
 You can read the motivation for why I created the Awesome Panel Designer [here](#what-problem-does-the-designer-solve).
