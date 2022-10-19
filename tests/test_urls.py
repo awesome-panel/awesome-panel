@@ -54,11 +54,11 @@ def test_urls(urls):
             continue
 
         try:
-            response = requests.get(url, verify=False)
+            response = requests.get(url, timeout=20)
 
             if response.status_code != 200:
                 invalid_urls.append(url)
-        except requests.exceptions.ConnectionError:
+        except:  # pylint: disable=bare-except
             invalid_urls.append(url)
 
     # Then

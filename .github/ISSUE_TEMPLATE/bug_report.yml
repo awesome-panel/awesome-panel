@@ -1,0 +1,68 @@
+name: "🐛 Bug Report"
+description: Report something that does not work as expected
+labels: [
+  "bug", "TRIAGE"
+]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: Please enter an explicit description of your issue. Supplementary images or videos are much appreciated.
+      placeholder: Short and explicit description of your issue...
+    validations:
+      required: true
+  - type: textarea
+    id: reprod
+    attributes:
+      label: "Reproduction steps"
+      description: Please list the steps needed to reproduce the issue. . Supplementary images or videos are much appreciated.
+      placeholder: |
+        - Run `panel serve app.py` where `app.py` contains the code below
+        - Open http://localhost:5006/app
+        - Go to '...'
+        - Click on '....'
+        - See error
+    validations:
+      required: true
+  - type: textarea
+    id: requirements
+    attributes:
+      label: "Requirements"
+      description: Please list the relevant requirements including version numbers
+      placeholder: |
+        panel==0.14.0
+      render: bash
+    validations:
+      required: false
+  - type: textarea
+    id: code
+    attributes:
+      label: "Code"
+      description: A minimum, reproducible example, see https://stackoverflow.com/help/minimal-reproducible-example.
+      placeholder: |
+        import panel as pn
+
+        pn.extension()
+      render: python3
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: "Logs"
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      placeholder: |
+        2022-10-13 05:59:36,200 Starting Bokeh server version 2.4.3 (running on Tornado 6.2)
+        2022-10-13 05:59:36,212 Bokeh app running at: http://localhost:5006/script
+      render: bash
+    validations:
+      required: false
+  - type: textarea
+    id: additional
+    attributes:
+      label: "Additional Context"
+      description: Any other relevant information that might be helpful
+      placeholder: This is important to fix because...
+    validations:
+      required: false

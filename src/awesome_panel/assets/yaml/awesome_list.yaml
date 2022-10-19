@@ -1,0 +1,1096 @@
+---
+users:
+  - uid: Ali Shahid
+    name: Ali Shahid
+    url: https://ali.insciteanalytics.com/
+    avatar: https://miro.medium.com/fit/c/262/262/2*21zuYNVkWgy2zU0NnM7ZtQ.jpeg
+    resources:
+      medium: https://medium.com/@amshahid
+  - uid: grantstevens
+    name: Grant Stevens
+    url: https://grantstevens.dev/
+    avatar: https://grantstevens.dev/images/linkedin_crop.jpg
+    resources:
+      github: https://github.com/grant-m-s
+  - uid: Andrew Huang
+    name: Andrew Huang
+    url: https://twitter.com/iateandrew1
+    avatar: https://avatars3.githubusercontent.com/u/15331990?s=400&u=6f855e2f82d576fd22110f2ac9b1b7ec4825d916&v=4
+    resources:
+      github: https://github.com/ahuang11
+  - uid: Awesome-panel.org
+    name: Awesome-panel.org
+    url: https://awesome-panel.org
+    avatar: https://avatars0.githubusercontent.com/u/24277277?s=400&v=4
+    resources:
+      github: https://github.com/marcskovmadsen
+  - uid: Benjamin Cooley
+    name: Benjamin Cooley
+    url: https://github.com/bendoesdata
+    avatar: https://avatars.githubusercontent.com/u/24277277
+    resources:
+      github: https://github.com/bendoesdata
+  - uid: Bokeh
+    name: Bokeh
+    url: https://docs.bokeh.org/en/latest/
+    avatar: https://avatars3.githubusercontent.com/u/8440965
+    resources:
+      github: https://github.com/bokeh
+  - uid: cea
+    name: CEA Tech
+    url: https://www.cea-tech.fr/cea-tech
+    avatar: https://www.cea.fr/PublishingImages/cea.jpg
+  - uid: Dash
+    name: Dash
+    url: https://plot.ly/dash/
+    avatar: https://avatars2.githubusercontent.com/u/5997976
+    resources:
+      github: https://github.com/plotly/dash
+  - uid: Damien Farrell
+    name: Damien Farrell
+    url: https://dmnfarrell.github.io/
+    avatar: https://avatars0.githubusercontent.com/u/7859189
+    resources:
+      github: https://github.com/dmnfarrell
+  - uid: davide-sd
+    name: Davide Sandonà
+    url: https://dsandona.space/
+    avatar: https://avatars.githubusercontent.com/u/9921777
+    resources:
+      github: https://github.com/Davide-sd
+  - uid: dhruvbalwada
+    name: Dhruv Balwada
+    url: https://dhruvbalwada.github.io/
+    avatar: https://dhruvbalwada.github.io/assets/images/bio-photo_balwada.jpg
+    resources:
+      github: https://github.com/dhruvbalwada
+  - uid: ec-jrc
+    name: European Commission, Joint Research Centre
+    url: https://github.com/ec-jrc
+    avatar: https://avatars.githubusercontent.com/u/39263635
+  - uid: gluonnet
+    name: gluoNNet
+    url: http://gluonnet.com/
+    avatar: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/avatars/gluonnet.png
+  - uid: Hayley Song
+    name: Hayley Song
+    url: http://holoviz.org/
+    avatar: https://avatars0.githubusercontent.com/u/8037983
+    resources:
+      github: https://github.com/cocoaaa
+  - uid: HoloViz
+    name: HoloViz
+    url: http://holoviz.org/
+    avatar: https://avatars2.githubusercontent.com/u/51678735
+    resources:
+      github: https://github.com/holoviz
+  - uid: hyamanieu
+    name: Hugues-Yanis Amanieu
+    url: https://www.hyamani.eu/about/
+    avatar: https://avatars.githubusercontent.com/u/15906523
+    resources:
+      github: https://github.com/hyamanieu
+      linkedin: https://fr.linkedin.com/in/hyamanieu
+  - uid: inbal-meir
+    name: Inbal Meir
+    url: https://www.linkedin.com/in/inbal-meir/
+    avatar: https://miro.medium.com/fit/c/176/176/1*Fp7Kv1HYwDt0IRdRGQrkNw.jpeg
+    resources:
+      github: https://github.com/inbalme
+      linkedin: https://www.linkedin.com/in/inbal-meir/
+  - uid: Intake
+    name: Intake
+    url: https://github.com/intake
+    avatar: https://avatars1.githubusercontent.com/u/1469464
+    resources:
+      github: https://github.com/intake
+  - uid: jhsmit
+    name: Jochem Smit
+    url: https://github.com/Jhsmit
+    avatar: https://avatars1.githubusercontent.com/u/7881506
+  - uid: julioasotodv
+    name: Julio Antonio Soto
+    url: https://twitter.com/julio_a_soto
+    avatar: https://avatars.githubusercontent.com/u/20630819
+    resources:
+      github: https://github.com/julioasotodv
+  - uid: Justin Bois
+    name: Justin Bois
+    url: http://bois.caltech.edu/
+    avatar: https://avatars.githubusercontent.com/u/1873517
+    resources:
+      github: https://github.com/justinbois
+  - uid: James A. Bednar
+    name: James A. Bednar
+    url: https://github.com/jbednar
+    avatar: https://avatars0.githubusercontent.com/u/1695496
+    resources:
+      github: https://github.com/jbednar
+  - uid: Kostas Kavvadias
+    name: Kostas Kavvadias
+    url: https://kavvadias.eu/
+    avatar: https://kavvadias.eu/authors/admin/avatar_hudced8bcfe22292ced2a3e4887c9f0f23_222078_270x270_fill_q75_lanczos_center.jpg
+    resources:
+      github: https://github.com/kavvkon
+  - uid: Leon van Kouwen
+    name: Leon van Kouwen
+    url: https://github.com/LeonvanKouwen
+    avatar: https://avatars3.githubusercontent.com/u/6023630
+    resources:
+      github: https://github.com/LeonvanKouwen
+  - uid: Lukas Mosser
+    name: lukas-mosser
+    url: https://github.com/LukasMosser
+    avatar: https://avatars.githubusercontent.com/u/4195648
+    resources:
+      github: https://github.com/LukasMosser
+      linkedin: https://www.linkedin.com/in/lukas-mosser
+      twitter: https://twitter.com/porestar
+  - uid: Marc Skov Madsen
+    name: Marc Skov Madsen
+    url: https://datamodelsanalytics.com
+    avatar: https://avatars0.githubusercontent.com/u/42288570
+    resources:
+      github: https://github.com/marcskovmadsen
+  - uid: Matteo Mancini
+    name: Matteo Mancini
+    url: https://neurosnippets.com/
+    avatar: https://avatars.githubusercontent.com/u/29856041
+    resources:
+      github: https://github.com/matteomancini
+  - uid: Matteo Niccoli
+    name: Matteo Niccoli
+    url: https://twitter.com/My_Carta
+    avatar: https://avatars3.githubusercontent.com/u/7424763
+    resources:
+      github: https://github.com/mycarta
+  - uid: Nic Fox
+    name: Nic Fox
+    url: https://dev.to/nicfoxds
+    avatar: https://avatars3.githubusercontent.com/u/39113566
+    resources:
+      github: https://github.com/foxnic
+  - uid: pygridgen
+    name: pygridgen
+    url: https://github.com/pygridgen
+    avatar: https://avatars.githubusercontent.com/u/36489971
+    resources:
+      github: https://github.com/pygridgen
+  - uid: rapids
+    name: RAPIDS
+    url: https://rapids.ai/
+    avatar: https://avatars.githubusercontent.com/u/43887749
+    resources:
+      github: https://github.com/rapidsai
+  - uid: OGGM EDU
+    name: OGGM EDU
+    url: https://edu.oggm.org/en/latest/index.html
+    avatar: https://avatars2.githubusercontent.com/u/14758186
+    resources:
+      github: https://github.com/OGGM
+  - uid: Our World in Data
+    name: Our World in Data
+    url: https://ourworldindata.org/
+    avatar: https://avatars3.githubusercontent.com/u/14187135
+    resources:
+      github: https://github.com/owid
+  - uid: panel
+    name: Panel
+    url: https://panel.pyviz.org/
+    avatar: https://avatars2.githubusercontent.com/u/51678735
+    resources:
+      github: https://github.com/holoviz/
+  - uid: Pierre-Olivier Simonard
+    name: Pierre-Olivier Simonard
+    url: https://www.linkedin.com/in/pierreoliviersimonard/?originalSubdomain=fr
+    avatar: https://avatars.githubusercontent.com/u/756464?v=4
+    resources:
+      github: https://github.com/pierrotsmnrd
+  - uid: Philipp Rudiger
+    name: Philipp Rudiger
+    url: https://github.com/philippjfr
+    avatar: https://avatars0.githubusercontent.com/u/1550771
+    resources:
+      github: https://github.com/philippjfr
+  - uid: PyGridGen
+    name: PyGridGen
+    url: https://github.com/pygridgen
+    avatar: https://avatars1.githubusercontent.com/u/36489971
+    resources:
+      github: https://github.com/pygridgen
+  - uid: Quansight
+    name: Quansight
+    url: https://www.quansight.com/
+    avatar: https://avatars1.githubusercontent.com/u/34879953
+    resources:
+      github: https://github.com/Quansight
+  - uid: Plotly
+    name: Plotly
+    url: https://plot.ly/
+    avatar: https://avatars2.githubusercontent.com/u/5997976
+    resources:
+      github: https://github.com/plotly
+  - uid: Ryan Noonan
+    name: Ryan Noonan
+    url: https://www.youtube.com/channel/UCoV0g-aQmcApny7BjK0aXMg
+    avatar: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/6151020c01f5fa494b3bd5a8726bc458fe404134/awesome-panel/resources/avatars/ryan-noonan.png
+  - uid: Stephen Kilcommins
+    name: Stephen Kilcommins
+    url: https://www.linkedin.com/in/stephen-kilcommins/
+    avatar: https://miro.medium.com/fit/c/176/176/1*DOAQGAKm-Lzek_1TztoR9Q.jpeg
+    resources:
+      medium: https://stephenkilcommins.medium.com/
+  - uid: talk-python
+    name: Talk Python to Me
+    url: https://talkpython.fm/
+    avatar: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/cf494dd4382b3438484a7a81aad557048f755f20/awesome-panel/resources/avatars/talk-python.png
+    resources:
+      medium: https://stephenkilcommins.medium.com/
+  - uid: Thomas PEDOT
+    name: Thomas PEDOT
+    url: https://github.com/slamer59
+    avatar: https://avatars2.githubusercontent.com/u/25283272
+    resources:
+      github: https://github.com/slamer59
+  - uid: Scott Condron
+    name: Scott Condron
+    url: https://www.scottcondron.com/
+    avatar: https://avatars.githubusercontent.com/u/8557070
+    resources:
+      github: https://github.com/scottire
+      twitter: https://twitter.com/_scottcondron
+  - uid: sophiamyang
+    name: Sophia Yang
+    url: https://github.com/sophiamyang
+    avatar: https://avatars.githubusercontent.com/u/39501859
+    resources:
+      github: https://github.com/sophiamyang
+      twitter: https://twitter.com/sophiamyang
+      linkedin: https://www.linkedin.com/in/sophiamyang/
+      medium: https://sophiamyang.medium.com/
+      discourse: https://discourse.holoviz.org/u/sophiamyang/summary
+  - uid: thu-vu
+    name: Thu Vu
+    url: https://www.youtube.com/channel/UCJQJAI7IjbLcpsjWdSzYz0Q
+    avatar: https://yt3.ggpht.com/s3HLl-uzqEaqww2tkWKgjLFfgoe2NUsu4tRLm7g5TOScMK3aqOl1wGhar3yZRa1VH4BK3rzHyg=s176-c-k-c0x00ffffff-no-rj
+    resources:
+      linkedin: https://www.linkedin.com/in/thu-hien-vu-3766b174/
+      youtube: https://www.youtube.com/channel/UCJQJAI7IjbLcpsjWdSzYz0Q
+  - uid: VDA Lab
+    name: VDA Lab
+    url: http://vda-lab.github.io/
+    avatar: https://avatars3.githubusercontent.com/u/13289096
+    resources:
+      github: https://github.com/vda-lab
+  - uid: Voila
+    name: Voila
+    url: https://github.com/voila-dashboards
+    avatar: https://avatars1.githubusercontent.com/u/55792893?s=200&v=4
+    resources:
+      github: https://github.com/voila-dashboards
+  - uid: xavArtely
+    name: Xavier Artusi
+    url: https://github.com/xavArtley
+    avatar: https://avatars1.githubusercontent.com/u/18531147
+    resources:
+      github: https://github.com/xavArtley
+  - uid: yogesh-dhande
+    name: Yogesh Dhande
+    url: https://yogesh.replnotes.com
+    avatar: https://avatars.githubusercontent.com/u/32183636
+    resources:
+      github: https://github.com/yogesh-dhande
+applications:
+  - uid: statseuro2020
+    name: Stats Euro 2020
+    url: https://www.statseuro2020.com/
+    author: Pierre-Olivier Simonard
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/statseuro2020.png
+    description: Lots of stats and visualizations of the Euro 2020 Teams
+    tags:
+      - App
+      - Code
+    resources:
+      youtube: https://youtu.be/-chB9GopNKE
+  - uid: Game of Dashboards
+    name: Game of Dashboards
+    url: https://neurosnippets.com/posts/game-of-dashboards-2/#post
+    author: Matteo Mancini
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/game-of-dashboards.png
+    description: A walkthrough and comparison of Bokeh, Dash, Panel and Streamlit
+    tags:
+      - App
+      - Code
+      - Review
+  - uid: Battle of The Python Dashboarding Giants
+    name: Battle of The Python Dashboarding Giants
+    url: https://medium.datadriveninvestor.com/streamlit-vs-dash-vs-voil%C3%A0-vs-panel-battle-of-the-python-dashboarding-giants-177c40b9ea57
+    author: Stephen Kilcommins
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/dashboards-battle.png
+    description: A critical examination of the leading frameworks in the Python dashboarding ecosystem.
+    tags:
+      - App
+      - Code
+      - Review
+  - uid: Digital Vulnerabilities Map
+    name: Digital Vulnerabilities Map
+    url: https://discourse.holoviz.org/t/a-map-to-help-local-policies-to-detect-digital-vulnerabilities/1580
+    author: Thomas PEDOT
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/digital-vulnerabilities-map.png
+    description: A map to help local policies to detect digital vulnerabilities
+    tags:
+      - App
+      - Code
+      - Tutorial
+    resources:
+      github: https://github.com/slamer59/batch8_mednum
+      discourse: https://discourse.holoviz.org/t/a-map-to-help-local-policies-to-detect-digital-vulnerabilities/1580
+      binder: https://mybinder.org/v2/gh/slamer59/batch8_mednum.git/infras?urlpath=%2Fproxy%2F5006%2Fmednumapp
+  - uid: Panel/Holoviews Learning Aid
+    name: Panel/Holoviews Learning Aid
+    url: https://www.quansight.com/post/panel-holoviews-learning-aid
+    author: Quansight
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/panel-learning-aid.png
+    description: An article designed to help you learn how to make apps in Panel in about 15 minutes
+    tags:
+      - Tutorial
+  - uid: Quick Dashboard with Panel
+    name: Quick Dashboard with Panel
+    url: https://www.quansight.com/post/quick-dashboarding-with-panel
+    author: Quansight
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/quick-panel-dashboard.png
+    description: An article showing you how to construct a quick dashboard using Panel & Python without ever leaving the comfort of your Jupyter notebook.
+    tags:
+      - Tutorial
+  - uid: Panel and IPyWidgets
+    name: Panel and IPyWidgets
+    url: https://www.quansight.com/post/working-across-panel-and-ipywidgets-ecosystems
+    author: Quansight
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/panel-and-ipywidgets.png
+    description: An article showing how easy it is to combine Panel and IPyWidgets
+    tags:
+      - Tutorial
+  - uid: Holo Grid Generator
+    name: Holo Grid Generator
+    url: https://github.com/pygridgen/holo-gridgen
+    author: PyGridGen
+    description: Interactive tool for the generation of orthonormal grids using pygridgen and the HoloViz tool suite
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/holo-grid-generator.png
+    tags:
+      - App
+      - Code
+  - uid: World Glaciers Explorer
+    name: World Glaciers Explorer
+    url: https://edu.oggm.org/en/latest/explorer.html
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/world-glacier.png
+    author: OGGM EDU
+    description: An application with which you can learn about the world's glaciers, their location, their climate, and the ice they store.
+    tags:
+      - App
+      - Video
+    resources:
+      app: https://bokeh.oggm.org/explorer/app
+      binder: https://mybinder.org/v2/gh/OGGM/world-glacier-explorer/master?urlpath=panel/app
+      github: https://github.com/OGGM/oggm-edu
+  - uid: Experimental Machine Learning with HoloViz and PyTorch in Jupyterlab
+    name: Experimental Machine Learning
+    url: https://pyvideo.org/pydata-la-2019/experimental-machine-learning-with-holoviz-and-pytorch-in-jupyterlab.html
+    author: Hayley Song
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/holoviz-pytorch.png
+    description: This tutorial introduces how to make your data exploration and neural network training process more interactive
+    tags:
+      - Tutorial
+      - Video
+  - uid: Panel Tutorial by vda-lab
+    name: Panel Tutorial by vda-lab
+    url: https://vda-lab.github.io/visualisation-tutorial/holoviz-what-is-panel.html#
+    author: VDA Lab
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/panel-vda-tutorial.png
+    description: A tutorial on Data Visualization in Data Science using Altair and Panel
+    tags:
+      - Tutorial
+      - Code
+      - App
+  - uid: Panel Dashboards Examples
+    name: Panel Dashboards Examples
+    url: https://foxnic.github.io/projects.html
+    author: Nic Fox
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/nic-fox-projects.png
+    description: Really creative use of Panel to create static reports and dashboards
+    tags:
+      - App
+      - Code
+  - uid: Interactive Dashboards Tutorial
+    name: Interactive Dashboards Tutorial
+    url: https://dev.to/nicfoxds/how-to-create-an-interactive-dashboard-in-python-using-holoviz-panel-5bhp
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/nic-fox-tutorial.png
+    description: This is a short tutorial-by-example that walks you through a very basic dashboard, created in a Jupyter Notebook
+    author: Nic Fox
+    tags:
+      - Tutorial
+      - Code
+  - uid: Colormap Distorsions
+    name: Colormap Distorsions
+    url: https://github.com/mycarta/Colormap-distorsions-Panel-app
+    author: Matteo Niccoli
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/color-map-distortions.png
+    tags:
+      - Code
+      - App
+    description: This app demonstrates the effect of colormaps on perception
+    resources:
+      github: https://github.com/mycarta/Colormap-distorsions-Panel-app
+      youtube: https://www.youtube.com/watch?v=rUbvueIF5f8&t=510s
+  - uid: Elvis - Golden Layout
+    name: Elvis - Golden Layout
+    url: https://github.com/LeonvanKouwen/elvis
+    author: Leon van Kouwen
+    description: Elvis is intended to enable the use of the golden-layout in Panel.
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/elvis.png
+    tags:
+      - Code
+    resources:
+      gif: https://github.com/LeonvanKouwen/elvis/raw/master/demos/demo-dark-param.gif
+  - uid: Color Dropper App
+    name: Color Dropper App
+    url: http://colordropper.herokuapp.com/colordropper
+    author: Andrew Huang
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/color-dropper.png
+    description: An online eyedropper tool
+    tags:
+      - App
+    resources:
+      github: https://github.com/ahuang11/colordropper
+  - uid: Introduction to Data Analysis in Biology
+    name: Introduction to Data Analysis in Biology
+    url: http://justinbois.github.io/bootcamp/2021/lessons/l29_dashboards.html
+    author: Justin Bois
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/intro-to-dataanalysis.png
+    description: Introduction to Programming in the Biological Sciences Bootcamp with Panel and HoloViews
+    tags:
+      - App
+      - Tutorial
+      - Static
+    resources:
+      github: https://github.com/justinbois/bootcamp
+      gif: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/resources/videos/introduction-to-data-analysis.gif?raw=true
+      mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/resources/videos/introduction-to-data-analysis.mp4?raw=true
+  - uid: Distribution Explorer
+    name: Distribution Explorer
+    url: https://distribution-explorer.github.io/
+    author: Justin Bois
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/distribution-explorer.png
+    description: A tool to explore commonly used probability distributions, including information about the stories behind them
+    tags:
+      - App
+      - Tutorial
+      - Static
+    resources:
+      github: https://github.com/justinbois/bootcamp
+  - uid: VTK Examples by xavArtley
+    name: VTK Examples by xavArtley
+    url: https://xavartley.github.io/#panel/vtk_examples/vtkVolumeViewer.html
+    author: xavArtely
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/vtk-examples.png
+    description: Examples of static apps in Python, Bokeh, HoloViz and VTK.
+    tags:
+      - Tutorial
+      - App
+      - Inspiration
+      - VTK
+    resources:
+      github: https://github.com/xavArtley/xavArtley.github.io
+  - uid: XrViz
+    name: XrViz
+    url: https://github.com/intake/xrviz
+    author: Intake
+    description: XrViz is an interactive graphical user interface(GUI) for visually browsing Xarrays
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/xrviz.png
+    tags:
+      - App
+      - Code
+      - Inspiration
+    resources:
+      binder: https://mybinder.org/v2/gh/intake/xrviz/master?filepath=examples%2Fgreat_lakes.ipynb
+      github: https://github.com/intake/xrviz
+  - uid: A simple time series dashboard
+    name: A simple time series dashboard
+    url: https://towardsdatascience.com/how-to-build-a-time-series-dashboard-in-python-with-panel-altair-and-a-jupyter-notebook-c0ed40f02289
+    author: Benjamin Cooley
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/benjamin-cooley.png
+    description: An article describing how to build a simple dashboard with Altair and Panel
+    tags:
+      - Tutorial
+      - Article
+    resources:
+      github: https://github.com/bendoesdata/panel-altair-dashboard
+  - uid: Open Source Directions ep. 29
+    name: Open Source Directions ep. 29
+    url: https://www.youtube.com/watch?v=hZOsxmM_wyg
+    author: Quansight
+    description: "Episode 29: Panel - Open Source Directions hosted By Quansight"
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/open-source-directions-29.png
+    tags:
+      - Video
+    resources:
+      youtube: https://www.youtube.com/watch?v=hZOsxmM_wyg
+  - uid: Panel
+    name: Panel
+    url: https://panel.pyviz.org/
+    author: panel
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/panel.png
+    description: The official site. Contains the User Guide, Reference Gallery and other resources
+    tags:
+      - Panel
+    resources:
+      github: https://github.com/holoviz/panel
+      binder: https://mybinder.org/v2/gh/holoviz/panel/master?urlpath=lab/tree/examples
+  - uid: Discourse
+    name: Discourse
+    url: https://discourse.holoviz.org/
+    author: panel
+    description: HoloViz Community Site. Ask or answer questions. Share or find inspiration.
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/panel-discourse.png
+    tags:
+      - Panel
+      - HoloViz
+  - uid: Announcing Article
+    name: Announcing Article
+    url: https://medium.com/@philipp.jfr/panel-announcement-2107c2b15f52
+    author: Philipp Rudiger
+    description: "Panel: A high-level app and dashboarding solution for the PyData ecosystem."
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/panel-announcement.png
+    tags:
+      - Panel
+  - uid: Awesome-panel.org
+    name: Awesome-panel.org
+    url: https://awesome-panel.org
+    author: Marc Skov Madsen
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/awesome-panel.png
+    description: A site full of resources and apps. Made with Panel.
+    tags:
+      - Awesome-panel.org
+    resources:
+      github: https://github.com/marcskovmadsen/awesome-panel
+      documentation: https://awesome-panel.readthedocs.io/en/latest/
+      docker: https://hub.docker.com/r/marcskovmadsen/awesome-panel
+      pypi: https://pypi.org/project/awesome-panel/
+      youtube: https://www.youtube.com/playlist?list=PLrrcIlm1vLr69f4CsTlrO0wSNBw6VbsJA
+  - uid: Dashboards with PyViz Panel
+    name: Dashboards with PyViz Panel
+    url: https://dmnfarrell.github.io/bioinformatics/pyviz-panel
+    author: Damien Farrell
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/dashboards-bioinformatics.png
+    description: Introduction to interactive dashboards in bioinformatics
+    tags:
+      - Article
+  - uid: Network Based Infection Model
+    name: Network Based Infection Model
+    url: https://dmnfarrell.github.io/bioinformatics/abm-mesa-network
+    author: Damien Farrell
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/network-based-infection-model.png
+    description: A network agent based infection model with Mesa
+    tags:
+      - Article
+  - uid: The THOR Dataset
+    name: The THOR Dataset
+    url: https://dmnfarrell.github.io/plotting/thor-data-bokeh
+    author: Damien Farrell
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/thor-dataset.png
+    description: Introduction to interactive dashboards in bioinformatics
+    tags:
+      - Article
+      - Code
+    resources:
+      gif: https://dmnfarrell.github.io/img/thor_bokeh_dashboard.gif
+      github: https://github.com/dmnfarrell/teaching/tree/master/vietnam_thor
+      binder: https://mybinder.org/v2/gh/dmnfarrell/teaching/tree/master/vietnam_thor/HEAD
+  - uid: Scipy 2019
+    name: Scipy 2019
+    url: https://www.youtube.com/watch?v=L91rd1D6XTA&t=274s
+    author: James A. Bednar
+    description: Turn any Notebook into a Deployable Dashboard
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/scipy-2019.png
+    tags:
+      - Video
+      - Tutorial
+  - uid: pydata-austin-2019
+    name: PyData Austin 2019
+    url: https://youtu.be/AXpjbJUVeb4
+    author: James A. Bednar
+    description: "Panel: Dashboards for PyData"
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/panel-pydata-austin-2019.png
+    tags:
+      - Video
+      - Tutorial
+  - uid: PyData Berlin 2019
+    name: PyData Berlin 2019
+    url: https://www.youtube.com/watch?v=Ohr29FJjBi0&list=PLGVZCDnMOq0pNHTYo3i56zYU-Tdw5Uguw
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/pydata-berlin-2019.png
+    description: Turn any notebook into a deployable dashboard | PyData Berlin 2019
+    author: Philipp Rudiger
+    tags:
+      - Video
+      - Tutorial
+  - uid: Scipy 2019 Tutorial
+    name: Scipy 2019 Tutorial
+    url: https://www.youtube.com/watch?v=7deGS4IPAQ0&t=1326s
+    author: James A. Bednar
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/scipy-2019-tutorial.png
+    description: Visualize any Data Easily, from Notebooks to Dashboards
+    tags:
+      - Video
+      - Tutorial
+  - uid: HoloViz.org
+    name: HoloViz.org
+    url: http://holoviz.org/index.html
+    author: HoloViz
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/holoviz.png
+    description: Introduction to HoloViz and a HoloViz Tutorial
+    tags:
+      - Tutorial
+  - uid: Bokeh
+    name: Bokeh
+    url: https://bokeh.pydata.org/en/latest/index.html
+    author: Bokeh
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/bokeh.png
+    description: Panel is built on top of Bokeh and it's docs contains a lot of useful information for Panelistas.
+    tags:
+      - Alternatives
+  - uid: Panel Business Dashboard
+    name: Panel Business Dashboard
+    url: https://github.com/julioasotodv/panel-dashboard-demo
+    author: julioasotodv
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/panel-business-dashboard.png
+    description: A simple demo of Panel + other HoloViz libraries using a custom template
+    tags:
+      - App
+      - Code
+    resources:
+      binder: https://mybinder.org/v2/gh/julioasotodv/panel-dashboard-demo/master?urlpath=/proxy/5006/dashboard
+      github: https://github.com/julioasotodv/panel-dashboard-demo
+  - uid: Gradient Descent Demo
+    name: Gradient Descent Demo
+    url: https://github.com/julioasotodv/gradient-descent-demo
+    author: julioasotodv
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/gradient-descent.png
+    description: An app showcasing gradient descent
+    tags:
+      - App
+      - Code
+    resources:
+      binder: https://mybinder.org/v2/gh/julioasotodv/gradient-descent-demo/master?urlpath=/proxy/5006/gradient_descent
+      github: https://github.com/julioasotodv/gradient-descent-demo
+  - uid: Heroku Deployment
+    name: Heroku Deployment
+    url: https://github.com/holoviz-demos/minimal-heroku-demo
+    author: panel
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/heroku-deployment.png
+    description: A repository showing how easy it is to deploy Panel apps on Heroku
+    tags:
+      - App
+      - Code
+    resources:
+      github: https://github.com/holoviz-demos/minimal-heroku-demo
+  - uid: Dashboards for IoT sensors
+    name: Dashboards for IoT sensors
+    url: http://www.hyamani.eu/2021/01/02/dashboards-for-iot-sensors/#A_full_fledge_Dashboard
+    author: hyamanieu
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/dashboards-for-iot.png
+    description: "How to record, visualize and analyze"
+    tags:
+      - Article
+      - App
+      - Code
+    resources:
+      github: http://www.hyamani.eu/2021/01/02/dashboards-for-iot-sensors/#A_full_fledge_Dashboard
+  - uid: ocean-glider-demo
+    name: Ocean Glider Demo
+    url: https://github.com/dhruvbalwada/glider-panel-demo
+    author: dhruvbalwada
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/ocean-glider-data.png
+    description: Visualization of ocean glider data.
+    tags:
+      - App
+      - Code
+    resources:
+      github: https://github.com/dhruvbalwada/glider-panel-demo
+      binder: https://mybinder.org/v2/gh/dhruvbalwada/glider-panel-demo/main?urlpath=%2Fpanel%2Fglider_combined_plot
+  - uid: talk-python-holoviz
+    name: "Talk Python: HoloViz"
+    url: https://youtu.be/wwZBO796r4s
+    author: talk-python
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/talk-python-holoviz.png
+    description: A deep dive on the HoloViz Project including Panel
+    tags:
+      - Podcast
+    resources:
+      youtube: https://youtu.be/wwZBO796r4s
+  - uid: Introduction to Panel
+    name: Introduction to Panel
+    url: https://youtu.be/ulHnNXNmuig
+    author: Ryan Noonan
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/introduction-to-panel-ryan-noonan.png
+    description: An introduction to Panel and its widgets
+    tags:
+      - Video
+    resources:
+      youtube: https://youtu.be/ulHnNXNmuig
+  - uid: Scalable Crossfiltering
+    name: Scalable Crossfiltering
+    url: https://youtu.be/AmHz31GrvkA
+    author: Philipp Rudiger
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/pydata-global-2020.png
+    description: An introduction to Panel, Linked Selections, The interactive API etc.
+    tags:
+      - Video
+    resources:
+      youtube: https://youtu.be/ulHnNXNmuig
+  - uid: JupyterCon 2020
+    name: JupyterCon 2020
+    url: https://youtu.be/o3g1CqpZOcA
+    author: Philipp Rudiger
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/jupyter-and-back.png
+    description: To Jupyter and back again. An introduction to Panel and IPyWidgets
+    tags:
+      - Video
+    resources:
+      youtube: https://youtu.be/ulHnNXNmuig
+  - uid: cuxfilter
+    name: cuxfilter
+    url: https://github.com/rapidsai/cuxfilter
+    author: rapids
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/cuxfilter.png
+    description: cuxfilter is a framework to connect web visualizations to GPU accelerated crossfiltering. Its built on top of Panel, DataShader and HoloViews.
+    tags:
+      - Video
+    resources:
+      gif: https://github.com/rapidsai/cuxfilter/raw/branch-21.08/docs/_images/demo.gif
+  - uid: panel-chemistry
+    name: Panel Chemistry
+    url: https://github.com/MarcSkovMadsen/panel-chemistry
+    author: Marc Skov Madsen
+    thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/panel-chemistry/main/assets/panel-chemistry-example.png
+    description: "Panel Chemistry is python package providing powerful extension for #cheminformatics"
+    tags:
+      - Package
+      - Extension
+    resources:
+      binder: https://mybinder.org/v2/gh/marcskovmadsen/panel-chemistry/HEAD?urlpath=lab/tree/examples
+      gif: https://raw.githubusercontent.com/awesome-panel/panel-chemistry/main/assets/panel-chemistry-intro.gif
+  - uid: panel-highcharts
+    name: Panel HighCharts
+    url: https://github.com/MarcSkovMadsen/panel-highcharts
+    author: Marc Skov Madsen
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/panel-highcharts.png
+    description: "Panel HighCharts is python package providing access to HighCharts"
+    tags:
+      - Package
+      - Extension
+    resources:
+      binder: https://mybinder.org/v2/gh/marcskovmadsen/panel-highcharts/HEAD?urlpath=lab/tree/examples
+      gif: https://raw.githubusercontent.com/MarcSkovMadsen/panel-highcharts/main/assets/images/panel-highcharts-binder.gif
+  - uid: awesome-panel-extensions
+    name: Awesome Panel Extensions
+    url: https://github.com/marcskovmadsen/awesome-panel-extensions
+    author: Marc Skov Madsen
+    thumbnail: https://github.com/MarcSkovMadsen/awesome-panel-extensions/raw/main/assets/images/pandas-profile-report-pane-app.png
+    description: A package of awesome Panel extensions and experiments.
+    tags:
+      - Package
+      - Extension
+    resources:
+      binder: https://mybinder.org/v2/gh/marcskovmadsen/awesome-panel-extensions/HEAD
+      documentation: https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html
+  - uid: deploying-using-heroku
+    name: Deployment using Heroku
+    url: https://towardsdatascience.com/deploying-panel-holoviz-dashboards-using-heroku-container-registry-5221eb0538ba
+    author: Ali Shahid
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/deploying-using-heroku.png
+    description: A guide on creating and deploying Panel Dashboards on Heroku
+    tags:
+      - Guide
+      - Deployment
+  - uid: everything-you-need-to-know
+    name: Everything You Need to Know
+    url: https://medium.datadriveninvestor.com/panel-everything-you-need-to-know-9bca61532e12
+    author: Stephen Kilcommins
+    thumbnail: https://miro.medium.com/max/1400/1*Uc7mVq2gKMsqVgu71IjaDQ.jpeg
+    description: An in depth introduction and review of Panel. Includes code for awesome football app.
+    tags:
+      - Guide
+      - Review
+      - App
+      - Code
+  - uid: panel-sketch
+    name: Panel Sketch
+    url: https://github.com/MarcSkovMadsen/panel-sketch
+    author: Marc Skov Madsen
+    thumbnail: https://raw.githubusercontent.com/MarcSkovMadsen/panel-sketch/main/assets/images/panel-sketch-logo.png
+    description: Panel Sketch attempts to make it easy to run Python directly in the Browser using Transcrypt and/ or Pyodide. Inspired by Processing and pyp5js.
+    tags:
+      - Package
+      - Extension
+      - Javascript
+    resources:
+      binder: https://mybinder.org/v2/gh/marcskovmadsen/panel-sketch/HEAD?urlpath=lab/tree/examples
+      gif: https://github.com/MarcSkovMadsen/panel-sketch/raw/main/assets/images/panel-sketch-binder.gif?raw=true
+      github: https://github.com/MarcSkovMadsen/panel-sketch
+  - uid: pyhdx
+    name: PyHDX
+    url: https://github.com/Jhsmit/PyHDX
+    author: jhsmit
+    thumbnail: https://github.com/Jhsmit/PyHDX/raw/master/images/PyHDX_rgb.png
+    description: PyHDX is python project which can be used to derive Gibbs free energy from HDX-MS data
+    tags:
+      - Application
+      - Code
+    resources:
+      discourse: https://discourse.holoviz.org/t/pyhdx-derive-g-for-single-residues-from-hdx-ms-data/1261
+      mp4: https://discourse.holoviz.org/uploads/default/original/2X/7/70353a87f21933a417b9923dbac2002a9c1aac15.mp4
+      documentation: https://www.biorxiv.org/content/10.1101/2020.09.30.320887v1
+  - uid: interactive-pytorch-layers
+    name: Interactive PyTorch Layers
+    url: https://www.scottcondron.com/jupyter/visualisation/ai/deep%20learning/2020/09/25/interact-with-pytorch-layers-with-jupyter-widgets.html
+    author: Scott Condron
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/interactive-pytorch-layers.png
+    description: A blog post showing you how how to build an interactive widget to explore PyTorch's ConvTranspose1d
+    tags:
+      - Guide
+      - Application
+      - Code
+    resources:
+      twitter: https://twitter.com/_ScottCondron/status/1308096826877325312
+  - uid: streaming-data-with-crossbar.io
+    name: Streaming Data w. Crossbar.io
+    url: https://gitlab.com/ea42gh/awesomepanelplayground/-/tree/master/WebSocket/CROSSBAR/sensors
+    author: Scott Condron
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/streaming-data-with-crossbario.png
+    description: An example showcasing streaming data with Panel and Crossbar.io
+    tags:
+      - Guide
+      - Application
+      - Code
+    resources:
+      discourse: https://discourse.holoviz.org/t/panel-dashboard-with-streaming-data-over-the-net/1677
+      github: https://gitlab.com/ea42gh/awesomepanelplayground/-/tree/master/WebSocket/CROSSBAR/sensors
+      youtube: https://youtu.be/Y7g_lMwGiY0
+  - uid: merit-order-app
+    name: Merit Order App
+    url: https://github.com/kavvkon/power-merit-Eur
+    author: Kostas Kavvadias
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/merit-order.png
+    description: An app for determining the merit order of power production in Europe.
+    tags:
+      - Application
+      - Code
+    resources:
+      github: https://github.com/kavvkon/power-merit-Eur
+      discourse: https://discourse.holoviz.org/t/tabbed-dashboard-with-altair-folium-and-custom-template/1999/2
+  - uid: Aviation Tracking
+    name: Aviation Tracking
+    url: http://gluonnet.com/portfolio/aviation-graphs/
+    author: gluonnet
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/aviation-tracking.jpg
+    description: Project Sunflower - A first-of-its-kind digital regulation system for the aviation industry
+    tags:
+      - Article
+      - Application
+    resources:
+      documentation: http://gluonnet.com/portfolio/aviation-graphs/
+      youtube: https://youtu.be/tUaAj3u_vvA
+  - uid: deployment-on-google-cloud-run
+    name: Deployment on Google Cloud Run
+    url: https://yogesh.replnotes.com/posts/deploy-bokeh-cloud-run
+    author: yogesh-dhande
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/deploy-bokeh-on-google-cloud-run.png
+    description: Google Cloud Run is an interesting, serverless deployment option. Replace bokeh serve with panel serve.
+    tags:
+      - Article
+      - Deployment
+    resources:
+      discourse: https://discourse.bokeh.org/t/deploy-bokeh-apps-on-cloud-run/8269
+      github: https://github.com/yogesh-dhande/bokeh-gcp-deploy-cloud-run-demo
+  - uid: hologridgen
+    name: HoloGridGen
+    url: https://github.com/pygridgen/hologridgen
+    author: pygridgen
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/hologridgen.png
+    description: Interactive tool for the generation of orthonormal grids using pygridgen and the HoloViz tool suite.
+    tags:
+      - Code
+      - App
+    resources:
+      github: https://github.com/pygridgen/hologridgen
+  - uid: astronomical
+    name: AstronomicAL
+    url: https://github.com/grant-m-s/AstronomicAL
+    author: grantstevens
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/astronomical.png
+    description: AstronomicAL a labelling and training dashboard that enables users to create reliable datasets and robust classifiers using active learning.
+    tags:
+      - Code
+    resources:
+      github: https://github.com/grant-m-s/AstronomicAL
+      docs: https://astronomical.readthedocs.io/en/latest/
+  - uid: cea-additive-manufacturing
+    name: CEA additive manufacturing
+    url: https://youtu.be/rVpYf_E4Yp8?t=97
+    author: cea
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/1c65c37898d933cf08c970a3da0dcd397a589cda/awesome-panel/resources/thumbnails/cea-monitoring-data-viewer.png
+    description: Nice video showcasing use of Panel, HoloViews and VTK in Robotics
+    tags:
+      - Video
+  - uid: deploy-panel-to-google-cloud-run
+    name: Deploy to Google Cloud Run
+    url: https://sophiamyang.medium.com/deploy-a-python-visualization-panel-app-to-google-cloud-ii-416e487b44eb
+    author: sophiamyang
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/deploy-panel-to-google-cloud-run.png
+    description: Article describing how to deploy a Panel App to Google Cloud Run
+    tags:
+      - Article
+      - Code
+    resources:
+      github: https://github.com/sophiamyang/panel_cloud_run
+      towardsdatascience: https://sophiamyang.medium.com/deploy-a-python-visualization-panel-app-to-google-cloud-ii-416e487b44eb
+  - uid: deploy-panel-to-google-app-engine
+    name: Deploy to Google Cloud App Engine
+    url: https://towardsdatascience.com/deploy-a-python-visualization-panel-app-to-google-cloud-cafe558fe787
+    author: sophiamyang
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/deploy-panel-to-google-app-engine.png
+    description: Article describing how to deploy a Panel App to Google Cloud App Engine
+    tags:
+      - Article
+      - Code
+    resources:
+      github: https://github.com/sophiamyang/panel_gcp
+      towardsdatascience: https://towardsdatascience.com/deploy-a-python-visualization-panel-app-to-google-cloud-cafe558fe787
+  - uid: lumen
+    name: Lumen
+    url: https://github.com/holoviz/lumen
+    author: HoloViz
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/lumen.png
+    description: A framework for visual analytics built on top of Panel. Build data-driven dashboards from a simple yaml specification.
+    tags:
+      - Framework
+      - Code
+    resources:
+      github: https://github.com/holoviz/lumen
+      docs: https://lumen.holoviz.org/index.html
+  - uid: Paithon
+    name: Paithon
+    url: https://github.com/MarcSkovMadsen/paithon
+    author: Marc Skov Madsen
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/paithon.png
+    description: Make your AI models interactive in no time. A python package built on top of Panel.
+    tags:
+      - Framework
+      - Code
+      - Package
+    resources:
+      github: https://github.com/MarcSkovMadsen/paithon
+      pypi: https://pypi.org/project/paithon/
+      binder: https://mybinder.org/v2/gh/marcskovmadsen/paithon/HEAD?urlpath=lab/tree/examples
+  - uid: sympy-plotting-backends
+    name: Sympy Plotting Backends
+    url: https://github.com/Davide-sd/sympy-plot-backends
+    author: davide-sd
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/sympy-plotting-backends.png
+    description: Alternative Plotting Backends for Sympy
+    tags:
+      - Framework
+      - Code
+      - Package
+    resources:
+      github: https://github.com/Davide-sd/sympy-plot-backends
+      pypi: https://pypi.org/project/sympy-plot-backends/
+      binder: https://mybinder.org/v2/gh/Davide-sd/sympy-plot-backends/HEAD
+      docs: https://sympy-plot-backends.readthedocs.io/en/latest/index.html
+  - uid: intake
+    name: Intake
+    url: https://github.com/intake/intake
+    author: Intake
+    description: A general interface for loading data with a GUI built on top of Panel
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/intake.png
+    tags:
+      - App
+      - Code
+      - Inspiration
+    resources:
+      docs: https://intake.readthedocs.io/en/latest/
+  - uid: pydata-2021-shootout
+    name: Dashboarding Shootout
+    url: https://zoom.us/rec/share/ailBm48NBppFXaNHvU2EsnSGf3XhR8Q9mzmhUnwqkwDXS_bRlYMRgnQvudc7UeY_.pAZHOxu7L2Yl6Fr0?startTime=1635430012000
+    author: Marc Skov Madsen
+    description: PyData Global 2021 shootout with Dash, Panel, Streamlit and Voila. Panel intro starting 24:02.
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/pydata2021-shootout.jpeg
+    tags:
+      - App
+      - Code
+      - Inspiration
+      - Video
+    resources:
+      github: https://github.com/marcskovmadsen/awesome-panel-introduction
+  - uid: pydata-2021-interactive
+    name: HvPlot .interactive
+    url: https://zoom.us/rec/share/AAqL5-5tQ43ZSgKkTvXsLLHxP3kjDGj866rkMHGzqKqDSWe4Uhe5C40JGOgP3Dae._5oPguwt16VEtq6f?startTime=1635508803000
+    author: Philipp Rudiger
+    description: PyData Global 2021. Panel and hvPlot .interactive allows you to leverage the DataFrame APIs you already know to build polished web applications.
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/pydata2021-interactive.png
+    tags:
+      - App
+      - Code
+      - Inspiration
+      - Video
+    resources:
+      github: https://github.com/philippjfr/pydata-2021
+  - uid: thalassa
+    name: Thalassa
+    url: https://github.com/ec-jrc/Thalassa
+    author: ec-jrc
+    description: Thalassa is a library/application for visualizing large scale results of hydrodynamic simulations.
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/thalassa.png
+    tags:
+      - App
+      - Code
+    resources:
+      github: https://github.com/ec-jrc/Thalassa
+      mp4: https://user-images.githubusercontent.com/411196/146007390-88e8cc59-9ae9-4a15-83fd-f7f1f2d724c2.mp4
+  - uid: neural-rock-typing
+    name: Neural Rock Typing
+    url: https://github.com/LukasMosser/neural_rock_typing
+    author: lukas-mosser
+    description: This project aims to investigate the ability of neural networks to classify carbonate rocks
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/neural-rock-viewer.png
+    tags:
+      - App
+      - Code
+    resources:
+      github: https://github.com/LukasMosser/neural_rock_typing
+  - uid: thu-vu-beautiful-python-visualization-dashboard
+    name: Beautiful Dashboard With Panel/Hvplot
+    url: https://youtu.be/uhxiXOTKzfs
+    author: thu-vu
+    description: In this video I will show you how to create a beautiful data visualization dashboard in Python from your Jupyter notebooks.
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/thu_vu_beautiful_python_visualization_dashboard_with_panel.png
+    tags:
+      - App
+      - Video
+    resources:
+      github: https://github.com/thu-vu92/python-dashboard-panel
+  - uid: interactive-model-evaluation-using-panel
+    name: Interactive Model Evaluation
+    url: https://towardsdatascience.com/interactive-model-evaluation-using-the-panel-python-package-a669692c0e9e
+    author: inbal-meir
+    description: How to turn your analysis into an interactive visualization tool that lives inside your jupyter notebook
+    thumbnail: https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/master/awesome-panel/resources/thumbnails/error-analysis-dashboard.png
+    tags:
+      - App
+      - Code
+      - Article
+    resources:
+      github: https://github.com/inbalme/Blogpost_Interactive_Model_Evaluation_Using_the_Panel_Python_Package
+      gif: https://media.giphy.com/media/shEQfh431FA4Lov6uT/giphy.gif
+
+# https://t.co/wAG7qGYDcm https://twitter.com/robmarkcole/status/1504725863966859266?s=27
+# https://twitter.com/kidpixo/status/1505552334725824515?s=20&t=Tdl4QxLtFDVvj3Ix6SXcPw

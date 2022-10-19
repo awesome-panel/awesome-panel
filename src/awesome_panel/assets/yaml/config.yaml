@@ -1,0 +1,1703 @@
+---
+users:
+  - uid: andrew_huang
+    name: Andrew Huang
+    category: Other
+    email: 
+    avatar: "https://avatars3.githubusercontent.com/u/15331990?s=400&u=6f855e2f82d576fd22110f2ac9b1b7ec4825d916&v=4"
+    url: "https://twitter.com/iateandrew1"
+    resources: 
+    tags: 
+  - uid: jochem_smit
+    name: Jochem Smit
+    category: Other
+    email: 
+    avatar: "https://avatars1.githubusercontent.com/u/7881506?s=400&u=bdf7b6635bf57e7022763ce3b002649fe80ef6a8&v=40"
+    url: "https://github.com/Jhsmit"
+    resources: 
+    tags: 
+  - uid: marc_skov_madsen
+    name: Marc Skov Madsen
+    category: Other
+    email: 
+    avatar: "https://avatars0.githubusercontent.com/u/42288570"
+    url: "https://datamodelsanalytics.com"
+    resources: 
+    tags: 
+  - uid: stephen_kilcommins
+    name: Stephen Kilcommins
+    category: Other
+    email: 
+    avatar: "https://miro.medium.com/fit/c/96/96/1*DOAQGAKm-Lzek_1TztoR9Q.jpeg"
+    url: "https://www.linkedin.com/in/stephen-kilcommins/"
+    resources: 
+    tags: 
+applications:
+  - url: async_tasks
+    name: Async Tasks
+    author: jochem_smit
+    owner: 
+    category: Performance
+    description: Demonstrates the use of asynchronous, background processes with Panel
+    description_long: |-
+      When creating awesome analytics apps you sometimes wants to run jobs in the background or provide
+      streaming analytics to your users.
+      Panel also supports these use cases as its running on top of the asynchronous web server Tornado.
+      Below we show case how to start a background thread that updates a progressbar while
+      the rest of the application remains responsive.
+      This example is based on the discussion [Can I load data asynchronously in Panel?](https://discourse.holoviz.org/t/can-i-load-data-asynchronously-in-panel/452).
+      If you really deep dive into this, then you can study
+      [tornado.ioloop.IOLoop](https://www.tornadoweb.org/en/stable/ioloop.html),
+      [concurrent.futures.ThreadPoolExecutor](https://docs.python.org/3/library/concurrent.futures.html#threadpoolexecutor),
+      [Panel.io.server.unlocked](https://panel.holoviz.org/api/panel.io.html#panel.io.server.unlocked)
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/async_tasks.py
+      gif: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/async_tasks.gif
+      mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/async_tasks.mp4
+    servable: 
+    tags:       
+      - Async
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/async_tasks.png"
+  - url: awesome_list
+    name: Community Gallery
+    author: marc_skov_madsen
+    owner: 
+    category: Main
+    description: An awesome list for Panel as a gallery
+    description_long: |-
+      The Community Gallery is the *awesome list* of Panel. It provides links to a range of awesome community resources.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/awesome_list.py
+    servable: 
+    tags:       
+      - Gallery
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/awesome-list.png"
+  - url: awesome_button
+    name: AwesomeButton
+    author: marc_skov_madsen
+    owner: 
+    category: awesome-panel-extensions
+    description: Demo of the AwesomeButton from the awesome-panel-extensions package
+    description_long: |-
+      The `AwesomeButton` improves the Panel `Button` with support for icons. Its a part of the 
+      [awesome-panel-extensions](https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html)
+      package.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/awesome_button.py
+      binder: https://mybinder.org/v2/gh/MarcSkovMadsen/awesome-panel-extensions/master?filepath=examples%2Freference%2Fmodels%2FIcon.ipynb
+      docs: https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html#icon
+    servable: 
+    tags:       
+      - awesome-panel-extensions
+      - icon
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/awesome_button.png"
+  - url: bootstrap_alerts
+    name: Bootstrap Alerts
+    author: marc_skov_madsen
+    owner: 
+    category: Contributions
+    description: Demonstrates the look and feel of the Panel Alerts
+    description_long: |-
+      Alert panes inspired by Bootstrap Alerts.
+      This example was originally created to show how to create custom Bootstrap Alerts.
+      The Alerts have now been contributed to Panel. You can find the reference example
+      [here](https://panel.holoviz.org/reference/panes/Alert.html).
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/bootstrap_alerts.py
+    servable: 
+    tags:       
+      - Bootstrap
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_bootstrap_alerts.png"
+  - url: bootstrap_card
+    name: Bootstrap Card
+    author: marc_skov_madsen
+    owner: 
+    category: Contributions
+    description: Demonstrates the look and feel of the Panel Cards
+    description_long: |-
+      Cards inspired by [Get Bootstrap Card](https://getbootstrap.com/docs/4.3/components/card/) and
+      [Card Collapse Tricks](https://disjfa.github.io/bootstrap-tricks/card-collapse-tricks/).
+      This example was originally created to show case how to create custom Cards.
+      The Cards have now been contributed to Panel. Checkout the reference guide
+      [here](https://panel.holoviz.org/reference/layouts/Card.html).
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/bootstrap_card.py
+    servable: 
+    tags:       
+      - Bootstrap
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_bootstrap_card.png"
+  - url: bootstrap_dashboard
+    name: Bootstrap Dashboard
+    author: marc_skov_madsen
+    owner: 
+    category: Dashboards
+    description: Demonstrates a Bootstrap styled dashboard with Panel
+    description_long: |-
+      The purpose of this app is to test that a **multi-page Dashboard Layout** similar to the [bootstrap dashboard template](https://getbootstrap.com/docs/4.3/examples/dashboard/) from [getboostrap.com](https://getbootstrap.com/) can be implemented in [Panel](https://panel.pyviz.org/).
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/bootstrap_dashboard.py
+    servable: 
+    tags:       
+      - Bootstrap
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/bootstrap_dashboard.png"
+  - url: caching_example
+    name: Caching Example
+    author: marc_skov_madsen
+    owner: 
+    category: Performance
+    description: An app demonstrating how to speed up your app using caching.
+    description_long: |-
+      In computing, a *cache* is a high-speed data storage layer which stores a subset of data,
+      typically transient in nature, so that future requests for that data are served up faster than
+      is possible by accessing the data’s primary storage location.
+      **Caching allows you to efficiently reuse previously retrieved or computed data** to
+      **speed up your exploration, jobs or apps**.
+      Good caching solutions for Panel are summarized in the table below
+
+      |Technology           |  Performance | Persistant | Horizontal Scaling | Vertical Scaling | Expiration | Preloading | Comments                           |
+      |---------------------|--------------|------------|--------------------| -----------------|---------------------|------------------------------------|-|
+      |`panel.state.cache` | Very Fast | No | No | Yes | No | No | Simple Dict Cache |
+      |[DiskCache](https://pypi.org/project/diskcache/) | Very Fast | Yes | No | Yes | Yes | Yes |  Simple Persistent Cache |
+      |[Redis](https://redis.io/) | Very Fast | Yes | Yes | Yes | Yes | Yes | Server solution. Works well with the distributed task queue [Celery](https://docs.celeryproject.org/en/stable/index.html)  |
+      
+      Note that
+      
+      - *Expiration* enables caching data for a period of time for example seconds, minutes, hours or
+      days.
+      - *Preloading* of a cache can be triggered by a cronjob or event.
+      - If the cache is *persisted*, i.e. stored to disk or runs on a server like Redis it can enable
+      caching data across jobs, applications, servers and restarts.
+      
+      To learn more about caching check out the [AWS Caching Overview](https://aws.amazon.com/caching/)
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/caching_example.py
+      mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/caching-example.mp4
+    servable: 
+    tags:       
+      - Panel
+      - Caching
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/caching-example.png"
+  - url: classic_dashboard
+    name: Classic Dashboard
+    author: marc_skov_madsen
+    owner: 
+    category: Dashboards
+    description: A classic looking Dashboard in Panel
+    description_long: |-
+      The Dashboard app shows how to create a **Classic Dashboard** in **Panel** with
+
+      - Classic Layout and awesome design
+      - Responsiveness
+      - User Selections
+
+      This app was kick started by [Pemp](https://discourse.holoviz.org/u/pemp) in a
+      [discussion on Discourse](https://discourse.holoviz.org/t/error-not-supported-between-instances-of-select-and-select/929).
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/classic_dashboard.py
+    servable: 
+    tags:       
+      - hvPlot
+      - HoloViews
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/dashboard.png"
+  - url: dash_iris_classifier
+    name: Iris Classifier
+    author: marc_skov_madsen
+    owner: 
+    category: Dash
+    description: A simple Machine Learning application for comparision to Dash app.
+    description_long: |-
+      A simple Machine Learning application. Can be compared to a similar Dash app from the
+      blog post [Deploy Machine Learning Model Using Dash and pipenv](https://towardsdatascience.com/deploy-machine-learning-model-using-dash-and-pipenv-c543569c33a6)
+
+      This app was kick started by [Dr. Kidpixo](https://twitter.com/kidpixo) in a
+      [discussion on Twitter](https://twitter.com/kidpixo/status/1505552334725824515?s=20&t=uULt1fBYRrYFtECHzQoD9w).
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/dash_iris_classifier.py
+    servable: 
+    tags:       
+      - Dash
+      - MachineLearning
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/dashboard.png"
+  # - url: custom_bokeh_model
+  #   name: Custom Bokeh Model
+  #   author: marc_skov_madsen
+  #   owner: 
+  #   category: Custom Components
+  #   description: An introduction to Bokeh/ Panel extensions
+  #   description_long: |-
+  #     One super power of Panel is that its actually extensible. You can write custom Panes, Layouts and
+  #     Widgets using Bokeh Extensions. This is actually how Panel is developed.
+      
+  #     If you want to learn how to create custom Bokeh/ Panel extensions you can
+  #     **[checkout the Awesome Panel Extensions Guide](https://awesome-panel.readthedocs.io/en/latest/guides/awesome-panel-extensions-guide/index.html)**
+  #   project: 
+  #   resources:       
+  #     code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/custom_bokeh_model.py
+  #   servable: 
+  #   tags:       
+  #     - Code
+  #     - App In Gallery
+  #   thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/custom_bokeh_model.png"
+  - url: data_explorer_loading
+    name: Data Explorer Loading
+    author: marc_skov_madsen
+    owner: 
+    category: Discourse
+    description: Shows how to provide progress information to a user during computation
+    description_long: |-
+      This example was created as response to
+      <a href="https://discourse.holoviz.org/t/how-to-show-a-loading-indication-during-computation/508"
+      target="_blank"> Discourse 508</a> <strong>How to show a loading indicator during
+      computation</strong>.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/data_explorer_loading.py
+    servable: 
+    tags: 
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/dataexplorer_loading.png"
+  - url: dataframe_formatting
+    name: Dataframe Formatting
+    author: marc_skov_madsen
+    owner: 
+    category: awesome-panel-extensions
+    description: Demonstrates how to style and format the DataFrame widget easily
+    description_long: |-
+      Panel does not style a `panel.widgets.DataFrame` by default.
+      A user can specify some Formatters like `Numberformatter`, `Stringformater` etc
+      `from bokeh.models.widgets.tables` manually. But this takes time, so I consider this *friction*.
+      
+      In the [`awesome_panel_extensions.widgets.dataframe`](https://pypi.org/project/awesome-panel-extensions/#:~:text=Panel%20is%20a%20framework%20for,to%20the%20power%20of%20Panel.&text=If%20you%20wan't%20to%20learn%20more%20checkout%20the%20Package%20Documentation.)
+      module we lower the friction by providing functionality for sensible defaults.
+      
+      If you want Panel to support sensible defaults automatically please upvote [Issue 940](https://github.com/holoviz/panel/issues/940).
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/dataframe_formatting.py
+    servable: 
+    tags:       
+      - DataFrame
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_dataframe.png"
+  - url: dependent_widgets
+    name: Dependent Widgets
+    author: marc_skov_madsen
+    owner: 
+    category: Discourse
+    description: An example of providing multiple widgets to select the same value
+    description_long: |-
+      Javier asked in [discourse 1478](https://discourse.holoviz.org/t/use-two-different-widgets-to-update-same-plot/1478)
+      how to provide multiple ways to the user to select a value and then update a plot.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/dependent_widgets.py
+      gif: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/dependent-widgets.gif
+      mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/dependent-widgets.mp4
+    servable: 
+    tags:       
+      - Discourse
+      - Multiselect
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/dependent-widgets.png"
+  - url: detr
+    name: "DE:TR: Object Detection"
+    author: marc_skov_madsen
+    owner: 
+    category: Deep Learning
+    description: "An image recognition app based on Facebook DE:TR and Plotly"
+    description_long: |-
+      [DE:TR:](https://github.com/facebookresearch/detr) by
+      [Facebook Research](https://research.fb.com/) provides End-to-End Object Detection with
+      Transformers.
+      
+      <img style="max-width:100%;height:260px;" src="https://github.com/facebookresearch/detr/raw/master/.github/DETR.png"/>
+      
+      This app is heavily inspired by the [dash-detr](https://github.com/plotly/dash-detr) app.
+      
+      I hope this provides you with an impression of how this can be implemented in a
+      [Panel](https://panel.holoviz.org/) context.
+      
+      I have tried to mature the implementation by
+      
+      - Adding documentation via Docstrings
+      - Cleaning up the code so that its satisfies simple code quality checks like Pylint and MyPy
+      - Implementing some basic tests
+      
+      Please note this app is running on very low end, cheap hardware which explains the low performance.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/detr.py
+      gif: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/detr.gif
+      mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/detr.mp4
+    servable: 
+    tags:       
+      - DE:TR
+      - Plotly
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/detr.png"
+  - url: echarts
+    name: ECharts
+    author: marc_skov_madsen
+    owner: 
+    category: Contributions
+    description: Demonstrates the look and feel of the Panel Echarts pane.
+    description_long: |-
+      [ECharts](https://echarts.apache.org/en/index.html) is an open-sourced JavaScript
+      visualization tool, which can run fluently on PC and mobile devices. Its also an
+      **Apache incubator project**. The library is very fast with a modern look and feel.
+      [Pyecharts](https://pyecharts.org/#/en-us/) is a Python api for using ECharts in Python
+      including Standalone, Flask, Django and Jupyter Notebooks.
+
+      Checkout the [Echarts Gallery](https://echarts.apache.org/examples/en/index.html),
+      [Echarts intro Video](https://www.youtube.com/watch?v=MF34Cgk5Rp0) or the
+      [Panel Echarts Reference Guide](https://panel.holoviz.org/reference/panes/ECharts.html)
+      for more info.
+      
+      Below we showcase an `ECharts` pane capable of showing Echarts dicts and Pyecharts objects
+      **enabling us to develop awesome analytics apps using the power of Echarts, Panel and Python**.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/echarts.py
+    servable: 
+    tags:       
+      - ECharts
+      - PyECharts
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_echarts.png"
+  - url: fast_grid_template
+    name: FastGridTemplate
+    author: marc_skov_madsen
+    owner: 
+    category: Contributions
+    description: Demonstrates the FastGridTemplate and Fast Components
+    description_long: |-
+      This app is based on the [`FastGridTemplate`](https://panel.holoviz.org/reference/templates/FastGridTemplate.html#templates-gallery-fastgridtemplate).
+      Probably the most powerful data app template in the world. For a deep dive see [FastGridTemplate on YouTube](https://youtu.be/_mv9xwwzWAA)
+      
+      We are also using some *Fast Components* provided by the
+      <fast-anchor href="https://awesome-panel.readthedocs.io/en/latest/packages/awesome-panel-extensions/index.html#fast" appearance="hypertext" target="_blank">awesome-panel-extensions</fast-anchor>
+      package.
+      
+      Fast is the adaptive interface system for modern web experiences.
+      Interfaces built with FAST adapt to your design system and can be used with any modern UI Framework by leveraging industry standard Web Components.
+      Checkout the <fast-anchor href="https://explore.fast.design/components/fast-accordion" appearance="hypertext" target="_blank">Component Gallery</fast-anchor>.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/fast_grid_template.py
+      mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/fast_grid_template_app.mp4
+    servable: 
+    tags:       
+      - Fast
+      - Template
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/fast-grid-template.png"
+  - url: fileinput_area
+    name: FileInput Area
+    author: marc_skov_madsen
+    owner: 
+    category: Style
+    description: Shows how to style the Panel FileInput to give it a modern look and feel
+    description_long: |-
+      The Panel [FileInput](https://panel.holoviz.org/reference/widgets/FileInput.html#widgets-gallery-FileInput)
+      is just an *ugly* button designed in the 1990s.
+      
+      Here we style the FileInput to make it look like a more modern file upload area that
+      **SUPPORTS DRAG AND DROP**.
+      This is done by adding the below css and settings `css_classes=["pnx-file-upload-area"]` on
+      the `FileInput` widget.
+      
+      ```css
+      .pnx-file-upload-area input[type=file] {
+        width: 100%;
+        height: 100%;
+        border: 3px dashed #9E9E9E;
+        background: transparent;
+        border-radius: 5px;
+        text-align: left;
+        margin: auto;
+      }
+      ```
+      
+      If you want a nicer looking `FileInput` in Panel please upvote
+      [Github Issue 917](https://github.com/holoviz/panel/issues/917) and join the discussion in
+      [Discourse 1128](https://discourse.holoviz.org/t/what-should-a-better-fileinput-look-like/1128/3).
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/fileinput_area.py
+      mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/
+    servable: 
+    tags:       
+      - Styling
+      - FileInput
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/fileinput-area.png"
+  - url: gallery
+    name: App Gallery
+    author: marc_skov_madsen
+    owner: 
+    category: Main
+    description: A custom Panel template using the Fast web components
+    description_long: |-
+      The Gallery provides a very visual overview to the applications and associated
+      resources
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/gallery.py
+    servable: 
+    tags: 
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/gallery.png"
+  - url: getting_started_panel
+    name: Getting Started with Panel
+    author: marc_skov_madsen
+    owner: 
+    category: Getting Started
+    description: A basic data app with Panel
+    description_long: |-
+      This data app serves as an introduction to Panel showcases widgets, panes, reactive functions and templates.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/getting_started_panel.ipynb
+    servable: 
+    tags: 
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/getting-started-panel.png"
+  - url: getting_started_hvplot_interactive
+    name: Getting Started with hvplot .interactive
+    author: marc_skov_madsen
+    owner: 
+    category: Getting Started
+    description: A basic data app with hvplot .interactive
+    description_long: |-
+      This data app serves as an introduction to hvplot .interactive and Panel
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/getting_started_hvplot_interactive.ipynb
+    servable: 
+    tags: 
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/getting-started-hvplot-interactive.png"
+  - url: google_map_viewer
+    name: Google Map Viewer
+    author: andrew_huang
+    owner: 
+    category: Discourse
+    description: An app showcasing the use of Google Maps and the FastGridTemplate
+    description_long: |-
+      In [Discourse 1533](https://discourse.holoviz.org/t/example-of-using-template-with-param-classes/1533) Andrew
+      showcased this example of using the ReactTemplate with Google Maps. Here it is
+      reproduced using the `FastListTemplate`.
+      The Google Maps example was initially described in the [Param User Guide](https://panel.holoviz.org/user_guide/Param.html).
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/google_map_viewer.py
+      mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/google-map-viewer.mp4
+    servable: 
+    tags:       
+      - Panel
+      - Param
+      - Grid
+      - Google
+      - Map
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/google-map-viewer.png"
+  - url: highcharts_network
+    name: HighCharts Network
+    author: marc_skov_madsen
+    owner: 
+    category: panel-highcharts
+    description: Interactive Network Graph. Showcase of the panel-highcharts package.
+    description_long: |-
+      This example demonstrates the use of the
+      [panel-highcharts](https://github.com/marcskovmadsen/panel-highcharts) python package.
+      
+      The `panel-highcharts` [python package](https://pypi.org/project/panel-highcharts/) and
+      [repository](https://github.com/marcskovmadsen/panel-highcharts) is open source and free to use
+      (MIT License), however Highcharts itself requires a license for commercial use.
+      
+      For more info see the Highcharts license [FAQs](https://shop.highsoft.com/faq).
+      For a gallery of HighCharts check out the [HighCharts Demo](https://www.highcharts.com/demo).
+    project: 
+    resources:       
+      binder: https://mybinder.org/v2/gh/marcskovmadsen/panel-highcharts/HEAD?urlpath=lab/tree/examples/Network.ipynb
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/highcharts_network.py
+      github: https://github.com/marcskovmadsen/panel-highcharts
+      pypi: https://pypi.org/project/panel-highcharts/
+    servable: 
+    tags:       
+      - HighCharts
+      - graph
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/highcharts-network.png"
+  - url: highcharts_add_series_dynamically
+    name: HighCharts - Add Series Dynamically
+    author: marc_skov_madsen
+    owner: 
+    category: panel-highcharts
+    description: Shows how to add an extra series to an existing HighCharts chart
+    description_long: |-
+      This example illustrates how to add an extra series to an existing HighCharts chart. This 
+      was motivated by
+      [Feature Request #3](https://github.com/MarcSkovMadsen/panel-highcharts/issues/3) and inspired by the 
+      [chart-addseries example](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/members/chart-addseries/).
+      
+      The `panel-highcharts` [python package](https://pypi.org/project/panel-highcharts/) and
+      [repository](https://github.com/marcskovmadsen/panel-highcharts) is open source and free to use
+      (MIT License), however Highcharts itself requires a license for commercial use.
+      
+      For more info see the Highcharts license [FAQs](https://shop.highsoft.com/faq).
+      For a gallery of HighCharts check out the [HighCharts Demo](https://www.highcharts.com/demo).
+    project: 
+    resources:       
+      binder: https://mybinder.org/v2/gh/marcskovmadsen/panel-highcharts/HEAD?urlpath=lab/tree/examples/AddSeriesDynamically.ipynb
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/highcharts_add_series_dynamically.py
+      github: https://github.com/marcskovmadsen/panel-highcharts
+      pypi: https://pypi.org/project/panel-highcharts/
+    servable: 
+    tags:       
+      - HighCharts
+      - graph
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/highcharts_add_series_dynamically.png"
+  - url: highcharts_renewable_power_plants_dk
+    name: HighCharts Renewable Power
+    author: marc_skov_madsen
+    owner: 
+    category: panel-highcharts
+    description: Demo of complex data app using panel-highcharts with linked charts
+    description_long: |-
+      This application demonstrates how to create parent-child relations using Panel-HighCharts by reacting to events.
+
+      For performance reasons the map shows a sample of 1000 points only. In total there are 84353 power plants.
+      
+      The `panel-highcharts` [python package](https://pypi.org/project/panel-highcharts/) and
+      [repository](https://github.com/marcskovmadsen/panel-highcharts) is open source and free to use
+      (MIT License), however Highcharts itself requires a license for commercial use.
+      
+      For more info see the Highcharts license [FAQs](https://shop.highsoft.com/faq).
+      For a gallery of HighCharts check out the [HighCharts Demo](https://www.highcharts.com/demo).
+    project: 
+    resources:       
+      binder: https://mybinder.org/v2/gh/marcskovmadsen/panel-highcharts/HEAD?urlpath=lab/tree/examples/LinkedCharts.ipynb
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/highcharts_renewable_power_plants_dk.py
+      github: https://github.com/marcskovmadsen/panel-highcharts
+      pypi: https://pypi.org/project/panel-highcharts/
+    servable: 
+    tags:
+      - Dashboard
+      - HighCharts
+      - Renewable
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/highcharts_renewable_power_plants_dk.png"
+  - url: holoviews_linked_brushing
+    name: HoloViews Linked Brushing
+    author: marc_skov_madsen
+    owner: 
+    category: Dashboards
+    description: A demonstration of HoloViews linked brushing for Bokeh and Plotly backends
+    description_long: |-
+      *Linked Brushing* is a very powerful technique. It's also often called *Linked Selections* or
+      *Crossfiltering*.
+      
+      This example is inspired by the HoloViews [Linked Brushing Reference Guide](http://holoviews.org/user_guide/Linked_Brushing.html) and the Plotly blog post
+      [Introducing Dash HoloViews](https://medium.com/plotly/introducing-dash-holoviews-6a05c088ebe5).
+      
+      This example uses the *Iris* dataset.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/holoviews_linked_brushing.py
+      mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/holoviews-linked-brushing.mp4
+      youtube: https://youtu.be/l-dvQwF6sHw
+    servable: 
+    tags:       
+      - Panel
+      - Bokeh
+      - Plotly
+      - HoloViews
+      - Linked Brushing
+      - Cross Filter
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/holoviews-linked-brushing.png"
+  - url: "home"
+    name: Home
+    author: marc_skov_madsen
+    owner: 
+    category: Main
+    description: An introduction to awesome-panel.org and Panel
+    description_long: |-
+      An introduction to awesome-panel.org and Panel
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/home.py
+    servable: 
+    tags: 
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/home.png"
+  - url: image_classifier
+    name: Image Classifier
+    author: marc_skov_madsen
+    owner: 
+    category: Deep Learning
+    description: An image classifier app created with Panel
+    description_long: |-
+      This is an **image classifier app** that enables a user to
+      
+      - select a classifier model
+      - upload an image and
+      - get a predicted classification in return.
+      
+      This app is inspired by the awesome [imageNet](https://github.com/iamatulsingh/imageNet-streamlit)
+      application developed by [Atul Kumar Singh](https://github.com/iamatulsingh).
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/image_classifier.py
+      mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/
+    servable: 
+    tags:       
+      - Keras
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/image_classifier.png"
+  - url: js_actions
+    name: JS Actions
+    author: marc_skov_madsen
+    owner: 
+    category: Discourse
+    description: Shows how to use a little bit of javascript with Panel
+    description_long: |-
+      Once in a while you might want sprinkle in some Javascript actions in your Panel Application. The
+      basics are described in the [Links Section](https://panel.holoviz.org/user_guide/Links.html) of the
+      Panel user Guide.
+
+      This example was developed as a response to
+      [Discourse Post 949](https://discourse.holoviz.org/t/using-panel-with-javascript-to-make-a-copy-text-to-clipboard-button/949)
+      by [ShanzyHolm](https://discourse.holoviz.org/u/ShanzyHolm/summary).
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/js_actions.py
+    servable: 
+    tags:       
+      - JavaScript
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/js_actions.png"
+  - url: jsme_editor
+    name: JSME Editor
+    author: marc_skov_madsen
+    owner: 
+    category: panel-chemistry
+    description: Demonstrates the basics of the JSME Editor from panel-chemistry
+    description_long: |-
+      The [JSME Editor](https://jsme-editor.github.io/) supports drawing and editing of molecules
+
+      The `JSMEEditor` component is included in the [panel-chemistry](https://github.com/MarcSkovMadsen/panel-chemistry)
+      package.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/jsme_editor.py
+      doc: https://nbviewer.org/github/MarcSkovMadsen/panel-chemistry/blob/main/examples/reference/JSMEEditor.ipynb
+    servable: 
+    tags:       
+      - Chemistry
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/jsme_editor.png"
+  - url: lib_altair
+    name: Altair
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: Altair data app with light and dark theme.
+    description_long: |-
+      [Altair](https://altair-viz.github.io/) is a [declarative](https://en.wikipedia.org/wiki/Declarative_programming)
+      statistical visualization library for Python, based on Vega and Vega-Lite.
+      
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including Altair. It supports both light and dark theme.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_altair.py
+      doc: https://panel.holoviz.org/reference/panes/Vega.html#altair
+      youtube: https://www.youtube.com/results?search_query=python+altair
+    servable: 
+    tags:       
+      - Altair
+      - DataViz
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_altair.png"
+  - url: lib_bokeh
+    name: Bokeh
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: Bokeh data app with light and dark theme.
+    description_long: |-
+      [Bokeh](https://docs.bokeh.org/en/latest/) is a Python library for creating interactive visualizations for modern web browsers.
+
+      I think Bokeh appeals to users with specialized, scientific or streaming use cases. Bokeh has a lot of "specialized" tools for specialized use cases.
+      
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including Bokeh. It supports both light and dark theme.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_bokeh.py
+      doc: https://panel.holoviz.org/reference/panes/Bokeh.html
+      youtube: https://www.youtube.com/results?search_query=python+bokeh
+    servable: 
+    tags:       
+      - Bokeh
+      - DataViz
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_bokeh.png"
+  - url: lib_datashader
+    name: Datashader
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: Datashader data app with light and dark theme.
+    description_long: |-
+      [Datashader](https://datashader.org/) accurately renders event the largest data. It enables you 
+      to interactively explore big data of Terabyte or even Peta byte scale. For 
+      example for use cases at Cern and intelligence institutions.
+
+      You would be using it in combination with [hvplot](lib_hvplot), 
+      [Holoviews](lib_holoviews) or [Plotly](lib_plotly).
+
+      Rapids by NVidia bases their [CuxFilter](https://github.com/rapidsai/cuxfilter) 
+      framework on Datashader, HoloViews and Panel.
+      
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including Datashader. It supports both light and dark theme.
+
+      Issue: [Datashader+Panel flashes](https://github.com/holoviz/panel/issues/3242)
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_datashader.py
+      youtube: https://www.youtube.com/results?search_query=datashader
+    servable: 
+    tags:       
+      - hvplot
+      - Datashader
+      - Big Data
+      - DataViz
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_datashader.png"
+  - url: lib_deckgl
+    name: Deck.gl
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: Deck.gl data app with light and dark theme.
+    description_long: |-
+      [DeckGL](https://deck.gl/) is a declarative, WebGL-powered framework for visual exploratory data analysis of large datasets.
+
+      For a more Pythonic interface see [PyDeck](lib_pydeck).
+      
+      Deck.gl works very well with Panel. Even hover, click etc events are supported.
+      
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including Deck.gl. It supports both light and dark theme.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_deckgl.py
+      doc: https://panel.holoviz.org/reference/panes/DeckGL.html#panes-gallery-deckgl
+      youtube: https://www.youtube.com/results?search_query=deckgl
+    servable: false
+    tags:       
+      - Deck.gl
+      - Big Data
+      - Spatial
+      - GeoViz
+      - DataViz
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_deckgl.png"
+  - url: lib_echarts
+    name: ECharts
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: ECharts data app with light and dark theme.
+    description_long: |-
+      [ECharts](https://echarts.apache.org/en/index.html) is modern .js visualization in the browser.
+
+      For a more Pythonic interface see [PyEcharts](lib_pyecharts). For another example see the [ECharts contribution](echarts).
+      
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including Echarts. It supports both light and dark theme.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_echarts.py
+      doc: https://panel.holoviz.org/reference/panes/ECharts.html#panes-gallery-echarts
+      youtube: https://www.youtube.com/results?search_query=echarts
+    servable: 
+    tags:       
+      - ECharts
+      - Apache
+      - DataViz
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_echarts.png"
+  - url: lib_folium
+    name: Folium
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: Folium data app with light and dark theme.
+    description_long: |-
+      [Folium](https://python-visualization.github.io/folium/) provides GeoViz using Python data wrangling and Leaflet.js
+
+      Please note that Folium **does not support two-way events** like click etc. in your data apps.
+      
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including Folium.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_folium.py
+      doc: https://panel.holoviz.org/reference/panes/Folium.html
+      youtube: https://www.youtube.com/results?search_query=folium
+    servable: 
+    tags:       
+      - Folium
+      - Spatial
+      - GeoViz
+      - DataViz
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_folium.png"
+  - url: lib_holoviews
+    name: HoloViews
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: HoloViews data app with light and dark theme.
+    description_long: |-
+      [HoloViews](http://holoviews.org/index.html) is an open-source Python library designed to make data analysis and visualization seamless and simple. With HoloViews, you can usually express what you want to do in very few lines of code, letting you focus on what you are trying to explore and convey, not on the process of plotting.
+
+      You can use any of the backends [Bokeh](lib_bokeh), [Matplotlib](lib_matplotlib) and
+      [Plotly](lib_plotly). Please note that Bokeh has the most comprehensive and robust support.
+
+      HoloViews is harder to learn than and less robust than Plotly.
+      But it provides a lot of features for specialized use cases and a mental
+      model for data visualiation.
+      
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including HoloViews.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_holoviews.py
+      doc: https://panel.holoviz.org/reference/panes/HoloViews.html
+      youtube: https://www.youtube.com/results?search_query=holoviews
+    servable: 
+    tags:       
+      - HoloViews
+      - DataViz
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_holoviews.png"
+  - url: lib_hvplot
+    name: hvplot
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: hvplot data app with light and dark theme.
+    description_long: |-
+      [hvplot](https://hvplot.holoviz.org/) is a high-level plotting api for the PyData ecosystem built on top of [HoloViews](https://holoviews.org/).
+
+      hvplot extends the [Pandas](https://pandas.pydata.org/) `.plot` api to other data(frame) frameworks like
+      [Dask](https://docs.rapids.ai/api/cudf/stable/),
+      [GeoPandas](https://geopandas.org/),
+      [Ibis](https://ibis-project.org/),
+      [Intake](https://github.com/ContinuumIO/intake),
+      [NetworkX](https://networkx.github.io/documentation/stable/).
+      [Rapids cuDF](https://docs.rapids.ai/api/cudf/stable/),
+      [Streamz](https://streamz.readthedocs.io/) and
+      [XArray](https://xarray.pydata.org/),
+
+      Currently the backend is [Bokeh](lib_bokeh). But that will soon be extended to
+      [Matplotlib](lib_matplotlib) and [Plotly](lib_plotly).
+
+      Personally I use `.hvplot` for simple data exploration and data apps. I like the simple api and the
+      ability to combine plots with simple `*`, `+` and `/` operations.
+      
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including hvplot.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_hvplot.py
+      doc: https://panel.holoviz.org/reference/panes/HoloViews.html
+      youtube: https://www.youtube.com/results?search_query=hvplot
+    servable: 
+    tags:       
+      - hvplot
+      - DataFrame
+      - Pandas
+      - DataViz
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_hvplot.png"
+  - url: lib_ipysheet
+    name: IpySheet
+    author: marc_skov_madsen
+    owner: 
+    category: Ipywidgets
+    description: IpySheet data app with light and dark theme.
+    description_long: |-
+      [Ipysheet](https://github.com/QuantStack/ipysheet) is a spreadsheet look a like based on [ipywidgets](https://ipywidgets.readthedocs.io/en/latest/).
+      
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including IpySheet.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_ipysheet.py
+      doc: https://panel.holoviz.org/reference/panes/IPyWidget.html
+      youtube: https://www.youtube.com/results?search_query=ipysheet
+    servable: 
+    tags:       
+      - ipysheet
+      - ipywidgets
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_ipysheet.png"
+  - url: lib_matplotlib
+    name: MatplotLib
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: Matplotlib data app with light and dark theme.
+    description_long: |-
+      [Matplotlib](https://matplotlib.org/) is a comprehensive library for creating static, animated, and interactive visualizations in Python. Matplotlib makes easy things easy and hard things possible. Matplotlib is the most used plotting library in Python.
+
+      Matplotlib only supports interactivity to a limited extent compared to Altair, Bokeh, HoloViews and Plotly. So personally I normally don't use it.
+
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including Matplotlib. It supports both light and dark theme.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_matplotlib.py
+      doc: https://panel.holoviz.org/reference/panes/Matplotlib.html
+      youtube: https://www.youtube.com/results?search_query=matplotlib
+    servable: 
+    tags:       
+      - ipysheet
+      - ipywidgets
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_matplotlib.png"
+  - url: lib_plotly
+    name: Plotly
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: Plotly data app with light and dark theme.
+    description_long: |-
+      [Plotly](https://plotly.com/python/)'s Python graphing library makes interactive, publication-quality graphs.
+
+      Plotly is one of the most popular plotting libraries in Python. It has high quality documentation and produces very appealing plots.
+
+      Plotly works very well with Panel. Even hover, click etc events are supported.
+
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including Plotly. It supports both light and dark theme.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_plotly.py
+      doc: https://panel.holoviz.org/reference/panes/Plotly.html
+      youtube: https://www.youtube.com/results?search_query=plotly
+    servable: 
+    tags:       
+      - dataviz
+      - plotly
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_plotly.png"
+  - url: lib_plotnine
+    name: Plotnine
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: Plotnine data app with light and dark theme.
+    description_long: |-
+      [Plotnine](https://plotnine.readthedocs.io/en/stable/) is an implementation of a grammar of
+      graphics in Python, it is based on [ggplot2](https://ggplot2.tidyverse.org/).
+      
+      The grammar allows users to compose plots by explicitly mapping data to the visual objects
+      that make up the plot. Its based on Matplotlib.
+
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including Plotnine. It supports both light and dark theme.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_plotnine.py
+      doc: https://panel.holoviz.org/reference/panes/Matplotlib.html
+      youtube: https://www.youtube.com/results?search_query=plotnine
+    servable: 
+    tags:       
+      - dataviz
+      - plotly
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_plotnine.png"
+  - url: lib_pydeck
+    name: PyDeck
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: PyDeck data app with light and dark theme.
+    description_long: |-
+      [PyDeck](https://deckgl.readthedocs.io/en/latest/) provides high-scale spatial rendering in 
+      Python. It is a Python wrapper for [deck.gl](lib_deckgl).
+
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including PyDeck. It supports both light and dark theme.
+
+      PyDeck works very well with Panel. Even hover, click etc events are supported.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_pydeck.py
+      doc: https://panel.holoviz.org/reference/panes/DeckGL.html
+      youtube: https://www.youtube.com/results?search_query=pydeck
+    servable: 
+    tags:       
+      - spatial
+      - geoviz
+      - dataviz
+      - deckgl
+      - pydeck
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_pydeck.png"
+  - url: lib_pyecharts
+    name: PyEcharts
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: PyECharts data app with light and dark theme.
+    description_long: |-
+      [PyEcharts](https://pyecharts.org/#/) is a Python wrapper for [ECharts](lib_echarts).
+
+      Please note **currently I cannot recommend PyEcharts** as the documentation often seems out of date
+      and the examples not working. But Echarts and thus PyEcharts is an Apache project and produces
+      business plots of a higher quality than Plotly. So it worth monitoring.
+
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including PyDeck. It supports both light and dark theme.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_pyecharts.py
+      doc: https://panel.holoviz.org/reference/panes/ECharts.html
+      youtube: https://www.youtube.com/results?search_query=pyecharts
+    servable: 
+    tags:       
+      - dataviz
+      - echarts
+      - pyecharts
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_pyecharts.png"
+  # - url: lib_pyvista
+  #   name: PyVista
+  #   author: marc_skov_madsen
+  #   owner: 
+  #   category: DataViz
+  #   description: PyVista data app with light and dark theme.
+  #   description_long: |-
+  #     [PyVista](https://docs.pyvista.org/) provides 3D plotting and mesh analysis through a
+  #     streamlined interface for the Visualization Toolkit (VTK).
+      
+  #     PyVista is a helper module for the Visualization Toolkit (VTK) 
+  #     that takes a different approach on interfacing with VTK through NumPy and direct array access.
+
+  #     The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+  #     including PyVista. It supports both light and dark theme.
+  #   project: 
+  #   resources:       
+  #     code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_pyvista.py
+  #     doc: https://panel.holoviz.org/reference/panes/VTK.html
+  #     youtube: https://www.youtube.com/results?search_query=pyvista
+  #   servable: 
+  #   tags:       
+  #     - dataviz
+  #     - vtk
+  #     - pyvista
+  #   thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+  - url: lib_seaborn
+    name: Seaborn
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: Seaborn data app with light and dark theme.
+    description_long: |-
+      [Seaborn](https://seaborn.pydata.org/) Seaborn is a Python data visualization
+      library based on [Matplotlib](lib_matplotlib). It provides a high-level 
+      interface for drawing attractive and informative statistical graphics.
+
+      Please note the lead developer is tweeting about upcoming, major changes to
+      the api.
+
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including Seaborn. It supports both light and dark theme.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_seaborn.py
+      doc: https://panel.holoviz.org/reference/panes/Matplotlib.html
+      youtube: https://www.youtube.com/results?search_query=seaborn
+    servable: 
+    tags:       
+      - dataviz
+      - matplotlib
+      - seaborn
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_seaborn.png"
+  - url: lib_vega
+    name: Vega
+    author: marc_skov_madsen
+    owner: 
+    category: DataViz
+    description: Vega-lite data app with light and dark theme.
+    description_long: |-
+      [Vega](https://vega.github.io/) is a declarative format for creating, saving, and sharing 
+      visualization designs. With Vega, visualizations are described in JSON, and 
+      generate interactive views using either HTML5 Canvas or SVG.
+
+      Please note that **you should be using the higher level Vega-Lite format**.
+      This app is using Vega-lite.
+
+      The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+      including Vega and Vega-lite. It supports both light and dark theme.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_vega.py
+      doc: https://panel.holoviz.org/reference/panes/Vega.html
+      youtube: https://www.youtube.com/results?search_query=vega-lite
+    servable: 
+    tags:       
+      - dataviz
+      - vega-lite
+      - vega
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/lib_vega.png"
+  # - url: lib_vtk
+  #   name: VTK
+  #   author: marc_skov_madsen
+  #   owner: 
+  #   category: DataViz
+  #   description: VTK data app with light and dark theme.
+  #   description_long: |-
+  #     [VTK](https://vtk.org/) is open source software for manipulating and 
+  #     displaying scientific data. It comes with state-of-the-art tools for 3D 
+  #     rendering, a suite of widgets for 3D interaction, and extensive 2D 
+  #     plotting capability.
+
+  #     The purpose of this app is to demonstrate that Panel works with the tools you know and love &#10084;&#65039;,
+  #     including VTK. It supports both light and dark theme.
+  #   project: 
+  #   resources:       
+  #     code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/lib_vtk.py
+  #     doc: https://panel.holoviz.org/reference/panes/VTK.html
+  #     youtube: https://www.youtube.com/results?search_query=visualization+toolkit
+  #   servable:
+  #   tags:       
+  #     - dataviz
+  #     - vega-lite
+  #     - vega
+  #   thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+  - url: kickstarter_dashboard
+    name: Kickstarter Dashboard
+    author: marc_skov_madsen
+    owner: 
+    category: Dashboards
+    description: A dashboard with fast and responsive linked brushing of the plots
+    description_long: |-
+      The purpose of the Kickstarter Dashboard was to test if the claims regarding Bokeh as of Jan 2018 in the
+      *bokeh-dash-best-dashboard-framework* article holds for Panel and the HoloViews suite of tools as of Dec 2019.
+      
+      The claims where
+      
+      - Data in Bokeh becomes inconsistent
+      - Bokeh is slow for big datasets
+      - Cannot link charts to dataframe
+      - Interactions take a long time to develop
+      
+      You can evaluate this dashboard and the code to make your personal evaluation of the above
+      statements in the Context of Panel.
+      
+      You can find an alternative version of this Dashboard in Streamlit at
+      [awesome-streamlit.org](https://awesome-streamlit.org)
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/kickstarter_dashboard.py
+    servable: 
+    tags:       
+      - Bokeh
+      - Linked Brushing
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/kickstarter_dashboard.png"
+  - url: loading_spinners
+    name: Loading Spinners
+    author: marc_skov_madsen
+    owner: 
+    category: Contributions
+    description: Demonstrates the look and feel of the Loading Spinners
+    description_long: |-
+      The Loading Spinners helps provide a nice user experience by indicating activity.
+      This app showcases the look and feel of the loading spinners and provides you with 
+      functionality to customize the look and feel of your loading spinner.
+      
+      - You can select the look and color of the loading spinner in the sidebar.
+      - If you end up with a design you would like to add in your app, then you can just copy the
+      `style` css and `append` it to `pn.config.raw_css` in your app.
+
+      Please note the loading spinner currently (Panel 0.12.6) does not cover the full Area,
+      but a fix will be released with Panel 0.13. See 
+      [#3205](https://github.com/holoviz/panel/pull/3205).
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/loading_spinners.py
+      gif: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/loading-spinners.gif
+      mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/loading-spinners.mp4
+    servable: 
+    tags:       
+      - UX
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/loading-spinners.png"
+  - url: mercury_buy_vs_build
+    name: Mercury - Buy vs Build
+    author: marc_skov_madsen
+    owner: 
+    category: Mercury
+    description: Compares a Panel app to a Mercury app. Uses Bloxs.
+    description_long: |-
+      [Mercury](https://mljar.com/mercury/) enables you to share your Python Notebooks with others as interactive web applications.
+      
+      So does Panel so I figured I would do a comparison. So here we compare to the Mercury [Buy &#128184; vs build &#128736;](https://mercury.mljar.com/app/5) app.
+
+      My take is that the main pro of Mercury is simplicity and the main con is slow execution model.
+
+      Note that this app also demonstrates the use of [Bloxs](https://github.com/mljar/bloxs).
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/mercury_buy_vs_build.py
+    servable: 
+    tags:       
+      - Mercury
+      - Bloxs
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/mercury_buy_vs_build.png"
+  - url: model_viewer
+    name: Model Viewer
+    author: marc_skov_madsen
+    owner: 
+    category: awesome-panel-extensions
+    description: Demonstrates the look and feel of the Google ModelViewer in your Panel app
+    description_long: |-
+      Google has developed the `model-viewer` web component for interactively viewing very large and
+      detailed 3D models. In this example we will demonstrate how to use the it in a Panel application. 
+      
+      It's available via the
+      [`awesome-panel-extensions`](https://pypi.org/project/awesome-panel-extensions/) package.
+      
+      ```python
+      from awesome_panel_extensions.pane import ModelViewer
+      ```
+      
+      The ModelViewer component and example could potentially be extended a lot by giving access to all
+      the parameters of the `model-viewer`.
+      
+      If you would like a `model-viewer` example notebook to be an integral part of the Panel gallery go
+      to GitHub and upvote [PR 1281](https://github.com/holoviz/panel/pull/1281).
+      
+      You can find more information at
+      [modelviewer.dev](https://modelviewer.dev/),
+      [examples](https://modelviewer.dev/examples/tester.html),
+      and [model-viewer Github](https://github.com/google/model-viewer/tree/master/packages/model-viewer)
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/model_viewer.py
+    servable: 
+    tags:       
+      - model-viewer
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_model_viewer.png"
+  - url: ngl_viewer
+    name: NGL Viewer
+    author: jochem_smit
+    owner: 
+    category: panel-chemistry
+    description: Demonstrates the basics of the NGLViewer from panel-chemistry
+    description_long: |-
+      The [`NGLViewer`](https://github.com/nglviewer/ngl) NGL Viewer is a component for molecular visualization.
+      WebGL is employed to display molecules like proteins and DNA/RNA with a variety of
+      representations. Please note the `NGLViewer` **does not work in Firefox**.
+
+      When using NGL please cite
+
+      - AS Rose, AR Bradley, Y Valasatava, JM Duarte, A Prlić and PW Rose. *Web-based molecular graphics for large complexes*. ACM Proceedings of the 21st International Conference on Web3D Technology (Web3D '16): 185-186, 2016. [doi:10.1145/2945292.2945324](http://dx.doi.org/10.1145/2945292.2945324).
+      - AS Rose and PW Hildebrand. *NGL Viewer: a web application for molecular visualization*. Nucl Acids Res (1 July 2015) 43 (W1): W576-W579 first published online April 29, 2015. [doi:10.1093/nar/gkv402](https://doi.org/10.1093/nar/gkv402).
+
+      The Panel `NGLViewer` widget was developed with help from the community. Checkout
+      [Discourse 583](https://discourse.holoviz.org/t/how-to-use-ngl-webgl-protein-viewer-in-panel/583).
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/ngl_viewer.py
+      mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/ngl-molecule-viewer.mp4
+      doc: https://nbviewer.org/github/MarcSkovMadsen/panel-chemistry/blob/main/examples/reference/NGLViewer.ipynb
+      gif: https://nbviewer.org/github/MarcSkovMadsen/panel-chemistry/blob/main/examples/assets/NGLViewer.gif
+    servable: 
+    tags:       
+      - Panel
+      - NGL
+      - Molecule
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/ngl-molecule-viewer.png"
+  - url: pandas_profiling_app
+    name: Pandas Profiling
+    author: marc_skov_madsen
+    owner: 
+    category: Exploratory Data Analysis
+    description: Embeds the Pandas Profiling report in a Panel app.
+    description_long: |-
+      [Pandas Profiling](https://github.com/pandas-profiling/pandas-profiling) provides profile reports
+      from Pandas DataFrames. I hope this provides you with an impression of how this can be integrated
+      in a [Panel](https://panel.holoviz.org/) context.
+      This app was originally created as a response to this [question on Discourse](https://discourse.holoviz.org/t/cant-display-pandas-profiling-report/760/2).
+      This app is restricted to profile a **maximum of 200 rows** to minimize the impact on the server.
+      For more information take a look at the [Pandas Profiling Examples](https://pandas-profiling.ydata.ai/docs/master/index.html).
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/pandas_profiling_app.py
+    servable: 
+    tags:       
+      - Pandas
+      - HTML
+      - embed
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/pandas_profiling_app.png"
+  - url: pdbe_molstar
+    name: PDBeMolStar
+    author: marc_skov_madsen
+    owner: 
+    category: panel-chemistry
+    description: Demo of the PDBeMolstar component from panel-chemistry
+    description_long: |-
+      The Panel Chemistry `PDBeMolStar` allows you to use the powerful [PDBe Molstar](https://github.com/PDBeurope/pdbe-molstar) viewer in Python, Jupyter and Panel.
+
+      PDBe Molstar is a streamlined structure viewer which enables a PDB structure to be explored within a browser rather than requiring pre-installed molecular graphics software
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/pdbe_molstar.py
+      binder: https://mybinder.org/v2/gh/marcskovmadsen/panel-chemistry/HEAD?urlpath=lab/tree/examples/reference/PDBe_MolStar.ipynb
+    servable: 
+    tags:       
+      - chemistry
+      - cheminformatics
+      - panel-chemistry
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/pdbe_molstar.png"
+  - url: component_explorer
+    name: Component Explorer
+    author: marc_skov_madsen
+    owner: 
+    category: Contributions
+    description: An app for discovering and learning about the Panel components
+    description_long: |-
+      The Panel Component Explorer App helps you discover and learn about the Panel Components
+      I hope this can speed up the process of learning the power of Panel.
+      
+      The Component Explorer currently supports the components that I have styled in the
+      [Fast.design](https://fast.design) style.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/component_explorer.py
+    servable: 
+    tags:       
+      - Panel
+      - Components
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/panel-component-explorer.png"
+  - url: param_reference
+    name: Param Reference
+    author: marc_skov_madsen
+    owner: 
+    category: Contributions
+    description: A live version of the Panel Param Reference guide
+    description_long: |-
+      In this app we build **a model a cycling Athlete and his PowerCurve**.
+      The PowerCurve is a recording of the athletes maximum power output in Watt per kg for fixed
+      durations of time.
+
+      This app illustrates the usage of the **`pn.Param`** function. The `pn.Param` function is used to
+      layout, style and configure the widgets of a `param.Parameterized` class when using it in Panel.
+      It took me some time to get my head around how to use it. So I've created this app
+      that I hope can help you.
+      
+      I have also contributed a **guided walk through** of this example to the Panel Reference Gallery.
+      You can find it [here](https://panel.holoviz.org/reference/panes/Param.html#panes-gallery-param).
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/param_reference.py
+    servable: 
+    tags:       
+      - Param
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/param_reference_example.png"
+  - url: perspective
+    name: Perspective Viewer
+    author: marc_skov_madsen
+    owner: 
+    category: Contributions
+    description: Demonstrates that you can use the awesome Perspective pane
+    description_long: |-
+      [Perspective](https://github.com/finos/perspective#readme) is an interactive visualization
+      component for large, real-time datasets. It enables analysts and traders at large banks like
+      J.P.Morgan to understand their data in real time.
+      
+      Panel provides the [`Perspective`](https://panel.holoviz.org/reference/panes/Perspective.html) pane
+      which was first contributed by awesome-panel.org and then further improved by Philipp.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/perspective.py
+    servable: 
+    tags:       
+      - Perspective
+      - Streaming
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_perspective.png"
+  - url: progress_extension
+    name: Progress Extension
+    author: marc_skov_madsen
+    owner: 
+    category: awesome-panel-extensions
+    description: Demonstrates how to easily add progress reporting using the ProgressExt widget
+    description_long: |-
+      The ProgressExt widget enables easier progress reporting then the built in
+      [`pn.widgets.Progress`](https://panel.holoviz.org/reference/indicators/Progress.html#indicators-gallery-progress)
+      widget. It's available via the
+      [`awesome-panel-extensions`](https://pypi.org/project/awesome-panel-extensions/) package.
+      
+      The ProgressExt widget provides
+      
+      - A combination of a progress value and a progress message
+      - Easy to use functionality for
+      - Function Annotation
+      - Context Management
+      
+      An example use case is
+      ```python
+      import time
+      import panel as pn
+      from awesome_panel_extensions.widgets.progress_ext import ProgressExt
+      
+      progress = ProgressExt()
+      run_button = pn.widgets.Button(name="Click me")
+      
+      @progress.increment(50, "incrementing ...")
+      def run(event):
+        time.sleep(0.5)
+        run_button.on_click(run)
+      
+      app = pn.Column(run_button, progress.view)
+      app.servable()
+      ```
+      
+      This will show the progress bar and reset every 2 clicks.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/progress_extension.py
+    servable: 
+    tags:       
+      - Progress
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_progress_ext.png"
+  - url: py3dmol
+    name: Py3DMol
+    author: marc_skov_madsen
+    owner: 
+    category: panel-chemistry
+    description: Demonstrates the basics of the Py3DMol editor from panel-chemistry
+    description_long: |-
+      The [3Dmol.js component](http://3dmol.csb.pitt.edu/) supports supports visualizing molecular data.
+
+      The [panel-chemistry](https://github.com/MarcSkovMadsen/panel-chemistry) `Py3DMol` component wraps the 
+      [`py3Dmol`](https://colab.research.google.com/drive/1T2zR59TXyWRcNxRgOAiqVPJWhep83NV_?usp=sharing)
+      jupyter widget.
+
+      When using `py3DMol` please cite:
+      
+      - Nicholas Rego and David Koes, 3Dmol.js: molecular visualization with WebGL, Bioinformatics (2015) 31 (8): 1322-1324 [doi:10.1093/bioinformatics/btu829](https://academic.oup.com/bioinformatics/article/31/8/1322/213186).
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/py3dmol.py
+      doc: https://nbviewer.org/github/MarcSkovMadsen/panel-chemistry/blob/main/examples/reference/Py3DMol.ipynb
+      gif: https://nbviewer.org/github/MarcSkovMadsen/panel-chemistry/blob/main/examples/assets/Py3DMol.gif
+    servable: 
+    tags:       
+      - Chemistry
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/py3dmol.png"
+  - url: reactive_leaflet
+    name: Leaflet component using ReactiveHTML
+    author: marc_skov_madsen
+    owner: 
+    category: Custom Components
+    description: Custom Leaflet component using ReactiveHTML
+    description_long: |-
+      [Leaflet](https://leafletjs.com/) is the leading open-source JavaScript library for mobile-friendly interactive maps. It has all the mapping features most developers ever need.
+
+      Here we demonstrate how create a custom Leaflet component using [ReactiveHTML](https://panel.holoviz.org/user_guide/Custom_Components.html#reactivehtml-components).
+
+      You can also [use ipyleaflet with Panel](https://discourse.holoviz.org/t/works-with-ipyleaflet/2755).
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/reactive_leaflet.py
+      doc: https://leafletjs.com/
+    servable: 
+    tags:       
+      - Spatial
+      - GeoViz
+      - Leaflet
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/reactive_leaflet.png"
+  - url: share_on_social_buttons
+    name: Share on Social Buttons
+    author: marc_skov_madsen
+    owner: 
+    category: awesome-panel-extensions
+    description: These widgets makes it easy to add *share on social* buttons to your apps
+    description_long: |-
+      I wanted to enable easy sharing of [awesome-panel.org](https://awesome-panel.org) on social media,
+      so implemented social sharing buttons.
+
+      ```python
+      from awesome_panel_extensions.widgets.link_buttons.share_buttons import ShareOnTwitter
+      
+      ShareOnTwitter(url="https://awesome-panel.org", size=6)
+      ```
+
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/share_on_social_buttons.py
+    servable: 
+    tags:       
+      - Social Media
+      - Buttons
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/test_share_links.png"
+  - url: shoelace
+    name: Shoelace
+    author: marc_skov_madsen
+    owner: 
+    category: Custom Templates
+    description: A demonstration of a custom template based on Shoelace and including a modal pop up
+    description_long: |-
+      This is a **custom Panel template** based on [Shoelace](https://shoelace.style/).
+      Shoelace provides a set of mature and awesome web components in the style of Bootstrap.
+      
+      It's the best set of **Bootstrap like** web components I've been able to find. I want web
+      components because they work well in Jupyter Notebooks and because I believe they are the future of
+      the web.
+      
+      The vision is to extend this to a Template similar to the
+      [Bootstrap Template](https://panel.holoviz.org/user_guide/Templates.html) and develop a set of
+      of Shoelace widgets for Panel.
+      
+      This template includes a modal popup which was originally requested on
+      [Discourse 1207](https://discourse.holoviz.org/t/can-i-use-create-a-modal-dialog-in-panel/1207)
+      Developed by [awesome-panel.org](/).
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/shoelace.py
+    servable: 
+    tags:       
+      - Shoelace
+      - Modal
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/shoelace.png"
+  - url: soccer_analytics_dashboard
+    name: Soccer Analytics Dashboard
+    author: stephen_kilcommins
+    owner: 
+    category: Dashboards
+    description: A nice sports app with a nice background
+    description_long: |-
+      This is a slightly updated version of the soccer analysis dashboard developed by
+      [Stephen Kilcommins](https://www.linkedin.com/in/stephen-kilcommins/) and published in the article
+      [Panel - Everything you need to know](https://medium.datadriveninvestor.com/panel-everything-you-need-to-know-9bca61532e12)
+      You can find the original notebook [here](soccer_analytics_dashboard_original.ipynb)
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/soccer_analytics_dashboard.py
+      documentation: https://medium.datadriveninvestor.com/panel-everything-you-need-to-know-9bca61532e12
+    servable: 
+    tags:       
+      - Panel
+      - Review
+      - Blog
+      - Soccer
+      - Plotly
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/soccer-analytics-dashboard.png"
+  - url: streaming_indicators
+    name: Streaming Indicators
+    author: marc_skov_madsen
+    owner: 
+    category: Dashboards
+    description: A Streaming Indicators Dashboard
+    description_long: |-
+      This example shows a streaming indicators dashboard.
+      
+      Panel runs on top of the Tornado server. Tornado is a fast, asynchronous web server built to
+      support streaming use cases.
+      
+      In panel it's very easy to support periodic updates. Here it's done via
+      `pn.state.add_periodic_callback`
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/streaming_indicators.py
+      mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/streaming-dashboard.mp4
+    servable: 
+    tags:       
+      - Streaming
+      - Dashboard
+      - StatsCard
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/streaming-dashboard.png"
+  - url: streaming_plots
+    name: Streaming Plots
+    author: marc_skov_madsen
+    owner: 
+    category: Dashboards
+    description: Demonstrates Streaming with Panel
+    description_long: |-
+      Streaming is something that Panel supports really well
+      This application demonstrates how to use
+      [Streamz](https://streamz.readthedocs.io/en/latest/),
+      [Pandas](https://pandas.pydata.org/),
+      [Bokeh](https://docs.bokeh.org/en/latest/index.html),
+      [Holoviews](https://holoviews.org/),
+      [Altair](https://altair-viz.github.io/),
+      [Echart](https://echarts.apache.org/en/index.html) and
+      [Plotly](https://plotly.com/) for streaming.
+      The stream will STOP AFTER 1 MINUTE.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/streaming_plots.py
+      gif: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/streaming-plots.gif
+      mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/streaming-plots.mp4
+    servable: 
+    tags:       
+      - Streaming
+      - Streamz
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/streaming-plots.png"
+  - url: tabulator
+    name: Tabulator
+    author: marc_skov_madsen
+    owner: 
+    category: Contributions
+    description: Demonstrates the powerful Tabulator Table
+    description_long: |-
+      [Tabulator](http://tabulator.info/) is a very powerful interactive javascript Table.
+      Panel provides the [`Tabulator`](https://panel.holoviz.org/reference/layouts/Tabs.html) widget.
+      
+      The widget was first implemented and contributed by `awesome-panel.org`. Later Philipp did massive
+      improvements. It is now one of the most powerful widgets in Panel.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/tabulator.py
+      gif: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/tabulator-app.gif
+      mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/tabulator-app.mp4
+    servable: 
+    tags:       
+      - Streaming
+      - Tabulator
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/tabulator-app.png"
+  - url: text_to_speech
+    name: Text To Speech
+    author: marc_skov_madsen
+    owner: 
+    category: Contributions
+    description: Demonstrates the powerful TextToSpeech widget
+    description_long: |-
+      The [`TextToSpeech`](https://panel.holoviz.org/reference/widgets/TextToSpeech.html#widgets-gallery-texttospeech) Widget provides brings text to speech to Panel. It wraps the wraps
+      the *HTML5 SpeechSynthesis API*.
+      
+      The `TextToSpeech` widget was developed and contributed to Panel by `awesome-panel.org`.
+      
+      Please note that the available voices and languages depend on your browser and os. For the best
+      experience **use Chrome**.
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/text_to_speech.py
+      gif: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/text-to-speech.gif
+      mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/text-to-speech.mp4
+    servable: 
+    tags:       
+      - TextToSpeech
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/text-to-speech.png"
+  - url: volume_profile_analysis
+    name: Volume Profile Analysis
+    author: marc_skov_madsen
+    owner: 
+    category: Dashboards
+    description: An example of Volume Profile Analysis of time series in financial markets.
+    description_long: |-
+      This example app demonstrates how to use Panel and the HoloViews ecosystem to
+      analyze Volume Profiles as described in the [How to Analyze Volume Profiles With Python Blog Post](https://medium.com/swlh/how-to-analyze-volume-profiles-with-python-3166bb10ff24)
+      by [Minh Ngyen](https://www.linkedin.com/in/minhnguyen001/)
+    project: 
+    resources:       
+      code: https://github.com/MarcSkovMadsen/awesome-panel/tree/master/awesome_panel/apps/volume_profile_analysis.py
+      mp4: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/volume_profile_analysis.mp4
+      gif: https://github.com/awesome-panel/awesome-panel-assets/blob/master/awesome-panel/applications/volume_profile_analysis.gif
+    servable: 
+    tags:       
+      - Panel
+      - HoloViz
+      - Volume Profiles
+      - Finance
+      - Quant
+      - Signal Processing
+    thumbnail: "https://github.com/MarcSkovMadsen/awesome-panel/raw/master/assets/images/thumbnails/volume-profile-analysis.png"

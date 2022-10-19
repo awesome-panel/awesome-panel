@@ -1,0 +1,48 @@
+name: "💡 Feature Request"
+description: Create a request for enhancing the project
+labels: [
+  "enhancement"
+]
+body:
+  - type: textarea
+    id: request
+    attributes:
+      label: "Request"
+      description: Provide a brief explanation of your request.
+      placeholder: Describe in a few lines your feature request
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: "Motivation"
+      description: . Provide motivation for your feature request.
+      placeholder: | 
+        Describe why your feature request is be relevant and important.
+        Supplementary images or videos are much appreciated.
+    validations:
+      required: true
+  - type: textarea
+    id: drawbacks
+    attributes:
+      label: "Drawbacks"
+      description: What are the drawbacks/impacts of your feature request ?
+      placeholder: Identify the drawbacks and impacts while being neutral on your feature request
+    validations:
+      required: false
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "Alternatives"
+      description: Provide any alternatives solutions you've considered.
+      placeholder: Describe alternative solutions while being neutral on your feature request
+    validations:
+      required: false
+  - type: textarea
+    id: additional
+    attributes:
+      label: "Additional Context"
+      description: Provide other information relevant for the feature request. Supplementary images or videos are much appreciated.
+      placeholder: Describe any other information that would be relevant including open questions
+    validations:
+      required: false  

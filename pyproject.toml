@@ -1,0 +1,231 @@
+[build-system]
+requires = ["setuptools",]
+build-backend = "setuptools.build_meta"
+[project]
+name = "awesome-panel"
+description = "This package makes it super simple to do exploratory data analysis and develop high-quality Panel data apps ..."
+readme = "README.md"
+requires-python = ">=3.7"
+keywords = ["python", "holoviz", "panel", "dataviz", "dataapp", "dashboard", "datascience", "analytics"]
+license = {file = "LICENSE"}
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Intended Audience :: Healthcare Industry",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Legal Industry",
+    "Intended Audience :: Other Audience",
+    "Intended Audience :: Science/Research",
+    "Natural Language :: English",
+    "Topic :: Office/Business :: Financial",
+    "Topic :: Office/Business",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development :: Libraries",
+]
+dependencies = [
+    "bokeh<3.0",
+    "panel<1.0",
+]
+dynamic = ["version"]
+
+authors = [
+    {name = "awesome-panel"}
+]
+
+[project.optional-dependencies]
+dev = [
+    "awesome-panel-cli[dev]",
+    "selenium==4.5.0",
+    "locust==2.12.2",
+]
+docs = [
+    "Sphinx",
+    "sphinx_rtd_theme",
+    "recommonmark",
+    "sphinx-autobuild",
+    "sphinxcontrib-napoleon",
+    "sphinx-markdown-tables",
+    "doc8",
+]
+examples = [
+    "altair",
+    "awesome-panel-cli",
+    "awesome-panel-extensions==20221019.2",
+    "bloxs",
+    "datashader",
+    "diskcache",
+    "fitparse",
+    "folium",
+    "geopandas; platform_system != 'Windows'", # To `pip install geopandas` on windows please follow https://geoffboeing.com/2014/09/using-geopandas-windows/
+    "holoviews",
+    "hvplot",
+    "ipykernel",
+    "ipywidgets_bokeh",
+    "lxml",
+    "ipysheet",
+    "ipywidgets",
+    "jinja2",
+    "jupyter",
+    "notebook",
+    "pandas-profiling",
+    "pandas",
+    "panel-chemistry==0.2.2",
+    "panel-highcharts==20221018.1",
+    "param",
+    "Pillow",
+    "plotly",
+    "plotnine",
+    "pooch",
+    "py3Dmol",
+    "pydeck",
+    "pyecharts",
+    "pyvista",
+    "scikit-learn",
+    "seaborn",
+    "statsmodels",
+    "streamz",
+    "tensorflow",
+    "torch",
+    "torchvision",
+    "vega-datasets",
+    "vtk",
+    "xarray",
+    "xlrd",
+    "yahooquery",
+    "yfinance",
+]
+
+[project.urls]
+repository = "https://github.com/awesome-panel/awesome-panel"
+
+[tool.setuptools.dynamic]
+version = {attr = "awesome_panel.VERSION"}
+
+[tool.black]
+line-length = 100
+
+[tool.isort]
+profile = "black"
+src_paths = ["src", "tests"]
+
+[tool.pylint.main]
+py-version=3.9
+output-format = "colorized"
+max-attributes=12
+max-args=10
+
+[tool.pylint.format]
+max-module-lines = 1000
+
+[tool.pylint.'MESSAGES CONTROL']
+max-line-length = 100
+disable = []
+
+[tool.mypy]
+python_version = "3.9"
+namespace_packages = true
+explicit_package_bases = true
+mypy_path = "src"
+exclude = []
+
+[[tool.mypy.overrides]]
+module = [
+    "altair.*",
+    "application.pages.awesome_panel_express_tests.*",
+    "awesome_panel_extensions.*",
+    "awesome_panel.*",
+    "bloxs.*",
+    "bokeh.*",
+    "bokeh.*",
+    "commonmark.*",
+    "diskcache.*",
+    "fitparse.*",
+    "folium.*",
+    "geopandas.*",
+    "holoviews.*",
+    "holoviews.*",
+    "hvplot.*",
+    "invoke.*",
+    "ipysheet.*",
+    "keras.*",
+    "locust.*",
+    "lxml.*",
+    "markdown.*",
+    "matplotlib.*",
+    "numpy.*",
+    "pandas_profiling.*",
+    "pandas.*",
+    "panel_highcharts.*",
+    "panel.*",
+    "param.*",
+    "param.*",
+    "PIL.*",
+    "plotly.*",
+    "plotnine.*",
+    "py3Dmol.*",
+    "pydeck.*",
+    "pyecharts.*",
+    "pytest.*",
+    "pyvista.*",
+    "pyviz_comms.*",
+    "pyviz_comms.*",
+    "requests.*",
+    "scipy.*",
+    "seaborn.*",
+    "selenium.*",
+    "setuptools.*",
+    "sklearn.*",
+    "streamz.*",
+    "tensorflow.keras.*",
+    "torchvision.*",
+    "tornado.ioloop.*",
+    "vega_datasets.*",
+    "vtk.*",
+    "yahooquery.*",
+    "yfinance.*",
+]
+ignore_missing_imports = true
+
+# https://github.com/pytest-dev/pytest/blob/main/pyproject.toml
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-s"
+testpaths = ["tests"]
+junit_family = "legacy"
+python_files = ["tests.py","test_*.py"]
+markers = [
+    "unittest", # Small, isolated test
+    "integrationtest", # A test towards some external system or service. For example a database
+    "functionaltest", # Large potentially non-isolated test requiring access to external services
+    "slow", # A slow test. Skip normally. But run this when you have the time.
+    "skip_in_build_server", # Tests that should be skipped on the build server
+]
+filterwarnings=[
+    "ignore:the imp module is deprecated in favour of importlib.*:DeprecationWarning", 
+    "ignore:inspect.getargspec.*:DeprecationWarning"
+]
+
+[tool.coverage.run]
+omit=[]
+
+[html]
+directory="test_results/cov_html"
+skip_empty=true
+
+[tool.bandit]
+exclude_dirs = [".venv", "venv",]
+severity="high"
+
+[tool.bandit.assert_used]
+exclude = ["*_test.py", "test_*.py"]
