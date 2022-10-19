@@ -39,47 +39,6 @@ steps:
     imageName: '$(imageName):latest'
     defaultContext: False
     context: $(buildContext)
-- script: |
-    sed -i 's/:latest/:$(Build.BuildId)/g' devops/docker/Dockerfile.test
-  displayName: Use Build
-- task: Docker@0
-  displayName: 'Run tests'
-  inputs:
-    dockerFile: $(dockerFileTest)
-    imageName: '$(imageNameTest):latest'
-    defaultContext: False
-    context: $(buildContext)
-- script: |
-    id=$(docker create marcskovmadsen/awesome-panel_test:latest)
-    docker cp $id:/app/test_results/. test_results
-    docker rm -v $id
-    ls test_results
-  displayName: Export test results
-  condition: succeededOrFailed()
-- task: PublishTestResults@2
-  displayName: 'Publish Pytest Results'
-  inputs:
-    testResultsFiles: |
-      test_results/test-results.xml
-    failTaskOnFailedTests: true
-    testRunTitle: 'Pytest'
-  condition: succeededOrFailed()
-- task: PublishTestResults@2
-  displayName: 'Publish Pylint Results'
-  inputs:
-    testResultsFiles: |
-      test_results/pylint-results.xml
-    failTaskOnFailedTests: true
-    testRunTitle: 'Pylint'
-  condition: succeededOrFailed()
-- task: PublishTestResults@2
-  displayName: 'Publish MyPy Results'
-  inputs:
-    testResultsFiles: |
-      test_results/mypy-results.xml
-    failTaskOnFailedTests: true
-    testRunTitle: 'MyPy'
-  condition: succeededOrFailed()
 - task: Docker@2
   displayName: Push image
   inputs:
