@@ -46,15 +46,18 @@ class EchartsApp(pn.viewable.Viewer):
         watch=True,
     )
     def _update_plot(self):
+        dark_theme = pn.state.location.query_params.get("theme", "") == "dark"
+        color = "#CCCCCC" if dark_theme else "#000000"
+
         echart = {
             "tooltip": {},
             "legend": {"data": ["Sales"]},
             "xAxis": {
                 "data": ["shirt", "cardign", "chiffon shirt", "pants", "heels", "socks"],
-                "axisLine": {"lineStyle": {"color": "#ccc"}},
+                "axisLine": {"lineStyle": {"color": color}},
             },
             "yAxis": {
-                "axisLine": {"lineStyle": {"color": "#ccc"}},
+                "axisLine": {"lineStyle": {"color": color}},
             },
             "series": [
                 {
@@ -73,7 +76,7 @@ class EchartsApp(pn.viewable.Viewer):
             ],
             "responsive": True,
         }
-        text_style = {"color": "#ccc"}
+        text_style = {"color": color}
         update = ["legend", "xAxis", "yAxis"]
         for upd in update:
             echart[upd]["textStyle"] = text_style

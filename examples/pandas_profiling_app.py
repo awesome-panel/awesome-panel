@@ -85,8 +85,6 @@ class PandasProfilingApp(param.Parameterized):  # pylint: disable=too-many-insta
 
     config = param.ClassSelector(class_=Config, instantiate=False)
 
-    intro_section = param.Parameter()
-
     def __init__(self, **params):
         self._csv_urls_cycle = cycle(CSV_URLS)
         params["config"] = Config()
@@ -126,10 +124,6 @@ class PandasProfilingApp(param.Parameterized):  # pylint: disable=too-many-insta
 
     def _get_view(self, conf):
         style = pn.pane.HTML(STYLE, width=0, height=0, margin=0, sizing_mode="fixed")
-        if self.intro_section:
-            description = self.intro_section()
-        else:
-            description = "No description"
         app_bar = pn.Row(
             pn.pane.PNG(
                 LOGO_URL,
@@ -194,10 +188,7 @@ class PandasProfilingApp(param.Parameterized):  # pylint: disable=too-many-insta
         )
         self._tabs = tabs
         main = pn.Column(
-            pn.Column(
-                style,
-                description,
-            ),
+            style,
             pn.Column(
                 app_bar,
                 pn.layout.HSpacer(),
@@ -231,4 +222,4 @@ class PandasProfilingApp(param.Parameterized):  # pylint: disable=too-many-insta
 
 if __name__.startswith("bokeh"):
     app = config.extension(url="pandas_profiling_app")
-    PandasProfilingApp(intro_section=app.intro_section).view.servable()
+    PandasProfilingApp().view.servable()
