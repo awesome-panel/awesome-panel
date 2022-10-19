@@ -79,7 +79,7 @@ examples = [
     "jupyter",
     "notebook",
     "pandas-profiling==3.3.0",
-    "pandas==1.4.4",
+    "pandas>=1.4",
     "panel-chemistry==0.2.2",
     "panel-highcharts==20221018.1",
     "param==1.12.2",
