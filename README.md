@@ -1,12 +1,18 @@
 # ✨ awesome-panel
 
+[![PyPI version](https://badge.fury.io/py/awesome-panel.svg)](https://pypi.org/project/awesome-panel/)
+[![Downloads](https://pepy.tech/badge/awesome-panel/month)](https://pepy.tech/project/awesome-panel)
+![Python Versions](https://img.shields.io/badge/python-3.9%20%7C%203.10-blue)
+[![License](https://img.shields.io/badge/License-MIT%202.0-blue.svg)](https://opensource.org/licenses/MIT)
+![Test Results](https://github.com/awesome-panel/awesome-panel/actions/workflows/tests.yaml/badge.svg?branch=main)
+
 We want to
 
 - show how awesome [Panel](https://awesome-panel.org) is and push the framework forward.
 
 We provide
 
-- The [awesome-panel.org](https://awesome-panel.org) web site includes galleries of
+- The [awesome-panel.org](https://awesome-panel.org) web site including galleries of
   - [Awesome Panel Applications](https://awesome-panel.org/gallery) and
   - [Awesome Community Resources](https://awesome-panel.org/awesome_list)
 - [Youtube Videos](https://www.youtube.com/playlist?list=PLrrcIlm1vLr69f4CsTlrO0wSNBw6VbsJA).
@@ -62,11 +68,3 @@ If you are looking to contribute to this project you can find ideas in the [issu
 I would love to support and receive your contributions. Thanks.
 
 [![Hacktober Fest](https://github.blog/wp-content/uploads/2022/10/hacktoberfestbanner.jpeg?fit=1200%2C630)](https://github.com/awesome-panel/awesome-panel/issues).
-
-## Monitor
-
-[![PyPI version](https://badge.fury.io/py/awesome-panel.svg)](https://pypi.org/project/awesome-panel/)
-[![Downloads](https://pepy.tech/badge/awesome-panel/month)](https://pepy.tech/project/awesome-panel)
-![Python Versions](https://img.shields.io/badge/python-3.9%20%7C%203.10-blue)
-[![License](https://img.shields.io/badge/License-MIT%202.0-blue.svg)](https://opensource.org/licenses/MIT)
-![Test Results](https://github.com/awesome-panel/awesome-panel/actions/workflows/tests.yaml/badge.svg?branch=main)
