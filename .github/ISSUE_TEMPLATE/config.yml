@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📙 Usage Questions
+    url: https://discourse.holoviz.org/
+    about: Please ask questions about usage here
+  - name: 📈 Panel Issues
+    url: https://github.com/holoviz/panel/issues
+    about: Please raise Panel specific issues here

@@ -1,0 +1,74 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+    - '*'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: ['ubuntu-latest', 'macos-latest', 'windows-latest']
+        python-version: [3.7, 3.8, 3.9, '3.10']
+        exclude:
+          - os: windows-latest
+            python-version: 3.8
+          - os: windows-latest
+            python-version: 3.9
+          - os: windows-latest
+            python-version: '3.10'
+          - os: macos-latest
+            python-version: 3.8
+          - os: macos-latest
+            python-version: 3.9
+          - os: macos-latest
+            python-version: '3.10'
+
+    env:
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+            fetch-depth: "1"
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .[dev,examples]
+      - name: Run Pylint
+        run: |
+          pn test pylint
+        if: always()
+      - name: Run MyPy
+        run: |
+          pn test mypy
+        if: always()
+      - name: Run Pytest
+        run: |
+          pn test bandit
+        if: always()
+      - name: Run Pytest
+        run: |
+          pn test pytest --report
+        if: always()
+      - name: Upload Test Reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: test_results/*.xml
+        if: always()      
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          files: test_results/coverage.xml
