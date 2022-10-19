@@ -4,9 +4,9 @@ Panel runs on top of the Tornado server. Tornado is a fast, asynchronous web ser
 support streaming use cases.
 
 In panel it's very easy to support periodic updates. Here it's done via
-`pn.state.add_periodic_callback(_create_callback(indicator), period=1000, count=200)`
+`pn.state.add_periodic_callback(_create_callback(indicators), period=1000, count=200)`
 
-This Dashboard is work in progress. I would like to add some different types of stats cards
+This Dashboard is work-in-progress. I would like to add some different types of stats cards
 including some with splines/ plots. I would also like to add some icons to make it look nice.
 """
 from typing import List, Tuple
@@ -41,9 +41,10 @@ def _increment(value):
     return int(value)
 
 
-def _create_callback(card):
-    def update_card():
-        card.value = _increment(card.value)
+def _create_callback(cards):
+    async def update_card():
+        for card in cards:
+            card.value = _increment(card.value)
 
     return update_card
 
@@ -62,6 +63,7 @@ def create_app(intro_section, sidebar_footer) -> pn.template.FastGridTemplate:
     )
     template.main[0:3, :] = intro_section
 
+    indicators = []
     for row in range(0, 3):
         for col in range(0, 6):
             colors: List[Tuple[float, str]] = [(66, OK_COLOR), (100, ERROR_COLOR)]
@@ -74,8 +76,7 @@ def create_app(intro_section, sidebar_footer) -> pn.template.FastGridTemplate:
                 css_classes=["pn-stats-card"],
             )
             template.main[row + 3, 2 * col : 2 * col + 2] = indicator
-
-            pn.state.add_periodic_callback(_create_callback(indicator), period=1000, count=200)
+            indicators.append(indicator)
 
     for row in range(3, 5):
         for col in range(0, 3):
@@ -89,8 +90,10 @@ def create_app(intro_section, sidebar_footer) -> pn.template.FastGridTemplate:
                 indicator,
                 pn.layout.HSpacer(),
             )
+            indicators.append(indicator)
 
-            pn.state.add_periodic_callback(_create_callback(indicator), period=1000, count=200)
+    # Create callback for all indicators
+    pn.state.add_periodic_callback(_create_callback(indicators), period=1000, count=200)
 
     return template
 
