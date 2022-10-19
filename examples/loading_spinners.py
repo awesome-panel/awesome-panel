@@ -11,12 +11,12 @@ import random
 import time
 
 import holoviews as hv
+import loading_spinners_config
 import panel as pn
 import param
 from panel.io.loading import start_loading_spinner, stop_loading_spinner
 
 from awesome_panel import config
-from awesome_panel.apps import loading_spinners_config
 
 COLOR = config.ACCENT
 # pylint: disable=line-too-long

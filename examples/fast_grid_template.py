@@ -28,11 +28,11 @@ from awesome_panel_extensions.frameworks.fast import (
     FastSwitch,
     FastTextInput,
 )
+from echarts import EchartsApp
 from holoviews import opts
 from panel.template import FastGridTemplate
 
 from awesome_panel import config
-from awesome_panel.apps.echarts import EchartsApp
 
 app = config.extension(url="fast_grid_template", template=None, intro_section=False)
 
