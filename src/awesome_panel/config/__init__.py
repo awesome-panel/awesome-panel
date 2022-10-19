@@ -179,6 +179,7 @@ def extension(
     if isinstance(template, pn.template.BaseTemplate):
         template.site = site
         template.favicon = favicon
+        template.title = app.name
 
         template.header_background = accent_color
 

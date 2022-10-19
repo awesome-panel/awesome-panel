@@ -31,12 +31,13 @@ import requests
 from PIL import Image
 
 from awesome_panel import config
-from awesome_panel.apps.detr_utils.model import (
+from detr_utils.model import (
     CLASSES,
     detect,
     filter_boxes,
     get_transform_detr_and_device,
 )
+
 
 # Source: https://github.com/plotly/dash-detr/blob/master/random_urls.txt
 RANDOM_URLS = [

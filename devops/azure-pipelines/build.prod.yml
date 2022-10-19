@@ -3,12 +3,11 @@ trigger:
   branches:
     include:
     - master
+    - main
   paths:
     exclude:
     - devops/azure-pipelines/build.base.yml
     - devops/docker/Dockerfile.base
-    - requirements_base.txt
-    - requirements.txt
 
 pool:
   vmImage: 'ubuntu-latest'
