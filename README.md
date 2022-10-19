@@ -14,7 +14,7 @@ We provide
 - Communication on social media: [Twitter](https://twitter.com/home) | [LinkedIn](https://www.linkedin.com/in/marcskovmadsen/)
 - [Panel Extensions and Example Repositories](https://github.com/orgs/awesome-panel/repositories)
 
-![Project Intro](assets/videos/project-intro.gif)
+![Awesome Panel Intro](https://github.com/awesome-panel/awesome-panel/blob/master/assets/videos/awesome-panel-intro.gif?raw=true)
 
 ## 🚀 Get started in under a minute
 
