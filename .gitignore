@@ -115,4 +115,4 @@ scripts/fast_tutorial/*
 cache_directory/*
 test_results/*
 seattle_bikes.csv
-script.py
+script.*
