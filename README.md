@@ -34,9 +34,9 @@ and opening [http://localhost:5006/gallery](http://localhost:5006/gallery) in yo
 
 You can find the sample apps in the `examples/awesome-panel/awesome-panel` folder.
 
-### Install geopandas on windows
+### 😅 Install geopandas on windows
 
-On Windows you unfortunately have to install the geopandas requirements manually as described in [using-geopandas-windows](https://geoffboeing.com/2014/09/using-geopandas-windows/). This is only required to be able to explore a small subset of the applications.
+On Windows you unfortunately have to install the [geopandas](https://geopandas.org/en/stable/) package your self as described in [using-geopandas-windows](https://geoffboeing.com/2014/09/using-geopandas-windows/). This is only required to be able to explore a small subset of the applications.
 
 ## 📒 Explore the examples online
 
@@ -67,6 +67,6 @@ I would love to support and receive your contributions. Thanks.
 
 [![PyPI version](https://badge.fury.io/py/awesome-panel.svg)](https://pypi.org/project/awesome-panel/)
 [![Downloads](https://pepy.tech/badge/awesome-panel/month)](https://pepy.tech/project/awesome-panel)
-![Python Versions](https://img.shields.io/badge/python-3.7%20%7C%203.8%20%7C%203.9%20%7C%203.10-blue)
+![Python Versions](https://img.shields.io/badge/python-3.9%20%7C%203.10-blue)
 [![License](https://img.shields.io/badge/License-MIT%202.0-blue.svg)](https://opensource.org/licenses/MIT)
 ![Test Results](https://github.com/awesome-panel/awesome-panel/actions/workflows/tests.yaml/badge.svg?branch=main)
