@@ -44,6 +44,18 @@ You can find the sample apps in the `examples/awesome-panel/awesome-panel` folde
 
 On Windows you unfortunately have to install the [geopandas](https://geopandas.org/en/stable/) package your self as described in [using-geopandas-windows](https://geoffboeing.com/2014/09/using-geopandas-windows/). This is only required to be able to explore a small subset of the applications.
 
+### 📁 Download the examples only
+
+You can download the example files only, i.e. without installing all the python packages, via
+
+```bash
+pip install awesome-panel awesome-panel-cli
+```
+
+```bash
+pn examples awesome-panel
+```
+
 ## 📒 Explore the examples online
 
 Click one of the buttons
