@@ -134,7 +134,7 @@ class KerasApplication(NamedTuple):
             f"Classifying image with '{self.name}'... ",
             85,
         )
-        predictions = model.predict(image)  # type: ignore
+        predictions = model.predict(image[:, :, :, :3])  # type: ignore
         top_predictions = self.decode_predictions_func(predictions)
 
         report_progress_func(
@@ -361,7 +361,7 @@ class ImageClassifierApp(param.Parameterized):
     """
 
     model = param.ObjectSelector()
-    image_file = param.FileSelector()
+    image_file = param.Parameter()
     top_predictions = param.ClassSelector(class_=list)
     progress_value = param.Integer()
     progress_message = param.String()
@@ -394,8 +394,7 @@ class ImageClassifierApp(param.Parameterized):
     ):
         """A view of the image_file"""
         if self.image_file:
-            bytes_io = io.BytesIO(self.image_file)
-            return pn.pane.JPG(object=bytes_io, height=300)
+            return pn.pane.JPG(object=self.image_file, height=300)
         return pn.pane.Markdown(
             """Drop an image in **.jpg** format onto the FileInput Area or click the **Choose File**
             button to upload.""",
