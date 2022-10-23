@@ -3,7 +3,7 @@ FROM marcskovmadsen/awesome-panel_base:latest
 WORKDIR /app
 ADD . ./
 
-RUN pip install --upgrade pip && pip install .[examples] && mkdir -p apps/dev/www && mkdir -p apps/prod/www
+RUN pip install --upgrade pip && pip install .[examples] -U && mkdir -p apps/dev/www && mkdir -p apps/prod/www
 RUN python examples/detr_utils/model.py
 
 # Default port for Azure Web App for containers is 80
