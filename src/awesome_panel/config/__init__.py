@@ -33,7 +33,6 @@ FAVICON = "https://raw.githubusercontent.com/awesome-panel/awesome-panel-assets/
 AWESOME_APPLICATIONS = Application.read(AWESOME_CONFIG_PATH)
 APPLICATIONS = Application.read(APPLICATIONS_CONFIG_PATH)
 APPLICATIONS_MAP = {app.url: app for app in APPLICATIONS}
-APPLICATIONS_MENU_MAP = {}
 
 pn.state.cache["cached"] = {}
 
@@ -73,34 +72,7 @@ def _app_sort_key(app: Application):
     return (app.category + app.name).lower()
 
 
-def _get_app_menu_fast_html():
-    for app in sorted(APPLICATIONS, key=_app_sort_key):
-        category = app.category
-        if not category in APPLICATIONS_MENU_MAP:
-            APPLICATIONS_MENU_MAP[category] = [app]
-        else:
-            APPLICATIONS_MENU_MAP[category].append(app)
-
-    html = ""
-    for category, apps in APPLICATIONS_MENU_MAP.items():
-        # pylint: disable=line-too-long
-        if category == "Main":
-            html += f"""
-            <fast-accordion-item slot="item" expanded>
-                <h3 slot="heading" style="margin:0px">{category}</h3>{{ COLLAPSED_ICON }}{{ EXPANDED_ICON }}
-                <ul>
-        """
-            for app in apps:
-                html += f"""          <li><a apperance="stealth" href="{app.url}">{app.name}</a></li>\n"""
-
-            html += """
-                </ul>
-            </fast-accordion-item>    
-        """
-    return html
-
-
-app_menu_fast_html = _get_app_menu_fast_html()
+app_menu_fast_html = menu_fast_html()
 
 
 def get_theme() -> str:
@@ -149,9 +121,7 @@ for _template in _TEMPLATES:
 
     if not _template == GalleryTemplate:
         _template.param.header_background.default = ACCENT
-        _template.param.sidebar_footer.default = menu_fast_html(
-            app_html=app_menu_fast_html, accent=ACCENT
-        )
+        _template.param.sidebar_footer.default = menu_fast_html(accent=ACCENT)
 
 
 def extension(
@@ -188,9 +158,7 @@ def extension(
             template.main_max_width = main_max_width
         if isinstance(template, (pn.template.FastListTemplate, pn.template.FastGridTemplate)):
             template.accent_base_color = accent_color
-            template.sidebar_footer = menu_fast_html(
-                app_html=app_menu_fast_html, accent=accent_color
-            )
+            template.sidebar_footer = menu_fast_html(accent=accent_color)
             add_header(template)
 
     if intro_section and template not in [pn.template.FastGridTemplate]:

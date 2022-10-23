@@ -32,7 +32,7 @@ THEME = {
 }
 
 HEADER = [config.get_header()]
-SIDEBAR_FOOTER = config.menu_fast_html(app_html=config.app_menu_fast_html, accent=ACCENT)
+SIDEBAR_FOOTER = config.menu_fast_html(accent=ACCENT)
 
 
 def _create_echarts(data):

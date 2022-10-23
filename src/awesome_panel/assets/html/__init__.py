@@ -10,15 +10,13 @@ MENU_FAST_OTHER_PATH = PATH / "menu_fast_other.html"
 
 _MENU_FAST_OTHER_HTML = MENU_FAST_OTHER_PATH.read_text(encoding="utf-8")
 
+MAIN_MENU = (PATH / "main_menu.html").read_text(encoding="utf8")
+
 
 @lru_cache()
-def menu_fast_html(app_html: str, accent: str = "#1f77b4") -> str:
+def menu_fast_html(accent: str = "#1f77b4") -> str:
     """Combines the specific app_html to other html into a fast html menu"""
-    return (
-        ('<fast-accordion id="menu">' + app_html + "</fast-accordion>")
-        .replace("{ COLLAPSED_ICON }", fast_collapsed_icon(stroke=accent))
-        .replace("{ EXPANDED_ICON }", fast_expanded_icon(stroke=accent))
-    )
+    return MAIN_MENU.replace("#1f77b4", accent)
 
 
 SHOELACE_TEMPLATE_PATH = PATH / "shoelace_template.html"

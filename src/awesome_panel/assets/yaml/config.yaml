@@ -438,7 +438,7 @@ applications:
     author: marc_skov_madsen
     owner: 
     category: Main
-    description: A custom Panel template using the Fast web components
+    description: A Gallery of Panel Apps
     description_long: |-
       The Gallery provides a very visual overview to the applications and associated
       resources

@@ -41,6 +41,12 @@ pn test all
 
 Please run this command and fix any failing tests if possible before you `git push`.
 
+### Serve the site
+
+```bash
+panel serve examples/*.py examples/*.ipynb --glob --num-procs 4 --index home.py
+```
+
 ### 🚢 Release a new package on Pypi
 
 Update the version in the [__init__.py](src/awesome_panel/__init__.py).

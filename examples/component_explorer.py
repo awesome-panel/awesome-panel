@@ -11,7 +11,7 @@ from awesome_panel import config
 
 app = config.extension(url="component_explorer", template=None, intro_section=False)
 
-SIDEBAR_FOOTER = config.menu_fast_html(app_html=config.app_menu_fast_html, accent=config.ACCENT)
+SIDEBAR_FOOTER = config.menu_fast_html(accent=config.ACCENT)
 
 explorer = PanelComponentExplorer()
 explorer.view.main.insert(0, app.intro_section())

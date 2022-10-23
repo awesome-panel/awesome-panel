@@ -38,7 +38,7 @@ def _plotly_hooks(plot, element):
 IRIS_DATASET = iris()
 
 ACCENT_COLOR = config.ACCENT
-SIDEBAR_FOOTER = config.menu_fast_html(app_html=config.app_menu_fast_html, accent=ACCENT_COLOR)
+SIDEBAR_FOOTER = config.menu_fast_html(accent=ACCENT_COLOR)
 HEADER = [config.get_header()]
 
 OPTS: Dict[str, Dict[str, Any]] = {

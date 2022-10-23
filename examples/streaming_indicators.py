@@ -27,7 +27,7 @@ OK_COLOR = config.PALETTE[2]
 ERROR_COLOR = config.PALETTE[3]
 
 HEADER = [config.get_header()]
-SIDEBAR_FOOTER = config.menu_fast_html(app_html=config.app_menu_fast_html, accent=ACCENT)
+SIDEBAR_FOOTER = config.menu_fast_html(accent=ACCENT)
 
 if not STYLE in pn.config.raw_css:
     pn.config.raw_css.append(STYLE)

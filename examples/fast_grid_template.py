@@ -37,7 +37,7 @@ from awesome_panel import config
 app = config.extension(url="fast_grid_template", template=None, intro_section=False)
 
 ACCENT = config.ACCENT
-SIDEBAR_FOOTER = config.menu_fast_html(app_html=config.app_menu_fast_html, accent=ACCENT)
+SIDEBAR_FOOTER = config.menu_fast_html(accent=ACCENT)
 HEADER = [config.get_header()]
 INTRO_SECTION = app.intro_section()
 
