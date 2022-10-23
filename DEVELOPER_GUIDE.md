@@ -44,7 +44,9 @@ Please run this command and fix any failing tests if possible before you `git pu
 ### Serve the site
 
 ```bash
-panel serve examples/*.py examples/*.ipynb --glob --num-procs 4 --index home.py
+mkdir -p apps/dev/www
+mkdir -p apps/prod/www
+panel serve examples/*.py examples/*.ipynb --glob --num-procs 4 --index home.py --static-dirs apps-dev=apps/dev/www apps=apps/prod/www
 ```
 
 ### 🚢 Release a new package on Pypi
