@@ -82,7 +82,7 @@ examples = [
     "pandas",
     "panel-chemistry==0.2.2",
     "panel-highcharts==20221018.1",
-    "panel-sharing[examples]==0.5.0",
+    "panel-sharing[examples]==0.6.0",
     "param",
     "Pillow",
     "plotly",
