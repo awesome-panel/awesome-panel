@@ -35,7 +35,7 @@ classifiers = [
 ]
 dependencies = [
     "bokeh<3.0",
-    "panel<1.0",
+    "panel==0.14.1",
 ]
 dynamic = ["version"]
 
