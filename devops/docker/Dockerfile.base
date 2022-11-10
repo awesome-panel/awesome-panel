@@ -17,6 +17,6 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
-RUN pip install --upgrade pip && pip install awesome-panel[examples]
+RUN pip install --upgrade pip && pip install awesome-panel[examples,sharing]
 
 ENTRYPOINT [ "/bin/bash" ]

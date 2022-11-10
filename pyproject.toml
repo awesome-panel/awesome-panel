@@ -106,6 +106,9 @@ examples = [
     "yahooquery",
     "yfinance",
 ]
+sharing = [
+    "textblob"
+]
 
 [project.urls]
 repository = "https://github.com/awesome-panel/awesome-panel"
