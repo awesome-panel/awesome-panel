@@ -107,7 +107,9 @@ examples = [
     "yfinance",
 ]
 sharing = [
-    "textblob"
+    "beautifulsoup4",
+    "prefect",
+    "textblob",
 ]
 
 [project.urls]
