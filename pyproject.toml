@@ -110,6 +110,8 @@ sharing = [
     "beautifulsoup4",
     "prefect",
     "textblob",
+    "windrose",
+    "pyextremes"
 ]
 
 [project.urls]
