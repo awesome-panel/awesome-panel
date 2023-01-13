@@ -109,9 +109,9 @@ examples = [
 sharing = [
     "beautifulsoup4",
     "prefect",
+    "pyextremes",
     "textblob",
     "windrose",
-    "pyextremes"
 ]
 
 [project.urls]
