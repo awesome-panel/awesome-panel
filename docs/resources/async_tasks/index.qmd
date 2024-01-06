@@ -45,7 +45,7 @@ The app below shows how to start a background thread that updates a progressbar 
 
 ## Mp4
 
-<video controls>
+<video poster="https://cdn.awesome-panel.org/resources/async_tasks/async_tasks.png" controls>
   <source src="https://cdn.awesome-panel.org/resources/async_tasks/async_tasks.mp4" type="video/mp4">
   Your browser does not support HTML video.
 </video>
