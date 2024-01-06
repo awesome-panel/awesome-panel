@@ -3,8 +3,10 @@ title: "Async Tasks"
 date: "2023-12-22"
 description: "Run blocking tasks in the background using a ThreadPoolExecutor and Async"
 author:
-  - Jochem Smit 
-  - Marc Skov Madsen
+  - name: Jochem Smit 
+    url: https://github.com/jhsmit/
+  - name: Marc Skov Madsen
+    url: https://github.com/marcskovmadsen/  
 categories: [async, threads]
 image: "async_tasks.png"
 ---
@@ -17,7 +19,7 @@ The app below shows how to start a background thread that updates a progressbar 
 
 ## App
 
-<a href="https://huggingface.co/spaces/awesome-panel/async_tasks" target="_blank">Open in a new window</a> | <a href="https://huggingface.co/spaces/awesome-panel/async_tasks" target="_blank">Open in Hugging Face Spaces</a>
+<a href="https://awesome-panel-async-tasks.hf.space" target="_blank">Open in a new window</a> | <a href="https://huggingface.co/spaces/awesome-panel/async_tasks" target="_blank">Open in Hugging Face Spaces</a>
 
 <iframe
 	src="https://awesome-panel-async-tasks.hf.space"
@@ -32,3 +34,18 @@ The app below shows how to start a background thread that updates a progressbar 
 ```{.python include="../../../examples/async_tasks.py" code-line-numbers="true"}
 ```
 </details>
+
+## Gif
+
+<img src="https://cdn.awesome-panel.org/resources/async_tasks/async_tasks.gif"></img>
+
+## Png
+
+<img src="https://cdn.awesome-panel.org/resources/async_tasks/async_tasks.png"></img>
+
+## Mp4
+
+<video controls>
+  <source src="https://cdn.awesome-panel.org/resources/async_tasks/async_tasks.mp4" type="video/mp4">
+  Your browser does not support HTML video.
+</video>

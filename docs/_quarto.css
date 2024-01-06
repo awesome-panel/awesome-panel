@@ -4,7 +4,7 @@ div.quarto-post .thumbnail img {
 #quarto-header {
     box-shadow: 0 .125rem .25rem 0 #d8d8d8;
 }
-img {
+img, video {
     max-width:100%;
 }
 .navbar-dark .navbar-brand {

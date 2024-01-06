@@ -6,7 +6,7 @@ author:
   - Marc Skov Madsen
   - Sean Law
 categories: [pyodide,timeseries,wasm]
-image: "https://raw.githubusercontent.com/TDAmeritrade/stumpy/master/docs/images/stumpy_logo_small.png"
+image: "stumpy.png"
 ---
 
 ## Introduction
@@ -36,8 +36,8 @@ This app runs entirely in the browser via [Pyodide](https://pyodide.org) and [pa
 
 I think the app looks amazing. Its really performant too.
 
-<img src="https://github.com/awesome-panel/examples/blob/main/src/stumpy-dashboard/stumpy-dashboard.gif?raw=true"></img>
+<img src="https://cdn.awesome-panel.org/resources/stumpy/stumpy.gif"></img>
 
 ## Png
 
-<img src="https://github.com/awesome-panel/examples/blob/main/src/stumpy-dashboard/thumbnail.png?raw=true"></img>
+<img src="https://cdn.awesome-panel.org/resources/stumpy/stumpy.png"></img>
