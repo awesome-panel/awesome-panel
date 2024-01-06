@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Awesome Panel</title>
+<link>https://awesome-panel.org/index.html</link>
+<atom:link href="https://awesome-panel.org/index.xml" rel="self" type="application/rss+xml"/>
+<description>Awesome Analytics Apps with HoloViz Panel</description>
+<generator>quarto-1.3.450</generator>
+<lastBuildDate>Fri, 22 Dec 2023 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Async Tasks</title>
+  <dc:creator>Jochem Smit</dc:creator>
+  <dc:creator>Marc Skov Madsen</dc:creator>
+  <link>https://awesome-panel.org/resources/async_tasks/async_tasks.html</link>
+  <description><![CDATA[ When creating awesome analytics apps you sometimes want to run blocking tasks asynchronously in a background thread. Panel supports this as its running on top of the asynchronous web server Tornado. ]]></description>
+  <category>async</category>
+  <category>threads</category>
+  <guid>https://awesome-panel.org/resources/async_tasks/async_tasks.html</guid>
+  <pubDate>Fri, 22 Dec 2023 00:00:00 GMT</pubDate>
+  <media:content url="https://awesome-panel.org/resources/async_tasks/async_tasks.png" medium="image" type="image/png" height="113" width="144"/>
+</item>
+<item>
+  <title>Stumpy</title>
+  <dc:creator>Marc Skov Madsen</dc:creator>
+  <dc:creator>Sean Law</dc:creator>
+  <link>https://awesome-panel.org/resources/stumpy/stumpy.html</link>
+  <description><![CDATA[ <a href="https://github.com/TDAmeritrade/stumpy">STUMPY</a> is a powerful and scalable Python library identifies repeating patterns in your timeseries. It does this by efficiently computing something called a <a href="https://stumpy.readthedocs.io/en/latest/Tutorial_The_Matrix_Profile.html">matrix profile</a>. ]]></description>
+  <category>pyodide</category>
+  <category>timeseries</category>
+  <category>wasm</category>
+  <guid>https://awesome-panel.org/resources/stumpy/stumpy.html</guid>
+  <pubDate>Fri, 22 Dec 2023 00:00:00 GMT</pubDate>
+  <media:content url="https://raw.githubusercontent.com/TDAmeritrade/stumpy/master/docs/images/stumpy_logo_small.png" medium="image" type="image/png"/>
+</item>
+</channel>
+</rss>
