@@ -49,3 +49,6 @@ format:
     code-tools: false
     code-fold: true
     code-summary: "Show the code"
+
+resources:
+  - CNAME
