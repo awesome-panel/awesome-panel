@@ -42,20 +42,6 @@
     "text": "Png"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Awesome Panel",
-    "section": "",
-    "text": "Panel by HoloViz is the powerful data exploration & web app framework for Python.\nCheck out the awesome community resources below.\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nAsync Tasks\n\n\n\n\n\n\n\nasync\n\n\nthreads\n\n\n\n\nRun blocking tasks in the background using a ThreadPoolExecutor and Async\n\n\n\n\n\n\nDec 22, 2023\n\n\nJochem Smit, Marc Skov Madsen\n\n\n\n\n\n\n  \n\n\n\n\nStumpy\n\n\n\n\n\n\n\npyodide\n\n\ntimeseries\n\n\nwasm\n\n\n\n\nUse the Stumpy library to identify patterns in timeseries\n\n\n\n\n\n\nDec 22, 2023\n\n\nMarc Skov Madsen, Sean Law\n\n\n\n\n\n\nNo matching items\n\n Back to top"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About\nWe want to show how awesome Panel by HoloViz is and push the framework forward.\n\n\n\nAwesome Panel Intro\n\n\n\n\n\n\n Back to top"
-  },
-  {
     "objectID": "resources/async_tasks/index.html",
     "href": "resources/async_tasks/index.html",
     "title": "Async Tasks",
@@ -101,6 +87,69 @@
     "objectID": "resources/async_tasks/index.html#mp4",
     "href": "resources/async_tasks/index.html#mp4",
     "title": "Async Tasks",
+    "section": "Mp4",
+    "text": "Mp4\n\n\nYour browser does not support HTML video."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About\nWe want to show how awesome Panel by HoloViz is and push the framework forward.\n\n\n\nAwesome Panel Intro\n\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Awesome Panel",
+    "section": "",
+    "text": "Panel by HoloViz is the powerful data exploration & web app framework for Python.\nCheck out the awesome community resources below.\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nAsync Tasks\n\n\n\n\n\n\n\nasync\n\n\nthreads\n\n\n\n\nRun blocking tasks in the background using a ThreadPoolExecutor and Async\n\n\n\n\n\n\nDec 22, 2023\n\n\nJochem Smit, Marc Skov Madsen\n\n\n\n\n\n\n  \n\n\n\n\nBootstrap Dashboard\n\n\n\n\n\n\n\ndashboard\n\n\nhvplot\n\n\n\n\nA Bootstrap like dashboard\n\n\n\n\n\n\nDec 22, 2023\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n  \n\n\n\n\nStumpy\n\n\n\n\n\n\n\npyodide\n\n\ntimeseries\n\n\nwasm\n\n\n\n\nUse the Stumpy library to identify patterns in timeseries\n\n\n\n\n\n\nDec 22, 2023\n\n\nMarc Skov Madsen, Sean Law\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "resources/bootstrap_dashboard/index.html",
+    "href": "resources/bootstrap_dashboard/index.html",
+    "title": "Bootstrap Dashboard",
+    "section": "",
+    "text": "This dashboard demonstrates that a dashboard layout similar to the Bootstrap dashboard template can be implemented in Panel."
+  },
+  {
+    "objectID": "resources/bootstrap_dashboard/index.html#introduction",
+    "href": "resources/bootstrap_dashboard/index.html#introduction",
+    "title": "Bootstrap Dashboard",
+    "section": "",
+    "text": "This dashboard demonstrates that a dashboard layout similar to the Bootstrap dashboard template can be implemented in Panel."
+  },
+  {
+    "objectID": "resources/bootstrap_dashboard/index.html#app",
+    "href": "resources/bootstrap_dashboard/index.html#app",
+    "title": "Bootstrap Dashboard",
+    "section": "App",
+    "text": "App\nThis app runs entirely in the browser via Pyodide and panel convert.\nOpen in a new window | Open in Hugging Face Spaces"
+  },
+  {
+    "objectID": "resources/bootstrap_dashboard/index.html#code",
+    "href": "resources/bootstrap_dashboard/index.html#code",
+    "title": "Bootstrap Dashboard",
+    "section": "Code",
+    "text": "Code\n\n\nShow\n\n\"\"\"The purpose of this app is to test that a **multi-page Dashboard Layout** similar to the\n[bootstrap dashboard template](https://getbootstrap.com/docs/4.3/examples/dashboard/)\nfrom [getboostrap.com](https://getbootstrap.com/) can be implemented in\n[Panel](https://panel.pyviz.org/).\n\"\"\"\nimport hvplot.pandas  # pylint: disable=unused-import\nimport pandas as pd\nimport panel as pn\n\nBOOTSTRAP_DASHBOARD_CHART_URL=\"https://awesomepanel.blob.core.windows.net/resources/bootstrap_dashboard/bootstrap_dashboard_chart.csv\"\nBOOTSTRAP_DASHBOARD_TABLE_URL=\"https://awesomepanel.blob.core.windows.net/resources/bootstrap_dashboard/bootstrap_dashboard_table.csv\"\n\nCOLOR=\"#0072B5\"\n\n@pn.cache\ndef _get_chart_data():\n    return pd.read_csv(BOOTSTRAP_DASHBOARD_CHART_URL)\n\n@pn.cache\ndef _get_table_data():\n    return pd.read_csv(BOOTSTRAP_DASHBOARD_TABLE_URL)\n\ndef _holoviews_chart():\n    \"\"\"## Dashboard Orders Chart generated by HoloViews\"\"\"\n    data = _get_chart_data()\n    line_plot = data.hvplot.line(\n        x=\"Day\",\n        y=\"Orders\",\n        height=500,\n        line_color=COLOR,\n        line_width=6,\n    )\n    scatter_plot = data.hvplot.scatter(x=\"Day\", y=\"Orders\", height=300,).opts(\n        marker=\"o\",\n        size=10,\n        color=COLOR,\n    )\n    fig = line_plot * scatter_plot\n    gridstyle = {\n        \"grid_line_color\": \"black\",\n        \"grid_line_width\": 0.1,\n    }\n    fig = fig.opts(\n        responsive=True,\n        toolbar=None,\n        yticks=list(\n            range(\n                12000,\n                26000,\n                2000,\n            )\n        ),\n        ylim=(\n            12000,\n            26000,\n        ),\n        gridstyle=gridstyle,\n        show_grid=True,\n    )\n    return fig\n\napp = pn.extension(\"tabulator\", sizing_mode=\"stretch_width\")\n\npn.template.FastListTemplate(\n    site=\"Awesome Panel\", site_url=\"https://awesome-panel.org\", title=\"Bootstrap Dashboard\",\n    main=[\n        pn.Column(\n            pn.pane.Markdown(\"## Dashboard\"),\n            _holoviews_chart()),\n            pn.Column(pn.pane.Markdown(\"## Section Title\"),\n            pn.widgets.Tabulator(_get_table_data(), layout='fit_data_stretch')),\n    ], main_max_width=\"800px\", main_layout=None,\n).servable()"
+  },
+  {
+    "objectID": "resources/bootstrap_dashboard/index.html#gif",
+    "href": "resources/bootstrap_dashboard/index.html#gif",
+    "title": "Bootstrap Dashboard",
+    "section": "Gif",
+    "text": "Gif"
+  },
+  {
+    "objectID": "resources/bootstrap_dashboard/index.html#png",
+    "href": "resources/bootstrap_dashboard/index.html#png",
+    "title": "Bootstrap Dashboard",
+    "section": "Png",
+    "text": "Png"
+  },
+  {
+    "objectID": "resources/bootstrap_dashboard/index.html#mp4",
+    "href": "resources/bootstrap_dashboard/index.html#mp4",
+    "title": "Bootstrap Dashboard",
     "section": "Mp4",
     "text": "Mp4\n\n\nYour browser does not support HTML video."
   }

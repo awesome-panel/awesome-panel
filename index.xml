@@ -24,6 +24,17 @@
   <media:content url="https://awesome-panel.org/resources/async_tasks/async_tasks.png" medium="image" type="image/png" height="71" width="144"/>
 </item>
 <item>
+  <title>Bootstrap Dashboard</title>
+  <dc:creator>Marc Skov Madsen</dc:creator>
+  <link>https://awesome-panel.org/resources/bootstrap_dashboard/index.html</link>
+  <description><![CDATA[ This dashboard demonstrates that a dashboard layout similar to the <a href="https://getbootstrap.com/docs/4.3/examples/dashboard/"><em>Bootstrap dashboard template</em></a> can be implemented in <a href="https://panel.pyviz.org/">Panel</a>. ]]></description>
+  <category>dashboard</category>
+  <category>hvplot</category>
+  <guid>https://awesome-panel.org/resources/bootstrap_dashboard/index.html</guid>
+  <pubDate>Fri, 22 Dec 2023 00:00:00 GMT</pubDate>
+  <media:content url="https://awesome-panel.org/resources/bootstrap_dashboard/bootstrap_dashboard.png" medium="image" type="image/png" height="99" width="144"/>
+</item>
+<item>
   <title>Stumpy</title>
   <dc:creator>Marc Skov Madsen</dc:creator>
   <dc:creator>Sean Law</dc:creator>

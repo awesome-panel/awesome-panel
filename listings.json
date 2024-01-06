@@ -3,6 +3,7 @@
     "listing": "/index.html",
     "items": [
       "/resources/async_tasks/index.html",
+      "/resources/bootstrap_dashboard/index.html",
       "/resources/stumpy/index.html"
     ]
   }
