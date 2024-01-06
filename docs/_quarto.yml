@@ -1,0 +1,51 @@
+project:
+  type: website
+  render:
+    - "*.qmd"    
+  output-dir: .site
+  resources:
+    - "*.mp4"
+    - "*.png"
+
+website:
+  title: "Awesome Panel"
+  site-url: https://awesome-panel.org
+  description: "Awesome Analytics Apps with HoloViz Panel"
+  favicon: assets/favicon.ico
+  repo-url: https://github.com/awesome-panel/awesome-panel
+  repo-actions: [issue]
+  page-navigation: true
+  back-to-top-navigation: true
+  page-footer: "© Copyright 2023 Awesome Panel contributors"
+  twitter-card:
+    site: "@awesome_panel"
+  open-graph: true
+  navbar:
+    title: Awesome Panel
+    title-href: https://awesome-panel.org
+    background: "#FFFFFF"
+    search: true
+    tools:
+      - icon: twitter
+        href: https://twitter.com/awesome_panel
+      - icon: linkedin
+        href: https://www.linkedin.com/company/awesome-panel-org
+      - icon: github
+        href: https://github.com/awesome-panel/awesome-panel     
+    left:
+    - file: index.qmd
+      text: Home
+    - file: about.qmd
+      text: About
+  
+filters:
+  - include-code-files
+
+format:
+  html:
+    theme: cosmo
+    css: _quarto.css
+    toc: true
+    code-tools: false
+    code-fold: true
+    code-summary: "Show the code"

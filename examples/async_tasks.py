@@ -1,22 +1,3 @@
-"""# Introduction
-
-When creating awesome analytics apps you sometimes wants to run jobs in the background or provide
-streaming analytics to your users.
-
-Panel also supports these use cases as its running on top of the asynchronous web server Tornado.
-
-**Below we show case how to start a background thread that updates a progressbar while
-the rest of the application remains responsive.**
-
-This example is based on the discussion [Can I load data asynchronously in Panel?]\
-(https://discourse.holoviz.org/t/can-i-load-data-asynchronously-in-panel/452).
-
-If you really deep dive into this, then you can study
-[tornado.ioloop.IOLoop](https://www.tornadoweb.org/en/stable/ioloop.html),
-[concurrent.futures.ThreadPoolExecutor]\
-(https://docs.python.org/3/library/concurrent.futures.html#threadpoolexecutor),
-[Panel.io.server.unlocked](https://panel.holoviz.org/api/panel.io.html#panel.io.server.unlocked)"""
-
 import time
 from concurrent.futures import ThreadPoolExecutor
 from contextlib import contextmanager
@@ -24,14 +5,10 @@ from contextlib import contextmanager
 import numpy as np
 import panel as pn
 import param
-from panel.io.server import unlocked
-from tornado.ioloop import IOLoop
+from asyncio import wrap_future
 
-from awesome_panel import config
-
-
-class ProgressExtMod(param.Parameterized):
-    """A component for easy progress reporting"""
+class ProgressExtMod(pn.viewable.Viewer):
+    """A custom component for easy progress reporting"""
 
     completed = param.Integer(default=0)
     bar_color = param.String(default="info")
@@ -40,7 +17,7 @@ class ProgressExtMod(param.Parameterized):
     # @param.depends('completed', 'num_tasks')
     @property
     def value(self) -> int:
-        """Returs the progress value
+        """Returns the progress value
 
         Returns:
             int: The progress value
@@ -52,7 +29,10 @@ class ProgressExtMod(param.Parameterized):
         # Please note the order matters as the Widgets updates two times. One for each change
         self.completed = 0
 
-    @param.depends("completed", "message", "bar_color")
+    def __panel__(self):
+        return self.view
+
+    @param.depends("completed", "bar_color")
     def view(self):
         """View the widget
         Returns:
@@ -66,8 +46,10 @@ class ProgressExtMod(param.Parameterized):
 
     @contextmanager
     def increment(self):
-        """Increment the value
-        Can be used as context manager or decorator?
+        """Increments the value
+        
+        Can be used as context manager or decorator
+        
         Yields:
             None: Nothing is yielded
         """
@@ -76,80 +58,77 @@ class ProgressExtMod(param.Parameterized):
         if self.completed == self.num_tasks:
             self.reset()
 
-
 executor = ThreadPoolExecutor(max_workers=2)  # pylint: disable=consider-using-with
 progress = ProgressExtMod()
 
 
 class AsyncComponent(pn.viewable.Viewer):
-    """An component that demonstrates how to setup use an asynchronous background task in Panel"""
+    """A component that demonstrates how to run a Blocking Background task asynchronously
+    in Panel"""
 
     select = param.Selector(objects=range(10))
     slider = param.Number(2, bounds=(0, 10))
-    text = param.String()
-
-    do_stuff = param.Action(lambda self: self.do_calc(), label="START")
+    
+    run_blocking_task = param.Event(label="RUN")
     result = param.Number(0)
     view = param.Parameter()
 
     def __init__(self, **params):
         super().__init__(**params)
 
-        pn.config.sizing_mode = "stretch_width"
-
         self._layout = pn.Column(
-            pn.pane.Markdown("## Background Task"),
+            pn.pane.Markdown("## Blocking Task Running in Background"),
             pn.Param(
                 self,
-                parameters=["do_stuff", "result"],
-                widgets={"result": {"disabled": True}, "do_stuff": {"button_type": "primary"}},
+                parameters=["run_blocking_task", "result"],
+                widgets={"result": {"disabled": True}, "run_blocking_task": {"button_type": "primary"}},
                 show_name=False,
             ),
-            progress.view,
-            pn.pane.Markdown("## Other Tasks"),
+            progress,
+            pn.pane.Markdown("## Other, Non-Blocked Tasks"),
             pn.Param(
                 self,
-                parameters=["select", "slider", "text"],
+                parameters=["select", "slider"],
                 widgets={"text": {"disabled": True}},
                 show_name=False,
             ),
+            self.text
         )
 
     def __panel__(self):
         return self._layout
 
-    @param.depends("slider", "select", watch=True)
-    def _on_slider_change(self):
-        # This functions does some other python code which we want to keep responsive
+    @param.depends("slider", "select")
+    def text(self):
         if self.select:
             select = self.select
         else:
             select = 0
-        self.text = str(self.slider + select)
+        return f"{select} + {self.slider} = {select + self.slider}"
 
-    def do_calc(self, num_tasks=10):
+    @pn.depends("run_blocking_task", watch=True)
+    async def _run_blocking_tasks(self, num_tasks=10):
         """Runs background tasks num_tasks times"""
         num_tasks = 20
         progress.num_tasks = num_tasks
-        loop = IOLoop.current()
         for _ in range(num_tasks):
-            future = executor.submit(self._blocking_task)
-            loop.add_future(future, self._update)
+            future = executor.submit(self._run_blocking_task)
+            result = await wrap_future(future)
+            self._update(result)
 
     @progress.increment()
-    def _update(self, future):
-        number = future.result()
-        with unlocked():
-            self.result += number
+    def _update(self, number):
+        self.result += number
 
     @staticmethod
-    def _blocking_task():
+    def _run_blocking_task():
         time.sleep(np.random.randint(1, 2))
         return 5
 
-
-if __name__.startswith("bokeh"):
-    config.extension(url="async_tasks")
-
-    pn.pane.Markdown(__doc__).servable()
-    AsyncComponent().servable()  # pylint: disable=no-value-for-parameter
+if pn.state.served:
+    pn.extension()
+    
+    component = AsyncComponent()
+    pn.template.FastListTemplate(
+        site="Awesome Panel", site_url="https://awesome-panel.org", title="Async Tasks", main=[component], main_layout=None, main_max_width="400px"
+    ).servable()

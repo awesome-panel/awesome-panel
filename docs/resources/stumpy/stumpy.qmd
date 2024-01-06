@@ -1,0 +1,43 @@
+---
+title: "Stumpy"
+date: "2023-12-22"
+description: "Use the Stumpy library to identify patterns in timeseries"
+author:
+  - Marc Skov Madsen
+  - Sean Law
+categories: [pyodide,timeseries,wasm]
+image: "https://raw.githubusercontent.com/TDAmeritrade/stumpy/master/docs/images/stumpy_logo_small.png"
+---
+
+## Introduction
+
+[STUMPY](https://github.com/TDAmeritrade/stumpy) is a powerful and scalable Python library identifies repeating patterns in your timeseries. It does this by efficiently computing something called a [matrix profile](https://stumpy.readthedocs.io/en/latest/Tutorial_The_Matrix_Profile.html).
+
+## App
+
+This app runs entirely in the browser via [Pyodide](https://pyodide.org) and [panel convert](https://panel.holoviz.org/how_to/wasm/convert.html).
+
+<a href="https://awesome-panel.github.io/examples/stumpy-dashboard/app.html" target="_blank">Open in a new window</a>
+
+<iframe
+	src="https://awesome-panel.github.io/examples/stumpy-dashboard/app.html"
+	frameborder="0"
+	style="width:100%;height:1000px"
+></iframe>
+
+## Code
+
+<details>
+  <summary>Show</summary>
+  <iframe frameborder="0" scrolling="no" style="width:100%; height:11056px;" allow="clipboard-write" src="https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fawesome-panel%2Fexamples%2Fblob%2Fmain%2Fsrc%2Fstumpy-dashboard%2Fapp.py&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></iframe>
+</details>
+
+## Gif
+
+I think the app looks amazing. Its really performant too.
+
+<img src="https://github.com/awesome-panel/examples/blob/main/src/stumpy-dashboard/stumpy-dashboard.gif?raw=true"></img>
+
+## Png
+
+<img src="https://github.com/awesome-panel/examples/blob/main/src/stumpy-dashboard/thumbnail.png?raw=true"></img>

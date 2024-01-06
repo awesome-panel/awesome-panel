@@ -119,3 +119,6 @@ script.*
 apps/dev/*
 apps/prod/*
 examples/todo.md
+
+docs/.quarto/
+docs/.site/

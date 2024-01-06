@@ -1,0 +1,67 @@
+div.quarto-post .thumbnail img {
+    object-fit: contain;
+}
+#quarto-header {
+    box-shadow: 0 .125rem .25rem 0 #d8d8d8;
+}
+img {
+    max-width:100%;
+}
+.navbar-dark .navbar-brand {
+    color: #0072B5;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: 600;
+    border-radius: 2px;
+    -webkit-animation: breathing 5s ease-out infinite normal;
+    animation: breathing 5s ease-out infinite normal;
+    -webkit-font-smoothing: antialiased;
+}
+
+@-webkit-keyframes breathing {
+  0% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  60% {
+    -webkit-transform: scale(1.1);
+    transform: scale(0.9);
+  }
+
+  100% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+@keyframes breathing {
+  0% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  25% {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  60% {
+    -webkit-transform: scale(1.1));
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  100% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}

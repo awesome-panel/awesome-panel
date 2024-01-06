@@ -1,0 +1,34 @@
+---
+title: "Async Tasks"
+date: "2023-12-22"
+description: "Run blocking tasks in the background using a ThreadPoolExecutor and Async"
+author:
+  - Jochem Smit 
+  - Marc Skov Madsen
+categories: [async, threads]
+image: "async_tasks.png"
+---
+
+## Introduction
+
+When creating awesome analytics apps you sometimes want to run blocking tasks asynchronously in a background thread. Panel supports this as its running on top of the asynchronous web server Tornado.
+
+The app below shows how to start a background thread that updates a progressbar while the rest of the application remains responsive. We utilize a [`ThreadPoolExecutor`](https://docs.python.org/3/library/concurrent.futures.html#threadpoolexecutor) and *async* to achieve this.
+
+## App
+
+<a href="https://huggingface.co/spaces/awesome-panel/async_tasks" target="_blank">Open in a new window</a> | <a href="https://huggingface.co/spaces/awesome-panel/async_tasks" target="_blank">Open in Hugging Face Spaces</a>
+
+<iframe
+	src="https://awesome-panel-async-tasks.hf.space"
+	frameborder="0"
+	style="width:100%;height:650px"
+></iframe>
+
+## Code
+
+<details>
+<summary>Show </summary>
+```{.python include="../../../examples/async_tasks.py" code-line-numbers="true"}
+```
+</details>

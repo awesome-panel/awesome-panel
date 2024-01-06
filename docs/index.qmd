@@ -1,0 +1,21 @@
+---
+listing:
+  contents: resources
+  sort: "date desc"
+  categories: true
+  sort-ui: true
+  filter-ui: true
+  image-height: "200px"
+  # RSS feed
+  # Come back to it when https://github.com/quarto-dev/quarto-cli/issues/7290 is resolved
+  feed:
+    items: 10
+    type: partial
+page-layout: full
+---
+
+[Panel](https://panel.holoviz.org) by [HoloViz](https://holoviz.org) is the powerful data exploration & web app framework for Python.
+
+Check out the **awesome community resources** below.
+
+---
