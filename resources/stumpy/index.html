@@ -6,8 +6,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Marc Skov Madsen">
+<meta name="author" content="Sean Law">
+<meta name="dcterms.date" content="2023-12-22">
+<meta name="description" content="Use the Stumpy library to identify patterns in timeseries">
 
-<title>Awesome Panel</title>
+<title>Awesome Panel - Stumpy</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +27,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./assets/favicon.ico" rel="icon">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -62,52 +64,21 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<link rel="stylesheet" href="_quarto.css">
-<link rel="alternate" type="application/rss+xml" title="Awesome Panel" href="index.xml"><meta property="og:title" content="">
-<meta property="og:description" content="">
-<meta property="og:image" content="https://awesome-panel.org/resources/async_tasks/async_tasks.png">
+<link rel="stylesheet" href="../../_quarto.css">
+<meta property="og:title" content="Awesome Panel - Stumpy">
+<meta property="og:description" content="Use the Stumpy library to identify patterns in timeseries">
+<meta property="og:image" content="https://awesome-panel.org/resources/stumpy/stumpy.png">
 <meta property="og:site-name" content="Awesome Panel">
-<meta property="og:image:height" content="244">
-<meta property="og:image:width" content="495">
-<meta name="twitter:title" content="">
-<meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://awesome-panel.org/resources/async_tasks/async_tasks.png">
+<meta property="og:image:height" content="136">
+<meta property="og:image:width" content="411">
+<meta name="twitter:title" content="Awesome Panel - Stumpy">
+<meta name="twitter:description" content="Use the Stumpy library to identify patterns in timeseries">
+<meta name="twitter:image" content="https://awesome-panel.org/resources/stumpy/stumpy.png">
 <meta name="twitter:site" content="@awesome_panel">
-<meta name="twitter:image-height" content="244">
-<meta name="twitter:image-width" content="495">
+<meta name="twitter:image-height" content="136">
+<meta name="twitter:image-width" content="411">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -118,7 +89,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Awesome Panel</span>
     </a>
   </div>
@@ -129,11 +100,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -147,135 +118,99 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="async">async <span class="quarto-category-count">(1)</span></div><div class="category" data-category="pyodide">pyodide <span class="quarto-category-count">(1)</span></div><div class="category" data-category="threads">threads <span class="quarto-category-count">(1)</span></div><div class="category" data-category="timeseries">timeseries <span class="quarto-category-count">(1)</span></div><div class="category" data-category="wasm">wasm <span class="quarto-category-count">(1)</span></div></div></div>
-<!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
-
-
-
-<p><a href="https://panel.holoviz.org">Panel</a> by <a href="https://holoviz.org">HoloViz</a> is the powerful data exploration &amp; web app framework for Python.</p>
-<p>Check out the <strong>awesome community resources</strong> below.</p>
-<hr>
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-title" data-direction="asc">
-          Title
-        </option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-         <option value="listing-author" data-direction="asc">
-          Author
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#app" id="toc-app" class="nav-link" data-scroll-target="#app">App</a></li>
+  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a></li>
+  <li><a href="#gif" id="toc-gif" class="nav-link" data-scroll-target="#gif">Gif</a></li>
+  <li><a href="#png" id="toc-png" class="nav-link" data-scroll-target="#png">Png</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/awesome-panel/awesome-panel/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="async,threads" data-listing-date-sort="1703203200000" data-listing-file-modified-sort="1704552700430" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="./resources/async_tasks/index.html"> <img src="./resources/async_tasks/async_tasks.png" class="thumbnail-image" style="height: 200px;"> </a></p>
-</div>
-<div class="body">
-<a href="./resources/async_tasks/index.html">
-<h3 class="no-anchor listing-title">
-Async Tasks
-</h3>
-<div class="listing-subtitle">
+<!-- main -->
+<main class="content" id="quarto-document-content">
 
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('async'); return false;">
-async
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('threads'); return false;">
-threads
-</div>
-</div>
-<a href="./resources/async_tasks/index.html">
-<div class="listing-description">
-<p>Run blocking tasks in the background using a ThreadPoolExecutor and Async</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./resources/async_tasks/index.html">
-<div class="listing-date">
-Dec 22, 2023
-</div>
-<div class="listing-author">
-Jochem Smit, Marc Skov Madsen
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="pyodide,timeseries,wasm" data-listing-date-sort="1703203200000" data-listing-file-modified-sort="1704552700850" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="./resources/stumpy/index.html"> <img src="./resources/stumpy/stumpy.png" class="thumbnail-image" style="height: 200px;"> </a></p>
-</div>
-<div class="body">
-<a href="./resources/stumpy/index.html">
-<h3 class="no-anchor listing-title">
-Stumpy
-</h3>
-<div class="listing-subtitle">
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Stumpy</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">pyodide</div>
+    <div class="quarto-category">timeseries</div>
+    <div class="quarto-category">wasm</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Use the Stumpy library to identify patterns in timeseries
+  </div>
 </div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('pyodide'); return false;">
-pyodide
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('timeseries'); return false;">
-timeseries
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('wasm'); return false;">
-wasm
-</div>
-</div>
-<a href="./resources/stumpy/index.html">
-<div class="listing-description">
-<p>Use the Stumpy library to identify patterns in timeseries</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./resources/stumpy/index.html">
-<div class="listing-date">
-Dec 22, 2023
-</div>
-<div class="listing-author">
-Marc Skov Madsen, Sean Law
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-contents">
+             <p>Marc Skov Madsen </p>
+             <p>Sean Law </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 22, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p><a href="https://github.com/TDAmeritrade/stumpy">STUMPY</a> is a powerful and scalable Python library identifies repeating patterns in your timeseries. It does this by efficiently computing something called a <a href="https://stumpy.readthedocs.io/en/latest/Tutorial_The_Matrix_Profile.html">matrix profile</a>.</p>
+</section>
+<section id="app" class="level2">
+<h2 class="anchored" data-anchor-id="app">App</h2>
+<p>This app runs entirely in the browser via <a href="https://pyodide.org">Pyodide</a> and <a href="https://panel.holoviz.org/how_to/wasm/convert.html">panel convert</a>.</p>
+<p><a href="https://awesome-panel.github.io/examples/stumpy-dashboard/app.html" target="_blank">Open in a new window</a></p>
+<iframe src="https://awesome-panel.github.io/examples/stumpy-dashboard/app.html" frameborder="0" style="width:100%;height:1000px">
+</iframe>
+</section>
+<section id="code" class="level2">
+<h2 class="anchored" data-anchor-id="code">Code</h2>
+<details>
+<summary>
+Show
+</summary>
+<iframe frameborder="0" scrolling="no" style="width:100%; height:11056px;" allow="clipboard-write" src="https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fawesome-panel%2Fexamples%2Fblob%2Fmain%2Fsrc%2Fstumpy-dashboard%2Fapp.py&amp;style=default&amp;type=code&amp;showBorder=on&amp;showLineNumbers=on&amp;showFileMeta=on&amp;showFullPath=on&amp;showCopy=on">
+</iframe>
+</details>
+</section>
+<section id="gif" class="level2">
+<h2 class="anchored" data-anchor-id="gif">Gif</h2>
+<p>I think the app looks amazing. Its really performant too.</p>
+<p><img src="https://cdn.awesome-panel.org/resources/stumpy/stumpy.gif"></p>
+</section>
+<section id="png" class="level2">
+<h2 class="anchored" data-anchor-id="png">Png</h2>
+<p><img src="https://cdn.awesome-panel.org/resources/stumpy/stumpy.png"></p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -515,7 +450,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">© Copyright 2023 Awesome Panel contributors<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/awesome-panel/awesome-panel/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
+    <div class="nav-footer-center">© Copyright 2023 Awesome Panel contributors</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

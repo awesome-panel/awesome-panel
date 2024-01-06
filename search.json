@@ -1,42 +1,42 @@
 [
   {
-    "objectID": "resources/stumpy/stumpy.html",
-    "href": "resources/stumpy/stumpy.html",
+    "objectID": "resources/stumpy/index.html",
+    "href": "resources/stumpy/index.html",
     "title": "Stumpy",
     "section": "",
     "text": "STUMPY is a powerful and scalable Python library identifies repeating patterns in your timeseries. It does this by efficiently computing something called a matrix profile."
   },
   {
-    "objectID": "resources/stumpy/stumpy.html#introduction",
-    "href": "resources/stumpy/stumpy.html#introduction",
+    "objectID": "resources/stumpy/index.html#introduction",
+    "href": "resources/stumpy/index.html#introduction",
     "title": "Stumpy",
     "section": "",
     "text": "STUMPY is a powerful and scalable Python library identifies repeating patterns in your timeseries. It does this by efficiently computing something called a matrix profile."
   },
   {
-    "objectID": "resources/stumpy/stumpy.html#app",
-    "href": "resources/stumpy/stumpy.html#app",
+    "objectID": "resources/stumpy/index.html#app",
+    "href": "resources/stumpy/index.html#app",
     "title": "Stumpy",
     "section": "App",
     "text": "App\nThis app runs entirely in the browser via Pyodide and panel convert.\nOpen in a new window"
   },
   {
-    "objectID": "resources/stumpy/stumpy.html#code",
-    "href": "resources/stumpy/stumpy.html#code",
+    "objectID": "resources/stumpy/index.html#code",
+    "href": "resources/stumpy/index.html#code",
     "title": "Stumpy",
     "section": "Code",
     "text": "Code\n\n\nShow"
   },
   {
-    "objectID": "resources/stumpy/stumpy.html#gif",
-    "href": "resources/stumpy/stumpy.html#gif",
+    "objectID": "resources/stumpy/index.html#gif",
+    "href": "resources/stumpy/index.html#gif",
     "title": "Stumpy",
     "section": "Gif",
     "text": "Gif\nI think the app looks amazing. Its really performant too."
   },
   {
-    "objectID": "resources/stumpy/stumpy.html#png",
-    "href": "resources/stumpy/stumpy.html#png",
+    "objectID": "resources/stumpy/index.html#png",
+    "href": "resources/stumpy/index.html#png",
     "title": "Stumpy",
     "section": "Png",
     "text": "Png"
@@ -56,31 +56,52 @@
     "text": "About\nWe want to show how awesome Panel by HoloViz is and push the framework forward.\n\n\n\nAwesome Panel Intro\n\n\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "resources/async_tasks/async_tasks.html",
-    "href": "resources/async_tasks/async_tasks.html",
+    "objectID": "resources/async_tasks/index.html",
+    "href": "resources/async_tasks/index.html",
     "title": "Async Tasks",
     "section": "",
     "text": "When creating awesome analytics apps you sometimes want to run blocking tasks asynchronously in a background thread. Panel supports this as its running on top of the asynchronous web server Tornado.\nThe app below shows how to start a background thread that updates a progressbar while the rest of the application remains responsive. We utilize a ThreadPoolExecutor and async to achieve this."
   },
   {
-    "objectID": "resources/async_tasks/async_tasks.html#introduction",
-    "href": "resources/async_tasks/async_tasks.html#introduction",
+    "objectID": "resources/async_tasks/index.html#introduction",
+    "href": "resources/async_tasks/index.html#introduction",
     "title": "Async Tasks",
     "section": "",
     "text": "When creating awesome analytics apps you sometimes want to run blocking tasks asynchronously in a background thread. Panel supports this as its running on top of the asynchronous web server Tornado.\nThe app below shows how to start a background thread that updates a progressbar while the rest of the application remains responsive. We utilize a ThreadPoolExecutor and async to achieve this."
   },
   {
-    "objectID": "resources/async_tasks/async_tasks.html#app",
-    "href": "resources/async_tasks/async_tasks.html#app",
+    "objectID": "resources/async_tasks/index.html#app",
+    "href": "resources/async_tasks/index.html#app",
     "title": "Async Tasks",
     "section": "App",
     "text": "App\nOpen in a new window | Open in Hugging Face Spaces"
   },
   {
-    "objectID": "resources/async_tasks/async_tasks.html#code",
-    "href": "resources/async_tasks/async_tasks.html#code",
+    "objectID": "resources/async_tasks/index.html#code",
+    "href": "resources/async_tasks/index.html#code",
     "title": "Async Tasks",
     "section": "Code",
     "text": "Code\n\n\nShow\n\nimport time\nfrom concurrent.futures import ThreadPoolExecutor\nfrom contextlib import contextmanager\n\nimport numpy as np\nimport panel as pn\nimport param\nfrom asyncio import wrap_future\n\nclass ProgressExtMod(pn.viewable.Viewer):\n    \"\"\"A custom component for easy progress reporting\"\"\"\n\n    completed = param.Integer(default=0)\n    bar_color = param.String(default=\"info\")\n    num_tasks = param.Integer(default=100, bounds=(1, None))\n\n    # @param.depends('completed', 'num_tasks')\n    @property\n    def value(self) -&gt; int:\n        \"\"\"Returns the progress value\n\n        Returns:\n            int: The progress value\n        \"\"\"\n        return int(100 * (self.completed / self.num_tasks))\n\n    def reset(self):\n        \"\"\"Resets the value and message\"\"\"\n        # Please note the order matters as the Widgets updates two times. One for each change\n        self.completed = 0\n\n    def __panel__(self):\n        return self.view\n\n    @param.depends(\"completed\", \"bar_color\")\n    def view(self):\n        \"\"\"View the widget\n        Returns:\n            pn.viewable.Viewable: Add this to your app to see the progress reported\n        \"\"\"\n        if self.value:\n            return pn.widgets.Progress(\n                active=True, value=self.value, align=\"center\", sizing_mode=\"stretch_width\"\n            )\n        return None\n\n    @contextmanager\n    def increment(self):\n        \"\"\"Increments the value\n        \n        Can be used as context manager or decorator\n        \n        Yields:\n            None: Nothing is yielded\n        \"\"\"\n        self.completed += 1\n        yield\n        if self.completed == self.num_tasks:\n            self.reset()\n\nexecutor = ThreadPoolExecutor(max_workers=2)  # pylint: disable=consider-using-with\nprogress = ProgressExtMod()\n\n\nclass AsyncComponent(pn.viewable.Viewer):\n    \"\"\"A component that demonstrates how to run a Blocking Background task asynchronously\n    in Panel\"\"\"\n\n    select = param.Selector(objects=range(10))\n    slider = param.Number(2, bounds=(0, 10))\n    \n    run_blocking_task = param.Event(label=\"RUN\")\n    result = param.Number(0)\n    view = param.Parameter()\n\n    def __init__(self, **params):\n        super().__init__(**params)\n\n        self._layout = pn.Column(\n            pn.pane.Markdown(\"## Blocking Task Running in Background\"),\n            pn.Param(\n                self,\n                parameters=[\"run_blocking_task\", \"result\"],\n                widgets={\"result\": {\"disabled\": True}, \"run_blocking_task\": {\"button_type\": \"primary\"}},\n                show_name=False,\n            ),\n            progress,\n            pn.pane.Markdown(\"## Other, Non-Blocked Tasks\"),\n            pn.Param(\n                self,\n                parameters=[\"select\", \"slider\"],\n                widgets={\"text\": {\"disabled\": True}},\n                show_name=False,\n            ),\n            self.text\n        )\n\n    def __panel__(self):\n        return self._layout\n\n    @param.depends(\"slider\", \"select\")\n    def text(self):\n        if self.select:\n            select = self.select\n        else:\n            select = 0\n        return f\"{select} + {self.slider} = {select + self.slider}\"\n\n    @pn.depends(\"run_blocking_task\", watch=True)\n    async def _run_blocking_tasks(self, num_tasks=10):\n        \"\"\"Runs background tasks num_tasks times\"\"\"\n        num_tasks = 20\n        progress.num_tasks = num_tasks\n        for _ in range(num_tasks):\n            future = executor.submit(self._run_blocking_task)\n            result = await wrap_future(future)\n            self._update(result)\n\n    @progress.increment()\n    def _update(self, number):\n        self.result += number\n\n    @staticmethod\n    def _run_blocking_task():\n        time.sleep(np.random.randint(1, 2))\n        return 5\n\nif pn.state.served:\n    pn.extension()\n    \n    component = AsyncComponent()\n    pn.template.FastListTemplate(\n        site=\"Awesome Panel\", site_url=\"https://awesome-panel.org\", title=\"Async Tasks\", main=[component], main_layout=None, main_max_width=\"400px\"\n    ).servable()"
+  },
+  {
+    "objectID": "resources/async_tasks/index.html#gif",
+    "href": "resources/async_tasks/index.html#gif",
+    "title": "Async Tasks",
+    "section": "Gif",
+    "text": "Gif"
+  },
+  {
+    "objectID": "resources/async_tasks/index.html#png",
+    "href": "resources/async_tasks/index.html#png",
+    "title": "Async Tasks",
+    "section": "Png",
+    "text": "Png"
+  },
+  {
+    "objectID": "resources/async_tasks/index.html#mp4",
+    "href": "resources/async_tasks/index.html#mp4",
+    "title": "Async Tasks",
+    "section": "Mp4",
+    "text": "Mp4\n\n\nYour browser does not support HTML video."
   }
 ]

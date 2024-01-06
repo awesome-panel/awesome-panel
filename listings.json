@@ -2,8 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
-      "/resources/async_tasks/async_tasks.html",
-      "/resources/stumpy/stumpy.html"
+      "/resources/async_tasks/index.html",
+      "/resources/stumpy/index.html"
     ]
   }
 ]

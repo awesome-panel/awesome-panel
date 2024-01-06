@@ -15,26 +15,26 @@
   <title>Async Tasks</title>
   <dc:creator>Jochem Smit</dc:creator>
   <dc:creator>Marc Skov Madsen</dc:creator>
-  <link>https://awesome-panel.org/resources/async_tasks/async_tasks.html</link>
+  <link>https://awesome-panel.org/resources/async_tasks/index.html</link>
   <description><![CDATA[ When creating awesome analytics apps you sometimes want to run blocking tasks asynchronously in a background thread. Panel supports this as its running on top of the asynchronous web server Tornado. ]]></description>
   <category>async</category>
   <category>threads</category>
-  <guid>https://awesome-panel.org/resources/async_tasks/async_tasks.html</guid>
+  <guid>https://awesome-panel.org/resources/async_tasks/index.html</guid>
   <pubDate>Fri, 22 Dec 2023 00:00:00 GMT</pubDate>
-  <media:content url="https://awesome-panel.org/resources/async_tasks/async_tasks.png" medium="image" type="image/png" height="113" width="144"/>
+  <media:content url="https://awesome-panel.org/resources/async_tasks/async_tasks.png" medium="image" type="image/png" height="71" width="144"/>
 </item>
 <item>
   <title>Stumpy</title>
   <dc:creator>Marc Skov Madsen</dc:creator>
   <dc:creator>Sean Law</dc:creator>
-  <link>https://awesome-panel.org/resources/stumpy/stumpy.html</link>
+  <link>https://awesome-panel.org/resources/stumpy/index.html</link>
   <description><![CDATA[ <a href="https://github.com/TDAmeritrade/stumpy">STUMPY</a> is a powerful and scalable Python library identifies repeating patterns in your timeseries. It does this by efficiently computing something called a <a href="https://stumpy.readthedocs.io/en/latest/Tutorial_The_Matrix_Profile.html">matrix profile</a>. ]]></description>
   <category>pyodide</category>
   <category>timeseries</category>
   <category>wasm</category>
-  <guid>https://awesome-panel.org/resources/stumpy/stumpy.html</guid>
+  <guid>https://awesome-panel.org/resources/stumpy/index.html</guid>
   <pubDate>Fri, 22 Dec 2023 00:00:00 GMT</pubDate>
-  <media:content url="https://raw.githubusercontent.com/TDAmeritrade/stumpy/master/docs/images/stumpy_logo_small.png" medium="image" type="image/png"/>
+  <media:content url="https://awesome-panel.org/resources/stumpy/stumpy.png" medium="image" type="image/png" height="48" width="144"/>
 </item>
 </channel>
 </rss>
