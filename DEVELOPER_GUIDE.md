@@ -24,7 +24,7 @@ Then run
 git clone https://github.com/awesome-panel/awesome-panel.git
 cd awesome-panel
 pip install pip -U
-pip install -e .[dev,docs,examples]
+pip install -e .[dev,examples]
 ```
 
 Then you can see the available commands via

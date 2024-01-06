@@ -49,15 +49,6 @@ dev = [
     "selenium==4.5.0",
     "locust==2.12.2",
 ]
-docs = [
-    "Sphinx",
-    "sphinx_rtd_theme",
-    "recommonmark",
-    "sphinx-autobuild",
-    "sphinxcontrib-napoleon",
-    "sphinx-markdown-tables",
-    "doc8",
-]
 examples = [
     "altair",
     "awesome-panel-cli",
