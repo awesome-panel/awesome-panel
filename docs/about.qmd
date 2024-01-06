@@ -2,4 +2,4 @@
 
 We want to show how awesome [Panel](https://awesome-panel.org) by [HoloViz](https://holoviz.org) is and push the framework forward.
 
-![Awesome Panel Intro](https://github.com/awesome-panel/awesome-panel/blob/master/assets/videos/awesome-panel-intro.gif?raw=true)
+![Awesome Panel Intro](https://github.com/awesome-panel/awesome-panel/blob/main/assets/videos/awesome-panel-intro.gif?raw=true)
