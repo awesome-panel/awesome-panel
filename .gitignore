@@ -1,0 +1,4 @@
+.venv/
+docs/.quarto/
+docs/.site/
+*.egg-info
