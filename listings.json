@@ -3,6 +3,7 @@
     "listing": "/index.html",
     "items": [
       "/resources/caching_example/index.html",
+      "/resources/classic_dashboard/classic_dashboard.html",
       "/resources/video_stream/index.html",
       "/resources/async_tasks/index.html",
       "/resources/bootstrap_dashboard/index.html",

@@ -2,38 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://awesome-panel.org/resources/video_stream/index.html</loc>
-    <lastmod>2024-01-07T12:49:12.759Z</lastmod>
+    <lastmod>2024-01-07T13:51:01.569Z</lastmod>
   </url>
   <url>
     <loc>https://awesome-panel.org/resources/stumpy/index.html</loc>
-    <lastmod>2024-01-07T12:49:11.787Z</lastmod>
+    <lastmod>2024-01-07T13:51:00.605Z</lastmod>
   </url>
   <url>
-    <loc>https://awesome-panel.org/resources/caching_example/index.html</loc>
-    <lastmod>2024-01-07T12:49:10.695Z</lastmod>
-  </url>
-  <url>
-    <loc>https://awesome-panel.org/resources/async_tasks/index.html</loc>
-    <lastmod>2024-01-07T12:49:09.615Z</lastmod>
-  </url>
-  <url>
-    <loc>https://awesome-panel.org/about.html</loc>
-    <lastmod>2024-01-07T12:49:08.027Z</lastmod>
-  </url>
-  <url>
-    <loc>https://awesome-panel.org/index.html</loc>
-    <lastmod>2024-01-07T12:49:09.051Z</lastmod>
+    <loc>https://awesome-panel.org/resources/classic_dashboard/classic_dashboard.html</loc>
+    <lastmod>2024-01-07T13:50:59.533Z</lastmod>
   </url>
   <url>
     <loc>https://awesome-panel.org/resources/bootstrap_dashboard/index.html</loc>
-    <lastmod>2024-01-07T12:49:10.095Z</lastmod>
+    <lastmod>2024-01-07T13:50:58.445Z</lastmod>
+  </url>
+  <url>
+    <loc>https://awesome-panel.org/index.html</loc>
+    <lastmod>2024-01-07T13:50:57.473Z</lastmod>
+  </url>
+  <url>
+    <loc>https://awesome-panel.org/about.html</loc>
+    <lastmod>2024-01-07T13:50:56.364Z</lastmod>
+  </url>
+  <url>
+    <loc>https://awesome-panel.org/resources/async_tasks/index.html</loc>
+    <lastmod>2024-01-07T13:50:57.997Z</lastmod>
+  </url>
+  <url>
+    <loc>https://awesome-panel.org/resources/caching_example/index.html</loc>
+    <lastmod>2024-01-07T13:50:59.021Z</lastmod>
   </url>
   <url>
     <loc>https://awesome-panel.org/resources/panel_chat_examples/index.html</loc>
-    <lastmod>2024-01-07T12:49:11.111Z</lastmod>
+    <lastmod>2024-01-07T13:50:59.921Z</lastmod>
   </url>
   <url>
     <loc>https://awesome-panel.org/resources/tasty_map/index.html</loc>
-    <lastmod>2024-01-07T12:49:12.171Z</lastmod>
+    <lastmod>2024-01-07T13:51:01.005Z</lastmod>
   </url>
 </urlset>

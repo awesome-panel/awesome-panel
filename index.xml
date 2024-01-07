@@ -22,6 +22,17 @@
   <media:content url="https://awesome-panel.org/resources/caching_example/caching_example.png" medium="image" type="image/png" height="85" width="144"/>
 </item>
 <item>
+  <title>Classic Dashboard</title>
+  <dc:creator>Marc Skov Madsen</dc:creator>
+  <link>https://awesome-panel.org/resources/classic_dashboard/classic_dashboard.html</link>
+  <description><![CDATA[ The app shows you how to create a <strong>Classic Dashboard</strong> in <strong>Panel</strong> with ]]></description>
+  <category>dashboard</category>
+  <category>hvplot</category>
+  <guid>https://awesome-panel.org/resources/classic_dashboard/classic_dashboard.html</guid>
+  <pubDate>Sun, 07 Jan 2024 00:00:00 GMT</pubDate>
+  <media:content url="https://awesome-panel.org/resources/classic_dashboard/classic_dashboard.png" medium="image" type="image/png" height="95" width="144"/>
+</item>
+<item>
   <title>Video Stream</title>
   <dc:creator>Marc Skov Madsen</dc:creator>
   <link>https://awesome-panel.org/resources/video_stream/index.html</link>
