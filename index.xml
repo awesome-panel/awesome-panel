@@ -40,9 +40,9 @@
   <dc:creator>Sean Law</dc:creator>
   <link>https://awesome-panel.org/resources/stumpy/index.html</link>
   <description><![CDATA[ <a href="https://github.com/TDAmeritrade/stumpy">STUMPY</a> is a powerful and scalable Python library identifies repeating patterns in your timeseries. It does this by efficiently computing something called a <a href="https://stumpy.readthedocs.io/en/latest/Tutorial_The_Matrix_Profile.html">matrix profile</a>. ]]></description>
+  <category>bokeh</category>
   <category>pyodide</category>
   <category>timeseries</category>
-  <category>wasm</category>
   <guid>https://awesome-panel.org/resources/stumpy/index.html</guid>
   <pubDate>Fri, 22 Dec 2023 00:00:00 GMT</pubDate>
   <media:content url="https://awesome-panel.org/resources/stumpy/stumpy.png" medium="image" type="image/png" height="48" width="144"/>
