@@ -20,6 +20,16 @@ The app is a Panel app.
 <a class="github-button" href="https://github.com/ahuang11/tastymap" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ahuang11/tastymap on GitHub">Star</a>
 
 
+## App
+
+<a href="https://ahuang11-tastykitchen.hf.space" target="_blank">Open in a new window</a> | <a href="https://huggingface.co/spaces/ahuang11/tastykitchen" target="_blank">Open in Hugging Face Spaces</a>
+
+<iframe
+	src="https://ahuang11-tastykitchen.hf.space"
+	frameborder="0"
+	style="width:100%;height:1350px"
+></iframe>
+
 ## Gif
 
 <img src="https://github.com/ahuang11/tastymap/assets/15331990/ce015064-2ffb-4da2-bb8e-4818fdd751ab"></img>

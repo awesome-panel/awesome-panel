@@ -1,0 +1,57 @@
+---
+title: "Video Stream"
+date: "2024-01-07"
+description: "Image processing with Pillow and Scikit Image"
+author:
+  - name: Marc Skov Madsen
+    url: https://github.com/marcskovmadsen/  
+    
+categories: [video]
+image: "video_stream.png"
+---
+
+## Introduction
+
+This app takes a videostream from your web cam and applies different filters supplied by [Pillow](https://python-pillow.org/) and [Scikit Image](https://scikit-image.org/).
+
+This app is heavily inspired by a similar realtime image processing [app](https://edit.share.stlite.net/?sampleAppId=realtime_image_processing) by Whitphx.
+
+## App
+
+This app runs entirely in the browser via [Pyodide](https://pyodide.org) and [panel convert](https://panel.holoviz.org/how_to/wasm/convert.html).
+
+<a href="https://awesome-panel-video-stream.static.hf.space" target="_blank">Open in a new window</a> | <a href="https://huggingface.co/spaces/awesome-panel/video_stream" target="_blank">Open in Hugging Face Spaces</a>
+
+<iframe
+	src="https://awesome-panel-video-stream.static.hf.space"
+	frameborder="0"
+	style="width:100%;height:800px"
+  allow="camera"
+></iframe>
+
+## Code
+
+<details>
+<summary>Show</summary>
+```{.python include="../../../examples/video_stream.py" code-line-numbers="true"}
+```
+</details>
+
+<a href="https://raw.githubusercontent.com/awesome-panel/awesome-panel/main/examples/video_stream.py" download>Download (right-click, save-as)</a>
+
+## Gif
+
+I think the app looks amazing. Its really performant too.
+
+<img src="https://cdn.awesome-panel.org/resources/video_stream/video_stream.gif"></img>
+
+## Mp4
+
+<video poster="https://cdn.awesome-panel.org/resources/video_stream/video_stream.png" controls>
+  <source src="https://cdn.awesome-panel.org/resources/video_stream/video_stream.mp4" type="video/mp4">
+  Your browser does not support HTML video.
+</video>
+
+## Png
+
+<img src="https://cdn.awesome-panel.org/resources/video_stream/video_stream.png"></img>

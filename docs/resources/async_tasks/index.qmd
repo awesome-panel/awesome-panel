@@ -7,7 +7,7 @@ author:
     url: https://github.com/jhsmit/
   - name: Marc Skov Madsen
     url: https://github.com/marcskovmadsen/  
-categories: [async, threads]
+categories: [async, performance, threads]
 image: "async_tasks.png"
 ---
 

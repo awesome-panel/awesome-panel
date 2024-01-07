@@ -18,6 +18,9 @@ image: "stumpy.png"
 
 The app is a Bokeh app wrapped in a nice Panel template.
 
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/TDAmeritrade/stumpy" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star TDAmeritrade/stumpy on GitHub">Star</a>
+
 ## App
 
 This app runs entirely in the browser via [Pyodide](https://pyodide.org) and [panel convert](https://panel.holoviz.org/how_to/wasm/convert.html).
