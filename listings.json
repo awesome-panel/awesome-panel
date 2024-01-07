@@ -4,7 +4,9 @@
     "items": [
       "/resources/async_tasks/index.html",
       "/resources/bootstrap_dashboard/index.html",
-      "/resources/stumpy/index.html"
+      "/resources/panel_chat_examples/index.html",
+      "/resources/stumpy/index.html",
+      "/resources/tasty_map/index.html"
     ]
   }
 ]

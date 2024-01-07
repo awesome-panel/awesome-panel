@@ -35,6 +35,18 @@
   <media:content url="https://awesome-panel.org/resources/bootstrap_dashboard/bootstrap_dashboard.png" medium="image" type="image/png" height="99" width="144"/>
 </item>
 <item>
+  <title>Panel Chat Examples</title>
+  <dc:creator>Andrew Huang</dc:creator>
+  <dc:creator>Marc Skov Madsen</dc:creator>
+  <link>https://awesome-panel.org/resources/panel_chat_examples/index.html</link>
+  <description><![CDATA[ <a href="https://holoviz-topics.github.io/panel-chat-examples/">Panel Chat Examples</a> provides example Panel Chat Apps. ]]></description>
+  <category>artificial intelligence</category>
+  <category>llm</category>
+  <guid>https://awesome-panel.org/resources/panel_chat_examples/index.html</guid>
+  <pubDate>Fri, 22 Dec 2023 00:00:00 GMT</pubDate>
+  <media:content url="https://awesome-panel.org/resources/panel_chat_examples/panel_chat_examples.png" medium="image" type="image/png" height="75" width="144"/>
+</item>
+<item>
   <title>Stumpy</title>
   <dc:creator>Marc Skov Madsen</dc:creator>
   <dc:creator>Sean Law</dc:creator>
@@ -46,6 +58,16 @@
   <guid>https://awesome-panel.org/resources/stumpy/index.html</guid>
   <pubDate>Fri, 22 Dec 2023 00:00:00 GMT</pubDate>
   <media:content url="https://awesome-panel.org/resources/stumpy/stumpy.png" medium="image" type="image/png" height="48" width="144"/>
+</item>
+<item>
+  <title>Tasty Map</title>
+  <dc:creator>Andrew Huang</dc:creator>
+  <link>https://awesome-panel.org/resources/tasty_map/index.html</link>
+  <description><![CDATA[ <a href="https://ahuang11.github.io/tastymap/">TastyMap</a> makes it easy to customize and use colormaps, any way you like. ]]></description>
+  <category>color</category>
+  <guid>https://awesome-panel.org/resources/tasty_map/index.html</guid>
+  <pubDate>Fri, 22 Dec 2023 00:00:00 GMT</pubDate>
+  <media:content url="https://awesome-panel.org/resources/tasty_map/tastymap.png" medium="image" type="image/png" height="18" width="144"/>
 </item>
 </channel>
 </rss>

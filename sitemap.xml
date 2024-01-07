@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://awesome-panel.org/resources/stumpy/index.html</loc>
-    <lastmod>2024-01-07T05:52:15.403Z</lastmod>
+    <loc>https://awesome-panel.org/resources/tasty_map/index.html</loc>
+    <lastmod>2024-01-07T06:27:29.913Z</lastmod>
+  </url>
+  <url>
+    <loc>https://awesome-panel.org/resources/panel_chat_examples/index.html</loc>
+    <lastmod>2024-01-07T06:27:28.945Z</lastmod>
   </url>
   <url>
     <loc>https://awesome-panel.org/resources/async_tasks/index.html</loc>
-    <lastmod>2024-01-07T05:52:14.327Z</lastmod>
+    <lastmod>2024-01-07T06:27:28.129Z</lastmod>
   </url>
   <url>
     <loc>https://awesome-panel.org/about.html</loc>
-    <lastmod>2024-01-07T05:52:13.143Z</lastmod>
+    <lastmod>2024-01-07T06:27:26.813Z</lastmod>
   </url>
   <url>
     <loc>https://awesome-panel.org/index.html</loc>
-    <lastmod>2024-01-07T05:52:13.823Z</lastmod>
+    <lastmod>2024-01-07T06:27:27.633Z</lastmod>
   </url>
   <url>
     <loc>https://awesome-panel.org/resources/bootstrap_dashboard/index.html</loc>
-    <lastmod>2024-01-07T05:52:14.791Z</lastmod>
+    <lastmod>2024-01-07T06:27:28.569Z</lastmod>
+  </url>
+  <url>
+    <loc>https://awesome-panel.org/resources/stumpy/index.html</loc>
+    <lastmod>2024-01-07T06:27:29.553Z</lastmod>
   </url>
 </urlset>
