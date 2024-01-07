@@ -16,6 +16,9 @@ This app takes a videostream from your web cam and applies different filters sup
 
 This app is heavily inspired by a similar realtime image processing [app](https://edit.share.stlite.net/?sampleAppId=realtime_image_processing) by Whitphx.
 
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/scikit-image/scikit-image" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star scikit-image/scikit-image on GitHub">Star</a>
+
 ## App
 
 This app runs entirely in the browser via [Pyodide](https://pyodide.org) and [panel convert](https://panel.holoviz.org/how_to/wasm/convert.html).
