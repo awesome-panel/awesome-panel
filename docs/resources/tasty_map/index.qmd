@@ -1,0 +1,25 @@
+---
+title: "Tasty Map"
+date: "2023-12-22"
+description: "Generate custom color palettes easily using the TastyMap Panel app"
+author:
+  - name: Andrew Huang
+    url: https://github.com/ahuang11
+    
+categories: [color]
+image: "tastymap.png"
+---
+
+## Introduction
+
+[TastyMap](https://ahuang11.github.io/tastymap/) makes it easy to customize and use colormaps, any way you like.
+
+The app is a Panel app.
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/ahuang11/tastymap" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ahuang11/tastymap on GitHub">Star</a>
+
+
+## Gif
+
+<img src="https://github.com/ahuang11/tastymap/assets/15331990/ce015064-2ffb-4da2-bb8e-4818fdd751ab"></img>
