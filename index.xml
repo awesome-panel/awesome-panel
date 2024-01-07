@@ -22,12 +22,23 @@
   <media:content url="https://awesome-panel.org/resources/caching_example/caching_example.png" medium="image" type="image/png" height="85" width="144"/>
 </item>
 <item>
+  <title>Video Stream</title>
+  <dc:creator>Marc Skov Madsen</dc:creator>
+  <link>https://awesome-panel.org/resources/video_stream/index.html</link>
+  <description><![CDATA[ This app takes a videostream from your web cam and applies different filters supplied by <a href="https://python-pillow.org/">Pillow</a> and <a href="https://scikit-image.org/">Scikit Image</a>. ]]></description>
+  <category>video</category>
+  <guid>https://awesome-panel.org/resources/video_stream/index.html</guid>
+  <pubDate>Sun, 07 Jan 2024 00:00:00 GMT</pubDate>
+  <media:content url="https://awesome-panel.org/resources/video_stream/video_stream.png" medium="image" type="image/png" height="80" width="144"/>
+</item>
+<item>
   <title>Async Tasks</title>
   <dc:creator>Jochem Smit</dc:creator>
   <dc:creator>Marc Skov Madsen</dc:creator>
   <link>https://awesome-panel.org/resources/async_tasks/index.html</link>
   <description><![CDATA[ When creating awesome analytics apps you sometimes want to run blocking tasks asynchronously in a background thread. Panel supports this as its running on top of the asynchronous web server Tornado. ]]></description>
   <category>async</category>
+  <category>performance</category>
   <category>threads</category>
   <guid>https://awesome-panel.org/resources/async_tasks/index.html</guid>
   <pubDate>Sat, 06 Jan 2024 00:00:00 GMT</pubDate>
@@ -77,7 +88,7 @@
   <category>color</category>
   <guid>https://awesome-panel.org/resources/tasty_map/index.html</guid>
   <pubDate>Sat, 06 Jan 2024 00:00:00 GMT</pubDate>
-  <media:content url="https://awesome-panel.org/resources/tasty_map/tastymap.png" medium="image" type="image/png" height="18" width="144"/>
+  <media:content url="https://awesome-panel.org/resources/tasty_map/tastymap.png" medium="image" type="image/png" height="80" width="144"/>
 </item>
 </channel>
 </rss>
