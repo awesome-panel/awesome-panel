@@ -1,0 +1,54 @@
+---
+title: "Classic Dashboard"
+date: "2024-01-07"
+description: "Learn how to create a classic dashboard"
+author:
+  - name: Marc Skov Madsen
+    url: https://github.com/marcskovmadsen/    
+    
+categories: [dashboard,hvplot]
+image: "classic_dashboard.png"
+---
+
+## Introduction
+
+The app shows you how to create a **Classic Dashboard** in **Panel** with
+
+- Classic Layout and design
+- Responsiveness
+- User Selections
+
+## App
+
+<a href="https://awesome-panel-classic-dashboard.hf.space" target="_blank">Open in a new window</a> | <a href="https://huggingface.co/spaces/awesome-panel/classic_dashboard" target="_blank">Open in Hugging Face Spaces</a>
+
+<iframe
+	src="https://awesome-panel-classic-dashboard.hf.space"
+	frameborder="0"
+	style="width:100%;height:1050px"
+></iframe>
+
+## Code
+
+<details>
+<summary>Show</summary>
+```{.python include="../../../examples/classic_dashboard.py" code-line-numbers="true"}
+```
+</details>
+
+<a href="https://raw.githubusercontent.com/awesome-panel/awesome-panel/main/examples/classic_dashboard.py" download>Download (right-click, save-as)</a>
+
+## Gif
+
+<img src="https://cdn.awesome-panel.org/resources/classic_dashboard/classic_dashboard.gif"></img>
+
+## Mp4
+
+<video poster="https://cdn.awesome-panel.org/resources/classic_dashboard/classic_dashboard.png" controls>
+  <source src="https://cdn.awesome-panel.org/resources/classic_dashboard/classic_dashboard.mp4" type="video/mp4">
+  Your browser does not support HTML video.
+</video>
+
+## Png
+
+<img src="https://cdn.awesome-panel.org/resources/classic_dashboard/classic_dashboard.png"></img>

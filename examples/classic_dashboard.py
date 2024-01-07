@@ -1,14 +1,5 @@
 """
-The Dashboard app shows how to create a **Classic Dashboard** in **Panel** with
-
-- Classic Layout and awesome design
-- Responsiveness
-- User Selections
-- [Linked Brushing](http://holoviews.org/user_guide/Linked_Brushing.html) (Not yet supported)
-
-This app was kick started by [Pemp](https://discourse.holoviz.org/u/pemp) in a
-[discussion on Discourse]\
-(https://discourse.holoviz.org/t/error-not-supported-between-instances-of-select-and-select/929).
+See https://awesome-panel.org/resources/classic_dashboard/
 """
 import pathlib
 
@@ -19,12 +10,18 @@ import panel as pn
 import param
 from holoviews.plotting.util import process_cmap
 
-from awesome_panel import config
-from awesome_panel.assets.csv import DASHBOARD_A_PATH, DASHBOARD_B_PATH
+DASHBOARD_A_PATH="https://cdn.awesome-panel.org/resources/classic_dashboard/dashboard_A.csv"
+DASHBOARD_B_PATH="https://cdn.awesome-panel.org/resources/classic_dashboard/dashboard_B.csv"
 
-EMPTY_PLOT = None
 COLOR_MAPS = hv.plotting.util.list_cmaps()
 STYLE = """
+body {
+    margin: 0px;
+    min-height: 100vh;
+    overflow-x: hidden;
+    width: 100%;
+    background: #f2f2f2;
+}
 .bk.app-body {
     background: #f2f2f2;
     color: #000000;
@@ -51,15 +48,16 @@ STYLE = """
 
 """
 
-if not STYLE in pn.config.raw_css:
-    pn.config.raw_css.append(STYLE)
+@pn.cache
+def _get_data_a():
+    return pd.read_csv(DASHBOARD_A_PATH, index_col=0)
 
-ROOT = pathlib.Path(__file__).parent
-DATA_A = pd.read_csv(DASHBOARD_A_PATH, index_col=0)
-DATA_B = pd.read_csv(DASHBOARD_B_PATH, index_col=0)
+@pn.cache
+def _get_data_b():
+    return pd.read_csv(DASHBOARD_B_PATH, index_col=0)
 
 
-class Dashboard(param.Parameterized):
+class Dashboard(pn.viewable.Viewer):
     """This application show cases how to build a Classic Dashboard
     in Panel.
     """
@@ -70,38 +68,30 @@ class Dashboard(param.Parameterized):
         default="Cut Distance",
         objects=["Cut Distance", "Removed Volume", "Av. uncut chip thickness"],
     )
-    color_map = param.ObjectSelector(default="gist_rainbow", objects=COLOR_MAPS)
-
-    insert_plot_pane = param.ClassSelector(class_=pn.pane.HoloViews)
-    edge_plot_pane = param.ClassSelector(class_=pn.pane.HoloViews)
-    history_plot_pane = param.ClassSelector(class_=pn.pane.HoloViews)
+    color_map = param.ObjectSelector(default="rainbow", objects=COLOR_MAPS)
 
     view = param.ClassSelector(class_=pn.Column)
 
     def __init__(self, **params):
-        params["insert_plot_pane"] = pn.pane.HoloViews(
-            EMPTY_PLOT, sizing_mode="stretch_width", margin=10, height=300
-        )
-        params["edge_plot_pane"] = pn.pane.HoloViews(
-            EMPTY_PLOT, sizing_mode="stretch_width", margin=10, height=300
-        )
-        params["history_plot_pane"] = pn.pane.HoloViews(
-            EMPTY_PLOT, sizing_mode="stretch_width", margin=10, height=300
-        )
-        params["view"] = pn.Column(sizing_mode="stretch_both")
-
         super().__init__(**params)
 
+        self.insert_plot_pane = pn.pane.HoloViews(
+            self._get_insert_plot, sizing_mode="stretch_width", margin=10, height=300
+        )
+        self.edge_plot_pane = pn.pane.HoloViews(
+            self._get_edge_plot, sizing_mode="stretch_width", margin=10, height=300
+        )
+        self.history_plot_pane = pn.pane.HoloViews(
+            self._update_history_plot, sizing_mode="stretch_width", margin=10, height=300
+        )
+        self.view = pn.Column(sizing_mode="stretch_both")
         self._init_view()
-        self._update_insert_plot()
-        self._update_edge_plot()
-        self._update_history_plot()
 
     def _init_view(self):
         appbar = pn.Row(
             pn.pane.Markdown(
                 "#### Classic Dashboard in Panel ",
-                margin=(10, 5, 10, 25),
+                margin=(15, 5, 5, 25),
                 sizing_mode="stretch_width",
                 align="center",
             ),
@@ -173,25 +163,25 @@ class Dashboard(param.Parameterized):
             pn.layout.HSpacer(height=25),
         ]
 
-    @pn.depends("tool", "variable", "color_map", watch=True)
-    def _update_insert_plot(self):
-        plot_data = DATA_A.loc[self.tool]
+    @pn.depends("tool", "variable", "color_map")
+    def _get_insert_plot(self):
+        plot_data = _get_data_a().loc[self.tool]
         data = [(plot_data["Xo"], plot_data["Yo"], plot_data[self.variable])]
-        self.insert_plot_pane.object = hv.Path(data, vdims=self.variable).opts(
+        return hv.Path(data, vdims=self.variable).opts(
             cmap=self.color_map, color=self.variable, line_width=4, colorbar=True, responsive=True
         )
 
-    @pn.depends("tool", "variable", "color_map", watch=True)
-    def _update_edge_plot(self):
-        plot_data = DATA_A.loc[self.tool]
-        self.edge_plot_pane.object = plot_data.hvplot(
+    @pn.depends("tool", "variable", "color_map")
+    def _get_edge_plot(self):
+        plot_data = _get_data_a().loc[self.tool]
+        return plot_data.hvplot(
             x="Number", y=self.variable, kind="area", alpha=0.6, color=self._color, responsive=True
         )
 
-    @pn.depends("tool", "color_map", watch=True)
+    @pn.depends("tool", "color_map")
     def _update_history_plot(self):
-        plot_data = DATA_B.loc[self.tool]
-        self.history_plot_pane.object = plot_data.hvplot(
+        plot_data = _get_data_b().loc[self.tool]
+        return plot_data.hvplot(
             x="Cut Distance", y="Feed", kind="line", line_width=4, responsive=True
         ).opts(color=self._color)
 
@@ -200,16 +190,7 @@ class Dashboard(param.Parameterized):
         return process_cmap(self.color_map, 1)[0]
 
 
-if __name__.startswith("bokeh") or __name__ == "__main__":
-    pn.config.raw_css.append(
-        """
-    body {
-        margin: 0px;
-        min-height: 100vh;
-        overflow-x: hidden;
-        width: 100%;
-    }
-    """
-    )
-    config.extension(url="classic_dashboard", main_max_width="80%")
+if pn.state.served:
+    pn.extension(raw_css=[STYLE], design="bootstrap")
     Dashboard().view.servable()
+    
