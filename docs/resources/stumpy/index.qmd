@@ -3,9 +3,12 @@ title: "Stumpy"
 date: "2023-12-22"
 description: "Use the Stumpy library to identify patterns in timeseries"
 author:
-  - Marc Skov Madsen
-  - Sean Law
-categories: [pyodide,timeseries,wasm]
+  - name: Marc Skov Madsen
+    url: https://github.com/marcskovmadsen/  
+  - name: Sean Law
+    url: https://github.com/seanlaw
+    
+categories: [bokeh,pyodide,timeseries]
 image: "stumpy.png"
 ---
 
@@ -13,24 +16,29 @@ image: "stumpy.png"
 
 [STUMPY](https://github.com/TDAmeritrade/stumpy) is a powerful and scalable Python library identifies repeating patterns in your timeseries. It does this by efficiently computing something called a [matrix profile](https://stumpy.readthedocs.io/en/latest/Tutorial_The_Matrix_Profile.html).
 
+The app is a Bokeh app wrapped in a nice Panel template.
+
 ## App
 
 This app runs entirely in the browser via [Pyodide](https://pyodide.org) and [panel convert](https://panel.holoviz.org/how_to/wasm/convert.html).
 
-<a href="https://awesome-panel.github.io/examples/stumpy-dashboard/app.html" target="_blank">Open in a new window</a>
+<a href="https://awesome-panel-stumpy.static.hf.space" target="_blank">Open in a new window</a> | <a href="https://huggingface.co/spaces/awesome-panel/stumpy" target="_blank">Open in Hugging Face Spaces</a>
 
 <iframe
-	src="https://awesome-panel.github.io/examples/stumpy-dashboard/app.html"
+	src="https://awesome-panel-stumpy.static.hf.space"
 	frameborder="0"
-	style="width:100%;height:1000px"
+	style="width:100%;height:800px"
 ></iframe>
 
 ## Code
 
 <details>
-  <summary>Show</summary>
-  <iframe frameborder="0" scrolling="no" style="width:100%; height:11056px;" allow="clipboard-write" src="https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fawesome-panel%2Fexamples%2Fblob%2Fmain%2Fsrc%2Fstumpy-dashboard%2Fapp.py&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></iframe>
+<summary>Show</summary>
+```{.python include="../../../examples/stumpy.py" code-line-numbers="true"}
+```
 </details>
+
+<a href="https://raw.githubusercontent.com/awesome-panel/awesome-panel/main/examples/stumpy.py" download>Download (right-click, save-as)</a>
 
 ## Gif
 
@@ -41,3 +49,10 @@ I think the app looks amazing. Its really performant too.
 ## Png
 
 <img src="https://cdn.awesome-panel.org/resources/stumpy/stumpy.png"></img>
+
+## Mp4
+
+<video poster="https://cdn.awesome-panel.org/resources/stumpy/stumpy.png" controls>
+  <source src="https://cdn.awesome-panel.org/resources/stumpy/stumpy.mp4" type="video/mp4">
+  Your browser does not support HTML video.
+</video>

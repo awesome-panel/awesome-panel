@@ -33,6 +33,8 @@ This app runs entirely in the browser via [Pyodide](https://pyodide.org) and [pa
 ```
 </details>
 
+<a href="https://raw.githubusercontent.com/awesome-panel/awesome-panel/main/examples/bootstrap_dashboard.py" download>Download (right-click, save-as)</a>
+
 ## Gif
 
 <img src="https://cdn.awesome-panel.org/resources/bootstrap_dashboard/bootstrap_dashboard.gif"></img>
