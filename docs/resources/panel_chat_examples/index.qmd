@@ -1,6 +1,6 @@
 ---
 title: "Panel Chat Examples"
-date: "2023-12-22"
+date: "2024-01-06"
 description: "A resource of Panel Chat Apps using Mistral, LangChain, LlamaIndex, OpenAI etc."
 author:
   - name: Andrew Huang
@@ -19,7 +19,7 @@ image: "panel_chat_examples.png"
 Panels Chat Components are multi modal and supports LangChain, OpenAI, Mistral, Llama, etc.
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-<a class="github-button" href="https://github.com/holoviz/panel-chat-examples" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ahuang11/tastymap on GitHub">Star</a>
+<a class="github-button" href="https://github.com/holoviz/panel-chat-examples" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star holoviz/panel-chat-examples on GitHub">Star</a>
 
 ## MP4
 

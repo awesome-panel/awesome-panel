@@ -87,6 +87,7 @@ examples = [
     "seaborn",
     "statsmodels",
     "streamz",
+    "stumpy",
     "tensorflow",
     "torch",
     "torchvision",

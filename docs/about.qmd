@@ -2,4 +2,9 @@
 
 We want to show how awesome [Panel](https://awesome-panel.org) by [HoloViz](https://holoviz.org) is and push the framework forward.
 
+If you like this project please give us a ⭐ on [Github](https://github.com/awesome-panel/awesome-panel).
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/awesome-panel/awesome-panel" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star awesome-panel/awesome-panel on GitHub">Star</a>
+
 ![Awesome Panel Intro](https://github.com/awesome-panel/awesome-panel/blob/main/assets/videos/awesome-panel-intro.gif?raw=true)

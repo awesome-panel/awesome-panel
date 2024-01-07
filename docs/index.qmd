@@ -16,6 +16,9 @@ page-layout: full
 
 [Panel](https://panel.holoviz.org) by [HoloViz](https://holoviz.org) is the powerful data exploration & web app framework for Python.
 
-Check out the **awesome community resources** below.
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/holoviz/panel" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star holoviz/panel">Star</a>
+
+Please give Panel a ⭐ on [Github](https://github.com/holoviz/panel), then check out the **awesome community resources** below.
 
 ---

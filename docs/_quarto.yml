@@ -26,12 +26,18 @@ website:
     background: "#FFFFFF"
     search: true
     tools:
-      - icon: twitter
-        href: https://twitter.com/awesome_panel
-      - icon: linkedin
-        href: https://www.linkedin.com/company/awesome-panel-org
       - icon: github
         href: https://github.com/awesome-panel/awesome-panel     
+        text: Github
+      - icon: robot
+        href: https://huggingface.co/awesome-panel
+        text: Hugging Face
+      - icon: linkedin
+        href: https://www.linkedin.com/company/awesome-panel-org
+        text: LinkedIn
+      - icon: twitter
+        href: https://twitter.com/awesome_panel
+        text: Twitter
     left:
     - file: index.qmd
       text: Home

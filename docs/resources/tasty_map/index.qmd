@@ -1,6 +1,6 @@
 ---
 title: "Tasty Map"
-date: "2023-12-22"
+date: "2024-01-06"
 description: "Generate custom color palettes easily using the TastyMap Panel app"
 author:
   - name: Andrew Huang

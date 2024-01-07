@@ -1,6 +1,6 @@
 ---
 title: "Stumpy"
-date: "2023-12-22"
+date: "2024-01-06"
 description: "Use the Stumpy library to identify patterns in timeseries"
 author:
   - name: Marc Skov Madsen
@@ -14,7 +14,7 @@ image: "stumpy.png"
 
 ## Introduction
 
-[STUMPY](https://github.com/TDAmeritrade/stumpy) is a powerful and scalable Python library identifies repeating patterns in your timeseries. It does this by efficiently computing something called a [matrix profile](https://stumpy.readthedocs.io/en/latest/Tutorial_The_Matrix_Profile.html).
+[STUMPY](https://github.com/TDAmeritrade/stumpy) is a powerful and scalable Python library for identifying repeating patterns in your timeseries. It does this by efficiently computing something called a [matrix profile](https://stumpy.readthedocs.io/en/latest/Tutorial_The_Matrix_Profile.html).
 
 The app is a Bokeh app wrapped in a nice Panel template.
 
@@ -46,13 +46,19 @@ I think the app looks amazing. Its really performant too.
 
 <img src="https://cdn.awesome-panel.org/resources/stumpy/stumpy.gif"></img>
 
-## Png
-
-<img src="https://cdn.awesome-panel.org/resources/stumpy/stumpy.png"></img>
-
 ## Mp4
 
 <video poster="https://cdn.awesome-panel.org/resources/stumpy/stumpy.png" controls>
   <source src="https://cdn.awesome-panel.org/resources/stumpy/stumpy.mp4" type="video/mp4">
   Your browser does not support HTML video.
 </video>
+
+## Png
+
+<img src="https://cdn.awesome-panel.org/resources/stumpy/stumpy.png"></img>
+
+## Social
+
+Please share on social media. Thanks.
+
+<a href="https://x.com/awesome_panel/status/1743903846332534791?s=20" target="_blank"><i class="bi bi-twitter"></i></a> <a href="https://www.linkedin.com/posts/awesome-panel-org_stumpy-python-dataviz-activity-7149668816120078336-8NJ_?utm_source=share&utm_medium=member_desktop" target="_blank"><i class="bi bi-linkedin"></i></a>
