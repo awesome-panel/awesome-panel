@@ -55,3 +55,9 @@ I think the app looks amazing. Its really performant too.
 ## Png
 
 <img src="https://cdn.awesome-panel.org/resources/video_stream/video_stream.png"></img>
+
+## Social
+
+Please share on social media. Thanks.
+
+<a href="https://x.com/awesome_panel/status/1744076017847664958?s=20" target="_blank"><i class="bi bi-twitter"></i></a> <a href="https://www.linkedin.com/posts/awesome-panel-org_python-analytics-datascience-activity-7149842654095212544-Szep?utm_source=share&utm_medium=member_desktop" target="_blank"><i class="bi bi-linkedin"></i></a>

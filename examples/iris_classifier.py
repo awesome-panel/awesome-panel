@@ -1,7 +1,6 @@
 # pylint: disable=line-too-long
 """
-A simple Machine Learning application. Can be compared to a similar Dash app from the
-blog post [Deploy Machine Learning Model Using Dash and pipenv](https://towardsdatascience.com/deploy-machine-learning-model-using-dash-and-pipenv-c543569c33a6)
+See https://awesome-panel.org/resources/bootstrap_dashboard/
 """
 # pylint: enable=line-too-long
 import numpy as np
@@ -9,12 +8,7 @@ import panel as pn
 from sklearn import datasets
 from sklearn.neighbors import KNeighborsClassifier
 
-from awesome_panel import config
-
-# can be replaced by pn.extension
-config.extension(url="dash_iris_classifier")
-
-
+@pn.cache
 def get_model(Classifier=KNeighborsClassifier):  # pylint: disable=invalid-name
     """Returns model trained on iris dataset"""
     iris = datasets.load_iris()
@@ -24,11 +18,6 @@ def get_model(Classifier=KNeighborsClassifier):  # pylint: disable=invalid-name
     clf = Classifier()
     clf.fit(data, target)
     return clf
-
-
-if not "dash_iris_classifier" in pn.state.cache:
-    # We only train the model once and then reuse across users
-    pn.state.cache["dash_iris_classifier"] = get_model()
 
 
 def predict(sepal_length, sepal_width, petal_length, petal_width, model):
@@ -48,12 +37,12 @@ def predict(sepal_length, sepal_width, petal_length, petal_width, model):
 
 def get_iris_explorer():
     """Returns a component for exploring iris predictions"""
-    model = pn.state.cache["dash_iris_classifier"]
+    model=get_model()
 
-    sepal_length = pn.widgets.FloatSlider(value=5.8, start=4.0, end=8.0, name="Sepal Length (CM)")
-    sepal_width = pn.widgets.FloatSlider(value=3.0, start=2.0, end=5.0, name="Sepal Width (CM)")
-    petal_length = pn.widgets.FloatSlider(value=3.8, start=1.0, end=7.0, name="Petal Length (CM)")
-    petal_width = pn.widgets.FloatSlider(value=1.2, start=0.1, end=3.0, name="Petal Width (CM)")
+    sepal_length = pn.widgets.FloatSlider(value=5.8, start=4.0, end=8.0, name="Sepal Length (cm)")
+    sepal_width = pn.widgets.FloatSlider(value=3.0, start=2.0, end=5.0, name="Sepal Width (cm)")
+    petal_length = pn.widgets.FloatSlider(value=3.8, start=1.0, end=7.0, name="Petal Length (cm)")
+    petal_width = pn.widgets.FloatSlider(value=1.2, start=0.1, end=3.0, name="Petal Width (cm)")
 
     settings = pn.Column(sepal_length, sepal_width, petal_length, petal_width, sizing_mode="fixed")
 
@@ -69,5 +58,9 @@ def get_iris_explorer():
     return pn.Row(settings, ipredict, align="end")
 
 
-if __name__.startswith("bokeh"):
-    get_iris_explorer().servable()
+if pn.state.served:
+    pn.extension()
+    
+    pn.template.MaterialTemplate(
+        title="Predict Iris Flower Species with Scikit Learn", main=[get_iris_explorer()]
+    ).servable()

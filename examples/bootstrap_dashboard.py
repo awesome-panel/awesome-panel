@@ -1,7 +1,5 @@
-"""The purpose of this app is to test that a **multi-page Dashboard Layout** similar to the
-[bootstrap dashboard template](https://getbootstrap.com/docs/4.3/examples/dashboard/)
-from [getboostrap.com](https://getbootstrap.com/) can be implemented in
-[Panel](https://panel.pyviz.org/).
+"""
+See https://awesome-panel.org/resources/bootstrap_dashboard/
 """
 import hvplot.pandas  # pylint: disable=unused-import
 import pandas as pd
