@@ -8,9 +8,25 @@
 <title>Awesome Panel</title>
 <link>https://awesome-panel.org/index.html</link>
 <atom:link href="https://awesome-panel.org/index.xml" rel="self" type="application/rss+xml"/>
-<description>Awesome Analytics Apps with HoloViz Panel</description>
+<description>Awesome Panel resources by the community</description>
+<image>
+<url>https://cdn.awesome-panel.org/resources/awesome-panel-intro.gif</url>
+<title>Awesome Panel</title>
+<link>https://awesome-panel.org/index.html</link>
+</image>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Sun, 07 Jan 2024 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 08 Jan 2024 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Panel ChatBot Pack</title>
+  <dc:creator>Marc Skov Madsen</dc:creator>
+  <link>https://awesome-panel.org/resources/panel_chat_pack/index.html</link>
+  <description><![CDATA[ <a href="https://llamahub.ai/l/llama_packs-panel_chatbot">Panel Chatbot Pack</a> is a <em>LlamaHub template</em> that enables you to talk to your Github Repository. ]]></description>
+  <category>artificial intelligence</category>
+  <category>llm</category>
+  <guid>https://awesome-panel.org/resources/panel_chat_pack/index.html</guid>
+  <pubDate>Mon, 08 Jan 2024 00:00:00 GMT</pubDate>
+  <media:content url="https://awesome-panel.org/resources/panel_chat_pack/panel_chatbot_pack.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
 <item>
   <title>Caching Example</title>
   <dc:creator>Marc Skov Madsen</dc:creator>

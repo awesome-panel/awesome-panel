@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/resources/panel_chat_pack/index.html",
       "/resources/caching_example/index.html",
       "/resources/classic_dashboard/classic_dashboard.html",
       "/resources/video_stream/index.html",
