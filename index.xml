@@ -28,6 +28,19 @@
   <media:content url="https://awesome-panel.org/resources/panel_chat_pack/panel_chatbot_pack.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
+  <title>The Easiest Way to Create an Interactive Dashboard in Python</title>
+  <dc:creator>Marc Skov Madsen</dc:creator>
+  <dc:creator>Sophia Yang</dc:creator>
+  <link>https://awesome-panel.org/resources/the_easiest_way_to_create_dashboard/index.html</link>
+  <description><![CDATA[ This app shows how to create a nice looking dashboard with <a href="https://param.holoviz.org/user_guide/Reactive_Expressions.html">param.Rx</a> and Panel. ]]></description>
+  <category>dashboard</category>
+  <category>hvplot</category>
+  <category>rx</category>
+  <guid>https://awesome-panel.org/resources/the_easiest_way_to_create_dashboard/index.html</guid>
+  <pubDate>Mon, 08 Jan 2024 00:00:00 GMT</pubDate>
+  <media:content url="https://awesome-panel.org/resources/the_easiest_way_to_create_dashboard/the_easiest_way_to_create_dashboard.png" medium="image" type="image/png" height="81" width="144"/>
+</item>
+<item>
   <title>Caching Example</title>
   <dc:creator>Marc Skov Madsen</dc:creator>
   <link>https://awesome-panel.org/resources/caching_example/index.html</link>
