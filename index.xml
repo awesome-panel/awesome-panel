@@ -17,6 +17,18 @@
 <generator>quarto-1.3.450</generator>
 <lastBuildDate>Mon, 08 Jan 2024 00:00:00 GMT</lastBuildDate>
 <item>
+  <title>Crossfiltering with HoloViews</title>
+  <dc:creator>Marc Skov Madsen</dc:creator>
+  <link>https://awesome-panel.org/resources/crossfiltering_holoviews/index.html</link>
+  <description><![CDATA[ Crossfiltering lets you interact with one chart and apply that interaction as a filter to other charts in the report. ]]></description>
+  <category>bokeh</category>
+  <category>pyodide</category>
+  <category>timeseries</category>
+  <guid>https://awesome-panel.org/resources/crossfiltering_holoviews/index.html</guid>
+  <pubDate>Mon, 08 Jan 2024 00:00:00 GMT</pubDate>
+  <media:content url="https://awesome-panel.org/resources/crossfiltering_holoviews/crossfiltering_holoviews.png" medium="image" type="image/png" height="103" width="144"/>
+</item>
+<item>
   <title>Panel ChatBot Pack</title>
   <dc:creator>Marc Skov Madsen</dc:creator>
   <link>https://awesome-panel.org/resources/panel_chat_pack/index.html</link>
@@ -119,16 +131,6 @@
   <guid>https://awesome-panel.org/resources/stumpy/index.html</guid>
   <pubDate>Sat, 06 Jan 2024 00:00:00 GMT</pubDate>
   <media:content url="https://awesome-panel.org/resources/stumpy/stumpy.png" medium="image" type="image/png" height="48" width="144"/>
-</item>
-<item>
-  <title>Tasty Map</title>
-  <dc:creator>Andrew Huang</dc:creator>
-  <link>https://awesome-panel.org/resources/tastymap/index.html</link>
-  <description><![CDATA[ <a href="https://ahuang11.github.io/tastymap/">TastyMap</a> makes it easy to customize and use colormaps, any way you like. ]]></description>
-  <category>color</category>
-  <guid>https://awesome-panel.org/resources/tastymap/index.html</guid>
-  <pubDate>Sat, 06 Jan 2024 00:00:00 GMT</pubDate>
-  <media:content url="https://awesome-panel.org/resources/tastymap/tastymap.png" medium="image" type="image/png" height="80" width="144"/>
 </item>
 </channel>
 </rss>

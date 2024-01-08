@@ -2,50 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://awesome-panel.org/resources/video_stream/index.html</loc>
-    <lastmod>2024-01-08T11:32:35.568Z</lastmod>
+    <lastmod>2024-01-08T15:50:04.319Z</lastmod>
   </url>
   <url>
     <loc>https://awesome-panel.org/resources/tastymap/index.html</loc>
-    <lastmod>2024-01-08T11:32:34.604Z</lastmod>
+    <lastmod>2024-01-08T15:50:03.287Z</lastmod>
   </url>
   <url>
     <loc>https://awesome-panel.org/resources/panel_chat_pack/index.html</loc>
-    <lastmod>2024-01-08T11:32:33.620Z</lastmod>
+    <lastmod>2024-01-08T15:50:02.235Z</lastmod>
   </url>
   <url>
-    <loc>https://awesome-panel.org/resources/classic_dashboard/classic_dashboard.html</loc>
-    <lastmod>2024-01-08T11:32:32.836Z</lastmod>
-  </url>
-  <url>
-    <loc>https://awesome-panel.org/resources/bootstrap_dashboard/index.html</loc>
-    <lastmod>2024-01-08T11:32:31.772Z</lastmod>
-  </url>
-  <url>
-    <loc>https://awesome-panel.org/index.html</loc>
-    <lastmod>2024-01-08T11:32:30.812Z</lastmod>
-  </url>
-  <url>
-    <loc>https://awesome-panel.org/about.html</loc>
-    <lastmod>2024-01-08T11:32:29.472Z</lastmod>
-  </url>
-  <url>
-    <loc>https://awesome-panel.org/resources/async_tasks/index.html</loc>
-    <lastmod>2024-01-08T11:32:31.316Z</lastmod>
+    <loc>https://awesome-panel.org/resources/crossfiltering_holoviews/index.html</loc>
+    <lastmod>2024-01-08T15:50:01.335Z</lastmod>
   </url>
   <url>
     <loc>https://awesome-panel.org/resources/caching_example/index.html</loc>
-    <lastmod>2024-01-08T11:32:32.368Z</lastmod>
+    <lastmod>2024-01-08T15:50:00.203Z</lastmod>
+  </url>
+  <url>
+    <loc>https://awesome-panel.org/resources/async_tasks/index.html</loc>
+    <lastmod>2024-01-08T15:49:59.086Z</lastmod>
+  </url>
+  <url>
+    <loc>https://awesome-panel.org/about.html</loc>
+    <lastmod>2024-01-08T15:49:56.870Z</lastmod>
+  </url>
+  <url>
+    <loc>https://awesome-panel.org/index.html</loc>
+    <lastmod>2024-01-08T15:49:58.570Z</lastmod>
+  </url>
+  <url>
+    <loc>https://awesome-panel.org/resources/bootstrap_dashboard/index.html</loc>
+    <lastmod>2024-01-08T15:49:59.579Z</lastmod>
+  </url>
+  <url>
+    <loc>https://awesome-panel.org/resources/classic_dashboard/classic_dashboard.html</loc>
+    <lastmod>2024-01-08T15:50:00.771Z</lastmod>
   </url>
   <url>
     <loc>https://awesome-panel.org/resources/panel_chat_examples/index.html</loc>
-    <lastmod>2024-01-08T11:32:33.204Z</lastmod>
+    <lastmod>2024-01-08T15:50:01.751Z</lastmod>
   </url>
   <url>
     <loc>https://awesome-panel.org/resources/stumpy/index.html</loc>
-    <lastmod>2024-01-08T11:32:34.236Z</lastmod>
+    <lastmod>2024-01-08T15:50:02.895Z</lastmod>
   </url>
   <url>
     <loc>https://awesome-panel.org/resources/the_easiest_way_to_create_dashboard/index.html</loc>
-    <lastmod>2024-01-08T11:32:35.000Z</lastmod>
+    <lastmod>2024-01-08T15:50:03.731Z</lastmod>
   </url>
 </urlset>
