@@ -6,7 +6,7 @@ author:
   - name: Marc Skov Madsen
     url: https://github.com/marcskovmadsen/  
     
-categories: [video]
+categories: [pyodide,video]
 image: "video_stream.png"
 ---
 

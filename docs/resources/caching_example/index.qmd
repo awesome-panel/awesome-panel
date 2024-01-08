@@ -5,7 +5,7 @@ description: "Learn how caching can speed up your app"
 author:
   - name: Marc Skov Madsen
     url: https://github.com/marcskovmadsen/  
-categories: [performance]
+categories: [performance, pyodide]
 image: "caching_example.png"
 ---
 
