@@ -46,8 +46,6 @@ This app runs entirely in the browser via [Pyodide](https://pyodide.org) and [pa
 
 ## Gif
 
-I think the app looks amazing. Its really performant too.
-
 <img src="https://cdn.awesome-panel.org/resources/video_stream/video_stream.gif"></img>
 
 ## Mp4

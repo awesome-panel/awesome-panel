@@ -58,8 +58,6 @@ For the Plotly backend I cannot get responsive plots working. That is why I use 
 
 ## Gif
 
-I think the app looks amazing. Its really performant too.
-
 <img src="https://cdn.awesome-panel.org/resources/crossfiltering_holoviews/crossfiltering_holoviews.gif"></img>
 
 ## Mp4
