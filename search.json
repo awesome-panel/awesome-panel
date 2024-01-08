@@ -56,32 +56,53 @@
     "text": "Social\nPlease share on social media. Thanks."
   },
   {
-    "objectID": "resources/tasty_map/index.html",
-    "href": "resources/tasty_map/index.html",
+    "objectID": "resources/tastymap/index.html",
+    "href": "resources/tastymap/index.html",
     "title": "Tasty Map",
     "section": "",
     "text": "TastyMap makes it easy to customize and use colormaps, any way you like.\nThe app is a Panel app.\n\nStar"
   },
   {
-    "objectID": "resources/tasty_map/index.html#introduction",
-    "href": "resources/tasty_map/index.html#introduction",
+    "objectID": "resources/tastymap/index.html#introduction",
+    "href": "resources/tastymap/index.html#introduction",
     "title": "Tasty Map",
     "section": "",
     "text": "TastyMap makes it easy to customize and use colormaps, any way you like.\nThe app is a Panel app.\n\nStar"
   },
   {
-    "objectID": "resources/tasty_map/index.html#app",
-    "href": "resources/tasty_map/index.html#app",
+    "objectID": "resources/tastymap/index.html#app",
+    "href": "resources/tastymap/index.html#app",
     "title": "Tasty Map",
     "section": "App",
     "text": "App\nOpen in a new window | Open in Hugging Face Spaces"
   },
   {
-    "objectID": "resources/tasty_map/index.html#gif",
-    "href": "resources/tasty_map/index.html#gif",
+    "objectID": "resources/tastymap/index.html#code",
+    "href": "resources/tastymap/index.html#code",
+    "title": "Tasty Map",
+    "section": "Code",
+    "text": "Code\ngithub/ahuang11/tastymap"
+  },
+  {
+    "objectID": "resources/tastymap/index.html#gif",
+    "href": "resources/tastymap/index.html#gif",
     "title": "Tasty Map",
     "section": "Gif",
-    "text": "Gif"
+    "text": "Gif\nWhat a colorful app!"
+  },
+  {
+    "objectID": "resources/tastymap/index.html#mp4",
+    "href": "resources/tastymap/index.html#mp4",
+    "title": "Tasty Map",
+    "section": "Mp4",
+    "text": "Mp4\n\n\nYour browser does not support HTML video."
+  },
+  {
+    "objectID": "resources/tastymap/index.html#png",
+    "href": "resources/tastymap/index.html#png",
+    "title": "Tasty Map",
+    "section": "Png",
+    "text": "Png"
   },
   {
     "objectID": "resources/panel_chat_pack/index.html",

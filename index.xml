@@ -123,12 +123,12 @@
 <item>
   <title>Tasty Map</title>
   <dc:creator>Andrew Huang</dc:creator>
-  <link>https://awesome-panel.org/resources/tasty_map/index.html</link>
+  <link>https://awesome-panel.org/resources/tastymap/index.html</link>
   <description><![CDATA[ <a href="https://ahuang11.github.io/tastymap/">TastyMap</a> makes it easy to customize and use colormaps, any way you like. ]]></description>
   <category>color</category>
-  <guid>https://awesome-panel.org/resources/tasty_map/index.html</guid>
+  <guid>https://awesome-panel.org/resources/tastymap/index.html</guid>
   <pubDate>Sat, 06 Jan 2024 00:00:00 GMT</pubDate>
-  <media:content url="https://awesome-panel.org/resources/tasty_map/tastymap.png" medium="image" type="image/png" height="80" width="144"/>
+  <media:content url="https://awesome-panel.org/resources/tastymap/tastymap.png" medium="image" type="image/png" height="80" width="144"/>
 </item>
 </channel>
 </rss>
