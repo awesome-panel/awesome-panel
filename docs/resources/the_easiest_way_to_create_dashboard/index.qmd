@@ -1,0 +1,56 @@
+---
+title: "The Easiest Way to Create an Interactive Dashboard in Python"
+date: "2024-01-08"
+description: "The Easiest Way to Create an Interactive Dashboard in Python with param.rx and Panel"
+author:
+  - name: Marc Skov Madsen
+    url: https://github.com/MarcSkovMadsen
+  - name: Sophia Yang
+    url: https://github.com/sophiamyang
+    
+categories: [dashboard, hvplot, rx]
+image: "the_easiest_way_to_create_dashboard.png"
+---
+
+## Introduction
+
+This app shows how to create a nice looking dashboard with [param.Rx](https://param.holoviz.org/user_guide/Reactive_Expressions.html) and Panel.
+
+## App
+
+<a href="https://awesome-panel-the-easiest-way-to-create-dashboard.hf.space" target="_blank">Open in a new window</a> | <a href="https://huggingface.co/spaces/awesome-panel/the_easiest_way_to_create_dashboard" target="_blank">Open in Hugging Face Spaces</a>
+
+<iframe
+	src="https://awesome-panel-the-easiest-way-to-create-dashboard.hf.space"
+	frameborder="0"
+	style="width:100%;height:800px"
+></iframe>
+
+## Code
+
+<a target="_blank" href="https://colab.research.google.com/#fileId=https://huggingface.co/spaces/awesome-panel/the_easiest_way_to_create_dashboard/blob/main/app.ipynb" class="colab-bade"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"></a>
+
+## Gif
+
+I think the app looks amazing. Its really performant too.
+
+<img src="https://cdn.awesome-panel.org/resources/the_easiest_way_to_create_dashboard/the_easiest_way_to_create_dashboard.gif"></img>
+
+## Legacy
+
+The legacy resources in this section shows how to create an interactive dashboard using the legacy [hvPlot .interactive](https://hvplot.holoviz.org/user_guide/Interactive.html) functionality. This has been superseeded by the generalized [param.Rx](https://param.holoviz.org/user_guide/Reactive_Expressions.html).
+
+[Github](https://github.com/sophiamyang/hvplot_interactive) | [Medium](https://towardsdatascience.com/the-easiest-way-to-create-an-interactive-dashboard-in-python-77440f2511d1)
+
+<iframe class="youtube" src="https://www.youtube.com/embed/tNAFtyjDPsI?si=3wBc5-34IdyBbMgT" title="The Easiest Way to Create an Interactive Dashboard in Python" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Mp4
+
+<video poster="https://cdn.awesome-panel.org/resources/the_easiest_way_to_create_dashboard/the_easiest_way_to_create_dashboard.png" controls>
+  <source src="https://cdn.awesome-panel.org/resources/the_easiest_way_to_create_dashboard/the_easiest_way_to_create_dashboard.mp4" type="video/mp4">
+  Your browser does not support HTML video.
+</video>
+
+## Png
+
+<img src="https://cdn.awesome-panel.org/resources/the_easiest_way_to_create_dashboard/the_easiest_way_to_create_dashboard.png"></img>
