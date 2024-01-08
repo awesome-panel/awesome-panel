@@ -30,6 +30,23 @@ The app is a Panel app.
 	style="width:100%;height:1350px"
 ></iframe>
 
+## Code
+
+[github/ahuang11/tastymap](https://github.com/ahuang11/tastymap)
+
 ## Gif
 
-<img src="https://github.com/ahuang11/tastymap/assets/15331990/ce015064-2ffb-4da2-bb8e-4818fdd751ab"></img>
+What a colorful app!
+
+<img src="https://cdn.awesome-panel.org/resources/tastymap/tastymap.gif"></img>
+
+## Mp4
+
+<video poster="https://cdn.awesome-panel.org/resources/tastymap/tastymap.png" controls>
+  <source src="https://cdn.awesome-panel.org/resources/tastymap/tastymap.mp4" type="video/mp4">
+  Your browser does not support HTML video.
+</video>
+
+## Png
+
+<img src="https://cdn.awesome-panel.org/resources/tastymap/tastymap.png"></img>
