@@ -1,0 +1,30 @@
+---
+title: "Panel ChatBot Pack"
+date: "2024-01-08"
+description: "Build a chatbot with LlamaIndex to talk to your Github repository"
+author:
+  - name: Marc Skov Madsen
+    url: https://github.com/marcskovmadsen/  
+    
+categories: [artificial intelligence,llm]
+image: "panel_chatbot_pack.png"
+---
+
+## Introduction
+
+[Panel Chatbot Pack](https://llamahub.ai/l/llama_packs-panel_chatbot) is a *LlamaHub template* that enables you to talk to your Github Repository.
+
+## Gif
+
+<img src="https://cdn.awesome-panel.org/resources/panel_chatbot_pack/panel_chatbot_pack.gif"></img>
+
+## Mp4
+
+<video poster="https://cdn.awesome-panel.org/resources/panel_chatbot_pack/panel_chatbot_pack.png" controls>
+  <source src="https://cdn.awesome-panel.org/resources/panel_chatbot_pack/panel_chatbot_pack.mp4" type="video/mp4">
+  Your browser does not support HTML video.
+</video>
+
+## Png
+
+<img src="https://cdn.awesome-panel.org/resources/panel_chatbot_pack/panel_chatbot_pack.png"></img>

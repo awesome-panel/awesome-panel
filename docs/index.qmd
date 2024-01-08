@@ -1,4 +1,7 @@
 ---
+title: "Awesome Panel"
+description: "Awesome Panel resources by the community"
+image: "https://cdn.awesome-panel.org/resources/awesome-panel-intro.gif"
 listing:
   contents: resources
   sort: "date desc"
@@ -14,11 +17,12 @@ listing:
 page-layout: full
 ---
 
-[Panel](https://panel.holoviz.org) by HoloViz is the powerful data exploration & web app framework for Python. Please give it a star.
+
+[Panel](https://panel.holoviz.org) by [HoloViz](https://holoviz.org) is *the powerful data exploration & web app framework for Python*.
+
+Please give Panel a ⭐ on Github. Thanks.
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <a class="github-button" href="https://github.com/holoviz/panel" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star holoviz/panel">Star</a>
-
-Check out the **awesome community resources** below.
 
 ---

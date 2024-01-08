@@ -14,6 +14,8 @@ image: "video_stream.png"
 
 This app takes a videostream from your web cam and applies different filters supplied by [Pillow](https://python-pillow.org/) and [Scikit Image](https://scikit-image.org/).
 
+You can change the model in the sidebar. The left plot shows how much time it takes to run the model on the image. The right plot shows the time since the last image was processed.
+
 This app is heavily inspired by a similar realtime image processing [app](https://edit.share.stlite.net/?sampleAppId=realtime_image_processing) by Whitphx.
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
