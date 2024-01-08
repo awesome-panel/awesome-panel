@@ -23,7 +23,7 @@ This app shows how to create a nice looking dashboard with [param.Rx](https://pa
 <iframe
 	src="https://awesome-panel-the-easiest-way-to-create-dashboard.hf.space"
 	frameborder="0"
-	style="width:100%;height:800px"
+	style="width:100%;height:950px"
 ></iframe>
 
 ## Code
@@ -32,13 +32,11 @@ This app shows how to create a nice looking dashboard with [param.Rx](https://pa
 
 ## Gif
 
-I think the app looks amazing. Its really performant too.
-
 <img src="https://cdn.awesome-panel.org/resources/the_easiest_way_to_create_dashboard/the_easiest_way_to_create_dashboard.gif"></img>
 
 ## Legacy
 
-The legacy resources in this section shows how to create an interactive dashboard using the legacy [hvPlot .interactive](https://hvplot.holoviz.org/user_guide/Interactive.html) functionality. This has been superseeded by the generalized [param.Rx](https://param.holoviz.org/user_guide/Reactive_Expressions.html).
+The legacy resources in this section shows how to create the same dashboard using the legacy [hvPlot .interactive](https://hvplot.holoviz.org/user_guide/Interactive.html) functionality. This has been superseeded by the generalized [param.Rx](https://param.holoviz.org/user_guide/Reactive_Expressions.html) functionality.
 
 [Github](https://github.com/sophiamyang/hvplot_interactive) | [Medium](https://towardsdatascience.com/the-easiest-way-to-create-an-interactive-dashboard-in-python-77440f2511d1)
 
