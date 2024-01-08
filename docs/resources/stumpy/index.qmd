@@ -64,4 +64,4 @@ I think the app looks amazing. Its really performant too.
 
 Please share on social media. Thanks.
 
-<a href="https://x.com/awesome_panel/status/1743903846332534791?s=20" target="_blank"><i class="bi bi-twitter"></i></a> <a href="https://www.linkedin.com/posts/awesome-panel-org_stumpy-python-dataviz-activity-7149668816120078336-8NJ_?utm_source=share&utm_medium=member_desktop" target="_blank"><i class="bi bi-linkedin"></i></a>
+<a href="https://x.com/awesome_panel/status/1743903846332534791?s=20" target="_blank"><i class="bi bi-twitter"></i></a> <a href="https://www.linkedin.com/posts/awesome-panel-org_stumpy-python-dataviz-activity-7149668816120078336-8NJ_" target="_blank"><i class="bi bi-linkedin"></i></a>
