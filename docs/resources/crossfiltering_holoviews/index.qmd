@@ -70,3 +70,9 @@ For the Plotly backend I cannot get responsive plots working. That is why I use 
 ## Png
 
 <img src="https://cdn.awesome-panel.org/resources/crossfiltering_holoviews/crossfiltering_holoviews.png"></img>
+
+## Social
+
+Please share on social media. Thanks.
+
+<a href="https://x.com/awesome_panel/status/1744617221505134854?s=20" target="_blank"><i class="bi bi-twitter"></i></a> <a href="https://www.linkedin.com/posts/awesome-panel-org_python-dataviz-datascience-activity-7150383525836267520-UuTy" target="_blank"><i class="bi bi-linkedin"></i></a>
