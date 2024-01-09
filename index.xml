@@ -58,6 +58,7 @@
   <link>https://awesome-panel.org/resources/caching_example/index.html</link>
   <description><![CDATA[ In computing, a <em>cache</em> is a high-speed data storage layer which stores a subset of data, typically transient in nature, so that future requests for that data are served up faster than is possible by accessing the data’s primary storage location. ]]></description>
   <category>performance</category>
+  <category>pyodide</category>
   <guid>https://awesome-panel.org/resources/caching_example/index.html</guid>
   <pubDate>Sun, 07 Jan 2024 00:00:00 GMT</pubDate>
   <media:content url="https://awesome-panel.org/resources/caching_example/caching_example.png" medium="image" type="image/png" height="85" width="144"/>
@@ -78,6 +79,7 @@
   <dc:creator>Marc Skov Madsen</dc:creator>
   <link>https://awesome-panel.org/resources/video_stream/index.html</link>
   <description><![CDATA[ This app takes a videostream from your web cam and applies different filters supplied by <a href="https://python-pillow.org/">Pillow</a> and <a href="https://scikit-image.org/">Scikit Image</a>. ]]></description>
+  <category>pyodide</category>
   <category>video</category>
   <guid>https://awesome-panel.org/resources/video_stream/index.html</guid>
   <pubDate>Sun, 07 Jan 2024 00:00:00 GMT</pubDate>
@@ -103,6 +105,7 @@
   <description><![CDATA[ This dashboard demonstrates that a dashboard layout similar to the <a href="https://getbootstrap.com/docs/4.3/examples/dashboard/"><em>Bootstrap dashboard template</em></a> can be implemented in <a href="https://panel.pyviz.org/">Panel</a>. ]]></description>
   <category>dashboard</category>
   <category>hvplot</category>
+  <category>pyodide</category>
   <guid>https://awesome-panel.org/resources/bootstrap_dashboard/index.html</guid>
   <pubDate>Sat, 06 Jan 2024 00:00:00 GMT</pubDate>
   <media:content url="https://awesome-panel.org/resources/bootstrap_dashboard/bootstrap_dashboard.png" medium="image" type="image/png" height="99" width="144"/>
