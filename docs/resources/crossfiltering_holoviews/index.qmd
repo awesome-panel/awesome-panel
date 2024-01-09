@@ -32,7 +32,7 @@ The apps below run entirely in the browser via [Pyodide](https://pyodide.org) an
 
 ### Plotly
 
-For the Plotly backend I cannot get responsive plots working. That is why I use fixed sizes.
+For the Plotly backend I cannot get responsive plots working. That is why I use fixed sizes. See [Panel #6173](https://github.com/holoviz/panel/issues/6173).
 
 <a href="https://awesome-panel-crossfiltering-holoviews.static.hf.space/crossfiltering_holoviews_plotly.html" target="_blank">Open in a new window</a> | <a href="https://huggingface.co/spaces/awesome-panel/crossfiltering_holoviews" target="_blank">Open in Hugging Face Spaces</a>
 
