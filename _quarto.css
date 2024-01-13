@@ -21,7 +21,10 @@ iframe.youtube {
   width: 100%;
   height: 500px;
 }
-i.bi{color: #595959;}
+i.bi{
+  color: #595959;
+  font-size: 1.25em;
+}
 .navbar-dark .navbar-brand {
     color: #0072B5;
     padding-left: 10px;
