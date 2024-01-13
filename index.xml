@@ -18,9 +18,9 @@
 <lastBuildDate>Sat, 13 Jan 2024 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Commuting Flows Italy</title>
-  <dc:creator>Ivan d&#39;Ortenzio</dc:creator>
+  <dc:creator>Ivan D&#39;Ortenzio</dc:creator>
   <link>https://awesome-panel.org/resources/commuting_flows_italy/index.html</link>
-  <description><![CDATA[ A dashboard by <a href="https://github.com/ivandorte">Ivan d’Ortenzio</a> showing incoming and outgoing commuting flows between Italian regions. ]]></description>
+  <description><![CDATA[ A dashboard by <a href="https://github.com/ivandorte">Ivan D’Ortenzio</a> showing incoming and outgoing commuting flows between Italian regions. ]]></description>
   <category>geo</category>
   <category>hugging face</category>
   <category>pyodide</category>
