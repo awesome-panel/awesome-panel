@@ -6,7 +6,7 @@ author:
   - name: Marc Skov Madsen
     url: https://github.com/marcskovmadsen/  
     
-categories: [pyodide,video]
+categories: [hugging face,pyodide,video]
 image: "video_stream.png"
 ---
 

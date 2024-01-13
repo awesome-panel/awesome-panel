@@ -6,7 +6,7 @@ author:
   - name: Marc Skov Madsen
     url: https://github.com/marcskovmadsen/
     
-categories: [bokeh,pyodide,timeseries]
+categories: [bokeh,hugging face, pyodide,timeseries]
 image: "crossfiltering_holoviews.png"
 ---
 

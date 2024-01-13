@@ -5,7 +5,7 @@ description: "A Bootstrap like dashboard"
 author:
   - name: Marc Skov Madsen
     url: https://github.com/marcskovmadsen/  
-categories: [dashboard, hvplot, pyodide]
+categories: [dashboard, hugging face, hvplot, pyodide]
 image: "bootstrap_dashboard.png"
 ---
 

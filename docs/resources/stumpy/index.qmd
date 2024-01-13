@@ -8,7 +8,7 @@ author:
   - name: Sean Law
     url: https://github.com/seanlaw
     
-categories: [bokeh,pyodide,timeseries]
+categories: [bokeh,hugging face,pyodide,timeseries]
 image: "stumpy.png"
 ---
 

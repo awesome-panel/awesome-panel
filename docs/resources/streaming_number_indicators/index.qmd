@@ -1,0 +1,60 @@
+---
+title: "Streaming Number Indicators"
+date: "2024-01-13"
+description: "Dashboard with streaming Number Indicators"
+author:
+  - name: Marc Skov Madsen
+    url: https://github.com/marcskovmadsen/  
+    
+categories: [hugging face,pyodide,pyscript,streaming]
+image: "streaming_number_indicators.png"
+---
+
+## Introduction
+
+Dashboard with streaming [Number Indicators](https://panel.holoviz.org/reference/indicators/Number.html). The [FlexBox](https://panel.holoviz.org/reference/layouts/FlexBox.html) layout used ensures the indicators will layout nicely no matter the window width or device.
+
+We use caching to ensure the values are updated globally across all sessions instead of per session when running on a Server.
+
+## App
+
+This app runs entirely in the browser via [Pyodide](https://pyodide.org) and [panel convert](https://panel.holoviz.org/how_to/wasm/convert.html).
+
+<a href="https://awesome-panel-streaming-number-indicators.static.hf.space" target="_blank">Open in a new window</a> | <a href="https://huggingface.co/spaces/awesome-panel/streaming_number_indicators" target="_blank">Open in Hugging Face Spaces</a> | <a href="https://pyscript.com/@awesome-panel/streaming-number-indicators" target="_blank">Open in PyScript.com</a>
+
+<iframe
+	src="https://awesome-panel-streaming-number-indicators.static.hf.space"
+	frameborder="0"
+	style="width:100%;height:1050px"
+></iframe>
+
+## Code
+
+<details>
+<summary>Show</summary>
+```{.python include="../../../examples/streaming_number_indicators.py" code-line-numbers="true"}
+```
+</details>
+
+<a href="https://raw.githubusercontent.com/awesome-panel/awesome-panel/main/examples/streaming_number_indicators.py" download>Download (right-click, save-as)</a>
+
+## Gif
+
+<img src="https://cdn.awesome-panel.org/resources/streaming_number_indicators/streaming_number_indicators.gif"></img>
+
+## Mp4
+
+<video poster="https://cdn.awesome-panel.org/resources/streaming_number_indicators/streaming_number_indicators.png" controls>
+  <source src="https://cdn.awesome-panel.org/resources/streaming_number_indicators/streaming_number_indicators.mp4" type="video/mp4">
+  Your browser does not support HTML video.
+</video>
+
+## Png
+
+<img src="https://cdn.awesome-panel.org/resources/streaming_number_indicators/streaming_number_indicators.png"></img>
+
+## Social
+
+Please share on social media. Thanks.
+
+<a href="https://x.com/awesome_panel/status/1746120196283326908?s=20" target="_blank"><i class="bi bi-twitter"></i></a> <a href="https://www.linkedin.com/posts/awesome-panel-org_python-pyscript-python-activity-7151886774900793345-3Pgk" target="_blank"><i class="bi bi-linkedin"></i></a>
