@@ -161,6 +161,13 @@
     "text": "Png"
   },
   {
+    "objectID": "resources/streaming_number_indicators/index.html#social",
+    "href": "resources/streaming_number_indicators/index.html#social",
+    "title": "Streaming Number Indicators",
+    "section": "Social",
+    "text": "Social\nPlease share on social media. Thanks."
+  },
+  {
     "objectID": "resources/panel_chat_examples/index.html",
     "href": "resources/panel_chat_examples/index.html",
     "title": "Panel Chat Examples",
@@ -182,116 +189,116 @@
     "text": "MP4"
   },
   {
-    "objectID": "resources/classic_dashboard/classic_dashboard.html",
-    "href": "resources/classic_dashboard/classic_dashboard.html",
-    "title": "Classic Dashboard",
+    "objectID": "resources/commuting_flows_italy/index.html",
+    "href": "resources/commuting_flows_italy/index.html",
+    "title": "Commuting Flows Italy",
     "section": "",
-    "text": "The app shows you how to create a Classic Dashboard in Panel with\n\nClassic Layout and design\nResponsiveness\nUser Selections"
+    "text": "A dashboard by Ivan d’Ortenzio showing incoming and outgoing commuting flows between Italian regions."
   },
   {
-    "objectID": "resources/classic_dashboard/classic_dashboard.html#introduction",
-    "href": "resources/classic_dashboard/classic_dashboard.html#introduction",
-    "title": "Classic Dashboard",
+    "objectID": "resources/commuting_flows_italy/index.html#introduction",
+    "href": "resources/commuting_flows_italy/index.html#introduction",
+    "title": "Commuting Flows Italy",
     "section": "",
-    "text": "The app shows you how to create a Classic Dashboard in Panel with\n\nClassic Layout and design\nResponsiveness\nUser Selections"
+    "text": "A dashboard by Ivan d’Ortenzio showing incoming and outgoing commuting flows between Italian regions."
   },
   {
-    "objectID": "resources/classic_dashboard/classic_dashboard.html#app",
-    "href": "resources/classic_dashboard/classic_dashboard.html#app",
-    "title": "Classic Dashboard",
+    "objectID": "resources/commuting_flows_italy/index.html#app",
+    "href": "resources/commuting_flows_italy/index.html#app",
+    "title": "Commuting Flows Italy",
     "section": "App",
-    "text": "App\nOpen in a new window | Open in Hugging Face Spaces"
+    "text": "App\nThis app runs entirely in the browser via Pyodide and panel convert.\nOpen in a new window | Open in Hugging Face Spaces | Open in PyScript.com"
   },
   {
-    "objectID": "resources/classic_dashboard/classic_dashboard.html#code",
-    "href": "resources/classic_dashboard/classic_dashboard.html#code",
-    "title": "Classic Dashboard",
+    "objectID": "resources/commuting_flows_italy/index.html#code",
+    "href": "resources/commuting_flows_italy/index.html#code",
+    "title": "Commuting Flows Italy",
     "section": "Code",
-    "text": "Code\n\n\nShow\n\n\"\"\"\nSee https://awesome-panel.org/resources/classic_dashboard/\n\"\"\"\nimport pathlib\n\nimport holoviews as hv\nimport hvplot.pandas  # pylint: disable=unused-import\nimport pandas as pd\nimport panel as pn\nimport param\nfrom holoviews.plotting.util import process_cmap\n\nDASHBOARD_A_PATH=\"https://cdn.awesome-panel.org/resources/classic_dashboard/dashboard_A.csv\"\nDASHBOARD_B_PATH=\"https://cdn.awesome-panel.org/resources/classic_dashboard/dashboard_B.csv\"\n\nCOLOR_MAPS = hv.plotting.util.list_cmaps()\nSTYLE = \"\"\"\nbody {\n    margin: 0px;\n    min-height: 100vh;\n    overflow-x: hidden;\n    width: 100%;\n    background: #f2f2f2;\n}\n.bk.app-body {\n    background: #f2f2f2;\n    color: #000000;\n    font-family: roboto, sans-serif, Verdana;\n}\n.bk.app-bar {\n    background: #212121;\n    border-color: white;\n    box-shadow: 5px 5px 20px #9E9E9E;\n    color: #ffffff;\n    z-index: 50;\n}\n.bk.app-container {\n    background: #ffffff;\n    border-radius: 5px;\n    box-shadow: 2px 2px 2px lightgrey;\n    color: #000000;\n}\n\n.bk.app-settings {\n    background: #e0e0e0;\n    color: #000000;\n}\n\n\"\"\"\n\n@pn.cache\ndef _get_data_a():\n    return pd.read_csv(DASHBOARD_A_PATH, index_col=0)\n\n@pn.cache\ndef _get_data_b():\n    return pd.read_csv(DASHBOARD_B_PATH, index_col=0)\n\n\nclass Dashboard(pn.viewable.Viewer):\n    \"\"\"This application show cases how to build a Classic Dashboard\n    in Panel.\n    \"\"\"\n\n    tool = param.ObjectSelector(label=\"Tool\", default=\"S1_1\", objects=[\"S1_1\", \"S2_1\"])\n    variable = param.ObjectSelector(\n        label=\"Variable\",\n        default=\"Cut Distance\",\n        objects=[\"Cut Distance\", \"Removed Volume\", \"Av. uncut chip thickness\"],\n    )\n    color_map = param.ObjectSelector(default=\"rainbow\", objects=COLOR_MAPS)\n\n    view = param.ClassSelector(class_=pn.Column)\n\n    def __init__(self, **params):\n        super().__init__(**params)\n\n        self.insert_plot_pane = pn.pane.HoloViews(\n            self._get_insert_plot, sizing_mode=\"stretch_width\", margin=10, height=300\n        )\n        self.edge_plot_pane = pn.pane.HoloViews(\n            self._get_edge_plot, sizing_mode=\"stretch_width\", margin=10, height=300\n        )\n        self.history_plot_pane = pn.pane.HoloViews(\n            self._update_history_plot, sizing_mode=\"stretch_width\", margin=10, height=300\n        )\n        self.view = pn.Column(sizing_mode=\"stretch_both\")\n        self._init_view()\n\n    def _init_view(self):\n        appbar = pn.Row(\n            pn.pane.Markdown(\n                \"#### Classic Dashboard in Panel \",\n                margin=(15, 5, 5, 25),\n                sizing_mode=\"stretch_width\",\n                align=\"center\",\n            ),\n            pn.layout.HSpacer(height=0),\n            pn.pane.PNG(\n                \"https://panel.holoviz.org/_static/logo_horizontal.png\",\n                width=200,\n                align=\"center\",\n                sizing_mode=\"fixed\",\n                margin=(10, 50, 10, 5),\n                embed=False,\n            ),\n            sizing_mode=\"stretch_width\",\n            css_classes=[\"app-bar\"],\n        )\n        settings_bar = pn.Column(\n            pn.Param(\n                self,\n                parameters=[\"tool\", \"variable\", \"color_map\"],\n                widgets={\n                    \"tool\": {\"align\": \"center\", \"width\": 75, \"sizing_mode\": \"fixed\"},\n                    \"variable\": {\n                        \"type\": pn.widgets.RadioBoxGroup,\n                        \"inline\": True,\n                        \"align\": \"end\",\n                        \"sizing_mode\": \"stretch_width\",\n                    },\n                },\n                default_layout=pn.Row,\n                show_name=False,\n                sizing_mode=\"stretch_width\",\n            ),\n            pn.layout.HSpacer(height=0),\n            sizing_mode=\"stretch_width\",\n            css_classes=[\"app-container\"],\n            margin=(50, 25, 25, 25),\n        )\n\n        self.view[:] = [  # pylint: disable=unsupported-assignment-operation\n            pn.Column(\n                appbar,\n                settings_bar,\n                pn.Row(\n                    pn.Column(\n                        self.insert_plot_pane,\n                        css_classes=[\"app-container\"],\n                        margin=25,\n                        sizing_mode=\"stretch_both\",\n                    ),\n                    pn.Column(\n                        self.edge_plot_pane,\n                        css_classes=[\"app-container\"],\n                        margin=25,\n                        sizing_mode=\"stretch_both\",\n                    ),\n                    sizing_mode=\"stretch_both\",\n                    min_height=300,\n                ),\n                pn.Row(\n                    self.history_plot_pane,\n                    css_classes=[\"app-container\"],\n                    margin=25,\n                    min_height=300,\n                    sizing_mode=\"stretch_both\",\n                ),\n                css_classes=[\"app-body\"],\n                sizing_mode=\"stretch_both\",\n            ),\n            pn.layout.HSpacer(height=25),\n        ]\n\n    @pn.depends(\"tool\", \"variable\", \"color_map\")\n    def _get_insert_plot(self):\n        plot_data = _get_data_a().loc[self.tool]\n        data = [(plot_data[\"Xo\"], plot_data[\"Yo\"], plot_data[self.variable])]\n        return hv.Path(data, vdims=self.variable).opts(\n            cmap=self.color_map, color=self.variable, line_width=4, colorbar=True, responsive=True\n        )\n\n    @pn.depends(\"tool\", \"variable\", \"color_map\")\n    def _get_edge_plot(self):\n        plot_data = _get_data_a().loc[self.tool]\n        return plot_data.hvplot(\n            x=\"Number\", y=self.variable, kind=\"area\", alpha=0.6, color=self._color, responsive=True\n        )\n\n    @pn.depends(\"tool\", \"color_map\")\n    def _update_history_plot(self):\n        plot_data = _get_data_b().loc[self.tool]\n        return plot_data.hvplot(\n            x=\"Cut Distance\", y=\"Feed\", kind=\"line\", line_width=4, responsive=True\n        ).opts(color=self._color)\n\n    @property\n    def _color(self):\n        return process_cmap(self.color_map, 1)[0]\n\n\nif pn.state.served:\n    pn.extension(raw_css=[STYLE], design=\"bootstrap\")\n    Dashboard().view.servable()\n    \n\nDownload (right-click, save-as)"
+    "text": "Code\n\n\nShow\n\n\"\"\"\nSource: https://awesome-panel.org/resources/commuting_flows_italian_regions/\n\"\"\"\nimport holoviews as hv\nimport numpy as np\nimport pandas as pd\nimport panel as pn\nfrom bokeh.models import HoverTool\nfrom shapely.geometry import LineString\n\n# Load the bokeh extension\nhv.extension(\"bokeh\")\n\n# Set the sizing mode\npn.extension(sizing_mode=\"stretch_width\")\n\n# Dashboard title\nDASH_TITLE = \"Commuting flows between Italian Regions\"\n\n# Default colors for the dashboard\nACCENT = \"#2f4f4f\"\nINCOMING_COLOR = \"rgba(0, 108, 151, 0.75)\"\nOUTGOING_COLOR = \"rgba(199, 81, 51, 0.75)\"\nINTERNAL_COLOR = \"rgba(47, 79, 79, 0.55)\"\n\n# Default colors for indicators\nDEFAULT_COLOR = \"white\"\nTITLE_SIZE = \"18pt\"\nFONT_SIZE = \"20pt\"\n\n# Min/Max node size\nMIN_PT_SIZE = 7\nMAX_PT_SIZE = 10\n\n# Min/Max curve width\nMIN_LW = 1\nMAX_LW = 10\n\n# Dataframes dtypes\nITA_REGIONS_DTYPES = {\n    \"cod_reg\": \"uint8\",\n    \"den_reg\": \"object\",\n    \"x\": \"object\",\n    \"y\": \"object\",\n}\n\nNODES_DTYPES = {\n    \"cod_reg\": \"uint8\",\n    \"x\": \"float64\",\n    \"y\": \"float64\",\n}\n\nEDGES_DTYPES = {\n    \"motivo\": \"object\",\n    \"interno\": \"bool\",\n    \"flussi\": \"uint32\",\n    \"reg_o\": \"uint8\",\n    \"reg_d\": \"uint8\",\n    \"x_o\": \"float64\",\n    \"y_o\": \"float64\",\n    \"x_d\": \"float64\",\n    \"y_d\": \"float64\",\n}\n\n# Dictionary that maps region code to its name\nITA_REGIONS = {\n    1: \"Piemonte\",\n    2: \"Valle d'Aosta/Vallée d'Aoste\",\n    3: \"Lombardia\",\n    4: \"Trentino-Alto Adige/Südtirol\",\n    5: \"Veneto\",\n    6: \"Friuli-Venezia Giulia\",\n    7: \"Liguria\",\n    8: \"Emilia-Romagna\",\n    9: \"Toscana\",\n    10: \"Umbria\",\n    11: \"Marche\",\n    12: \"Lazio\",\n    13: \"Abruzzo\",\n    14: \"Molise\",\n    15: \"Campania\",\n    16: \"Puglia\",\n    17: \"Basilicata\",\n    18: \"Calabria\",\n    19: \"Sicilia\",\n    20: \"Sardegna\",\n}\n\n# Dictionary of options (Label/option) for commuting purpose\nCOMMUTING_PURPOSE = {\n    \"Work\": \"Lavoro\",\n    \"Study\": \"Studio\",\n    \"Total\": \"Totale\",\n}\n\n# Dashboard description\nDASH_DESCR = f\"\"\"\n&lt;div&gt;\n  &lt;hr /&gt;\n  &lt;p&gt;A Panel dashboard showing &lt;b style=\"color:{INCOMING_COLOR};\"&gt;incoming&lt;/b&gt;\n    and &lt;b style=\"color:{OUTGOING_COLOR};\"&gt;outgoing&lt;/b&gt; commuting flows\n    for work and study between Italian Regions.&lt;/p&gt;\n  &lt;p&gt;The width of the curves reflects the magnitude of the flows.&lt;/p&gt;\n  &lt;p&gt;\n    &lt;a href=\"https://www.istat.it/it/archivio/139381\" target=\"_blank\"&gt;Commuting data&lt;/a&gt; from the\n    15th Population and Housing Census (Istat, 2011).\n  &lt;/p&gt;\n  &lt;p&gt;\n    &lt;a href=\"https://www.istat.it/it/archivio/222527\" target=\"_blank\"&gt;Administrative boundaries&lt;/a&gt; from\n    ISTAT.\n  &lt;/p&gt;\n  &lt;hr /&gt;\n&lt;/div&gt;\n\"\"\"\n\nCSS_FIX = \"\"\"\n:host(.outline) .bk-btn.bk-btn-primary.bk-active, :host(.outline) .bk-btn.bk-btn-primary:active {\n    color: var(--foreground-on-accent-rest) !important;\n}\n\"\"\"\n\nif not CSS_FIX in pn.config.raw_css:\n    pn.config.raw_css.append(CSS_FIX)\n\n\ndef get_incoming_numind(edges, region_code, comm_purpose):\n    \"\"\"\n    Returns the total incoming commuters to the selected Region.\n    \"\"\"\n\n    # Get the value of incoming commuters\n    if comm_purpose == \"Totale\":\n        query = f\"reg_d == {region_code} & interno == 0\"\n    else:\n        query = f\"(reg_d == {region_code} & motivo == '{comm_purpose}' & interno == 0)\"\n\n    flows = edges.query(query)[\"flussi\"].sum()\n\n    return pn.indicators.Number(\n        name=\"Incoming\",\n        value=flows,\n        default_color=DEFAULT_COLOR,\n        styles={\"background\": INCOMING_COLOR, \"padding\": \"5px 10px 5px 10px\", \"border-radius\": \"5px\"},\n        title_size=TITLE_SIZE,\n        font_size=FONT_SIZE,\n        sizing_mode=\"stretch_width\",\n        align=\"center\",\n        css_classes=[\"center_number\"],\n    )\n\n\ndef get_outgoing_numind(edges, region_code, comm_purpose):\n    \"\"\"\n    Returns the outgoing commuters from\n    the selected Region.\n    \"\"\"\n\n    # Get the value of outgoing commuters\n    if comm_purpose == \"Totale\":\n        query = f\"reg_o == {region_code} & interno == 0\"\n    else:\n        query = f\"(reg_o == {region_code} & motivo == '{comm_purpose}' & interno == 0)\"\n\n    flows = edges.query(query)[\"flussi\"].sum()\n\n    return pn.indicators.Number(\n        name=\"Outgoing\",\n        value=flows,\n        default_color=DEFAULT_COLOR,\n        styles={\"background\": OUTGOING_COLOR, \"padding\": \"5px 10px 5px 10px\", \"border-radius\": \"5px\"},\n        title_size=TITLE_SIZE,\n        font_size=FONT_SIZE,\n        sizing_mode=\"stretch_width\",\n        align=\"center\",\n        css_classes=[\"center_number\"],\n    )\n\n\ndef get_internal_numind(edges, region_code, comm_purpose):\n    \"\"\"\n    Returns the number of internal commuters of\n    the selected Region.\n    \"\"\"\n\n    # Get the value of internal commuters\n    if comm_purpose == \"Totale\":\n        query = f\"reg_o == {region_code} & interno == 1\"\n    else:\n        query = f\"(reg_o == {region_code} & motivo == '{comm_purpose}' & interno == 1)\"\n\n    flows = edges.query(query)[\"flussi\"].sum()\n\n    return pn.indicators.Number(\n        name=\"Internal mobility\",\n        value=flows,\n        default_color=DEFAULT_COLOR,\n        styles={\"background\": INTERNAL_COLOR, \"padding\": \"5px 10px 5px 10px\", \"border-radius\": \"5px\"},\n        title_size=TITLE_SIZE,\n        font_size=FONT_SIZE,\n        sizing_mode=\"stretch_width\",\n        align=\"center\",\n        css_classes=[\"center_number\"],\n    )\n\n\ndef filter_edges(edges, region_code, comm_purpose):\n    \"\"\"\n    This function filters the rows of the edges for\n    the selected Region and commuting purpose.\n    \"\"\"\n\n    if comm_purpose == \"Totale\":\n        query = f\"(reg_o == {region_code} & interno == 0) |\"\n        query += f\" (reg_d == {region_code} & interno == 0)\"\n    else:\n        query = f\"(reg_o == {region_code} & motivo == '{comm_purpose}' & interno == 0) |\"\n        query += f\" (reg_d == {region_code} & motivo == '{comm_purpose}' & interno == 0)\"\n    return edges.query(query)\n\n\ndef get_nodes(nodes, edges, region_code, comm_purpose):\n    \"\"\"\n    Get the graph's nodes for the selected Region and commuting purpose\n    \"\"\"\n\n    # Filter the edges by Region and commuting purpose\n    filt_edges = filter_edges(edges, region_code, comm_purpose)\n\n    # Find the unique values of region codes\n    region_codes = np.unique(filt_edges[[\"reg_o\", \"reg_d\"]].values)\n\n    # Filter the nodes\n    nodes = nodes[nodes[\"cod_reg\"].isin(region_codes)]\n\n    # Reoder the columns for hv.Graph\n    nodes = nodes[[\"x\", \"y\", \"cod_reg\"]]\n\n    # Assign the node size\n    nodes[\"size\"] = np.where(\n        nodes[\"cod_reg\"] == region_code, MAX_PT_SIZE, MIN_PT_SIZE\n    )\n\n    # Assigns a marker to the nodes\n    nodes[\"marker\"] = np.where(\n        nodes[\"cod_reg\"] == region_code, \"square\", \"circle\"\n    )\n\n    return nodes\n\n\ndef get_bezier_curve(x_o, y_o, x_d, y_d, steps=25):\n    \"\"\"\n    Draw a Bézier curve defined by a start point, endpoint and a control points\n    Source: https://stackoverflow.com/questions/69804595/trying-to-make-a-bezier-curve-on-pygame-library\n    \"\"\"\n\n    # Generate the O/D linestring\n    od_line = LineString([(x_o, y_o), (x_d, y_d)])\n\n    # Calculate the offset distance of the control point\n    offset_distance = od_line.length / 2\n\n    # Create a line parallel to the original at the offset distance\n    offset_pline = od_line.parallel_offset(offset_distance, \"left\")\n\n    # Get the XY coodinates of the control point\n    ctrl_x = offset_pline.centroid.x\n    ctrl_y = offset_pline.centroid.y\n\n    # Calculate the XY coordinates of the Bézier curve\n    t = np.array([i * 1 / steps for i in range(0, steps + 1)])\n    x_coords = x_o * (1 - t) ** 2 + 2 * (1 - t) * t * ctrl_x + x_d * t**2\n    y_coords = y_o * (1 - t) ** 2 + 2 * (1 - t) * t * ctrl_y + y_d * t**2\n\n    return (x_coords, y_coords)\n\n\ndef get_edge_width(flow, min_flow, max_flow):\n    \"\"\"\n    This function calculates the width of the curves\n    according to the magnitude of the flow.\n    \"\"\"\n\n    return MIN_LW + np.power(flow - min_flow, 0.57) * (\n        MAX_LW - MIN_LW\n    ) / np.power(max_flow - min_flow, 0.57)\n\n\ndef get_edges(nodes, edges, region_code, comm_purpose):\n    \"\"\"\n    Get the graph's edges for the selected Region and commuting purpose\n    \"\"\"\n\n    # Filter the edges by Region and commuting purpose\n    filt_edges = filter_edges(edges, region_code, comm_purpose).copy()\n\n    # Aggregate the flows by Region of origin and destination\n    if comm_purpose == \"Totale\":\n        filt_edges = (\n            filt_edges.groupby([\"reg_o\", \"reg_d\"])\n            .agg(\n                motivo=(\"motivo\", \"first\"),\n                interno=(\"interno\", \"first\"),\n                flussi=(\"flussi\", \"sum\"),\n            )\n            .reset_index()\n        )\n\n    # Assign Region names\n    filt_edges.loc[:,\"den_reg_o\"] = filt_edges[\"reg_o\"].map(ITA_REGIONS)\n    filt_edges.loc[:,\"den_reg_d\"] = filt_edges[\"reg_d\"].map(ITA_REGIONS)\n\n    # Add xy coordinates of origin\n    filt_edges = filt_edges.merge(\n        nodes.add_suffix(\"_o\"), left_on=\"reg_o\", right_on=\"cod_reg_o\"\n    )\n\n    # Add xy coordinates of destination\n    filt_edges = filt_edges.merge(\n        nodes.add_suffix(\"_d\"), left_on=\"reg_d\", right_on=\"cod_reg_d\"\n    )\n\n    # Get the Bézier curve\n    filt_edges[\"curve\"] = filt_edges.apply(\n        lambda row: get_bezier_curve(\n            row[\"x_o\"], row[\"y_o\"], row[\"x_d\"], row[\"y_d\"]\n        ),\n        axis=1,\n    )\n\n    # Get the minimum/maximum flow\n    min_flow = filt_edges[\"flussi\"].min()\n    max_flow = filt_edges[\"flussi\"].max()\n\n    # Calculate the curve width\n    filt_edges[\"width\"] = filt_edges.apply(\n        lambda row: get_edge_width(\n            row[\"flussi\"],\n            min_flow,\n            max_flow,\n        ),\n        axis=1,\n    )\n\n    # Assigns the color to the incoming/outgoing edges\n    filt_edges[\"color\"] = np.where(\n        filt_edges[\"reg_d\"] == region_code, INCOMING_COLOR, OUTGOING_COLOR\n    )\n\n    filt_edges = filt_edges.sort_values(by=\"flussi\")\n\n    return filt_edges\n\n\ndef get_flow_map(nodes, edges, region_admin_bounds, region_code, comm_purpose):\n    \"\"\"\n    Returns a Graph showing incoming and outgoing commuting flows\n    for the selected Region and commuting purpose.\n    \"\"\"\n\n    def hook(plot, element):\n        \"\"\"\n        Custom hook for disabling x/y tick lines/labels\n        \"\"\"\n        plot.state.xaxis.major_tick_line_color = None\n        plot.state.xaxis.minor_tick_line_color = None\n        plot.state.xaxis.major_label_text_font_size = \"0pt\"\n        plot.state.yaxis.major_tick_line_color = None\n        plot.state.yaxis.minor_tick_line_color = None\n        plot.state.yaxis.major_label_text_font_size = \"0pt\"\n\n    # Define a custom Hover tool\n    flow_map_hover = HoverTool(\n        tooltips=[\n            (\"Origin\", \"@den_reg_o\"),\n            (\"Destination\", \"@den_reg_d\"),\n            (\"Commuters\", \"@flussi\"),\n        ]\n    )\n\n    # Get the Nodes of the selected Region and commuting purpose\n    region_graph_nodes = get_nodes(nodes, edges, region_code, comm_purpose)\n\n    # Get the Edges of the selected Region and commuting purpose\n    region_graph_edges = get_edges(nodes, edges, region_code, comm_purpose)\n\n    # Get the list of Bézier curves\n    curves = region_graph_edges[\"curve\"].to_list()\n\n    # Get the administrative boundary of the selected Region\n    region_admin_bound = region_admin_bounds[\n        (region_admin_bounds[\"cod_reg\"] == region_code)\n    ].to_dict(\"records\")\n\n    # Draw the administrative boundary using hv.Path\n    region_admin_bound_path = hv.Path(region_admin_bound)\n    region_admin_bound_path.opts(color=ACCENT, line_width=1.0)\n\n    # Build a Graph from Edges, Nodes and Bézier curves\n    region_flow_graph = hv.Graph(\n        (region_graph_edges.drop(\"curve\", axis=1), region_graph_nodes, curves)\n    )\n\n    # Additional plot options\n    region_flow_graph.opts(\n        title=\"Incoming and outgoing commuting flows\",\n        xlabel=\"\",\n        ylabel=\"\",\n        node_color=\"white\",\n        node_hover_fill_color=\"magenta\",\n        node_line_color=ACCENT,\n        node_size=\"size\",\n        node_marker=\"marker\",\n        edge_color=\"color\",\n        edge_hover_line_color=\"magenta\",\n        edge_line_width=\"width\",\n        inspection_policy=\"edges\",\n        tools=[flow_map_hover],\n        hooks=[hook],\n        frame_height=500,\n    )\n\n    # Compose the flow map\n    flow_map = (\n        hv.element.tiles.CartoLight()\n        * region_admin_bound_path\n        * region_flow_graph\n    )\n\n    return flow_map\n\n\n# Load the edges as a Dataframe\n@pn.cache\ndef get_edges_df():\n    return pd.read_json(\n        \"https://raw.githubusercontent.com/ivandorte/panel-commuting-istat/main/data/edges.json\",\n        orient=\"split\",\n        dtype=EDGES_DTYPES,\n    )\nedges_df = get_edges_df()\n\n# Load the nodes as a Dataframe\n@pn.cache\ndef get_nodes_df():\n    return pd.read_json(\n        \"https://raw.githubusercontent.com/ivandorte/panel-commuting-istat/main/data/nodes.json\",\n        orient=\"split\",\n        dtype=NODES_DTYPES,\n    )\n\nnodes_df = get_nodes_df()\n\n# Load the italian regions as a Dataframe\n@pn.cache\ndef get_region_admin_bounds_df():\n    return pd.read_json(\n        \"https://raw.githubusercontent.com/ivandorte/panel-commuting-istat/main/data/italian_regions.json\",\n        orient=\"split\",\n        dtype=ITA_REGIONS_DTYPES,\n    )\nregion_admin_bounds_df = get_region_admin_bounds_df()\n\n# Region selector\nregion_options = dict(map(reversed, ITA_REGIONS.items()))\nregion_options = dict(sorted(region_options.items()))\n\nregion_select = pn.widgets.Select(\n    name=\"Region:\",\n    options=region_options,\n    sizing_mode=\"stretch_width\",\n)\n\n# Toggle buttons to select the commuting purpose\npurpose_select = pn.widgets.ToggleGroup(\n    name=\"\",\n    options=COMMUTING_PURPOSE,\n    behavior=\"radio\",\n    sizing_mode=\"stretch_width\",\n    button_type=\"primary\", button_style=\"outline\"\n)\n\n# Description pane\ndescr_pane = pn.pane.HTML(DASH_DESCR, styles={\"text-align\": \"left\"})\n\n# Numeric indicator for incoming flows\nincoming_numind_bind = pn.bind(\n    get_incoming_numind,\n    edges=edges_df,\n    region_code=region_select,\n    comm_purpose=purpose_select,\n)\n\n# Numeric indicator for outgoing flows\noutgoing_numind_bind = pn.bind(\n    get_outgoing_numind,\n    edges=edges_df,\n    region_code=region_select,\n    comm_purpose=purpose_select,\n)\n\n# Numeric indicator for internal flows\ninternal_numind_bind = pn.bind(\n    get_internal_numind,\n    edges=edges_df,\n    region_code=region_select,\n    comm_purpose=purpose_select,\n)\n\n# Flow map\nflowmap_bind = pn.bind(\n    get_flow_map,\n    nodes=nodes_df,\n    edges=edges_df,\n    region_admin_bounds=region_admin_bounds_df,\n    region_code=region_select,\n    comm_purpose=purpose_select,\n)\n\n# Compose the layout\nlayout = pn.Row(\n    pn.Column(\n        region_select,\n        purpose_select,\n        pn.Row(incoming_numind_bind, outgoing_numind_bind),\n        internal_numind_bind,\n        descr_pane,\n        width=350,\n    ),\n    flowmap_bind,\n)\n\npn.template.FastListTemplate(\n    site=\"\",\n    logo=\"https://raw.githubusercontent.com/ivandorte/panel-commuting-istat/main/icons/home_work.svg\",\n    title=DASH_TITLE,\n    theme=\"default\",\n    theme_toggle=False,\n    accent=ACCENT,\n    neutral_color=\"white\",\n    main=[layout],\n    main_max_width=\"1000px\",\n).servable()\n\nDownload (right-click, save-as)\nThe code of the app is an updated version of the original."
   },
   {
-    "objectID": "resources/classic_dashboard/classic_dashboard.html#gif",
-    "href": "resources/classic_dashboard/classic_dashboard.html#gif",
-    "title": "Classic Dashboard",
+    "objectID": "resources/commuting_flows_italy/index.html#gif",
+    "href": "resources/commuting_flows_italy/index.html#gif",
+    "title": "Commuting Flows Italy",
     "section": "Gif",
     "text": "Gif"
   },
   {
-    "objectID": "resources/classic_dashboard/classic_dashboard.html#mp4",
-    "href": "resources/classic_dashboard/classic_dashboard.html#mp4",
-    "title": "Classic Dashboard",
+    "objectID": "resources/commuting_flows_italy/index.html#github",
+    "href": "resources/commuting_flows_italy/index.html#github",
+    "title": "Commuting Flows Italy",
+    "section": "Github",
+    "text": "Github\nThe original repository by Ivan d’Ortenzio\nivandorte/panel-commuting-istat"
+  },
+  {
+    "objectID": "resources/commuting_flows_italy/index.html#mp4",
+    "href": "resources/commuting_flows_italy/index.html#mp4",
+    "title": "Commuting Flows Italy",
     "section": "Mp4",
     "text": "Mp4\n\n\nYour browser does not support HTML video."
   },
   {
-    "objectID": "resources/classic_dashboard/classic_dashboard.html#png",
-    "href": "resources/classic_dashboard/classic_dashboard.html#png",
-    "title": "Classic Dashboard",
+    "objectID": "resources/commuting_flows_italy/index.html#png",
+    "href": "resources/commuting_flows_italy/index.html#png",
+    "title": "Commuting Flows Italy",
     "section": "Png",
     "text": "Png"
   },
   {
-    "objectID": "resources/bootstrap_dashboard/index.html",
-    "href": "resources/bootstrap_dashboard/index.html",
-    "title": "Bootstrap Dashboard",
-    "section": "",
-    "text": "This dashboard demonstrates that a dashboard layout similar to the Bootstrap dashboard template can be implemented in Panel."
+    "objectID": "resources/commuting_flows_italy/index.html#social",
+    "href": "resources/commuting_flows_italy/index.html#social",
+    "title": "Commuting Flows Italy",
+    "section": "Social",
+    "text": "Social\nPlease share on social media. Thanks."
   },
   {
-    "objectID": "resources/bootstrap_dashboard/index.html#introduction",
-    "href": "resources/bootstrap_dashboard/index.html#introduction",
-    "title": "Bootstrap Dashboard",
+    "objectID": "resources/caching_example/index.html",
+    "href": "resources/caching_example/index.html",
+    "title": "Caching Example",
     "section": "",
-    "text": "This dashboard demonstrates that a dashboard layout similar to the Bootstrap dashboard template can be implemented in Panel."
+    "text": "In computing, a cache is a high-speed data storage layer which stores a subset of data, typically transient in nature, so that future requests for that data are served up faster than is possible by accessing the data’s primary storage location.\nCaching allows you to efficiently reuse previously retrieved or computed data to speed up your exploration, jobs or apps.\nGood caching solutions for Panel are summarized in the table below\n\n\n\nTechnology\nPerformance\nPersistant\nHorizontal Scaling\nVertical Scaling\nExpiration\nPreloading\nComments\n\n\n\n\npanel.cache\nVery Fast\nOptional\nOptional\nYes\nYes\nYes\nConfigurable\n\n\npanel.state.as_cached\nVery Fast\nOptional\nOptional\nYes\nYes\nYes\nConfigurable\n\n\npanel.state.cache\nVery Fast\nNo\nNo\nYes\nNo\nYes\nSimple Dict Cache\n\n\nDiskCache\nVery Fast\nYes\nNo\nYes\nYes\nYes\nSimple Persistent Cache\n\n\nRedis\nVery Fast\nYes\nYes\nYes\nYes\nYes\nServer solution. Works well with the distributed task queue Celery\n\n\n\nNote that\n\nExpiration enables caching data for a period of time for example seconds, minutes, hours or days.\nPreloading of a cache can be triggered by a cronjob or event.\nIf the cache is persisted, i.e. stored to disk or runs on a server like Redis it can enable caching data across jobs, applications, servers and restarts.\n\nTo learn more about caching check out the AWS Caching Overview"
   },
   {
-    "objectID": "resources/bootstrap_dashboard/index.html#app",
-    "href": "resources/bootstrap_dashboard/index.html#app",
-    "title": "Bootstrap Dashboard",
+    "objectID": "resources/caching_example/index.html#introduction",
+    "href": "resources/caching_example/index.html#introduction",
+    "title": "Caching Example",
+    "section": "",
+    "text": "In computing, a cache is a high-speed data storage layer which stores a subset of data, typically transient in nature, so that future requests for that data are served up faster than is possible by accessing the data’s primary storage location.\nCaching allows you to efficiently reuse previously retrieved or computed data to speed up your exploration, jobs or apps.\nGood caching solutions for Panel are summarized in the table below\n\n\n\nTechnology\nPerformance\nPersistant\nHorizontal Scaling\nVertical Scaling\nExpiration\nPreloading\nComments\n\n\n\n\npanel.cache\nVery Fast\nOptional\nOptional\nYes\nYes\nYes\nConfigurable\n\n\npanel.state.as_cached\nVery Fast\nOptional\nOptional\nYes\nYes\nYes\nConfigurable\n\n\npanel.state.cache\nVery Fast\nNo\nNo\nYes\nNo\nYes\nSimple Dict Cache\n\n\nDiskCache\nVery Fast\nYes\nNo\nYes\nYes\nYes\nSimple Persistent Cache\n\n\nRedis\nVery Fast\nYes\nYes\nYes\nYes\nYes\nServer solution. Works well with the distributed task queue Celery\n\n\n\nNote that\n\nExpiration enables caching data for a period of time for example seconds, minutes, hours or days.\nPreloading of a cache can be triggered by a cronjob or event.\nIf the cache is persisted, i.e. stored to disk or runs on a server like Redis it can enable caching data across jobs, applications, servers and restarts.\n\nTo learn more about caching check out the AWS Caching Overview"
+  },
+  {
+    "objectID": "resources/caching_example/index.html#app",
+    "href": "resources/caching_example/index.html#app",
+    "title": "Caching Example",
     "section": "App",
     "text": "App\nThis app runs entirely in the browser via Pyodide and panel convert.\nOpen in a new window | Open in Hugging Face Spaces"
   },
   {
-    "objectID": "resources/bootstrap_dashboard/index.html#code",
-    "href": "resources/bootstrap_dashboard/index.html#code",
-    "title": "Bootstrap Dashboard",
+    "objectID": "resources/caching_example/index.html#code",
+    "href": "resources/caching_example/index.html#code",
+    "title": "Caching Example",
     "section": "Code",
-    "text": "Code\n\n\nShow\n\n\"\"\"\nSee https://awesome-panel.org/resources/bootstrap_dashboard/\n\"\"\"\nimport hvplot.pandas  # pylint: disable=unused-import\nimport pandas as pd\nimport panel as pn\n\nBOOTSTRAP_DASHBOARD_CHART_URL=\"https://awesomepanel.blob.core.windows.net/resources/bootstrap_dashboard/bootstrap_dashboard_chart.csv\"\nBOOTSTRAP_DASHBOARD_TABLE_URL=\"https://awesomepanel.blob.core.windows.net/resources/bootstrap_dashboard/bootstrap_dashboard_table.csv\"\n\nCOLOR=\"#0072B5\"\n\n@pn.cache\ndef _get_chart_data():\n    return pd.read_csv(BOOTSTRAP_DASHBOARD_CHART_URL)\n\n@pn.cache\ndef _get_table_data():\n    return pd.read_csv(BOOTSTRAP_DASHBOARD_TABLE_URL)\n\ndef _holoviews_chart():\n    \"\"\"## Dashboard Orders Chart generated by HoloViews\"\"\"\n    data = _get_chart_data()\n    line_plot = data.hvplot.line(\n        x=\"Day\",\n        y=\"Orders\",\n        height=500,\n        line_color=COLOR,\n        line_width=6,\n    )\n    scatter_plot = data.hvplot.scatter(x=\"Day\", y=\"Orders\", height=300,).opts(\n        marker=\"o\",\n        size=10,\n        color=COLOR,\n    )\n    fig = line_plot * scatter_plot\n    gridstyle = {\n        \"grid_line_color\": \"black\",\n        \"grid_line_width\": 0.1,\n    }\n    fig = fig.opts(\n        responsive=True,\n        toolbar=None,\n        yticks=list(\n            range(\n                12000,\n                26000,\n                2000,\n            )\n        ),\n        ylim=(\n            12000,\n            26000,\n        ),\n        gridstyle=gridstyle,\n        show_grid=True,\n    )\n    return fig\n\napp = pn.extension(\"tabulator\", sizing_mode=\"stretch_width\")\n\npn.template.FastListTemplate(\n    site=\"Awesome Panel\", site_url=\"https://awesome-panel.org\", title=\"Bootstrap Dashboard\",\n    main=[\n        pn.Column(\n            pn.pane.Markdown(\"## Dashboard\"),\n            _holoviews_chart()),\n            pn.Column(pn.pane.Markdown(\"## Section Title\"),\n            pn.widgets.Tabulator(_get_table_data(), layout='fit_data_stretch')),\n    ], main_max_width=\"800px\", main_layout=None,\n).servable()\n\n\nDownload (right-click, save-as)"
+    "text": "Code\n\n\nShow\n\n\"\"\"\n# Caching Example\n\nSee https://awesome-panel.org/resources/caching_example\n\"\"\"\nimport time\n\nimport hvplot.pandas  # pylint: disable=unused-import\nimport numpy as np\nimport pandas as pd\nimport panel as pn\n\npn.extension(design=\"material\")\n\nACCENT_COLOR = \"#1f77b4\"\n\nnp.random.seed([3, 1415])\nPERIODS = 1 * 24 * 60  # minutes. I.e. 1 days\nDATA = pd.DataFrame(\n    {\n        \"time\": pd.date_range(\"2020-01-01\", periods=PERIODS, freq=\"T\"),\n        \"price\": np.random.randn(PERIODS) + 98,\n    }\n)\n\ndef _load_data(frac=0.1):\n    time.sleep(0.5 + frac * 0.5)\n    return DATA.sample(frac=frac)\n\ndef _plot_data(frac=0.1):\n    time.sleep(0.5)\n    data = _load_data(frac)\n    return data.hvplot(x=\"time\", y=\"price\")\n\n@pn.cache(per_session=True, ttl=60*60*24)\ndef _plot_data_cached(frac):\n    return _plot_data(frac)\n\n\n# Create Widgets\nfraction = pn.widgets.FloatSlider(value=0.1, start=0.1, end=1.0, step=0.1, name=\"Fraction of data\")\nduration = pn.widgets.StaticText(value=\"\", name=\"Time to create plot\")\nuse_cache = pn.widgets.Checkbox(value=False, name=\"Use Cache\")\npreload_cache = pn.widgets.Button(name=\"Preload Cache\", button_type=\"primary\", disabled=True)\nclear_cache = pn.widgets.Button(name=\"Clear Cache\", disabled=True)\npreload_progress = pn.widgets.Progress(\n    name=\"Progress\", active=False, value=0, max=100, sizing_mode=\"stretch_width\", disabled=True\n)\n\nplot_panel = pn.pane.HoloViews(min_height=500, sizing_mode=\"stretch_both\")\n\n# Setup interactivity\ndef _clear_cache(*_):\n    _plot_data_cached.clear()\n\n\nclear_cache.on_click(_clear_cache)\n\n\ndef _preload_cache(*_):\n    for index in range(0, 11, 1):\n        frac_ = round(index / 10, 1)\n        preload_progress.value = int(frac_ * 100)\n        _plot_data_cached(frac_)\n    preload_progress.value = 0\n\n\npreload_cache.on_click(_preload_cache)\n\n\n@pn.depends(frac=fraction, watch=True)\ndef _update_plot(frac):\n    start_counter = time.perf_counter()\n\n    frac = round(frac, 1)\n    if use_cache.value:\n        plot = _plot_data_cached(frac)\n    else:\n        plot = _plot_data(frac)\n\n    end_counter = time.perf_counter()\n    duration.value = str(round(end_counter - start_counter, 4)) + \" seconds\"\n\n    # Please note DiskCache does not cache the options\n    plot.opts(color=ACCENT_COLOR, responsive=True)\n    plot_panel.object = plot\n\n\n@pn.depends(use_cache=use_cache, watch=True)\ndef _update_cache_widgets(use_cache):  # pylint: disable=redefined-outer-name\n    disabled = not use_cache\n    preload_cache.disabled = disabled\n    clear_cache.disabled = disabled\n    preload_progress.disabled = disabled\n\n\n# Layout the app\npn.Column(\n    pn.pane.Markdown(\n        \"# Speed up slow functions with caching\", sizing_mode=\"stretch_width\"\n    ),\n    fraction,\n    duration,\n    use_cache,\n    plot_panel,\n    pn.Row(preload_cache, clear_cache,),\n    preload_progress,\n).servable()\n\npn.state.onload(lambda: fraction.param.trigger(\"value\"))\n\nDownload (right-click, save-as)"
   },
   {
-    "objectID": "resources/bootstrap_dashboard/index.html#gif",
-    "href": "resources/bootstrap_dashboard/index.html#gif",
-    "title": "Bootstrap Dashboard",
+    "objectID": "resources/caching_example/index.html#gif",
+    "href": "resources/caching_example/index.html#gif",
+    "title": "Caching Example",
     "section": "Gif",
     "text": "Gif"
   },
   {
-    "objectID": "resources/bootstrap_dashboard/index.html#png",
-    "href": "resources/bootstrap_dashboard/index.html#png",
-    "title": "Bootstrap Dashboard",
+    "objectID": "resources/caching_example/index.html#png",
+    "href": "resources/caching_example/index.html#png",
+    "title": "Caching Example",
     "section": "Png",
     "text": "Png"
   },
   {
-    "objectID": "resources/bootstrap_dashboard/index.html#mp4",
-    "href": "resources/bootstrap_dashboard/index.html#mp4",
-    "title": "Bootstrap Dashboard",
+    "objectID": "resources/caching_example/index.html#mp4",
+    "href": "resources/caching_example/index.html#mp4",
+    "title": "Caching Example",
     "section": "Mp4",
     "text": "Mp4\n\n\nYour browser does not support HTML video."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Awesome Panel",
-    "section": "",
-    "text": "Panel by HoloViz is the powerful data exploration & web app framework for Python.\nPlease give Panel a ⭐ on Github. Thanks.\n\nStar\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nStreaming Number Indicators\n\n\n\n\n\n\n\nhugging face\n\n\npyodide\n\n\npyscript\n\n\nstreaming\n\n\n\n\nDashboard with streaming Number Indicators\n\n\n\n\n\n\nJan 13, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n  \n\n\n\n\nCrossfiltering with HoloViews\n\n\n\n\n\n\n\nbokeh\n\n\nhugging face\n\n\npyodide\n\n\ntimeseries\n\n\n\n\nApply a selection in one plot as a filter in other plots\n\n\n\n\n\n\nJan 8, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n  \n\n\n\n\nPanel ChatBot Pack\n\n\n\n\n\n\n\nartificial intelligence\n\n\nllm\n\n\n\n\nBuild a chatbot with LlamaIndex to talk to your Github repository\n\n\n\n\n\n\nJan 8, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n  \n\n\n\n\nThe Easiest Way to Create an Interactive Dashboard in Python\n\n\n\n\n\n\n\ndashboard\n\n\nhvplot\n\n\nrx\n\n\n\n\nThe Easiest Way to Create an Interactive Dashboard in Python with param.rx and Panel\n\n\n\n\n\n\nJan 8, 2024\n\n\nMarc Skov Madsen, Sophia Yang\n\n\n\n\n\n\n  \n\n\n\n\nCaching Example\n\n\n\n\n\n\n\nhugging face\n\n\nperformance\n\n\npyodide\n\n\n\n\nLearn how caching can speed up your app\n\n\n\n\n\n\nJan 7, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n  \n\n\n\n\nClassic Dashboard\n\n\n\n\n\n\n\ndashboard\n\n\nhvplot\n\n\n\n\nLearn how to create a classic dashboard\n\n\n\n\n\n\nJan 7, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n  \n\n\n\n\nVideo Stream\n\n\n\n\n\n\n\nhugging face\n\n\npyodide\n\n\nvideo\n\n\n\n\nImage processing with Pillow and Scikit Image\n\n\n\n\n\n\nJan 7, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n  \n\n\n\n\nAsync Tasks\n\n\n\n\n\n\n\nasync\n\n\nperformance\n\n\nthreads\n\n\n\n\nRun blocking tasks in the background using a ThreadPoolExecutor and Async\n\n\n\n\n\n\nJan 6, 2024\n\n\nJochem Smit, Marc Skov Madsen\n\n\n\n\n\n\n  \n\n\n\n\nBootstrap Dashboard\n\n\n\n\n\n\n\ndashboard\n\n\nhugging face\n\n\nhvplot\n\n\npyodide\n\n\n\n\nA Bootstrap like dashboard\n\n\n\n\n\n\nJan 6, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n  \n\n\n\n\nPanel Chat Examples\n\n\n\n\n\n\n\nartificial intelligence\n\n\nllm\n\n\n\n\nA resource of Panel Chat Apps using Mistral, LangChain, LlamaIndex, OpenAI etc.\n\n\n\n\n\n\nJan 6, 2024\n\n\nAndrew Huang, Marc Skov Madsen\n\n\n\n\n\n\n  \n\n\n\n\nStumpy\n\n\n\n\n\n\n\nbokeh\n\n\nhugging face\n\n\npyodide\n\n\ntimeseries\n\n\n\n\nUse the Stumpy library to identify patterns in timeseries\n\n\n\n\n\n\nJan 6, 2024\n\n\nMarc Skov Madsen, Sean Law\n\n\n\n\n\n\n  \n\n\n\n\nTasty Map\n\n\n\n\n\n\n\ncolor\n\n\n\n\nGenerate custom color palettes easily using the TastyMap Panel app\n\n\n\n\n\n\nJan 6, 2024\n\n\nAndrew Huang\n\n\n\n\n\n\nNo matching items\n\n Back to top"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Awesome Panel",
-    "section": "",
-    "text": "We want to show how awesome Panel by HoloViz is and push the framework forward.\nPlease give awesome-panel a ⭐ on Github. Thanks.\n\nStar\n\n\n\nAwesome Panel Intro\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "resources/async_tasks/index.html",
@@ -343,53 +350,116 @@
     "text": "Mp4\n\n\nYour browser does not support HTML video."
   },
   {
-    "objectID": "resources/caching_example/index.html",
-    "href": "resources/caching_example/index.html",
-    "title": "Caching Example",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Awesome Panel",
     "section": "",
-    "text": "In computing, a cache is a high-speed data storage layer which stores a subset of data, typically transient in nature, so that future requests for that data are served up faster than is possible by accessing the data’s primary storage location.\nCaching allows you to efficiently reuse previously retrieved or computed data to speed up your exploration, jobs or apps.\nGood caching solutions for Panel are summarized in the table below\n\n\n\nTechnology\nPerformance\nPersistant\nHorizontal Scaling\nVertical Scaling\nExpiration\nPreloading\nComments\n\n\n\n\npanel.cache\nVery Fast\nOptional\nOptional\nYes\nYes\nYes\nConfigurable\n\n\npanel.state.as_cached\nVery Fast\nOptional\nOptional\nYes\nYes\nYes\nConfigurable\n\n\npanel.state.cache\nVery Fast\nNo\nNo\nYes\nNo\nYes\nSimple Dict Cache\n\n\nDiskCache\nVery Fast\nYes\nNo\nYes\nYes\nYes\nSimple Persistent Cache\n\n\nRedis\nVery Fast\nYes\nYes\nYes\nYes\nYes\nServer solution. Works well with the distributed task queue Celery\n\n\n\nNote that\n\nExpiration enables caching data for a period of time for example seconds, minutes, hours or days.\nPreloading of a cache can be triggered by a cronjob or event.\nIf the cache is persisted, i.e. stored to disk or runs on a server like Redis it can enable caching data across jobs, applications, servers and restarts.\n\nTo learn more about caching check out the AWS Caching Overview"
+    "text": "We want to show how awesome Panel by HoloViz is and push the framework forward.\nPlease give awesome-panel a ⭐ on Github. Thanks.\n\nStar\n\n\n\nAwesome Panel Intro\n\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "resources/caching_example/index.html#introduction",
-    "href": "resources/caching_example/index.html#introduction",
-    "title": "Caching Example",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Awesome Panel",
     "section": "",
-    "text": "In computing, a cache is a high-speed data storage layer which stores a subset of data, typically transient in nature, so that future requests for that data are served up faster than is possible by accessing the data’s primary storage location.\nCaching allows you to efficiently reuse previously retrieved or computed data to speed up your exploration, jobs or apps.\nGood caching solutions for Panel are summarized in the table below\n\n\n\nTechnology\nPerformance\nPersistant\nHorizontal Scaling\nVertical Scaling\nExpiration\nPreloading\nComments\n\n\n\n\npanel.cache\nVery Fast\nOptional\nOptional\nYes\nYes\nYes\nConfigurable\n\n\npanel.state.as_cached\nVery Fast\nOptional\nOptional\nYes\nYes\nYes\nConfigurable\n\n\npanel.state.cache\nVery Fast\nNo\nNo\nYes\nNo\nYes\nSimple Dict Cache\n\n\nDiskCache\nVery Fast\nYes\nNo\nYes\nYes\nYes\nSimple Persistent Cache\n\n\nRedis\nVery Fast\nYes\nYes\nYes\nYes\nYes\nServer solution. Works well with the distributed task queue Celery\n\n\n\nNote that\n\nExpiration enables caching data for a period of time for example seconds, minutes, hours or days.\nPreloading of a cache can be triggered by a cronjob or event.\nIf the cache is persisted, i.e. stored to disk or runs on a server like Redis it can enable caching data across jobs, applications, servers and restarts.\n\nTo learn more about caching check out the AWS Caching Overview"
+    "text": "Panel by HoloViz is the powerful data exploration & web app framework for Python.\nPlease give Panel a ⭐ on Github. Thanks.\n\nStar\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nCommuting Flows Italy\n\n\n\n\n\n\n\ngeo\n\n\nhugging face\n\n\npyodide\n\n\n\n\nA dashboard showing commuting flows between Italian regions\n\n\n\n\n\n\nJan 13, 2024\n\n\nIvan d’Ortenzio\n\n\n\n\n\n\n  \n\n\n\n\nStreaming Number Indicators\n\n\n\n\n\n\n\nhugging face\n\n\npyodide\n\n\npyscript\n\n\nstreaming\n\n\n\n\nDashboard with streaming Number Indicators\n\n\n\n\n\n\nJan 13, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n  \n\n\n\n\nCrossfiltering with HoloViews\n\n\n\n\n\n\n\nbokeh\n\n\nhugging face\n\n\npyodide\n\n\ntimeseries\n\n\n\n\nApply a selection in one plot as a filter in other plots\n\n\n\n\n\n\nJan 8, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n  \n\n\n\n\nPanel ChatBot Pack\n\n\n\n\n\n\n\nartificial intelligence\n\n\nllm\n\n\n\n\nBuild a chatbot with LlamaIndex to talk to your Github repository\n\n\n\n\n\n\nJan 8, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n  \n\n\n\n\nThe Easiest Way to Create an Interactive Dashboard in Python\n\n\n\n\n\n\n\ndashboard\n\n\nhvplot\n\n\nrx\n\n\n\n\nThe Easiest Way to Create an Interactive Dashboard in Python with param.rx and Panel\n\n\n\n\n\n\nJan 8, 2024\n\n\nMarc Skov Madsen, Sophia Yang\n\n\n\n\n\n\n  \n\n\n\n\nCaching Example\n\n\n\n\n\n\n\nhugging face\n\n\nperformance\n\n\npyodide\n\n\n\n\nLearn how caching can speed up your app\n\n\n\n\n\n\nJan 7, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n  \n\n\n\n\nClassic Dashboard\n\n\n\n\n\n\n\ndashboard\n\n\nhvplot\n\n\n\n\nLearn how to create a classic dashboard\n\n\n\n\n\n\nJan 7, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n  \n\n\n\n\nVideo Stream\n\n\n\n\n\n\n\nhugging face\n\n\npyodide\n\n\nvideo\n\n\n\n\nImage processing with Pillow and Scikit Image\n\n\n\n\n\n\nJan 7, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n  \n\n\n\n\nAsync Tasks\n\n\n\n\n\n\n\nasync\n\n\nperformance\n\n\nthreads\n\n\n\n\nRun blocking tasks in the background using a ThreadPoolExecutor and Async\n\n\n\n\n\n\nJan 6, 2024\n\n\nJochem Smit, Marc Skov Madsen\n\n\n\n\n\n\n  \n\n\n\n\nBootstrap Dashboard\n\n\n\n\n\n\n\ndashboard\n\n\nhugging face\n\n\nhvplot\n\n\npyodide\n\n\n\n\nA Bootstrap like dashboard\n\n\n\n\n\n\nJan 6, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n  \n\n\n\n\nPanel Chat Examples\n\n\n\n\n\n\n\nartificial intelligence\n\n\nllm\n\n\n\n\nA resource of Panel Chat Apps using Mistral, LangChain, LlamaIndex, OpenAI etc.\n\n\n\n\n\n\nJan 6, 2024\n\n\nAndrew Huang, Marc Skov Madsen\n\n\n\n\n\n\n  \n\n\n\n\nStumpy\n\n\n\n\n\n\n\nbokeh\n\n\nhugging face\n\n\npyodide\n\n\ntimeseries\n\n\n\n\nUse the Stumpy library to identify patterns in timeseries\n\n\n\n\n\n\nJan 6, 2024\n\n\nMarc Skov Madsen, Sean Law\n\n\n\n\n\n\n  \n\n\n\n\nTasty Map\n\n\n\n\n\n\n\ncolor\n\n\n\n\nGenerate custom color palettes easily using the TastyMap Panel app\n\n\n\n\n\n\nJan 6, 2024\n\n\nAndrew Huang\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
-    "objectID": "resources/caching_example/index.html#app",
-    "href": "resources/caching_example/index.html#app",
-    "title": "Caching Example",
+    "objectID": "resources/bootstrap_dashboard/index.html",
+    "href": "resources/bootstrap_dashboard/index.html",
+    "title": "Bootstrap Dashboard",
+    "section": "",
+    "text": "This dashboard demonstrates that a dashboard layout similar to the Bootstrap dashboard template can be implemented in Panel."
+  },
+  {
+    "objectID": "resources/bootstrap_dashboard/index.html#introduction",
+    "href": "resources/bootstrap_dashboard/index.html#introduction",
+    "title": "Bootstrap Dashboard",
+    "section": "",
+    "text": "This dashboard demonstrates that a dashboard layout similar to the Bootstrap dashboard template can be implemented in Panel."
+  },
+  {
+    "objectID": "resources/bootstrap_dashboard/index.html#app",
+    "href": "resources/bootstrap_dashboard/index.html#app",
+    "title": "Bootstrap Dashboard",
     "section": "App",
     "text": "App\nThis app runs entirely in the browser via Pyodide and panel convert.\nOpen in a new window | Open in Hugging Face Spaces"
   },
   {
-    "objectID": "resources/caching_example/index.html#code",
-    "href": "resources/caching_example/index.html#code",
-    "title": "Caching Example",
+    "objectID": "resources/bootstrap_dashboard/index.html#code",
+    "href": "resources/bootstrap_dashboard/index.html#code",
+    "title": "Bootstrap Dashboard",
     "section": "Code",
-    "text": "Code\n\n\nShow\n\n\"\"\"\n# Caching Example\n\nSee https://awesome-panel.org/resources/caching_example\n\"\"\"\nimport time\n\nimport hvplot.pandas  # pylint: disable=unused-import\nimport numpy as np\nimport pandas as pd\nimport panel as pn\n\npn.extension(design=\"material\")\n\nACCENT_COLOR = \"#1f77b4\"\n\nnp.random.seed([3, 1415])\nPERIODS = 1 * 24 * 60  # minutes. I.e. 1 days\nDATA = pd.DataFrame(\n    {\n        \"time\": pd.date_range(\"2020-01-01\", periods=PERIODS, freq=\"T\"),\n        \"price\": np.random.randn(PERIODS) + 98,\n    }\n)\n\ndef _load_data(frac=0.1):\n    time.sleep(0.5 + frac * 0.5)\n    return DATA.sample(frac=frac)\n\ndef _plot_data(frac=0.1):\n    time.sleep(0.5)\n    data = _load_data(frac)\n    return data.hvplot(x=\"time\", y=\"price\")\n\n@pn.cache(per_session=True, ttl=60*60*24)\ndef _plot_data_cached(frac):\n    return _plot_data(frac)\n\n\n# Create Widgets\nfraction = pn.widgets.FloatSlider(value=0.1, start=0.1, end=1.0, step=0.1, name=\"Fraction of data\")\nduration = pn.widgets.StaticText(value=\"\", name=\"Time to create plot\")\nuse_cache = pn.widgets.Checkbox(value=False, name=\"Use Cache\")\npreload_cache = pn.widgets.Button(name=\"Preload Cache\", button_type=\"primary\", disabled=True)\nclear_cache = pn.widgets.Button(name=\"Clear Cache\", disabled=True)\npreload_progress = pn.widgets.Progress(\n    name=\"Progress\", active=False, value=0, max=100, sizing_mode=\"stretch_width\", disabled=True\n)\n\nplot_panel = pn.pane.HoloViews(min_height=500, sizing_mode=\"stretch_both\")\n\n# Setup interactivity\ndef _clear_cache(*_):\n    _plot_data_cached.clear()\n\n\nclear_cache.on_click(_clear_cache)\n\n\ndef _preload_cache(*_):\n    for index in range(0, 11, 1):\n        frac_ = round(index / 10, 1)\n        preload_progress.value = int(frac_ * 100)\n        _plot_data_cached(frac_)\n    preload_progress.value = 0\n\n\npreload_cache.on_click(_preload_cache)\n\n\n@pn.depends(frac=fraction, watch=True)\ndef _update_plot(frac):\n    start_counter = time.perf_counter()\n\n    frac = round(frac, 1)\n    if use_cache.value:\n        plot = _plot_data_cached(frac)\n    else:\n        plot = _plot_data(frac)\n\n    end_counter = time.perf_counter()\n    duration.value = str(round(end_counter - start_counter, 4)) + \" seconds\"\n\n    # Please note DiskCache does not cache the options\n    plot.opts(color=ACCENT_COLOR, responsive=True)\n    plot_panel.object = plot\n\n\n@pn.depends(use_cache=use_cache, watch=True)\ndef _update_cache_widgets(use_cache):  # pylint: disable=redefined-outer-name\n    disabled = not use_cache\n    preload_cache.disabled = disabled\n    clear_cache.disabled = disabled\n    preload_progress.disabled = disabled\n\n\n# Layout the app\npn.Column(\n    pn.pane.Markdown(\n        \"# Speed up slow functions with caching\", sizing_mode=\"stretch_width\"\n    ),\n    fraction,\n    duration,\n    use_cache,\n    plot_panel,\n    pn.Row(preload_cache, clear_cache,),\n    preload_progress,\n).servable()\n\npn.state.onload(lambda: fraction.param.trigger(\"value\"))\n\nDownload (right-click, save-as)"
+    "text": "Code\n\n\nShow\n\n\"\"\"\nSee https://awesome-panel.org/resources/bootstrap_dashboard/\n\"\"\"\nimport hvplot.pandas  # pylint: disable=unused-import\nimport pandas as pd\nimport panel as pn\n\nBOOTSTRAP_DASHBOARD_CHART_URL=\"https://awesomepanel.blob.core.windows.net/resources/bootstrap_dashboard/bootstrap_dashboard_chart.csv\"\nBOOTSTRAP_DASHBOARD_TABLE_URL=\"https://awesomepanel.blob.core.windows.net/resources/bootstrap_dashboard/bootstrap_dashboard_table.csv\"\n\nCOLOR=\"#0072B5\"\n\n@pn.cache\ndef _get_chart_data():\n    return pd.read_csv(BOOTSTRAP_DASHBOARD_CHART_URL)\n\n@pn.cache\ndef _get_table_data():\n    return pd.read_csv(BOOTSTRAP_DASHBOARD_TABLE_URL)\n\ndef _holoviews_chart():\n    \"\"\"## Dashboard Orders Chart generated by HoloViews\"\"\"\n    data = _get_chart_data()\n    line_plot = data.hvplot.line(\n        x=\"Day\",\n        y=\"Orders\",\n        height=500,\n        line_color=COLOR,\n        line_width=6,\n    )\n    scatter_plot = data.hvplot.scatter(x=\"Day\", y=\"Orders\", height=300,).opts(\n        marker=\"o\",\n        size=10,\n        color=COLOR,\n    )\n    fig = line_plot * scatter_plot\n    gridstyle = {\n        \"grid_line_color\": \"black\",\n        \"grid_line_width\": 0.1,\n    }\n    fig = fig.opts(\n        responsive=True,\n        toolbar=None,\n        yticks=list(\n            range(\n                12000,\n                26000,\n                2000,\n            )\n        ),\n        ylim=(\n            12000,\n            26000,\n        ),\n        gridstyle=gridstyle,\n        show_grid=True,\n    )\n    return fig\n\napp = pn.extension(\"tabulator\", sizing_mode=\"stretch_width\")\n\npn.template.FastListTemplate(\n    site=\"Awesome Panel\", site_url=\"https://awesome-panel.org\", title=\"Bootstrap Dashboard\",\n    main=[\n        pn.Column(\n            pn.pane.Markdown(\"## Dashboard\"),\n            _holoviews_chart()),\n            pn.Column(pn.pane.Markdown(\"## Section Title\"),\n            pn.widgets.Tabulator(_get_table_data(), layout='fit_data_stretch')),\n    ], main_max_width=\"800px\", main_layout=None,\n).servable()\n\n\nDownload (right-click, save-as)"
   },
   {
-    "objectID": "resources/caching_example/index.html#gif",
-    "href": "resources/caching_example/index.html#gif",
-    "title": "Caching Example",
+    "objectID": "resources/bootstrap_dashboard/index.html#gif",
+    "href": "resources/bootstrap_dashboard/index.html#gif",
+    "title": "Bootstrap Dashboard",
     "section": "Gif",
     "text": "Gif"
   },
   {
-    "objectID": "resources/caching_example/index.html#png",
-    "href": "resources/caching_example/index.html#png",
-    "title": "Caching Example",
+    "objectID": "resources/bootstrap_dashboard/index.html#png",
+    "href": "resources/bootstrap_dashboard/index.html#png",
+    "title": "Bootstrap Dashboard",
     "section": "Png",
     "text": "Png"
   },
   {
-    "objectID": "resources/caching_example/index.html#mp4",
-    "href": "resources/caching_example/index.html#mp4",
-    "title": "Caching Example",
+    "objectID": "resources/bootstrap_dashboard/index.html#mp4",
+    "href": "resources/bootstrap_dashboard/index.html#mp4",
+    "title": "Bootstrap Dashboard",
     "section": "Mp4",
     "text": "Mp4\n\n\nYour browser does not support HTML video."
+  },
+  {
+    "objectID": "resources/classic_dashboard/classic_dashboard.html",
+    "href": "resources/classic_dashboard/classic_dashboard.html",
+    "title": "Classic Dashboard",
+    "section": "",
+    "text": "The app shows you how to create a Classic Dashboard in Panel with\n\nClassic Layout and design\nResponsiveness\nUser Selections"
+  },
+  {
+    "objectID": "resources/classic_dashboard/classic_dashboard.html#introduction",
+    "href": "resources/classic_dashboard/classic_dashboard.html#introduction",
+    "title": "Classic Dashboard",
+    "section": "",
+    "text": "The app shows you how to create a Classic Dashboard in Panel with\n\nClassic Layout and design\nResponsiveness\nUser Selections"
+  },
+  {
+    "objectID": "resources/classic_dashboard/classic_dashboard.html#app",
+    "href": "resources/classic_dashboard/classic_dashboard.html#app",
+    "title": "Classic Dashboard",
+    "section": "App",
+    "text": "App\nOpen in a new window | Open in Hugging Face Spaces"
+  },
+  {
+    "objectID": "resources/classic_dashboard/classic_dashboard.html#code",
+    "href": "resources/classic_dashboard/classic_dashboard.html#code",
+    "title": "Classic Dashboard",
+    "section": "Code",
+    "text": "Code\n\n\nShow\n\n\"\"\"\nSee https://awesome-panel.org/resources/classic_dashboard/\n\"\"\"\nimport pathlib\n\nimport holoviews as hv\nimport hvplot.pandas  # pylint: disable=unused-import\nimport pandas as pd\nimport panel as pn\nimport param\nfrom holoviews.plotting.util import process_cmap\n\nDASHBOARD_A_PATH=\"https://cdn.awesome-panel.org/resources/classic_dashboard/dashboard_A.csv\"\nDASHBOARD_B_PATH=\"https://cdn.awesome-panel.org/resources/classic_dashboard/dashboard_B.csv\"\n\nCOLOR_MAPS = hv.plotting.util.list_cmaps()\nSTYLE = \"\"\"\nbody {\n    margin: 0px;\n    min-height: 100vh;\n    overflow-x: hidden;\n    width: 100%;\n    background: #f2f2f2;\n}\n.bk.app-body {\n    background: #f2f2f2;\n    color: #000000;\n    font-family: roboto, sans-serif, Verdana;\n}\n.bk.app-bar {\n    background: #212121;\n    border-color: white;\n    box-shadow: 5px 5px 20px #9E9E9E;\n    color: #ffffff;\n    z-index: 50;\n}\n.bk.app-container {\n    background: #ffffff;\n    border-radius: 5px;\n    box-shadow: 2px 2px 2px lightgrey;\n    color: #000000;\n}\n\n.bk.app-settings {\n    background: #e0e0e0;\n    color: #000000;\n}\n\n\"\"\"\n\n@pn.cache\ndef _get_data_a():\n    return pd.read_csv(DASHBOARD_A_PATH, index_col=0)\n\n@pn.cache\ndef _get_data_b():\n    return pd.read_csv(DASHBOARD_B_PATH, index_col=0)\n\n\nclass Dashboard(pn.viewable.Viewer):\n    \"\"\"This application show cases how to build a Classic Dashboard\n    in Panel.\n    \"\"\"\n\n    tool = param.ObjectSelector(label=\"Tool\", default=\"S1_1\", objects=[\"S1_1\", \"S2_1\"])\n    variable = param.ObjectSelector(\n        label=\"Variable\",\n        default=\"Cut Distance\",\n        objects=[\"Cut Distance\", \"Removed Volume\", \"Av. uncut chip thickness\"],\n    )\n    color_map = param.ObjectSelector(default=\"rainbow\", objects=COLOR_MAPS)\n\n    view = param.ClassSelector(class_=pn.Column)\n\n    def __init__(self, **params):\n        super().__init__(**params)\n\n        self.insert_plot_pane = pn.pane.HoloViews(\n            self._get_insert_plot, sizing_mode=\"stretch_width\", margin=10, height=300\n        )\n        self.edge_plot_pane = pn.pane.HoloViews(\n            self._get_edge_plot, sizing_mode=\"stretch_width\", margin=10, height=300\n        )\n        self.history_plot_pane = pn.pane.HoloViews(\n            self._update_history_plot, sizing_mode=\"stretch_width\", margin=10, height=300\n        )\n        self.view = pn.Column(sizing_mode=\"stretch_both\")\n        self._init_view()\n\n    def _init_view(self):\n        appbar = pn.Row(\n            pn.pane.Markdown(\n                \"#### Classic Dashboard in Panel \",\n                margin=(15, 5, 5, 25),\n                sizing_mode=\"stretch_width\",\n                align=\"center\",\n            ),\n            pn.layout.HSpacer(height=0),\n            pn.pane.PNG(\n                \"https://panel.holoviz.org/_static/logo_horizontal.png\",\n                width=200,\n                align=\"center\",\n                sizing_mode=\"fixed\",\n                margin=(10, 50, 10, 5),\n                embed=False,\n            ),\n            sizing_mode=\"stretch_width\",\n            css_classes=[\"app-bar\"],\n        )\n        settings_bar = pn.Column(\n            pn.Param(\n                self,\n                parameters=[\"tool\", \"variable\", \"color_map\"],\n                widgets={\n                    \"tool\": {\"align\": \"center\", \"width\": 75, \"sizing_mode\": \"fixed\"},\n                    \"variable\": {\n                        \"type\": pn.widgets.RadioBoxGroup,\n                        \"inline\": True,\n                        \"align\": \"end\",\n                        \"sizing_mode\": \"stretch_width\",\n                    },\n                },\n                default_layout=pn.Row,\n                show_name=False,\n                sizing_mode=\"stretch_width\",\n            ),\n            pn.layout.HSpacer(height=0),\n            sizing_mode=\"stretch_width\",\n            css_classes=[\"app-container\"],\n            margin=(50, 25, 25, 25),\n        )\n\n        self.view[:] = [  # pylint: disable=unsupported-assignment-operation\n            pn.Column(\n                appbar,\n                settings_bar,\n                pn.Row(\n                    pn.Column(\n                        self.insert_plot_pane,\n                        css_classes=[\"app-container\"],\n                        margin=25,\n                        sizing_mode=\"stretch_both\",\n                    ),\n                    pn.Column(\n                        self.edge_plot_pane,\n                        css_classes=[\"app-container\"],\n                        margin=25,\n                        sizing_mode=\"stretch_both\",\n                    ),\n                    sizing_mode=\"stretch_both\",\n                    min_height=300,\n                ),\n                pn.Row(\n                    self.history_plot_pane,\n                    css_classes=[\"app-container\"],\n                    margin=25,\n                    min_height=300,\n                    sizing_mode=\"stretch_both\",\n                ),\n                css_classes=[\"app-body\"],\n                sizing_mode=\"stretch_both\",\n            ),\n            pn.layout.HSpacer(height=25),\n        ]\n\n    @pn.depends(\"tool\", \"variable\", \"color_map\")\n    def _get_insert_plot(self):\n        plot_data = _get_data_a().loc[self.tool]\n        data = [(plot_data[\"Xo\"], plot_data[\"Yo\"], plot_data[self.variable])]\n        return hv.Path(data, vdims=self.variable).opts(\n            cmap=self.color_map, color=self.variable, line_width=4, colorbar=True, responsive=True\n        )\n\n    @pn.depends(\"tool\", \"variable\", \"color_map\")\n    def _get_edge_plot(self):\n        plot_data = _get_data_a().loc[self.tool]\n        return plot_data.hvplot(\n            x=\"Number\", y=self.variable, kind=\"area\", alpha=0.6, color=self._color, responsive=True\n        )\n\n    @pn.depends(\"tool\", \"color_map\")\n    def _update_history_plot(self):\n        plot_data = _get_data_b().loc[self.tool]\n        return plot_data.hvplot(\n            x=\"Cut Distance\", y=\"Feed\", kind=\"line\", line_width=4, responsive=True\n        ).opts(color=self._color)\n\n    @property\n    def _color(self):\n        return process_cmap(self.color_map, 1)[0]\n\n\nif pn.state.served:\n    pn.extension(raw_css=[STYLE], design=\"bootstrap\")\n    Dashboard().view.servable()\n    \n\nDownload (right-click, save-as)"
+  },
+  {
+    "objectID": "resources/classic_dashboard/classic_dashboard.html#gif",
+    "href": "resources/classic_dashboard/classic_dashboard.html#gif",
+    "title": "Classic Dashboard",
+    "section": "Gif",
+    "text": "Gif"
+  },
+  {
+    "objectID": "resources/classic_dashboard/classic_dashboard.html#mp4",
+    "href": "resources/classic_dashboard/classic_dashboard.html#mp4",
+    "title": "Classic Dashboard",
+    "section": "Mp4",
+    "text": "Mp4\n\n\nYour browser does not support HTML video."
+  },
+  {
+    "objectID": "resources/classic_dashboard/classic_dashboard.html#png",
+    "href": "resources/classic_dashboard/classic_dashboard.html#png",
+    "title": "Classic Dashboard",
+    "section": "Png",
+    "text": "Png"
   },
   {
     "objectID": "resources/crossfiltering_holoviews/index.html",

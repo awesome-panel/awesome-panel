@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/resources/commuting_flows_italy/index.html",
       "/resources/streaming_number_indicators/index.html",
       "/resources/crossfiltering_holoviews/index.html",
       "/resources/panel_chat_pack/index.html",

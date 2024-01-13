@@ -17,6 +17,18 @@
 <generator>quarto-1.3.450</generator>
 <lastBuildDate>Sat, 13 Jan 2024 00:00:00 GMT</lastBuildDate>
 <item>
+  <title>Commuting Flows Italy</title>
+  <dc:creator>Ivan d&#39;Ortenzio</dc:creator>
+  <link>https://awesome-panel.org/resources/commuting_flows_italy/index.html</link>
+  <description><![CDATA[ A dashboard by <a href="https://github.com/ivandorte">Ivan d’Ortenzio</a> showing incoming and outgoing commuting flows between Italian regions. ]]></description>
+  <category>geo</category>
+  <category>hugging face</category>
+  <category>pyodide</category>
+  <guid>https://awesome-panel.org/resources/commuting_flows_italy/index.html</guid>
+  <pubDate>Sat, 13 Jan 2024 00:00:00 GMT</pubDate>
+  <media:content url="https://awesome-panel.org/resources/commuting_flows_italy/commuting_flows_italy.png" medium="image" type="image/png" height="86" width="144"/>
+</item>
+<item>
   <title>Streaming Number Indicators</title>
   <dc:creator>Marc Skov Madsen</dc:creator>
   <link>https://awesome-panel.org/resources/streaming_number_indicators/index.html</link>
@@ -126,18 +138,6 @@
   <guid>https://awesome-panel.org/resources/bootstrap_dashboard/index.html</guid>
   <pubDate>Sat, 06 Jan 2024 00:00:00 GMT</pubDate>
   <media:content url="https://awesome-panel.org/resources/bootstrap_dashboard/bootstrap_dashboard.png" medium="image" type="image/png" height="99" width="144"/>
-</item>
-<item>
-  <title>Panel Chat Examples</title>
-  <dc:creator>Andrew Huang</dc:creator>
-  <dc:creator>Marc Skov Madsen</dc:creator>
-  <link>https://awesome-panel.org/resources/panel_chat_examples/index.html</link>
-  <description><![CDATA[ <a href="https://holoviz-topics.github.io/panel-chat-examples/">Panel Chat Examples</a> provides example Panel Chat Apps. ]]></description>
-  <category>artificial intelligence</category>
-  <category>llm</category>
-  <guid>https://awesome-panel.org/resources/panel_chat_examples/index.html</guid>
-  <pubDate>Sat, 06 Jan 2024 00:00:00 GMT</pubDate>
-  <media:content url="https://awesome-panel.org/resources/panel_chat_examples/panel_chat_examples.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 </channel>
 </rss>
