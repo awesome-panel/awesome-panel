@@ -1,8 +1,18 @@
 div.quarto-post .thumbnail img {
     object-fit: contain;
 }
+.navbar-dark {
+  background: var(--bs-body-bg);
+}
 #quarto-header {
     box-shadow: 0 .125rem .25rem 0 #d8d8d8;
+}
+.quarto-dark #quarto-header {
+  box-shadow: none;
+  border-bottom: 1px solid #d8d8d8;
+}
+.quarto-dark i.bi {
+  color: var(--quarto-body-color);
 }
 img, video {
     max-width:100%;

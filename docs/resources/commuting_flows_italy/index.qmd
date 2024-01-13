@@ -1,0 +1,66 @@
+---
+title: "Commuting Flows Italy"
+date: "2024-01-13"
+description: "A dashboard showing commuting flows between Italian regions"
+author:
+  - name: Ivan d'Ortenzio
+    url: https://github.com/ivandorte
+    
+categories: [geo,hugging face,pyodide,]
+image: "commuting_flows_italy.png"
+---
+
+## Introduction
+
+A dashboard by [Ivan d'Ortenzio](https://github.com/ivandorte) showing incoming and outgoing commuting flows between Italian regions.
+
+## App
+
+This app runs entirely in the browser via [Pyodide](https://pyodide.org) and [panel convert](https://panel.holoviz.org/how_to/wasm/convert.html).
+
+<a href="https://awesome-panel-commuting-flows-italy.static.hf.space" target="_blank">Open in a new window</a> | <a href="https://huggingface.co/spaces/awesome-panel/commuting_flows_italy" target="_blank">Open in Hugging Face Spaces</a> | <a href="https://pyscript.com/@awesome-panel/streaming-number-indicators" target="_blank">Open in PyScript.com</a>
+
+<iframe
+	src="https://awesome-panel-commuting-flows-italy.static.hf.space"
+	frameborder="0"
+	style="width:100%;height:700px"
+></iframe>
+
+## Code
+
+<details>
+<summary>Show</summary>
+```{.python include="../../../examples/commuting_flows_italy.py" code-line-numbers="true"}
+```
+</details>
+
+<a href="https://raw.githubusercontent.com/awesome-panel/awesome-panel/main/examples/commuting_flows_italy.py" download>Download (right-click, save-as)</a>
+
+The code of the app is an updated version of the original.
+
+## Gif
+
+<img src="https://cdn.awesome-panel.org/resources/commuting_flows_italy/commuting_flows_italy.gif"></img>
+
+## Github
+
+The original repository by Ivan d'Ortenzio
+
+[ivandorte/panel-commuting-istat](https://github.com/ivandorte/panel-commuting-istat)
+
+## Mp4
+
+<video poster="https://cdn.awesome-panel.org/resources/commuting_flows_italy/commuting_flows_italy.png" controls>
+  <source src="https://cdn.awesome-panel.org/resources/commuting_flows_italy/commuting_flows_italy.mp4" type="video/mp4">
+  Your browser does not support HTML video.
+</video>
+
+## Png
+
+<img src="https://cdn.awesome-panel.org/resources/commuting_flows_italy/commuting_flows_italy.png"></img>
+
+## Social
+
+Please share on social media. Thanks.
+
+<a href="https://x.com/awesome_panel/status/1746120196283326908?s=20" target="_blank"><i class="bi bi-twitter"></i></a> <a href="https://www.linkedin.com/posts/awesome-panel-org_python-pyscript-python-activity-7151886774900793345-3Pgk" target="_blank"><i class="bi bi-linkedin"></i></a>
