@@ -3,7 +3,7 @@ title: "Commuting Flows Italy"
 date: "2024-01-13"
 description: "A dashboard showing commuting flows between Italian regions"
 author:
-  - name: Ivan d'Ortenzio
+  - name: Ivan D'Ortenzio
     url: https://github.com/ivandorte
     
 categories: [geo,hugging face,pyodide,]
@@ -12,7 +12,7 @@ image: "commuting_flows_italy.png"
 
 ## Introduction
 
-A dashboard by [Ivan d'Ortenzio](https://github.com/ivandorte) showing incoming and outgoing commuting flows between Italian regions.
+A dashboard by [Ivan D'Ortenzio](https://github.com/ivandorte) showing incoming and outgoing commuting flows between Italian regions.
 
 ## App
 
@@ -44,7 +44,7 @@ The code of the app is an updated version of the original.
 
 ## Github
 
-The original repository by Ivan d'Ortenzio
+The original repository by Ivan D'Ortenzio
 
 [ivandorte/panel-commuting-istat](https://github.com/ivandorte/panel-commuting-istat)
 
