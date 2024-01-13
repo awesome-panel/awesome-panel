@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Marc Skov Madsen">
-<meta name="dcterms.date" content="2024-01-06">
-<meta name="description" content="A Bootstrap like dashboard">
+<meta name="dcterms.date" content="2024-01-13">
+<meta name="description" content="Dashboard with streaming Number Indicators">
 
-<title>Awesome Panel - Bootstrap Dashboard</title>
+<title>Awesome Panel - Streaming Number Indicators</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -100,18 +100,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../../_quarto.css">
-<meta property="og:title" content="Awesome Panel - Bootstrap Dashboard">
-<meta property="og:description" content="A Bootstrap like dashboard">
-<meta property="og:image" content="https://awesome-panel.org/resources/bootstrap_dashboard/bootstrap_dashboard.png">
+<meta property="og:title" content="Awesome Panel - Streaming Number Indicators">
+<meta property="og:description" content="Dashboard with streaming Number Indicators">
+<meta property="og:image" content="https://awesome-panel.org/resources/streaming_number_indicators/streaming_number_indicators.png">
 <meta property="og:site-name" content="Awesome Panel">
-<meta property="og:image:height" content="650">
-<meta property="og:image:width" content="947">
-<meta name="twitter:title" content="Awesome Panel - Bootstrap Dashboard">
-<meta name="twitter:description" content="A Bootstrap like dashboard">
-<meta name="twitter:image" content="https://awesome-panel.org/resources/bootstrap_dashboard/bootstrap_dashboard.png">
+<meta property="og:image:height" content="978">
+<meta property="og:image:width" content="1825">
+<meta name="twitter:title" content="Awesome Panel - Streaming Number Indicators">
+<meta name="twitter:description" content="Dashboard with streaming Number Indicators">
+<meta name="twitter:image" content="https://awesome-panel.org/resources/streaming_number_indicators/streaming_number_indicators.png">
 <meta name="twitter:site" content="@awesome_panel">
-<meta name="twitter:image-height" content="650">
-<meta name="twitter:image-width" content="947">
+<meta name="twitter:image-height" content="978">
+<meta name="twitter:image-width" content="1825">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -164,8 +164,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#app" id="toc-app" class="nav-link" data-scroll-target="#app">App</a></li>
   <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a></li>
   <li><a href="#gif" id="toc-gif" class="nav-link" data-scroll-target="#gif">Gif</a></li>
-  <li><a href="#png" id="toc-png" class="nav-link" data-scroll-target="#png">Png</a></li>
   <li><a href="#mp4" id="toc-mp4" class="nav-link" data-scroll-target="#mp4">Mp4</a></li>
+  <li><a href="#png" id="toc-png" class="nav-link" data-scroll-target="#png">Png</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/awesome-panel/awesome-panel/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -174,18 +174,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Bootstrap Dashboard</h1>
+<h1 class="title">Streaming Number Indicators</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">dashboard</div>
     <div class="quarto-category">hugging face</div>
-    <div class="quarto-category">hvplot</div>
     <div class="quarto-category">pyodide</div>
+    <div class="quarto-category">streaming</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    A Bootstrap like dashboard
+    Dashboard with streaming Number Indicators
   </div>
 </div>
 
@@ -202,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 6, 2024</p>
+      <p class="date">January 13, 2024</p>
     </div>
   </div>
   
@@ -214,13 +213,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>This dashboard demonstrates that a dashboard layout similar to the <a href="https://getbootstrap.com/docs/4.3/examples/dashboard/"><em>Bootstrap dashboard template</em></a> can be implemented in <a href="https://panel.pyviz.org/">Panel</a>.</p>
+<p>Dashboard with streaming <a href="https://panel.holoviz.org/reference/indicators/Number.html">Number Indicators</a>. The <a href="https://panel.holoviz.org/reference/layouts/FlexBox.html">FlexBox</a> layout used ensures the indicators will layout nicely no matter the window width or device.</p>
+<p>We use caching to ensure the values are updated globally across all sessions instead of per session when running on a Server.</p>
 </section>
 <section id="app" class="level2">
 <h2 class="anchored" data-anchor-id="app">App</h2>
 <p>This app runs entirely in the browser via <a href="https://pyodide.org">Pyodide</a> and <a href="https://panel.holoviz.org/how_to/wasm/convert.html">panel convert</a>.</p>
-<p><a href="https://awesome-panel-bootstrap-dashboard.static.hf.space" target="_blank">Open in a new window</a> | <a href="https://huggingface.co/spaces/awesome-panel/bootstrap_dashboard" target="_blank">Open in Hugging Face Spaces</a></p>
-<iframe src="https://awesome-panel-bootstrap-dashboard.static.hf.space" frameborder="0" style="width:100%;height:800px">
+<p><a href="https://awesome-panel-streaming-number-indicators.static.hf.space" target="_blank">Open in a new window</a> | <a href="https://huggingface.co/spaces/awesome-panel/streaming_number_indicators" target="_blank">Open in Hugging Face Spaces</a></p>
+<iframe src="https://awesome-panel-streaming-number-indicators.static.hf.space" frameborder="0" style="width:100%;height:1050px">
 </iframe>
 </section>
 <section id="code" class="level2">
@@ -230,96 +230,117 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 Show
 </summary>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">"""</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="co">See https://awesome-panel.org/resources/bootstrap_dashboard/</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co">Source: https://awesome-panel.org/resources/streaming_indicators/</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="co">"""</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="im">import</span> hvplot.pandas  <span class="co"># pylint: disable=unused-import</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="im">import</span> panel <span class="im">as</span> pn</span>
-<span id="cb1-7"><a href="#cb1-7"></a></span>
-<span id="cb1-8"><a href="#cb1-8"></a>BOOTSTRAP_DASHBOARD_CHART_URL<span class="op">=</span><span class="st">"https://awesomepanel.blob.core.windows.net/resources/bootstrap_dashboard/bootstrap_dashboard_chart.csv"</span></span>
-<span id="cb1-9"><a href="#cb1-9"></a>BOOTSTRAP_DASHBOARD_TABLE_URL<span class="op">=</span><span class="st">"https://awesomepanel.blob.core.windows.net/resources/bootstrap_dashboard/bootstrap_dashboard_table.csv"</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a></span>
-<span id="cb1-11"><a href="#cb1-11"></a>COLOR<span class="op">=</span><span class="st">"#0072B5"</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a></span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="at">@pn.cache</span></span>
-<span id="cb1-14"><a href="#cb1-14"></a><span class="kw">def</span> _get_chart_data():</span>
-<span id="cb1-15"><a href="#cb1-15"></a>    <span class="cf">return</span> pd.read_csv(BOOTSTRAP_DASHBOARD_CHART_URL)</span>
-<span id="cb1-16"><a href="#cb1-16"></a></span>
-<span id="cb1-17"><a href="#cb1-17"></a><span class="at">@pn.cache</span></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="kw">def</span> _get_table_data():</span>
-<span id="cb1-19"><a href="#cb1-19"></a>    <span class="cf">return</span> pd.read_csv(BOOTSTRAP_DASHBOARD_TABLE_URL)</span>
-<span id="cb1-20"><a href="#cb1-20"></a></span>
-<span id="cb1-21"><a href="#cb1-21"></a><span class="kw">def</span> _holoviews_chart():</span>
-<span id="cb1-22"><a href="#cb1-22"></a>    <span class="co">"""## Dashboard Orders Chart generated by HoloViews"""</span></span>
-<span id="cb1-23"><a href="#cb1-23"></a>    data <span class="op">=</span> _get_chart_data()</span>
-<span id="cb1-24"><a href="#cb1-24"></a>    line_plot <span class="op">=</span> data.hvplot.line(</span>
-<span id="cb1-25"><a href="#cb1-25"></a>        x<span class="op">=</span><span class="st">"Day"</span>,</span>
-<span id="cb1-26"><a href="#cb1-26"></a>        y<span class="op">=</span><span class="st">"Orders"</span>,</span>
-<span id="cb1-27"><a href="#cb1-27"></a>        height<span class="op">=</span><span class="dv">500</span>,</span>
-<span id="cb1-28"><a href="#cb1-28"></a>        line_color<span class="op">=</span>COLOR,</span>
-<span id="cb1-29"><a href="#cb1-29"></a>        line_width<span class="op">=</span><span class="dv">6</span>,</span>
-<span id="cb1-30"><a href="#cb1-30"></a>    )</span>
-<span id="cb1-31"><a href="#cb1-31"></a>    scatter_plot <span class="op">=</span> data.hvplot.scatter(x<span class="op">=</span><span class="st">"Day"</span>, y<span class="op">=</span><span class="st">"Orders"</span>, height<span class="op">=</span><span class="dv">300</span>,).opts(</span>
-<span id="cb1-32"><a href="#cb1-32"></a>        marker<span class="op">=</span><span class="st">"o"</span>,</span>
-<span id="cb1-33"><a href="#cb1-33"></a>        size<span class="op">=</span><span class="dv">10</span>,</span>
-<span id="cb1-34"><a href="#cb1-34"></a>        color<span class="op">=</span>COLOR,</span>
-<span id="cb1-35"><a href="#cb1-35"></a>    )</span>
-<span id="cb1-36"><a href="#cb1-36"></a>    fig <span class="op">=</span> line_plot <span class="op">*</span> scatter_plot</span>
-<span id="cb1-37"><a href="#cb1-37"></a>    gridstyle <span class="op">=</span> {</span>
-<span id="cb1-38"><a href="#cb1-38"></a>        <span class="st">"grid_line_color"</span>: <span class="st">"black"</span>,</span>
-<span id="cb1-39"><a href="#cb1-39"></a>        <span class="st">"grid_line_width"</span>: <span class="fl">0.1</span>,</span>
-<span id="cb1-40"><a href="#cb1-40"></a>    }</span>
-<span id="cb1-41"><a href="#cb1-41"></a>    fig <span class="op">=</span> fig.opts(</span>
-<span id="cb1-42"><a href="#cb1-42"></a>        responsive<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb1-43"><a href="#cb1-43"></a>        toolbar<span class="op">=</span><span class="va">None</span>,</span>
-<span id="cb1-44"><a href="#cb1-44"></a>        yticks<span class="op">=</span><span class="bu">list</span>(</span>
-<span id="cb1-45"><a href="#cb1-45"></a>            <span class="bu">range</span>(</span>
-<span id="cb1-46"><a href="#cb1-46"></a>                <span class="dv">12000</span>,</span>
-<span id="cb1-47"><a href="#cb1-47"></a>                <span class="dv">26000</span>,</span>
-<span id="cb1-48"><a href="#cb1-48"></a>                <span class="dv">2000</span>,</span>
-<span id="cb1-49"><a href="#cb1-49"></a>            )</span>
-<span id="cb1-50"><a href="#cb1-50"></a>        ),</span>
-<span id="cb1-51"><a href="#cb1-51"></a>        ylim<span class="op">=</span>(</span>
-<span id="cb1-52"><a href="#cb1-52"></a>            <span class="dv">12000</span>,</span>
-<span id="cb1-53"><a href="#cb1-53"></a>            <span class="dv">26000</span>,</span>
-<span id="cb1-54"><a href="#cb1-54"></a>        ),</span>
-<span id="cb1-55"><a href="#cb1-55"></a>        gridstyle<span class="op">=</span>gridstyle,</span>
-<span id="cb1-56"><a href="#cb1-56"></a>        show_grid<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb1-57"><a href="#cb1-57"></a>    )</span>
-<span id="cb1-58"><a href="#cb1-58"></a>    <span class="cf">return</span> fig</span>
-<span id="cb1-59"><a href="#cb1-59"></a></span>
-<span id="cb1-60"><a href="#cb1-60"></a>app <span class="op">=</span> pn.extension(<span class="st">"tabulator"</span>, sizing_mode<span class="op">=</span><span class="st">"stretch_width"</span>)</span>
-<span id="cb1-61"><a href="#cb1-61"></a></span>
-<span id="cb1-62"><a href="#cb1-62"></a>pn.template.FastListTemplate(</span>
-<span id="cb1-63"><a href="#cb1-63"></a>    site<span class="op">=</span><span class="st">"Awesome Panel"</span>, site_url<span class="op">=</span><span class="st">"https://awesome-panel.org"</span>, title<span class="op">=</span><span class="st">"Bootstrap Dashboard"</span>,</span>
-<span id="cb1-64"><a href="#cb1-64"></a>    main<span class="op">=</span>[</span>
-<span id="cb1-65"><a href="#cb1-65"></a>        pn.Column(</span>
-<span id="cb1-66"><a href="#cb1-66"></a>            pn.pane.Markdown(<span class="st">"## Dashboard"</span>),</span>
-<span id="cb1-67"><a href="#cb1-67"></a>            _holoviews_chart()),</span>
-<span id="cb1-68"><a href="#cb1-68"></a>            pn.Column(pn.pane.Markdown(<span class="st">"## Section Title"</span>),</span>
-<span id="cb1-69"><a href="#cb1-69"></a>            pn.widgets.Tabulator(_get_table_data(), layout<span class="op">=</span><span class="st">'fit_data_stretch'</span>)),</span>
-<span id="cb1-70"><a href="#cb1-70"></a>    ], main_max_width<span class="op">=</span><span class="st">"800px"</span>, main_layout<span class="op">=</span><span class="va">None</span>,</span>
-<span id="cb1-71"><a href="#cb1-71"></a>).servable()</span>
-<span id="cb1-72"><a href="#cb1-72"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="im">from</span> asyncio <span class="im">import</span> create_task, get_event_loop, sleep</span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="im">import</span> panel <span class="im">as</span> pn</span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a>ACCENT <span class="op">=</span> <span class="st">"#00A170"</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a>OK_COLOR<span class="op">=</span>ACCENT</span>
+<span id="cb1-11"><a href="#cb1-11"></a>ERROR_COLOR <span class="op">=</span> <span class="st">"#a10031"</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a>ALERT <span class="op">=</span> <span class="dv">80</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a>COLORS <span class="op">=</span> [(ALERT, OK_COLOR), (<span class="dv">100</span>, ERROR_COLOR)]</span>
+<span id="cb1-14"><a href="#cb1-14"></a>INITIAL_VALUE <span class="op">=</span> ALERT<span class="op">-</span><span class="dv">3</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a></span>
+<span id="cb1-16"><a href="#cb1-16"></a>N<span class="op">=</span><span class="dv">18</span> <span class="co"># Number of indicators</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a></span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="co"># Can be removed when https://github.com/holoviz/panel/pull/6194 is released</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a>CSS_FIX <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="st">:host(.pn-loading) .pn-loading-msg,</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="st">.pn-loading .pn-loading-msg {</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="st">  color: var(--panel-on-background-color, black) !important; </span></span>
+<span id="cb1-23"><a href="#cb1-23"></a><span class="st">}</span></span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="st">"""</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a><span class="cf">if</span> <span class="kw">not</span> CSS_FIX <span class="kw">in</span> pn.config.raw_css:</span>
+<span id="cb1-26"><a href="#cb1-26"></a>    pn.config.raw_css.append(CSS_FIX)</span>
+<span id="cb1-27"><a href="#cb1-27"></a></span>
+<span id="cb1-28"><a href="#cb1-28"></a><span class="cf">async</span> <span class="kw">def</span> update_values(values):</span>
+<span id="cb1-29"><a href="#cb1-29"></a>    <span class="co">"""Some random updating of values."""</span></span>
+<span id="cb1-30"><a href="#cb1-30"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb1-31"><a href="#cb1-31"></a>        <span class="co"># Replace with your own code.</span></span>
+<span id="cb1-32"><a href="#cb1-32"></a>        new_value <span class="op">=</span> np.copy(values.rx.value)</span>
+<span id="cb1-33"><a href="#cb1-33"></a>        </span>
+<span id="cb1-34"><a href="#cb1-34"></a>        new_value <span class="op">+=</span> np.random.randint(<span class="dv">5</span>, size<span class="op">=</span>N) <span class="op">-</span><span class="dv">2</span></span>
+<span id="cb1-35"><a href="#cb1-35"></a>        new_value[new_value<span class="op">&lt;</span><span class="dv">0</span>]<span class="op">=</span><span class="dv">0</span></span>
+<span id="cb1-36"><a href="#cb1-36"></a>        new_value[new_value<span class="op">&gt;</span><span class="dv">99</span>]<span class="op">=</span><span class="dv">99</span></span>
+<span id="cb1-37"><a href="#cb1-37"></a>        </span>
+<span id="cb1-38"><a href="#cb1-38"></a>        values.rx.value <span class="op">=</span> new_value</span>
+<span id="cb1-39"><a href="#cb1-39"></a></span>
+<span id="cb1-40"><a href="#cb1-40"></a>        <span class="cf">await</span> sleep(<span class="dv">1</span>)</span>
+<span id="cb1-41"><a href="#cb1-41"></a></span>
+<span id="cb1-42"><a href="#cb1-42"></a><span class="at">@pn.cache</span> <span class="co"># We use caching to share values across all sessions</span></span>
+<span id="cb1-43"><a href="#cb1-43"></a><span class="kw">def</span> get_values():</span>
+<span id="cb1-44"><a href="#cb1-44"></a>    <span class="co"># We use Reactive Expressions https://param.holoviz.org/user_guide/Reactive_Expressions.html</span></span>
+<span id="cb1-45"><a href="#cb1-45"></a>    <span class="cf">return</span> pn.rx([INITIAL_VALUE]<span class="op">*</span>N)</span>
+<span id="cb1-46"><a href="#cb1-46"></a></span>
+<span id="cb1-47"><a href="#cb1-47"></a><span class="at">@pn.cache</span> <span class="co"># We use caching to only update values once across all sessions</span></span>
+<span id="cb1-48"><a href="#cb1-48"></a><span class="kw">def</span> create_update_values_task():</span>
+<span id="cb1-49"><a href="#cb1-49"></a>    values <span class="op">=</span> get_values()</span>
+<span id="cb1-50"><a href="#cb1-50"></a>    create_task(update_values(values))</span>
+<span id="cb1-51"><a href="#cb1-51"></a></span>
+<span id="cb1-52"><a href="#cb1-52"></a><span class="kw">def</span> get_styles(value):</span>
+<span id="cb1-53"><a href="#cb1-53"></a>    <span class="cf">if</span> value<span class="op">&lt;=</span>ALERT:</span>
+<span id="cb1-54"><a href="#cb1-54"></a>        <span class="cf">return</span> {<span class="st">"border"</span>: <span class="ss">f"1px solid </span><span class="sc">{</span>OK_COLOR<span class="sc">}</span><span class="ss">"</span>, <span class="st">"padding"</span>: <span class="st">"1em"</span>, <span class="st">"border-radius"</span>: <span class="st">"3px"</span>}</span>
+<span id="cb1-55"><a href="#cb1-55"></a>    <span class="cf">return</span> {<span class="st">"border"</span>: <span class="ss">f"1px solid </span><span class="sc">{</span>ERROR_COLOR<span class="sc">}</span><span class="ss">"</span>, <span class="st">"padding"</span>: <span class="st">"1em"</span>, <span class="st">"border-radius"</span>: <span class="st">"3px"</span>}</span>
+<span id="cb1-56"><a href="#cb1-56"></a></span>
+<span id="cb1-57"><a href="#cb1-57"></a><span class="kw">def</span> create_indicator(index, values):</span>
+<span id="cb1-58"><a href="#cb1-58"></a>    title <span class="op">=</span><span class="ss">f"Sensor </span><span class="sc">{</span>index<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb1-59"><a href="#cb1-59"></a>    value <span class="op">=</span> values[index]</span>
+<span id="cb1-60"><a href="#cb1-60"></a>    </span>
+<span id="cb1-61"><a href="#cb1-61"></a>    <span class="cf">return</span> pn.indicators.Number(</span>
+<span id="cb1-62"><a href="#cb1-62"></a>        name<span class="op">=</span>title,</span>
+<span id="cb1-63"><a href="#cb1-63"></a>        value<span class="op">=</span>value,</span>
+<span id="cb1-64"><a href="#cb1-64"></a>        <span class="bu">format</span><span class="op">=</span><span class="st">"</span><span class="sc">{value}</span><span class="st">%"</span>,</span>
+<span id="cb1-65"><a href="#cb1-65"></a>        colors<span class="op">=</span>COLORS,</span>
+<span id="cb1-66"><a href="#cb1-66"></a>        margin<span class="op">=</span><span class="dv">10</span>,</span>
+<span id="cb1-67"><a href="#cb1-67"></a>        styles<span class="op">=</span>pn.rx(get_styles)(value),</span>
+<span id="cb1-68"><a href="#cb1-68"></a>        width<span class="op">=</span><span class="dv">165</span></span>
+<span id="cb1-69"><a href="#cb1-69"></a>    )</span>
+<span id="cb1-70"><a href="#cb1-70"></a>    </span>
+<span id="cb1-71"><a href="#cb1-71"></a><span class="kw">def</span> create_component():</span>
+<span id="cb1-72"><a href="#cb1-72"></a>    values <span class="op">=</span> get_values()</span>
+<span id="cb1-73"><a href="#cb1-73"></a>    indicators <span class="op">=</span> <span class="bu">tuple</span>(create_indicator(i, values) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(values.rx.value)))</span>
+<span id="cb1-74"><a href="#cb1-74"></a>    layout <span class="op">=</span> pn.FlexBox(<span class="op">*</span>indicators)</span>
+<span id="cb1-75"><a href="#cb1-75"></a>    <span class="cf">return</span> layout</span>
+<span id="cb1-76"><a href="#cb1-76"></a></span>
+<span id="cb1-77"><a href="#cb1-77"></a><span class="cf">if</span> pn.state.served <span class="kw">or</span> pn.state._is_pyodide:</span>
+<span id="cb1-78"><a href="#cb1-78"></a>    pn.extension()</span>
+<span id="cb1-79"><a href="#cb1-79"></a></span>
+<span id="cb1-80"><a href="#cb1-80"></a>    <span class="cf">if</span> get_event_loop().is_running():</span>
+<span id="cb1-81"><a href="#cb1-81"></a>        <span class="co"># We can only start the stream if the event loop is running</span></span>
+<span id="cb1-82"><a href="#cb1-82"></a>        create_update_values_task()</span>
+<span id="cb1-83"><a href="#cb1-83"></a>    </span>
+<span id="cb1-84"><a href="#cb1-84"></a>    pn.template.FastListTemplate(</span>
+<span id="cb1-85"><a href="#cb1-85"></a>        site<span class="op">=</span><span class="st">"Awesome Panel"</span>,</span>
+<span id="cb1-86"><a href="#cb1-86"></a>        site_url<span class="op">=</span><span class="st">"https://awesome-panel.org"</span>,</span>
+<span id="cb1-87"><a href="#cb1-87"></a>        title<span class="op">=</span><span class="st">"Streaming Number Indicators"</span>,</span>
+<span id="cb1-88"><a href="#cb1-88"></a>        accent<span class="op">=</span>ACCENT,</span>
+<span id="cb1-89"><a href="#cb1-89"></a>        theme<span class="op">=</span><span class="st">"dark"</span>,</span>
+<span id="cb1-90"><a href="#cb1-90"></a>        theme_toggle<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb1-91"><a href="#cb1-91"></a>        main<span class="op">=</span>[create_component()],</span>
+<span id="cb1-92"><a href="#cb1-92"></a>        main_layout<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb1-93"><a href="#cb1-93"></a>    ).servable()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<p><a href="https://raw.githubusercontent.com/awesome-panel/awesome-panel/main/examples/bootstrap_dashboard.py" download="">Download (right-click, save-as)</a></p>
+<p><a href="https://raw.githubusercontent.com/awesome-panel/awesome-panel/main/examples/streaming_number_indicators.py" download="">Download (right-click, save-as)</a></p>
 </section>
 <section id="gif" class="level2">
 <h2 class="anchored" data-anchor-id="gif">Gif</h2>
-<p><img src="https://cdn.awesome-panel.org/resources/bootstrap_dashboard/bootstrap_dashboard.gif"></p>
-</section>
-<section id="png" class="level2">
-<h2 class="anchored" data-anchor-id="png">Png</h2>
-<p><img src="https://cdn.awesome-panel.org/resources/bootstrap_dashboard/bootstrap_dashboard.png"></p>
+<p><img src="https://cdn.awesome-panel.org/resources/streaming_number_indicators/streaming_number_indicators.gif"></p>
 </section>
 <section id="mp4" class="level2">
 <h2 class="anchored" data-anchor-id="mp4">Mp4</h2>
-<video poster="https://cdn.awesome-panel.org/resources/bootstrap_dashboard/bootstrap_dashboard.png" controls="">
-<source src="https://cdn.awesome-panel.org/resources/bootstrap_dashboard/bootstrap_dashboard.mp4" type="video/mp4">
+<video poster="https://cdn.awesome-panel.org/resources/streaming_number_indicators/streaming_number_indicators.png" controls="">
+<source src="https://cdn.awesome-panel.org/resources/streaming_number_indicators/streaming_number_indicators.mp4" type="video/mp4">
 <p>Your browser does not support HTML video. </p>
-
-
 </video></section>
+<section id="png" class="level2">
+<h2 class="anchored" data-anchor-id="png">Png</h2>
+<p><img src="https://cdn.awesome-panel.org/resources/streaming_number_indicators/streaming_number_indicators.png"></p>
+
+
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
