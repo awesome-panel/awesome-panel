@@ -29,12 +29,15 @@ website:
       - icon: github
         href: https://github.com/awesome-panel/awesome-panel     
         text: Github
-      - icon: robot
+      - icon: emoji-smile
         href: https://huggingface.co/awesome-panel
-        text: Hugging Face
+        text: Hugging Face 🤗
       - icon: linkedin
         href: https://www.linkedin.com/company/awesome-panel-org
         text: LinkedIn
+      - icon: filetype-py
+        href: "https://pyscript.com/@awesome-panel"
+        text: PyScript
       - icon: twitter
         href: https://twitter.com/awesome_panel
         text: Twitter
@@ -43,6 +46,7 @@ website:
       text: Home
     - file: about.qmd
       text: About
+    
   
 filters:
   - include-code-files
