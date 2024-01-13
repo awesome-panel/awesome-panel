@@ -19,12 +19,13 @@
 <item>
   <title>Streaming Number Indicators</title>
   <dc:creator>Marc Skov Madsen</dc:creator>
-  <link>https://awesome-panel.org/resources/streaming_number_indicators/streaming_number_indicators.html</link>
+  <link>https://awesome-panel.org/resources/streaming_number_indicators/index.html</link>
   <description><![CDATA[ Dashboard with streaming <a href="https://panel.holoviz.org/reference/indicators/Number.html">Number Indicators</a>. The <a href="https://panel.holoviz.org/reference/layouts/FlexBox.html">FlexBox</a> layout used ensures the indicators will layout nicely no matter the window width or device. ]]></description>
   <category>hugging face</category>
   <category>pyodide</category>
+  <category>pyscript</category>
   <category>streaming</category>
-  <guid>https://awesome-panel.org/resources/streaming_number_indicators/streaming_number_indicators.html</guid>
+  <guid>https://awesome-panel.org/resources/streaming_number_indicators/index.html</guid>
   <pubDate>Sat, 13 Jan 2024 00:00:00 GMT</pubDate>
   <media:content url="https://awesome-panel.org/resources/streaming_number_indicators/streaming_number_indicators.png" medium="image" type="image/png" height="77" width="144"/>
 </item>
