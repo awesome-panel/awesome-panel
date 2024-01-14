@@ -8,10 +8,6 @@ author:
     
 categories: [chemistry,hugging face,pyodide,tabulator]
 image: "table_of_elements_with_wikipedia_row_content.png"
-twitter-card:
-  image: "https://cdn.awesome-panel.org/resources/table_of_elements_with_wikipedia_row_content/table_of_elements_with_wikipedia_row_content.gif"
-open-graph:
-  image: "https://cdn.awesome-panel.org/resources/table_of_elements_with_wikipedia_row_content/table_of_elements_with_wikipedia_row_content.gif"
 ---
 
 ## Introduction
