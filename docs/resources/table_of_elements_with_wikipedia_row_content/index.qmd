@@ -1,0 +1,64 @@
+---
+title: "Table of elements with Wikipedia row content"
+date: "2024-01-14"
+description: "Table of elements with Wikipedia row content. Powered by Tabulator."
+author:
+  - name: Marc Skov Madsen
+    url: https://github.com/marcskovmadsen/  
+    
+categories: [chemistry,hugging face,pyodide,tabulator]
+image: "table_of_elements_with_wikipedia_row_content.png"
+twitter-card:
+  image: "https://cdn.awesome-panel.org/resources/table_of_elements_with_wikipedia_row_content/table_of_elements_with_wikipedia_row_content.gif"
+open-graph:
+  image: "https://cdn.awesome-panel.org/resources/table_of_elements_with_wikipedia_row_content/table_of_elements_with_wikipedia_row_content.gif"
+---
+
+## Introduction
+
+This app demonstrates the power of the `row_content` feature of Panels [Tabulator](https://panel.holoviz.org/reference/widgets/Tabulator.html) pane. The app contains a table of the elements. When you click a specific row, it expands and you can study the corresponding Wikipedia article.
+
+The app was developed from code and discussions in [Discourse #6710](https://discourse.holoviz.org/t/row-content-tabulator-widget/6710).
+
+## App
+
+This app runs entirely in the browser via [Pyodide](https://pyodide.org) and [panel convert](https://panel.holoviz.org/how_to/wasm/convert.html).
+
+<a href="https://awesome-panel-table-of-elements-with-wikipedia-r-9f38e95.static.hf.space" target="_blank">Open in a new window</a> | <a href="https://huggingface.co/spaces/awesome-panel/table_of_elements_with_wikipedia_row_content" target="_blank">Open in Hugging Face Spaces</a>
+
+<iframe
+	src="https://awesome-panel-table-of-elements-with-wikipedia-r-9f38e95.static.hf.space"
+	frameborder="0"
+	style="width:100%;height:800px"
+></iframe>
+
+## Code
+
+<details>
+<summary>Show</summary>
+```{.python include="../../../examples/table_of_elements_with_wikipedia_row_content.py" code-line-numbers="true"}
+```
+</details>
+
+<a href="https://raw.githubusercontent.com/awesome-panel/awesome-panel/main/examples/table_of_elements_with_wikipedia_row_content.py" download>Download (right-click, save-as)</a>
+
+## Gif
+
+<img src="https://cdn.awesome-panel.org/resources/table_of_elements_with_wikipedia_row_content/table_of_elements_with_wikipedia_row_content.gif"></img>
+
+## Mp4
+
+<video poster="https://cdn.awesome-panel.org/resources/table_of_elements_with_wikipedia_row_content/table_of_elements_with_wikipedia_row_content.png" controls>
+  <source src="https://cdn.awesome-panel.org/resources/table_of_elements_with_wikipedia_row_content/table_of_elements_with_wikipedia_row_content.mp4" type="video/mp4">
+  Your browser does not support HTML video.
+</video>
+
+## Png
+
+<img src="https://cdn.awesome-panel.org/resources/table_of_elements_with_wikipedia_row_content/table_of_elements_with_wikipedia_row_content.png"></img>
+
+## Social
+
+Please share on social media. Thanks.
+
+<a href="https://x.com/awesome_panel/status/1743903846332534791?s=20" target="_blank"><i class="bi bi-twitter"></i></a> <a href="https://www.linkedin.com/posts/awesome-panel-org_table_of_elements_with_wikipedia_row_content-python-dataviz-activity-7149668816120078336-8NJ_" target="_blank"><i class="bi bi-linkedin"></i></a>
