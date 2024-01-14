@@ -15,7 +15,20 @@
 <link>https://awesome-panel.org/index.html</link>
 </image>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Sat, 13 Jan 2024 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 14 Jan 2024 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Table of elements with Wikipedia row content</title>
+  <dc:creator>Marc Skov Madsen</dc:creator>
+  <link>https://awesome-panel.org/resources/table_of_elements_with_wikipedia_row_content/index.html</link>
+  <description><![CDATA[ This app demonstrates the power of the <code>row_content</code> feature of Panels <a href="https://panel.holoviz.org/reference/widgets/Tabulator.html">Tabulator</a> pane. The app contains a table of the elements. When you click a specific row, it expands and you can study the corresponding Wikipedia article. ]]></description>
+  <category>chemistry</category>
+  <category>hugging face</category>
+  <category>pyodide</category>
+  <category>tabulator</category>
+  <guid>https://awesome-panel.org/resources/table_of_elements_with_wikipedia_row_content/index.html</guid>
+  <pubDate>Sun, 14 Jan 2024 00:00:00 GMT</pubDate>
+  <media:content url="https://awesome-panel.org/resources/table_of_elements_with_wikipedia_row_content/table_of_elements_with_wikipedia_row_content.png" medium="image" type="image/png" height="87" width="144"/>
+</item>
 <item>
   <title>Commuting Flows Italy</title>
   <dc:creator>Ivan D&#39;Ortenzio</dc:creator>
@@ -125,19 +138,6 @@
   <guid>https://awesome-panel.org/resources/async_tasks/index.html</guid>
   <pubDate>Sat, 06 Jan 2024 00:00:00 GMT</pubDate>
   <media:content url="https://awesome-panel.org/resources/async_tasks/async_tasks.png" medium="image" type="image/png" height="71" width="144"/>
-</item>
-<item>
-  <title>Bootstrap Dashboard</title>
-  <dc:creator>Marc Skov Madsen</dc:creator>
-  <link>https://awesome-panel.org/resources/bootstrap_dashboard/index.html</link>
-  <description><![CDATA[ This dashboard demonstrates that a dashboard layout similar to the <a href="https://getbootstrap.com/docs/4.3/examples/dashboard/"><em>Bootstrap dashboard template</em></a> can be implemented in <a href="https://panel.pyviz.org/">Panel</a>. ]]></description>
-  <category>dashboard</category>
-  <category>hugging face</category>
-  <category>hvplot</category>
-  <category>pyodide</category>
-  <guid>https://awesome-panel.org/resources/bootstrap_dashboard/index.html</guid>
-  <pubDate>Sat, 06 Jan 2024 00:00:00 GMT</pubDate>
-  <media:content url="https://awesome-panel.org/resources/bootstrap_dashboard/bootstrap_dashboard.png" medium="image" type="image/png" height="99" width="144"/>
 </item>
 </channel>
 </rss>

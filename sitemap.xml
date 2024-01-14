@@ -2,62 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://awesome-panel.org/resources/video_stream/index.html</loc>
-    <lastmod>2024-01-13T16:54:40.783Z</lastmod>
+    <lastmod>2024-01-14T11:57:24.373Z</lastmod>
   </url>
   <url>
     <loc>https://awesome-panel.org/resources/tastymap/index.html</loc>
-    <lastmod>2024-01-13T16:54:39.843Z</lastmod>
-  </url>
-  <url>
-    <loc>https://awesome-panel.org/resources/streaming_number_indicators/index.html</loc>
-    <lastmod>2024-01-13T16:54:38.867Z</lastmod>
-  </url>
-  <url>
-    <loc>https://awesome-panel.org/resources/panel_chat_examples/index.html</loc>
-    <lastmod>2024-01-13T16:54:38.051Z</lastmod>
-  </url>
-  <url>
-    <loc>https://awesome-panel.org/resources/commuting_flows_italy/index.html</loc>
-    <lastmod>2024-01-13T16:54:37.183Z</lastmod>
-  </url>
-  <url>
-    <loc>https://awesome-panel.org/resources/caching_example/index.html</loc>
-    <lastmod>2024-01-13T16:54:36.127Z</lastmod>
-  </url>
-  <url>
-    <loc>https://awesome-panel.org/resources/async_tasks/index.html</loc>
-    <lastmod>2024-01-13T16:54:35.183Z</lastmod>
-  </url>
-  <url>
-    <loc>https://awesome-panel.org/about.html</loc>
-    <lastmod>2024-01-13T16:54:33.063Z</lastmod>
-  </url>
-  <url>
-    <loc>https://awesome-panel.org/index.html</loc>
-    <lastmod>2024-01-13T16:54:34.731Z</lastmod>
-  </url>
-  <url>
-    <loc>https://awesome-panel.org/resources/bootstrap_dashboard/index.html</loc>
-    <lastmod>2024-01-13T16:54:35.579Z</lastmod>
-  </url>
-  <url>
-    <loc>https://awesome-panel.org/resources/classic_dashboard/classic_dashboard.html</loc>
-    <lastmod>2024-01-13T16:54:36.599Z</lastmod>
-  </url>
-  <url>
-    <loc>https://awesome-panel.org/resources/crossfiltering_holoviews/index.html</loc>
-    <lastmod>2024-01-13T16:54:37.655Z</lastmod>
-  </url>
-  <url>
-    <loc>https://awesome-panel.org/resources/panel_chat_pack/index.html</loc>
-    <lastmod>2024-01-13T16:54:38.423Z</lastmod>
+    <lastmod>2024-01-14T11:57:23.389Z</lastmod>
   </url>
   <url>
     <loc>https://awesome-panel.org/resources/stumpy/index.html</loc>
-    <lastmod>2024-01-13T16:54:39.467Z</lastmod>
+    <lastmod>2024-01-14T11:57:22.597Z</lastmod>
+  </url>
+  <url>
+    <loc>https://awesome-panel.org/resources/panel_chat_pack/index.html</loc>
+    <lastmod>2024-01-14T11:57:21.537Z</lastmod>
+  </url>
+  <url>
+    <loc>https://awesome-panel.org/resources/crossfiltering_holoviews/index.html</loc>
+    <lastmod>2024-01-14T11:57:20.729Z</lastmod>
+  </url>
+  <url>
+    <loc>https://awesome-panel.org/resources/classic_dashboard/classic_dashboard.html</loc>
+    <lastmod>2024-01-14T11:57:19.637Z</lastmod>
+  </url>
+  <url>
+    <loc>https://awesome-panel.org/resources/bootstrap_dashboard/index.html</loc>
+    <lastmod>2024-01-14T11:57:18.621Z</lastmod>
+  </url>
+  <url>
+    <loc>https://awesome-panel.org/index.html</loc>
+    <lastmod>2024-01-14T11:57:17.693Z</lastmod>
+  </url>
+  <url>
+    <loc>https://awesome-panel.org/about.html</loc>
+    <lastmod>2024-01-14T11:57:15.929Z</lastmod>
+  </url>
+  <url>
+    <loc>https://awesome-panel.org/resources/async_tasks/index.html</loc>
+    <lastmod>2024-01-14T11:57:18.185Z</lastmod>
+  </url>
+  <url>
+    <loc>https://awesome-panel.org/resources/caching_example/index.html</loc>
+    <lastmod>2024-01-14T11:57:19.169Z</lastmod>
+  </url>
+  <url>
+    <loc>https://awesome-panel.org/resources/commuting_flows_italy/index.html</loc>
+    <lastmod>2024-01-14T11:57:20.261Z</lastmod>
+  </url>
+  <url>
+    <loc>https://awesome-panel.org/resources/panel_chat_examples/index.html</loc>
+    <lastmod>2024-01-14T11:57:21.141Z</lastmod>
+  </url>
+  <url>
+    <loc>https://awesome-panel.org/resources/streaming_number_indicators/index.html</loc>
+    <lastmod>2024-01-14T11:57:21.985Z</lastmod>
+  </url>
+  <url>
+    <loc>https://awesome-panel.org/resources/table_of_elements_with_wikipedia_row_content/index.html</loc>
+    <lastmod>2024-01-14T11:57:23.017Z</lastmod>
   </url>
   <url>
     <loc>https://awesome-panel.org/resources/the_easiest_way_to_create_dashboard/index.html</loc>
-    <lastmod>2024-01-13T16:54:40.219Z</lastmod>
+    <lastmod>2024-01-14T11:57:23.821Z</lastmod>
   </url>
 </urlset>
