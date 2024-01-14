@@ -1,7 +1,7 @@
 ---
 title: "Table of elements with Wikipedia row content"
 date: "2024-01-14"
-description: "Table of elements with Wikipedia row content. Powered by Tabulator."
+description: "Table of elements. When you click a row it expands and shows the Wikipedia article. Powered by Tabulator."
 author:
   - name: Marc Skov Madsen
     url: https://github.com/marcskovmadsen/  
