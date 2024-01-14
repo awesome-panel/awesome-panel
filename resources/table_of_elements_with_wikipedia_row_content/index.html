@@ -8,7 +8,7 @@
 
 <meta name="author" content="Marc Skov Madsen">
 <meta name="dcterms.date" content="2024-01-14">
-<meta name="description" content="Table of elements with Wikipedia row content. Powered by Tabulator.">
+<meta name="description" content="Table of elements. When you click a row it expands and shows the Wikipedia article. Powered by Tabulator.">
 
 <title>Awesome Panel - Table of elements with Wikipedia row content</title>
 <style>
@@ -101,11 +101,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <link rel="stylesheet" href="../../_quarto.css">
 <meta property="og:title" content="Awesome Panel - Table of elements with Wikipedia row content">
-<meta property="og:description" content="Table of elements with Wikipedia row content. Powered by Tabulator.">
+<meta property="og:description" content="Table of elements. When you click a row it expands and shows the Wikipedia article. Powered by Tabulator.">
 <meta property="og:image" content="https://cdn.awesome-panel.org/resources/table_of_elements_with_wikipedia_row_content/table_of_elements_with_wikipedia_row_content.gif">
 <meta property="og:site-name" content="Awesome Panel">
 <meta name="twitter:title" content="Awesome Panel - Table of elements with Wikipedia row content">
-<meta name="twitter:description" content="Table of elements with Wikipedia row content. Powered by Tabulator.">
+<meta name="twitter:description" content="Table of elements. When you click a row it expands and shows the Wikipedia article. Powered by Tabulator.">
 <meta name="twitter:image" content="https://cdn.awesome-panel.org/resources/table_of_elements_with_wikipedia_row_content/table_of_elements_with_wikipedia_row_content.gif">
 <meta name="twitter:site" content="@awesome_panel">
 <meta name="twitter:card" content="summary_large_image">
@@ -183,7 +183,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div>
   <div class="description">
-    Table of elements with Wikipedia row content. Powered by Tabulator.
+    Table of elements. When you click a row it expands and shows the Wikipedia article. Powered by Tabulator.
   </div>
 </div>
 
@@ -246,30 +246,32 @@ Show
 <span id="cb1-15"><a href="#cb1-15"></a></span>
 <span id="cb1-16"><a href="#cb1-16"></a>periodic_df <span class="op">=</span> get_elements()</span>
 <span id="cb1-17"><a href="#cb1-17"></a></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="at">@pn.cache</span> <span class="co"># Caching is a hack to avoid flickering. It seems like row content is loaded twice otherwise</span></span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="kw">def</span> content_fn(row):</span>
-<span id="cb1-20"><a href="#cb1-20"></a>    <span class="cf">return</span> pn.pane.HTML(</span>
-<span id="cb1-21"><a href="#cb1-21"></a>        <span class="ss">f'&lt;iframe src="https://en.wikipedia.org/wiki/</span><span class="sc">{</span>row[<span class="st">"name"</span>]<span class="sc">}</span><span class="ss">" width="100%" height="500px"&gt;&lt;/iframe&gt;'</span>,</span>
-<span id="cb1-22"><a href="#cb1-22"></a>        sizing_mode<span class="op">=</span><span class="st">"stretch_width"</span></span>
-<span id="cb1-23"><a href="#cb1-23"></a>    )</span>
-<span id="cb1-24"><a href="#cb1-24"></a></span>
-<span id="cb1-25"><a href="#cb1-25"></a>periodic_table <span class="op">=</span> pn.widgets.Tabulator(</span>
-<span id="cb1-26"><a href="#cb1-26"></a>    periodic_df,</span>
-<span id="cb1-27"><a href="#cb1-27"></a>    layout<span class="op">=</span><span class="st">"fit_columns"</span>,</span>
-<span id="cb1-28"><a href="#cb1-28"></a>    sizing_mode<span class="op">=</span><span class="st">"stretch_both"</span>,</span>
-<span id="cb1-29"><a href="#cb1-29"></a>    row_content<span class="op">=</span>content_fn,</span>
-<span id="cb1-30"><a href="#cb1-30"></a>    embed_content<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb1-31"><a href="#cb1-31"></a>)</span>
-<span id="cb1-32"><a href="#cb1-32"></a></span>
-<span id="cb1-33"><a href="#cb1-33"></a>pn.template.FastListTemplate(</span>
-<span id="cb1-34"><a href="#cb1-34"></a>    site<span class="op">=</span><span class="st">"Awesome Panel"</span>,</span>
-<span id="cb1-35"><a href="#cb1-35"></a>    site_url<span class="op">=</span><span class="st">"https://awesome-panel.org"</span>,</span>
-<span id="cb1-36"><a href="#cb1-36"></a>    title<span class="op">=</span><span class="st">"Table of Elements with Wikipedia row content"</span>,</span>
-<span id="cb1-37"><a href="#cb1-37"></a>    main<span class="op">=</span>[periodic_table],</span>
-<span id="cb1-38"><a href="#cb1-38"></a>    accent<span class="op">=</span><span class="st">"#F08080"</span>,</span>
-<span id="cb1-39"><a href="#cb1-39"></a>    main_layout<span class="op">=</span><span class="va">None</span>,</span>
-<span id="cb1-40"><a href="#cb1-40"></a>    main_max_width<span class="op">=</span><span class="st">"1024px"</span>,</span>
-<span id="cb1-41"><a href="#cb1-41"></a>).servable()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="co"># Caching is a hack to avoid flickering. It seems like row content is loaded twice otherwise</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="co"># See https://github.com/holoviz/panel/issues/6200</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="at">@pn.cache</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="kw">def</span> content_fn(row):</span>
+<span id="cb1-22"><a href="#cb1-22"></a>    <span class="cf">return</span> pn.pane.HTML(</span>
+<span id="cb1-23"><a href="#cb1-23"></a>        <span class="ss">f'&lt;iframe src="https://en.wikipedia.org/wiki/</span><span class="sc">{</span>row[<span class="st">"name"</span>]<span class="sc">}</span><span class="ss">" width="100%" height="500px"&gt;&lt;/iframe&gt;'</span>,</span>
+<span id="cb1-24"><a href="#cb1-24"></a>        sizing_mode<span class="op">=</span><span class="st">"stretch_width"</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a>    )</span>
+<span id="cb1-26"><a href="#cb1-26"></a></span>
+<span id="cb1-27"><a href="#cb1-27"></a>periodic_table <span class="op">=</span> pn.widgets.Tabulator(</span>
+<span id="cb1-28"><a href="#cb1-28"></a>    periodic_df,</span>
+<span id="cb1-29"><a href="#cb1-29"></a>    layout<span class="op">=</span><span class="st">"fit_columns"</span>,</span>
+<span id="cb1-30"><a href="#cb1-30"></a>    sizing_mode<span class="op">=</span><span class="st">"stretch_both"</span>,</span>
+<span id="cb1-31"><a href="#cb1-31"></a>    row_content<span class="op">=</span>content_fn,</span>
+<span id="cb1-32"><a href="#cb1-32"></a>    embed_content<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb1-33"><a href="#cb1-33"></a>)</span>
+<span id="cb1-34"><a href="#cb1-34"></a></span>
+<span id="cb1-35"><a href="#cb1-35"></a>pn.template.FastListTemplate(</span>
+<span id="cb1-36"><a href="#cb1-36"></a>    site<span class="op">=</span><span class="st">"Awesome Panel"</span>,</span>
+<span id="cb1-37"><a href="#cb1-37"></a>    site_url<span class="op">=</span><span class="st">"https://awesome-panel.org"</span>,</span>
+<span id="cb1-38"><a href="#cb1-38"></a>    title<span class="op">=</span><span class="st">"Table of Elements with Wikipedia row content"</span>,</span>
+<span id="cb1-39"><a href="#cb1-39"></a>    main<span class="op">=</span>[periodic_table],</span>
+<span id="cb1-40"><a href="#cb1-40"></a>    accent<span class="op">=</span><span class="st">"#F08080"</span>,</span>
+<span id="cb1-41"><a href="#cb1-41"></a>    main_layout<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb1-42"><a href="#cb1-42"></a>    main_max_width<span class="op">=</span><span class="st">"1024px"</span>,</span>
+<span id="cb1-43"><a href="#cb1-43"></a>).servable()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <p><a href="https://raw.githubusercontent.com/awesome-panel/awesome-panel/main/examples/table_of_elements_with_wikipedia_row_content.py" download="">Download (right-click, save-as)</a></p>
 </section>
