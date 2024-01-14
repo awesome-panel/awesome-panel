@@ -15,7 +15,9 @@ def get_elements():
 
 periodic_df = get_elements()
 
-@pn.cache # Caching is a hack to avoid flickering. It seems like row content is loaded twice otherwise
+# Caching is a hack to avoid flickering. It seems like row content is loaded twice otherwise
+# See https://github.com/holoviz/panel/issues/6200
+@pn.cache
 def content_fn(row):
     return pn.pane.HTML(
         f'<iframe src="https://en.wikipedia.org/wiki/{row["name"]}" width="100%" height="500px"></iframe>',
