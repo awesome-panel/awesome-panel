@@ -57,4 +57,4 @@ This app runs entirely in the browser via [Pyodide](https://pyodide.org) and [pa
 
 Please share on social media. Thanks.
 
-<a href="https://x.com/awesome_panel/status/1743903846332534791?s=20" target="_blank"><i class="bi bi-twitter"></i></a> <a href="https://www.linkedin.com/posts/awesome-panel-org_table_of_elements_with_wikipedia_row_content-python-dataviz-activity-7149668816120078336-8NJ_" target="_blank"><i class="bi bi-linkedin"></i></a>
+<a href="https://x.com/awesome_panel/status/1746799595550588981?s=20" target="_blank"><i class="bi bi-twitter"></i></a> <a href="https://www.linkedin.com/feed/update/urn:li:activity:7152565758110183425" target="_blank"><i class="bi bi-linkedin"></i></a>
