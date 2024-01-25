@@ -1,0 +1,41 @@
+---
+title: "Hurdat Tracks Viewer"
+date: "2024-01-25"
+description: "Create an interactive web app for analysing hurricane tracks using Tropycal and Panel"
+author:
+  - name: Andrew Huang
+    url: https://github.com/ahuang11
+    
+categories: [geo,hugging face,matplotlib]
+image: "hurdat_tracks_viewer.png"
+---
+
+## Introduction
+
+The [Hurdat Tracks Viewer](https://medium.com/@pYdeas/transform-a-python-script-into-an-interactive-web-app-and-make-it-performant-73fa3b304cdf) medium post by [Andrew Huang](https://github.com/ahuang11) describes how to turn a script, that outputs an image of a hurricane track, into a shareable app, and the best practices to improve the UX.
+
+The script is from the [Tropycal](https://tropycal.github.io/tropycal/) Python package.
+
+## App
+
+<a href="https://ahuang11-hurdat-tracks-viewer.hf.space" target="_blank">Open in a new window</a> | <a href="https://huggingface.co/spaces/ahuang11/hurdat_tracks_viewer" target="_blank">Open in Hugging Face Spaces</a>
+
+<iframe
+	src="https://ahuang11-hurdat-tracks-viewer.hf.space"
+	frameborder="0"
+	style="width:100%;height:700px"
+></iframe>
+
+## Gif
+
+<img src="https://cdn.awesome-panel.org/resources/hurdat_tracks_viewer/hurdat_tracks_viewer.gif"></img>
+
+## Png
+
+<img src="https://cdn.awesome-panel.org/resources/hurdat_tracks_viewer/hurdat_tracks_viewer.png"></img>
+
+## Social
+
+Please share on social media. Thanks.
+
+<!-- <a href="https://x.com/awesome_panel/status/1746213263992389903?s=20" target="_blank"><i class="bi bi-twitter"></i></a> <a href="https://www.linkedin.com/feed/update/urn:li:activity:7151979513604648960" target="_blank"><i class="bi bi-linkedin"></i></a> -->
