@@ -1,0 +1,39 @@
+---
+title: "Standa - Stock Analysis Dashboard"
+date: "2024-01-25"
+description: "A large, nicely polished Stock Analysis Dashboard"
+author:
+  - name: Fayssal El Mofatiche
+    url: https://github.com/fayssalelmofatiche
+    
+categories: [finance,hugging face,plotly,tabulator,trading]
+image: "standa.png"
+---
+
+## Introduction
+
+The [Standa](https://github.com/fayssalelmofatiche/standa) Stock Analysi Dashboards by [Fayssal El Mofatiche](https://www.linkedin.com/posts/elmofatiche_its-impressive-what-interactive-data-analysis-activity-7153795195740852225-y5OG?utm_source=share&utm_medium=member_desktop) is an example of a large, nicely polished Panel app.
+
+## App
+
+<a href="https://felmofatiche-standa.hf.space" target="_blank">Open in a new window</a> | <a href="https://huggingface.co/spaces/felmofatiche/standa" target="_blank">Open in Hugging Face Spaces</a>
+
+<iframe
+	src="https://felmofatiche-standa.hf.space"
+	frameborder="0"
+	style="width:100%;height:900px"
+></iframe>
+
+## Gif
+
+<img src="https://cdn.awesome-panel.org/resources/standa/standa.gif"></img>
+
+## Png
+
+<img src="https://cdn.awesome-panel.org/resources/standa/standa.png"></img>
+
+## Social
+
+Please share on social media. Thanks.
+
+<a href="https://twitter.com/awesome_panel" target="_blank"><i class="bi bi-twitter"></i></a> <a href="https://www.linkedin.com/company/awesome-panel-org" target="_blank"><i class="bi bi-linkedin"></i></a>

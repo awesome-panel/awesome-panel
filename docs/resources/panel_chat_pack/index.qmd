@@ -28,3 +28,9 @@ image: "panel_chatbot_pack.png"
 ## Png
 
 <img src="https://cdn.awesome-panel.org/resources/panel_chatbot_pack/panel_chatbot_pack.png"></img>
+
+## Social
+
+Please share on social media. Thanks.
+
+<a href="https://twitter.com/awesome_panel" target="_blank"><i class="bi bi-twitter"></i></a> <a href="https://www.linkedin.com/company/awesome-panel-org" target="_blank"><i class="bi bi-linkedin"></i></a>

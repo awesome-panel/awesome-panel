@@ -38,4 +38,4 @@ The script is from the [Tropycal](https://tropycal.github.io/tropycal/) Python p
 
 Please share on social media. Thanks.
 
-<!-- <a href="https://x.com/awesome_panel/status/1746213263992389903?s=20" target="_blank"><i class="bi bi-twitter"></i></a> <a href="https://www.linkedin.com/feed/update/urn:li:activity:7151979513604648960" target="_blank"><i class="bi bi-linkedin"></i></a> -->
+<a href="https://twitter.com/awesome_panel" target="_blank"><i class="bi bi-twitter"></i></a> <a href="https://www.linkedin.com/company/awesome-panel-org" target="_blank"><i class="bi bi-linkedin"></i></a>

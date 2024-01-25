@@ -55,4 +55,4 @@ What a colorful app!
 
 Please share on social media. Thanks.
 
-<a href="https://x.com/awesome_panel/status/1744393677990920591?s=20" target="_blank"><i class="bi bi-twitter"></i></a> <a href="https://www.linkedin.com/posts/awesome-panel-org_python-dataviz-datascience-activity-7150159948172238849-Kq-J" target="_blank"><i class="bi bi-linkedin"></i></a>
+<a href="https://twitter.com/awesome_panel" target="_blank"><i class="bi bi-twitter"></i></a> <a href="https://www.linkedin.com/company/awesome-panel-org" target="_blank"><i class="bi bi-linkedin"></i></a>

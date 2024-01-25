@@ -26,3 +26,9 @@ Panels Chat Components are multi modal and supports LangChain, OpenAI, Mistral, 
 <video controls="" style="height:auto;width: 100%;max-height:500px" poster="https://github.com/holoviz-topics/panel-chat-examples/blob/main/docs/assets/videos/panel-chat-examples-splash.png?raw=true">
     <source src="https://github.com/holoviz-topics/panel-chat-examples/raw/main/docs/assets/videos/panel-chat-examples-splash.mp4" type="video/mp4">
 </video>
+
+## Social
+
+Please share on social media. Thanks.
+
+<a href="https://twitter.com/awesome_panel" target="_blank"><i class="bi bi-twitter"></i></a> <a href="https://www.linkedin.com/company/awesome-panel-org" target="_blank"><i class="bi bi-linkedin"></i></a>

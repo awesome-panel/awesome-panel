@@ -52,3 +52,9 @@ The app shows you how to create a **Classic Dashboard** in **Panel** with
 ## Png
 
 <img src="https://cdn.awesome-panel.org/resources/classic_dashboard/classic_dashboard.png"></img>
+
+## Social
+
+Please share on social media. Thanks.
+
+<a href="https://twitter.com/awesome_panel" target="_blank"><i class="bi bi-twitter"></i></a> <a href="https://www.linkedin.com/company/awesome-panel-org" target="_blank"><i class="bi bi-linkedin"></i></a>
