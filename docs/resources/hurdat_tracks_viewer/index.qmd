@@ -1,7 +1,7 @@
 ---
 title: "Hurdat Tracks Viewer"
 date: "2024-01-25"
-description: "Create an interactive web app for analysing hurricane tracks using Tropycal and Panel"
+description: "An interactive web app for analysing hurricane tracks using Tropycal and Panel"
 author:
   - name: Andrew Huang
     url: https://github.com/ahuang11
@@ -12,7 +12,7 @@ image: "hurdat_tracks_viewer.png"
 
 ## Introduction
 
-The [Hurdat Tracks Viewer](https://medium.com/@pYdeas/transform-a-python-script-into-an-interactive-web-app-and-make-it-performant-73fa3b304cdf) medium post by [Andrew Huang](https://github.com/ahuang11) describes how to turn a script, that outputs an image of a hurricane track, into a shareable app, and the best practices to improve the UX.
+The [Hurdat Tracks Viewer](https://medium.com/@pYdeas/transform-a-python-script-into-an-interactive-web-app-and-make-it-performant-73fa3b304cdf) medium post by [Andrew Huang](https://github.com/ahuang11) show you how to to turn a script, that outputs an image of a hurricane track, into a shareable app, and the best practices to improve the UX.
 
 The script is from the [Tropycal](https://tropycal.github.io/tropycal/) Python package.
 
@@ -29,6 +29,13 @@ The script is from the [Tropycal](https://tropycal.github.io/tropycal/) Python p
 ## Gif
 
 <img src="https://cdn.awesome-panel.org/resources/hurdat_tracks_viewer/hurdat_tracks_viewer.gif"></img>
+
+## MP4
+
+<video poster="https://cdn.awesome-panel.org/resources/hurdat_tracks_viewer/hurdat_tracks_viewer.png" controls>
+  <source src="https://cdn.awesome-panel.org/resources/hurdat_tracks_viewer/hurdat_tracks_viewer.mp4" type="video/mp4">
+  Your browser does not support HTML video.
+</video>
 
 ## Png
 
