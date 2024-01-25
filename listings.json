@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/resources/hurdat_tracks_viewer/index.html",
       "/resources/table_of_elements_with_wikipedia_row_content/index.html",
       "/resources/commuting_flows_italy/index.html",
       "/resources/streaming_number_indicators/index.html",
