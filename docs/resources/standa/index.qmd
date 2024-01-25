@@ -12,7 +12,7 @@ image: "standa.png"
 
 ## Introduction
 
-The [Standa](https://github.com/fayssalelmofatiche/standa) Stock Analysi Dashboards by [Fayssal El Mofatiche](https://www.linkedin.com/posts/elmofatiche_its-impressive-what-interactive-data-analysis-activity-7153795195740852225-y5OG?utm_source=share&utm_medium=member_desktop) is an example of a large, nicely polished Panel app.
+The [Standa](https://github.com/fayssalelmofatiche/standa) Stock Analysis Dashboards by [Fayssal El Mofatiche](https://www.linkedin.com/posts/elmofatiche_its-impressive-what-interactive-data-analysis-activity-7153795195740852225-y5OG?utm_source=share&utm_medium=member_desktop) is an example of a large, nicely polished Panel app.
 
 ## App
 
