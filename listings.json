@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/resources/lonboard_dashboard/index.html",
       "/resources/hurdat_tracks_viewer/index.html",
       "/resources/standa/index.html",
       "/resources/table_of_elements_with_wikipedia_row_content/index.html",

@@ -15,12 +15,25 @@
 <link>https://awesome-panel.org/index.html</link>
 </image>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Thu, 25 Jan 2024 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 27 Jan 2024 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Lonboard Dashboard</title>
+  <dc:creator>Marc Skov Madsen</dc:creator>
+  <link>https://awesome-panel.org/resources/lonboard_dashboard/index.html</link>
+  <description><![CDATA[ <a href="https://developmentseed.org/lonboard/latest/">Lonboard</a> is a Python library for fast, interactive geospatial vector data visualization in Jupyter. But it also works with Panel. This Dashboard demonstrates that. ]]></description>
+  <category>anywidget</category>
+  <category>dashboard</category>
+  <category>hugging face</category>
+  <category>ipywidgets</category>
+  <guid>https://awesome-panel.org/resources/lonboard_dashboard/index.html</guid>
+  <pubDate>Sat, 27 Jan 2024 00:00:00 GMT</pubDate>
+  <media:content url="https://awesome-panel.org/resources/lonboard_dashboard/lonboard_dashboard.png" medium="image" type="image/png" height="81" width="144"/>
+</item>
 <item>
   <title>Hurdat Tracks Viewer</title>
   <dc:creator>Andrew Huang</dc:creator>
   <link>https://awesome-panel.org/resources/hurdat_tracks_viewer/index.html</link>
-  <description><![CDATA[ The <a href="https://medium.com/@pYdeas/transform-a-python-script-into-an-interactive-web-app-and-make-it-performant-73fa3b304cdf">Hurdat Tracks Viewer</a> medium post by <a href="https://github.com/ahuang11">Andrew Huang</a> describes how to turn a script, that outputs an image of a hurricane track, into a shareable app, and the best practices to improve the UX. ]]></description>
+  <description><![CDATA[ The <a href="https://medium.com/@pYdeas/transform-a-python-script-into-an-interactive-web-app-and-make-it-performant-73fa3b304cdf">Hurdat Tracks Viewer</a> medium post by <a href="https://github.com/ahuang11">Andrew Huang</a> show you how to to turn a script, that outputs an image of a hurricane track, into a shareable app, and the best practices to improve the UX. ]]></description>
   <category>geo</category>
   <category>hugging face</category>
   <category>matplotlib</category>
@@ -128,17 +141,6 @@
   <guid>https://awesome-panel.org/resources/caching_example/index.html</guid>
   <pubDate>Sun, 07 Jan 2024 00:00:00 GMT</pubDate>
   <media:content url="https://awesome-panel.org/resources/caching_example/caching_example.png" medium="image" type="image/png" height="85" width="144"/>
-</item>
-<item>
-  <title>Classic Dashboard</title>
-  <dc:creator>Marc Skov Madsen</dc:creator>
-  <link>https://awesome-panel.org/resources/classic_dashboard/classic_dashboard.html</link>
-  <description><![CDATA[ The app shows you how to create a <strong>Classic Dashboard</strong> in <strong>Panel</strong> with ]]></description>
-  <category>dashboard</category>
-  <category>hvplot</category>
-  <guid>https://awesome-panel.org/resources/classic_dashboard/classic_dashboard.html</guid>
-  <pubDate>Sun, 07 Jan 2024 00:00:00 GMT</pubDate>
-  <media:content url="https://awesome-panel.org/resources/classic_dashboard/classic_dashboard.png" medium="image" type="image/png" height="95" width="144"/>
 </item>
 </channel>
 </rss>
