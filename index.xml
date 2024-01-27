@@ -30,6 +30,19 @@
   <media:content url="https://awesome-panel.org/resources/lonboard_dashboard/lonboard_dashboard.png" medium="image" type="image/png" height="81" width="144"/>
 </item>
 <item>
+  <title>MapWidget Cesium</title>
+  <dc:creator>Qiusheng Wu</dc:creator>
+  <link>https://awesome-panel.org/resources/mapwidget_dashboard/index.html</link>
+  <description><![CDATA[ The <a href="https://mapwidget.gishub.org/">mapwidget</a> package by <a href="https://github.com/giswqs">Qiusheng Wu</a> provides a set of custom map widgets for creating interactive maps in a Jupyter environment using different JavaScript mapping libraries, such as <code>Cesium</code>, <code>Mapbox</code>, <code>MapLibre</code>, <code>Leaflet</code>, and <code>OpenLayers</code>. ]]></description>
+  <category>anywidget</category>
+  <category>dashboard</category>
+  <category>hugging face</category>
+  <category>ipywidgets</category>
+  <guid>https://awesome-panel.org/resources/mapwidget_dashboard/index.html</guid>
+  <pubDate>Sat, 27 Jan 2024 00:00:00 GMT</pubDate>
+  <media:content url="https://awesome-panel.org/resources/mapwidget_dashboard/mapwidget_cesium.png" medium="image" type="image/png" height="85" width="144"/>
+</item>
+<item>
   <title>Hurdat Tracks Viewer</title>
   <dc:creator>Andrew Huang</dc:creator>
   <link>https://awesome-panel.org/resources/hurdat_tracks_viewer/index.html</link>
@@ -129,18 +142,6 @@
   <guid>https://awesome-panel.org/resources/the_easiest_way_to_create_dashboard/index.html</guid>
   <pubDate>Mon, 08 Jan 2024 00:00:00 GMT</pubDate>
   <media:content url="https://awesome-panel.org/resources/the_easiest_way_to_create_dashboard/the_easiest_way_to_create_dashboard.png" medium="image" type="image/png" height="81" width="144"/>
-</item>
-<item>
-  <title>Caching Example</title>
-  <dc:creator>Marc Skov Madsen</dc:creator>
-  <link>https://awesome-panel.org/resources/caching_example/index.html</link>
-  <description><![CDATA[ In computing, a <em>cache</em> is a high-speed data storage layer which stores a subset of data, typically transient in nature, so that future requests for that data are served up faster than is possible by accessing the data’s primary storage location. ]]></description>
-  <category>hugging face</category>
-  <category>performance</category>
-  <category>pyodide</category>
-  <guid>https://awesome-panel.org/resources/caching_example/index.html</guid>
-  <pubDate>Sun, 07 Jan 2024 00:00:00 GMT</pubDate>
-  <media:content url="https://awesome-panel.org/resources/caching_example/caching_example.png" medium="image" type="image/png" height="85" width="144"/>
 </item>
 </channel>
 </rss>
