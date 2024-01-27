@@ -1,0 +1,55 @@
+---
+title: "Lonboard Dashboard"
+date: "2024-01-27"
+description: "A Dashboard using Lonboard to fast, interactive geospatial vector data visualization."
+author:
+  - name: Marc Skov Madsen
+    url: https://github.com/marcskovmadsen/  
+categories: [anywidget,dashboard, hugging face, ipywidgets]
+image: "lonboard_dashboard.png"
+---
+
+## Introduction
+
+[Lonboard](https://developmentseed.org/lonboard/latest/) is a Python library for fast, interactive geospatial vector data visualization in Jupyter. But it also works with Panel. This Dashboard demonstrates that.
+
+## App
+
+<a href="https://awesome-panel-lonboard-dashboard.hf.space" target="_blank">Open in a new window</a> | <a href="https://huggingface.co/spaces/awesome-panel/lonboard_dashboard" target="_blank">Open in Hugging Face Spaces</a>
+
+<iframe
+	src="https://awesome-panel-lonboard-dashboard.hf.space"
+	frameborder="0"
+	style="width:100%;height:1000px"
+></iframe>
+
+## Code
+
+<details>
+<summary>Show </summary>
+```{.python include="../../../examples/lonboard_dashboard.py" code-line-numbers="true"}
+```
+</details>
+
+<a href="https://raw.githubusercontent.com/awesome-panel/awesome-panel/main/examples/lonboard_dashboard.py" download>Download (right-click, save-as)</a>
+
+## Gif
+
+<img src="https://cdn.awesome-panel.org/resources/lonboard_dashboard/lonboard_dashboard.gif"></img>
+
+## Png
+
+<img src="https://cdn.awesome-panel.org/resources/lonboard_dashboard/lonboard_dashboard.png"></img>
+
+## Mp4
+
+<video poster="https://cdn.awesome-panel.org/resources/lonboard_dashboard/lonboard_dashboard.png" controls>
+  <source src="https://cdn.awesome-panel.org/resources/lonboard_dashboard/lonboard_dashboard.mp4" type="video/mp4">
+  Your browser does not support HTML video.
+</video>
+
+## Social
+
+Please share on social media. Thanks.
+
+<a href="https://twitter.com/awesome_panel" target="_blank"><i class="bi bi-twitter"></i></a> <a href="https://www.linkedin.com/company/awesome-panel-org" target="_blank"><i class="bi bi-linkedin"></i></a>
