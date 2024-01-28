@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/resources/weather_station_viewer/index.html",
       "/resources/lonboard_dashboard/index.html",
       "/resources/mapwidget_dashboard/index.html",
       "/resources/hurdat_tracks_viewer/index.html",

@@ -15,7 +15,19 @@
 <link>https://awesome-panel.org/index.html</link>
 </image>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Sat, 27 Jan 2024 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 28 Jan 2024 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Weather Station Viewer</title>
+  <dc:creator>Andrew Huang</dc:creator>
+  <link>https://awesome-panel.org/resources/weather_station_viewer/index.html</link>
+  <description><![CDATA[ This very nicely styled app by <a href="https://github.com/ahuang11">Andrew Huang</a> allows you to compare a single year of data from a weather station to the average of a range of years. ]]></description>
+  <category>climate</category>
+  <category>hvplot</category>
+  <category>hugging face</category>
+  <guid>https://awesome-panel.org/resources/weather_station_viewer/index.html</guid>
+  <pubDate>Sun, 28 Jan 2024 00:00:00 GMT</pubDate>
+  <media:content url="https://awesome-panel.org/resources/weather_station_viewer/weather_station_viewer.png" medium="image" type="image/png" height="91" width="144"/>
+</item>
 <item>
   <title>Lonboard Dashboard</title>
   <dc:creator>Marc Skov Madsen</dc:creator>
@@ -129,19 +141,6 @@
   <guid>https://awesome-panel.org/resources/panel_chat_pack/index.html</guid>
   <pubDate>Mon, 08 Jan 2024 00:00:00 GMT</pubDate>
   <media:content url="https://awesome-panel.org/resources/panel_chat_pack/panel_chatbot_pack.png" medium="image" type="image/png" height="144" width="144"/>
-</item>
-<item>
-  <title>The Easiest Way to Create an Interactive Dashboard in Python</title>
-  <dc:creator>Marc Skov Madsen</dc:creator>
-  <dc:creator>Sophia Yang</dc:creator>
-  <link>https://awesome-panel.org/resources/the_easiest_way_to_create_dashboard/index.html</link>
-  <description><![CDATA[ This app shows how to create a nice looking dashboard with <a href="https://param.holoviz.org/user_guide/Reactive_Expressions.html">param.Rx</a> and Panel. ]]></description>
-  <category>dashboard</category>
-  <category>hvplot</category>
-  <category>rx</category>
-  <guid>https://awesome-panel.org/resources/the_easiest_way_to_create_dashboard/index.html</guid>
-  <pubDate>Mon, 08 Jan 2024 00:00:00 GMT</pubDate>
-  <media:content url="https://awesome-panel.org/resources/the_easiest_way_to_create_dashboard/the_easiest_way_to_create_dashboard.png" medium="image" type="image/png" height="81" width="144"/>
 </item>
 </channel>
 </rss>

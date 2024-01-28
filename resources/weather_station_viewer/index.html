@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andrew Huang">
-<meta name="dcterms.date" content="2024-01-06">
-<meta name="description" content="Generate custom color palettes easily using the TastyMap Panel app">
+<meta name="dcterms.date" content="2024-01-28">
+<meta name="description" content="This app allows you to compare a single year of data from a weather station to the average of a range of years.">
 
-<title>Awesome Panel - Tasty Map</title>
+<title>Awesome Panel - Weather Station Viewer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -66,18 +66,18 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../../_quarto.css">
-<meta property="og:title" content="Awesome Panel - Tasty Map">
-<meta property="og:description" content="Generate custom color palettes easily using the TastyMap Panel app">
-<meta property="og:image" content="https://awesome-panel.org/resources/tastymap/tastymap.png">
+<meta property="og:title" content="Awesome Panel - Weather Station Viewer">
+<meta property="og:description" content="This app allows you to compare a single year of data from a weather station to the average of a range of years.">
+<meta property="og:image" content="https://awesome-panel.org/resources/weather_station_viewer/weather_station_viewer.png">
 <meta property="og:site-name" content="Awesome Panel">
-<meta property="og:image:height" content="484">
-<meta property="og:image:width" content="875">
-<meta name="twitter:title" content="Awesome Panel - Tasty Map">
-<meta name="twitter:description" content="Generate custom color palettes easily using the TastyMap Panel app">
-<meta name="twitter:image" content="https://awesome-panel.org/resources/tastymap/tastymap.png">
+<meta property="og:image:height" content="1177">
+<meta property="og:image:width" content="1858">
+<meta name="twitter:title" content="Awesome Panel - Weather Station Viewer">
+<meta name="twitter:description" content="This app allows you to compare a single year of data from a weather station to the average of a range of years.">
+<meta name="twitter:image" content="https://awesome-panel.org/resources/weather_station_viewer/weather_station_viewer.png">
 <meta name="twitter:site" content="@awesome_panel">
-<meta name="twitter:image-height" content="484">
-<meta name="twitter:image-width" content="875">
+<meta name="twitter:image-height" content="1177">
+<meta name="twitter:image-width" content="1858">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -142,16 +142,17 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Tasty Map</h1>
+<h1 class="title">Weather Station Viewer</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">color</div>
+    <div class="quarto-category">climate</div>
+    <div class="quarto-category">hvplot</div>
     <div class="quarto-category">hugging face</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Generate custom color palettes easily using the TastyMap Panel app
+    This app allows you to compare a single year of data from a weather station to the average of a range of years.
   </div>
 </div>
 
@@ -168,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 6, 2024</p>
+      <p class="date">January 28, 2024</p>
     </div>
   </div>
   
@@ -180,35 +181,33 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p><a href="https://ahuang11.github.io/tastymap/">TastyMap</a> makes it easy to customize and use colormaps, any way you like.</p>
-<p>The app is a Panel app.</p>
-<script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
-<p><a class="github-button" href="https://github.com/ahuang11/tastymap" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ahuang11/tastymap on GitHub">Star</a></p>
+<p>This very nicely styled app by <a href="https://github.com/ahuang11">Andrew Huang</a> allows you to compare a single year of data from a weather station to the average of a range of years.</p>
+<p>You can read more about the awesome styling applied to the plots in the blog post <a href="https://medium.com/@pYdeas/create-publication-styled-figures-with-hvplot-using-the-bokeh-backend-b623ab48a5d2">Create publication-styled figures with hvPlot</a></p>
 </section>
 <section id="app" class="level2">
 <h2 class="anchored" data-anchor-id="app">App</h2>
-<p><a href="https://ahuang11-tastykitchen.hf.space" target="_blank">Open in a new window</a> | <a href="https://huggingface.co/spaces/ahuang11/tastykitchen" target="_blank">Open in Hugging Face Spaces</a></p>
-<iframe src="https://ahuang11-tastykitchen.hf.space" frameborder="0" style="width:100%;height:1350px">
+<p><a href="https://ahuang11-year-vs-climatology.hf.space" target="_blank">Open in a new window</a> | <a href="https://huggingface.co/spaces/ahuang11/year-vs-climatology" target="_blank">Open in Hugging Face Spaces</a></p>
+<iframe src="https://ahuang11-year-vs-climatology.hf.space" frameborder="0" style="width:100%;height:1350px">
 </iframe>
 </section>
 <section id="code" class="level2">
 <h2 class="anchored" data-anchor-id="code">Code</h2>
-<p><a href="https://github.com/ahuang11/tastymap">github/ahuang11/tastymap</a></p>
+<p><a href="https://huggingface.co/spaces/ahuang11/year-vs-climatology/tree/main">hugging face/ahuang11/year-vs-climatology</a></p>
 </section>
 <section id="gif" class="level2">
 <h2 class="anchored" data-anchor-id="gif">Gif</h2>
-<p>What a colorful app!</p>
-<p><img src="https://cdn.awesome-panel.org/resources/tastymap/tastymap.gif"></p>
+<p>What a nicely styled app!</p>
+<p><img src="https://cdn.awesome-panel.org/resources/weather_station_viewer/weather_station_viewer.gif"></p>
 </section>
 <section id="mp4" class="level2">
 <h2 class="anchored" data-anchor-id="mp4">Mp4</h2>
-<video poster="https://cdn.awesome-panel.org/resources/tastymap/tastymap.png" controls="">
-<source src="https://cdn.awesome-panel.org/resources/tastymap/tastymap.mp4" type="video/mp4">
+<video poster="https://cdn.awesome-panel.org/resources/weather_station_viewer/weather_station_viewer.png" controls="">
+<source src="https://cdn.awesome-panel.org/resources/weather_station_viewer/weather_station_viewer.mp4" type="video/mp4">
 <p>Your browser does not support HTML video. </p>
 </video></section>
 <section id="png" class="level2">
 <h2 class="anchored" data-anchor-id="png">Png</h2>
-<p><img src="https://cdn.awesome-panel.org/resources/tastymap/tastymap.png"></p>
+<p><img src="https://cdn.awesome-panel.org/resources/weather_station_viewer/weather_station_viewer.png"></p>
 </section>
 <section id="social" class="level2">
 <h2 class="anchored" data-anchor-id="social">Social</h2>
