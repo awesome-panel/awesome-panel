@@ -6,7 +6,7 @@ author:
   - name: Andrew Huang
     url: https://github.com/ahuang11
     
-categories: [color]
+categories: [color,hugging face]
 image: "tastymap.png"
 ---
 

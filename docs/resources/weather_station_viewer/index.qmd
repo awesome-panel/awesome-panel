@@ -1,0 +1,53 @@
+---
+title: "Weather Station Viewer"
+date: "2024-01-28"
+description: "This app allows you to compare a single year of data from a weather station to the average of a range of years."
+author:
+  - name: Andrew Huang
+    url: https://github.com/ahuang11
+categories: [climate,hvplot,hugging face]
+image: "weather_station_viewer.png"
+---
+
+## Introduction
+
+This very nicely styled app by [Andrew Huang](https://github.com/ahuang11) allows you to compare a single year of data from a weather station to the average of a range of years.
+
+You can read more about the awesome styling applied to the plots in the blog post [Create publication-styled figures with hvPlot](https://medium.com/@pYdeas/create-publication-styled-figures-with-hvplot-using-the-bokeh-backend-b623ab48a5d2)
+
+## App
+
+<a href="https://ahuang11-year-vs-climatology.hf.space" target="_blank">Open in a new window</a> | <a href="https://huggingface.co/spaces/ahuang11/year-vs-climatology" target="_blank">Open in Hugging Face Spaces</a>
+
+<iframe
+	src="https://ahuang11-year-vs-climatology.hf.space"
+	frameborder="0"
+	style="width:100%;height:1350px"
+></iframe>
+
+## Code
+
+[hugging face/ahuang11/year-vs-climatology](https://huggingface.co/spaces/ahuang11/year-vs-climatology/tree/main)
+
+## Gif
+
+What a nicely styled app!
+
+<img src="https://cdn.awesome-panel.org/resources/weather_station_viewer/weather_station_viewer.gif"></img>
+
+## Mp4
+
+<video poster="https://cdn.awesome-panel.org/resources/weather_station_viewer/weather_station_viewer.png" controls>
+  <source src="https://cdn.awesome-panel.org/resources/weather_station_viewer/weather_station_viewer.mp4" type="video/mp4">
+  Your browser does not support HTML video.
+</video>
+
+## Png
+
+<img src="https://cdn.awesome-panel.org/resources/weather_station_viewer/weather_station_viewer.png"></img>
+
+## Social
+
+Please share on social media. Thanks.
+
+<a href="https://twitter.com/awesome_panel" target="_blank"><i class="bi bi-twitter"></i></a> <a href="https://www.linkedin.com/company/awesome-panel-org" target="_blank"><i class="bi bi-linkedin"></i></a>
