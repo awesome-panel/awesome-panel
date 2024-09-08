@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.55">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -49,7 +49,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -58,6 +64,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -93,14 +100,41 @@ ul.task-list li input[type="checkbox"] {
   })
   </script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="_quarto.css">
-<link rel="alternate" type="application/rss+xml" title="Awesome Panel" href="index.xml"><meta property="og:title" content="Awesome Panel">
+<link rel="alternate" type="application/rss+xml" title="Awesome Panel" href="index.xml" data-external="1"><meta property="og:title" content="Awesome Panel">
 <meta property="og:description" content="Awesome Panel resources by the community">
 <meta property="og:image" content="https://cdn.awesome-panel.org/resources/awesome-panel-card-1024x1024.png?version=1">
-<meta property="og:site-name" content="Awesome Panel">
+<meta property="og:site_name" content="Awesome Panel">
 <meta name="twitter:title" content="Awesome Panel">
 <meta name="twitter:description" content="Awesome Panel resources by the community">
 <meta name="twitter:image" content="https://cdn.awesome-panel.org/resources/awesome-panel-card-1024x1024.png?version=1">
@@ -112,36 +146,36 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Awesome Panel</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto tools-wide">
-    <a href="https://github.com/awesome-panel/awesome-panel" rel="" title="Github" class="quarto-navigation-tool px-1" aria-label="Github"><i class="bi bi-github"></i></a>
-    <a href="https://huggingface.co/awesome-panel" rel="" title="Hugging Face 🤗" class="quarto-navigation-tool px-1" aria-label="Hugging Face 🤗"><i class="bi bi-emoji-smile"></i></a>
-    <a href="https://www.linkedin.com/company/awesome-panel-org" rel="" title="LinkedIn" class="quarto-navigation-tool px-1" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-    <a href="https://pyscript.com/@awesome-panel" rel="" title="PyScript" class="quarto-navigation-tool px-1" aria-label="PyScript"><i class="bi bi-filetype-py"></i></a>
-    <a href="https://twitter.com/awesome_panel" rel="" title="Twitter" class="quarto-navigation-tool px-1" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
-</div>
           </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools tools-wide">
+    <a href="https://github.com/awesome-panel/awesome-panel" title="Github" class="quarto-navigation-tool px-1" aria-label="Github"><i class="bi bi-github"></i></a>
+    <a href="https://huggingface.co/awesome-panel" title="Hugging Face 🤗" class="quarto-navigation-tool px-1" aria-label="Hugging Face 🤗"><i class="bi bi-emoji-smile"></i></a>
+    <a href="https://www.linkedin.com/company/awesome-panel-org" title="LinkedIn" class="quarto-navigation-tool px-1" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+    <a href="https://pyscript.com/@awesome-panel" title="PyScript" class="quarto-navigation-tool px-1" aria-label="PyScript"><i class="bi bi-filetype-py"></i></a>
+    <a href="https://twitter.com/awesome_panel" title="Twitter" class="quarto-navigation-tool px-1" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -167,7 +201,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page-left">
 
     
   
@@ -175,7 +209,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <p><a href="https://panel.holoviz.org">Panel</a> by <a href="https://holoviz.org">HoloViz</a> is <em>the powerful data exploration &amp; web app framework for Python</em>.</p>
 <p>Please give Panel a ⭐ on Github. Thanks.</p>
@@ -213,19 +249,19 @@ ul.task-list li input[type="checkbox"] {
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="climate,hvplot,hugging face" data-listing-date-sort="1706400000000" data-listing-file-modified-sort="1706418173126" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="0" data-categories="climate,hvplot,hugging face" data-listing-date-sort="1706400000000" data-listing-file-modified-sort="1725771525259" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="104">
 <div class="thumbnail">
-<p><a href="./resources/weather_station_viewer/index.html"> <img src="./resources/weather_station_viewer/weather_station_viewer.png" class="thumbnail-image" style="height: 200px;"> </a></p>
+<p><a href="./resources/weather_station_viewer/index.html" class="no-external"></a></p><a href="./resources/weather_station_viewer/index.html" class="no-external">
+<p><img loading="lazy" src="./resources/weather_station_viewer/weather_station_viewer.png" class="thumbnail-image" style="height: 200px;"></p>
+</a><p><a href="./resources/weather_station_viewer/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./resources/weather_station_viewer/index.html">
 <h3 class="no-anchor listing-title">
-Weather Station Viewer
+<a href="./resources/weather_station_viewer/index.html" class="no-external">Weather Station Viewer</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./resources/weather_station_viewer/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('climate'); return false;">
 climate
@@ -237,14 +273,12 @@ hvplot
 hugging face
 </div>
 </div>
-<a href="./resources/weather_station_viewer/index.html">
 <div class="listing-description">
-<p>This app allows you to compare a single year of data from a weather station to the average of a range of years.</p>
+<a href="./resources/weather_station_viewer/index.html" class="no-external">This app allows you to compare a single year of data from a weather station to the average of a range of years.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./resources/weather_station_viewer/index.html">
+<a href="./resources/weather_station_viewer/index.html" class="no-external">
 <div class="listing-date">
 Jan 28, 2024
 </div>
@@ -254,19 +288,19 @@ Andrew Huang
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="anywidget,dashboard,hugging face,ipywidgets" data-listing-date-sort="1706313600000" data-listing-file-modified-sort="1706337987573" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="1" data-categories="anywidget,dashboard,hugging face,ipywidgets" data-listing-date-sort="1706313600000" data-listing-file-modified-sort="1725769307225" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="81">
 <div class="thumbnail">
-<p><a href="./resources/lonboard_dashboard/index.html"> <img src="./resources/lonboard_dashboard/lonboard_dashboard.png" class="thumbnail-image" style="height: 200px;"> </a></p>
+<p><a href="./resources/lonboard_dashboard/index.html" class="no-external"></a></p><a href="./resources/lonboard_dashboard/index.html" class="no-external">
+<p><img loading="lazy" src="./resources/lonboard_dashboard/lonboard_dashboard.png" class="thumbnail-image" style="height: 200px;"></p>
+</a><p><a href="./resources/lonboard_dashboard/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./resources/lonboard_dashboard/index.html">
 <h3 class="no-anchor listing-title">
-Lonboard Dashboard
+<a href="./resources/lonboard_dashboard/index.html" class="no-external">Lonboard Dashboard</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./resources/lonboard_dashboard/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('anywidget'); return false;">
 anywidget
@@ -281,14 +315,12 @@ hugging face
 ipywidgets
 </div>
 </div>
-<a href="./resources/lonboard_dashboard/index.html">
 <div class="listing-description">
-<p>A Dashboard using Lonboard to fast, interactive geospatial vector data visualization.</p>
+<a href="./resources/lonboard_dashboard/index.html" class="no-external">A Dashboard using Lonboard to fast, interactive geospatial vector data visualization.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./resources/lonboard_dashboard/index.html">
+<a href="./resources/lonboard_dashboard/index.html" class="no-external">
 <div class="listing-date">
 Jan 27, 2024
 </div>
@@ -298,19 +330,19 @@ Marc Skov Madsen
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="anywidget,dashboard,hugging face,ipywidgets" data-listing-date-sort="1706313600000" data-listing-file-modified-sort="1706339722923" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="2" data-categories="anywidget,dashboard,hugging face,ipywidgets" data-listing-date-sort="1706313600000" data-listing-file-modified-sort="1725769307229" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="99">
 <div class="thumbnail">
-<p><a href="./resources/mapwidget_dashboard/index.html"> <img src="./resources/mapwidget_dashboard/mapwidget_cesium.png" class="thumbnail-image" style="height: 200px;"> </a></p>
+<p><a href="./resources/mapwidget_dashboard/index.html" class="no-external"></a></p><a href="./resources/mapwidget_dashboard/index.html" class="no-external">
+<p><img loading="lazy" src="./resources/mapwidget_dashboard/mapwidget_cesium.png" class="thumbnail-image" style="height: 200px;"></p>
+</a><p><a href="./resources/mapwidget_dashboard/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./resources/mapwidget_dashboard/index.html">
 <h3 class="no-anchor listing-title">
-MapWidget Cesium
+<a href="./resources/mapwidget_dashboard/index.html" class="no-external">MapWidget Cesium</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./resources/mapwidget_dashboard/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('anywidget'); return false;">
 anywidget
@@ -325,14 +357,12 @@ hugging face
 ipywidgets
 </div>
 </div>
-<a href="./resources/mapwidget_dashboard/index.html">
 <div class="listing-description">
-<p>A dashboard showcasing mapwidget.cesium by Qiusheng Wu</p>
+<a href="./resources/mapwidget_dashboard/index.html" class="no-external">A dashboard showcasing mapwidget.cesium by Qiusheng Wu</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./resources/mapwidget_dashboard/index.html">
+<a href="./resources/mapwidget_dashboard/index.html" class="no-external">
 <div class="listing-date">
 Jan 27, 2024
 </div>
@@ -342,19 +372,19 @@ Qiusheng Wu
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="geo,hugging face,matplotlib" data-listing-date-sort="1706140800000" data-listing-file-modified-sort="1706158379964" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="3" data-categories="geo,hugging face,matplotlib" data-listing-date-sort="1706140800000" data-listing-file-modified-sort="1725769307225" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="93">
 <div class="thumbnail">
-<p><a href="./resources/hurdat_tracks_viewer/index.html"> <img src="./resources/hurdat_tracks_viewer/hurdat_tracks_viewer.png" class="thumbnail-image" style="height: 200px;"> </a></p>
+<p><a href="./resources/hurdat_tracks_viewer/index.html" class="no-external"></a></p><a href="./resources/hurdat_tracks_viewer/index.html" class="no-external">
+<p><img loading="lazy" src="./resources/hurdat_tracks_viewer/hurdat_tracks_viewer.png" class="thumbnail-image" style="height: 200px;"></p>
+</a><p><a href="./resources/hurdat_tracks_viewer/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./resources/hurdat_tracks_viewer/index.html">
 <h3 class="no-anchor listing-title">
-Hurdat Tracks Viewer
+<a href="./resources/hurdat_tracks_viewer/index.html" class="no-external">Hurdat Tracks Viewer</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./resources/hurdat_tracks_viewer/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('geo'); return false;">
 geo
@@ -366,14 +396,12 @@ hugging face
 matplotlib
 </div>
 </div>
-<a href="./resources/hurdat_tracks_viewer/index.html">
 <div class="listing-description">
-<p>An interactive web app for analysing hurricane tracks using Tropycal and Panel</p>
+<a href="./resources/hurdat_tracks_viewer/index.html" class="no-external">An interactive web app for analysing hurricane tracks using Tropycal and Panel</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./resources/hurdat_tracks_viewer/index.html">
+<a href="./resources/hurdat_tracks_viewer/index.html" class="no-external">
 <div class="listing-date">
 Jan 25, 2024
 </div>
@@ -383,19 +411,19 @@ Andrew Huang
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="finance,hugging face,plotly,tabulator,trading" data-listing-date-sort="1706140800000" data-listing-file-modified-sort="1706156846985" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="4" data-categories="finance,hugging face,plotly,tabulator,trading" data-listing-date-sort="1706140800000" data-listing-file-modified-sort="1725769307249" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="53">
 <div class="thumbnail">
-<p><a href="./resources/standa/index.html"> <img src="./resources/standa/standa.png" class="thumbnail-image" style="height: 200px;"> </a></p>
+<p><a href="./resources/standa/index.html" class="no-external"></a></p><a href="./resources/standa/index.html" class="no-external">
+<p><img loading="lazy" src="./resources/standa/standa.png" class="thumbnail-image" style="height: 200px;"></p>
+</a><p><a href="./resources/standa/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./resources/standa/index.html">
 <h3 class="no-anchor listing-title">
-Standa - Stock Analysis Dashboard
+<a href="./resources/standa/index.html" class="no-external">Standa - Stock Analysis Dashboard</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./resources/standa/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('finance'); return false;">
 finance
@@ -413,14 +441,12 @@ tabulator
 trading
 </div>
 </div>
-<a href="./resources/standa/index.html">
 <div class="listing-description">
-<p>A large, nicely polished Stock Analysis Dashboard</p>
+<a href="./resources/standa/index.html" class="no-external">A large, nicely polished Stock Analysis Dashboard</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./resources/standa/index.html">
+<a href="./resources/standa/index.html" class="no-external">
 <div class="listing-date">
 Jan 25, 2024
 </div>
@@ -430,19 +456,19 @@ Fayssal El Mofatiche
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="chemistry,hugging face,pyodide,tabulator" data-listing-date-sort="1705190400000" data-listing-file-modified-sort="1706156474221" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="5" data-categories="chemistry,hugging face,pyodide,tabulator" data-listing-date-sort="1705190400000" data-listing-file-modified-sort="1725769307249" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="114">
 <div class="thumbnail">
-<p><a href="./resources/table_of_elements_with_wikipedia_row_content/index.html"> <img src="./resources/table_of_elements_with_wikipedia_row_content/table_of_elements_with_wikipedia_row_content.png" class="thumbnail-image" style="height: 200px;"> </a></p>
+<p><a href="./resources/table_of_elements_with_wikipedia_row_content/index.html" class="no-external"></a></p><a href="./resources/table_of_elements_with_wikipedia_row_content/index.html" class="no-external">
+<p><img loading="lazy" src="./resources/table_of_elements_with_wikipedia_row_content/table_of_elements_with_wikipedia_row_content.png" class="thumbnail-image" style="height: 200px;"></p>
+</a><p><a href="./resources/table_of_elements_with_wikipedia_row_content/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./resources/table_of_elements_with_wikipedia_row_content/index.html">
 <h3 class="no-anchor listing-title">
-Table of elements with Wikipedia row content
+<a href="./resources/table_of_elements_with_wikipedia_row_content/index.html" class="no-external">Table of elements with Wikipedia row content</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./resources/table_of_elements_with_wikipedia_row_content/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('chemistry'); return false;">
 chemistry
@@ -457,14 +483,12 @@ pyodide
 tabulator
 </div>
 </div>
-<a href="./resources/table_of_elements_with_wikipedia_row_content/index.html">
 <div class="listing-description">
-<p>Table of elements. When you click a row it expands and shows the Wikipedia article. Powered by Tabulator.</p>
+<a href="./resources/table_of_elements_with_wikipedia_row_content/index.html" class="no-external">Table of elements. When you click a row it expands and shows the Wikipedia article. Powered by Tabulator.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./resources/table_of_elements_with_wikipedia_row_content/index.html">
+<a href="./resources/table_of_elements_with_wikipedia_row_content/index.html" class="no-external">
 <div class="listing-date">
 Jan 14, 2024
 </div>
@@ -474,19 +498,19 @@ Marc Skov Madsen
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="geo,hugging face,pyodide" data-listing-date-sort="1705104000000" data-listing-file-modified-sort="1706156416864" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="6" data-categories="geo,hugging face,pyodide" data-listing-date-sort="1705104000000" data-listing-file-modified-sort="1725769307209" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="104">
 <div class="thumbnail">
-<p><a href="./resources/commuting_flows_italy/index.html"> <img src="./resources/commuting_flows_italy/commuting_flows_italy.png" class="thumbnail-image" style="height: 200px;"> </a></p>
+<p><a href="./resources/commuting_flows_italy/index.html" class="no-external"></a></p><a href="./resources/commuting_flows_italy/index.html" class="no-external">
+<p><img loading="lazy" src="./resources/commuting_flows_italy/commuting_flows_italy.png" class="thumbnail-image" style="height: 200px;"></p>
+</a><p><a href="./resources/commuting_flows_italy/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./resources/commuting_flows_italy/index.html">
 <h3 class="no-anchor listing-title">
-Commuting Flows Italy
+<a href="./resources/commuting_flows_italy/index.html" class="no-external">Commuting Flows Italy</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./resources/commuting_flows_italy/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('geo'); return false;">
 geo
@@ -498,14 +522,12 @@ hugging face
 pyodide
 </div>
 </div>
-<a href="./resources/commuting_flows_italy/index.html">
 <div class="listing-description">
-<p>A dashboard showing commuting flows between Italian regions</p>
+<a href="./resources/commuting_flows_italy/index.html" class="no-external">A dashboard showing commuting flows between Italian regions</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./resources/commuting_flows_italy/index.html">
+<a href="./resources/commuting_flows_italy/index.html" class="no-external">
 <div class="listing-date">
 Jan 13, 2024
 </div>
@@ -515,19 +537,19 @@ Ivan D’Ortenzio
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="hugging face,pyodide,pyscript,streaming" data-listing-date-sort="1705104000000" data-listing-file-modified-sort="1706156454545" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="7" data-categories="hugging face,pyodide,pyscript,streaming" data-listing-date-sort="1705104000000" data-listing-file-modified-sort="1725769307249" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="116">
 <div class="thumbnail">
-<p><a href="./resources/streaming_number_indicators/index.html"> <img src="./resources/streaming_number_indicators/streaming_number_indicators.png" class="thumbnail-image" style="height: 200px;"> </a></p>
+<p><a href="./resources/streaming_number_indicators/index.html" class="no-external"></a></p><a href="./resources/streaming_number_indicators/index.html" class="no-external">
+<p><img loading="lazy" src="./resources/streaming_number_indicators/streaming_number_indicators.png" class="thumbnail-image" style="height: 200px;"></p>
+</a><p><a href="./resources/streaming_number_indicators/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./resources/streaming_number_indicators/index.html">
 <h3 class="no-anchor listing-title">
-Streaming Number Indicators
+<a href="./resources/streaming_number_indicators/index.html" class="no-external">Streaming Number Indicators</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./resources/streaming_number_indicators/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('hugging face'); return false;">
 hugging face
@@ -542,14 +564,12 @@ pyscript
 streaming
 </div>
 </div>
-<a href="./resources/streaming_number_indicators/index.html">
 <div class="listing-description">
-<p>Dashboard with streaming Number Indicators</p>
+<a href="./resources/streaming_number_indicators/index.html" class="no-external">Dashboard with streaming Number Indicators</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./resources/streaming_number_indicators/index.html">
+<a href="./resources/streaming_number_indicators/index.html" class="no-external">
 <div class="listing-date">
 Jan 13, 2024
 </div>
@@ -559,19 +579,19 @@ Marc Skov Madsen
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="bokeh,hugging face,pyodide,timeseries" data-listing-date-sort="1704672000000" data-listing-file-modified-sort="1706156424012" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="8" data-categories="bokeh,hugging face,pyodide,timeseries" data-listing-date-sort="1704672000000" data-listing-file-modified-sort="1725769307225" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="142">
 <div class="thumbnail">
-<p><a href="./resources/crossfiltering_holoviews/index.html"> <img src="./resources/crossfiltering_holoviews/crossfiltering_holoviews.png" class="thumbnail-image" style="height: 200px;"> </a></p>
+<p><a href="./resources/crossfiltering_holoviews/index.html" class="no-external"></a></p><a href="./resources/crossfiltering_holoviews/index.html" class="no-external">
+<p><img loading="lazy" src="./resources/crossfiltering_holoviews/crossfiltering_holoviews.png" class="thumbnail-image" style="height: 200px;"></p>
+</a><p><a href="./resources/crossfiltering_holoviews/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./resources/crossfiltering_holoviews/index.html">
 <h3 class="no-anchor listing-title">
-Crossfiltering with HoloViews
+<a href="./resources/crossfiltering_holoviews/index.html" class="no-external">Crossfiltering with HoloViews</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./resources/crossfiltering_holoviews/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('bokeh'); return false;">
 bokeh
@@ -586,14 +606,12 @@ pyodide
 timeseries
 </div>
 </div>
-<a href="./resources/crossfiltering_holoviews/index.html">
 <div class="listing-description">
-<p>Apply a selection in one plot as a filter in other plots</p>
+<a href="./resources/crossfiltering_holoviews/index.html" class="no-external">Apply a selection in one plot as a filter in other plots</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./resources/crossfiltering_holoviews/index.html">
+<a href="./resources/crossfiltering_holoviews/index.html" class="no-external">
 <div class="listing-date">
 Jan 8, 2024
 </div>
@@ -603,19 +621,19 @@ Marc Skov Madsen
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="artificial intelligence,llm" data-listing-date-sort="1704672000000" data-listing-file-modified-sort="1706156443129" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="9" data-categories="artificial intelligence,llm" data-listing-date-sort="1704672000000" data-listing-file-modified-sort="1725769307237" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
 <div class="thumbnail">
-<p><a href="./resources/panel_chat_pack/index.html"> <img src="./resources/panel_chat_pack/panel_chatbot_pack.png" class="thumbnail-image" style="height: 200px;"> </a></p>
+<p><a href="./resources/panel_chat_pack/index.html" class="no-external"></a></p><a href="./resources/panel_chat_pack/index.html" class="no-external">
+<p><img loading="lazy" src="./resources/panel_chat_pack/panel_chatbot_pack.png" class="thumbnail-image" style="height: 200px;"></p>
+</a><p><a href="./resources/panel_chat_pack/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./resources/panel_chat_pack/index.html">
 <h3 class="no-anchor listing-title">
-Panel ChatBot Pack
+<a href="./resources/panel_chat_pack/index.html" class="no-external">Panel ChatBot Pack</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./resources/panel_chat_pack/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('artificial intelligence'); return false;">
 artificial intelligence
@@ -624,14 +642,12 @@ artificial intelligence
 llm
 </div>
 </div>
-<a href="./resources/panel_chat_pack/index.html">
 <div class="listing-description">
-<p>Build a chatbot with LlamaIndex to talk to your Github repository</p>
+<a href="./resources/panel_chat_pack/index.html" class="no-external">Build a chatbot with LlamaIndex to talk to your Github repository</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./resources/panel_chat_pack/index.html">
+<a href="./resources/panel_chat_pack/index.html" class="no-external">
 <div class="listing-date">
 Jan 8, 2024
 </div>
@@ -641,19 +657,19 @@ Marc Skov Madsen
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-categories="dashboard,hvplot,rx" data-listing-date-sort="1704672000000" data-listing-file-modified-sort="1706156492933" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="10" data-categories="dashboard,hvplot,rx" data-listing-date-sort="1704672000000" data-listing-file-modified-sort="1725769307253" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="122">
 <div class="thumbnail">
-<p><a href="./resources/the_easiest_way_to_create_dashboard/index.html"> <img src="./resources/the_easiest_way_to_create_dashboard/the_easiest_way_to_create_dashboard.png" class="thumbnail-image" style="height: 200px;"> </a></p>
+<p><a href="./resources/the_easiest_way_to_create_dashboard/index.html" class="no-external"></a></p><a href="./resources/the_easiest_way_to_create_dashboard/index.html" class="no-external">
+<p><img loading="lazy" src="./resources/the_easiest_way_to_create_dashboard/the_easiest_way_to_create_dashboard.png" class="thumbnail-image" style="height: 200px;"></p>
+</a><p><a href="./resources/the_easiest_way_to_create_dashboard/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./resources/the_easiest_way_to_create_dashboard/index.html">
 <h3 class="no-anchor listing-title">
-The Easiest Way to Create an Interactive Dashboard in Python
+<a href="./resources/the_easiest_way_to_create_dashboard/index.html" class="no-external">The Easiest Way to Create an Interactive Dashboard in Python</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./resources/the_easiest_way_to_create_dashboard/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('dashboard'); return false;">
 dashboard
@@ -665,14 +681,12 @@ hvplot
 rx
 </div>
 </div>
-<a href="./resources/the_easiest_way_to_create_dashboard/index.html">
 <div class="listing-description">
-<p>The Easiest Way to Create an Interactive Dashboard in Python with param.rx and Panel</p>
+<a href="./resources/the_easiest_way_to_create_dashboard/index.html" class="no-external">The Easiest Way to Create an Interactive Dashboard in Python with param.rx and Panel</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./resources/the_easiest_way_to_create_dashboard/index.html">
+<a href="./resources/the_easiest_way_to_create_dashboard/index.html" class="no-external">
 <div class="listing-date">
 Jan 8, 2024
 </div>
@@ -682,19 +696,19 @@ Marc Skov Madsen, Sophia Yang
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-categories="hugging face,performance,pyodide" data-listing-date-sort="1704585600000" data-listing-file-modified-sort="1706156393744" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="11" data-categories="hugging face,performance,pyodide" data-listing-date-sort="1704585600000" data-listing-file-modified-sort="1725769307205" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="348">
 <div class="thumbnail">
-<p><a href="./resources/caching_example/index.html"> <img src="./resources/caching_example/caching_example.png" class="thumbnail-image" style="height: 200px;"> </a></p>
+<p><a href="./resources/caching_example/index.html" class="no-external"></a></p><a href="./resources/caching_example/index.html" class="no-external">
+<p><img loading="lazy" src="./resources/caching_example/caching_example.png" class="thumbnail-image" style="height: 200px;"></p>
+</a><p><a href="./resources/caching_example/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./resources/caching_example/index.html">
 <h3 class="no-anchor listing-title">
-Caching Example
+<a href="./resources/caching_example/index.html" class="no-external">Caching Example</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./resources/caching_example/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('hugging face'); return false;">
 hugging face
@@ -706,14 +720,12 @@ performance
 pyodide
 </div>
 </div>
-<a href="./resources/caching_example/index.html">
 <div class="listing-description">
-<p>Learn how caching can speed up your app</p>
+<a href="./resources/caching_example/index.html" class="no-external">Learn how caching can speed up your app</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./resources/caching_example/index.html">
+<a href="./resources/caching_example/index.html" class="no-external">
 <div class="listing-date">
 Jan 7, 2024
 </div>
@@ -723,19 +735,19 @@ Marc Skov Madsen
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="12" data-categories="dashboard,hvplot" data-listing-date-sort="1704585600000" data-listing-file-modified-sort="1706156403184" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="12" data-categories="dashboard,hvplot" data-listing-date-sort="1704585600000" data-listing-file-modified-sort="1725769307209" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="76">
 <div class="thumbnail">
-<p><a href="./resources/classic_dashboard/classic_dashboard.html"> <img src="./resources/classic_dashboard/classic_dashboard.png" class="thumbnail-image" style="height: 200px;"> </a></p>
+<p><a href="./resources/classic_dashboard/classic_dashboard.html" class="no-external"></a></p><a href="./resources/classic_dashboard/classic_dashboard.html" class="no-external">
+<p><img loading="lazy" src="./resources/classic_dashboard/classic_dashboard.png" class="thumbnail-image" style="height: 200px;"></p>
+</a><p><a href="./resources/classic_dashboard/classic_dashboard.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./resources/classic_dashboard/classic_dashboard.html">
 <h3 class="no-anchor listing-title">
-Classic Dashboard
+<a href="./resources/classic_dashboard/classic_dashboard.html" class="no-external">Classic Dashboard</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./resources/classic_dashboard/classic_dashboard.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('dashboard'); return false;">
 dashboard
@@ -744,14 +756,12 @@ dashboard
 hvplot
 </div>
 </div>
-<a href="./resources/classic_dashboard/classic_dashboard.html">
 <div class="listing-description">
-<p>Learn how to create a classic dashboard</p>
+<a href="./resources/classic_dashboard/classic_dashboard.html" class="no-external">Learn how to create a classic dashboard</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./resources/classic_dashboard/classic_dashboard.html">
+<a href="./resources/classic_dashboard/classic_dashboard.html" class="no-external">
 <div class="listing-date">
 Jan 7, 2024
 </div>
@@ -761,19 +771,19 @@ Marc Skov Madsen
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="13" data-categories="hugging face,pyodide,video" data-listing-date-sort="1704585600000" data-listing-file-modified-sort="1706156501045" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="13" data-categories="hugging face,pyodide,video" data-listing-date-sort="1704585600000" data-listing-file-modified-sort="1725769307253" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="154">
 <div class="thumbnail">
-<p><a href="./resources/video_stream/index.html"> <img src="./resources/video_stream/video_stream.png" class="thumbnail-image" style="height: 200px;"> </a></p>
+<p><a href="./resources/video_stream/index.html" class="no-external"></a></p><a href="./resources/video_stream/index.html" class="no-external">
+<p><img loading="lazy" src="./resources/video_stream/video_stream.png" class="thumbnail-image" style="height: 200px;"></p>
+</a><p><a href="./resources/video_stream/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./resources/video_stream/index.html">
 <h3 class="no-anchor listing-title">
-Video Stream
+<a href="./resources/video_stream/index.html" class="no-external">Video Stream</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./resources/video_stream/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('hugging face'); return false;">
 hugging face
@@ -785,14 +795,12 @@ pyodide
 video
 </div>
 </div>
-<a href="./resources/video_stream/index.html">
 <div class="listing-description">
-<p>Image processing with Pillow and Scikit Image</p>
+<a href="./resources/video_stream/index.html" class="no-external">Image processing with Pillow and Scikit Image</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./resources/video_stream/index.html">
+<a href="./resources/video_stream/index.html" class="no-external">
 <div class="listing-date">
 Jan 7, 2024
 </div>
@@ -802,19 +810,19 @@ Marc Skov Madsen
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="14" data-categories="async,performance,threads" data-listing-date-sort="1704499200000" data-listing-file-modified-sort="1706156378784" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="14" data-categories="async,performance,threads" data-listing-date-sort="1704499200000" data-listing-file-modified-sort="1725769307205" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="114">
 <div class="thumbnail">
-<p><a href="./resources/async_tasks/index.html"> <img src="./resources/async_tasks/async_tasks.png" class="thumbnail-image" style="height: 200px;"> </a></p>
+<p><a href="./resources/async_tasks/index.html" class="no-external"></a></p><a href="./resources/async_tasks/index.html" class="no-external">
+<p><img loading="lazy" src="./resources/async_tasks/async_tasks.png" class="thumbnail-image" style="height: 200px;"></p>
+</a><p><a href="./resources/async_tasks/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./resources/async_tasks/index.html">
 <h3 class="no-anchor listing-title">
-Async Tasks
+<a href="./resources/async_tasks/index.html" class="no-external">Async Tasks</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./resources/async_tasks/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('async'); return false;">
 async
@@ -826,14 +834,12 @@ performance
 threads
 </div>
 </div>
-<a href="./resources/async_tasks/index.html">
 <div class="listing-description">
-<p>Run blocking tasks in the background using a ThreadPoolExecutor and Async</p>
+<a href="./resources/async_tasks/index.html" class="no-external">Run blocking tasks in the background using a ThreadPoolExecutor and Async</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./resources/async_tasks/index.html">
+<a href="./resources/async_tasks/index.html" class="no-external">
 <div class="listing-date">
 Jan 6, 2024
 </div>
@@ -843,19 +849,19 @@ Jochem Smit, Marc Skov Madsen
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="15" data-categories="dashboard,hugging face,hvplot,pyodide" data-listing-date-sort="1704499200000" data-listing-file-modified-sort="1706156386420" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="15" data-categories="dashboard,hugging face,hvplot,pyodide" data-listing-date-sort="1704499200000" data-listing-file-modified-sort="1725769307205" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="86">
 <div class="thumbnail">
-<p><a href="./resources/bootstrap_dashboard/index.html"> <img src="./resources/bootstrap_dashboard/bootstrap_dashboard.png" class="thumbnail-image" style="height: 200px;"> </a></p>
+<p><a href="./resources/bootstrap_dashboard/index.html" class="no-external"></a></p><a href="./resources/bootstrap_dashboard/index.html" class="no-external">
+<p><img loading="lazy" src="./resources/bootstrap_dashboard/bootstrap_dashboard.png" class="thumbnail-image" style="height: 200px;"></p>
+</a><p><a href="./resources/bootstrap_dashboard/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./resources/bootstrap_dashboard/index.html">
 <h3 class="no-anchor listing-title">
-Bootstrap Dashboard
+<a href="./resources/bootstrap_dashboard/index.html" class="no-external">Bootstrap Dashboard</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./resources/bootstrap_dashboard/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('dashboard'); return false;">
 dashboard
@@ -870,14 +876,12 @@ hvplot
 pyodide
 </div>
 </div>
-<a href="./resources/bootstrap_dashboard/index.html">
 <div class="listing-description">
-<p>A Bootstrap like dashboard</p>
+<a href="./resources/bootstrap_dashboard/index.html" class="no-external">A Bootstrap like dashboard</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./resources/bootstrap_dashboard/index.html">
+<a href="./resources/bootstrap_dashboard/index.html" class="no-external">
 <div class="listing-date">
 Jan 6, 2024
 </div>
@@ -887,19 +891,19 @@ Marc Skov Madsen
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="16" data-categories="artificial intelligence,llm" data-listing-date-sort="1704499200000" data-listing-file-modified-sort="1706156437613" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="16" data-categories="artificial intelligence,llm" data-listing-date-sort="1704499200000" data-listing-file-modified-sort="1725769307233" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="64">
 <div class="thumbnail">
-<p><a href="./resources/panel_chat_examples/index.html"> <img src="./resources/panel_chat_examples/panel_chat_examples.png" class="thumbnail-image" style="height: 200px;"> </a></p>
+<p><a href="./resources/panel_chat_examples/index.html" class="no-external"></a></p><a href="./resources/panel_chat_examples/index.html" class="no-external">
+<p><img loading="lazy" src="./resources/panel_chat_examples/panel_chat_examples.png" class="thumbnail-image" style="height: 200px;"></p>
+</a><p><a href="./resources/panel_chat_examples/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./resources/panel_chat_examples/index.html">
 <h3 class="no-anchor listing-title">
-Panel Chat Examples
+<a href="./resources/panel_chat_examples/index.html" class="no-external">Panel Chat Examples</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./resources/panel_chat_examples/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('artificial intelligence'); return false;">
 artificial intelligence
@@ -908,14 +912,12 @@ artificial intelligence
 llm
 </div>
 </div>
-<a href="./resources/panel_chat_examples/index.html">
 <div class="listing-description">
-<p>A resource of Panel Chat Apps using Mistral, LangChain, LlamaIndex, OpenAI etc.</p>
+<a href="./resources/panel_chat_examples/index.html" class="no-external">A resource of Panel Chat Apps using Mistral, LangChain, LlamaIndex, OpenAI etc.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./resources/panel_chat_examples/index.html">
+<a href="./resources/panel_chat_examples/index.html" class="no-external">
 <div class="listing-date">
 Jan 6, 2024
 </div>
@@ -925,19 +927,19 @@ Andrew Huang, Marc Skov Madsen
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="17" data-categories="bokeh,hugging face,pyodide,timeseries" data-listing-date-sort="1704499200000" data-listing-file-modified-sort="1706156465573" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="17" data-categories="bokeh,hugging face,pyodide,timeseries" data-listing-date-sort="1704499200000" data-listing-file-modified-sort="1725769307249" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="131">
 <div class="thumbnail">
-<p><a href="./resources/stumpy/index.html"> <img src="./resources/stumpy/stumpy.png" class="thumbnail-image" style="height: 200px;"> </a></p>
+<p><a href="./resources/stumpy/index.html" class="no-external"></a></p><a href="./resources/stumpy/index.html" class="no-external">
+<p><img loading="lazy" src="./resources/stumpy/stumpy.png" class="thumbnail-image" style="height: 200px;"></p>
+</a><p><a href="./resources/stumpy/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./resources/stumpy/index.html">
 <h3 class="no-anchor listing-title">
-Stumpy
+<a href="./resources/stumpy/index.html" class="no-external">Stumpy</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./resources/stumpy/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('bokeh'); return false;">
 bokeh
@@ -952,14 +954,12 @@ pyodide
 timeseries
 </div>
 </div>
-<a href="./resources/stumpy/index.html">
 <div class="listing-description">
-<p>Use the Stumpy library to identify patterns in timeseries</p>
+<a href="./resources/stumpy/index.html" class="no-external">Use the Stumpy library to identify patterns in timeseries</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./resources/stumpy/index.html">
+<a href="./resources/stumpy/index.html" class="no-external">
 <div class="listing-date">
 Jan 6, 2024
 </div>
@@ -969,19 +969,19 @@ Marc Skov Madsen, Sean Law
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="18" data-categories="color,hugging face" data-listing-date-sort="1704499200000" data-listing-file-modified-sort="1706417460263" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="18" data-categories="color,hugging face" data-listing-date-sort="1704499200000" data-listing-file-modified-sort="1725769307253" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="89">
 <div class="thumbnail">
-<p><a href="./resources/tastymap/index.html"> <img src="./resources/tastymap/tastymap.png" class="thumbnail-image" style="height: 200px;"> </a></p>
+<p><a href="./resources/tastymap/index.html" class="no-external"></a></p><a href="./resources/tastymap/index.html" class="no-external">
+<p><img loading="lazy" src="./resources/tastymap/tastymap.png" class="thumbnail-image" style="height: 200px;"></p>
+</a><p><a href="./resources/tastymap/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./resources/tastymap/index.html">
 <h3 class="no-anchor listing-title">
-Tasty Map
+<a href="./resources/tastymap/index.html" class="no-external">Tasty Map</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./resources/tastymap/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('color'); return false;">
 color
@@ -990,14 +990,12 @@ color
 hugging face
 </div>
 </div>
-<a href="./resources/tastymap/index.html">
 <div class="listing-description">
-<p>Generate custom color palettes easily using the TastyMap Panel app</p>
+<a href="./resources/tastymap/index.html" class="no-external">Generate custom color palettes easily using the TastyMap Panel app</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./resources/tastymap/index.html">
+<a href="./resources/tastymap/index.html" class="no-external">
 <div class="listing-date">
 Jan 6, 2024
 </div>
@@ -1047,18 +1045,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1090,11 +1077,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/awesome-panel\.org");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1104,8 +1130,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1117,7 +1152,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1161,6 +1319,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1186,6 +1345,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1251,12 +1436,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">© Copyright 2023 Awesome Panel contributors<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/awesome-panel/awesome-panel/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
+    <div class="nav-footer-center">
+<p>© Copyright 2023 Awesome Panel contributors</p>
+<div class="toc-actions"><ul><li><a href="https://github.com/awesome-panel/awesome-panel/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 

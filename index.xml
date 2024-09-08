@@ -6,139 +6,139 @@
       version="2.0">
 <channel>
 <title>Awesome Panel</title>
-<link>https://awesome-panel.org/index.html</link>
+<link>https://awesome-panel.org/</link>
 <atom:link href="https://awesome-panel.org/index.xml" rel="self" type="application/rss+xml"/>
 <description>Awesome Panel resources by the community</description>
 <image>
 <url>https://cdn.awesome-panel.org/resources/awesome-panel-card-1024x1024.png?version=1</url>
 <title>Awesome Panel</title>
-<link>https://awesome-panel.org/index.html</link>
+<link>https://awesome-panel.org/</link>
 </image>
-<generator>quarto-1.3.450</generator>
+<generator>quarto-1.5.55</generator>
 <lastBuildDate>Sun, 28 Jan 2024 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Weather Station Viewer</title>
   <dc:creator>Andrew Huang</dc:creator>
-  <link>https://awesome-panel.org/resources/weather_station_viewer/index.html</link>
-  <description><![CDATA[ This very nicely styled app by <a href="https://github.com/ahuang11">Andrew Huang</a> allows you to compare a single year of data from a weather station to the average of a range of years. ]]></description>
+  <link>https://awesome-panel.org/resources/weather_station_viewer/</link>
+  <description><![CDATA[ This app allows you to compare a single year of data from a weather station to the average of a range of years. ]]></description>
   <category>climate</category>
   <category>hvplot</category>
   <category>hugging face</category>
-  <guid>https://awesome-panel.org/resources/weather_station_viewer/index.html</guid>
+  <guid>https://awesome-panel.org/resources/weather_station_viewer/</guid>
   <pubDate>Sun, 28 Jan 2024 00:00:00 GMT</pubDate>
   <media:content url="https://awesome-panel.org/resources/weather_station_viewer/weather_station_viewer.png" medium="image" type="image/png" height="91" width="144"/>
 </item>
 <item>
   <title>Lonboard Dashboard</title>
   <dc:creator>Marc Skov Madsen</dc:creator>
-  <link>https://awesome-panel.org/resources/lonboard_dashboard/index.html</link>
-  <description><![CDATA[ <a href="https://developmentseed.org/lonboard/latest/">Lonboard</a> is a Python library for fast, interactive geospatial vector data visualization in Jupyter. But it also works with Panel. This Dashboard demonstrates that. ]]></description>
+  <link>https://awesome-panel.org/resources/lonboard_dashboard/</link>
+  <description><![CDATA[ A Dashboard using Lonboard to fast, interactive geospatial vector data visualization. ]]></description>
   <category>anywidget</category>
   <category>dashboard</category>
   <category>hugging face</category>
   <category>ipywidgets</category>
-  <guid>https://awesome-panel.org/resources/lonboard_dashboard/index.html</guid>
+  <guid>https://awesome-panel.org/resources/lonboard_dashboard/</guid>
   <pubDate>Sat, 27 Jan 2024 00:00:00 GMT</pubDate>
   <media:content url="https://awesome-panel.org/resources/lonboard_dashboard/lonboard_dashboard.png" medium="image" type="image/png" height="81" width="144"/>
 </item>
 <item>
   <title>MapWidget Cesium</title>
   <dc:creator>Qiusheng Wu</dc:creator>
-  <link>https://awesome-panel.org/resources/mapwidget_dashboard/index.html</link>
-  <description><![CDATA[ The <a href="https://mapwidget.gishub.org/">mapwidget</a> package by <a href="https://github.com/giswqs">Qiusheng Wu</a> provides a set of custom map widgets for creating interactive maps in a Jupyter environment using different JavaScript mapping libraries, such as <code>Cesium</code>, <code>Mapbox</code>, <code>MapLibre</code>, <code>Leaflet</code>, and <code>OpenLayers</code>. ]]></description>
+  <link>https://awesome-panel.org/resources/mapwidget_dashboard/</link>
+  <description><![CDATA[ A dashboard showcasing mapwidget.cesium by Qiusheng Wu ]]></description>
   <category>anywidget</category>
   <category>dashboard</category>
   <category>hugging face</category>
   <category>ipywidgets</category>
-  <guid>https://awesome-panel.org/resources/mapwidget_dashboard/index.html</guid>
+  <guid>https://awesome-panel.org/resources/mapwidget_dashboard/</guid>
   <pubDate>Sat, 27 Jan 2024 00:00:00 GMT</pubDate>
   <media:content url="https://awesome-panel.org/resources/mapwidget_dashboard/mapwidget_cesium.png" medium="image" type="image/png" height="85" width="144"/>
 </item>
 <item>
   <title>Hurdat Tracks Viewer</title>
   <dc:creator>Andrew Huang</dc:creator>
-  <link>https://awesome-panel.org/resources/hurdat_tracks_viewer/index.html</link>
-  <description><![CDATA[ The <a href="https://medium.com/@pYdeas/transform-a-python-script-into-an-interactive-web-app-and-make-it-performant-73fa3b304cdf">Hurdat Tracks Viewer</a> medium post by <a href="https://github.com/ahuang11">Andrew Huang</a> show you how to to turn a script, that outputs an image of a hurricane track, into a shareable app, and the best practices to improve the UX. ]]></description>
+  <link>https://awesome-panel.org/resources/hurdat_tracks_viewer/</link>
+  <description><![CDATA[ An interactive web app for analysing hurricane tracks using Tropycal and Panel ]]></description>
   <category>geo</category>
   <category>hugging face</category>
   <category>matplotlib</category>
-  <guid>https://awesome-panel.org/resources/hurdat_tracks_viewer/index.html</guid>
+  <guid>https://awesome-panel.org/resources/hurdat_tracks_viewer/</guid>
   <pubDate>Thu, 25 Jan 2024 00:00:00 GMT</pubDate>
   <media:content url="https://awesome-panel.org/resources/hurdat_tracks_viewer/hurdat_tracks_viewer.png" medium="image" type="image/png" height="84" width="144"/>
 </item>
 <item>
   <title>Standa - Stock Analysis Dashboard</title>
   <dc:creator>Fayssal El Mofatiche</dc:creator>
-  <link>https://awesome-panel.org/resources/standa/index.html</link>
-  <description><![CDATA[ The <a href="https://github.com/fayssalelmofatiche/standa">Standa</a> Stock Analysis Dashboards by <a href="https://www.linkedin.com/posts/elmofatiche_its-impressive-what-interactive-data-analysis-activity-7153795195740852225-y5OG?utm_source=share&amp;utm_medium=member_desktop">Fayssal El Mofatiche</a> is an example of a large, nicely polished Panel app. ]]></description>
+  <link>https://awesome-panel.org/resources/standa/</link>
+  <description><![CDATA[ A large, nicely polished Stock Analysis Dashboard ]]></description>
   <category>finance</category>
   <category>hugging face</category>
   <category>plotly</category>
   <category>tabulator</category>
   <category>trading</category>
-  <guid>https://awesome-panel.org/resources/standa/index.html</guid>
+  <guid>https://awesome-panel.org/resources/standa/</guid>
   <pubDate>Thu, 25 Jan 2024 00:00:00 GMT</pubDate>
   <media:content url="https://awesome-panel.org/resources/standa/standa.png" medium="image" type="image/png" height="83" width="144"/>
 </item>
 <item>
   <title>Table of elements with Wikipedia row content</title>
   <dc:creator>Marc Skov Madsen</dc:creator>
-  <link>https://awesome-panel.org/resources/table_of_elements_with_wikipedia_row_content/index.html</link>
-  <description><![CDATA[ This app demonstrates the power of the <code>row_content</code> feature of Panels <a href="https://panel.holoviz.org/reference/widgets/Tabulator.html">Tabulator</a> pane. The app contains a table of the elements. When you click a specific row, it expands and you can study the corresponding Wikipedia article. ]]></description>
+  <link>https://awesome-panel.org/resources/table_of_elements_with_wikipedia_row_content/</link>
+  <description><![CDATA[ Table of elements. When you click a row it expands and shows the Wikipedia article. Powered by Tabulator. ]]></description>
   <category>chemistry</category>
   <category>hugging face</category>
   <category>pyodide</category>
   <category>tabulator</category>
-  <guid>https://awesome-panel.org/resources/table_of_elements_with_wikipedia_row_content/index.html</guid>
+  <guid>https://awesome-panel.org/resources/table_of_elements_with_wikipedia_row_content/</guid>
   <pubDate>Sun, 14 Jan 2024 00:00:00 GMT</pubDate>
   <media:content url="https://awesome-panel.org/resources/table_of_elements_with_wikipedia_row_content/table_of_elements_with_wikipedia_row_content.png" medium="image" type="image/png" height="87" width="144"/>
 </item>
 <item>
   <title>Commuting Flows Italy</title>
   <dc:creator>Ivan D&#39;Ortenzio</dc:creator>
-  <link>https://awesome-panel.org/resources/commuting_flows_italy/index.html</link>
-  <description><![CDATA[ A dashboard by <a href="https://github.com/ivandorte">Ivan D’Ortenzio</a> showing incoming and outgoing commuting flows between Italian regions. ]]></description>
+  <link>https://awesome-panel.org/resources/commuting_flows_italy/</link>
+  <description><![CDATA[ A dashboard showing commuting flows between Italian regions ]]></description>
   <category>geo</category>
   <category>hugging face</category>
   <category>pyodide</category>
-  <guid>https://awesome-panel.org/resources/commuting_flows_italy/index.html</guid>
+  <guid>https://awesome-panel.org/resources/commuting_flows_italy/</guid>
   <pubDate>Sat, 13 Jan 2024 00:00:00 GMT</pubDate>
   <media:content url="https://awesome-panel.org/resources/commuting_flows_italy/commuting_flows_italy.png" medium="image" type="image/png" height="86" width="144"/>
 </item>
 <item>
   <title>Streaming Number Indicators</title>
   <dc:creator>Marc Skov Madsen</dc:creator>
-  <link>https://awesome-panel.org/resources/streaming_number_indicators/index.html</link>
-  <description><![CDATA[ Dashboard with streaming <a href="https://panel.holoviz.org/reference/indicators/Number.html">Number Indicators</a>. The <a href="https://panel.holoviz.org/reference/layouts/FlexBox.html">FlexBox</a> layout used ensures the indicators will layout nicely no matter the window width or device. ]]></description>
+  <link>https://awesome-panel.org/resources/streaming_number_indicators/</link>
+  <description><![CDATA[ Dashboard with streaming Number Indicators ]]></description>
   <category>hugging face</category>
   <category>pyodide</category>
   <category>pyscript</category>
   <category>streaming</category>
-  <guid>https://awesome-panel.org/resources/streaming_number_indicators/index.html</guid>
+  <guid>https://awesome-panel.org/resources/streaming_number_indicators/</guid>
   <pubDate>Sat, 13 Jan 2024 00:00:00 GMT</pubDate>
   <media:content url="https://awesome-panel.org/resources/streaming_number_indicators/streaming_number_indicators.png" medium="image" type="image/png" height="77" width="144"/>
 </item>
 <item>
   <title>Crossfiltering with HoloViews</title>
   <dc:creator>Marc Skov Madsen</dc:creator>
-  <link>https://awesome-panel.org/resources/crossfiltering_holoviews/index.html</link>
-  <description><![CDATA[ Crossfiltering lets you interact with one chart and apply that interaction as a filter to other charts in the report. ]]></description>
+  <link>https://awesome-panel.org/resources/crossfiltering_holoviews/</link>
+  <description><![CDATA[ Apply a selection in one plot as a filter in other plots ]]></description>
   <category>bokeh</category>
   <category>hugging face</category>
   <category>pyodide</category>
   <category>timeseries</category>
-  <guid>https://awesome-panel.org/resources/crossfiltering_holoviews/index.html</guid>
+  <guid>https://awesome-panel.org/resources/crossfiltering_holoviews/</guid>
   <pubDate>Mon, 08 Jan 2024 00:00:00 GMT</pubDate>
   <media:content url="https://awesome-panel.org/resources/crossfiltering_holoviews/crossfiltering_holoviews.png" medium="image" type="image/png" height="103" width="144"/>
 </item>
 <item>
   <title>Panel ChatBot Pack</title>
   <dc:creator>Marc Skov Madsen</dc:creator>
-  <link>https://awesome-panel.org/resources/panel_chat_pack/index.html</link>
-  <description><![CDATA[ <a href="https://llamahub.ai/l/llama_packs-panel_chatbot">Panel Chatbot Pack</a> is a <em>LlamaHub template</em> that enables you to talk to your Github Repository. ]]></description>
+  <link>https://awesome-panel.org/resources/panel_chat_pack/</link>
+  <description><![CDATA[ Build a chatbot with LlamaIndex to talk to your Github repository ]]></description>
   <category>artificial intelligence</category>
   <category>llm</category>
-  <guid>https://awesome-panel.org/resources/panel_chat_pack/index.html</guid>
+  <guid>https://awesome-panel.org/resources/panel_chat_pack/</guid>
   <pubDate>Mon, 08 Jan 2024 00:00:00 GMT</pubDate>
   <media:content url="https://awesome-panel.org/resources/panel_chat_pack/panel_chatbot_pack.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
