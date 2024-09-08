@@ -33,18 +33,18 @@ You can read more about the awesome styling applied to the plots in the blog pos
 
 What a nicely styled app!
 
-<img src="https://cdn.awesome-panel.org/resources/weather_station_viewer/weather_station_viewer.gif"></img>
+<img src="weather_station_viewer.gif"></img>
 
 ## Mp4
 
-<video poster="https://cdn.awesome-panel.org/resources/weather_station_viewer/weather_station_viewer.png" controls>
-  <source src="https://cdn.awesome-panel.org/resources/weather_station_viewer/weather_station_viewer.mp4" type="video/mp4">
+<video poster="weather_station_viewer.png" controls>
+  <source src="weather_station_viewer.mp4" type="video/mp4">
   Your browser does not support HTML video.
 </video>
 
 ## Png
 
-<img src="https://cdn.awesome-panel.org/resources/weather_station_viewer/weather_station_viewer.png"></img>
+<img src="weather_station_viewer.png"></img>
 
 ## Social
 
