@@ -1,10 +1,10 @@
 # ✨ awesome-panel
 
-[![PyPI version](https://badge.fury.io/py/awesome-panel.svg)](https://pypi.org/project/awesome-panel/)
+<!-- [![PyPI version](https://badge.fury.io/py/awesome-panel.svg)](https://pypi.org/project/awesome-panel/)
 [![Downloads](https://pepy.tech/badge/awesome-panel/month)](https://pepy.tech/project/awesome-panel)
-![Python Versions](https://img.shields.io/badge/python-3.9%20%7C%203.10-blue)
+![Python Versions](https://img.shields.io/badge/python-3.9%20%7C%203.10-blue) -->
 [![License](https://img.shields.io/badge/License-MIT%202.0-blue.svg)](https://opensource.org/licenses/MIT)
-![Test Results](https://github.com/awesome-panel/awesome-panel/actions/workflows/tests.yaml/badge.svg?branch=main)
+<!-- ![Test Results](https://github.com/awesome-panel/awesome-panel/actions/workflows/tests.yaml/badge.svg?branch=main) -->
 
 We want to
 
@@ -12,11 +12,7 @@ We want to
 
 We provide
 
-- The [awesome-panel.org](https://awesome-panel.org) web site including galleries of
-  - [Awesome Panel Applications](https://awesome-panel.org/gallery) and
-  - [Awesome Community Resources](https://awesome-panel.org/awesome_list)
-- [Youtube Videos](https://www.youtube.com/playlist?list=PLrrcIlm1vLr69f4CsTlrO0wSNBw6VbsJA).
-- [Blog Posts](https://medium.com/@marcskovmadsen)
+- The [awesome-panel.org](https://awesome-panel.org) web site
 - Communication on social media: [Twitter](https://twitter.com/home) | [LinkedIn](https://www.linkedin.com/in/marcskovmadsen/)
 - [Panel Extensions and Example Repositories](https://github.com/orgs/awesome-panel/repositories)
 
@@ -39,6 +35,13 @@ conda create -n awesome-panel -c conda-forge r-quarto perl
 ```bash
 cd docs
 quarto preview
+```
+
+### Publish
+
+```bash
+cd docs
+quarto publish
 ```
 
 ## ⭐ Support
