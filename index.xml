@@ -67,20 +67,6 @@
   <media:content url="https://awesome-panel.org/resources/hurdat_tracks_viewer/hurdat_tracks_viewer.png" medium="image" type="image/png" height="84" width="144"/>
 </item>
 <item>
-  <title>Standa - Stock Analysis Dashboard</title>
-  <dc:creator>Fayssal El Mofatiche</dc:creator>
-  <link>https://awesome-panel.org/resources/standa/</link>
-  <description><![CDATA[ A large, nicely polished Stock Analysis Dashboard ]]></description>
-  <category>finance</category>
-  <category>hugging face</category>
-  <category>plotly</category>
-  <category>tabulator</category>
-  <category>trading</category>
-  <guid>https://awesome-panel.org/resources/standa/</guid>
-  <pubDate>Thu, 25 Jan 2024 00:00:00 GMT</pubDate>
-  <media:content url="https://awesome-panel.org/resources/standa/standa.png" medium="image" type="image/png" height="83" width="144"/>
-</item>
-<item>
   <title>Table of elements with Wikipedia row content</title>
   <dc:creator>Marc Skov Madsen</dc:creator>
   <link>https://awesome-panel.org/resources/table_of_elements_with_wikipedia_row_content/</link>
@@ -141,6 +127,19 @@
   <guid>https://awesome-panel.org/resources/panel_chat_pack/</guid>
   <pubDate>Mon, 08 Jan 2024 00:00:00 GMT</pubDate>
   <media:content url="https://awesome-panel.org/resources/panel_chat_pack/panel_chatbot_pack.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>The Easiest Way to Create an Interactive Dashboard in Python</title>
+  <dc:creator>Marc Skov Madsen</dc:creator>
+  <dc:creator>Sophia Yang</dc:creator>
+  <link>https://awesome-panel.org/resources/the_easiest_way_to_create_dashboard/</link>
+  <description><![CDATA[ The Easiest Way to Create an Interactive Dashboard in Python with param.rx and Panel ]]></description>
+  <category>dashboard</category>
+  <category>hvplot</category>
+  <category>rx</category>
+  <guid>https://awesome-panel.org/resources/the_easiest_way_to_create_dashboard/</guid>
+  <pubDate>Mon, 08 Jan 2024 00:00:00 GMT</pubDate>
+  <media:content url="https://awesome-panel.org/resources/the_easiest_way_to_create_dashboard/the_easiest_way_to_create_dashboard.png" medium="image" type="image/png" height="81" width="144"/>
 </item>
 </channel>
 </rss>

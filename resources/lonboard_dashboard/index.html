@@ -23,40 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -225,7 +191,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p><a href="https://developmentseed.org/lonboard/latest/">Lonboard</a> is a Python library for fast, interactive geospatial vector data visualization in Jupyter. But it also works with Panel. This Dashboard demonstrates that.</p>
+<p><a href="https://developmentseed.org/lonboard/latest/">Lonboard</a> is a Python library for fast, interactive geospatial vector data visualization in Jupyter. But it also works with Panel.</p>
+<p>For more info check out the <a href="https://developmentseed.org/lonboard/latest/ecosystem/panel/">Lonboard-Panel guide</a>.</p>
 </section>
 <section id="app" class="level2">
 <h2 class="anchored" data-anchor-id="app">App</h2>
@@ -235,121 +202,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="code" class="level2">
 <h2 class="anchored" data-anchor-id="code">Code</h2>
-<details>
-<summary>
-Show
-</summary>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">"""Panel data app based on https://developmentseed.org/lonboard/latest/examples/north-america-roads/"""</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="co"># pip install panel colorcet ipywidgets_bokeh geopandas palettable lonboard</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> colorcet <span class="im">as</span> cc</span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
-<span id="cb1-5"><a href="#cb1-5"></a></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="im">from</span> lonboard <span class="im">import</span> Map, PathLayer</span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="im">from</span> lonboard.colormap <span class="im">import</span> apply_continuous_cmap</span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="im">from</span> palettable.palette <span class="im">import</span> Palette</span>
-<span id="cb1-9"><a href="#cb1-9"></a></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="im">import</span> panel <span class="im">as</span> pn</span>
-<span id="cb1-11"><a href="#cb1-11"></a></span>
-<span id="cb1-12"><a href="#cb1-12"></a>url <span class="op">=</span> <span class="st">"https://naciscdn.org/naturalearth/10m/cultural/ne_10m_roads_north_america.zip"</span></span>
-<span id="cb1-13"><a href="#cb1-13"></a>path <span class="op">=</span> <span class="st">"ne_10m_roads_north_america.zip"</span></span>
-<span id="cb1-14"><a href="#cb1-14"></a></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="cf">try</span>:</span>
-<span id="cb1-16"><a href="#cb1-16"></a>    gdf <span class="op">=</span> pn.state.as_cached(</span>
-<span id="cb1-17"><a href="#cb1-17"></a>        <span class="st">"ne_10m_roads_north_america"</span>, gpd.read_file, filename<span class="op">=</span>path, engine<span class="op">=</span><span class="st">"pyogrio"</span></span>
-<span id="cb1-18"><a href="#cb1-18"></a>    )</span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="cf">except</span>:</span>
-<span id="cb1-20"><a href="#cb1-20"></a>    gdf <span class="op">=</span> pn.state.as_cached(</span>
-<span id="cb1-21"><a href="#cb1-21"></a>        <span class="st">"ne_10m_roads_north_america"</span>, gpd.read_file, filename<span class="op">=</span>url, engine<span class="op">=</span><span class="st">"pyogrio"</span></span>
-<span id="cb1-22"><a href="#cb1-22"></a>    )</span>
-<span id="cb1-23"><a href="#cb1-23"></a></span>
-<span id="cb1-24"><a href="#cb1-24"></a>state_options <span class="op">=</span> <span class="bu">sorted</span>(state <span class="cf">for</span> state <span class="kw">in</span> gdf[<span class="st">"state"</span>].unique() <span class="cf">if</span> state)</span>
-<span id="cb1-25"><a href="#cb1-25"></a></span>
-<span id="cb1-26"><a href="#cb1-26"></a></span>
-<span id="cb1-27"><a href="#cb1-27"></a><span class="kw">def</span> to_rgb(<span class="bu">hex</span>: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
-<span id="cb1-28"><a href="#cb1-28"></a>    h <span class="op">=</span> <span class="bu">hex</span>.strip(<span class="st">"#"</span>)</span>
-<span id="cb1-29"><a href="#cb1-29"></a>    <span class="cf">return</span> <span class="bu">list</span>(<span class="bu">int</span>(h[i : i <span class="op">+</span> <span class="dv">2</span>], <span class="dv">16</span>) <span class="cf">for</span> i <span class="kw">in</span> (<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">4</span>))</span>
-<span id="cb1-30"><a href="#cb1-30"></a></span>
-<span id="cb1-31"><a href="#cb1-31"></a></span>
-<span id="cb1-32"><a href="#cb1-32"></a><span class="kw">def</span> to_palette(cmap) <span class="op">-&gt;</span> Palette:</span>
-<span id="cb1-33"><a href="#cb1-33"></a>    <span class="co">"""Returns the ColorCet colormap as a palettable Palette"""</span></span>
-<span id="cb1-34"><a href="#cb1-34"></a>    colors <span class="op">=</span> [to_rgb(item) <span class="cf">for</span> item <span class="kw">in</span> cmap]</span>
-<span id="cb1-35"><a href="#cb1-35"></a>    <span class="cf">return</span> Palette(name<span class="op">=</span><span class="st">"colorcet"</span>, map_type<span class="op">=</span><span class="st">"colorcet"</span>, colors<span class="op">=</span>colors)</span>
-<span id="cb1-36"><a href="#cb1-36"></a></span>
-<span id="cb1-37"><a href="#cb1-37"></a></span>
-<span id="cb1-38"><a href="#cb1-38"></a><span class="kw">def</span> create_map(state<span class="op">=</span><span class="st">"California"</span>, cmap<span class="op">=</span>cc.fire, alpha<span class="op">=</span><span class="fl">0.8</span>):</span>
-<span id="cb1-39"><a href="#cb1-39"></a>    palette <span class="op">=</span> to_palette(cmap)</span>
-<span id="cb1-40"><a href="#cb1-40"></a>    data <span class="op">=</span> gdf[gdf[<span class="st">"state"</span>] <span class="op">==</span> state]</span>
-<span id="cb1-41"><a href="#cb1-41"></a>    layer <span class="op">=</span> PathLayer.from_geopandas(data, width_min_pixels<span class="op">=</span><span class="fl">0.8</span>)</span>
-<span id="cb1-42"><a href="#cb1-42"></a>    normalized_scale_rank <span class="op">=</span> (data[<span class="st">"scalerank"</span>] <span class="op">-</span> <span class="dv">3</span>) <span class="op">/</span> <span class="dv">9</span></span>
-<span id="cb1-43"><a href="#cb1-43"></a>    layer.get_color <span class="op">=</span> apply_continuous_cmap(normalized_scale_rank, palette, alpha<span class="op">=</span>alpha)</span>
-<span id="cb1-44"><a href="#cb1-44"></a>    map_ <span class="op">=</span> Map(layers<span class="op">=</span>[layer], _height<span class="op">=</span><span class="dv">650</span>)</span>
-<span id="cb1-45"><a href="#cb1-45"></a>    <span class="cf">return</span> map_</span>
-<span id="cb1-46"><a href="#cb1-46"></a></span>
-<span id="cb1-47"><a href="#cb1-47"></a></span>
-<span id="cb1-48"><a href="#cb1-48"></a>description <span class="op">=</span> <span class="st">"""# lonboard</span></span>
-<span id="cb1-49"><a href="#cb1-49"></a></span>
-<span id="cb1-50"><a href="#cb1-50"></a><span class="st">A Python library for **fast, interactive geospatial vector data visualization** in Jupyter (and Panel).</span></span>
-<span id="cb1-51"><a href="#cb1-51"></a></span>
-<span id="cb1-52"><a href="#cb1-52"></a><span class="st">By utilizing new technologies like `GeoArrow` and `GeoParquet` in conjunction with GPU-based map rendering, lonboard aims to enable visualizing large geospatial datasets interactively through a simple interface."""</span></span>
-<span id="cb1-53"><a href="#cb1-53"></a></span>
-<span id="cb1-54"><a href="#cb1-54"></a></span>
-<span id="cb1-55"><a href="#cb1-55"></a><span class="co"># THE PANEL APP</span></span>
-<span id="cb1-56"><a href="#cb1-56"></a>pn.extension(<span class="st">"ipywidgets"</span>)</span>
-<span id="cb1-57"><a href="#cb1-57"></a>state <span class="op">=</span> pn.widgets.Select(</span>
-<span id="cb1-58"><a href="#cb1-58"></a>    value<span class="op">=</span><span class="st">"California"</span>,</span>
-<span id="cb1-59"><a href="#cb1-59"></a>    options<span class="op">=</span>state_options,</span>
-<span id="cb1-60"><a href="#cb1-60"></a>    width<span class="op">=</span><span class="dv">150</span>,</span>
-<span id="cb1-61"><a href="#cb1-61"></a>    name<span class="op">=</span><span class="st">"State"</span>,</span>
-<span id="cb1-62"><a href="#cb1-62"></a>    sizing_mode<span class="op">=</span><span class="st">"stretch_width"</span>,</span>
-<span id="cb1-63"><a href="#cb1-63"></a>)</span>
-<span id="cb1-64"><a href="#cb1-64"></a>cmap <span class="op">=</span> pn.widgets.ColorMap(</span>
-<span id="cb1-65"><a href="#cb1-65"></a>    value<span class="op">=</span>cc.fire,</span>
-<span id="cb1-66"><a href="#cb1-66"></a>    options<span class="op">=</span>cc.palette,</span>
-<span id="cb1-67"><a href="#cb1-67"></a>    ncols<span class="op">=</span><span class="dv">3</span>,</span>
-<span id="cb1-68"><a href="#cb1-68"></a>    swatch_width<span class="op">=</span><span class="dv">100</span>,</span>
-<span id="cb1-69"><a href="#cb1-69"></a>    name<span class="op">=</span><span class="st">"cmap by Colorcet"</span>,</span>
-<span id="cb1-70"><a href="#cb1-70"></a>    sizing_mode<span class="op">=</span><span class="st">"stretch_width"</span>,</span>
-<span id="cb1-71"><a href="#cb1-71"></a>)</span>
-<span id="cb1-72"><a href="#cb1-72"></a>alpha <span class="op">=</span> pn.widgets.FloatSlider(</span>
-<span id="cb1-73"><a href="#cb1-73"></a>    value<span class="op">=</span><span class="fl">0.8</span>, start<span class="op">=</span><span class="dv">0</span>, end<span class="op">=</span><span class="dv">1</span>, name<span class="op">=</span><span class="st">"Alpha"</span>, min_width<span class="op">=</span><span class="dv">100</span>, sizing_mode<span class="op">=</span><span class="st">"stretch_width"</span></span>
-<span id="cb1-74"><a href="#cb1-74"></a>)</span>
-<span id="cb1-75"><a href="#cb1-75"></a>logo <span class="op">=</span> pn.pane.Image(</span>
-<span id="cb1-76"><a href="#cb1-76"></a>    <span class="st">"https://github.com/developmentseed/lonboard/raw/main/assets/dalle-lonboard.jpg"</span></span>
-<span id="cb1-77"><a href="#cb1-77"></a>)</span>
-<span id="cb1-78"><a href="#cb1-78"></a><span class="kw">def</span> title(state):</span>
-<span id="cb1-79"><a href="#cb1-79"></a>    <span class="cf">return</span> <span class="ss">f"# North America Roads: </span><span class="sc">{</span>state<span class="sc">}</span><span class="ss">"</span></span>
-<span id="cb1-80"><a href="#cb1-80"></a></span>
-<span id="cb1-81"><a href="#cb1-81"></a>settings <span class="op">=</span> pn.Column(state, cmap, alpha)</span>
-<span id="cb1-82"><a href="#cb1-82"></a>description <span class="op">=</span> pn.Column(pn.pane.Markdown(description, margin<span class="op">=</span><span class="dv">5</span>), logo)</span>
-<span id="cb1-83"><a href="#cb1-83"></a>component <span class="op">=</span> pn.Column(</span>
-<span id="cb1-84"><a href="#cb1-84"></a>    pn.bind(title, state<span class="op">=</span>state),</span>
-<span id="cb1-85"><a href="#cb1-85"></a>    pn.panel(</span>
-<span id="cb1-86"><a href="#cb1-86"></a>        pn.bind(create_map, state<span class="op">=</span>state, cmap<span class="op">=</span>cmap, alpha<span class="op">=</span>alpha.param.value_throttled),</span>
-<span id="cb1-87"><a href="#cb1-87"></a>        sizing_mode<span class="op">=</span><span class="st">"stretch_both"</span>,</span>
-<span id="cb1-88"><a href="#cb1-88"></a>    ),</span>
-<span id="cb1-89"><a href="#cb1-89"></a>    sizing_mode<span class="op">=</span><span class="st">"stretch_both"</span>,</span>
-<span id="cb1-90"><a href="#cb1-90"></a>)</span>
-<span id="cb1-91"><a href="#cb1-91"></a>pn.template.FastListTemplate(</span>
-<span id="cb1-92"><a href="#cb1-92"></a>    logo<span class="op">=</span><span class="st">"https://panel.holoviz.org/_static/logo_horizontal_dark_theme.png"</span>,</span>
-<span id="cb1-93"><a href="#cb1-93"></a>    title<span class="op">=</span><span class="st">"Works with LonBoard"</span>,</span>
-<span id="cb1-94"><a href="#cb1-94"></a>    main<span class="op">=</span>[component],</span>
-<span id="cb1-95"><a href="#cb1-95"></a>    sidebar<span class="op">=</span>[description, settings],</span>
-<span id="cb1-96"><a href="#cb1-96"></a>).servable()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<p><a href="https://raw.githubusercontent.com/awesome-panel/awesome-panel/main/examples/lonboard_dashboard.py" download="">Download (right-click, save-as)</a></p>
+<ul>
+<li><a href="https://huggingface.co/spaces/awesome-panel/lonboard_dashboard/tree/main">hugging face/awesome-panel/lonboard_dashboard</a></li>
+</ul>
 </section>
 <section id="gif" class="level2">
 <h2 class="anchored" data-anchor-id="gif">Gif</h2>
-<p><img src="https://cdn.awesome-panel.org/resources/lonboard_dashboard/lonboard_dashboard.gif"></p>
+<p><img src="lonboard_dashboard.gif"></p>
 </section>
 <section id="png" class="level2">
 <h2 class="anchored" data-anchor-id="png">Png</h2>
-<p><img src="https://cdn.awesome-panel.org/resources/lonboard_dashboard/lonboard_dashboard.png"></p>
+<p><img src="lonboard_dashboard.png"></p>
 </section>
 <section id="mp4" class="level2">
 <h2 class="anchored" data-anchor-id="mp4">Mp4</h2>
-<video poster="https://cdn.awesome-panel.org/resources/lonboard_dashboard/lonboard_dashboard.png" controls="">
-<source src="https://cdn.awesome-panel.org/resources/lonboard_dashboard/lonboard_dashboard.mp4" type="video/mp4">
+<video poster="lonboard_dashboard.png" controls="">
+<source src="lonboard_dashboard.mp4" type="video/mp4">
 <p>Your browser does not support HTML video. </p>
 </video></section>
 <section id="social" class="level2">

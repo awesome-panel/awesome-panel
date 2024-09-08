@@ -23,40 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -236,64 +202,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="code" class="level2">
 <h2 class="anchored" data-anchor-id="code">Code</h2>
-<details>
-<summary>
-Show
-</summary>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> os</span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> mapwidget.cesium <span class="im">as</span> mapwidget</span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="im">import</span> panel <span class="im">as</span> pn</span>
-<span id="cb1-6"><a href="#cb1-6"></a></span>
-<span id="cb1-7"><a href="#cb1-7"></a>pn.extension(<span class="st">"ipywidgets"</span>)</span>
-<span id="cb1-8"><a href="#cb1-8"></a></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="cf">try</span>:</span>
-<span id="cb1-10"><a href="#cb1-10"></a>    token <span class="op">=</span> os.environ[<span class="st">"CESIUM_TOKEN"</span>]</span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="cf">except</span> <span class="pp">KeyError</span> <span class="im">as</span> ex:</span>
-<span id="cb1-12"><a href="#cb1-12"></a>    <span class="cf">raise</span> <span class="pp">EnvironmentError</span>(</span>
-<span id="cb1-13"><a href="#cb1-13"></a>        <span class="st">"CESIUM_TOKEN environment variable not set. "</span></span>
-<span id="cb1-14"><a href="#cb1-14"></a>        <span class="st">"Sign up for free and get a free Cesium token here https://ion.cesium.com/signup/"</span></span>
-<span id="cb1-15"><a href="#cb1-15"></a>    ) <span class="im">from</span> ex</span>
-<span id="cb1-16"><a href="#cb1-16"></a></span>
-<span id="cb1-17"><a href="#cb1-17"></a>cesium_map <span class="op">=</span> mapwidget.Map(</span>
-<span id="cb1-18"><a href="#cb1-18"></a>    center<span class="op">=</span>[<span class="fl">40.70605</span>, <span class="op">-</span><span class="fl">74.01177</span>], height<span class="op">=</span><span class="st">"650px"</span>, altitude<span class="op">=</span><span class="dv">600</span>, token<span class="op">=</span>token</span>
-<span id="cb1-19"><a href="#cb1-19"></a>)</span>
-<span id="cb1-20"><a href="#cb1-20"></a></span>
-<span id="cb1-21"><a href="#cb1-21"></a>component <span class="op">=</span> pn.panel(cesium_map, sizing_mode<span class="op">=</span><span class="st">"stretch_width"</span>)</span>
-<span id="cb1-22"><a href="#cb1-22"></a></span>
-<span id="cb1-23"><a href="#cb1-23"></a>description <span class="op">=</span> <span class="st">"""# MapWidget</span></span>
-<span id="cb1-24"><a href="#cb1-24"></a><span class="st">Custom Jupyter widgets for creating interactive 2D/3D maps using popular JavaScript libraries with bidirectional communication, such as `Cesium`, `Mapbox`, `MapLibre`, `Leaflet`, and `OpenLayers`.</span></span>
-<span id="cb1-25"><a href="#cb1-25"></a><span class="st">By **Qiusheng Wu**</span></span>
-<span id="cb1-26"><a href="#cb1-26"></a><span class="st">&lt;img src="https://avatars.githubusercontent.com/u/5016453?v=4" style="width:100%;"&gt; </span></span>
-<span id="cb1-27"><a href="#cb1-27"></a><span class="st"># Cesium</span></span>
-<span id="cb1-28"><a href="#cb1-28"></a><span class="st">Cesium is the open platform for software applications designed to unleash the power of 3D data.</span></span>
-<span id="cb1-29"><a href="#cb1-29"></a><span class="st">&lt;img src="https://images.prismic.io/cesium/a4dc3936-e083-4337-ba48-bb5bba78b2a1_ion_color_white.png" style="width:100%;"&gt; </span></span>
-<span id="cb1-30"><a href="#cb1-30"></a><span class="st">"""</span></span>
-<span id="cb1-31"><a href="#cb1-31"></a></span>
-<span id="cb1-32"><a href="#cb1-32"></a>pn.template.FastListTemplate(</span>
-<span id="cb1-33"><a href="#cb1-33"></a>    site<span class="op">=</span><span class="st">"Awesome Panel"</span>,</span>
-<span id="cb1-34"><a href="#cb1-34"></a>    site_url<span class="op">=</span><span class="st">"https://awesome-panel.org"</span>,</span>
-<span id="cb1-35"><a href="#cb1-35"></a>    logo<span class="op">=</span><span class="st">"https://panel.holoviz.org/_static/logo_horizontal_dark_theme.png"</span>,</span>
-<span id="cb1-36"><a href="#cb1-36"></a>    title<span class="op">=</span><span class="st">"mapwidget.cesium"</span>,</span>
-<span id="cb1-37"><a href="#cb1-37"></a>    main<span class="op">=</span>[component],</span>
-<span id="cb1-38"><a href="#cb1-38"></a>    sidebar<span class="op">=</span>[description],</span>
-<span id="cb1-39"><a href="#cb1-39"></a>).servable()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<p><a href="https://raw.githubusercontent.com/awesome-panel/awesome-panel/main/examples/mapwidget_cesium.py" download="">Download (right-click, save-as)</a></p>
+<ul>
+<li><a href="https://huggingface.co/spaces/awesome-panel/mapwidget_cesium/tree/main">hugging face/awesome-panel/mapwidget_cesium</a></li>
+</ul>
 </section>
 <section id="gif" class="level2">
 <h2 class="anchored" data-anchor-id="gif">Gif</h2>
-<p><img src="https://cdn.awesome-panel.org/resources/mapwidget_cesium/mapwidget_cesium.gif"></p>
+<p><img src="mapwidget_cesium.gif"></p>
 </section>
 <section id="png" class="level2">
 <h2 class="anchored" data-anchor-id="png">Png</h2>
-<p><img src="https://cdn.awesome-panel.org/resources/mapwidget_cesium/mapwidget_cesium.png"></p>
+<p><img src="mapwidget_cesium.png"></p>
 </section>
 <section id="mp4" class="level2">
 <h2 class="anchored" data-anchor-id="mp4">Mp4</h2>
-<video poster="https://cdn.awesome-panel.org/resources/mapwidget_cesium/mapwidget_cesium.png" controls="">
-<source src="https://cdn.awesome-panel.org/resources/mapwidget_cesium/mapwidget_cesium.mp4" type="video/mp4">
+<video poster="mapwidget_cesium.png" controls="">
+<source src="mapwidget_cesium.mp4" type="video/mp4">
 <p>Your browser does not support HTML video. </p>
 </video></section>
 <section id="social" class="level2">
