@@ -11,7 +11,9 @@ image: "lonboard_dashboard.png"
 
 ## Introduction
 
-[Lonboard](https://developmentseed.org/lonboard/latest/) is a Python library for fast, interactive geospatial vector data visualization in Jupyter. But it also works with Panel. This Dashboard demonstrates that.
+[Lonboard](https://developmentseed.org/lonboard/latest/) is a Python library for fast, interactive geospatial vector data visualization in Jupyter. But it also works with Panel.
+
+For more info check out the [Lonboard-Panel guide](https://developmentseed.org/lonboard/latest/ecosystem/panel/).
 
 ## App
 
@@ -25,26 +27,20 @@ image: "lonboard_dashboard.png"
 
 ## Code
 
-<details>
-<summary>Show </summary>
-```{.python include="../../../examples/lonboard_dashboard.py" code-line-numbers="true"}
-```
-</details>
-
-<a href="https://raw.githubusercontent.com/awesome-panel/awesome-panel/main/examples/lonboard_dashboard.py" download>Download (right-click, save-as)</a>
+<a href="https://huggingface.co/spaces/awesome-panel/lonboard_dashboard/tree/main">Hugging Face</a>
 
 ## Gif
 
-<img src="https://cdn.awesome-panel.org/resources/lonboard_dashboard/lonboard_dashboard.gif"></img>
+<img src="lonboard_dashboard.gif"></img>
 
 ## Png
 
-<img src="https://cdn.awesome-panel.org/resources/lonboard_dashboard/lonboard_dashboard.png"></img>
+<img src="lonboard_dashboard.png"></img>
 
 ## Mp4
 
-<video poster="https://cdn.awesome-panel.org/resources/lonboard_dashboard/lonboard_dashboard.png" controls>
-  <source src="https://cdn.awesome-panel.org/resources/lonboard_dashboard/lonboard_dashboard.mp4" type="video/mp4">
+<video poster="lonboard_dashboard.png" controls>
+  <source src="lonboard_dashboard.mp4" type="video/mp4">
   Your browser does not support HTML video.
 </video>
 

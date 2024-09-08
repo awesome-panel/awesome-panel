@@ -13,7 +13,7 @@ We want to
 We provide
 
 - The [awesome-panel.org](https://awesome-panel.org) web site
-- Communication on social media: [Twitter](https://twitter.com/home) | [LinkedIn](https://www.linkedin.com/in/marcskovmadsen/)
+- Communication on social media at [Twitter](https://twitter.com/home) | [LinkedIn](https://www.linkedin.com/in/marcskovmadsen/)
 - [Panel Extensions and Example Repositories](https://github.com/orgs/awesome-panel/repositories)
 
 ![Awesome Panel Intro](https://github.com/awesome-panel/awesome-panel/blob/main/assets/videos/awesome-panel-intro.gif?raw=true)

@@ -27,26 +27,20 @@ Here we show that [`mapwidget.cesium`](https://mapwidget.gishub.org/examples/ces
 
 ## Code
 
-<details>
-<summary>Show </summary>
-```{.python include="../../../examples/mapwidget_cesium.py" code-line-numbers="true"}
-```
-</details>
-
-<a href="https://raw.githubusercontent.com/awesome-panel/awesome-panel/main/examples/mapwidget_cesium.py" download>Download (right-click, save-as)</a>
+<a href="https://huggingface.co/spaces/awesome-panel/mapwidget_cesium/tree/main">Hugging Face</a>
 
 ## Gif
 
-<img src="https://cdn.awesome-panel.org/resources/mapwidget_cesium/mapwidget_cesium.gif"></img>
+<img src="mapwidget_cesium.gif"></img>
 
 ## Png
 
-<img src="https://cdn.awesome-panel.org/resources/mapwidget_cesium/mapwidget_cesium.png"></img>
+<img src="mapwidget_cesium.png"></img>
 
 ## Mp4
 
-<video poster="https://cdn.awesome-panel.org/resources/mapwidget_cesium/mapwidget_cesium.png" controls>
-  <source src="https://cdn.awesome-panel.org/resources/mapwidget_cesium/mapwidget_cesium.mp4" type="video/mp4">
+<video poster="mapwidget_cesium.png" controls>
+  <source src="mapwidget_cesium.mp4" type="video/mp4">
   Your browser does not support HTML video.
 </video>
 
