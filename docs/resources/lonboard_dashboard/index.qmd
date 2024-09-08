@@ -27,7 +27,7 @@ For more info check out the [Lonboard-Panel guide](https://developmentseed.org/l
 
 ## Code
 
-<a href="https://huggingface.co/spaces/awesome-panel/lonboard_dashboard/tree/main">Hugging Face</a>
+- [hugging face/awesome-panel/lonboard_dashboard](https://huggingface.co/spaces/awesome-panel/lonboard_dashboard/tree/main)
 
 ## Gif
 

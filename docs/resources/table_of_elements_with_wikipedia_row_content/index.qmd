@@ -30,28 +30,22 @@ This app runs entirely in the browser via [Pyodide](https://pyodide.org) and [pa
 
 ## Code
 
-<details>
-<summary>Show</summary>
-```{.python include="../../../examples/table_of_elements_with_wikipedia_row_content.py" code-line-numbers="true"}
-```
-</details>
-
-<a href="https://raw.githubusercontent.com/awesome-panel/awesome-panel/main/examples/table_of_elements_with_wikipedia_row_content.py" download>Download (right-click, save-as)</a>
+- [hugging face/ahuang11/hurdat_tracks_viewer](https://huggingface.co/spaces/awesome-panel/table_of_elements_with_wikipedia_row_content/tree/main)
 
 ## Gif
 
-<img src="https://cdn.awesome-panel.org/resources/table_of_elements_with_wikipedia_row_content/table_of_elements_with_wikipedia_row_content.gif"></img>
+<img src="table_of_elements_with_wikipedia_row_content.gif"></img>
 
 ## Mp4
 
-<video poster="https://cdn.awesome-panel.org/resources/table_of_elements_with_wikipedia_row_content/table_of_elements_with_wikipedia_row_content.png" controls>
-  <source src="https://cdn.awesome-panel.org/resources/table_of_elements_with_wikipedia_row_content/table_of_elements_with_wikipedia_row_content.mp4" type="video/mp4">
+<video poster="table_of_elements_with_wikipedia_row_content.png" controls>
+  <source src="table_of_elements_with_wikipedia_row_content.mp4" type="video/mp4">
   Your browser does not support HTML video.
 </video>
 
 ## Png
 
-<img src="https://cdn.awesome-panel.org/resources/table_of_elements_with_wikipedia_row_content/table_of_elements_with_wikipedia_row_content.png"></img>
+<img src="table_of_elements_with_wikipedia_row_content.png"></img>
 
 ## Social
 

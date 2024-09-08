@@ -27,7 +27,7 @@ Here we show that [`mapwidget.cesium`](https://mapwidget.gishub.org/examples/ces
 
 ## Code
 
-<a href="https://huggingface.co/spaces/awesome-panel/mapwidget_cesium/tree/main">Hugging Face</a>
+- [hugging face/awesome-panel/mapwidget_cesium](https://huggingface.co/spaces/awesome-panel/mapwidget_cesium/tree/main)
 
 ## Gif
 

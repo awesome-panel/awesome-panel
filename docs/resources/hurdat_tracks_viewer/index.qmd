@@ -26,20 +26,24 @@ The script is from the [Tropycal](https://tropycal.github.io/tropycal/) Python p
 	style="width:100%;height:700px"
 ></iframe>
 
+## Code
+
+- [hugging face/ahuang11/hurdat_tracks_viewer](https://huggingface.co/spaces/ahuang11/hurdat_tracks_viewer/tree/main)
+
 ## Gif
 
-<img src="https://cdn.awesome-panel.org/resources/hurdat_tracks_viewer/hurdat_tracks_viewer.gif"></img>
+<img src="hurdat_tracks_viewer.gif"></img>
 
 ## MP4
 
-<video poster="https://cdn.awesome-panel.org/resources/hurdat_tracks_viewer/hurdat_tracks_viewer.png" controls>
-  <source src="https://cdn.awesome-panel.org/resources/hurdat_tracks_viewer/hurdat_tracks_viewer.mp4" type="video/mp4">
+<video poster="hurdat_tracks_viewer.png" controls>
+  <source src="hurdat_tracks_viewer.mp4" type="video/mp4">
   Your browser does not support HTML video.
 </video>
 
 ## Png
 
-<img src="https://cdn.awesome-panel.org/resources/hurdat_tracks_viewer/hurdat_tracks_viewer.png"></img>
+<img src="hurdat_tracks_viewer.png"></img>
 
 ## Social
 

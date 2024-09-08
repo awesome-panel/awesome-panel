@@ -28,36 +28,22 @@ This app runs entirely in the browser via [Pyodide](https://pyodide.org) and [pa
 
 ## Code
 
-<details>
-<summary>Show</summary>
-```{.python include="../../../examples/commuting_flows_italy.py" code-line-numbers="true"}
-```
-</details>
-
-<a href="https://raw.githubusercontent.com/awesome-panel/awesome-panel/main/examples/commuting_flows_italy.py" download>Download (right-click, save-as)</a>
-
-The code of the app is an updated version of the original.
+- [hugging face/awesome-panel/commuting_flows_italy](https://huggingface.co/spaces/awesome-panel/commuting_flows_italy/tree/main)
 
 ## Gif
 
-<img src="https://cdn.awesome-panel.org/resources/commuting_flows_italy/commuting_flows_italy.gif"></img>
-
-## Github
-
-The original repository by Ivan D'Ortenzio
-
-[ivandorte/panel-commuting-istat](https://github.com/ivandorte/panel-commuting-istat)
+<img src="commuting_flows_italy.gif"></img>
 
 ## Mp4
 
-<video poster="https://cdn.awesome-panel.org/resources/commuting_flows_italy/commuting_flows_italy.png" controls>
-  <source src="https://cdn.awesome-panel.org/resources/commuting_flows_italy/commuting_flows_italy.mp4" type="video/mp4">
+<video poster="commuting_flows_italy.png" controls>
+  <source src="commuting_flows_italy.mp4" type="video/mp4">
   Your browser does not support HTML video.
 </video>
 
 ## Png
 
-<img src="https://cdn.awesome-panel.org/resources/commuting_flows_italy/commuting_flows_italy.png"></img>
+<img src="commuting_flows_italy.png"></img>
 
 ## Social
 

@@ -27,7 +27,7 @@ You can read more about the awesome styling applied to the plots in the blog pos
 
 ## Code
 
-[hugging face/ahuang11/year-vs-climatology](https://huggingface.co/spaces/ahuang11/year-vs-climatology/tree/main)
+- [hugging face/ahuang11/year-vs-climatology](https://huggingface.co/spaces/ahuang11/year-vs-climatology/tree/main)
 
 ## Gif
 

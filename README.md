@@ -13,6 +13,7 @@ We want to
 We provide
 
 - The [awesome-panel.org](https://awesome-panel.org) web site
+- The [awesome-panel space](https://huggingface.co/awesome-panel) on Hugging Face
 - Communication on social media at [Twitter](https://twitter.com/home) | [LinkedIn](https://www.linkedin.com/in/marcskovmadsen/)
 - [Panel Extensions and Example Repositories](https://github.com/orgs/awesome-panel/repositories)
 
