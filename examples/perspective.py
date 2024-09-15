@@ -94,14 +94,14 @@ def main(theme: str) -> pn.Column:
 
     settings_parameters = [
         "theme",
-        "row_pivots",
+        "group_by",
         "plugin",
         "columns",
         "aggregates",
         "filters",
         "sort",
         "rows",
-        "column_pivots",
+        "split_by",
     ]
 
     settings_pane = pn.Param(
