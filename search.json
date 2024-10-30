@@ -385,6 +385,13 @@
     "text": "Pyodide Apps\nWe distribute most of our apps as apps that run entirely in the browser via Pyodide and panel convert. We do this because we don’t have the resources to pay for and maintain servers. They do take longer time to load than apps server on a server."
   },
   {
+    "objectID": "about.html#marc-skov-madsen",
+    "href": "about.html#marc-skov-madsen",
+    "title": "Awesome Panel",
+    "section": "Marc Skov Madsen",
+    "text": "Marc Skov Madsen\nThis site is mainly build in the spare time of Marc Skov Madsen, Head of Trading Applications & Insights at Orsted. Follow on X and Linked In."
+  },
+  {
     "objectID": "resources/classic_dashboard/classic_dashboard.html",
     "href": "resources/classic_dashboard/classic_dashboard.html",
     "title": "Classic Dashboard",
