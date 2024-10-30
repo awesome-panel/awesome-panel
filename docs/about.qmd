@@ -16,3 +16,7 @@ Please give awesome-panel a ⭐ on [Github](https://github.com/awesome-panel/awe
 ## Pyodide Apps
 
 We distribute most of our apps as apps that run entirely in the browser via [Pyodide](https://pyodide.org) and [panel convert](https://panel.holoviz.org/how_to/wasm/convert.html). We do this because we don't have the resources to pay for and maintain servers. They do take longer time to load than apps server on a server.
+
+## Marc Skov Madsen
+
+This site is mainly build in the spare time of Marc Skov Madsen, Head of Trading Applications & Insights at [Orsted](https://orsted.com/). Follow on [X](https://x.com/MarcSkovMadsen) and [Linked In](https://www.linkedin.com/in/marcskovmadsen/).
