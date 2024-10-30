@@ -25,7 +25,8 @@ The app is a Bokeh app wrapped in a nice Panel template.
 
 This app runs entirely in the browser via [Pyodide](https://pyodide.org) and [panel convert](https://panel.holoviz.org/how_to/wasm/convert.html).
 
-<a href="https://awesome-panel-stumpy.static.hf.space" target="_blank">Open in a new window</a> | <a href="https://huggingface.co/spaces/awesome-panel/stumpy" target="_blank">Open in Hugging Face Spaces</a>
+[![Open in Spaces](https://huggingface.co/datasets/huggingface/badges/resolve/main/open-in-hf-spaces-md.svg)](https://huggingface.co/spaces/awesome-panel/stumpy) [![py.cafe](https://py.cafe/badge.svg)]()
+
 
 <iframe
 	src="https://awesome-panel-stumpy.static.hf.space"
@@ -33,32 +34,22 @@ This app runs entirely in the browser via [Pyodide](https://pyodide.org) and [pa
 	style="width:100%;height:800px"
 ></iframe>
 
-## Code
-
-<details>
-<summary>Show</summary>
-```{.python include="../../../examples/stumpy.py" code-line-numbers="true"}
-```
-</details>
-
-<a href="https://raw.githubusercontent.com/awesome-panel/awesome-panel/main/examples/stumpy.py" download>Download (right-click, save-as)</a>
-
 ## Gif
 
 I think the app looks amazing. Its really performant too.
 
-<img src="https://cdn.awesome-panel.org/resources/stumpy/stumpy.gif"></img>
+<img src="stumpy.gif"></img>
 
 ## Mp4
 
-<video poster="https://cdn.awesome-panel.org/resources/stumpy/stumpy.png" controls>
-  <source src="https://cdn.awesome-panel.org/resources/stumpy/stumpy.mp4" type="video/mp4">
+<video poster="stumpy.png" controls>
+  <source src="stumpy.mp4" type="video/mp4">
   Your browser does not support HTML video.
 </video>
 
 ## Png
 
-<img src="https://cdn.awesome-panel.org/resources/stumpy/stumpy.png"></img>
+<img src="stumpy.png"></img>
 
 ## Social
 

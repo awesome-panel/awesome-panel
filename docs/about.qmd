@@ -11,8 +11,8 @@ Please give awesome-panel a ⭐ on [Github](https://github.com/awesome-panel/awe
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <a class="github-button" href="https://github.com/awesome-panel/awesome-panel" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star awesome-panel/awesome-panel on GitHub">Star</a>
 
-![Awesome Panel Intro](https://cdn.awesome-panel.org/resources/awesome-panel-intro.gif)
+![Awesome Panel Intro](https://github.com/awesome-panel/awesome-panel/blob/main/assets/videos/awesome-panel-intro.gif?raw=true)
 
 ## Pyodide Apps
 
-We distribute most of our apps as apps that run entirely in the browser via [Pyodide](https://pyodide.org) and [panel convert](https://panel.holoviz.org/how_to/wasm/convert.html). We do this because we don't have the resources to pay for and maintain servers.
+We distribute most of our apps as apps that run entirely in the browser via [Pyodide](https://pyodide.org) and [panel convert](https://panel.holoviz.org/how_to/wasm/convert.html). We do this because we don't have the resources to pay for and maintain servers. They do take longer time to load than apps server on a server.

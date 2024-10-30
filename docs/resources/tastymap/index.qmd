@@ -22,17 +22,13 @@ The app is a Panel app.
 
 ## App
 
-<a href="https://ahuang11-tastykitchen.hf.space" target="_blank">Open in a new window</a> | <a href="https://huggingface.co/spaces/ahuang11/tastykitchen" target="_blank">Open in Hugging Face Spaces</a>
+[![Open in Spaces](https://huggingface.co/datasets/huggingface/badges/resolve/main/open-in-hf-spaces-md.svg)](https://huggingface.co/spaces/ahuang11/tastykitchen)
 
 <iframe
 	src="https://ahuang11-tastykitchen.hf.space"
 	frameborder="0"
 	style="width:100%;height:1350px"
 ></iframe>
-
-## Code
-
-[github/ahuang11/tastymap](https://github.com/ahuang11/tastymap)
 
 ## Gif
 
