@@ -46,18 +46,18 @@ This app runs entirely in the browser via [Pyodide](https://pyodide.org) and [pa
 
 ## Gif
 
-<img src="https://cdn.awesome-panel.org/resources/video_stream/video_stream.gif"></img>
+<img src="video_stream.gif"></img>
 
 ## Mp4
 
-<video poster="https://cdn.awesome-panel.org/resources/video_stream/video_stream.png" controls>
-  <source src="https://cdn.awesome-panel.org/resources/video_stream/video_stream.mp4" type="video/mp4">
+<video poster="video_stream.png" controls>
+  <source src="video_stream.mp4" type="video/mp4">
   Your browser does not support HTML video.
 </video>
 
 ## Png
 
-<img src="https://cdn.awesome-panel.org/resources/video_stream/video_stream.png"></img>
+<img src="video_stream.png"></img>
 
 ## Social
 

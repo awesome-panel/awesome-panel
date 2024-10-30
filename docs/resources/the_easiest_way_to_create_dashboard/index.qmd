@@ -32,7 +32,7 @@ This app shows how to create a nice looking dashboard with [param.Rx](https://pa
 
 ## Gif
 
-<img src="https://cdn.awesome-panel.org/resources/the_easiest_way_to_create_dashboard/the_easiest_way_to_create_dashboard.gif"></img>
+<img src="the_easiest_way_to_create_dashboard.gif"></img>
 
 ## Legacy
 
@@ -44,14 +44,14 @@ The legacy resources in this section shows how to create the same dashboard usin
 
 ## Mp4
 
-<video poster="https://cdn.awesome-panel.org/resources/the_easiest_way_to_create_dashboard/the_easiest_way_to_create_dashboard.png" controls>
-  <source src="https://cdn.awesome-panel.org/resources/the_easiest_way_to_create_dashboard/the_easiest_way_to_create_dashboard.mp4" type="video/mp4">
+<video poster="the_easiest_way_to_create_dashboard.png" controls>
+  <source src="the_easiest_way_to_create_dashboard.mp4" type="video/mp4">
   Your browser does not support HTML video.
 </video>
 
 ## Png
 
-<img src="https://cdn.awesome-panel.org/resources/the_easiest_way_to_create_dashboard/the_easiest_way_to_create_dashboard.png"></img>
+<img src="the_easiest_way_to_create_dashboard.png"></img>
 
 ## Social
 
