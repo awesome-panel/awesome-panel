@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Awesome Panel",
     "section": "",
-    "text": "Panel by HoloViz is the powerful data exploration & web app framework for Python.\nPlease give Panel a ⭐ on Github. Thanks.\n\nStar\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nWeather Station Viewer\n\n\n\n\n\n\nclimate\n\n\nhvplot\n\n\nhugging face\n\n\n\nThis app allows you to compare a single year of data from a weather station to the average of a range of years.\n\n\n\n\n\nJan 28, 2024\n\n\nAndrew Huang\n\n\n\n\n\n\n\n\n\n\n\n\nLonboard Dashboard\n\n\n\n\n\n\nanywidget\n\n\ndashboard\n\n\nhugging face\n\n\nipywidgets\n\n\n\nA Dashboard using Lonboard to fast, interactive geospatial vector data visualization.\n\n\n\n\n\nJan 27, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n\n\n\n\n\n\nMapWidget Cesium\n\n\n\n\n\n\nanywidget\n\n\ndashboard\n\n\nhugging face\n\n\nipywidgets\n\n\n\nA dashboard showcasing mapwidget.cesium by Qiusheng Wu\n\n\n\n\n\nJan 27, 2024\n\n\nQiusheng Wu\n\n\n\n\n\n\n\n\n\n\n\n\nHurdat Tracks Viewer\n\n\n\n\n\n\ngeo\n\n\nhugging face\n\n\nmatplotlib\n\n\n\nAn interactive web app for analysing hurricane tracks using Tropycal and Panel\n\n\n\n\n\nJan 25, 2024\n\n\nAndrew Huang\n\n\n\n\n\n\n\n\n\n\n\n\nTable of elements with Wikipedia row content\n\n\n\n\n\n\nchemistry\n\n\nhugging face\n\n\npyodide\n\n\ntabulator\n\n\n\nTable of elements. When you click a row it expands and shows the Wikipedia article. Powered by Tabulator.\n\n\n\n\n\nJan 14, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n\n\n\n\n\n\nCommuting Flows Italy\n\n\n\n\n\n\ngeo\n\n\nhugging face\n\n\npyodide\n\n\n\nA dashboard showing commuting flows between Italian regions\n\n\n\n\n\nJan 13, 2024\n\n\nIvan D’Ortenzio\n\n\n\n\n\n\n\n\n\n\n\n\nStreaming Number Indicators\n\n\n\n\n\n\nhugging face\n\n\npyodide\n\n\npyscript\n\n\nstreaming\n\n\n\nDashboard with streaming Number Indicators\n\n\n\n\n\nJan 13, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n\n\n\n\n\n\nCrossfiltering with HoloViews\n\n\n\n\n\n\nbokeh\n\n\nhugging face\n\n\npyodide\n\n\ntimeseries\n\n\n\nApply a selection in one plot as a filter in other plots\n\n\n\n\n\nJan 8, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n\n\n\n\n\n\nPanel ChatBot Pack\n\n\n\n\n\n\nartificial intelligence\n\n\nllm\n\n\n\nBuild a chatbot with LlamaIndex to talk to your Github repository\n\n\n\n\n\nJan 8, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n\n\n\n\n\n\nThe Easiest Way to Create an Interactive Dashboard in Python\n\n\n\n\n\n\ndashboard\n\n\nhvplot\n\n\nrx\n\n\n\nThe Easiest Way to Create an Interactive Dashboard in Python with param.rx and Panel\n\n\n\n\n\nJan 8, 2024\n\n\nMarc Skov Madsen, Sophia Yang\n\n\n\n\n\n\n\n\n\n\n\n\nCaching Example\n\n\n\n\n\n\nhugging face\n\n\nperformance\n\n\npyodide\n\n\n\nLearn how caching can speed up your app\n\n\n\n\n\nJan 7, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n\n\n\n\n\n\nClassic Dashboard\n\n\n\n\n\n\ndashboard\n\n\nhvplot\n\n\n\nLearn how to create a classic dashboard\n\n\n\n\n\nJan 7, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n\n\n\n\n\n\nVideo Stream\n\n\n\n\n\n\nhugging face\n\n\npyodide\n\n\nvideo\n\n\n\nImage processing with Pillow and Scikit Image\n\n\n\n\n\nJan 7, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n\n\n\n\n\n\nAsync Tasks\n\n\n\n\n\n\nasync\n\n\nperformance\n\n\nthreads\n\n\n\nRun blocking tasks in the background using a ThreadPoolExecutor and Async\n\n\n\n\n\nJan 6, 2024\n\n\nJochem Smit, Marc Skov Madsen\n\n\n\n\n\n\n\n\n\n\n\n\nBootstrap Dashboard\n\n\n\n\n\n\ndashboard\n\n\nhugging face\n\n\nhvplot\n\n\npyodide\n\n\n\nA Bootstrap like dashboard\n\n\n\n\n\nJan 6, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n\n\n\n\n\n\nPanel Chat Examples\n\n\n\n\n\n\nartificial intelligence\n\n\nllm\n\n\n\nA resource of Panel Chat Apps using Mistral, LangChain, LlamaIndex, OpenAI etc.\n\n\n\n\n\nJan 6, 2024\n\n\nAndrew Huang, Marc Skov Madsen\n\n\n\n\n\n\n\n\n\n\n\n\nStumpy\n\n\n\n\n\n\nbokeh\n\n\nhugging face\n\n\npyodide\n\n\ntimeseries\n\n\n\nUse the Stumpy library to identify patterns in timeseries\n\n\n\n\n\nJan 6, 2024\n\n\nMarc Skov Madsen, Sean Law\n\n\n\n\n\n\n\n\n\n\n\n\nTasty Map\n\n\n\n\n\n\ncolor\n\n\nhugging face\n\n\n\nGenerate custom color palettes easily using the TastyMap Panel app\n\n\n\n\n\nJan 6, 2024\n\n\nAndrew Huang\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Panel by HoloViz is the powerful data exploration & web app framework for Python.\nPlease give Panel a ⭐ on Github. Thanks.\n\nStar\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nWeather Station Viewer\n\n\n\n\n\n\nclimate\n\n\nhvplot\n\n\nhugging face\n\n\n\nThis app allows you to compare a single year of data from a weather station to the average of a range of years.\n\n\n\n\n\nJan 28, 2024\n\n\nAndrew Huang\n\n\n\n\n\n\n\n\n\n\n\n\nLonboard Dashboard\n\n\n\n\n\n\nanywidget\n\n\ndashboard\n\n\nhugging face\n\n\nipywidgets\n\n\n\nA Dashboard using Lonboard to fast, interactive geospatial vector data visualization.\n\n\n\n\n\nJan 27, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n\n\n\n\n\n\nMapWidget Cesium\n\n\n\n\n\n\nanywidget\n\n\ndashboard\n\n\nhugging face\n\n\nipywidgets\n\n\n\nA dashboard showcasing mapwidget.cesium by Qiusheng Wu\n\n\n\n\n\nJan 27, 2024\n\n\nQiusheng Wu\n\n\n\n\n\n\n\n\n\n\n\n\nHurdat Tracks Viewer\n\n\n\n\n\n\ngeo\n\n\nhugging face\n\n\nmatplotlib\n\n\n\nAn interactive web app for analysing hurricane tracks using Tropycal and Panel\n\n\n\n\n\nJan 25, 2024\n\n\nAndrew Huang\n\n\n\n\n\n\n\n\n\n\n\n\nTable of elements with Wikipedia row content\n\n\n\n\n\n\nchemistry\n\n\nhugging face\n\n\npyodide\n\n\ntabulator\n\n\n\nTable of elements. When you click a row it expands and shows the Wikipedia article. Powered by Tabulator.\n\n\n\n\n\nJan 14, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n\n\n\n\n\n\nCommuting Flows Italy\n\n\n\n\n\n\ngeo\n\n\nhugging face\n\n\npyodide\n\n\n\nA dashboard showing commuting flows between Italian regions\n\n\n\n\n\nJan 13, 2024\n\n\nIvan D’Ortenzio\n\n\n\n\n\n\n\n\n\n\n\n\nStreaming Number Indicators\n\n\n\n\n\n\nhugging face\n\n\npyodide\n\n\npyscript\n\n\nstreaming\n\n\n\nDashboard with streaming Number Indicators\n\n\n\n\n\nJan 13, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n\n\n\n\n\n\nCrossfiltering with HoloViews\n\n\n\n\n\n\nbokeh\n\n\nhugging face\n\n\npyodide\n\n\ntimeseries\n\n\n\nApply a selection in one plot as a filter in other plots\n\n\n\n\n\nJan 8, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n\n\n\n\n\n\nPanel ChatBot Pack\n\n\n\n\n\n\nartificial intelligence\n\n\nllm\n\n\n\nBuild a chatbot with LlamaIndex to talk to your Github repository\n\n\n\n\n\nJan 8, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n\n\n\n\n\n\nThe Easiest Way to Create an Interactive Dashboard in Python\n\n\n\n\n\n\ndashboard\n\n\nhvplot\n\n\nrx\n\n\n\nThe Easiest Way to Create an Interactive Dashboard in Python with param.rx and Panel\n\n\n\n\n\nJan 8, 2024\n\n\nMarc Skov Madsen, Sophia Yang\n\n\n\n\n\n\n\n\n\n\n\n\nClassic Dashboard\n\n\n\n\n\n\ndashboard\n\n\nhvplot\n\n\n\nLearn how to create a classic dashboard\n\n\n\n\n\nJan 7, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n\n\n\n\n\n\nVideo Stream\n\n\n\n\n\n\nhugging face\n\n\npyodide\n\n\nvideo\n\n\n\nImage processing with Pillow and Scikit Image\n\n\n\n\n\nJan 7, 2024\n\n\nMarc Skov Madsen\n\n\n\n\n\n\n\n\n\n\n\n\nPanel Chat Examples\n\n\n\n\n\n\nartificial intelligence\n\n\nllm\n\n\n\nA resource of Panel Chat Apps using Mistral, LangChain, LlamaIndex, OpenAI etc.\n\n\n\n\n\nJan 6, 2024\n\n\nAndrew Huang, Marc Skov Madsen\n\n\n\n\n\n\n\n\n\n\n\n\nStumpy\n\n\n\n\n\n\nbokeh\n\n\nhugging face\n\n\npyodide\n\n\ntimeseries\n\n\n\nUse the Stumpy library to identify patterns in timeseries\n\n\n\n\n\nJan 6, 2024\n\n\nMarc Skov Madsen, Sean Law\n\n\n\n\n\n\n\n\n\n\n\n\nTasty Map\n\n\n\n\n\n\ncolor\n\n\nhugging face\n\n\n\nGenerate custom color palettes easily using the TastyMap Panel app\n\n\n\n\n\nJan 6, 2024\n\n\nAndrew Huang\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "resources/video_stream/index.html",
@@ -371,118 +371,6 @@
     "text": "Social\nPlease share on social media. Thanks."
   },
   {
-    "objectID": "resources/caching_example/index.html",
-    "href": "resources/caching_example/index.html",
-    "title": "Caching Example",
-    "section": "",
-    "text": "In computing, a cache is a high-speed data storage layer which stores a subset of data, typically transient in nature, so that future requests for that data are served up faster than is possible by accessing the data’s primary storage location.\nCaching allows you to efficiently reuse previously retrieved or computed data to speed up your exploration, jobs or apps.\nGood caching solutions for Panel are summarized in the table below\n\n\n\nTechnology\nPerformance\nPersistant\nHorizontal Scaling\nVertical Scaling\nExpiration\nPreloading\nComments\n\n\n\n\npanel.cache\nVery Fast\nOptional\nOptional\nYes\nYes\nYes\nConfigurable\n\n\npanel.state.as_cached\nVery Fast\nOptional\nOptional\nYes\nYes\nYes\nConfigurable\n\n\npanel.state.cache\nVery Fast\nNo\nNo\nYes\nNo\nYes\nSimple Dict Cache\n\n\nDiskCache\nVery Fast\nYes\nNo\nYes\nYes\nYes\nSimple Persistent Cache\n\n\nRedis\nVery Fast\nYes\nYes\nYes\nYes\nYes\nServer solution. Works well with the distributed task queue Celery\n\n\n\nNote that\n\nExpiration enables caching data for a period of time for example seconds, minutes, hours or days.\nPreloading of a cache can be triggered by a cronjob or event.\nIf the cache is persisted, i.e. stored to disk or runs on a server like Redis it can enable caching data across jobs, applications, servers and restarts.\n\nTo learn more about caching check out the AWS Caching Overview"
-  },
-  {
-    "objectID": "resources/caching_example/index.html#introduction",
-    "href": "resources/caching_example/index.html#introduction",
-    "title": "Caching Example",
-    "section": "",
-    "text": "In computing, a cache is a high-speed data storage layer which stores a subset of data, typically transient in nature, so that future requests for that data are served up faster than is possible by accessing the data’s primary storage location.\nCaching allows you to efficiently reuse previously retrieved or computed data to speed up your exploration, jobs or apps.\nGood caching solutions for Panel are summarized in the table below\n\n\n\nTechnology\nPerformance\nPersistant\nHorizontal Scaling\nVertical Scaling\nExpiration\nPreloading\nComments\n\n\n\n\npanel.cache\nVery Fast\nOptional\nOptional\nYes\nYes\nYes\nConfigurable\n\n\npanel.state.as_cached\nVery Fast\nOptional\nOptional\nYes\nYes\nYes\nConfigurable\n\n\npanel.state.cache\nVery Fast\nNo\nNo\nYes\nNo\nYes\nSimple Dict Cache\n\n\nDiskCache\nVery Fast\nYes\nNo\nYes\nYes\nYes\nSimple Persistent Cache\n\n\nRedis\nVery Fast\nYes\nYes\nYes\nYes\nYes\nServer solution. Works well with the distributed task queue Celery\n\n\n\nNote that\n\nExpiration enables caching data for a period of time for example seconds, minutes, hours or days.\nPreloading of a cache can be triggered by a cronjob or event.\nIf the cache is persisted, i.e. stored to disk or runs on a server like Redis it can enable caching data across jobs, applications, servers and restarts.\n\nTo learn more about caching check out the AWS Caching Overview"
-  },
-  {
-    "objectID": "resources/caching_example/index.html#app",
-    "href": "resources/caching_example/index.html#app",
-    "title": "Caching Example",
-    "section": "App",
-    "text": "App\nThis app runs entirely in the browser via Pyodide and panel convert.\nOpen in a new window | Open in Hugging Face Spaces"
-  },
-  {
-    "objectID": "resources/caching_example/index.html#code",
-    "href": "resources/caching_example/index.html#code",
-    "title": "Caching Example",
-    "section": "Code",
-    "text": "Code\n\n\nShow\n\n\"\"\"\n# Caching Example\n\nSee https://awesome-panel.org/resources/caching_example\n\"\"\"\nimport time\n\nimport hvplot.pandas  # pylint: disable=unused-import\nimport numpy as np\nimport pandas as pd\nimport panel as pn\n\npn.extension(design=\"material\")\n\nACCENT_COLOR = \"#1f77b4\"\n\nnp.random.seed([3, 1415])\nPERIODS = 1 * 24 * 60  # minutes. I.e. 1 days\nDATA = pd.DataFrame(\n    {\n        \"time\": pd.date_range(\"2020-01-01\", periods=PERIODS, freq=\"T\"),\n        \"price\": np.random.randn(PERIODS) + 98,\n    }\n)\n\ndef _load_data(frac=0.1):\n    time.sleep(0.5 + frac * 0.5)\n    return DATA.sample(frac=frac)\n\ndef _plot_data(frac=0.1):\n    time.sleep(0.5)\n    data = _load_data(frac)\n    return data.hvplot(x=\"time\", y=\"price\")\n\n@pn.cache(per_session=True, ttl=60*60*24)\ndef _plot_data_cached(frac):\n    return _plot_data(frac)\n\n\n# Create Widgets\nfraction = pn.widgets.FloatSlider(value=0.1, start=0.1, end=1.0, step=0.1, name=\"Fraction of data\")\nduration = pn.widgets.StaticText(value=\"\", name=\"Time to create plot\")\nuse_cache = pn.widgets.Checkbox(value=False, name=\"Use Cache\")\npreload_cache = pn.widgets.Button(name=\"Preload Cache\", button_type=\"primary\", disabled=True)\nclear_cache = pn.widgets.Button(name=\"Clear Cache\", disabled=True)\npreload_progress = pn.widgets.Progress(\n    name=\"Progress\", active=False, value=0, max=100, sizing_mode=\"stretch_width\", disabled=True\n)\n\nplot_panel = pn.pane.HoloViews(min_height=500, sizing_mode=\"stretch_both\")\n\n# Setup interactivity\ndef _clear_cache(*_):\n    _plot_data_cached.clear()\n\n\nclear_cache.on_click(_clear_cache)\n\n\ndef _preload_cache(*_):\n    for index in range(0, 11, 1):\n        frac_ = round(index / 10, 1)\n        preload_progress.value = int(frac_ * 100)\n        _plot_data_cached(frac_)\n    preload_progress.value = 0\n\n\npreload_cache.on_click(_preload_cache)\n\n\n@pn.depends(frac=fraction, watch=True)\ndef _update_plot(frac):\n    start_counter = time.perf_counter()\n\n    frac = round(frac, 1)\n    if use_cache.value:\n        plot = _plot_data_cached(frac)\n    else:\n        plot = _plot_data(frac)\n\n    end_counter = time.perf_counter()\n    duration.value = str(round(end_counter - start_counter, 4)) + \" seconds\"\n\n    # Please note DiskCache does not cache the options\n    plot.opts(color=ACCENT_COLOR, responsive=True)\n    plot_panel.object = plot\n\n\n@pn.depends(use_cache=use_cache, watch=True)\ndef _update_cache_widgets(use_cache):  # pylint: disable=redefined-outer-name\n    disabled = not use_cache\n    preload_cache.disabled = disabled\n    clear_cache.disabled = disabled\n    preload_progress.disabled = disabled\n\n\n# Layout the app\npn.Column(\n    pn.pane.Markdown(\n        \"# Speed up slow functions with caching\", sizing_mode=\"stretch_width\"\n    ),\n    fraction,\n    duration,\n    use_cache,\n    plot_panel,\n    pn.Row(preload_cache, clear_cache,),\n    preload_progress,\n).servable()\n\npn.state.onload(lambda: fraction.param.trigger(\"value\"))\n\nDownload (right-click, save-as)"
-  },
-  {
-    "objectID": "resources/caching_example/index.html#gif",
-    "href": "resources/caching_example/index.html#gif",
-    "title": "Caching Example",
-    "section": "Gif",
-    "text": "Gif"
-  },
-  {
-    "objectID": "resources/caching_example/index.html#png",
-    "href": "resources/caching_example/index.html#png",
-    "title": "Caching Example",
-    "section": "Png",
-    "text": "Png"
-  },
-  {
-    "objectID": "resources/caching_example/index.html#mp4",
-    "href": "resources/caching_example/index.html#mp4",
-    "title": "Caching Example",
-    "section": "Mp4",
-    "text": "Mp4\n\n\nYour browser does not support HTML video."
-  },
-  {
-    "objectID": "resources/caching_example/index.html#social",
-    "href": "resources/caching_example/index.html#social",
-    "title": "Caching Example",
-    "section": "Social",
-    "text": "Social\nPlease share on social media. Thanks."
-  },
-  {
-    "objectID": "resources/async_tasks/index.html",
-    "href": "resources/async_tasks/index.html",
-    "title": "Async Tasks",
-    "section": "",
-    "text": "When creating awesome analytics apps you sometimes want to run blocking tasks asynchronously in a background thread. Panel supports this as its running on top of the asynchronous web server Tornado.\nThe app below shows how to start a background thread that updates a progressbar while the rest of the application remains responsive. We utilize a ThreadPoolExecutor and async to achieve this."
-  },
-  {
-    "objectID": "resources/async_tasks/index.html#introduction",
-    "href": "resources/async_tasks/index.html#introduction",
-    "title": "Async Tasks",
-    "section": "",
-    "text": "When creating awesome analytics apps you sometimes want to run blocking tasks asynchronously in a background thread. Panel supports this as its running on top of the asynchronous web server Tornado.\nThe app below shows how to start a background thread that updates a progressbar while the rest of the application remains responsive. We utilize a ThreadPoolExecutor and async to achieve this."
-  },
-  {
-    "objectID": "resources/async_tasks/index.html#app",
-    "href": "resources/async_tasks/index.html#app",
-    "title": "Async Tasks",
-    "section": "App",
-    "text": "App\nOpen in a new window | Open in Hugging Face Spaces"
-  },
-  {
-    "objectID": "resources/async_tasks/index.html#code",
-    "href": "resources/async_tasks/index.html#code",
-    "title": "Async Tasks",
-    "section": "Code",
-    "text": "Code\n\n\nShow\n\nimport time\nfrom concurrent.futures import ThreadPoolExecutor\nfrom contextlib import contextmanager\n\nimport numpy as np\nimport panel as pn\nimport param\nfrom asyncio import wrap_future\n\nclass ProgressExtMod(pn.viewable.Viewer):\n    \"\"\"A custom component for easy progress reporting\"\"\"\n\n    completed = param.Integer(default=0)\n    bar_color = param.String(default=\"info\")\n    num_tasks = param.Integer(default=100, bounds=(1, None))\n\n    # @param.depends('completed', 'num_tasks')\n    @property\n    def value(self) -&gt; int:\n        \"\"\"Returns the progress value\n\n        Returns:\n            int: The progress value\n        \"\"\"\n        return int(100 * (self.completed / self.num_tasks))\n\n    def reset(self):\n        \"\"\"Resets the value and message\"\"\"\n        # Please note the order matters as the Widgets updates two times. One for each change\n        self.completed = 0\n\n    def __panel__(self):\n        return self.view\n\n    @param.depends(\"completed\", \"bar_color\")\n    def view(self):\n        \"\"\"View the widget\n        Returns:\n            pn.viewable.Viewable: Add this to your app to see the progress reported\n        \"\"\"\n        if self.value:\n            return pn.widgets.Progress(\n                active=True, value=self.value, align=\"center\", sizing_mode=\"stretch_width\"\n            )\n        return None\n\n    @contextmanager\n    def increment(self):\n        \"\"\"Increments the value\n        \n        Can be used as context manager or decorator\n        \n        Yields:\n            None: Nothing is yielded\n        \"\"\"\n        self.completed += 1\n        yield\n        if self.completed == self.num_tasks:\n            self.reset()\n\nexecutor = ThreadPoolExecutor(max_workers=2)  # pylint: disable=consider-using-with\nprogress = ProgressExtMod()\n\n\nclass AsyncComponent(pn.viewable.Viewer):\n    \"\"\"A component that demonstrates how to run a Blocking Background task asynchronously\n    in Panel\"\"\"\n\n    select = param.Selector(objects=range(10))\n    slider = param.Number(2, bounds=(0, 10))\n    \n    run_blocking_task = param.Event(label=\"RUN\")\n    result = param.Number(0)\n    view = param.Parameter()\n\n    def __init__(self, **params):\n        super().__init__(**params)\n\n        self._layout = pn.Column(\n            pn.pane.Markdown(\"## Blocking Task Running in Background\"),\n            pn.Param(\n                self,\n                parameters=[\"run_blocking_task\", \"result\"],\n                widgets={\"result\": {\"disabled\": True}, \"run_blocking_task\": {\"button_type\": \"primary\"}},\n                show_name=False,\n            ),\n            progress,\n            pn.pane.Markdown(\"## Other, Non-Blocked Tasks\"),\n            pn.Param(\n                self,\n                parameters=[\"select\", \"slider\"],\n                widgets={\"text\": {\"disabled\": True}},\n                show_name=False,\n            ),\n            self.text\n        )\n\n    def __panel__(self):\n        return self._layout\n\n    @param.depends(\"slider\", \"select\")\n    def text(self):\n        if self.select:\n            select = self.select\n        else:\n            select = 0\n        return f\"{select} + {self.slider} = {select + self.slider}\"\n\n    @pn.depends(\"run_blocking_task\", watch=True)\n    async def _run_blocking_tasks(self, num_tasks=10):\n        \"\"\"Runs background tasks num_tasks times\"\"\"\n        num_tasks = 20\n        progress.num_tasks = num_tasks\n        for _ in range(num_tasks):\n            future = executor.submit(self._run_blocking_task)\n            result = await wrap_future(future)\n            self._update(result)\n\n    @progress.increment()\n    def _update(self, number):\n        self.result += number\n\n    @staticmethod\n    def _run_blocking_task():\n        time.sleep(np.random.randint(1, 2))\n        return 5\n\nif pn.state.served:\n    pn.extension()\n    \n    component = AsyncComponent()\n    pn.template.FastListTemplate(\n        site=\"Awesome Panel\", site_url=\"https://awesome-panel.org\", title=\"Async Tasks\", main=[component], main_layout=None, main_max_width=\"400px\"\n    ).servable()"
-  },
-  {
-    "objectID": "resources/async_tasks/index.html#gif",
-    "href": "resources/async_tasks/index.html#gif",
-    "title": "Async Tasks",
-    "section": "Gif",
-    "text": "Gif"
-  },
-  {
-    "objectID": "resources/async_tasks/index.html#png",
-    "href": "resources/async_tasks/index.html#png",
-    "title": "Async Tasks",
-    "section": "Png",
-    "text": "Png"
-  },
-  {
-    "objectID": "resources/async_tasks/index.html#mp4",
-    "href": "resources/async_tasks/index.html#mp4",
-    "title": "Async Tasks",
-    "section": "Mp4",
-    "text": "Mp4\n\n\nYour browser does not support HTML video."
-  },
-  {
-    "objectID": "resources/async_tasks/index.html#social",
-    "href": "resources/async_tasks/index.html#social",
-    "title": "Async Tasks",
-    "section": "Social",
-    "text": "Social\nPlease share on social media. Thanks."
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "Awesome Panel",
@@ -495,62 +383,6 @@
     "title": "Awesome Panel",
     "section": "Pyodide Apps",
     "text": "Pyodide Apps\nWe distribute most of our apps as apps that run entirely in the browser via Pyodide and panel convert. We do this because we don’t have the resources to pay for and maintain servers. They do take longer time to load than apps server on a server."
-  },
-  {
-    "objectID": "resources/bootstrap_dashboard/index.html",
-    "href": "resources/bootstrap_dashboard/index.html",
-    "title": "Bootstrap Dashboard",
-    "section": "",
-    "text": "This dashboard demonstrates that a dashboard layout similar to the Bootstrap dashboard template can be implemented in Panel."
-  },
-  {
-    "objectID": "resources/bootstrap_dashboard/index.html#introduction",
-    "href": "resources/bootstrap_dashboard/index.html#introduction",
-    "title": "Bootstrap Dashboard",
-    "section": "",
-    "text": "This dashboard demonstrates that a dashboard layout similar to the Bootstrap dashboard template can be implemented in Panel."
-  },
-  {
-    "objectID": "resources/bootstrap_dashboard/index.html#app",
-    "href": "resources/bootstrap_dashboard/index.html#app",
-    "title": "Bootstrap Dashboard",
-    "section": "App",
-    "text": "App\nThis app runs entirely in the browser via Pyodide and panel convert.\nOpen in a new window | Open in Hugging Face Spaces"
-  },
-  {
-    "objectID": "resources/bootstrap_dashboard/index.html#code",
-    "href": "resources/bootstrap_dashboard/index.html#code",
-    "title": "Bootstrap Dashboard",
-    "section": "Code",
-    "text": "Code\n\n\nShow\n\n\"\"\"\nSee https://awesome-panel.org/resources/bootstrap_dashboard/\n\"\"\"\nimport hvplot.pandas  # pylint: disable=unused-import\nimport pandas as pd\nimport panel as pn\n\nBOOTSTRAP_DASHBOARD_CHART_URL=\"https://awesomepanel.blob.core.windows.net/resources/bootstrap_dashboard/bootstrap_dashboard_chart.csv\"\nBOOTSTRAP_DASHBOARD_TABLE_URL=\"https://awesomepanel.blob.core.windows.net/resources/bootstrap_dashboard/bootstrap_dashboard_table.csv\"\n\nCOLOR=\"#0072B5\"\n\n@pn.cache\ndef _get_chart_data():\n    return pd.read_csv(BOOTSTRAP_DASHBOARD_CHART_URL)\n\n@pn.cache\ndef _get_table_data():\n    return pd.read_csv(BOOTSTRAP_DASHBOARD_TABLE_URL)\n\ndef _holoviews_chart():\n    \"\"\"## Dashboard Orders Chart generated by HoloViews\"\"\"\n    data = _get_chart_data()\n    line_plot = data.hvplot.line(\n        x=\"Day\",\n        y=\"Orders\",\n        height=500,\n        line_color=COLOR,\n        line_width=6,\n    )\n    scatter_plot = data.hvplot.scatter(x=\"Day\", y=\"Orders\", height=300,).opts(\n        marker=\"o\",\n        size=10,\n        color=COLOR,\n    )\n    fig = line_plot * scatter_plot\n    gridstyle = {\n        \"grid_line_color\": \"black\",\n        \"grid_line_width\": 0.1,\n    }\n    fig = fig.opts(\n        responsive=True,\n        toolbar=None,\n        yticks=list(\n            range(\n                12000,\n                26000,\n                2000,\n            )\n        ),\n        ylim=(\n            12000,\n            26000,\n        ),\n        gridstyle=gridstyle,\n        show_grid=True,\n    )\n    return fig\n\napp = pn.extension(\"tabulator\", sizing_mode=\"stretch_width\")\n\npn.template.FastListTemplate(\n    site=\"Awesome Panel\", site_url=\"https://awesome-panel.org\", title=\"Bootstrap Dashboard\",\n    main=[\n        pn.Column(\n            pn.pane.Markdown(\"## Dashboard\"),\n            _holoviews_chart()),\n            pn.Column(pn.pane.Markdown(\"## Section Title\"),\n            pn.widgets.Tabulator(_get_table_data(), layout='fit_data_stretch')),\n    ], main_max_width=\"800px\", main_layout=None,\n).servable()\n\n\nDownload (right-click, save-as)"
-  },
-  {
-    "objectID": "resources/bootstrap_dashboard/index.html#gif",
-    "href": "resources/bootstrap_dashboard/index.html#gif",
-    "title": "Bootstrap Dashboard",
-    "section": "Gif",
-    "text": "Gif"
-  },
-  {
-    "objectID": "resources/bootstrap_dashboard/index.html#png",
-    "href": "resources/bootstrap_dashboard/index.html#png",
-    "title": "Bootstrap Dashboard",
-    "section": "Png",
-    "text": "Png"
-  },
-  {
-    "objectID": "resources/bootstrap_dashboard/index.html#mp4",
-    "href": "resources/bootstrap_dashboard/index.html#mp4",
-    "title": "Bootstrap Dashboard",
-    "section": "Mp4",
-    "text": "Mp4\n\n\nYour browser does not support HTML video."
-  },
-  {
-    "objectID": "resources/bootstrap_dashboard/index.html#social",
-    "href": "resources/bootstrap_dashboard/index.html#social",
-    "title": "Bootstrap Dashboard",
-    "section": "Social",
-    "text": "Social\nPlease share on social media. Thanks."
   },
   {
     "objectID": "resources/classic_dashboard/classic_dashboard.html",
@@ -627,7 +459,7 @@
     "href": "resources/crossfiltering_holoviews/index.html#app",
     "title": "Crossfiltering with HoloViews",
     "section": "App",
-    "text": "App\nThe apps below run entirely in the browser via Pyodide and panel convert.\n\nBokeh\nOpen in a new window | Open in Hugging Face Spaces\n\n\n\n\nPlotly\nFor the Plotly backend I cannot get responsive plots working. That is why I use fixed sizes. See Panel #6173.\nOpen in a new window | Open in Hugging Face Spaces"
+    "text": "App\n\nBokeh\n\n\n\n\nPlotly\nFor the Plotly backend I cannot get responsive plots working. That is why I use fixed sizes. See Panel #6173.\nOpen in a new window | Open in Hugging Face Spaces"
   },
   {
     "objectID": "resources/crossfiltering_holoviews/index.html#code",
