@@ -18,17 +18,9 @@ With HoloViews you can add crossfiltering to your hvPlot or Holoviews plots. Che
 
 ## App
 
-The apps below run entirely in the browser via [Pyodide](https://pyodide.org) and [panel convert](https://panel.holoviz.org/how_to/wasm/convert.html).
-
 ### Bokeh
 
-<a href="https://awesome-panel-crossfiltering-holoviews.static.hf.space/crossfiltering_holoviews_bokeh.html" target="_blank">Open in a new window</a> | <a href="https://huggingface.co/spaces/awesome-panel/crossfiltering_holoviews" target="_blank">Open in Hugging Face Spaces</a>
-
-<iframe
-	src="https://awesome-panel-crossfiltering-holoviews.static.hf.space/crossfiltering_holoviews_bokeh.html"
-	frameborder="0"
-	style="width:100%;height:1000px"
-></iframe>
+<iframe src="https://py.cafe/app/awesome.panel.org/holoviews-crossfiltering" width="100%" height="800px" style="border: 1px solid #e6e6e6; border-radius: 8px;"></iframe>
 
 ### Plotly
 
@@ -36,11 +28,7 @@ For the Plotly backend I cannot get responsive plots working. That is why I use 
 
 <a href="https://awesome-panel-crossfiltering-holoviews.static.hf.space/crossfiltering_holoviews_plotly.html" target="_blank">Open in a new window</a> | <a href="https://huggingface.co/spaces/awesome-panel/crossfiltering_holoviews" target="_blank">Open in Hugging Face Spaces</a>
 
-<iframe
-	src="https://awesome-panel-crossfiltering-holoviews.static.hf.space/crossfiltering_holoviews_plotly.html"
-	frameborder="0"
-	style="width:100%;height:1000px"
-></iframe>
+<iframe src="https://py.cafe/embed/awesome.panel.org/holoviews-crossfiltering-plotly?theme=light&linkToApp=false" width="100%" height="800px" style="border: 1px solid #e6e6e6; border-radius: 8px;"></iframe>
 
 ## Code
 
@@ -58,18 +46,18 @@ For the Plotly backend I cannot get responsive plots working. That is why I use 
 
 ## Gif
 
-<img src="https://cdn.awesome-panel.org/resources/crossfiltering_holoviews/crossfiltering_holoviews.gif"></img>
+<img src="crossfiltering_holoviews.gif"></img>
 
 ## Mp4
 
-<video poster="https://cdn.awesome-panel.org/resources/crossfiltering_holoviews/crossfiltering_holoviews.png" controls>
-  <source src="https://cdn.awesome-panel.org/resources/crossfiltering_holoviews/crossfiltering_holoviews.mp4" type="video/mp4">
+<video poster="crossfiltering_holoviews.png" controls>
+  <source src="crossfiltering_holoviews.mp4" type="video/mp4">
   Your browser does not support HTML video.
 </video>
 
 ## Png
 
-<img src="https://cdn.awesome-panel.org/resources/crossfiltering_holoviews/crossfiltering_holoviews.png"></img>
+<img src="crossfiltering_holoviews.png"></img>
 
 ## Social
 
