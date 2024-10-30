@@ -29,6 +29,9 @@ website:
       - icon: github
         href: https://github.com/awesome-panel/awesome-panel     
         text: Github
+      - icon: emoji-coffee
+        href: https://py.cafe/awesome.panel.org
+        text: Py.Cafe
       - icon: emoji-smile
         href: https://huggingface.co/awesome-panel
         text: Hugging Face 🤗

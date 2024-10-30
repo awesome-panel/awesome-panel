@@ -13,8 +13,9 @@ We want to
 We provide
 
 - The [awesome-panel.org](https://awesome-panel.org) web site
-- The [awesome-panel space](https://huggingface.co/awesome-panel) on Hugging Face
-- Communication on social media at [Twitter](https://twitter.com/home) | [LinkedIn](https://www.linkedin.com/in/marcskovmadsen/)
+- The [awesome-panel space](https://huggingface.co/awesome-panel) on 🤗 Hugging Face
+- The [awesome-panel examples](https://py.cafe/awesome.panel.org) at ☕ PY.CAFE.
+- Communication on social media at [Twitter](https://x.com/awesome_panel) | [LinkedIn](https://www.linkedin.com/company/awesome-panel-org)
 - [Panel Extensions and Example Repositories](https://github.com/orgs/awesome-panel/repositories)
 
 ![Awesome Panel Intro](https://github.com/awesome-panel/awesome-panel/blob/main/assets/videos/awesome-panel-intro.gif?raw=true)
@@ -23,27 +24,7 @@ We provide
 
 If you are looking to contribute to this project you can find ideas in the [issue tracker](https://github.com/awesome-panel/awesome-panel/issues).
 
-I would love to support and receive your contributions. Thanks.
-
-### Installing
-
-```bash
-conda create -n awesome-panel -c conda-forge r-quarto perl
-```
-
-### Previewing
-
-```bash
-cd docs
-quarto preview
-```
-
-### Publish
-
-```bash
-cd docs
-quarto publish
-```
+Check out the [Developer Guide](DEVELOPER_GUIDE.md) for more info.
 
 ## ⭐ Support
 
