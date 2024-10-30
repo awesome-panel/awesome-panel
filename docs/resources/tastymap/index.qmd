@@ -38,18 +38,18 @@ The app is a Panel app.
 
 What a colorful app!
 
-<img src="https://cdn.awesome-panel.org/resources/tastymap/tastymap.gif"></img>
+<img src="tastymap.gif"></img>
 
 ## Mp4
 
-<video poster="https://cdn.awesome-panel.org/resources/tastymap/tastymap.png" controls>
-  <source src="https://cdn.awesome-panel.org/resources/tastymap/tastymap.mp4" type="video/mp4">
+<video poster="tastymap.png" controls>
+  <source src="tastymap.mp4" type="video/mp4">
   Your browser does not support HTML video.
 </video>
 
 ## Png
 
-<img src="https://cdn.awesome-panel.org/resources/tastymap/tastymap.png"></img>
+<img src="tastymap.png"></img>
 
 ## Social
 

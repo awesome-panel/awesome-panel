@@ -26,24 +26,24 @@ website:
     background: "#FFFFFF"
     search: true
     tools:
-      - icon: github
-        href: https://github.com/awesome-panel/awesome-panel     
-        text: Github
-      - icon: emoji-coffee
+      - icon: cup-hot
         href: https://py.cafe/awesome.panel.org
         text: Py.Cafe
       - icon: emoji-smile
         href: https://huggingface.co/awesome-panel
-        text: Hugging Face 🤗
-      - icon: linkedin
-        href: https://www.linkedin.com/company/awesome-panel-org
-        text: LinkedIn
+        text: Hugging Face
       - icon: filetype-py
         href: "https://pyscript.com/@awesome-panel"
         text: PyScript
+      - icon: linkedin
+        href: https://www.linkedin.com/company/awesome-panel-org
+        text: LinkedIn
       - icon: twitter
         href: https://twitter.com/awesome_panel
         text: Twitter
+      - icon: github
+        href: https://github.com/awesome-panel/awesome-panel     
+        text: Github
     left:
     - file: index.qmd
       text: Home

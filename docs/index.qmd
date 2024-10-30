@@ -1,6 +1,6 @@
 ---
 title: "Awesome Panel"
-description: "Awesome Panel resources by the community"
+description: "Resources by the community for the community."
 image: "https://cdn.awesome-panel.org/resources/awesome-panel-card-1024x1024.png?version=1"
 listing:
   contents: resources
